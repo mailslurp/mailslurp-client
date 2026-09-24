@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmsDtoToJSON = exports.SmsDtoFromJSONTyped = exports.SmsDtoFromJSON = void 0;
+exports.SmsDtoFromJSON = SmsDtoFromJSON;
+exports.SmsDtoFromJSONTyped = SmsDtoFromJSONTyped;
+exports.SmsDtoToJSON = SmsDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function SmsDtoFromJSON(json) {
     return SmsDtoFromJSONTyped(json, false);
 }
-exports.SmsDtoFromJSON = SmsDtoFromJSON;
 function SmsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +39,6 @@ function SmsDtoFromJSONTyped(json, ignoreDiscriminator) {
         media: json['media'].map(_1.SmsMessageMediaDtoFromJSON),
     };
 }
-exports.SmsDtoFromJSONTyped = SmsDtoFromJSONTyped;
 function SmsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -60,4 +60,3 @@ function SmsDtoToJSON(value) {
         media: value.media.map(_1.SmsMessageMediaDtoToJSON),
     };
 }
-exports.SmsDtoToJSON = SmsDtoToJSON;

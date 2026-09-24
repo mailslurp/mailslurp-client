@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewEmailSubmissionDtoToJSON = exports.DevicePreviewEmailSubmissionDtoFromJSONTyped = exports.DevicePreviewEmailSubmissionDtoFromJSON = exports.DevicePreviewEmailSubmissionDtoFailureCodeEnum = exports.DevicePreviewEmailSubmissionDtoStatusEnum = void 0;
+exports.DevicePreviewEmailSubmissionDtoFailureCodeEnum = exports.DevicePreviewEmailSubmissionDtoStatusEnum = void 0;
+exports.DevicePreviewEmailSubmissionDtoFromJSON = DevicePreviewEmailSubmissionDtoFromJSON;
+exports.DevicePreviewEmailSubmissionDtoFromJSONTyped = DevicePreviewEmailSubmissionDtoFromJSONTyped;
+exports.DevicePreviewEmailSubmissionDtoToJSON = DevicePreviewEmailSubmissionDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,7 +29,7 @@ var DevicePreviewEmailSubmissionDtoStatusEnum;
     DevicePreviewEmailSubmissionDtoStatusEnum["INSPECTION_READY"] = "INSPECTION_READY";
     DevicePreviewEmailSubmissionDtoStatusEnum["RUN_CREATED"] = "RUN_CREATED";
     DevicePreviewEmailSubmissionDtoStatusEnum["FAILED"] = "FAILED";
-})(DevicePreviewEmailSubmissionDtoStatusEnum = exports.DevicePreviewEmailSubmissionDtoStatusEnum || (exports.DevicePreviewEmailSubmissionDtoStatusEnum = {}));
+})(DevicePreviewEmailSubmissionDtoStatusEnum || (exports.DevicePreviewEmailSubmissionDtoStatusEnum = DevicePreviewEmailSubmissionDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -161,11 +164,10 @@ var DevicePreviewEmailSubmissionDtoFailureCodeEnum;
     DevicePreviewEmailSubmissionDtoFailureCodeEnum["W_429_SUBSCRIPTION_FREE_LIMIT"] = "W_429_SUBSCRIPTION_FREE_LIMIT";
     DevicePreviewEmailSubmissionDtoFailureCodeEnum["W_429_PUBLIC_DEVICE_RENDER_ACCOUNT_REQUIRED"] = "W_429_PUBLIC_DEVICE_RENDER_ACCOUNT_REQUIRED";
     DevicePreviewEmailSubmissionDtoFailureCodeEnum["W_429_FREE_ACCOUNT_EXPIRED"] = "W_429_FREE_ACCOUNT_EXPIRED";
-})(DevicePreviewEmailSubmissionDtoFailureCodeEnum = exports.DevicePreviewEmailSubmissionDtoFailureCodeEnum || (exports.DevicePreviewEmailSubmissionDtoFailureCodeEnum = {}));
+})(DevicePreviewEmailSubmissionDtoFailureCodeEnum || (exports.DevicePreviewEmailSubmissionDtoFailureCodeEnum = DevicePreviewEmailSubmissionDtoFailureCodeEnum = {}));
 function DevicePreviewEmailSubmissionDtoFromJSON(json) {
     return DevicePreviewEmailSubmissionDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewEmailSubmissionDtoFromJSON = DevicePreviewEmailSubmissionDtoFromJSON;
 function DevicePreviewEmailSubmissionDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -216,7 +218,6 @@ function DevicePreviewEmailSubmissionDtoFromJSONTyped(json, ignoreDiscriminator)
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DevicePreviewEmailSubmissionDtoFromJSONTyped = DevicePreviewEmailSubmissionDtoFromJSONTyped;
 function DevicePreviewEmailSubmissionDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -258,4 +259,3 @@ function DevicePreviewEmailSubmissionDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DevicePreviewEmailSubmissionDtoToJSON = DevicePreviewEmailSubmissionDtoToJSON;

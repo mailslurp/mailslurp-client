@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CampaignProbeSeriesPointDtoToJSON = exports.CampaignProbeSeriesPointDtoFromJSONTyped = exports.CampaignProbeSeriesPointDtoFromJSON = void 0;
+exports.CampaignProbeSeriesPointDtoFromJSON = CampaignProbeSeriesPointDtoFromJSON;
+exports.CampaignProbeSeriesPointDtoFromJSONTyped = CampaignProbeSeriesPointDtoFromJSONTyped;
+exports.CampaignProbeSeriesPointDtoToJSON = CampaignProbeSeriesPointDtoToJSON;
 function CampaignProbeSeriesPointDtoFromJSON(json) {
     return CampaignProbeSeriesPointDtoFromJSONTyped(json, false);
 }
-exports.CampaignProbeSeriesPointDtoFromJSON = CampaignProbeSeriesPointDtoFromJSON;
 function CampaignProbeSeriesPointDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function CampaignProbeSeriesPointDtoFromJSONTyped(json, ignoreDiscriminator) {
         averageHealthScore: json['averageHealthScore'],
     };
 }
-exports.CampaignProbeSeriesPointDtoFromJSONTyped = CampaignProbeSeriesPointDtoFromJSONTyped;
 function CampaignProbeSeriesPointDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function CampaignProbeSeriesPointDtoToJSON(value) {
         averageHealthScore: value.averageHealthScore,
     };
 }
-exports.CampaignProbeSeriesPointDtoToJSON = CampaignProbeSeriesPointDtoToJSON;

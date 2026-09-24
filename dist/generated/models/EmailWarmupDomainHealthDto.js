@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupDomainHealthDtoToJSON = exports.EmailWarmupDomainHealthDtoFromJSONTyped = exports.EmailWarmupDomainHealthDtoFromJSON = void 0;
+exports.EmailWarmupDomainHealthDtoFromJSON = EmailWarmupDomainHealthDtoFromJSON;
+exports.EmailWarmupDomainHealthDtoFromJSONTyped = EmailWarmupDomainHealthDtoFromJSONTyped;
+exports.EmailWarmupDomainHealthDtoToJSON = EmailWarmupDomainHealthDtoToJSON;
 var runtime_1 = require("../runtime");
 function EmailWarmupDomainHealthDtoFromJSON(json) {
     return EmailWarmupDomainHealthDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupDomainHealthDtoFromJSON = EmailWarmupDomainHealthDtoFromJSON;
 function EmailWarmupDomainHealthDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +41,6 @@ function EmailWarmupDomainHealthDtoFromJSONTyped(json, ignoreDiscriminator) {
                 : new Date(json['checkedAt']),
     };
 }
-exports.EmailWarmupDomainHealthDtoFromJSONTyped = EmailWarmupDomainHealthDtoFromJSONTyped;
 function EmailWarmupDomainHealthDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -65,4 +65,3 @@ function EmailWarmupDomainHealthDtoToJSON(value) {
                 : value.checkedAt.toISOString(),
     };
 }
-exports.EmailWarmupDomainHealthDtoToJSON = EmailWarmupDomainHealthDtoToJSON;

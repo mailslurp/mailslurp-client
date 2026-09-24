@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValidatePhoneNumberOptionsToJSON = exports.ValidatePhoneNumberOptionsFromJSONTyped = exports.ValidatePhoneNumberOptionsFromJSON = void 0;
+exports.ValidatePhoneNumberOptionsFromJSON = ValidatePhoneNumberOptionsFromJSON;
+exports.ValidatePhoneNumberOptionsFromJSONTyped = ValidatePhoneNumberOptionsFromJSONTyped;
+exports.ValidatePhoneNumberOptionsToJSON = ValidatePhoneNumberOptionsToJSON;
 function ValidatePhoneNumberOptionsFromJSON(json) {
     return ValidatePhoneNumberOptionsFromJSONTyped(json, false);
 }
-exports.ValidatePhoneNumberOptionsFromJSON = ValidatePhoneNumberOptionsFromJSON;
 function ValidatePhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function ValidatePhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
         phoneNumber: json['phoneNumber'],
     };
 }
-exports.ValidatePhoneNumberOptionsFromJSONTyped = ValidatePhoneNumberOptionsFromJSONTyped;
 function ValidatePhoneNumberOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function ValidatePhoneNumberOptionsToJSON(value) {
         phoneNumber: value.phoneNumber,
     };
 }
-exports.ValidatePhoneNumberOptionsToJSON = ValidatePhoneNumberOptionsToJSON;

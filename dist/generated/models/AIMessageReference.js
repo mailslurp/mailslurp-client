@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageReferenceToJSON = exports.AIMessageReferenceFromJSONTyped = exports.AIMessageReferenceFromJSON = exports.AIMessageReferenceTypeEnum = void 0;
+exports.AIMessageReferenceTypeEnum = void 0;
+exports.AIMessageReferenceFromJSON = AIMessageReferenceFromJSON;
+exports.AIMessageReferenceFromJSONTyped = AIMessageReferenceFromJSONTyped;
+exports.AIMessageReferenceToJSON = AIMessageReferenceToJSON;
 /**
  * @export
  * @enum {string}
@@ -22,11 +25,10 @@ var AIMessageReferenceTypeEnum;
 (function (AIMessageReferenceTypeEnum) {
     AIMessageReferenceTypeEnum["EMAIL"] = "EMAIL";
     AIMessageReferenceTypeEnum["SMS"] = "SMS";
-})(AIMessageReferenceTypeEnum = exports.AIMessageReferenceTypeEnum || (exports.AIMessageReferenceTypeEnum = {}));
+})(AIMessageReferenceTypeEnum || (exports.AIMessageReferenceTypeEnum = AIMessageReferenceTypeEnum = {}));
 function AIMessageReferenceFromJSON(json) {
     return AIMessageReferenceFromJSONTyped(json, false);
 }
-exports.AIMessageReferenceFromJSON = AIMessageReferenceFromJSON;
 function AIMessageReferenceFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -36,7 +38,6 @@ function AIMessageReferenceFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.AIMessageReferenceFromJSONTyped = AIMessageReferenceFromJSONTyped;
 function AIMessageReferenceToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +50,3 @@ function AIMessageReferenceToJSON(value) {
         id: value.id,
     };
 }
-exports.AIMessageReferenceToJSON = AIMessageReferenceToJSON;

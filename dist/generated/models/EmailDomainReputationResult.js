@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailDomainReputationResultToJSON = exports.EmailDomainReputationResultFromJSONTyped = exports.EmailDomainReputationResultFromJSON = exports.EmailDomainReputationResultStatusEnum = void 0;
+exports.EmailDomainReputationResultStatusEnum = void 0;
+exports.EmailDomainReputationResultFromJSON = EmailDomainReputationResultFromJSON;
+exports.EmailDomainReputationResultFromJSONTyped = EmailDomainReputationResultFromJSONTyped;
+exports.EmailDomainReputationResultToJSON = EmailDomainReputationResultToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -26,11 +29,10 @@ var EmailDomainReputationResultStatusEnum;
     EmailDomainReputationResultStatusEnum["DEGRADED"] = "DEGRADED";
     EmailDomainReputationResultStatusEnum["CRITICAL"] = "CRITICAL";
     EmailDomainReputationResultStatusEnum["FAILED"] = "FAILED";
-})(EmailDomainReputationResultStatusEnum = exports.EmailDomainReputationResultStatusEnum || (exports.EmailDomainReputationResultStatusEnum = {}));
+})(EmailDomainReputationResultStatusEnum || (exports.EmailDomainReputationResultStatusEnum = EmailDomainReputationResultStatusEnum = {}));
 function EmailDomainReputationResultFromJSON(json) {
     return EmailDomainReputationResultFromJSONTyped(json, false);
 }
-exports.EmailDomainReputationResultFromJSON = EmailDomainReputationResultFromJSON;
 function EmailDomainReputationResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -54,7 +56,6 @@ function EmailDomainReputationResultFromJSONTyped(json, ignoreDiscriminator) {
         errors: json['errors'],
     };
 }
-exports.EmailDomainReputationResultFromJSONTyped = EmailDomainReputationResultFromJSONTyped;
 function EmailDomainReputationResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -77,4 +78,3 @@ function EmailDomainReputationResultToJSON(value) {
         errors: value.errors,
     };
 }
-exports.EmailDomainReputationResultToJSON = EmailDomainReputationResultToJSON;

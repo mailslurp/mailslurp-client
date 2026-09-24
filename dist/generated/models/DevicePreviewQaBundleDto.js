@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewQaBundleDtoToJSON = exports.DevicePreviewQaBundleDtoFromJSONTyped = exports.DevicePreviewQaBundleDtoFromJSON = exports.DevicePreviewQaBundleDtoDomainMonitorStatusEnum = exports.DevicePreviewQaBundleDtoEmailAuditStatusEnum = exports.DevicePreviewQaBundleDtoStatusEnum = void 0;
+exports.DevicePreviewQaBundleDtoDomainMonitorStatusEnum = exports.DevicePreviewQaBundleDtoEmailAuditStatusEnum = exports.DevicePreviewQaBundleDtoStatusEnum = void 0;
+exports.DevicePreviewQaBundleDtoFromJSON = DevicePreviewQaBundleDtoFromJSON;
+exports.DevicePreviewQaBundleDtoFromJSONTyped = DevicePreviewQaBundleDtoFromJSONTyped;
+exports.DevicePreviewQaBundleDtoToJSON = DevicePreviewQaBundleDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,7 +28,7 @@ var DevicePreviewQaBundleDtoStatusEnum;
     DevicePreviewQaBundleDtoStatusEnum["COMPLETE"] = "COMPLETE";
     DevicePreviewQaBundleDtoStatusEnum["COMPLETE_WITH_SKIPS"] = "COMPLETE_WITH_SKIPS";
     DevicePreviewQaBundleDtoStatusEnum["COMPLETE_WITH_ERRORS"] = "COMPLETE_WITH_ERRORS";
-})(DevicePreviewQaBundleDtoStatusEnum = exports.DevicePreviewQaBundleDtoStatusEnum || (exports.DevicePreviewQaBundleDtoStatusEnum = {}));
+})(DevicePreviewQaBundleDtoStatusEnum || (exports.DevicePreviewQaBundleDtoStatusEnum = DevicePreviewQaBundleDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -37,7 +40,7 @@ var DevicePreviewQaBundleDtoEmailAuditStatusEnum;
     DevicePreviewQaBundleDtoEmailAuditStatusEnum["COMPLETE"] = "COMPLETE";
     DevicePreviewQaBundleDtoEmailAuditStatusEnum["SKIPPED"] = "SKIPPED";
     DevicePreviewQaBundleDtoEmailAuditStatusEnum["FAILED"] = "FAILED";
-})(DevicePreviewQaBundleDtoEmailAuditStatusEnum = exports.DevicePreviewQaBundleDtoEmailAuditStatusEnum || (exports.DevicePreviewQaBundleDtoEmailAuditStatusEnum = {}));
+})(DevicePreviewQaBundleDtoEmailAuditStatusEnum || (exports.DevicePreviewQaBundleDtoEmailAuditStatusEnum = DevicePreviewQaBundleDtoEmailAuditStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -49,11 +52,10 @@ var DevicePreviewQaBundleDtoDomainMonitorStatusEnum;
     DevicePreviewQaBundleDtoDomainMonitorStatusEnum["COMPLETE"] = "COMPLETE";
     DevicePreviewQaBundleDtoDomainMonitorStatusEnum["SKIPPED"] = "SKIPPED";
     DevicePreviewQaBundleDtoDomainMonitorStatusEnum["FAILED"] = "FAILED";
-})(DevicePreviewQaBundleDtoDomainMonitorStatusEnum = exports.DevicePreviewQaBundleDtoDomainMonitorStatusEnum || (exports.DevicePreviewQaBundleDtoDomainMonitorStatusEnum = {}));
+})(DevicePreviewQaBundleDtoDomainMonitorStatusEnum || (exports.DevicePreviewQaBundleDtoDomainMonitorStatusEnum = DevicePreviewQaBundleDtoDomainMonitorStatusEnum = {}));
 function DevicePreviewQaBundleDtoFromJSON(json) {
     return DevicePreviewQaBundleDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewQaBundleDtoFromJSON = DevicePreviewQaBundleDtoFromJSON;
 function DevicePreviewQaBundleDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -89,7 +91,6 @@ function DevicePreviewQaBundleDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DevicePreviewQaBundleDtoFromJSONTyped = DevicePreviewQaBundleDtoFromJSONTyped;
 function DevicePreviewQaBundleDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -116,4 +117,3 @@ function DevicePreviewQaBundleDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DevicePreviewQaBundleDtoToJSON = DevicePreviewQaBundleDtoToJSON;

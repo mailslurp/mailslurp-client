@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateMtaStsRecordOptionsToJSON = exports.GenerateMtaStsRecordOptionsFromJSONTyped = exports.GenerateMtaStsRecordOptionsFromJSON = exports.GenerateMtaStsRecordOptionsModeEnum = exports.GenerateMtaStsRecordOptionsVersionEnum = void 0;
+exports.GenerateMtaStsRecordOptionsModeEnum = exports.GenerateMtaStsRecordOptionsVersionEnum = void 0;
+exports.GenerateMtaStsRecordOptionsFromJSON = GenerateMtaStsRecordOptionsFromJSON;
+exports.GenerateMtaStsRecordOptionsFromJSONTyped = GenerateMtaStsRecordOptionsFromJSONTyped;
+exports.GenerateMtaStsRecordOptionsToJSON = GenerateMtaStsRecordOptionsToJSON;
 /**
  * @export
  * @enum {string}
@@ -21,7 +24,7 @@ exports.GenerateMtaStsRecordOptionsToJSON = exports.GenerateMtaStsRecordOptionsF
 var GenerateMtaStsRecordOptionsVersionEnum;
 (function (GenerateMtaStsRecordOptionsVersionEnum) {
     GenerateMtaStsRecordOptionsVersionEnum["STSv1"] = "STSv1";
-})(GenerateMtaStsRecordOptionsVersionEnum = exports.GenerateMtaStsRecordOptionsVersionEnum || (exports.GenerateMtaStsRecordOptionsVersionEnum = {}));
+})(GenerateMtaStsRecordOptionsVersionEnum || (exports.GenerateMtaStsRecordOptionsVersionEnum = GenerateMtaStsRecordOptionsVersionEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -31,11 +34,10 @@ var GenerateMtaStsRecordOptionsModeEnum;
     GenerateMtaStsRecordOptionsModeEnum["TESTING"] = "TESTING";
     GenerateMtaStsRecordOptionsModeEnum["ENFORCE"] = "ENFORCE";
     GenerateMtaStsRecordOptionsModeEnum["NONE"] = "NONE";
-})(GenerateMtaStsRecordOptionsModeEnum = exports.GenerateMtaStsRecordOptionsModeEnum || (exports.GenerateMtaStsRecordOptionsModeEnum = {}));
+})(GenerateMtaStsRecordOptionsModeEnum || (exports.GenerateMtaStsRecordOptionsModeEnum = GenerateMtaStsRecordOptionsModeEnum = {}));
 function GenerateMtaStsRecordOptionsFromJSON(json) {
     return GenerateMtaStsRecordOptionsFromJSONTyped(json, false);
 }
-exports.GenerateMtaStsRecordOptionsFromJSON = GenerateMtaStsRecordOptionsFromJSON;
 function GenerateMtaStsRecordOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -49,7 +51,6 @@ function GenerateMtaStsRecordOptionsFromJSONTyped(json, ignoreDiscriminator) {
         mxRecords: json['mxRecords'],
     };
 }
-exports.GenerateMtaStsRecordOptionsFromJSONTyped = GenerateMtaStsRecordOptionsFromJSONTyped;
 function GenerateMtaStsRecordOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -66,4 +67,3 @@ function GenerateMtaStsRecordOptionsToJSON(value) {
         mxRecords: value.mxRecords,
     };
 }
-exports.GenerateMtaStsRecordOptionsToJSON = GenerateMtaStsRecordOptionsToJSON;

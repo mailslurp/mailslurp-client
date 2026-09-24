@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GroupContactsDtoToJSON = exports.GroupContactsDtoFromJSONTyped = exports.GroupContactsDtoFromJSON = void 0;
+exports.GroupContactsDtoFromJSON = GroupContactsDtoFromJSON;
+exports.GroupContactsDtoFromJSONTyped = GroupContactsDtoFromJSONTyped;
+exports.GroupContactsDtoToJSON = GroupContactsDtoToJSON;
 var _1 = require("./");
 function GroupContactsDtoFromJSON(json) {
     return GroupContactsDtoFromJSONTyped(json, false);
 }
-exports.GroupContactsDtoFromJSON = GroupContactsDtoFromJSON;
 function GroupContactsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function GroupContactsDtoFromJSONTyped(json, ignoreDiscriminator) {
         contacts: json['contacts'].map(_1.ContactDtoFromJSON),
     };
 }
-exports.GroupContactsDtoFromJSONTyped = GroupContactsDtoFromJSONTyped;
 function GroupContactsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function GroupContactsDtoToJSON(value) {
         contacts: value.contacts.map(_1.ContactDtoToJSON),
     };
 }
-exports.GroupContactsDtoToJSON = GroupContactsDtoToJSON;

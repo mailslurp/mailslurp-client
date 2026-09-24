@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthV2PasswordLoginOptionsToJSON = exports.AuthV2PasswordLoginOptionsFromJSONTyped = exports.AuthV2PasswordLoginOptionsFromJSON = void 0;
+exports.AuthV2PasswordLoginOptionsFromJSON = AuthV2PasswordLoginOptionsFromJSON;
+exports.AuthV2PasswordLoginOptionsFromJSONTyped = AuthV2PasswordLoginOptionsFromJSONTyped;
+exports.AuthV2PasswordLoginOptionsToJSON = AuthV2PasswordLoginOptionsToJSON;
 var runtime_1 = require("../runtime");
 function AuthV2PasswordLoginOptionsFromJSON(json) {
     return AuthV2PasswordLoginOptionsFromJSONTyped(json, false);
 }
-exports.AuthV2PasswordLoginOptionsFromJSON = AuthV2PasswordLoginOptionsFromJSON;
 function AuthV2PasswordLoginOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function AuthV2PasswordLoginOptionsFromJSONTyped(json, ignoreDiscriminator) {
         returnTo: !(0, runtime_1.exists)(json, 'returnTo') ? undefined : json['returnTo'],
     };
 }
-exports.AuthV2PasswordLoginOptionsFromJSONTyped = AuthV2PasswordLoginOptionsFromJSONTyped;
 function AuthV2PasswordLoginOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function AuthV2PasswordLoginOptionsToJSON(value) {
         returnTo: value.returnTo,
     };
 }
-exports.AuthV2PasswordLoginOptionsToJSON = AuthV2PasswordLoginOptionsToJSON;

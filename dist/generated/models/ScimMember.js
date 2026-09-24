@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScimMemberToJSON = exports.ScimMemberFromJSONTyped = exports.ScimMemberFromJSON = void 0;
+exports.ScimMemberFromJSON = ScimMemberFromJSON;
+exports.ScimMemberFromJSONTyped = ScimMemberFromJSONTyped;
+exports.ScimMemberToJSON = ScimMemberToJSON;
 var runtime_1 = require("../runtime");
 function ScimMemberFromJSON(json) {
     return ScimMemberFromJSONTyped(json, false);
 }
-exports.ScimMemberFromJSON = ScimMemberFromJSON;
 function ScimMemberFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function ScimMemberFromJSONTyped(json, ignoreDiscriminator) {
         display: !(0, runtime_1.exists)(json, 'display') ? undefined : json['display'],
     };
 }
-exports.ScimMemberFromJSONTyped = ScimMemberFromJSONTyped;
 function ScimMemberToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ScimMemberToJSON(value) {
         display: value.display,
     };
 }
-exports.ScimMemberToJSON = ScimMemberToJSON;

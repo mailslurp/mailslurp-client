@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePhonePoolOptionsToJSON = exports.CreatePhonePoolOptionsFromJSONTyped = exports.CreatePhonePoolOptionsFromJSON = void 0;
+exports.CreatePhonePoolOptionsFromJSON = CreatePhonePoolOptionsFromJSON;
+exports.CreatePhonePoolOptionsFromJSONTyped = CreatePhonePoolOptionsFromJSONTyped;
+exports.CreatePhonePoolOptionsToJSON = CreatePhonePoolOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreatePhonePoolOptionsFromJSON(json) {
     return CreatePhonePoolOptionsFromJSONTyped(json, false);
 }
-exports.CreatePhonePoolOptionsFromJSON = CreatePhonePoolOptionsFromJSON;
 function CreatePhonePoolOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function CreatePhonePoolOptionsFromJSONTyped(json, ignoreDiscriminator) {
         description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
     };
 }
-exports.CreatePhonePoolOptionsFromJSONTyped = CreatePhonePoolOptionsFromJSONTyped;
 function CreatePhonePoolOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function CreatePhonePoolOptionsToJSON(value) {
         description: value.description,
     };
 }
-exports.CreatePhonePoolOptionsToJSON = CreatePhonePoolOptionsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageCandidateResultToJSON = exports.AIMessageCandidateResultFromJSONTyped = exports.AIMessageCandidateResultFromJSON = void 0;
+exports.AIMessageCandidateResultFromJSON = AIMessageCandidateResultFromJSON;
+exports.AIMessageCandidateResultFromJSONTyped = AIMessageCandidateResultFromJSONTyped;
+exports.AIMessageCandidateResultToJSON = AIMessageCandidateResultToJSON;
 var _1 = require("./");
 function AIMessageCandidateResultFromJSON(json) {
     return AIMessageCandidateResultFromJSONTyped(json, false);
 }
-exports.AIMessageCandidateResultFromJSON = AIMessageCandidateResultFromJSON;
 function AIMessageCandidateResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function AIMessageCandidateResultFromJSONTyped(json, ignoreDiscriminator) {
         match: (0, _1.AIMessageMatchResultFromJSON)(json['match']),
     };
 }
-exports.AIMessageCandidateResultFromJSONTyped = AIMessageCandidateResultFromJSONTyped;
 function AIMessageCandidateResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function AIMessageCandidateResultToJSON(value) {
         match: (0, _1.AIMessageMatchResultToJSON)(value.match),
     };
 }
-exports.AIMessageCandidateResultToJSON = AIMessageCandidateResultToJSON;

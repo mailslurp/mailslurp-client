@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewTargetDtoToJSON = exports.DevicePreviewTargetDtoFromJSONTyped = exports.DevicePreviewTargetDtoFromJSON = exports.DevicePreviewTargetDtoStatusEnum = void 0;
+exports.DevicePreviewTargetDtoStatusEnum = void 0;
+exports.DevicePreviewTargetDtoFromJSON = DevicePreviewTargetDtoFromJSON;
+exports.DevicePreviewTargetDtoFromJSONTyped = DevicePreviewTargetDtoFromJSONTyped;
+exports.DevicePreviewTargetDtoToJSON = DevicePreviewTargetDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -30,11 +33,10 @@ var DevicePreviewTargetDtoStatusEnum;
     DevicePreviewTargetDtoStatusEnum["TIMED_OUT"] = "TIMED_OUT";
     DevicePreviewTargetDtoStatusEnum["SKIPPED_OFFLINE"] = "SKIPPED_OFFLINE";
     DevicePreviewTargetDtoStatusEnum["SETUP_REQUIRED"] = "SETUP_REQUIRED";
-})(DevicePreviewTargetDtoStatusEnum = exports.DevicePreviewTargetDtoStatusEnum || (exports.DevicePreviewTargetDtoStatusEnum = {}));
+})(DevicePreviewTargetDtoStatusEnum || (exports.DevicePreviewTargetDtoStatusEnum = DevicePreviewTargetDtoStatusEnum = {}));
 function DevicePreviewTargetDtoFromJSON(json) {
     return DevicePreviewTargetDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewTargetDtoFromJSON = DevicePreviewTargetDtoFromJSON;
 function DevicePreviewTargetDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -62,7 +64,6 @@ function DevicePreviewTargetDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DevicePreviewTargetDtoFromJSONTyped = DevicePreviewTargetDtoFromJSONTyped;
 function DevicePreviewTargetDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -87,4 +88,3 @@ function DevicePreviewTargetDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DevicePreviewTargetDtoToJSON = DevicePreviewTargetDtoToJSON;

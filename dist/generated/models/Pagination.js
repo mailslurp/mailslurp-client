@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PaginationToJSON = exports.PaginationFromJSONTyped = exports.PaginationFromJSON = void 0;
+exports.PaginationFromJSON = PaginationFromJSON;
+exports.PaginationFromJSONTyped = PaginationFromJSONTyped;
+exports.PaginationToJSON = PaginationToJSON;
 function PaginationFromJSON(json) {
     return PaginationFromJSONTyped(json, false);
 }
-exports.PaginationFromJSON = PaginationFromJSON;
 function PaginationFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function PaginationFromJSONTyped(json, ignoreDiscriminator) {
         pageSize: json['pageSize'],
     };
 }
-exports.PaginationFromJSONTyped = PaginationFromJSONTyped;
 function PaginationToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function PaginationToJSON(value) {
         pageSize: value.pageSize,
     };
 }
-exports.PaginationToJSON = PaginationToJSON;

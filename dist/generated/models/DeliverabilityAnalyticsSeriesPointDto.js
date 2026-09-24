@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityAnalyticsSeriesPointDtoToJSON = exports.DeliverabilityAnalyticsSeriesPointDtoFromJSONTyped = exports.DeliverabilityAnalyticsSeriesPointDtoFromJSON = void 0;
+exports.DeliverabilityAnalyticsSeriesPointDtoFromJSON = DeliverabilityAnalyticsSeriesPointDtoFromJSON;
+exports.DeliverabilityAnalyticsSeriesPointDtoFromJSONTyped = DeliverabilityAnalyticsSeriesPointDtoFromJSONTyped;
+exports.DeliverabilityAnalyticsSeriesPointDtoToJSON = DeliverabilityAnalyticsSeriesPointDtoToJSON;
 var _1 = require("./");
 function DeliverabilityAnalyticsSeriesPointDtoFromJSON(json) {
     return DeliverabilityAnalyticsSeriesPointDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilityAnalyticsSeriesPointDtoFromJSON = DeliverabilityAnalyticsSeriesPointDtoFromJSON;
 function DeliverabilityAnalyticsSeriesPointDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function DeliverabilityAnalyticsSeriesPointDtoFromJSONTyped(json, ignoreDiscrimi
         metrics: (0, _1.DeliverabilityAnalyticsSummaryDtoFromJSON)(json['metrics']),
     };
 }
-exports.DeliverabilityAnalyticsSeriesPointDtoFromJSONTyped = DeliverabilityAnalyticsSeriesPointDtoFromJSONTyped;
 function DeliverabilityAnalyticsSeriesPointDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DeliverabilityAnalyticsSeriesPointDtoToJSON(value) {
         metrics: (0, _1.DeliverabilityAnalyticsSummaryDtoToJSON)(value.metrics),
     };
 }
-exports.DeliverabilityAnalyticsSeriesPointDtoToJSON = DeliverabilityAnalyticsSeriesPointDtoToJSON;

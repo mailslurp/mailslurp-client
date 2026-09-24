@@ -48,8 +48,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -111,7 +111,11 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TextApiResponse = exports.BlobApiResponse = exports.VoidApiResponse = exports.JSONApiResponse = exports.canConsumeForm = exports.mapValues = exports.querystring = exports.exists = exports.Configuration = exports.COLLECTION_FORMATS = exports.RequiredError = exports.BaseAPI = exports.BASE_PATH = void 0;
+exports.TextApiResponse = exports.BlobApiResponse = exports.VoidApiResponse = exports.JSONApiResponse = exports.Configuration = exports.COLLECTION_FORMATS = exports.RequiredError = exports.BaseAPI = exports.BASE_PATH = void 0;
+exports.exists = exists;
+exports.querystring = querystring;
+exports.mapValues = mapValues;
+exports.canConsumeForm = canConsumeForm;
 exports.BASE_PATH = 'https://api.mailslurp.com'.replace(/\/+$/, '');
 var isBlob = function (value) {
     return typeof Blob !== 'undefined' && value instanceof Blob;
@@ -390,7 +394,6 @@ function exists(json, key) {
     var value = json[key];
     return value !== null && value !== undefined;
 }
-exports.exists = exists;
 function querystring(params, prefix) {
     if (prefix === void 0) { prefix = ''; }
     return Object.keys(params)
@@ -414,14 +417,12 @@ function querystring(params, prefix) {
         .filter(function (part) { return part.length > 0; })
         .join('&');
 }
-exports.querystring = querystring;
 function mapValues(data, fn) {
     return Object.keys(data).reduce(function (acc, key) {
         var _a;
         return (__assign(__assign({}, acc), (_a = {}, _a[key] = fn(data[key]), _a)));
     }, {});
 }
-exports.mapValues = mapValues;
 function canConsumeForm(consumes) {
     var e_3, _a;
     try {
@@ -441,7 +442,6 @@ function canConsumeForm(consumes) {
     }
     return false;
 }
-exports.canConsumeForm = canConsumeForm;
 var JSONApiResponse = /** @class */ (function () {
     function JSONApiResponse(raw, transformer) {
         if (transformer === void 0) { transformer = function (jsonValue) { return jsonValue; }; }

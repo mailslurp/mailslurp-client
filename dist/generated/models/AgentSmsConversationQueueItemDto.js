@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentSmsConversationQueueItemDtoToJSON = exports.AgentSmsConversationQueueItemDtoFromJSONTyped = exports.AgentSmsConversationQueueItemDtoFromJSON = exports.AgentSmsConversationQueueItemDtoReviewStatusEnum = exports.AgentSmsConversationQueueItemDtoOutcomeEnum = exports.AgentSmsConversationQueueItemDtoWorkflowStateEnum = exports.AgentSmsConversationQueueItemDtoLatestMessageDirectionEnum = void 0;
+exports.AgentSmsConversationQueueItemDtoReviewStatusEnum = exports.AgentSmsConversationQueueItemDtoOutcomeEnum = exports.AgentSmsConversationQueueItemDtoWorkflowStateEnum = exports.AgentSmsConversationQueueItemDtoLatestMessageDirectionEnum = void 0;
+exports.AgentSmsConversationQueueItemDtoFromJSON = AgentSmsConversationQueueItemDtoFromJSON;
+exports.AgentSmsConversationQueueItemDtoFromJSONTyped = AgentSmsConversationQueueItemDtoFromJSONTyped;
+exports.AgentSmsConversationQueueItemDtoToJSON = AgentSmsConversationQueueItemDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,7 +27,7 @@ var AgentSmsConversationQueueItemDtoLatestMessageDirectionEnum;
 (function (AgentSmsConversationQueueItemDtoLatestMessageDirectionEnum) {
     AgentSmsConversationQueueItemDtoLatestMessageDirectionEnum["INBOUND"] = "INBOUND";
     AgentSmsConversationQueueItemDtoLatestMessageDirectionEnum["OUTBOUND"] = "OUTBOUND";
-})(AgentSmsConversationQueueItemDtoLatestMessageDirectionEnum = exports.AgentSmsConversationQueueItemDtoLatestMessageDirectionEnum || (exports.AgentSmsConversationQueueItemDtoLatestMessageDirectionEnum = {}));
+})(AgentSmsConversationQueueItemDtoLatestMessageDirectionEnum || (exports.AgentSmsConversationQueueItemDtoLatestMessageDirectionEnum = AgentSmsConversationQueueItemDtoLatestMessageDirectionEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -37,7 +40,7 @@ var AgentSmsConversationQueueItemDtoWorkflowStateEnum;
     AgentSmsConversationQueueItemDtoWorkflowStateEnum["WAITING_ON_CUSTOMER"] = "WAITING_ON_CUSTOMER";
     AgentSmsConversationQueueItemDtoWorkflowStateEnum["REVIEW"] = "REVIEW";
     AgentSmsConversationQueueItemDtoWorkflowStateEnum["RESOLVED"] = "RESOLVED";
-})(AgentSmsConversationQueueItemDtoWorkflowStateEnum = exports.AgentSmsConversationQueueItemDtoWorkflowStateEnum || (exports.AgentSmsConversationQueueItemDtoWorkflowStateEnum = {}));
+})(AgentSmsConversationQueueItemDtoWorkflowStateEnum || (exports.AgentSmsConversationQueueItemDtoWorkflowStateEnum = AgentSmsConversationQueueItemDtoWorkflowStateEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -50,7 +53,7 @@ var AgentSmsConversationQueueItemDtoOutcomeEnum;
     AgentSmsConversationQueueItemDtoOutcomeEnum["REVIEW_REQUESTED"] = "REVIEW_REQUESTED";
     AgentSmsConversationQueueItemDtoOutcomeEnum["FAILED"] = "FAILED";
     AgentSmsConversationQueueItemDtoOutcomeEnum["RESOLVED"] = "RESOLVED";
-})(AgentSmsConversationQueueItemDtoOutcomeEnum = exports.AgentSmsConversationQueueItemDtoOutcomeEnum || (exports.AgentSmsConversationQueueItemDtoOutcomeEnum = {}));
+})(AgentSmsConversationQueueItemDtoOutcomeEnum || (exports.AgentSmsConversationQueueItemDtoOutcomeEnum = AgentSmsConversationQueueItemDtoOutcomeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -63,11 +66,10 @@ var AgentSmsConversationQueueItemDtoReviewStatusEnum;
     AgentSmsConversationQueueItemDtoReviewStatusEnum["APPROVED"] = "APPROVED";
     AgentSmsConversationQueueItemDtoReviewStatusEnum["REJECTED"] = "REJECTED";
     AgentSmsConversationQueueItemDtoReviewStatusEnum["RESOLVED"] = "RESOLVED";
-})(AgentSmsConversationQueueItemDtoReviewStatusEnum = exports.AgentSmsConversationQueueItemDtoReviewStatusEnum || (exports.AgentSmsConversationQueueItemDtoReviewStatusEnum = {}));
+})(AgentSmsConversationQueueItemDtoReviewStatusEnum || (exports.AgentSmsConversationQueueItemDtoReviewStatusEnum = AgentSmsConversationQueueItemDtoReviewStatusEnum = {}));
 function AgentSmsConversationQueueItemDtoFromJSON(json) {
     return AgentSmsConversationQueueItemDtoFromJSONTyped(json, false);
 }
-exports.AgentSmsConversationQueueItemDtoFromJSON = AgentSmsConversationQueueItemDtoFromJSON;
 function AgentSmsConversationQueueItemDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -105,7 +107,6 @@ function AgentSmsConversationQueueItemDtoFromJSONTyped(json, ignoreDiscriminator
             : (0, _1.AgentConversationClaimDtoFromJSON)(json['claim']),
     };
 }
-exports.AgentSmsConversationQueueItemDtoFromJSONTyped = AgentSmsConversationQueueItemDtoFromJSONTyped;
 function AgentSmsConversationQueueItemDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -138,4 +139,3 @@ function AgentSmsConversationQueueItemDtoToJSON(value) {
         claim: (0, _1.AgentConversationClaimDtoToJSON)(value.claim),
     };
 }
-exports.AgentSmsConversationQueueItemDtoToJSON = AgentSmsConversationQueueItemDtoToJSON;

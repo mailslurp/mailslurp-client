@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SwitchAccountOptionsToJSON = exports.SwitchAccountOptionsFromJSONTyped = exports.SwitchAccountOptionsFromJSON = void 0;
+exports.SwitchAccountOptionsFromJSON = SwitchAccountOptionsFromJSON;
+exports.SwitchAccountOptionsFromJSONTyped = SwitchAccountOptionsFromJSONTyped;
+exports.SwitchAccountOptionsToJSON = SwitchAccountOptionsToJSON;
 var runtime_1 = require("../runtime");
 function SwitchAccountOptionsFromJSON(json) {
     return SwitchAccountOptionsFromJSONTyped(json, false);
 }
-exports.SwitchAccountOptionsFromJSON = SwitchAccountOptionsFromJSON;
 function SwitchAccountOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function SwitchAccountOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['organizationSlug'],
     };
 }
-exports.SwitchAccountOptionsFromJSONTyped = SwitchAccountOptionsFromJSONTyped;
 function SwitchAccountOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function SwitchAccountOptionsToJSON(value) {
         organizationSlug: value.organizationSlug,
     };
 }
-exports.SwitchAccountOptionsToJSON = SwitchAccountOptionsToJSON;

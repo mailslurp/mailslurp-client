@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateTrackingPixelOptionsToJSON = exports.CreateTrackingPixelOptionsFromJSONTyped = exports.CreateTrackingPixelOptionsFromJSON = void 0;
+exports.CreateTrackingPixelOptionsFromJSON = CreateTrackingPixelOptionsFromJSON;
+exports.CreateTrackingPixelOptionsFromJSONTyped = CreateTrackingPixelOptionsFromJSONTyped;
+exports.CreateTrackingPixelOptionsToJSON = CreateTrackingPixelOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateTrackingPixelOptionsFromJSON(json) {
     return CreateTrackingPixelOptionsFromJSONTyped(json, false);
 }
-exports.CreateTrackingPixelOptionsFromJSON = CreateTrackingPixelOptionsFromJSON;
 function CreateTrackingPixelOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function CreateTrackingPixelOptionsFromJSONTyped(json, ignoreDiscriminator) {
         recipient: !(0, runtime_1.exists)(json, 'recipient') ? undefined : json['recipient'],
     };
 }
-exports.CreateTrackingPixelOptionsFromJSONTyped = CreateTrackingPixelOptionsFromJSONTyped;
 function CreateTrackingPixelOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function CreateTrackingPixelOptionsToJSON(value) {
         recipient: value.recipient,
     };
 }
-exports.CreateTrackingPixelOptionsToJSON = CreateTrackingPixelOptionsToJSON;

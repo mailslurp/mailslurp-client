@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePostmasterConnectionResultToJSON = exports.CreatePostmasterConnectionResultFromJSONTyped = exports.CreatePostmasterConnectionResultFromJSON = void 0;
+exports.CreatePostmasterConnectionResultFromJSON = CreatePostmasterConnectionResultFromJSON;
+exports.CreatePostmasterConnectionResultFromJSONTyped = CreatePostmasterConnectionResultFromJSONTyped;
+exports.CreatePostmasterConnectionResultToJSON = CreatePostmasterConnectionResultToJSON;
 function CreatePostmasterConnectionResultFromJSON(json) {
     return CreatePostmasterConnectionResultFromJSONTyped(json, false);
 }
-exports.CreatePostmasterConnectionResultFromJSON = CreatePostmasterConnectionResultFromJSON;
 function CreatePostmasterConnectionResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function CreatePostmasterConnectionResultFromJSONTyped(json, ignoreDiscriminator
         redirectUri: json['redirectUri'],
     };
 }
-exports.CreatePostmasterConnectionResultFromJSONTyped = CreatePostmasterConnectionResultFromJSONTyped;
 function CreatePostmasterConnectionResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function CreatePostmasterConnectionResultToJSON(value) {
         redirectUri: value.redirectUri,
     };
 }
-exports.CreatePostmasterConnectionResultToJSON = CreatePostmasterConnectionResultToJSON;

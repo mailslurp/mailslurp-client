@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestSmtpServerResultsToJSON = exports.TestSmtpServerResultsFromJSONTyped = exports.TestSmtpServerResultsFromJSON = void 0;
+exports.TestSmtpServerResultsFromJSON = TestSmtpServerResultsFromJSON;
+exports.TestSmtpServerResultsFromJSONTyped = TestSmtpServerResultsFromJSONTyped;
+exports.TestSmtpServerResultsToJSON = TestSmtpServerResultsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function TestSmtpServerResultsFromJSON(json) {
     return TestSmtpServerResultsFromJSONTyped(json, false);
 }
-exports.TestSmtpServerResultsFromJSON = TestSmtpServerResultsFromJSON;
 function TestSmtpServerResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -34,7 +35,6 @@ function TestSmtpServerResultsFromJSONTyped(json, ignoreDiscriminator) {
         errors: json['errors'],
     };
 }
-exports.TestSmtpServerResultsFromJSONTyped = TestSmtpServerResultsFromJSONTyped;
 function TestSmtpServerResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -52,4 +52,3 @@ function TestSmtpServerResultsToJSON(value) {
         errors: value.errors,
     };
 }
-exports.TestSmtpServerResultsToJSON = TestSmtpServerResultsToJSON;

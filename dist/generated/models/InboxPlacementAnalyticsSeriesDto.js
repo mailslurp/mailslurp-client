@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementAnalyticsSeriesDtoToJSON = exports.InboxPlacementAnalyticsSeriesDtoFromJSONTyped = exports.InboxPlacementAnalyticsSeriesDtoFromJSON = exports.InboxPlacementAnalyticsSeriesDtoGroupByEnum = exports.InboxPlacementAnalyticsSeriesDtoBucketEnum = void 0;
+exports.InboxPlacementAnalyticsSeriesDtoGroupByEnum = exports.InboxPlacementAnalyticsSeriesDtoBucketEnum = void 0;
+exports.InboxPlacementAnalyticsSeriesDtoFromJSON = InboxPlacementAnalyticsSeriesDtoFromJSON;
+exports.InboxPlacementAnalyticsSeriesDtoFromJSONTyped = InboxPlacementAnalyticsSeriesDtoFromJSONTyped;
+exports.InboxPlacementAnalyticsSeriesDtoToJSON = InboxPlacementAnalyticsSeriesDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,7 +27,7 @@ var InboxPlacementAnalyticsSeriesDtoBucketEnum;
 (function (InboxPlacementAnalyticsSeriesDtoBucketEnum) {
     InboxPlacementAnalyticsSeriesDtoBucketEnum["HOUR"] = "HOUR";
     InboxPlacementAnalyticsSeriesDtoBucketEnum["DAY"] = "DAY";
-})(InboxPlacementAnalyticsSeriesDtoBucketEnum = exports.InboxPlacementAnalyticsSeriesDtoBucketEnum || (exports.InboxPlacementAnalyticsSeriesDtoBucketEnum = {}));
+})(InboxPlacementAnalyticsSeriesDtoBucketEnum || (exports.InboxPlacementAnalyticsSeriesDtoBucketEnum = InboxPlacementAnalyticsSeriesDtoBucketEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -34,11 +37,10 @@ var InboxPlacementAnalyticsSeriesDtoGroupByEnum;
     InboxPlacementAnalyticsSeriesDtoGroupByEnum["NONE"] = "NONE";
     InboxPlacementAnalyticsSeriesDtoGroupByEnum["SENDER_DOMAIN"] = "SENDER_DOMAIN";
     InboxPlacementAnalyticsSeriesDtoGroupByEnum["FROM_EMAIL"] = "FROM_EMAIL";
-})(InboxPlacementAnalyticsSeriesDtoGroupByEnum = exports.InboxPlacementAnalyticsSeriesDtoGroupByEnum || (exports.InboxPlacementAnalyticsSeriesDtoGroupByEnum = {}));
+})(InboxPlacementAnalyticsSeriesDtoGroupByEnum || (exports.InboxPlacementAnalyticsSeriesDtoGroupByEnum = InboxPlacementAnalyticsSeriesDtoGroupByEnum = {}));
 function InboxPlacementAnalyticsSeriesDtoFromJSON(json) {
     return InboxPlacementAnalyticsSeriesDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementAnalyticsSeriesDtoFromJSON = InboxPlacementAnalyticsSeriesDtoFromJSON;
 function InboxPlacementAnalyticsSeriesDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -58,7 +60,6 @@ function InboxPlacementAnalyticsSeriesDtoFromJSONTyped(json, ignoreDiscriminator
         groups: json['groups'].map(_1.InboxPlacementAnalyticsGroupSeriesDtoFromJSON),
     };
 }
-exports.InboxPlacementAnalyticsSeriesDtoFromJSONTyped = InboxPlacementAnalyticsSeriesDtoFromJSONTyped;
 function InboxPlacementAnalyticsSeriesDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -79,4 +80,3 @@ function InboxPlacementAnalyticsSeriesDtoToJSON(value) {
         groups: value.groups.map(_1.InboxPlacementAnalyticsGroupSeriesDtoToJSON),
     };
 }
-exports.InboxPlacementAnalyticsSeriesDtoToJSON = InboxPlacementAnalyticsSeriesDtoToJSON;

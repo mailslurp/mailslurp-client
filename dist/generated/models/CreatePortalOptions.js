@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePortalOptionsToJSON = exports.CreatePortalOptionsFromJSONTyped = exports.CreatePortalOptionsFromJSON = void 0;
+exports.CreatePortalOptionsFromJSON = CreatePortalOptionsFromJSON;
+exports.CreatePortalOptionsFromJSONTyped = CreatePortalOptionsFromJSONTyped;
+exports.CreatePortalOptionsToJSON = CreatePortalOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreatePortalOptionsFromJSON(json) {
     return CreatePortalOptionsFromJSONTyped(json, false);
 }
-exports.CreatePortalOptionsFromJSON = CreatePortalOptionsFromJSON;
 function CreatePortalOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function CreatePortalOptionsFromJSONTyped(json, ignoreDiscriminator) {
         linkHelp: !(0, runtime_1.exists)(json, 'linkHelp') ? undefined : json['linkHelp'],
     };
 }
-exports.CreatePortalOptionsFromJSONTyped = CreatePortalOptionsFromJSONTyped;
 function CreatePortalOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CreatePortalOptionsToJSON(value) {
         linkHelp: value.linkHelp,
     };
 }
-exports.CreatePortalOptionsToJSON = CreatePortalOptionsToJSON;

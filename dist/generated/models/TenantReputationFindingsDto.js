@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TenantReputationFindingsDtoToJSON = exports.TenantReputationFindingsDtoFromJSONTyped = exports.TenantReputationFindingsDtoFromJSON = void 0;
+exports.TenantReputationFindingsDtoFromJSON = TenantReputationFindingsDtoFromJSON;
+exports.TenantReputationFindingsDtoFromJSONTyped = TenantReputationFindingsDtoFromJSONTyped;
+exports.TenantReputationFindingsDtoToJSON = TenantReputationFindingsDtoToJSON;
 var _1 = require("./");
 function TenantReputationFindingsDtoFromJSON(json) {
     return TenantReputationFindingsDtoFromJSONTyped(json, false);
 }
-exports.TenantReputationFindingsDtoFromJSON = TenantReputationFindingsDtoFromJSON;
 function TenantReputationFindingsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function TenantReputationFindingsDtoFromJSONTyped(json, ignoreDiscriminator) {
         findings: json['findings'].map(_1.TenantReputationFindingDtoFromJSON),
     };
 }
-exports.TenantReputationFindingsDtoFromJSONTyped = TenantReputationFindingsDtoFromJSONTyped;
 function TenantReputationFindingsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function TenantReputationFindingsDtoToJSON(value) {
         findings: value.findings.map(_1.TenantReputationFindingDtoToJSON),
     };
 }
-exports.TenantReputationFindingsDtoToJSON = TenantReputationFindingsDtoToJSON;

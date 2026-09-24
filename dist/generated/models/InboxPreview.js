@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPreviewToJSON = exports.InboxPreviewFromJSONTyped = exports.InboxPreviewFromJSON = exports.InboxPreviewAccountRegionEnum = exports.InboxPreviewFunctionsAsEnum = exports.InboxPreviewInboxTypeEnum = void 0;
+exports.InboxPreviewAccountRegionEnum = exports.InboxPreviewFunctionsAsEnum = exports.InboxPreviewInboxTypeEnum = void 0;
+exports.InboxPreviewFromJSON = InboxPreviewFromJSON;
+exports.InboxPreviewFromJSONTyped = InboxPreviewFromJSONTyped;
+exports.InboxPreviewToJSON = InboxPreviewToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var InboxPreviewInboxTypeEnum;
 (function (InboxPreviewInboxTypeEnum) {
     InboxPreviewInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     InboxPreviewInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(InboxPreviewInboxTypeEnum = exports.InboxPreviewInboxTypeEnum || (exports.InboxPreviewInboxTypeEnum = {}));
+})(InboxPreviewInboxTypeEnum || (exports.InboxPreviewInboxTypeEnum = InboxPreviewInboxTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -38,7 +41,7 @@ var InboxPreviewFunctionsAsEnum;
     InboxPreviewFunctionsAsEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
     InboxPreviewFunctionsAsEnum["GUEST"] = "GUEST";
     InboxPreviewFunctionsAsEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
-})(InboxPreviewFunctionsAsEnum = exports.InboxPreviewFunctionsAsEnum || (exports.InboxPreviewFunctionsAsEnum = {}));
+})(InboxPreviewFunctionsAsEnum || (exports.InboxPreviewFunctionsAsEnum = InboxPreviewFunctionsAsEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -59,11 +62,10 @@ var InboxPreviewAccountRegionEnum;
     InboxPreviewAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
     InboxPreviewAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
     InboxPreviewAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
-})(InboxPreviewAccountRegionEnum = exports.InboxPreviewAccountRegionEnum || (exports.InboxPreviewAccountRegionEnum = {}));
+})(InboxPreviewAccountRegionEnum || (exports.InboxPreviewAccountRegionEnum = InboxPreviewAccountRegionEnum = {}));
 function InboxPreviewFromJSON(json) {
     return InboxPreviewFromJSONTyped(json, false);
 }
-exports.InboxPreviewFromJSON = InboxPreviewFromJSON;
 function InboxPreviewFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -95,7 +97,6 @@ function InboxPreviewFromJSONTyped(json, ignoreDiscriminator) {
             : json['mergedIntoInboxId'],
     };
 }
-exports.InboxPreviewFromJSONTyped = InboxPreviewFromJSONTyped;
 function InboxPreviewToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -126,4 +127,3 @@ function InboxPreviewToJSON(value) {
         mergedIntoInboxId: value.mergedIntoInboxId,
     };
 }
-exports.InboxPreviewToJSON = InboxPreviewToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxRetentionPolicyOptionalDtoToJSON = exports.InboxRetentionPolicyOptionalDtoFromJSONTyped = exports.InboxRetentionPolicyOptionalDtoFromJSON = void 0;
+exports.InboxRetentionPolicyOptionalDtoFromJSON = InboxRetentionPolicyOptionalDtoFromJSON;
+exports.InboxRetentionPolicyOptionalDtoFromJSONTyped = InboxRetentionPolicyOptionalDtoFromJSONTyped;
+exports.InboxRetentionPolicyOptionalDtoToJSON = InboxRetentionPolicyOptionalDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function InboxRetentionPolicyOptionalDtoFromJSON(json) {
     return InboxRetentionPolicyOptionalDtoFromJSONTyped(json, false);
 }
-exports.InboxRetentionPolicyOptionalDtoFromJSON = InboxRetentionPolicyOptionalDtoFromJSON;
 function InboxRetentionPolicyOptionalDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function InboxRetentionPolicyOptionalDtoFromJSONTyped(json, ignoreDiscriminator)
             : (0, _1.InboxRetentionPolicyDtoFromJSON)(json['policy']),
     };
 }
-exports.InboxRetentionPolicyOptionalDtoFromJSONTyped = InboxRetentionPolicyOptionalDtoFromJSONTyped;
 function InboxRetentionPolicyOptionalDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function InboxRetentionPolicyOptionalDtoToJSON(value) {
         policy: (0, _1.InboxRetentionPolicyDtoToJSON)(value.policy),
     };
 }
-exports.InboxRetentionPolicyOptionalDtoToJSON = InboxRetentionPolicyOptionalDtoToJSON;

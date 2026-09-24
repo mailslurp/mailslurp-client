@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmtpAuthDiagnosticResultToJSON = exports.SmtpAuthDiagnosticResultFromJSONTyped = exports.SmtpAuthDiagnosticResultFromJSON = void 0;
+exports.SmtpAuthDiagnosticResultFromJSON = SmtpAuthDiagnosticResultFromJSON;
+exports.SmtpAuthDiagnosticResultFromJSONTyped = SmtpAuthDiagnosticResultFromJSONTyped;
+exports.SmtpAuthDiagnosticResultToJSON = SmtpAuthDiagnosticResultToJSON;
 var runtime_1 = require("../runtime");
 function SmtpAuthDiagnosticResultFromJSON(json) {
     return SmtpAuthDiagnosticResultFromJSONTyped(json, false);
 }
-exports.SmtpAuthDiagnosticResultFromJSON = SmtpAuthDiagnosticResultFromJSON;
 function SmtpAuthDiagnosticResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function SmtpAuthDiagnosticResultFromJSONTyped(json, ignoreDiscriminator) {
         mechanism: !(0, runtime_1.exists)(json, 'mechanism') ? undefined : json['mechanism'],
     };
 }
-exports.SmtpAuthDiagnosticResultFromJSONTyped = SmtpAuthDiagnosticResultFromJSONTyped;
 function SmtpAuthDiagnosticResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function SmtpAuthDiagnosticResultToJSON(value) {
         mechanism: value.mechanism,
     };
 }
-exports.SmtpAuthDiagnosticResultToJSON = SmtpAuthDiagnosticResultToJSON;

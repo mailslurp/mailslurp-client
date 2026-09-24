@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookEmailReadPayloadToJSON = exports.WebhookEmailReadPayloadFromJSONTyped = exports.WebhookEmailReadPayloadFromJSON = exports.WebhookEmailReadPayloadEventNameEnum = void 0;
+exports.WebhookEmailReadPayloadEventNameEnum = void 0;
+exports.WebhookEmailReadPayloadFromJSON = WebhookEmailReadPayloadFromJSON;
+exports.WebhookEmailReadPayloadFromJSONTyped = WebhookEmailReadPayloadFromJSONTyped;
+exports.WebhookEmailReadPayloadToJSON = WebhookEmailReadPayloadToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -33,11 +36,10 @@ var WebhookEmailReadPayloadEventNameEnum;
     WebhookEmailReadPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookEmailReadPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookEmailReadPayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookEmailReadPayloadEventNameEnum = exports.WebhookEmailReadPayloadEventNameEnum || (exports.WebhookEmailReadPayloadEventNameEnum = {}));
+})(WebhookEmailReadPayloadEventNameEnum || (exports.WebhookEmailReadPayloadEventNameEnum = WebhookEmailReadPayloadEventNameEnum = {}));
 function WebhookEmailReadPayloadFromJSON(json) {
     return WebhookEmailReadPayloadFromJSONTyped(json, false);
 }
-exports.WebhookEmailReadPayloadFromJSON = WebhookEmailReadPayloadFromJSON;
 function WebhookEmailReadPayloadFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -53,7 +55,6 @@ function WebhookEmailReadPayloadFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.WebhookEmailReadPayloadFromJSONTyped = WebhookEmailReadPayloadFromJSONTyped;
 function WebhookEmailReadPayloadToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -72,4 +73,3 @@ function WebhookEmailReadPayloadToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.WebhookEmailReadPayloadToJSON = WebhookEmailReadPayloadToJSON;

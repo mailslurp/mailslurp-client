@@ -43,13 +43,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,8 +70,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -3385,7 +3395,7 @@ var GetEmailDraftsSortEnum;
 (function (GetEmailDraftsSortEnum) {
     GetEmailDraftsSortEnum["ASC"] = "ASC";
     GetEmailDraftsSortEnum["DESC"] = "DESC";
-})(GetEmailDraftsSortEnum = exports.GetEmailDraftsSortEnum || (exports.GetEmailDraftsSortEnum = {}));
+})(GetEmailDraftsSortEnum || (exports.GetEmailDraftsSortEnum = GetEmailDraftsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3395,7 +3405,7 @@ var GetEmailPreviewHTMLLinkBehaviorEnum;
     GetEmailPreviewHTMLLinkBehaviorEnum["PRESERVE"] = "PRESERVE";
     GetEmailPreviewHTMLLinkBehaviorEnum["NEW_TAB"] = "NEW_TAB";
     GetEmailPreviewHTMLLinkBehaviorEnum["DISABLED"] = "DISABLED";
-})(GetEmailPreviewHTMLLinkBehaviorEnum = exports.GetEmailPreviewHTMLLinkBehaviorEnum || (exports.GetEmailPreviewHTMLLinkBehaviorEnum = {}));
+})(GetEmailPreviewHTMLLinkBehaviorEnum || (exports.GetEmailPreviewHTMLLinkBehaviorEnum = GetEmailPreviewHTMLLinkBehaviorEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3404,7 +3414,7 @@ var GetEmailThreadItemsSortEnum;
 (function (GetEmailThreadItemsSortEnum) {
     GetEmailThreadItemsSortEnum["ASC"] = "ASC";
     GetEmailThreadItemsSortEnum["DESC"] = "DESC";
-})(GetEmailThreadItemsSortEnum = exports.GetEmailThreadItemsSortEnum || (exports.GetEmailThreadItemsSortEnum = {}));
+})(GetEmailThreadItemsSortEnum || (exports.GetEmailThreadItemsSortEnum = GetEmailThreadItemsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3413,7 +3423,7 @@ var GetEmailThreadsSortEnum;
 (function (GetEmailThreadsSortEnum) {
     GetEmailThreadsSortEnum["ASC"] = "ASC";
     GetEmailThreadsSortEnum["DESC"] = "DESC";
-})(GetEmailThreadsSortEnum = exports.GetEmailThreadsSortEnum || (exports.GetEmailThreadsSortEnum = {}));
+})(GetEmailThreadsSortEnum || (exports.GetEmailThreadsSortEnum = GetEmailThreadsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3422,7 +3432,7 @@ var GetEmailsOffsetPaginatedSortEnum;
 (function (GetEmailsOffsetPaginatedSortEnum) {
     GetEmailsOffsetPaginatedSortEnum["ASC"] = "ASC";
     GetEmailsOffsetPaginatedSortEnum["DESC"] = "DESC";
-})(GetEmailsOffsetPaginatedSortEnum = exports.GetEmailsOffsetPaginatedSortEnum || (exports.GetEmailsOffsetPaginatedSortEnum = {}));
+})(GetEmailsOffsetPaginatedSortEnum || (exports.GetEmailsOffsetPaginatedSortEnum = GetEmailsOffsetPaginatedSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3431,7 +3441,7 @@ var GetEmailsPaginatedSortEnum;
 (function (GetEmailsPaginatedSortEnum) {
     GetEmailsPaginatedSortEnum["ASC"] = "ASC";
     GetEmailsPaginatedSortEnum["DESC"] = "DESC";
-})(GetEmailsPaginatedSortEnum = exports.GetEmailsPaginatedSortEnum || (exports.GetEmailsPaginatedSortEnum = {}));
+})(GetEmailsPaginatedSortEnum || (exports.GetEmailsPaginatedSortEnum = GetEmailsPaginatedSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3440,4 +3450,4 @@ var GetOrganizationEmailsPaginatedSortEnum;
 (function (GetOrganizationEmailsPaginatedSortEnum) {
     GetOrganizationEmailsPaginatedSortEnum["ASC"] = "ASC";
     GetOrganizationEmailsPaginatedSortEnum["DESC"] = "DESC";
-})(GetOrganizationEmailsPaginatedSortEnum = exports.GetOrganizationEmailsPaginatedSortEnum || (exports.GetOrganizationEmailsPaginatedSortEnum = {}));
+})(GetOrganizationEmailsPaginatedSortEnum || (exports.GetOrganizationEmailsPaginatedSortEnum = GetOrganizationEmailsPaginatedSortEnum = {}));

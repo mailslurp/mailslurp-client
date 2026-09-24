@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TemporaryAccessKeyDtoToJSON = exports.TemporaryAccessKeyDtoFromJSONTyped = exports.TemporaryAccessKeyDtoFromJSON = void 0;
+exports.TemporaryAccessKeyDtoFromJSON = TemporaryAccessKeyDtoFromJSON;
+exports.TemporaryAccessKeyDtoFromJSONTyped = TemporaryAccessKeyDtoFromJSONTyped;
+exports.TemporaryAccessKeyDtoToJSON = TemporaryAccessKeyDtoToJSON;
 function TemporaryAccessKeyDtoFromJSON(json) {
     return TemporaryAccessKeyDtoFromJSONTyped(json, false);
 }
-exports.TemporaryAccessKeyDtoFromJSON = TemporaryAccessKeyDtoFromJSON;
 function TemporaryAccessKeyDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function TemporaryAccessKeyDtoFromJSONTyped(json, ignoreDiscriminator) {
         expiresAt: new Date(json['expiresAt']),
     };
 }
-exports.TemporaryAccessKeyDtoFromJSONTyped = TemporaryAccessKeyDtoFromJSONTyped;
 function TemporaryAccessKeyDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function TemporaryAccessKeyDtoToJSON(value) {
         expiresAt: value.expiresAt.toISOString(),
     };
 }
-exports.TemporaryAccessKeyDtoToJSON = TemporaryAccessKeyDtoToJSON;

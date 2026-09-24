@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CountDtoToJSON = exports.CountDtoFromJSONTyped = exports.CountDtoFromJSON = void 0;
+exports.CountDtoFromJSON = CountDtoFromJSON;
+exports.CountDtoFromJSONTyped = CountDtoFromJSONTyped;
+exports.CountDtoToJSON = CountDtoToJSON;
 function CountDtoFromJSON(json) {
     return CountDtoFromJSONTyped(json, false);
 }
-exports.CountDtoFromJSON = CountDtoFromJSON;
 function CountDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function CountDtoFromJSONTyped(json, ignoreDiscriminator) {
         totalElements: json['totalElements'],
     };
 }
-exports.CountDtoFromJSONTyped = CountDtoFromJSONTyped;
 function CountDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function CountDtoToJSON(value) {
         totalElements: value.totalElements,
     };
 }
-exports.CountDtoToJSON = CountDtoToJSON;

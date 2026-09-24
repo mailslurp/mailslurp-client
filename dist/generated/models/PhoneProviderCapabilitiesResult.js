@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneProviderCapabilitiesResultToJSON = exports.PhoneProviderCapabilitiesResultFromJSONTyped = exports.PhoneProviderCapabilitiesResultFromJSON = exports.PhoneProviderCapabilitiesResultPhoneCountryEnum = void 0;
+exports.PhoneProviderCapabilitiesResultPhoneCountryEnum = void 0;
+exports.PhoneProviderCapabilitiesResultFromJSON = PhoneProviderCapabilitiesResultFromJSON;
+exports.PhoneProviderCapabilitiesResultFromJSONTyped = PhoneProviderCapabilitiesResultFromJSONTyped;
+exports.PhoneProviderCapabilitiesResultToJSON = PhoneProviderCapabilitiesResultToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -34,11 +37,10 @@ var PhoneProviderCapabilitiesResultPhoneCountryEnum;
     PhoneProviderCapabilitiesResultPhoneCountryEnum["IL"] = "IL";
     PhoneProviderCapabilitiesResultPhoneCountryEnum["FI"] = "FI";
     PhoneProviderCapabilitiesResultPhoneCountryEnum["SE"] = "SE";
-})(PhoneProviderCapabilitiesResultPhoneCountryEnum = exports.PhoneProviderCapabilitiesResultPhoneCountryEnum || (exports.PhoneProviderCapabilitiesResultPhoneCountryEnum = {}));
+})(PhoneProviderCapabilitiesResultPhoneCountryEnum || (exports.PhoneProviderCapabilitiesResultPhoneCountryEnum = PhoneProviderCapabilitiesResultPhoneCountryEnum = {}));
 function PhoneProviderCapabilitiesResultFromJSON(json) {
     return PhoneProviderCapabilitiesResultFromJSONTyped(json, false);
 }
-exports.PhoneProviderCapabilitiesResultFromJSON = PhoneProviderCapabilitiesResultFromJSON;
 function PhoneProviderCapabilitiesResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -50,7 +52,6 @@ function PhoneProviderCapabilitiesResultFromJSONTyped(json, ignoreDiscriminator)
         warning: !(0, runtime_1.exists)(json, 'warning') ? undefined : json['warning'],
     };
 }
-exports.PhoneProviderCapabilitiesResultFromJSONTyped = PhoneProviderCapabilitiesResultFromJSONTyped;
 function PhoneProviderCapabilitiesResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -65,4 +66,3 @@ function PhoneProviderCapabilitiesResultToJSON(value) {
         warning: value.warning,
     };
 }
-exports.PhoneProviderCapabilitiesResultToJSON = PhoneProviderCapabilitiesResultToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateConnectorSmtpConnectionOptionsToJSON = exports.CreateConnectorSmtpConnectionOptionsFromJSONTyped = exports.CreateConnectorSmtpConnectionOptionsFromJSON = void 0;
+exports.CreateConnectorSmtpConnectionOptionsFromJSON = CreateConnectorSmtpConnectionOptionsFromJSON;
+exports.CreateConnectorSmtpConnectionOptionsFromJSONTyped = CreateConnectorSmtpConnectionOptionsFromJSONTyped;
+exports.CreateConnectorSmtpConnectionOptionsToJSON = CreateConnectorSmtpConnectionOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateConnectorSmtpConnectionOptionsFromJSON(json) {
     return CreateConnectorSmtpConnectionOptionsFromJSONTyped(json, false);
 }
-exports.CreateConnectorSmtpConnectionOptionsFromJSON = CreateConnectorSmtpConnectionOptionsFromJSON;
 function CreateConnectorSmtpConnectionOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -52,7 +53,6 @@ function CreateConnectorSmtpConnectionOptionsFromJSONTyped(json, ignoreDiscrimin
             : json['sslProtocols'],
     };
 }
-exports.CreateConnectorSmtpConnectionOptionsFromJSONTyped = CreateConnectorSmtpConnectionOptionsFromJSONTyped;
 function CreateConnectorSmtpConnectionOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -77,4 +77,3 @@ function CreateConnectorSmtpConnectionOptionsToJSON(value) {
         sslProtocols: value.sslProtocols,
     };
 }
-exports.CreateConnectorSmtpConnectionOptionsToJSON = CreateConnectorSmtpConnectionOptionsToJSON;

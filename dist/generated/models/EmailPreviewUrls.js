@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailPreviewUrlsToJSON = exports.EmailPreviewUrlsFromJSONTyped = exports.EmailPreviewUrlsFromJSON = void 0;
+exports.EmailPreviewUrlsFromJSON = EmailPreviewUrlsFromJSON;
+exports.EmailPreviewUrlsFromJSONTyped = EmailPreviewUrlsFromJSONTyped;
+exports.EmailPreviewUrlsToJSON = EmailPreviewUrlsToJSON;
 function EmailPreviewUrlsFromJSON(json) {
     return EmailPreviewUrlsFromJSONTyped(json, false);
 }
-exports.EmailPreviewUrlsFromJSON = EmailPreviewUrlsFromJSON;
 function EmailPreviewUrlsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function EmailPreviewUrlsFromJSONTyped(json, ignoreDiscriminator) {
         origin: json['origin'],
     };
 }
-exports.EmailPreviewUrlsFromJSONTyped = EmailPreviewUrlsFromJSONTyped;
 function EmailPreviewUrlsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function EmailPreviewUrlsToJSON(value) {
         origin: value.origin,
     };
 }
-exports.EmailPreviewUrlsToJSON = EmailPreviewUrlsToJSON;

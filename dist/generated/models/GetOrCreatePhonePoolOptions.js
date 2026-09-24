@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetOrCreatePhonePoolOptionsToJSON = exports.GetOrCreatePhonePoolOptionsFromJSONTyped = exports.GetOrCreatePhonePoolOptionsFromJSON = void 0;
+exports.GetOrCreatePhonePoolOptionsFromJSON = GetOrCreatePhonePoolOptionsFromJSON;
+exports.GetOrCreatePhonePoolOptionsFromJSONTyped = GetOrCreatePhonePoolOptionsFromJSONTyped;
+exports.GetOrCreatePhonePoolOptionsToJSON = GetOrCreatePhonePoolOptionsToJSON;
 var runtime_1 = require("../runtime");
 function GetOrCreatePhonePoolOptionsFromJSON(json) {
     return GetOrCreatePhonePoolOptionsFromJSONTyped(json, false);
 }
-exports.GetOrCreatePhonePoolOptionsFromJSON = GetOrCreatePhonePoolOptionsFromJSON;
 function GetOrCreatePhonePoolOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function GetOrCreatePhonePoolOptionsFromJSONTyped(json, ignoreDiscriminator) {
         description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
     };
 }
-exports.GetOrCreatePhonePoolOptionsFromJSONTyped = GetOrCreatePhonePoolOptionsFromJSONTyped;
 function GetOrCreatePhonePoolOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function GetOrCreatePhonePoolOptionsToJSON(value) {
         description: value.description,
     };
 }
-exports.GetOrCreatePhonePoolOptionsToJSON = GetOrCreatePhonePoolOptionsToJSON;

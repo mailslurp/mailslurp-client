@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMappingMatchOptionToJSON = exports.AIMappingMatchOptionFromJSONTyped = exports.AIMappingMatchOptionFromJSON = exports.AIMappingMatchOptionShouldEnum = exports.AIMappingMatchOptionFieldEnum = void 0;
+exports.AIMappingMatchOptionShouldEnum = exports.AIMappingMatchOptionFieldEnum = void 0;
+exports.AIMappingMatchOptionFromJSON = AIMappingMatchOptionFromJSON;
+exports.AIMappingMatchOptionFromJSONTyped = AIMappingMatchOptionFromJSONTyped;
+exports.AIMappingMatchOptionToJSON = AIMappingMatchOptionToJSON;
 /**
  * @export
  * @enum {string}
@@ -28,7 +31,7 @@ var AIMappingMatchOptionFieldEnum;
     AIMappingMatchOptionFieldEnum["HEADERS"] = "HEADERS";
     AIMappingMatchOptionFieldEnum["FILENAME"] = "FILENAME";
     AIMappingMatchOptionFieldEnum["SMS"] = "SMS";
-})(AIMappingMatchOptionFieldEnum = exports.AIMappingMatchOptionFieldEnum || (exports.AIMappingMatchOptionFieldEnum = {}));
+})(AIMappingMatchOptionFieldEnum || (exports.AIMappingMatchOptionFieldEnum = AIMappingMatchOptionFieldEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -38,11 +41,10 @@ var AIMappingMatchOptionShouldEnum;
     AIMappingMatchOptionShouldEnum["MATCH"] = "MATCH";
     AIMappingMatchOptionShouldEnum["CONTAIN"] = "CONTAIN";
     AIMappingMatchOptionShouldEnum["EQUAL"] = "EQUAL";
-})(AIMappingMatchOptionShouldEnum = exports.AIMappingMatchOptionShouldEnum || (exports.AIMappingMatchOptionShouldEnum = {}));
+})(AIMappingMatchOptionShouldEnum || (exports.AIMappingMatchOptionShouldEnum = AIMappingMatchOptionShouldEnum = {}));
 function AIMappingMatchOptionFromJSON(json) {
     return AIMappingMatchOptionFromJSONTyped(json, false);
 }
-exports.AIMappingMatchOptionFromJSON = AIMappingMatchOptionFromJSON;
 function AIMappingMatchOptionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -53,7 +55,6 @@ function AIMappingMatchOptionFromJSONTyped(json, ignoreDiscriminator) {
         value: json['value'],
     };
 }
-exports.AIMappingMatchOptionFromJSONTyped = AIMappingMatchOptionFromJSONTyped;
 function AIMappingMatchOptionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -67,4 +68,3 @@ function AIMappingMatchOptionToJSON(value) {
         value: value.value,
     };
 }
-exports.AIMappingMatchOptionToJSON = AIMappingMatchOptionToJSON;

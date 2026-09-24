@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendingConnectionDeliveryProbeDtoToJSON = exports.SendingConnectionDeliveryProbeDtoFromJSONTyped = exports.SendingConnectionDeliveryProbeDtoFromJSON = exports.SendingConnectionDeliveryProbeDtoStatusEnum = void 0;
+exports.SendingConnectionDeliveryProbeDtoStatusEnum = void 0;
+exports.SendingConnectionDeliveryProbeDtoFromJSON = SendingConnectionDeliveryProbeDtoFromJSON;
+exports.SendingConnectionDeliveryProbeDtoFromJSONTyped = SendingConnectionDeliveryProbeDtoFromJSONTyped;
+exports.SendingConnectionDeliveryProbeDtoToJSON = SendingConnectionDeliveryProbeDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var SendingConnectionDeliveryProbeDtoStatusEnum;
 (function (SendingConnectionDeliveryProbeDtoStatusEnum) {
     SendingConnectionDeliveryProbeDtoStatusEnum["DELIVERED"] = "DELIVERED";
     SendingConnectionDeliveryProbeDtoStatusEnum["INCONCLUSIVE"] = "INCONCLUSIVE";
-})(SendingConnectionDeliveryProbeDtoStatusEnum = exports.SendingConnectionDeliveryProbeDtoStatusEnum || (exports.SendingConnectionDeliveryProbeDtoStatusEnum = {}));
+})(SendingConnectionDeliveryProbeDtoStatusEnum || (exports.SendingConnectionDeliveryProbeDtoStatusEnum = SendingConnectionDeliveryProbeDtoStatusEnum = {}));
 function SendingConnectionDeliveryProbeDtoFromJSON(json) {
     return SendingConnectionDeliveryProbeDtoFromJSONTyped(json, false);
 }
-exports.SendingConnectionDeliveryProbeDtoFromJSON = SendingConnectionDeliveryProbeDtoFromJSON;
 function SendingConnectionDeliveryProbeDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -50,7 +52,6 @@ function SendingConnectionDeliveryProbeDtoFromJSONTyped(json, ignoreDiscriminato
             : json['latencyMillis'],
     };
 }
-exports.SendingConnectionDeliveryProbeDtoFromJSONTyped = SendingConnectionDeliveryProbeDtoFromJSONTyped;
 function SendingConnectionDeliveryProbeDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -74,4 +75,3 @@ function SendingConnectionDeliveryProbeDtoToJSON(value) {
         latencyMillis: value.latencyMillis,
     };
 }
-exports.SendingConnectionDeliveryProbeDtoToJSON = SendingConnectionDeliveryProbeDtoToJSON;

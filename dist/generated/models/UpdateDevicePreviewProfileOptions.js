@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateDevicePreviewProfileOptionsToJSON = exports.UpdateDevicePreviewProfileOptionsFromJSONTyped = exports.UpdateDevicePreviewProfileOptionsFromJSON = void 0;
+exports.UpdateDevicePreviewProfileOptionsFromJSON = UpdateDevicePreviewProfileOptionsFromJSON;
+exports.UpdateDevicePreviewProfileOptionsFromJSONTyped = UpdateDevicePreviewProfileOptionsFromJSONTyped;
+exports.UpdateDevicePreviewProfileOptionsToJSON = UpdateDevicePreviewProfileOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function UpdateDevicePreviewProfileOptionsFromJSON(json) {
     return UpdateDevicePreviewProfileOptionsFromJSONTyped(json, false);
 }
-exports.UpdateDevicePreviewProfileOptionsFromJSON = UpdateDevicePreviewProfileOptionsFromJSON;
 function UpdateDevicePreviewProfileOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function UpdateDevicePreviewProfileOptionsFromJSONTyped(json, ignoreDiscriminato
         enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
     };
 }
-exports.UpdateDevicePreviewProfileOptionsFromJSONTyped = UpdateDevicePreviewProfileOptionsFromJSONTyped;
 function UpdateDevicePreviewProfileOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function UpdateDevicePreviewProfileOptionsToJSON(value) {
         enabled: value.enabled,
     };
 }
-exports.UpdateDevicePreviewProfileOptionsToJSON = UpdateDevicePreviewProfileOptionsToJSON;

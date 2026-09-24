@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorAlertSinkDtoToJSON = exports.DomainMonitorAlertSinkDtoFromJSONTyped = exports.DomainMonitorAlertSinkDtoFromJSON = exports.DomainMonitorAlertSinkDtoSeverityThresholdEnum = exports.DomainMonitorAlertSinkDtoTypeEnum = void 0;
+exports.DomainMonitorAlertSinkDtoSeverityThresholdEnum = exports.DomainMonitorAlertSinkDtoTypeEnum = void 0;
+exports.DomainMonitorAlertSinkDtoFromJSON = DomainMonitorAlertSinkDtoFromJSON;
+exports.DomainMonitorAlertSinkDtoFromJSONTyped = DomainMonitorAlertSinkDtoFromJSONTyped;
+exports.DomainMonitorAlertSinkDtoToJSON = DomainMonitorAlertSinkDtoToJSON;
 /**
  * @export
  * @enum {string}
@@ -24,7 +27,7 @@ var DomainMonitorAlertSinkDtoTypeEnum;
     DomainMonitorAlertSinkDtoTypeEnum["WEBHOOK"] = "WEBHOOK";
     DomainMonitorAlertSinkDtoTypeEnum["SLACK"] = "SLACK";
     DomainMonitorAlertSinkDtoTypeEnum["TEAMS"] = "TEAMS";
-})(DomainMonitorAlertSinkDtoTypeEnum = exports.DomainMonitorAlertSinkDtoTypeEnum || (exports.DomainMonitorAlertSinkDtoTypeEnum = {}));
+})(DomainMonitorAlertSinkDtoTypeEnum || (exports.DomainMonitorAlertSinkDtoTypeEnum = DomainMonitorAlertSinkDtoTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -35,11 +38,10 @@ var DomainMonitorAlertSinkDtoSeverityThresholdEnum;
     DomainMonitorAlertSinkDtoSeverityThresholdEnum["MEDIUM"] = "MEDIUM";
     DomainMonitorAlertSinkDtoSeverityThresholdEnum["HIGH"] = "HIGH";
     DomainMonitorAlertSinkDtoSeverityThresholdEnum["CRITICAL"] = "CRITICAL";
-})(DomainMonitorAlertSinkDtoSeverityThresholdEnum = exports.DomainMonitorAlertSinkDtoSeverityThresholdEnum || (exports.DomainMonitorAlertSinkDtoSeverityThresholdEnum = {}));
+})(DomainMonitorAlertSinkDtoSeverityThresholdEnum || (exports.DomainMonitorAlertSinkDtoSeverityThresholdEnum = DomainMonitorAlertSinkDtoSeverityThresholdEnum = {}));
 function DomainMonitorAlertSinkDtoFromJSON(json) {
     return DomainMonitorAlertSinkDtoFromJSONTyped(json, false);
 }
-exports.DomainMonitorAlertSinkDtoFromJSON = DomainMonitorAlertSinkDtoFromJSON;
 function DomainMonitorAlertSinkDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -56,7 +58,6 @@ function DomainMonitorAlertSinkDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DomainMonitorAlertSinkDtoFromJSONTyped = DomainMonitorAlertSinkDtoFromJSONTyped;
 function DomainMonitorAlertSinkDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -76,4 +77,3 @@ function DomainMonitorAlertSinkDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DomainMonitorAlertSinkDtoToJSON = DomainMonitorAlertSinkDtoToJSON;

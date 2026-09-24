@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentActivityDtoToJSON = exports.AgentActivityDtoFromJSONTyped = exports.AgentActivityDtoFromJSON = exports.AgentActivityDtoStatusEnum = exports.AgentActivityDtoEventTypeEnum = exports.AgentActivityDtoAgentRoleEnum = void 0;
+exports.AgentActivityDtoStatusEnum = exports.AgentActivityDtoEventTypeEnum = exports.AgentActivityDtoAgentRoleEnum = void 0;
+exports.AgentActivityDtoFromJSON = AgentActivityDtoFromJSON;
+exports.AgentActivityDtoFromJSONTyped = AgentActivityDtoFromJSONTyped;
+exports.AgentActivityDtoToJSON = AgentActivityDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -27,7 +30,7 @@ var AgentActivityDtoAgentRoleEnum;
     AgentActivityDtoAgentRoleEnum["INBOX_MANAGER"] = "AGENT_INBOX_MANAGER";
     AgentActivityDtoAgentRoleEnum["SUPPORT"] = "AGENT_SUPPORT";
     AgentActivityDtoAgentRoleEnum["TOTP_MANAGER"] = "AGENT_TOTP_MANAGER";
-})(AgentActivityDtoAgentRoleEnum = exports.AgentActivityDtoAgentRoleEnum || (exports.AgentActivityDtoAgentRoleEnum = {}));
+})(AgentActivityDtoAgentRoleEnum || (exports.AgentActivityDtoAgentRoleEnum = AgentActivityDtoAgentRoleEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -66,7 +69,7 @@ var AgentActivityDtoEventTypeEnum;
     AgentActivityDtoEventTypeEnum["REQUEST_SMS_CONVERSATION_HANDOFF"] = "REQUEST_SMS_CONVERSATION_HANDOFF";
     AgentActivityDtoEventTypeEnum["SEND_SMS"] = "SEND_SMS";
     AgentActivityDtoEventTypeEnum["REPLY_SMS"] = "REPLY_SMS";
-})(AgentActivityDtoEventTypeEnum = exports.AgentActivityDtoEventTypeEnum || (exports.AgentActivityDtoEventTypeEnum = {}));
+})(AgentActivityDtoEventTypeEnum || (exports.AgentActivityDtoEventTypeEnum = AgentActivityDtoEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -75,11 +78,10 @@ var AgentActivityDtoStatusEnum;
 (function (AgentActivityDtoStatusEnum) {
     AgentActivityDtoStatusEnum["SUCCESS"] = "SUCCESS";
     AgentActivityDtoStatusEnum["FAILURE"] = "FAILURE";
-})(AgentActivityDtoStatusEnum = exports.AgentActivityDtoStatusEnum || (exports.AgentActivityDtoStatusEnum = {}));
+})(AgentActivityDtoStatusEnum || (exports.AgentActivityDtoStatusEnum = AgentActivityDtoStatusEnum = {}));
 function AgentActivityDtoFromJSON(json) {
     return AgentActivityDtoFromJSONTyped(json, false);
 }
-exports.AgentActivityDtoFromJSON = AgentActivityDtoFromJSON;
 function AgentActivityDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -121,7 +123,6 @@ function AgentActivityDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['smsParticipant'],
     };
 }
-exports.AgentActivityDtoFromJSONTyped = AgentActivityDtoFromJSONTyped;
 function AgentActivityDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -154,4 +155,3 @@ function AgentActivityDtoToJSON(value) {
         smsParticipant: value.smsParticipant,
     };
 }
-exports.AgentActivityDtoToJSON = AgentActivityDtoToJSON;

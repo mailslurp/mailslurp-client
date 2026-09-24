@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewEmailSubmissionWaitResultToJSON = exports.DevicePreviewEmailSubmissionWaitResultFromJSONTyped = exports.DevicePreviewEmailSubmissionWaitResultFromJSON = void 0;
+exports.DevicePreviewEmailSubmissionWaitResultFromJSON = DevicePreviewEmailSubmissionWaitResultFromJSON;
+exports.DevicePreviewEmailSubmissionWaitResultFromJSONTyped = DevicePreviewEmailSubmissionWaitResultFromJSONTyped;
+exports.DevicePreviewEmailSubmissionWaitResultToJSON = DevicePreviewEmailSubmissionWaitResultToJSON;
 var _1 = require("./");
 function DevicePreviewEmailSubmissionWaitResultFromJSON(json) {
     return DevicePreviewEmailSubmissionWaitResultFromJSONTyped(json, false);
 }
-exports.DevicePreviewEmailSubmissionWaitResultFromJSON = DevicePreviewEmailSubmissionWaitResultFromJSON;
 function DevicePreviewEmailSubmissionWaitResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function DevicePreviewEmailSubmissionWaitResultFromJSONTyped(json, ignoreDiscrim
         submissions: json['submissions'].map(_1.DevicePreviewEmailSubmissionDtoFromJSON),
     };
 }
-exports.DevicePreviewEmailSubmissionWaitResultFromJSONTyped = DevicePreviewEmailSubmissionWaitResultFromJSONTyped;
 function DevicePreviewEmailSubmissionWaitResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DevicePreviewEmailSubmissionWaitResultToJSON(value) {
         submissions: value.submissions.map(_1.DevicePreviewEmailSubmissionDtoToJSON),
     };
 }
-exports.DevicePreviewEmailSubmissionWaitResultToJSON = DevicePreviewEmailSubmissionWaitResultToJSON;

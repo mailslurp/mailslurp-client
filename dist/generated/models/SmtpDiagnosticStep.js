@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmtpDiagnosticStepToJSON = exports.SmtpDiagnosticStepFromJSONTyped = exports.SmtpDiagnosticStepFromJSON = void 0;
+exports.SmtpDiagnosticStepFromJSON = SmtpDiagnosticStepFromJSON;
+exports.SmtpDiagnosticStepFromJSONTyped = SmtpDiagnosticStepFromJSONTyped;
+exports.SmtpDiagnosticStepToJSON = SmtpDiagnosticStepToJSON;
 var runtime_1 = require("../runtime");
 function SmtpDiagnosticStepFromJSON(json) {
     return SmtpDiagnosticStepFromJSONTyped(json, false);
 }
-exports.SmtpDiagnosticStepFromJSON = SmtpDiagnosticStepFromJSON;
 function SmtpDiagnosticStepFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function SmtpDiagnosticStepFromJSONTyped(json, ignoreDiscriminator) {
         message: json['message'],
     };
 }
-exports.SmtpDiagnosticStepFromJSONTyped = SmtpDiagnosticStepFromJSONTyped;
 function SmtpDiagnosticStepToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function SmtpDiagnosticStepToJSON(value) {
         message: value.message,
     };
 }
-exports.SmtpDiagnosticStepToJSON = SmtpDiagnosticStepToJSON;

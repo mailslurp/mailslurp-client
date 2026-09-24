@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapAccessDetailsToJSON = exports.ImapAccessDetailsFromJSONTyped = exports.ImapAccessDetailsFromJSON = void 0;
+exports.ImapAccessDetailsFromJSON = ImapAccessDetailsFromJSON;
+exports.ImapAccessDetailsFromJSONTyped = ImapAccessDetailsFromJSONTyped;
+exports.ImapAccessDetailsToJSON = ImapAccessDetailsToJSON;
 function ImapAccessDetailsFromJSON(json) {
     return ImapAccessDetailsFromJSONTyped(json, false);
 }
-exports.ImapAccessDetailsFromJSON = ImapAccessDetailsFromJSON;
 function ImapAccessDetailsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -34,7 +35,6 @@ function ImapAccessDetailsFromJSONTyped(json, ignoreDiscriminator) {
         imapMailbox: json['imapMailbox'],
     };
 }
-exports.ImapAccessDetailsFromJSONTyped = ImapAccessDetailsFromJSONTyped;
 function ImapAccessDetailsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +54,3 @@ function ImapAccessDetailsToJSON(value) {
         imapMailbox: value.imapMailbox,
     };
 }
-exports.ImapAccessDetailsToJSON = ImapAccessDetailsToJSON;

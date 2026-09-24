@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExtractAIMessageOptionsToJSON = exports.ExtractAIMessageOptionsFromJSONTyped = exports.ExtractAIMessageOptionsFromJSON = exports.ExtractAIMessageOptionsExtractionPresetEnum = void 0;
+exports.ExtractAIMessageOptionsExtractionPresetEnum = void 0;
+exports.ExtractAIMessageOptionsFromJSON = ExtractAIMessageOptionsFromJSON;
+exports.ExtractAIMessageOptionsFromJSONTyped = ExtractAIMessageOptionsFromJSONTyped;
+exports.ExtractAIMessageOptionsToJSON = ExtractAIMessageOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -23,11 +26,10 @@ var _1 = require("./");
 var ExtractAIMessageOptionsExtractionPresetEnum;
 (function (ExtractAIMessageOptionsExtractionPresetEnum) {
     ExtractAIMessageOptionsExtractionPresetEnum["OTP_CODE"] = "OTP_CODE";
-})(ExtractAIMessageOptionsExtractionPresetEnum = exports.ExtractAIMessageOptionsExtractionPresetEnum || (exports.ExtractAIMessageOptionsExtractionPresetEnum = {}));
+})(ExtractAIMessageOptionsExtractionPresetEnum || (exports.ExtractAIMessageOptionsExtractionPresetEnum = ExtractAIMessageOptionsExtractionPresetEnum = {}));
 function ExtractAIMessageOptionsFromJSON(json) {
     return ExtractAIMessageOptionsFromJSONTyped(json, false);
 }
-exports.ExtractAIMessageOptionsFromJSON = ExtractAIMessageOptionsFromJSON;
 function ExtractAIMessageOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -48,7 +50,6 @@ function ExtractAIMessageOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['extractionPreset'],
     };
 }
-exports.ExtractAIMessageOptionsFromJSONTyped = ExtractAIMessageOptionsFromJSONTyped;
 function ExtractAIMessageOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -66,4 +67,3 @@ function ExtractAIMessageOptionsToJSON(value) {
         extractionPreset: value.extractionPreset,
     };
 }
-exports.ExtractAIMessageOptionsToJSON = ExtractAIMessageOptionsToJSON;

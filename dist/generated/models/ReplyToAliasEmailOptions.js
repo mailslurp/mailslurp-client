@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReplyToAliasEmailOptionsToJSON = exports.ReplyToAliasEmailOptionsFromJSONTyped = exports.ReplyToAliasEmailOptionsFromJSON = exports.ReplyToAliasEmailOptionsSendStrategyEnum = void 0;
+exports.ReplyToAliasEmailOptionsSendStrategyEnum = void 0;
+exports.ReplyToAliasEmailOptionsFromJSON = ReplyToAliasEmailOptionsFromJSON;
+exports.ReplyToAliasEmailOptionsFromJSONTyped = ReplyToAliasEmailOptionsFromJSONTyped;
+exports.ReplyToAliasEmailOptionsToJSON = ReplyToAliasEmailOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -22,11 +25,10 @@ var runtime_1 = require("../runtime");
 var ReplyToAliasEmailOptionsSendStrategyEnum;
 (function (ReplyToAliasEmailOptionsSendStrategyEnum) {
     ReplyToAliasEmailOptionsSendStrategyEnum["SINGLE_MESSAGE"] = "SINGLE_MESSAGE";
-})(ReplyToAliasEmailOptionsSendStrategyEnum = exports.ReplyToAliasEmailOptionsSendStrategyEnum || (exports.ReplyToAliasEmailOptionsSendStrategyEnum = {}));
+})(ReplyToAliasEmailOptionsSendStrategyEnum || (exports.ReplyToAliasEmailOptionsSendStrategyEnum = ReplyToAliasEmailOptionsSendStrategyEnum = {}));
 function ReplyToAliasEmailOptionsFromJSON(json) {
     return ReplyToAliasEmailOptionsFromJSONTyped(json, false);
 }
-exports.ReplyToAliasEmailOptionsFromJSON = ReplyToAliasEmailOptionsFromJSON;
 function ReplyToAliasEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -52,7 +54,6 @@ function ReplyToAliasEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
     };
 }
-exports.ReplyToAliasEmailOptionsFromJSONTyped = ReplyToAliasEmailOptionsFromJSONTyped;
 function ReplyToAliasEmailOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -73,4 +74,3 @@ function ReplyToAliasEmailOptionsToJSON(value) {
         html: value.html,
     };
 }
-exports.ReplyToAliasEmailOptionsToJSON = ReplyToAliasEmailOptionsToJSON;

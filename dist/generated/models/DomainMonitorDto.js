@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorDtoToJSON = exports.DomainMonitorDtoFromJSONTyped = exports.DomainMonitorDtoFromJSON = exports.DomainMonitorDtoLastStatusEnum = void 0;
+exports.DomainMonitorDtoLastStatusEnum = void 0;
+exports.DomainMonitorDtoFromJSON = DomainMonitorDtoFromJSON;
+exports.DomainMonitorDtoFromJSONTyped = DomainMonitorDtoFromJSONTyped;
+exports.DomainMonitorDtoToJSON = DomainMonitorDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -26,11 +29,10 @@ var DomainMonitorDtoLastStatusEnum;
     DomainMonitorDtoLastStatusEnum["DEGRADED"] = "DEGRADED";
     DomainMonitorDtoLastStatusEnum["CRITICAL"] = "CRITICAL";
     DomainMonitorDtoLastStatusEnum["FAILED"] = "FAILED";
-})(DomainMonitorDtoLastStatusEnum = exports.DomainMonitorDtoLastStatusEnum || (exports.DomainMonitorDtoLastStatusEnum = {}));
+})(DomainMonitorDtoLastStatusEnum || (exports.DomainMonitorDtoLastStatusEnum = DomainMonitorDtoLastStatusEnum = {}));
 function DomainMonitorDtoFromJSON(json) {
     return DomainMonitorDtoFromJSONTyped(json, false);
 }
-exports.DomainMonitorDtoFromJSON = DomainMonitorDtoFromJSON;
 function DomainMonitorDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -64,7 +66,6 @@ function DomainMonitorDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DomainMonitorDtoFromJSONTyped = DomainMonitorDtoFromJSONTyped;
 function DomainMonitorDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -97,4 +98,3 @@ function DomainMonitorDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DomainMonitorDtoToJSON = DomainMonitorDtoToJSON;

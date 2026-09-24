@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateDeliverySenderSeatsOptionsToJSON = exports.UpdateDeliverySenderSeatsOptionsFromJSONTyped = exports.UpdateDeliverySenderSeatsOptionsFromJSON = void 0;
+exports.UpdateDeliverySenderSeatsOptionsFromJSON = UpdateDeliverySenderSeatsOptionsFromJSON;
+exports.UpdateDeliverySenderSeatsOptionsFromJSONTyped = UpdateDeliverySenderSeatsOptionsFromJSONTyped;
+exports.UpdateDeliverySenderSeatsOptionsToJSON = UpdateDeliverySenderSeatsOptionsToJSON;
 function UpdateDeliverySenderSeatsOptionsFromJSON(json) {
     return UpdateDeliverySenderSeatsOptionsFromJSONTyped(json, false);
 }
-exports.UpdateDeliverySenderSeatsOptionsFromJSON = UpdateDeliverySenderSeatsOptionsFromJSON;
 function UpdateDeliverySenderSeatsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function UpdateDeliverySenderSeatsOptionsFromJSONTyped(json, ignoreDiscriminator
         quantity: json['quantity'],
     };
 }
-exports.UpdateDeliverySenderSeatsOptionsFromJSONTyped = UpdateDeliverySenderSeatsOptionsFromJSONTyped;
 function UpdateDeliverySenderSeatsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function UpdateDeliverySenderSeatsOptionsToJSON(value) {
         quantity: value.quantity,
     };
 }
-exports.UpdateDeliverySenderSeatsOptionsToJSON = UpdateDeliverySenderSeatsOptionsToJSON;

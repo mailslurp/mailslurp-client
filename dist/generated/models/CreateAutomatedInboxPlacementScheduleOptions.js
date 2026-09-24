@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateAutomatedInboxPlacementScheduleOptionsToJSON = exports.CreateAutomatedInboxPlacementScheduleOptionsFromJSONTyped = exports.CreateAutomatedInboxPlacementScheduleOptionsFromJSON = exports.CreateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum = void 0;
+exports.CreateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum = void 0;
+exports.CreateAutomatedInboxPlacementScheduleOptionsFromJSON = CreateAutomatedInboxPlacementScheduleOptionsFromJSON;
+exports.CreateAutomatedInboxPlacementScheduleOptionsFromJSONTyped = CreateAutomatedInboxPlacementScheduleOptionsFromJSONTyped;
+exports.CreateAutomatedInboxPlacementScheduleOptionsToJSON = CreateAutomatedInboxPlacementScheduleOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var CreateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum;
     CreateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum["ALL_INBOXES"] = "ALL_INBOXES";
     CreateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum["PERSONAL_INBOXES"] = "PERSONAL_INBOXES";
     CreateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum["PROFESSIONAL_INBOXES"] = "PROFESSIONAL_INBOXES";
-})(CreateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum = exports.CreateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum || (exports.CreateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum = {}));
+})(CreateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum || (exports.CreateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum = CreateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum = {}));
 function CreateAutomatedInboxPlacementScheduleOptionsFromJSON(json) {
     return CreateAutomatedInboxPlacementScheduleOptionsFromJSONTyped(json, false);
 }
-exports.CreateAutomatedInboxPlacementScheduleOptionsFromJSON = CreateAutomatedInboxPlacementScheduleOptionsFromJSON;
 function CreateAutomatedInboxPlacementScheduleOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -52,7 +54,6 @@ function CreateAutomatedInboxPlacementScheduleOptionsFromJSONTyped(json, ignoreD
         sourceRunId: !(0, runtime_1.exists)(json, 'sourceRunId') ? undefined : json['sourceRunId'],
     };
 }
-exports.CreateAutomatedInboxPlacementScheduleOptionsFromJSONTyped = CreateAutomatedInboxPlacementScheduleOptionsFromJSONTyped;
 function CreateAutomatedInboxPlacementScheduleOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -73,4 +74,3 @@ function CreateAutomatedInboxPlacementScheduleOptionsToJSON(value) {
         sourceRunId: value.sourceRunId,
     };
 }
-exports.CreateAutomatedInboxPlacementScheduleOptionsToJSON = CreateAutomatedInboxPlacementScheduleOptionsToJSON;

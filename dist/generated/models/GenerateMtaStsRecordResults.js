@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateMtaStsRecordResultsToJSON = exports.GenerateMtaStsRecordResultsFromJSONTyped = exports.GenerateMtaStsRecordResultsFromJSON = exports.GenerateMtaStsRecordResultsTypeEnum = void 0;
+exports.GenerateMtaStsRecordResultsTypeEnum = void 0;
+exports.GenerateMtaStsRecordResultsFromJSON = GenerateMtaStsRecordResultsFromJSON;
+exports.GenerateMtaStsRecordResultsFromJSONTyped = GenerateMtaStsRecordResultsFromJSONTyped;
+exports.GenerateMtaStsRecordResultsToJSON = GenerateMtaStsRecordResultsToJSON;
 /**
  * @export
  * @enum {string}
@@ -109,11 +112,10 @@ var GenerateMtaStsRecordResultsTypeEnum;
     GenerateMtaStsRecordResultsTypeEnum["AMTRELAY"] = "AMTRELAY";
     GenerateMtaStsRecordResultsTypeEnum["TA"] = "TA";
     GenerateMtaStsRecordResultsTypeEnum["DLV"] = "DLV";
-})(GenerateMtaStsRecordResultsTypeEnum = exports.GenerateMtaStsRecordResultsTypeEnum || (exports.GenerateMtaStsRecordResultsTypeEnum = {}));
+})(GenerateMtaStsRecordResultsTypeEnum || (exports.GenerateMtaStsRecordResultsTypeEnum = GenerateMtaStsRecordResultsTypeEnum = {}));
 function GenerateMtaStsRecordResultsFromJSON(json) {
     return GenerateMtaStsRecordResultsFromJSONTyped(json, false);
 }
-exports.GenerateMtaStsRecordResultsFromJSON = GenerateMtaStsRecordResultsFromJSON;
 function GenerateMtaStsRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -127,7 +129,6 @@ function GenerateMtaStsRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
         wellKnownUrl: json['wellKnownUrl'],
     };
 }
-exports.GenerateMtaStsRecordResultsFromJSONTyped = GenerateMtaStsRecordResultsFromJSONTyped;
 function GenerateMtaStsRecordResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -144,4 +145,3 @@ function GenerateMtaStsRecordResultsToJSON(value) {
         wellKnownUrl: value.wellKnownUrl,
     };
 }
-exports.GenerateMtaStsRecordResultsToJSON = GenerateMtaStsRecordResultsToJSON;

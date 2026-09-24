@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageInboxTagsToJSON = exports.PageInboxTagsFromJSONTyped = exports.PageInboxTagsFromJSON = void 0;
+exports.PageInboxTagsFromJSON = PageInboxTagsFromJSON;
+exports.PageInboxTagsFromJSONTyped = PageInboxTagsFromJSONTyped;
+exports.PageInboxTagsToJSON = PageInboxTagsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageInboxTagsFromJSON(json) {
     return PageInboxTagsFromJSONTyped(json, false);
 }
-exports.PageInboxTagsFromJSON = PageInboxTagsFromJSON;
 function PageInboxTagsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -42,7 +43,6 @@ function PageInboxTagsFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageInboxTagsFromJSONTyped = PageInboxTagsFromJSONTyped;
 function PageInboxTagsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,4 +64,3 @@ function PageInboxTagsToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageInboxTagsToJSON = PageInboxTagsToJSON;

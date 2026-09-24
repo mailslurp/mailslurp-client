@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendOptInConsentEmailOptionsToJSON = exports.SendOptInConsentEmailOptionsFromJSONTyped = exports.SendOptInConsentEmailOptionsFromJSON = void 0;
+exports.SendOptInConsentEmailOptionsFromJSON = SendOptInConsentEmailOptionsFromJSON;
+exports.SendOptInConsentEmailOptionsFromJSONTyped = SendOptInConsentEmailOptionsFromJSONTyped;
+exports.SendOptInConsentEmailOptionsToJSON = SendOptInConsentEmailOptionsToJSON;
 var runtime_1 = require("../runtime");
 function SendOptInConsentEmailOptionsFromJSON(json) {
     return SendOptInConsentEmailOptionsFromJSONTyped(json, false);
 }
-exports.SendOptInConsentEmailOptionsFromJSON = SendOptInConsentEmailOptionsFromJSON;
 function SendOptInConsentEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function SendOptInConsentEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         senderInbox: !(0, runtime_1.exists)(json, 'senderInbox') ? undefined : json['senderInbox'],
     };
 }
-exports.SendOptInConsentEmailOptionsFromJSONTyped = SendOptInConsentEmailOptionsFromJSONTyped;
 function SendOptInConsentEmailOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function SendOptInConsentEmailOptionsToJSON(value) {
         senderInbox: value.senderInbox,
     };
 }
-exports.SendOptInConsentEmailOptionsToJSON = SendOptInConsentEmailOptionsToJSON;

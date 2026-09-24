@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePublicSpamTestOptionsToJSON = exports.CreatePublicSpamTestOptionsFromJSONTyped = exports.CreatePublicSpamTestOptionsFromJSON = exports.CreatePublicSpamTestOptionsAddressFormatEnum = exports.CreatePublicSpamTestOptionsRequestedSegmentEnum = void 0;
+exports.CreatePublicSpamTestOptionsAddressFormatEnum = exports.CreatePublicSpamTestOptionsRequestedSegmentEnum = void 0;
+exports.CreatePublicSpamTestOptionsFromJSON = CreatePublicSpamTestOptionsFromJSON;
+exports.CreatePublicSpamTestOptionsFromJSONTyped = CreatePublicSpamTestOptionsFromJSONTyped;
+exports.CreatePublicSpamTestOptionsToJSON = CreatePublicSpamTestOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,7 +27,7 @@ var CreatePublicSpamTestOptionsRequestedSegmentEnum;
     CreatePublicSpamTestOptionsRequestedSegmentEnum["ALL_INBOXES"] = "ALL_INBOXES";
     CreatePublicSpamTestOptionsRequestedSegmentEnum["PERSONAL_INBOXES"] = "PERSONAL_INBOXES";
     CreatePublicSpamTestOptionsRequestedSegmentEnum["PROFESSIONAL_INBOXES"] = "PROFESSIONAL_INBOXES";
-})(CreatePublicSpamTestOptionsRequestedSegmentEnum = exports.CreatePublicSpamTestOptionsRequestedSegmentEnum || (exports.CreatePublicSpamTestOptionsRequestedSegmentEnum = {}));
+})(CreatePublicSpamTestOptionsRequestedSegmentEnum || (exports.CreatePublicSpamTestOptionsRequestedSegmentEnum = CreatePublicSpamTestOptionsRequestedSegmentEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -33,11 +36,10 @@ var CreatePublicSpamTestOptionsAddressFormatEnum;
 (function (CreatePublicSpamTestOptionsAddressFormatEnum) {
     CreatePublicSpamTestOptionsAddressFormatEnum["COMMA"] = "COMMA";
     CreatePublicSpamTestOptionsAddressFormatEnum["NEWLINE"] = "NEWLINE";
-})(CreatePublicSpamTestOptionsAddressFormatEnum = exports.CreatePublicSpamTestOptionsAddressFormatEnum || (exports.CreatePublicSpamTestOptionsAddressFormatEnum = {}));
+})(CreatePublicSpamTestOptionsAddressFormatEnum || (exports.CreatePublicSpamTestOptionsAddressFormatEnum = CreatePublicSpamTestOptionsAddressFormatEnum = {}));
 function CreatePublicSpamTestOptionsFromJSON(json) {
     return CreatePublicSpamTestOptionsFromJSONTyped(json, false);
 }
-exports.CreatePublicSpamTestOptionsFromJSON = CreatePublicSpamTestOptionsFromJSON;
 function CreatePublicSpamTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -54,7 +56,6 @@ function CreatePublicSpamTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['captchaToken'],
     };
 }
-exports.CreatePublicSpamTestOptionsFromJSONTyped = CreatePublicSpamTestOptionsFromJSONTyped;
 function CreatePublicSpamTestOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -70,4 +71,3 @@ function CreatePublicSpamTestOptionsToJSON(value) {
         captchaToken: value.captchaToken,
     };
 }
-exports.CreatePublicSpamTestOptionsToJSON = CreatePublicSpamTestOptionsToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorRunEvidenceDtoToJSON = exports.DomainMonitorRunEvidenceDtoFromJSONTyped = exports.DomainMonitorRunEvidenceDtoFromJSON = exports.DomainMonitorRunEvidenceDtoObservedDmarcStatusEnum = exports.DomainMonitorRunEvidenceDtoObservedDkimStatusEnum = exports.DomainMonitorRunEvidenceDtoObservedSpfStatusEnum = exports.DomainMonitorRunEvidenceDtoScoreScopeEnum = void 0;
+exports.DomainMonitorRunEvidenceDtoObservedDmarcStatusEnum = exports.DomainMonitorRunEvidenceDtoObservedDkimStatusEnum = exports.DomainMonitorRunEvidenceDtoObservedSpfStatusEnum = exports.DomainMonitorRunEvidenceDtoScoreScopeEnum = void 0;
+exports.DomainMonitorRunEvidenceDtoFromJSON = DomainMonitorRunEvidenceDtoFromJSON;
+exports.DomainMonitorRunEvidenceDtoFromJSONTyped = DomainMonitorRunEvidenceDtoFromJSONTyped;
+exports.DomainMonitorRunEvidenceDtoToJSON = DomainMonitorRunEvidenceDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,7 +27,7 @@ var DomainMonitorRunEvidenceDtoScoreScopeEnum;
 (function (DomainMonitorRunEvidenceDtoScoreScopeEnum) {
     DomainMonitorRunEvidenceDtoScoreScopeEnum["POSTURE"] = "CONFIGURATION_POSTURE";
     DomainMonitorRunEvidenceDtoScoreScopeEnum["AND_OBSERVED_MESSAGE"] = "CONFIGURATION_AND_OBSERVED_MESSAGE";
-})(DomainMonitorRunEvidenceDtoScoreScopeEnum = exports.DomainMonitorRunEvidenceDtoScoreScopeEnum || (exports.DomainMonitorRunEvidenceDtoScoreScopeEnum = {}));
+})(DomainMonitorRunEvidenceDtoScoreScopeEnum || (exports.DomainMonitorRunEvidenceDtoScoreScopeEnum = DomainMonitorRunEvidenceDtoScoreScopeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -35,7 +38,7 @@ var DomainMonitorRunEvidenceDtoObservedSpfStatusEnum;
     DomainMonitorRunEvidenceDtoObservedSpfStatusEnum["FAIL"] = "FAIL";
     DomainMonitorRunEvidenceDtoObservedSpfStatusEnum["WARNING"] = "WARNING";
     DomainMonitorRunEvidenceDtoObservedSpfStatusEnum["NOT_CHECKED"] = "NOT_CHECKED";
-})(DomainMonitorRunEvidenceDtoObservedSpfStatusEnum = exports.DomainMonitorRunEvidenceDtoObservedSpfStatusEnum || (exports.DomainMonitorRunEvidenceDtoObservedSpfStatusEnum = {}));
+})(DomainMonitorRunEvidenceDtoObservedSpfStatusEnum || (exports.DomainMonitorRunEvidenceDtoObservedSpfStatusEnum = DomainMonitorRunEvidenceDtoObservedSpfStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -46,7 +49,7 @@ var DomainMonitorRunEvidenceDtoObservedDkimStatusEnum;
     DomainMonitorRunEvidenceDtoObservedDkimStatusEnum["FAIL"] = "FAIL";
     DomainMonitorRunEvidenceDtoObservedDkimStatusEnum["WARNING"] = "WARNING";
     DomainMonitorRunEvidenceDtoObservedDkimStatusEnum["NOT_CHECKED"] = "NOT_CHECKED";
-})(DomainMonitorRunEvidenceDtoObservedDkimStatusEnum = exports.DomainMonitorRunEvidenceDtoObservedDkimStatusEnum || (exports.DomainMonitorRunEvidenceDtoObservedDkimStatusEnum = {}));
+})(DomainMonitorRunEvidenceDtoObservedDkimStatusEnum || (exports.DomainMonitorRunEvidenceDtoObservedDkimStatusEnum = DomainMonitorRunEvidenceDtoObservedDkimStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -57,11 +60,10 @@ var DomainMonitorRunEvidenceDtoObservedDmarcStatusEnum;
     DomainMonitorRunEvidenceDtoObservedDmarcStatusEnum["FAIL"] = "FAIL";
     DomainMonitorRunEvidenceDtoObservedDmarcStatusEnum["WARNING"] = "WARNING";
     DomainMonitorRunEvidenceDtoObservedDmarcStatusEnum["NOT_CHECKED"] = "NOT_CHECKED";
-})(DomainMonitorRunEvidenceDtoObservedDmarcStatusEnum = exports.DomainMonitorRunEvidenceDtoObservedDmarcStatusEnum || (exports.DomainMonitorRunEvidenceDtoObservedDmarcStatusEnum = {}));
+})(DomainMonitorRunEvidenceDtoObservedDmarcStatusEnum || (exports.DomainMonitorRunEvidenceDtoObservedDmarcStatusEnum = DomainMonitorRunEvidenceDtoObservedDmarcStatusEnum = {}));
 function DomainMonitorRunEvidenceDtoFromJSON(json) {
     return DomainMonitorRunEvidenceDtoFromJSONTyped(json, false);
 }
-exports.DomainMonitorRunEvidenceDtoFromJSON = DomainMonitorRunEvidenceDtoFromJSON;
 function DomainMonitorRunEvidenceDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -95,7 +97,6 @@ function DomainMonitorRunEvidenceDtoFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.CheckEmailBlacklistResultsFromJSON)(json['blacklist']),
     };
 }
-exports.DomainMonitorRunEvidenceDtoFromJSONTyped = DomainMonitorRunEvidenceDtoFromJSONTyped;
 function DomainMonitorRunEvidenceDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -120,4 +121,3 @@ function DomainMonitorRunEvidenceDtoToJSON(value) {
         blacklist: (0, _1.CheckEmailBlacklistResultsToJSON)(value.blacklist),
     };
 }
-exports.DomainMonitorRunEvidenceDtoToJSON = DomainMonitorRunEvidenceDtoToJSON;

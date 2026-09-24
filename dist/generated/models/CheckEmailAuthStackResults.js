@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckEmailAuthStackResultsToJSON = exports.CheckEmailAuthStackResultsFromJSONTyped = exports.CheckEmailAuthStackResultsFromJSON = exports.CheckEmailAuthStackResultsStatusEnum = void 0;
+exports.CheckEmailAuthStackResultsStatusEnum = void 0;
+exports.CheckEmailAuthStackResultsFromJSON = CheckEmailAuthStackResultsFromJSON;
+exports.CheckEmailAuthStackResultsFromJSONTyped = CheckEmailAuthStackResultsFromJSONTyped;
+exports.CheckEmailAuthStackResultsToJSON = CheckEmailAuthStackResultsToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -25,11 +28,10 @@ var CheckEmailAuthStackResultsStatusEnum;
     CheckEmailAuthStackResultsStatusEnum["DEGRADED"] = "DEGRADED";
     CheckEmailAuthStackResultsStatusEnum["CRITICAL"] = "CRITICAL";
     CheckEmailAuthStackResultsStatusEnum["FAILED"] = "FAILED";
-})(CheckEmailAuthStackResultsStatusEnum = exports.CheckEmailAuthStackResultsStatusEnum || (exports.CheckEmailAuthStackResultsStatusEnum = {}));
+})(CheckEmailAuthStackResultsStatusEnum || (exports.CheckEmailAuthStackResultsStatusEnum = CheckEmailAuthStackResultsStatusEnum = {}));
 function CheckEmailAuthStackResultsFromJSON(json) {
     return CheckEmailAuthStackResultsFromJSONTyped(json, false);
 }
-exports.CheckEmailAuthStackResultsFromJSON = CheckEmailAuthStackResultsFromJSON;
 function CheckEmailAuthStackResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -56,7 +58,6 @@ function CheckEmailAuthStackResultsFromJSONTyped(json, ignoreDiscriminator) {
         advisoryChecks: json['advisoryChecks'],
     };
 }
-exports.CheckEmailAuthStackResultsFromJSONTyped = CheckEmailAuthStackResultsFromJSONTyped;
 function CheckEmailAuthStackResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -86,4 +87,3 @@ function CheckEmailAuthStackResultsToJSON(value) {
         advisoryChecks: value.advisoryChecks,
     };
 }
-exports.CheckEmailAuthStackResultsToJSON = CheckEmailAuthStackResultsToJSON;

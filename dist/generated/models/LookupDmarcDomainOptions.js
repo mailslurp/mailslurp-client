@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupDmarcDomainOptionsToJSON = exports.LookupDmarcDomainOptionsFromJSONTyped = exports.LookupDmarcDomainOptionsFromJSON = void 0;
+exports.LookupDmarcDomainOptionsFromJSON = LookupDmarcDomainOptionsFromJSON;
+exports.LookupDmarcDomainOptionsFromJSONTyped = LookupDmarcDomainOptionsFromJSONTyped;
+exports.LookupDmarcDomainOptionsToJSON = LookupDmarcDomainOptionsToJSON;
 function LookupDmarcDomainOptionsFromJSON(json) {
     return LookupDmarcDomainOptionsFromJSONTyped(json, false);
 }
-exports.LookupDmarcDomainOptionsFromJSON = LookupDmarcDomainOptionsFromJSON;
 function LookupDmarcDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function LookupDmarcDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
         host: json['host'],
     };
 }
-exports.LookupDmarcDomainOptionsFromJSONTyped = LookupDmarcDomainOptionsFromJSONTyped;
 function LookupDmarcDomainOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function LookupDmarcDomainOptionsToJSON(value) {
         host: value.host,
     };
 }
-exports.LookupDmarcDomainOptionsToJSON = LookupDmarcDomainOptionsToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SentEmailProjectionToJSON = exports.SentEmailProjectionFromJSONTyped = exports.SentEmailProjectionFromJSON = void 0;
+exports.SentEmailProjectionFromJSON = SentEmailProjectionFromJSON;
+exports.SentEmailProjectionFromJSONTyped = SentEmailProjectionFromJSONTyped;
+exports.SentEmailProjectionToJSON = SentEmailProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function SentEmailProjectionFromJSON(json) {
     return SentEmailProjectionFromJSONTyped(json, false);
 }
-exports.SentEmailProjectionFromJSON = SentEmailProjectionFromJSON;
 function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -50,7 +51,6 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         virtualSend: json['virtualSend'],
     };
 }
-exports.SentEmailProjectionFromJSONTyped = SentEmailProjectionFromJSONTyped;
 function SentEmailProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -80,4 +80,3 @@ function SentEmailProjectionToJSON(value) {
         virtualSend: value.virtualSend,
     };
 }
-exports.SentEmailProjectionToJSON = SentEmailProjectionToJSON;

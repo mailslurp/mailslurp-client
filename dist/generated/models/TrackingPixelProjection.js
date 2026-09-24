@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TrackingPixelProjectionToJSON = exports.TrackingPixelProjectionFromJSONTyped = exports.TrackingPixelProjectionFromJSON = void 0;
+exports.TrackingPixelProjectionFromJSON = TrackingPixelProjectionFromJSON;
+exports.TrackingPixelProjectionFromJSONTyped = TrackingPixelProjectionFromJSONTyped;
+exports.TrackingPixelProjectionToJSON = TrackingPixelProjectionToJSON;
 var runtime_1 = require("../runtime");
 function TrackingPixelProjectionFromJSON(json) {
     return TrackingPixelProjectionFromJSONTyped(json, false);
 }
-exports.TrackingPixelProjectionFromJSON = TrackingPixelProjectionFromJSON;
 function TrackingPixelProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +40,6 @@ function TrackingPixelProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.TrackingPixelProjectionFromJSONTyped = TrackingPixelProjectionFromJSONTyped;
 function TrackingPixelProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -63,4 +63,3 @@ function TrackingPixelProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.TrackingPixelProjectionToJSON = TrackingPixelProjectionToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PagePhoneMessageThreadProjectionToJSON = exports.PagePhoneMessageThreadProjectionFromJSONTyped = exports.PagePhoneMessageThreadProjectionFromJSON = void 0;
+exports.PagePhoneMessageThreadProjectionFromJSON = PagePhoneMessageThreadProjectionFromJSON;
+exports.PagePhoneMessageThreadProjectionFromJSONTyped = PagePhoneMessageThreadProjectionFromJSONTyped;
+exports.PagePhoneMessageThreadProjectionToJSON = PagePhoneMessageThreadProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PagePhoneMessageThreadProjectionFromJSON(json) {
     return PagePhoneMessageThreadProjectionFromJSONTyped(json, false);
 }
-exports.PagePhoneMessageThreadProjectionFromJSON = PagePhoneMessageThreadProjectionFromJSON;
 function PagePhoneMessageThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PagePhoneMessageThreadProjectionFromJSONTyped(json, ignoreDiscriminator
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PagePhoneMessageThreadProjectionFromJSONTyped = PagePhoneMessageThreadProjectionFromJSONTyped;
 function PagePhoneMessageThreadProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PagePhoneMessageThreadProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PagePhoneMessageThreadProjectionToJSON = PagePhoneMessageThreadProjectionToJSON;

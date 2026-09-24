@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneMessageThreadItemProjectionToJSON = exports.PhoneMessageThreadItemProjectionFromJSONTyped = exports.PhoneMessageThreadItemProjectionFromJSON = exports.PhoneMessageThreadItemProjectionMessageDirectionEnum = void 0;
+exports.PhoneMessageThreadItemProjectionMessageDirectionEnum = void 0;
+exports.PhoneMessageThreadItemProjectionFromJSON = PhoneMessageThreadItemProjectionFromJSON;
+exports.PhoneMessageThreadItemProjectionFromJSONTyped = PhoneMessageThreadItemProjectionFromJSONTyped;
+exports.PhoneMessageThreadItemProjectionToJSON = PhoneMessageThreadItemProjectionToJSON;
 /**
  * @export
  * @enum {string}
@@ -22,11 +25,10 @@ var PhoneMessageThreadItemProjectionMessageDirectionEnum;
 (function (PhoneMessageThreadItemProjectionMessageDirectionEnum) {
     PhoneMessageThreadItemProjectionMessageDirectionEnum["OUTBOUND"] = "OUTBOUND";
     PhoneMessageThreadItemProjectionMessageDirectionEnum["INBOUND"] = "INBOUND";
-})(PhoneMessageThreadItemProjectionMessageDirectionEnum = exports.PhoneMessageThreadItemProjectionMessageDirectionEnum || (exports.PhoneMessageThreadItemProjectionMessageDirectionEnum = {}));
+})(PhoneMessageThreadItemProjectionMessageDirectionEnum || (exports.PhoneMessageThreadItemProjectionMessageDirectionEnum = PhoneMessageThreadItemProjectionMessageDirectionEnum = {}));
 function PhoneMessageThreadItemProjectionFromJSON(json) {
     return PhoneMessageThreadItemProjectionFromJSONTyped(json, false);
 }
-exports.PhoneMessageThreadItemProjectionFromJSON = PhoneMessageThreadItemProjectionFromJSON;
 function PhoneMessageThreadItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -41,7 +43,6 @@ function PhoneMessageThreadItemProjectionFromJSONTyped(json, ignoreDiscriminator
         id: json['id'],
     };
 }
-exports.PhoneMessageThreadItemProjectionFromJSONTyped = PhoneMessageThreadItemProjectionFromJSONTyped;
 function PhoneMessageThreadItemProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +60,3 @@ function PhoneMessageThreadItemProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.PhoneMessageThreadItemProjectionToJSON = PhoneMessageThreadItemProjectionToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TemplateVariableToJSON = exports.TemplateVariableFromJSONTyped = exports.TemplateVariableFromJSON = exports.TemplateVariableVariableTypeEnum = void 0;
+exports.TemplateVariableVariableTypeEnum = void 0;
+exports.TemplateVariableFromJSON = TemplateVariableFromJSON;
+exports.TemplateVariableFromJSONTyped = TemplateVariableFromJSONTyped;
+exports.TemplateVariableToJSON = TemplateVariableToJSON;
 /**
  * @export
  * @enum {string}
@@ -21,11 +24,10 @@ exports.TemplateVariableToJSON = exports.TemplateVariableFromJSONTyped = exports
 var TemplateVariableVariableTypeEnum;
 (function (TemplateVariableVariableTypeEnum) {
     TemplateVariableVariableTypeEnum["STRING"] = "STRING";
-})(TemplateVariableVariableTypeEnum = exports.TemplateVariableVariableTypeEnum || (exports.TemplateVariableVariableTypeEnum = {}));
+})(TemplateVariableVariableTypeEnum || (exports.TemplateVariableVariableTypeEnum = TemplateVariableVariableTypeEnum = {}));
 function TemplateVariableFromJSON(json) {
     return TemplateVariableFromJSONTyped(json, false);
 }
-exports.TemplateVariableFromJSON = TemplateVariableFromJSON;
 function TemplateVariableFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +37,6 @@ function TemplateVariableFromJSONTyped(json, ignoreDiscriminator) {
         variableType: json['variableType'],
     };
 }
-exports.TemplateVariableFromJSONTyped = TemplateVariableFromJSONTyped;
 function TemplateVariableToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +49,3 @@ function TemplateVariableToJSON(value) {
         variableType: value.variableType,
     };
 }
-exports.TemplateVariableToJSON = TemplateVariableToJSON;

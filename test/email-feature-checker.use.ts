@@ -4,9 +4,8 @@ import {
   EmailFeatureSupportStatusPercentageStatusEnum,
 } from '../src';
 
-jest.setTimeout(120_000);
 const timeout = 120001;
-jest.setTimeout(timeout);
+vi.setConfig({ testTimeout: timeout });
 integrationTest('can check email compatibility', async (mailslurp) => {
   const inbox = await mailslurp.createInbox();
   await mailslurp.inboxController.sendEmail({

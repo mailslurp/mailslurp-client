@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDevicePreviewQaOptionsToJSON = exports.CreateDevicePreviewQaOptionsFromJSONTyped = exports.CreateDevicePreviewQaOptionsFromJSON = void 0;
+exports.CreateDevicePreviewQaOptionsFromJSON = CreateDevicePreviewQaOptionsFromJSON;
+exports.CreateDevicePreviewQaOptionsFromJSONTyped = CreateDevicePreviewQaOptionsFromJSONTyped;
+exports.CreateDevicePreviewQaOptionsToJSON = CreateDevicePreviewQaOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateDevicePreviewQaOptionsFromJSON(json) {
     return CreateDevicePreviewQaOptionsFromJSONTyped(json, false);
 }
-exports.CreateDevicePreviewQaOptionsFromJSON = CreateDevicePreviewQaOptionsFromJSON;
 function CreateDevicePreviewQaOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function CreateDevicePreviewQaOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['senderDomain'],
     };
 }
-exports.CreateDevicePreviewQaOptionsFromJSONTyped = CreateDevicePreviewQaOptionsFromJSONTyped;
 function CreateDevicePreviewQaOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function CreateDevicePreviewQaOptionsToJSON(value) {
         senderDomain: value.senderDomain,
     };
 }
-exports.CreateDevicePreviewQaOptionsToJSON = CreateDevicePreviewQaOptionsToJSON;

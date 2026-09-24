@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeatureNamesToJSON = exports.EmailFeatureNamesFromJSONTyped = exports.EmailFeatureNamesFromJSON = void 0;
+exports.EmailFeatureNamesFromJSON = EmailFeatureNamesFromJSON;
+exports.EmailFeatureNamesFromJSONTyped = EmailFeatureNamesFromJSONTyped;
+exports.EmailFeatureNamesToJSON = EmailFeatureNamesToJSON;
 var _1 = require("./");
 function EmailFeatureNamesFromJSON(json) {
     return EmailFeatureNamesFromJSONTyped(json, false);
 }
-exports.EmailFeatureNamesFromJSON = EmailFeatureNamesFromJSON;
 function EmailFeatureNamesFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function EmailFeatureNamesFromJSONTyped(json, ignoreDiscriminator) {
         category: json['category'].map(_1.EmailFeatureCategoryNameFromJSON),
     };
 }
-exports.EmailFeatureNamesFromJSONTyped = EmailFeatureNamesFromJSONTyped;
 function EmailFeatureNamesToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function EmailFeatureNamesToJSON(value) {
         category: value.category.map(_1.EmailFeatureCategoryNameToJSON),
     };
 }
-exports.EmailFeatureNamesToJSON = EmailFeatureNamesToJSON;

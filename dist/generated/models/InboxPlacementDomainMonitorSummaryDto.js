@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementDomainMonitorSummaryDtoToJSON = exports.InboxPlacementDomainMonitorSummaryDtoFromJSONTyped = exports.InboxPlacementDomainMonitorSummaryDtoFromJSON = exports.InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum = exports.InboxPlacementDomainMonitorSummaryDtoStatusEnum = exports.InboxPlacementDomainMonitorSummaryDtoSourceEnum = exports.InboxPlacementDomainMonitorSummaryDtoStateEnum = void 0;
+exports.InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum = exports.InboxPlacementDomainMonitorSummaryDtoStatusEnum = exports.InboxPlacementDomainMonitorSummaryDtoSourceEnum = exports.InboxPlacementDomainMonitorSummaryDtoStateEnum = void 0;
+exports.InboxPlacementDomainMonitorSummaryDtoFromJSON = InboxPlacementDomainMonitorSummaryDtoFromJSON;
+exports.InboxPlacementDomainMonitorSummaryDtoFromJSONTyped = InboxPlacementDomainMonitorSummaryDtoFromJSONTyped;
+exports.InboxPlacementDomainMonitorSummaryDtoToJSON = InboxPlacementDomainMonitorSummaryDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,7 +28,7 @@ var InboxPlacementDomainMonitorSummaryDtoStateEnum;
     InboxPlacementDomainMonitorSummaryDtoStateEnum["QUICK_CHECK_READY"] = "QUICK_CHECK_READY";
     InboxPlacementDomainMonitorSummaryDtoStateEnum["PROVIDER_MANAGED"] = "PROVIDER_MANAGED";
     InboxPlacementDomainMonitorSummaryDtoStateEnum["ERROR"] = "ERROR";
-})(InboxPlacementDomainMonitorSummaryDtoStateEnum = exports.InboxPlacementDomainMonitorSummaryDtoStateEnum || (exports.InboxPlacementDomainMonitorSummaryDtoStateEnum = {}));
+})(InboxPlacementDomainMonitorSummaryDtoStateEnum || (exports.InboxPlacementDomainMonitorSummaryDtoStateEnum = InboxPlacementDomainMonitorSummaryDtoStateEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -36,7 +39,7 @@ var InboxPlacementDomainMonitorSummaryDtoSourceEnum;
     InboxPlacementDomainMonitorSummaryDtoSourceEnum["QUICK_CHECK"] = "QUICK_CHECK";
     InboxPlacementDomainMonitorSummaryDtoSourceEnum["OBSERVED_MESSAGE"] = "OBSERVED_MESSAGE";
     InboxPlacementDomainMonitorSummaryDtoSourceEnum["PERSISTENT_MONITOR"] = "PERSISTENT_MONITOR";
-})(InboxPlacementDomainMonitorSummaryDtoSourceEnum = exports.InboxPlacementDomainMonitorSummaryDtoSourceEnum || (exports.InboxPlacementDomainMonitorSummaryDtoSourceEnum = {}));
+})(InboxPlacementDomainMonitorSummaryDtoSourceEnum || (exports.InboxPlacementDomainMonitorSummaryDtoSourceEnum = InboxPlacementDomainMonitorSummaryDtoSourceEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -47,7 +50,7 @@ var InboxPlacementDomainMonitorSummaryDtoStatusEnum;
     InboxPlacementDomainMonitorSummaryDtoStatusEnum["DEGRADED"] = "DEGRADED";
     InboxPlacementDomainMonitorSummaryDtoStatusEnum["CRITICAL"] = "CRITICAL";
     InboxPlacementDomainMonitorSummaryDtoStatusEnum["FAILED"] = "FAILED";
-})(InboxPlacementDomainMonitorSummaryDtoStatusEnum = exports.InboxPlacementDomainMonitorSummaryDtoStatusEnum || (exports.InboxPlacementDomainMonitorSummaryDtoStatusEnum = {}));
+})(InboxPlacementDomainMonitorSummaryDtoStatusEnum || (exports.InboxPlacementDomainMonitorSummaryDtoStatusEnum = InboxPlacementDomainMonitorSummaryDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -58,11 +61,10 @@ var InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum;
     InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum["NOT_LISTED"] = "NOT_LISTED";
     InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum["ERROR"] = "ERROR";
     InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum["NOT_CHECKED"] = "NOT_CHECKED";
-})(InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum = exports.InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum || (exports.InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum = {}));
+})(InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum || (exports.InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum = InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum = {}));
 function InboxPlacementDomainMonitorSummaryDtoFromJSON(json) {
     return InboxPlacementDomainMonitorSummaryDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementDomainMonitorSummaryDtoFromJSON = InboxPlacementDomainMonitorSummaryDtoFromJSON;
 function InboxPlacementDomainMonitorSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -115,7 +117,6 @@ function InboxPlacementDomainMonitorSummaryDtoFromJSONTyped(json, ignoreDiscrimi
                 : new Date(json['checkedAt']),
     };
 }
-exports.InboxPlacementDomainMonitorSummaryDtoFromJSONTyped = InboxPlacementDomainMonitorSummaryDtoFromJSONTyped;
 function InboxPlacementDomainMonitorSummaryDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -159,4 +160,3 @@ function InboxPlacementDomainMonitorSummaryDtoToJSON(value) {
                 : value.checkedAt.toISOString(),
     };
 }
-exports.InboxPlacementDomainMonitorSummaryDtoToJSON = InboxPlacementDomainMonitorSummaryDtoToJSON;

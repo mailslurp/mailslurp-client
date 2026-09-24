@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TrackingPixelDtoToJSON = exports.TrackingPixelDtoFromJSONTyped = exports.TrackingPixelDtoFromJSON = void 0;
+exports.TrackingPixelDtoFromJSON = TrackingPixelDtoFromJSON;
+exports.TrackingPixelDtoFromJSONTyped = TrackingPixelDtoFromJSONTyped;
+exports.TrackingPixelDtoToJSON = TrackingPixelDtoToJSON;
 var runtime_1 = require("../runtime");
 function TrackingPixelDtoFromJSON(json) {
     return TrackingPixelDtoFromJSONTyped(json, false);
 }
-exports.TrackingPixelDtoFromJSON = TrackingPixelDtoFromJSON;
 function TrackingPixelDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +40,6 @@ function TrackingPixelDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.TrackingPixelDtoFromJSONTyped = TrackingPixelDtoFromJSONTyped;
 function TrackingPixelDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -63,4 +63,3 @@ function TrackingPixelDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.TrackingPixelDtoToJSON = TrackingPixelDtoToJSON;

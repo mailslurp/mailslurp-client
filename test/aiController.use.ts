@@ -4,7 +4,6 @@ import {
 } from '../dist';
 import { integrationTest } from './_helpers';
 
-jest.setTimeout(120_000);
 integrationTest('can use structured content', async (mailslurp) => {
   const emailId = '';
   const instructions = '';

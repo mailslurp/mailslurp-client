@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RulesetTestOptionsToJSON = exports.RulesetTestOptionsFromJSONTyped = exports.RulesetTestOptionsFromJSON = void 0;
+exports.RulesetTestOptionsFromJSON = RulesetTestOptionsFromJSON;
+exports.RulesetTestOptionsFromJSONTyped = RulesetTestOptionsFromJSONTyped;
+exports.RulesetTestOptionsToJSON = RulesetTestOptionsToJSON;
 function RulesetTestOptionsFromJSON(json) {
     return RulesetTestOptionsFromJSONTyped(json, false);
 }
-exports.RulesetTestOptionsFromJSON = RulesetTestOptionsFromJSON;
 function RulesetTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function RulesetTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
         testTarget: json['testTarget'],
     };
 }
-exports.RulesetTestOptionsFromJSONTyped = RulesetTestOptionsFromJSONTyped;
 function RulesetTestOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function RulesetTestOptionsToJSON(value) {
         testTarget: value.testTarget,
     };
 }
-exports.RulesetTestOptionsToJSON = RulesetTestOptionsToJSON;

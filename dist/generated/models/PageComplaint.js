@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageComplaintToJSON = exports.PageComplaintFromJSONTyped = exports.PageComplaintFromJSON = void 0;
+exports.PageComplaintFromJSON = PageComplaintFromJSON;
+exports.PageComplaintFromJSONTyped = PageComplaintFromJSONTyped;
+exports.PageComplaintToJSON = PageComplaintToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageComplaintFromJSON(json) {
     return PageComplaintFromJSONTyped(json, false);
 }
-exports.PageComplaintFromJSON = PageComplaintFromJSON;
 function PageComplaintFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageComplaintFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageComplaintFromJSONTyped = PageComplaintFromJSONTyped;
 function PageComplaintToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageComplaintToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageComplaintToJSON = PageComplaintToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentInboxSendPolicyDtoToJSON = exports.AgentInboxSendPolicyDtoFromJSONTyped = exports.AgentInboxSendPolicyDtoFromJSON = void 0;
+exports.AgentInboxSendPolicyDtoFromJSON = AgentInboxSendPolicyDtoFromJSON;
+exports.AgentInboxSendPolicyDtoFromJSONTyped = AgentInboxSendPolicyDtoFromJSONTyped;
+exports.AgentInboxSendPolicyDtoToJSON = AgentInboxSendPolicyDtoToJSON;
 var runtime_1 = require("../runtime");
 function AgentInboxSendPolicyDtoFromJSON(json) {
     return AgentInboxSendPolicyDtoFromJSONTyped(json, false);
 }
-exports.AgentInboxSendPolicyDtoFromJSON = AgentInboxSendPolicyDtoFromJSON;
 function AgentInboxSendPolicyDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function AgentInboxSendPolicyDtoFromJSONTyped(json, ignoreDiscriminator) {
         operatorUrl: json['operatorUrl'],
     };
 }
-exports.AgentInboxSendPolicyDtoFromJSONTyped = AgentInboxSendPolicyDtoFromJSONTyped;
 function AgentInboxSendPolicyDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function AgentInboxSendPolicyDtoToJSON(value) {
         operatorUrl: value.operatorUrl,
     };
 }
-exports.AgentInboxSendPolicyDtoToJSON = AgentInboxSendPolicyDtoToJSON;

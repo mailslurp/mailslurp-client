@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupBimiDomainOptionsToJSON = exports.LookupBimiDomainOptionsFromJSONTyped = exports.LookupBimiDomainOptionsFromJSON = void 0;
+exports.LookupBimiDomainOptionsFromJSON = LookupBimiDomainOptionsFromJSON;
+exports.LookupBimiDomainOptionsFromJSONTyped = LookupBimiDomainOptionsFromJSONTyped;
+exports.LookupBimiDomainOptionsToJSON = LookupBimiDomainOptionsToJSON;
 function LookupBimiDomainOptionsFromJSON(json) {
     return LookupBimiDomainOptionsFromJSONTyped(json, false);
 }
-exports.LookupBimiDomainOptionsFromJSON = LookupBimiDomainOptionsFromJSON;
 function LookupBimiDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function LookupBimiDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
         host: json['host'],
     };
 }
-exports.LookupBimiDomainOptionsFromJSONTyped = LookupBimiDomainOptionsFromJSONTyped;
 function LookupBimiDomainOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function LookupBimiDomainOptionsToJSON(value) {
         host: value.host,
     };
 }
-exports.LookupBimiDomainOptionsToJSON = LookupBimiDomainOptionsToJSON;

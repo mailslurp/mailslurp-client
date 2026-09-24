@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailSignatureParseResultToJSON = exports.EmailSignatureParseResultFromJSONTyped = exports.EmailSignatureParseResultFromJSON = void 0;
+exports.EmailSignatureParseResultFromJSON = EmailSignatureParseResultFromJSON;
+exports.EmailSignatureParseResultFromJSONTyped = EmailSignatureParseResultFromJSONTyped;
+exports.EmailSignatureParseResultToJSON = EmailSignatureParseResultToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function EmailSignatureParseResultFromJSON(json) {
     return EmailSignatureParseResultFromJSONTyped(json, false);
 }
-exports.EmailSignatureParseResultFromJSON = EmailSignatureParseResultFromJSON;
 function EmailSignatureParseResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function EmailSignatureParseResultFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.EmailSignatureFromJSON)(json['signature']),
     };
 }
-exports.EmailSignatureParseResultFromJSONTyped = EmailSignatureParseResultFromJSONTyped;
 function EmailSignatureParseResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function EmailSignatureParseResultToJSON(value) {
         signature: (0, _1.EmailSignatureToJSON)(value.signature),
     };
 }
-exports.EmailSignatureParseResultToJSON = EmailSignatureParseResultToJSON;

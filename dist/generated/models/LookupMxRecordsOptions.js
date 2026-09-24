@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupMxRecordsOptionsToJSON = exports.LookupMxRecordsOptionsFromJSONTyped = exports.LookupMxRecordsOptionsFromJSON = void 0;
+exports.LookupMxRecordsOptionsFromJSON = LookupMxRecordsOptionsFromJSON;
+exports.LookupMxRecordsOptionsFromJSONTyped = LookupMxRecordsOptionsFromJSONTyped;
+exports.LookupMxRecordsOptionsToJSON = LookupMxRecordsOptionsToJSON;
 function LookupMxRecordsOptionsFromJSON(json) {
     return LookupMxRecordsOptionsFromJSONTyped(json, false);
 }
-exports.LookupMxRecordsOptionsFromJSON = LookupMxRecordsOptionsFromJSON;
 function LookupMxRecordsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function LookupMxRecordsOptionsFromJSONTyped(json, ignoreDiscriminator) {
         host: json['host'],
     };
 }
-exports.LookupMxRecordsOptionsFromJSONTyped = LookupMxRecordsOptionsFromJSONTyped;
 function LookupMxRecordsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function LookupMxRecordsOptionsToJSON(value) {
         host: value.host,
     };
 }
-exports.LookupMxRecordsOptionsToJSON = LookupMxRecordsOptionsToJSON;

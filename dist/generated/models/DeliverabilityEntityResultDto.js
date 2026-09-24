@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityEntityResultDtoToJSON = exports.DeliverabilityEntityResultDtoFromJSONTyped = exports.DeliverabilityEntityResultDtoFromJSON = exports.DeliverabilityEntityResultDtoPhoneVariantEnum = exports.DeliverabilityEntityResultDtoPhoneCountryEnum = void 0;
+exports.DeliverabilityEntityResultDtoPhoneVariantEnum = exports.DeliverabilityEntityResultDtoPhoneCountryEnum = void 0;
+exports.DeliverabilityEntityResultDtoFromJSON = DeliverabilityEntityResultDtoFromJSON;
+exports.DeliverabilityEntityResultDtoFromJSONTyped = DeliverabilityEntityResultDtoFromJSONTyped;
+exports.DeliverabilityEntityResultDtoToJSON = DeliverabilityEntityResultDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -35,7 +38,7 @@ var DeliverabilityEntityResultDtoPhoneCountryEnum;
     DeliverabilityEntityResultDtoPhoneCountryEnum["IL"] = "IL";
     DeliverabilityEntityResultDtoPhoneCountryEnum["FI"] = "FI";
     DeliverabilityEntityResultDtoPhoneCountryEnum["SE"] = "SE";
-})(DeliverabilityEntityResultDtoPhoneCountryEnum = exports.DeliverabilityEntityResultDtoPhoneCountryEnum || (exports.DeliverabilityEntityResultDtoPhoneCountryEnum = {}));
+})(DeliverabilityEntityResultDtoPhoneCountryEnum || (exports.DeliverabilityEntityResultDtoPhoneCountryEnum = DeliverabilityEntityResultDtoPhoneCountryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -45,11 +48,10 @@ var DeliverabilityEntityResultDtoPhoneVariantEnum;
     DeliverabilityEntityResultDtoPhoneVariantEnum["LOCAL"] = "LOCAL";
     DeliverabilityEntityResultDtoPhoneVariantEnum["MOBILE"] = "MOBILE";
     DeliverabilityEntityResultDtoPhoneVariantEnum["TOLL_FREE"] = "TOLL_FREE";
-})(DeliverabilityEntityResultDtoPhoneVariantEnum = exports.DeliverabilityEntityResultDtoPhoneVariantEnum || (exports.DeliverabilityEntityResultDtoPhoneVariantEnum = {}));
+})(DeliverabilityEntityResultDtoPhoneVariantEnum || (exports.DeliverabilityEntityResultDtoPhoneVariantEnum = DeliverabilityEntityResultDtoPhoneVariantEnum = {}));
 function DeliverabilityEntityResultDtoFromJSON(json) {
     return DeliverabilityEntityResultDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilityEntityResultDtoFromJSON = DeliverabilityEntityResultDtoFromJSON;
 function DeliverabilityEntityResultDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -74,7 +76,6 @@ function DeliverabilityEntityResultDtoFromJSONTyped(json, ignoreDiscriminator) {
         expectationResults: json['expectationResults'].map(_1.DeliverabilityExpectationResultDtoFromJSON),
     };
 }
-exports.DeliverabilityEntityResultDtoFromJSONTyped = DeliverabilityEntityResultDtoFromJSONTyped;
 function DeliverabilityEntityResultDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -98,4 +99,3 @@ function DeliverabilityEntityResultDtoToJSON(value) {
         expectationResults: value.expectationResults.map(_1.DeliverabilityExpectationResultDtoToJSON),
     };
 }
-exports.DeliverabilityEntityResultDtoToJSON = DeliverabilityEntityResultDtoToJSON;

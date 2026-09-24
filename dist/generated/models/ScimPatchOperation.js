@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScimPatchOperationToJSON = exports.ScimPatchOperationFromJSONTyped = exports.ScimPatchOperationFromJSON = void 0;
+exports.ScimPatchOperationFromJSON = ScimPatchOperationFromJSON;
+exports.ScimPatchOperationFromJSONTyped = ScimPatchOperationFromJSONTyped;
+exports.ScimPatchOperationToJSON = ScimPatchOperationToJSON;
 var runtime_1 = require("../runtime");
 function ScimPatchOperationFromJSON(json) {
     return ScimPatchOperationFromJSONTyped(json, false);
 }
-exports.ScimPatchOperationFromJSON = ScimPatchOperationFromJSON;
 function ScimPatchOperationFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function ScimPatchOperationFromJSONTyped(json, ignoreDiscriminator) {
         value: !(0, runtime_1.exists)(json, 'value') ? undefined : json['value'],
     };
 }
-exports.ScimPatchOperationFromJSONTyped = ScimPatchOperationFromJSONTyped;
 function ScimPatchOperationToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ScimPatchOperationToJSON(value) {
         value: value.value,
     };
 }
-exports.ScimPatchOperationToJSON = ScimPatchOperationToJSON;

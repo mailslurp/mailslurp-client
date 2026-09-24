@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConsentStatusDtoToJSON = exports.ConsentStatusDtoFromJSONTyped = exports.ConsentStatusDtoFromJSON = void 0;
+exports.ConsentStatusDtoFromJSON = ConsentStatusDtoFromJSON;
+exports.ConsentStatusDtoFromJSONTyped = ConsentStatusDtoFromJSONTyped;
+exports.ConsentStatusDtoToJSON = ConsentStatusDtoToJSON;
 function ConsentStatusDtoFromJSON(json) {
     return ConsentStatusDtoFromJSONTyped(json, false);
 }
-exports.ConsentStatusDtoFromJSON = ConsentStatusDtoFromJSON;
 function ConsentStatusDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function ConsentStatusDtoFromJSONTyped(json, ignoreDiscriminator) {
         consented: json['consented'],
     };
 }
-exports.ConsentStatusDtoFromJSONTyped = ConsentStatusDtoFromJSONTyped;
 function ConsentStatusDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function ConsentStatusDtoToJSON(value) {
         consented: value.consented,
     };
 }
-exports.ConsentStatusDtoToJSON = ConsentStatusDtoToJSON;

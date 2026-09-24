@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilitySimulationJobErrorSummaryDtoToJSON = exports.DeliverabilitySimulationJobErrorSummaryDtoFromJSONTyped = exports.DeliverabilitySimulationJobErrorSummaryDtoFromJSON = void 0;
+exports.DeliverabilitySimulationJobErrorSummaryDtoFromJSON = DeliverabilitySimulationJobErrorSummaryDtoFromJSON;
+exports.DeliverabilitySimulationJobErrorSummaryDtoFromJSONTyped = DeliverabilitySimulationJobErrorSummaryDtoFromJSONTyped;
+exports.DeliverabilitySimulationJobErrorSummaryDtoToJSON = DeliverabilitySimulationJobErrorSummaryDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function DeliverabilitySimulationJobErrorSummaryDtoFromJSON(json) {
     return DeliverabilitySimulationJobErrorSummaryDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilitySimulationJobErrorSummaryDtoFromJSON = DeliverabilitySimulationJobErrorSummaryDtoFromJSON;
 function DeliverabilitySimulationJobErrorSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function DeliverabilitySimulationJobErrorSummaryDtoFromJSONTyped(json, ignoreDis
         topErrors: json['topErrors'].map(_1.DeliverabilitySimulationJobTopErrorDtoFromJSON),
     };
 }
-exports.DeliverabilitySimulationJobErrorSummaryDtoFromJSONTyped = DeliverabilitySimulationJobErrorSummaryDtoFromJSONTyped;
 function DeliverabilitySimulationJobErrorSummaryDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function DeliverabilitySimulationJobErrorSummaryDtoToJSON(value) {
         topErrors: value.topErrors.map(_1.DeliverabilitySimulationJobTopErrorDtoToJSON),
     };
 }
-exports.DeliverabilitySimulationJobErrorSummaryDtoToJSON = DeliverabilitySimulationJobErrorSummaryDtoToJSON;

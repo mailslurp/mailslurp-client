@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupBimiDomainResultsToJSON = exports.LookupBimiDomainResultsFromJSONTyped = exports.LookupBimiDomainResultsFromJSON = void 0;
+exports.LookupBimiDomainResultsFromJSON = LookupBimiDomainResultsFromJSON;
+exports.LookupBimiDomainResultsFromJSONTyped = LookupBimiDomainResultsFromJSONTyped;
+exports.LookupBimiDomainResultsToJSON = LookupBimiDomainResultsToJSON;
 var _1 = require("./");
 function LookupBimiDomainResultsFromJSON(json) {
     return LookupBimiDomainResultsFromJSONTyped(json, false);
 }
-exports.LookupBimiDomainResultsFromJSON = LookupBimiDomainResultsFromJSON;
 function LookupBimiDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function LookupBimiDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
         warnings: json['warnings'],
     };
 }
-exports.LookupBimiDomainResultsFromJSONTyped = LookupBimiDomainResultsFromJSONTyped;
 function LookupBimiDomainResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function LookupBimiDomainResultsToJSON(value) {
         warnings: value.warnings,
     };
 }
-exports.LookupBimiDomainResultsToJSON = LookupBimiDomainResultsToJSON;

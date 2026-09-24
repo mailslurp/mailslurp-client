@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookRedriveAllResultToJSON = exports.WebhookRedriveAllResultFromJSONTyped = exports.WebhookRedriveAllResultFromJSON = void 0;
+exports.WebhookRedriveAllResultFromJSON = WebhookRedriveAllResultFromJSON;
+exports.WebhookRedriveAllResultFromJSONTyped = WebhookRedriveAllResultFromJSONTyped;
+exports.WebhookRedriveAllResultToJSON = WebhookRedriveAllResultToJSON;
 var runtime_1 = require("../runtime");
 function WebhookRedriveAllResultFromJSON(json) {
     return WebhookRedriveAllResultFromJSONTyped(json, false);
 }
-exports.WebhookRedriveAllResultFromJSON = WebhookRedriveAllResultFromJSON;
 function WebhookRedriveAllResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function WebhookRedriveAllResultFromJSONTyped(json, ignoreDiscriminator) {
         message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
     };
 }
-exports.WebhookRedriveAllResultFromJSONTyped = WebhookRedriveAllResultFromJSONTyped;
 function WebhookRedriveAllResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function WebhookRedriveAllResultToJSON(value) {
         message: value.message,
     };
 }
-exports.WebhookRedriveAllResultToJSON = WebhookRedriveAllResultToJSON;

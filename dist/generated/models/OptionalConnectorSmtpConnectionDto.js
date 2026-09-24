@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OptionalConnectorSmtpConnectionDtoToJSON = exports.OptionalConnectorSmtpConnectionDtoFromJSONTyped = exports.OptionalConnectorSmtpConnectionDtoFromJSON = void 0;
+exports.OptionalConnectorSmtpConnectionDtoFromJSON = OptionalConnectorSmtpConnectionDtoFromJSON;
+exports.OptionalConnectorSmtpConnectionDtoFromJSONTyped = OptionalConnectorSmtpConnectionDtoFromJSONTyped;
+exports.OptionalConnectorSmtpConnectionDtoToJSON = OptionalConnectorSmtpConnectionDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function OptionalConnectorSmtpConnectionDtoFromJSON(json) {
     return OptionalConnectorSmtpConnectionDtoFromJSONTyped(json, false);
 }
-exports.OptionalConnectorSmtpConnectionDtoFromJSON = OptionalConnectorSmtpConnectionDtoFromJSON;
 function OptionalConnectorSmtpConnectionDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function OptionalConnectorSmtpConnectionDtoFromJSONTyped(json, ignoreDiscriminat
             : (0, _1.ConnectorSmtpConnectionDtoFromJSON)(json['result']),
     };
 }
-exports.OptionalConnectorSmtpConnectionDtoFromJSONTyped = OptionalConnectorSmtpConnectionDtoFromJSONTyped;
 function OptionalConnectorSmtpConnectionDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function OptionalConnectorSmtpConnectionDtoToJSON(value) {
         result: (0, _1.ConnectorSmtpConnectionDtoToJSON)(value.result),
     };
 }
-exports.OptionalConnectorSmtpConnectionDtoToJSON = OptionalConnectorSmtpConnectionDtoToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendingConnectionSmtpHostOptionToJSON = exports.SendingConnectionSmtpHostOptionFromJSONTyped = exports.SendingConnectionSmtpHostOptionFromJSON = void 0;
+exports.SendingConnectionSmtpHostOptionFromJSON = SendingConnectionSmtpHostOptionFromJSON;
+exports.SendingConnectionSmtpHostOptionFromJSONTyped = SendingConnectionSmtpHostOptionFromJSONTyped;
+exports.SendingConnectionSmtpHostOptionToJSON = SendingConnectionSmtpHostOptionToJSON;
 function SendingConnectionSmtpHostOptionFromJSON(json) {
     return SendingConnectionSmtpHostOptionFromJSONTyped(json, false);
 }
-exports.SendingConnectionSmtpHostOptionFromJSON = SendingConnectionSmtpHostOptionFromJSON;
 function SendingConnectionSmtpHostOptionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function SendingConnectionSmtpHostOptionFromJSONTyped(json, ignoreDiscriminator)
         label: json['label'],
     };
 }
-exports.SendingConnectionSmtpHostOptionFromJSONTyped = SendingConnectionSmtpHostOptionFromJSONTyped;
 function SendingConnectionSmtpHostOptionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function SendingConnectionSmtpHostOptionToJSON(value) {
         label: value.label,
     };
 }
-exports.SendingConnectionSmtpHostOptionToJSON = SendingConnectionSmtpHostOptionToJSON;

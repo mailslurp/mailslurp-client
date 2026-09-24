@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExpirationDefaultsToJSON = exports.ExpirationDefaultsFromJSONTyped = exports.ExpirationDefaultsFromJSON = void 0;
+exports.ExpirationDefaultsFromJSON = ExpirationDefaultsFromJSON;
+exports.ExpirationDefaultsFromJSONTyped = ExpirationDefaultsFromJSONTyped;
+exports.ExpirationDefaultsToJSON = ExpirationDefaultsToJSON;
 var runtime_1 = require("../runtime");
 function ExpirationDefaultsFromJSON(json) {
     return ExpirationDefaultsFromJSONTyped(json, false);
 }
-exports.ExpirationDefaultsFromJSON = ExpirationDefaultsFromJSON;
 function ExpirationDefaultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +40,6 @@ function ExpirationDefaultsFromJSONTyped(json, ignoreDiscriminator) {
         nextInboxAllowsPermanent: json['nextInboxAllowsPermanent'],
     };
 }
-exports.ExpirationDefaultsFromJSONTyped = ExpirationDefaultsFromJSONTyped;
 function ExpirationDefaultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +59,3 @@ function ExpirationDefaultsToJSON(value) {
         nextInboxAllowsPermanent: value.nextInboxAllowsPermanent,
     };
 }
-exports.ExpirationDefaultsToJSON = ExpirationDefaultsToJSON;

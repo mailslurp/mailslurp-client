@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CampaignProbeDtoToJSON = exports.CampaignProbeDtoFromJSONTyped = exports.CampaignProbeDtoFromJSON = exports.CampaignProbeDtoLastRunStatusEnum = void 0;
+exports.CampaignProbeDtoLastRunStatusEnum = void 0;
+exports.CampaignProbeDtoFromJSON = CampaignProbeDtoFromJSON;
+exports.CampaignProbeDtoFromJSONTyped = CampaignProbeDtoFromJSONTyped;
+exports.CampaignProbeDtoToJSON = CampaignProbeDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var CampaignProbeDtoLastRunStatusEnum;
     CampaignProbeDtoLastRunStatusEnum["HEALTHY"] = "HEALTHY";
     CampaignProbeDtoLastRunStatusEnum["WARNING"] = "WARNING";
     CampaignProbeDtoLastRunStatusEnum["FAILED"] = "FAILED";
-})(CampaignProbeDtoLastRunStatusEnum = exports.CampaignProbeDtoLastRunStatusEnum || (exports.CampaignProbeDtoLastRunStatusEnum = {}));
+})(CampaignProbeDtoLastRunStatusEnum || (exports.CampaignProbeDtoLastRunStatusEnum = CampaignProbeDtoLastRunStatusEnum = {}));
 function CampaignProbeDtoFromJSON(json) {
     return CampaignProbeDtoFromJSONTyped(json, false);
 }
-exports.CampaignProbeDtoFromJSON = CampaignProbeDtoFromJSON;
 function CampaignProbeDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -65,7 +67,6 @@ function CampaignProbeDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.CampaignProbeDtoFromJSONTyped = CampaignProbeDtoFromJSONTyped;
 function CampaignProbeDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -99,4 +100,3 @@ function CampaignProbeDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.CampaignProbeDtoToJSON = CampaignProbeDtoToJSON;

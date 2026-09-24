@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PostmasterTrafficStatsDtoToJSON = exports.PostmasterTrafficStatsDtoFromJSONTyped = exports.PostmasterTrafficStatsDtoFromJSON = void 0;
+exports.PostmasterTrafficStatsDtoFromJSON = PostmasterTrafficStatsDtoFromJSON;
+exports.PostmasterTrafficStatsDtoFromJSONTyped = PostmasterTrafficStatsDtoFromJSONTyped;
+exports.PostmasterTrafficStatsDtoToJSON = PostmasterTrafficStatsDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PostmasterTrafficStatsDtoFromJSON(json) {
     return PostmasterTrafficStatsDtoFromJSONTyped(json, false);
 }
-exports.PostmasterTrafficStatsDtoFromJSON = PostmasterTrafficStatsDtoFromJSON;
 function PostmasterTrafficStatsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -57,7 +58,6 @@ function PostmasterTrafficStatsDtoFromJSONTyped(json, ignoreDiscriminator) {
         payload: json['payload'],
     };
 }
-exports.PostmasterTrafficStatsDtoFromJSONTyped = PostmasterTrafficStatsDtoFromJSONTyped;
 function PostmasterTrafficStatsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -84,4 +84,3 @@ function PostmasterTrafficStatsDtoToJSON(value) {
         payload: value.payload,
     };
 }
-exports.PostmasterTrafficStatsDtoToJSON = PostmasterTrafficStatsDtoToJSON;

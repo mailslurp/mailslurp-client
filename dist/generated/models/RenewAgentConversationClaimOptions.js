@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RenewAgentConversationClaimOptionsToJSON = exports.RenewAgentConversationClaimOptionsFromJSONTyped = exports.RenewAgentConversationClaimOptionsFromJSON = void 0;
+exports.RenewAgentConversationClaimOptionsFromJSON = RenewAgentConversationClaimOptionsFromJSON;
+exports.RenewAgentConversationClaimOptionsFromJSONTyped = RenewAgentConversationClaimOptionsFromJSONTyped;
+exports.RenewAgentConversationClaimOptionsToJSON = RenewAgentConversationClaimOptionsToJSON;
 function RenewAgentConversationClaimOptionsFromJSON(json) {
     return RenewAgentConversationClaimOptionsFromJSONTyped(json, false);
 }
-exports.RenewAgentConversationClaimOptionsFromJSON = RenewAgentConversationClaimOptionsFromJSON;
 function RenewAgentConversationClaimOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function RenewAgentConversationClaimOptionsFromJSONTyped(json, ignoreDiscriminat
         leaseSeconds: json['leaseSeconds'],
     };
 }
-exports.RenewAgentConversationClaimOptionsFromJSONTyped = RenewAgentConversationClaimOptionsFromJSONTyped;
 function RenewAgentConversationClaimOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function RenewAgentConversationClaimOptionsToJSON(value) {
         leaseSeconds: value.leaseSeconds,
     };
 }
-exports.RenewAgentConversationClaimOptionsToJSON = RenewAgentConversationClaimOptionsToJSON;

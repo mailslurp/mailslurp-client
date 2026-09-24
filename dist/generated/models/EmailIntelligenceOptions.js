@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailIntelligenceOptionsToJSON = exports.EmailIntelligenceOptionsFromJSONTyped = exports.EmailIntelligenceOptionsFromJSON = void 0;
+exports.EmailIntelligenceOptionsFromJSON = EmailIntelligenceOptionsFromJSON;
+exports.EmailIntelligenceOptionsFromJSONTyped = EmailIntelligenceOptionsFromJSONTyped;
+exports.EmailIntelligenceOptionsToJSON = EmailIntelligenceOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function EmailIntelligenceOptionsFromJSON(json) {
     return EmailIntelligenceOptionsFromJSONTyped(json, false);
 }
-exports.EmailIntelligenceOptionsFromJSON = EmailIntelligenceOptionsFromJSON;
 function EmailIntelligenceOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function EmailIntelligenceOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.EmailIntelligenceTestsOptionsFromJSON)(json['tests']),
     };
 }
-exports.EmailIntelligenceOptionsFromJSONTyped = EmailIntelligenceOptionsFromJSONTyped;
 function EmailIntelligenceOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +54,3 @@ function EmailIntelligenceOptionsToJSON(value) {
         tests: (0, _1.EmailIntelligenceTestsOptionsToJSON)(value.tests),
     };
 }
-exports.EmailIntelligenceOptionsToJSON = EmailIntelligenceOptionsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AliasThreadProjectionToJSON = exports.AliasThreadProjectionFromJSONTyped = exports.AliasThreadProjectionFromJSON = void 0;
+exports.AliasThreadProjectionFromJSON = AliasThreadProjectionFromJSON;
+exports.AliasThreadProjectionFromJSONTyped = AliasThreadProjectionFromJSONTyped;
+exports.AliasThreadProjectionToJSON = AliasThreadProjectionToJSON;
 var runtime_1 = require("../runtime");
 function AliasThreadProjectionFromJSON(json) {
     return AliasThreadProjectionFromJSONTyped(json, false);
 }
-exports.AliasThreadProjectionFromJSON = AliasThreadProjectionFromJSON;
 function AliasThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function AliasThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.AliasThreadProjectionFromJSONTyped = AliasThreadProjectionFromJSONTyped;
 function AliasThreadProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +59,3 @@ function AliasThreadProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.AliasThreadProjectionToJSON = AliasThreadProjectionToJSON;

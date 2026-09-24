@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScimMetaToJSON = exports.ScimMetaFromJSONTyped = exports.ScimMetaFromJSON = void 0;
+exports.ScimMetaFromJSON = ScimMetaFromJSON;
+exports.ScimMetaFromJSONTyped = ScimMetaFromJSONTyped;
+exports.ScimMetaToJSON = ScimMetaToJSON;
 var runtime_1 = require("../runtime");
 function ScimMetaFromJSON(json) {
     return ScimMetaFromJSONTyped(json, false);
 }
-exports.ScimMetaFromJSON = ScimMetaFromJSON;
 function ScimMetaFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +39,6 @@ function ScimMetaFromJSONTyped(json, ignoreDiscriminator) {
         location: !(0, runtime_1.exists)(json, 'location') ? undefined : json['location'],
     };
 }
-exports.ScimMetaFromJSONTyped = ScimMetaFromJSONTyped;
 function ScimMetaToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -61,4 +61,3 @@ function ScimMetaToJSON(value) {
         location: value.location,
     };
 }
-exports.ScimMetaToJSON = ScimMetaToJSON;

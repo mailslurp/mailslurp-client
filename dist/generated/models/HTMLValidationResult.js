@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HTMLValidationResultToJSON = exports.HTMLValidationResultFromJSONTyped = exports.HTMLValidationResultFromJSON = void 0;
+exports.HTMLValidationResultFromJSON = HTMLValidationResultFromJSON;
+exports.HTMLValidationResultFromJSONTyped = HTMLValidationResultFromJSONTyped;
+exports.HTMLValidationResultToJSON = HTMLValidationResultToJSON;
 var _1 = require("./");
 function HTMLValidationResultFromJSON(json) {
     return HTMLValidationResultFromJSONTyped(json, false);
 }
-exports.HTMLValidationResultFromJSON = HTMLValidationResultFromJSON;
 function HTMLValidationResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function HTMLValidationResultFromJSONTyped(json, ignoreDiscriminator) {
         warnings: json['warnings'].map(_1.ValidationMessageFromJSON),
     };
 }
-exports.HTMLValidationResultFromJSONTyped = HTMLValidationResultFromJSONTyped;
 function HTMLValidationResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function HTMLValidationResultToJSON(value) {
         warnings: value.warnings.map(_1.ValidationMessageToJSON),
     };
 }
-exports.HTMLValidationResultToJSON = HTMLValidationResultToJSON;

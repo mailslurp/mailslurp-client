@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageAITransformProjectionToJSON = exports.PageAITransformProjectionFromJSONTyped = exports.PageAITransformProjectionFromJSON = void 0;
+exports.PageAITransformProjectionFromJSON = PageAITransformProjectionFromJSON;
+exports.PageAITransformProjectionFromJSONTyped = PageAITransformProjectionFromJSONTyped;
+exports.PageAITransformProjectionToJSON = PageAITransformProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageAITransformProjectionFromJSON(json) {
     return PageAITransformProjectionFromJSONTyped(json, false);
 }
-exports.PageAITransformProjectionFromJSON = PageAITransformProjectionFromJSON;
 function PageAITransformProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageAITransformProjectionFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageAITransformProjectionFromJSONTyped = PageAITransformProjectionFromJSONTyped;
 function PageAITransformProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageAITransformProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageAITransformProjectionToJSON = PageAITransformProjectionToJSON;

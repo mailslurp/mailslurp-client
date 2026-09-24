@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorImapConnectionDtoToJSON = exports.ConnectorImapConnectionDtoFromJSONTyped = exports.ConnectorImapConnectionDtoFromJSON = void 0;
+exports.ConnectorImapConnectionDtoFromJSON = ConnectorImapConnectionDtoFromJSON;
+exports.ConnectorImapConnectionDtoFromJSONTyped = ConnectorImapConnectionDtoFromJSONTyped;
+exports.ConnectorImapConnectionDtoToJSON = ConnectorImapConnectionDtoToJSON;
 var runtime_1 = require("../runtime");
 function ConnectorImapConnectionDtoFromJSON(json) {
     return ConnectorImapConnectionDtoFromJSONTyped(json, false);
 }
-exports.ConnectorImapConnectionDtoFromJSON = ConnectorImapConnectionDtoFromJSON;
 function ConnectorImapConnectionDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -57,7 +58,6 @@ function ConnectorImapConnectionDtoFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.ConnectorImapConnectionDtoFromJSONTyped = ConnectorImapConnectionDtoFromJSONTyped;
 function ConnectorImapConnectionDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -87,4 +87,3 @@ function ConnectorImapConnectionDtoToJSON(value) {
         id: value.id,
     };
 }
-exports.ConnectorImapConnectionDtoToJSON = ConnectorImapConnectionDtoToJSON;

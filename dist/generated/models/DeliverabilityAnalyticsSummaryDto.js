@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityAnalyticsSummaryDtoToJSON = exports.DeliverabilityAnalyticsSummaryDtoFromJSONTyped = exports.DeliverabilityAnalyticsSummaryDtoFromJSON = void 0;
+exports.DeliverabilityAnalyticsSummaryDtoFromJSON = DeliverabilityAnalyticsSummaryDtoFromJSON;
+exports.DeliverabilityAnalyticsSummaryDtoFromJSONTyped = DeliverabilityAnalyticsSummaryDtoFromJSONTyped;
+exports.DeliverabilityAnalyticsSummaryDtoToJSON = DeliverabilityAnalyticsSummaryDtoToJSON;
 function DeliverabilityAnalyticsSummaryDtoFromJSON(json) {
     return DeliverabilityAnalyticsSummaryDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilityAnalyticsSummaryDtoFromJSON = DeliverabilityAnalyticsSummaryDtoFromJSON;
 function DeliverabilityAnalyticsSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +39,6 @@ function DeliverabilityAnalyticsSummaryDtoFromJSONTyped(json, ignoreDiscriminato
         averageUnmatchedEntities: json['averageUnmatchedEntities'],
     };
 }
-exports.DeliverabilityAnalyticsSummaryDtoFromJSONTyped = DeliverabilityAnalyticsSummaryDtoFromJSONTyped;
 function DeliverabilityAnalyticsSummaryDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -62,4 +62,3 @@ function DeliverabilityAnalyticsSummaryDtoToJSON(value) {
         averageUnmatchedEntities: value.averageUnmatchedEntities,
     };
 }
-exports.DeliverabilityAnalyticsSummaryDtoToJSON = DeliverabilityAnalyticsSummaryDtoToJSON;

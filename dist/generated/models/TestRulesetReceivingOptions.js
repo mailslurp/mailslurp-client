@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestRulesetReceivingOptionsToJSON = exports.TestRulesetReceivingOptionsFromJSONTyped = exports.TestRulesetReceivingOptionsFromJSON = void 0;
+exports.TestRulesetReceivingOptionsFromJSON = TestRulesetReceivingOptionsFromJSON;
+exports.TestRulesetReceivingOptionsFromJSONTyped = TestRulesetReceivingOptionsFromJSONTyped;
+exports.TestRulesetReceivingOptionsToJSON = TestRulesetReceivingOptionsToJSON;
 var runtime_1 = require("../runtime");
 function TestRulesetReceivingOptionsFromJSON(json) {
     return TestRulesetReceivingOptionsFromJSONTyped(json, false);
 }
-exports.TestRulesetReceivingOptionsFromJSON = TestRulesetReceivingOptionsFromJSON;
 function TestRulesetReceivingOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function TestRulesetReceivingOptionsFromJSONTyped(json, ignoreDiscriminator) {
         fromSender: json['fromSender'],
     };
 }
-exports.TestRulesetReceivingOptionsFromJSONTyped = TestRulesetReceivingOptionsFromJSONTyped;
 function TestRulesetReceivingOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function TestRulesetReceivingOptionsToJSON(value) {
         fromSender: value.fromSender,
     };
 }
-exports.TestRulesetReceivingOptionsToJSON = TestRulesetReceivingOptionsToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PagePhoneNumberReleaseProjectionToJSON = exports.PagePhoneNumberReleaseProjectionFromJSONTyped = exports.PagePhoneNumberReleaseProjectionFromJSON = void 0;
+exports.PagePhoneNumberReleaseProjectionFromJSON = PagePhoneNumberReleaseProjectionFromJSON;
+exports.PagePhoneNumberReleaseProjectionFromJSONTyped = PagePhoneNumberReleaseProjectionFromJSONTyped;
+exports.PagePhoneNumberReleaseProjectionToJSON = PagePhoneNumberReleaseProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PagePhoneNumberReleaseProjectionFromJSON(json) {
     return PagePhoneNumberReleaseProjectionFromJSONTyped(json, false);
 }
-exports.PagePhoneNumberReleaseProjectionFromJSON = PagePhoneNumberReleaseProjectionFromJSON;
 function PagePhoneNumberReleaseProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PagePhoneNumberReleaseProjectionFromJSONTyped(json, ignoreDiscriminator
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PagePhoneNumberReleaseProjectionFromJSONTyped = PagePhoneNumberReleaseProjectionFromJSONTyped;
 function PagePhoneNumberReleaseProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PagePhoneNumberReleaseProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PagePhoneNumberReleaseProjectionToJSON = PagePhoneNumberReleaseProjectionToJSON;

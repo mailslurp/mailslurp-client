@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilitySimulationSmsOptionsToJSON = exports.DeliverabilitySimulationSmsOptionsFromJSONTyped = exports.DeliverabilitySimulationSmsOptionsFromJSON = void 0;
+exports.DeliverabilitySimulationSmsOptionsFromJSON = DeliverabilitySimulationSmsOptionsFromJSON;
+exports.DeliverabilitySimulationSmsOptionsFromJSONTyped = DeliverabilitySimulationSmsOptionsFromJSONTyped;
+exports.DeliverabilitySimulationSmsOptionsToJSON = DeliverabilitySimulationSmsOptionsToJSON;
 var runtime_1 = require("../runtime");
 function DeliverabilitySimulationSmsOptionsFromJSON(json) {
     return DeliverabilitySimulationSmsOptionsFromJSONTyped(json, false);
 }
-exports.DeliverabilitySimulationSmsOptionsFromJSON = DeliverabilitySimulationSmsOptionsFromJSON;
 function DeliverabilitySimulationSmsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function DeliverabilitySimulationSmsOptionsFromJSONTyped(json, ignoreDiscriminat
             : json['bodyTemplate'],
     };
 }
-exports.DeliverabilitySimulationSmsOptionsFromJSONTyped = DeliverabilitySimulationSmsOptionsFromJSONTyped;
 function DeliverabilitySimulationSmsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DeliverabilitySimulationSmsOptionsToJSON(value) {
         bodyTemplate: value.bodyTemplate,
     };
 }
-exports.DeliverabilitySimulationSmsOptionsToJSON = DeliverabilitySimulationSmsOptionsToJSON;

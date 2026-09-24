@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupSendSlotPageDtoToJSON = exports.EmailWarmupSendSlotPageDtoFromJSONTyped = exports.EmailWarmupSendSlotPageDtoFromJSON = void 0;
+exports.EmailWarmupSendSlotPageDtoFromJSON = EmailWarmupSendSlotPageDtoFromJSON;
+exports.EmailWarmupSendSlotPageDtoFromJSONTyped = EmailWarmupSendSlotPageDtoFromJSONTyped;
+exports.EmailWarmupSendSlotPageDtoToJSON = EmailWarmupSendSlotPageDtoToJSON;
 var _1 = require("./");
 function EmailWarmupSendSlotPageDtoFromJSON(json) {
     return EmailWarmupSendSlotPageDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupSendSlotPageDtoFromJSON = EmailWarmupSendSlotPageDtoFromJSON;
 function EmailWarmupSendSlotPageDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function EmailWarmupSendSlotPageDtoFromJSONTyped(json, ignoreDiscriminator) {
         totalPages: json['totalPages'],
     };
 }
-exports.EmailWarmupSendSlotPageDtoFromJSONTyped = EmailWarmupSendSlotPageDtoFromJSONTyped;
 function EmailWarmupSendSlotPageDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function EmailWarmupSendSlotPageDtoToJSON(value) {
         totalPages: value.totalPages,
     };
 }
-exports.EmailWarmupSendSlotPageDtoToJSON = EmailWarmupSendSlotPageDtoToJSON;

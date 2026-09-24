@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageOrganizationInboxProjectionToJSON = exports.PageOrganizationInboxProjectionFromJSONTyped = exports.PageOrganizationInboxProjectionFromJSON = void 0;
+exports.PageOrganizationInboxProjectionFromJSON = PageOrganizationInboxProjectionFromJSON;
+exports.PageOrganizationInboxProjectionFromJSONTyped = PageOrganizationInboxProjectionFromJSONTyped;
+exports.PageOrganizationInboxProjectionToJSON = PageOrganizationInboxProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageOrganizationInboxProjectionFromJSON(json) {
     return PageOrganizationInboxProjectionFromJSONTyped(json, false);
 }
-exports.PageOrganizationInboxProjectionFromJSON = PageOrganizationInboxProjectionFromJSON;
 function PageOrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageOrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator)
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageOrganizationInboxProjectionFromJSONTyped = PageOrganizationInboxProjectionFromJSONTyped;
 function PageOrganizationInboxProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageOrganizationInboxProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageOrganizationInboxProjectionToJSON = PageOrganizationInboxProjectionToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailHtmlDtoToJSON = exports.EmailHtmlDtoFromJSONTyped = exports.EmailHtmlDtoFromJSON = void 0;
+exports.EmailHtmlDtoFromJSON = EmailHtmlDtoFromJSON;
+exports.EmailHtmlDtoFromJSONTyped = EmailHtmlDtoFromJSONTyped;
+exports.EmailHtmlDtoToJSON = EmailHtmlDtoToJSON;
 var runtime_1 = require("../runtime");
 function EmailHtmlDtoFromJSON(json) {
     return EmailHtmlDtoFromJSONTyped(json, false);
 }
-exports.EmailHtmlDtoFromJSON = EmailHtmlDtoFromJSON;
 function EmailHtmlDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function EmailHtmlDtoFromJSONTyped(json, ignoreDiscriminator) {
         body: !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
     };
 }
-exports.EmailHtmlDtoFromJSONTyped = EmailHtmlDtoFromJSONTyped;
 function EmailHtmlDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function EmailHtmlDtoToJSON(value) {
         body: value.body,
     };
 }
-exports.EmailHtmlDtoToJSON = EmailHtmlDtoToJSON;

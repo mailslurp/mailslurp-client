@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookBouncePayloadToJSON = exports.WebhookBouncePayloadFromJSONTyped = exports.WebhookBouncePayloadFromJSON = exports.WebhookBouncePayloadEventNameEnum = void 0;
+exports.WebhookBouncePayloadEventNameEnum = void 0;
+exports.WebhookBouncePayloadFromJSON = WebhookBouncePayloadFromJSON;
+exports.WebhookBouncePayloadFromJSONTyped = WebhookBouncePayloadFromJSONTyped;
+exports.WebhookBouncePayloadToJSON = WebhookBouncePayloadToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -33,11 +36,10 @@ var WebhookBouncePayloadEventNameEnum;
     WebhookBouncePayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookBouncePayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookBouncePayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookBouncePayloadEventNameEnum = exports.WebhookBouncePayloadEventNameEnum || (exports.WebhookBouncePayloadEventNameEnum = {}));
+})(WebhookBouncePayloadEventNameEnum || (exports.WebhookBouncePayloadEventNameEnum = WebhookBouncePayloadEventNameEnum = {}));
 function WebhookBouncePayloadFromJSON(json) {
     return WebhookBouncePayloadFromJSONTyped(json, false);
 }
-exports.WebhookBouncePayloadFromJSON = WebhookBouncePayloadFromJSON;
 function WebhookBouncePayloadFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -57,7 +59,6 @@ function WebhookBouncePayloadFromJSONTyped(json, ignoreDiscriminator) {
             : json['bounceRecipients'],
     };
 }
-exports.WebhookBouncePayloadFromJSONTyped = WebhookBouncePayloadFromJSONTyped;
 function WebhookBouncePayloadToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -76,4 +77,3 @@ function WebhookBouncePayloadToJSON(value) {
         bounceRecipients: value.bounceRecipients,
     };
 }
-exports.WebhookBouncePayloadToJSON = WebhookBouncePayloadToJSON;

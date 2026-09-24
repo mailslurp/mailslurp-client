@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateAliasOptionsToJSON = exports.CreateAliasOptionsFromJSONTyped = exports.CreateAliasOptionsFromJSON = void 0;
+exports.CreateAliasOptionsFromJSON = CreateAliasOptionsFromJSON;
+exports.CreateAliasOptionsFromJSONTyped = CreateAliasOptionsFromJSONTyped;
+exports.CreateAliasOptionsToJSON = CreateAliasOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateAliasOptionsFromJSON(json) {
     return CreateAliasOptionsFromJSONTyped(json, false);
 }
-exports.CreateAliasOptionsFromJSON = CreateAliasOptionsFromJSON;
 function CreateAliasOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -34,7 +35,6 @@ function CreateAliasOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['verifyEmailAddress'],
     };
 }
-exports.CreateAliasOptionsFromJSONTyped = CreateAliasOptionsFromJSONTyped;
 function CreateAliasOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function CreateAliasOptionsToJSON(value) {
         verifyEmailAddress: value.verifyEmailAddress,
     };
 }
-exports.CreateAliasOptionsToJSON = CreateAliasOptionsToJSON;

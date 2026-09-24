@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupProgramDtoToJSON = exports.EmailWarmupProgramDtoFromJSONTyped = exports.EmailWarmupProgramDtoFromJSON = exports.EmailWarmupProgramDtoContentSourceEnum = exports.EmailWarmupProgramDtoBaselineSourceEnum = exports.EmailWarmupProgramDtoResolvedCoverageEnum = exports.EmailWarmupProgramDtoRequestedCoverageEnum = exports.EmailWarmupProgramDtoSchedulePresetEnum = exports.EmailWarmupProgramDtoBlockersEnum = exports.EmailWarmupProgramDtoStatusEnum = exports.EmailWarmupProgramDtoProgramModeEnum = exports.EmailWarmupProgramDtoExecutionPolicyEnum = exports.EmailWarmupProgramDtoCustomerIntentEnum = void 0;
+exports.EmailWarmupProgramDtoContentSourceEnum = exports.EmailWarmupProgramDtoBaselineSourceEnum = exports.EmailWarmupProgramDtoResolvedCoverageEnum = exports.EmailWarmupProgramDtoRequestedCoverageEnum = exports.EmailWarmupProgramDtoSchedulePresetEnum = exports.EmailWarmupProgramDtoBlockersEnum = exports.EmailWarmupProgramDtoStatusEnum = exports.EmailWarmupProgramDtoProgramModeEnum = exports.EmailWarmupProgramDtoExecutionPolicyEnum = exports.EmailWarmupProgramDtoCustomerIntentEnum = void 0;
+exports.EmailWarmupProgramDtoFromJSON = EmailWarmupProgramDtoFromJSON;
+exports.EmailWarmupProgramDtoFromJSONTyped = EmailWarmupProgramDtoFromJSONTyped;
+exports.EmailWarmupProgramDtoToJSON = EmailWarmupProgramDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,7 +27,7 @@ var EmailWarmupProgramDtoCustomerIntentEnum;
 (function (EmailWarmupProgramDtoCustomerIntentEnum) {
     EmailWarmupProgramDtoCustomerIntentEnum["NEW_SENDER_WARMUP"] = "NEW_SENDER_WARMUP";
     EmailWarmupProgramDtoCustomerIntentEnum["EXISTING_SENDER_REPAIR"] = "EXISTING_SENDER_REPAIR";
-})(EmailWarmupProgramDtoCustomerIntentEnum = exports.EmailWarmupProgramDtoCustomerIntentEnum || (exports.EmailWarmupProgramDtoCustomerIntentEnum = {}));
+})(EmailWarmupProgramDtoCustomerIntentEnum || (exports.EmailWarmupProgramDtoCustomerIntentEnum = EmailWarmupProgramDtoCustomerIntentEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -34,7 +37,7 @@ var EmailWarmupProgramDtoExecutionPolicyEnum;
     EmailWarmupProgramDtoExecutionPolicyEnum["LOW_VOLUME_MAILBOX_RAMP"] = "LOW_VOLUME_MAILBOX_RAMP";
     EmailWarmupProgramDtoExecutionPolicyEnum["HIGH_VOLUME_INFRASTRUCTURE_RAMP"] = "HIGH_VOLUME_INFRASTRUCTURE_RAMP";
     EmailWarmupProgramDtoExecutionPolicyEnum["ASSISTED_CAMPAIGN_RAMP"] = "ASSISTED_CAMPAIGN_RAMP";
-})(EmailWarmupProgramDtoExecutionPolicyEnum = exports.EmailWarmupProgramDtoExecutionPolicyEnum || (exports.EmailWarmupProgramDtoExecutionPolicyEnum = {}));
+})(EmailWarmupProgramDtoExecutionPolicyEnum || (exports.EmailWarmupProgramDtoExecutionPolicyEnum = EmailWarmupProgramDtoExecutionPolicyEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -43,7 +46,7 @@ var EmailWarmupProgramDtoProgramModeEnum;
 (function (EmailWarmupProgramDtoProgramModeEnum) {
     EmailWarmupProgramDtoProgramModeEnum["ASSISTED"] = "ASSISTED";
     EmailWarmupProgramDtoProgramModeEnum["NATIVE_SEND"] = "NATIVE_SEND";
-})(EmailWarmupProgramDtoProgramModeEnum = exports.EmailWarmupProgramDtoProgramModeEnum || (exports.EmailWarmupProgramDtoProgramModeEnum = {}));
+})(EmailWarmupProgramDtoProgramModeEnum || (exports.EmailWarmupProgramDtoProgramModeEnum = EmailWarmupProgramDtoProgramModeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -63,7 +66,7 @@ var EmailWarmupProgramDtoStatusEnum;
     EmailWarmupProgramDtoStatusEnum["COMPLETED"] = "COMPLETED";
     EmailWarmupProgramDtoStatusEnum["MONITORING"] = "MONITORING";
     EmailWarmupProgramDtoStatusEnum["STOPPED"] = "STOPPED";
-})(EmailWarmupProgramDtoStatusEnum = exports.EmailWarmupProgramDtoStatusEnum || (exports.EmailWarmupProgramDtoStatusEnum = {}));
+})(EmailWarmupProgramDtoStatusEnum || (exports.EmailWarmupProgramDtoStatusEnum = EmailWarmupProgramDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -80,7 +83,7 @@ var EmailWarmupProgramDtoBlockersEnum;
     EmailWarmupProgramDtoBlockersEnum["PREMIUM_COVERAGE_REQUIRED"] = "PREMIUM_COVERAGE_REQUIRED";
     EmailWarmupProgramDtoBlockersEnum["EXECUTION_DISABLED"] = "EXECUTION_DISABLED";
     EmailWarmupProgramDtoBlockersEnum["BILLING_NOT_READY"] = "BILLING_NOT_READY";
-})(EmailWarmupProgramDtoBlockersEnum = exports.EmailWarmupProgramDtoBlockersEnum || (exports.EmailWarmupProgramDtoBlockersEnum = {}));
+})(EmailWarmupProgramDtoBlockersEnum || (exports.EmailWarmupProgramDtoBlockersEnum = EmailWarmupProgramDtoBlockersEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -91,7 +94,7 @@ var EmailWarmupProgramDtoSchedulePresetEnum;
     EmailWarmupProgramDtoSchedulePresetEnum["STANDARD"] = "STANDARD";
     EmailWarmupProgramDtoSchedulePresetEnum["REPAIR"] = "REPAIR";
     EmailWarmupProgramDtoSchedulePresetEnum["CUSTOM"] = "CUSTOM";
-})(EmailWarmupProgramDtoSchedulePresetEnum = exports.EmailWarmupProgramDtoSchedulePresetEnum || (exports.EmailWarmupProgramDtoSchedulePresetEnum = {}));
+})(EmailWarmupProgramDtoSchedulePresetEnum || (exports.EmailWarmupProgramDtoSchedulePresetEnum = EmailWarmupProgramDtoSchedulePresetEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -102,7 +105,7 @@ var EmailWarmupProgramDtoRequestedCoverageEnum;
     EmailWarmupProgramDtoRequestedCoverageEnum["CONTROLLED"] = "CONTROLLED";
     EmailWarmupProgramDtoRequestedCoverageEnum["CORE"] = "CORE";
     EmailWarmupProgramDtoRequestedCoverageEnum["EXPANDED"] = "EXPANDED";
-})(EmailWarmupProgramDtoRequestedCoverageEnum = exports.EmailWarmupProgramDtoRequestedCoverageEnum || (exports.EmailWarmupProgramDtoRequestedCoverageEnum = {}));
+})(EmailWarmupProgramDtoRequestedCoverageEnum || (exports.EmailWarmupProgramDtoRequestedCoverageEnum = EmailWarmupProgramDtoRequestedCoverageEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -113,7 +116,7 @@ var EmailWarmupProgramDtoResolvedCoverageEnum;
     EmailWarmupProgramDtoResolvedCoverageEnum["CONTROLLED"] = "CONTROLLED";
     EmailWarmupProgramDtoResolvedCoverageEnum["CORE"] = "CORE";
     EmailWarmupProgramDtoResolvedCoverageEnum["EXPANDED"] = "EXPANDED";
-})(EmailWarmupProgramDtoResolvedCoverageEnum = exports.EmailWarmupProgramDtoResolvedCoverageEnum || (exports.EmailWarmupProgramDtoResolvedCoverageEnum = {}));
+})(EmailWarmupProgramDtoResolvedCoverageEnum || (exports.EmailWarmupProgramDtoResolvedCoverageEnum = EmailWarmupProgramDtoResolvedCoverageEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -123,7 +126,7 @@ var EmailWarmupProgramDtoBaselineSourceEnum;
     EmailWarmupProgramDtoBaselineSourceEnum["SUPPLIED"] = "SUPPLIED";
     EmailWarmupProgramDtoBaselineSourceEnum["PROGRAM_CHECKPOINT"] = "PROGRAM_CHECKPOINT";
     EmailWarmupProgramDtoBaselineSourceEnum["NONE"] = "NONE";
-})(EmailWarmupProgramDtoBaselineSourceEnum = exports.EmailWarmupProgramDtoBaselineSourceEnum || (exports.EmailWarmupProgramDtoBaselineSourceEnum = {}));
+})(EmailWarmupProgramDtoBaselineSourceEnum || (exports.EmailWarmupProgramDtoBaselineSourceEnum = EmailWarmupProgramDtoBaselineSourceEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -133,11 +136,10 @@ var EmailWarmupProgramDtoContentSourceEnum;
     EmailWarmupProgramDtoContentSourceEnum["MANAGED_CONTROL"] = "MANAGED_CONTROL";
     EmailWarmupProgramDtoContentSourceEnum["CUSTOM_TEMPLATE"] = "CUSTOM_TEMPLATE";
     EmailWarmupProgramDtoContentSourceEnum["AI_ASSISTED_TEMPLATE"] = "AI_ASSISTED_TEMPLATE";
-})(EmailWarmupProgramDtoContentSourceEnum = exports.EmailWarmupProgramDtoContentSourceEnum || (exports.EmailWarmupProgramDtoContentSourceEnum = {}));
+})(EmailWarmupProgramDtoContentSourceEnum || (exports.EmailWarmupProgramDtoContentSourceEnum = EmailWarmupProgramDtoContentSourceEnum = {}));
 function EmailWarmupProgramDtoFromJSON(json) {
     return EmailWarmupProgramDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupProgramDtoFromJSON = EmailWarmupProgramDtoFromJSON;
 function EmailWarmupProgramDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -199,7 +201,6 @@ function EmailWarmupProgramDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.EmailWarmupProgramDtoFromJSONTyped = EmailWarmupProgramDtoFromJSONTyped;
 function EmailWarmupProgramDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -260,4 +261,3 @@ function EmailWarmupProgramDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.EmailWarmupProgramDtoToJSON = EmailWarmupProgramDtoToJSON;

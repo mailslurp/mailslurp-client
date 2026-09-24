@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailAnalysisToJSON = exports.EmailAnalysisFromJSONTyped = exports.EmailAnalysisFromJSON = void 0;
+exports.EmailAnalysisFromJSON = EmailAnalysisFromJSON;
+exports.EmailAnalysisFromJSONTyped = EmailAnalysisFromJSONTyped;
+exports.EmailAnalysisToJSON = EmailAnalysisToJSON;
 var runtime_1 = require("../runtime");
 function EmailAnalysisFromJSON(json) {
     return EmailAnalysisFromJSONTyped(json, false);
 }
-exports.EmailAnalysisFromJSON = EmailAnalysisFromJSON;
 function EmailAnalysisFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function EmailAnalysisFromJSONTyped(json, ignoreDiscriminator) {
             : json['dmarcVerdict'],
     };
 }
-exports.EmailAnalysisFromJSONTyped = EmailAnalysisFromJSONTyped;
 function EmailAnalysisToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function EmailAnalysisToJSON(value) {
         dmarcVerdict: value.dmarcVerdict,
     };
 }
-exports.EmailAnalysisToJSON = EmailAnalysisToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccessibleInboxListToJSON = exports.AccessibleInboxListFromJSONTyped = exports.AccessibleInboxListFromJSON = void 0;
+exports.AccessibleInboxListFromJSON = AccessibleInboxListFromJSON;
+exports.AccessibleInboxListFromJSONTyped = AccessibleInboxListFromJSONTyped;
+exports.AccessibleInboxListToJSON = AccessibleInboxListToJSON;
 var _1 = require("./");
 function AccessibleInboxListFromJSON(json) {
     return AccessibleInboxListFromJSONTyped(json, false);
 }
-exports.AccessibleInboxListFromJSON = AccessibleInboxListFromJSON;
 function AccessibleInboxListFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function AccessibleInboxListFromJSONTyped(json, ignoreDiscriminator) {
         count: json['count'],
     };
 }
-exports.AccessibleInboxListFromJSONTyped = AccessibleInboxListFromJSONTyped;
 function AccessibleInboxListToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function AccessibleInboxListToJSON(value) {
         count: value.count,
     };
 }
-exports.AccessibleInboxListToJSON = AccessibleInboxListToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExportOptionsToJSON = exports.ExportOptionsFromJSONTyped = exports.ExportOptionsFromJSON = exports.ExportOptionsOutputFormatEnum = void 0;
+exports.ExportOptionsOutputFormatEnum = void 0;
+exports.ExportOptionsFromJSON = ExportOptionsFromJSON;
+exports.ExportOptionsFromJSONTyped = ExportOptionsFromJSONTyped;
+exports.ExportOptionsToJSON = ExportOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var ExportOptionsOutputFormatEnum;
 (function (ExportOptionsOutputFormatEnum) {
     ExportOptionsOutputFormatEnum["DEFAULT"] = "CSV_DEFAULT";
     ExportOptionsOutputFormatEnum["EXCEL"] = "CSV_EXCEL";
-})(ExportOptionsOutputFormatEnum = exports.ExportOptionsOutputFormatEnum || (exports.ExportOptionsOutputFormatEnum = {}));
+})(ExportOptionsOutputFormatEnum || (exports.ExportOptionsOutputFormatEnum = ExportOptionsOutputFormatEnum = {}));
 function ExportOptionsFromJSON(json) {
     return ExportOptionsFromJSONTyped(json, false);
 }
-exports.ExportOptionsFromJSON = ExportOptionsFromJSON;
 function ExportOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -53,7 +55,6 @@ function ExportOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['listSeparatorToken'],
     };
 }
-exports.ExportOptionsFromJSONTyped = ExportOptionsFromJSONTyped;
 function ExportOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -78,4 +79,3 @@ function ExportOptionsToJSON(value) {
         listSeparatorToken: value.listSeparatorToken,
     };
 }
-exports.ExportOptionsToJSON = ExportOptionsToJSON;

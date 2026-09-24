@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendSMTPEnvelopeOptionsToJSON = exports.SendSMTPEnvelopeOptionsFromJSONTyped = exports.SendSMTPEnvelopeOptionsFromJSON = void 0;
+exports.SendSMTPEnvelopeOptionsFromJSON = SendSMTPEnvelopeOptionsFromJSON;
+exports.SendSMTPEnvelopeOptionsFromJSONTyped = SendSMTPEnvelopeOptionsFromJSONTyped;
+exports.SendSMTPEnvelopeOptionsToJSON = SendSMTPEnvelopeOptionsToJSON;
 function SendSMTPEnvelopeOptionsFromJSON(json) {
     return SendSMTPEnvelopeOptionsFromJSONTyped(json, false);
 }
-exports.SendSMTPEnvelopeOptionsFromJSON = SendSMTPEnvelopeOptionsFromJSON;
 function SendSMTPEnvelopeOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function SendSMTPEnvelopeOptionsFromJSONTyped(json, ignoreDiscriminator) {
         data: json['data'],
     };
 }
-exports.SendSMTPEnvelopeOptionsFromJSONTyped = SendSMTPEnvelopeOptionsFromJSONTyped;
 function SendSMTPEnvelopeOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function SendSMTPEnvelopeOptionsToJSON(value) {
         data: value.data,
     };
 }
-exports.SendSMTPEnvelopeOptionsToJSON = SendSMTPEnvelopeOptionsToJSON;

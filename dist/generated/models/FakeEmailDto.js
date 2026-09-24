@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FakeEmailDtoToJSON = exports.FakeEmailDtoFromJSONTyped = exports.FakeEmailDtoFromJSON = void 0;
+exports.FakeEmailDtoFromJSON = FakeEmailDtoFromJSON;
+exports.FakeEmailDtoFromJSONTyped = FakeEmailDtoFromJSONTyped;
+exports.FakeEmailDtoToJSON = FakeEmailDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function FakeEmailDtoFromJSON(json) {
     return FakeEmailDtoFromJSONTyped(json, false);
 }
-exports.FakeEmailDtoFromJSON = FakeEmailDtoFromJSON;
 function FakeEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -43,7 +44,6 @@ function FakeEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         bodyUrl: json['bodyUrl'],
     };
 }
-exports.FakeEmailDtoFromJSONTyped = FakeEmailDtoFromJSONTyped;
 function FakeEmailDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -66,4 +66,3 @@ function FakeEmailDtoToJSON(value) {
         bodyUrl: value.bodyUrl,
     };
 }
-exports.FakeEmailDtoToJSON = FakeEmailDtoToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PublicSpamTestResultsDtoToJSON = exports.PublicSpamTestResultsDtoFromJSONTyped = exports.PublicSpamTestResultsDtoFromJSON = void 0;
+exports.PublicSpamTestResultsDtoFromJSON = PublicSpamTestResultsDtoFromJSON;
+exports.PublicSpamTestResultsDtoFromJSONTyped = PublicSpamTestResultsDtoFromJSONTyped;
+exports.PublicSpamTestResultsDtoToJSON = PublicSpamTestResultsDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PublicSpamTestResultsDtoFromJSON(json) {
     return PublicSpamTestResultsDtoFromJSONTyped(json, false);
 }
-exports.PublicSpamTestResultsDtoFromJSON = PublicSpamTestResultsDtoFromJSON;
 function PublicSpamTestResultsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function PublicSpamTestResultsDtoFromJSONTyped(json, ignoreDiscriminator) {
         spamScores: json['spamScores'].map(_1.InboxPlacementSpamScoreDtoFromJSON),
     };
 }
-exports.PublicSpamTestResultsDtoFromJSONTyped = PublicSpamTestResultsDtoFromJSONTyped;
 function PublicSpamTestResultsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function PublicSpamTestResultsDtoToJSON(value) {
         spamScores: value.spamScores.map(_1.InboxPlacementSpamScoreDtoToJSON),
     };
 }
-exports.PublicSpamTestResultsDtoToJSON = PublicSpamTestResultsDtoToJSON;

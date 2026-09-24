@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorSmtpConnectionDtoToJSON = exports.ConnectorSmtpConnectionDtoFromJSONTyped = exports.ConnectorSmtpConnectionDtoFromJSON = void 0;
+exports.ConnectorSmtpConnectionDtoFromJSON = ConnectorSmtpConnectionDtoFromJSON;
+exports.ConnectorSmtpConnectionDtoFromJSONTyped = ConnectorSmtpConnectionDtoFromJSONTyped;
+exports.ConnectorSmtpConnectionDtoToJSON = ConnectorSmtpConnectionDtoToJSON;
 var runtime_1 = require("../runtime");
 function ConnectorSmtpConnectionDtoFromJSON(json) {
     return ConnectorSmtpConnectionDtoFromJSONTyped(json, false);
 }
-exports.ConnectorSmtpConnectionDtoFromJSON = ConnectorSmtpConnectionDtoFromJSON;
 function ConnectorSmtpConnectionDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -55,7 +56,6 @@ function ConnectorSmtpConnectionDtoFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.ConnectorSmtpConnectionDtoFromJSONTyped = ConnectorSmtpConnectionDtoFromJSONTyped;
 function ConnectorSmtpConnectionDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -83,4 +83,3 @@ function ConnectorSmtpConnectionDtoToJSON(value) {
         id: value.id,
     };
 }
-exports.ConnectorSmtpConnectionDtoToJSON = ConnectorSmtpConnectionDtoToJSON;

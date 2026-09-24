@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageExpectationToJSON = exports.AIMessageExpectationFromJSONTyped = exports.AIMessageExpectationFromJSON = exports.AIMessageExpectationExtractionPresetEnum = void 0;
+exports.AIMessageExpectationExtractionPresetEnum = void 0;
+exports.AIMessageExpectationFromJSON = AIMessageExpectationFromJSON;
+exports.AIMessageExpectationFromJSONTyped = AIMessageExpectationFromJSONTyped;
+exports.AIMessageExpectationToJSON = AIMessageExpectationToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -23,11 +26,10 @@ var _1 = require("./");
 var AIMessageExpectationExtractionPresetEnum;
 (function (AIMessageExpectationExtractionPresetEnum) {
     AIMessageExpectationExtractionPresetEnum["OTP_CODE"] = "OTP_CODE";
-})(AIMessageExpectationExtractionPresetEnum = exports.AIMessageExpectationExtractionPresetEnum || (exports.AIMessageExpectationExtractionPresetEnum = {}));
+})(AIMessageExpectationExtractionPresetEnum || (exports.AIMessageExpectationExtractionPresetEnum = AIMessageExpectationExtractionPresetEnum = {}));
 function AIMessageExpectationFromJSON(json) {
     return AIMessageExpectationFromJSONTyped(json, false);
 }
-exports.AIMessageExpectationFromJSON = AIMessageExpectationFromJSON;
 function AIMessageExpectationFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -57,7 +59,6 @@ function AIMessageExpectationFromJSONTyped(json, ignoreDiscriminator) {
             : json['extractionPreset'],
     };
 }
-exports.AIMessageExpectationFromJSONTyped = AIMessageExpectationFromJSONTyped;
 function AIMessageExpectationToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -78,4 +79,3 @@ function AIMessageExpectationToJSON(value) {
         extractionPreset: value.extractionPreset,
     };
 }
-exports.AIMessageExpectationToJSON = AIMessageExpectationToJSON;

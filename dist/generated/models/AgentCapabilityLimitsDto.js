@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentCapabilityLimitsDtoToJSON = exports.AgentCapabilityLimitsDtoFromJSONTyped = exports.AgentCapabilityLimitsDtoFromJSON = void 0;
+exports.AgentCapabilityLimitsDtoFromJSON = AgentCapabilityLimitsDtoFromJSON;
+exports.AgentCapabilityLimitsDtoFromJSONTyped = AgentCapabilityLimitsDtoFromJSONTyped;
+exports.AgentCapabilityLimitsDtoToJSON = AgentCapabilityLimitsDtoToJSON;
 function AgentCapabilityLimitsDtoFromJSON(json) {
     return AgentCapabilityLimitsDtoFromJSONTyped(json, false);
 }
-exports.AgentCapabilityLimitsDtoFromJSON = AgentCapabilityLimitsDtoFromJSON;
 function AgentCapabilityLimitsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function AgentCapabilityLimitsDtoFromJSONTyped(json, ignoreDiscriminator) {
         maxClaimLeaseSeconds: json['maxClaimLeaseSeconds'],
     };
 }
-exports.AgentCapabilityLimitsDtoFromJSONTyped = AgentCapabilityLimitsDtoFromJSONTyped;
 function AgentCapabilityLimitsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function AgentCapabilityLimitsDtoToJSON(value) {
         maxClaimLeaseSeconds: value.maxClaimLeaseSeconds,
     };
 }
-exports.AgentCapabilityLimitsDtoToJSON = AgentCapabilityLimitsDtoToJSON;

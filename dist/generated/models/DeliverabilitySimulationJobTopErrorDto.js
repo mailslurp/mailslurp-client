@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilitySimulationJobTopErrorDtoToJSON = exports.DeliverabilitySimulationJobTopErrorDtoFromJSONTyped = exports.DeliverabilitySimulationJobTopErrorDtoFromJSON = void 0;
+exports.DeliverabilitySimulationJobTopErrorDtoFromJSON = DeliverabilitySimulationJobTopErrorDtoFromJSON;
+exports.DeliverabilitySimulationJobTopErrorDtoFromJSONTyped = DeliverabilitySimulationJobTopErrorDtoFromJSONTyped;
+exports.DeliverabilitySimulationJobTopErrorDtoToJSON = DeliverabilitySimulationJobTopErrorDtoToJSON;
 function DeliverabilitySimulationJobTopErrorDtoFromJSON(json) {
     return DeliverabilitySimulationJobTopErrorDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilitySimulationJobTopErrorDtoFromJSON = DeliverabilitySimulationJobTopErrorDtoFromJSON;
 function DeliverabilitySimulationJobTopErrorDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function DeliverabilitySimulationJobTopErrorDtoFromJSONTyped(json, ignoreDiscrim
         count: json['count'],
     };
 }
-exports.DeliverabilitySimulationJobTopErrorDtoFromJSONTyped = DeliverabilitySimulationJobTopErrorDtoFromJSONTyped;
 function DeliverabilitySimulationJobTopErrorDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeliverabilitySimulationJobTopErrorDtoToJSON(value) {
         count: value.count,
     };
 }
-exports.DeliverabilitySimulationJobTopErrorDtoToJSON = DeliverabilitySimulationJobTopErrorDtoToJSON;

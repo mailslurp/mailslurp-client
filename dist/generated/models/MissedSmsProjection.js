@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MissedSmsProjectionToJSON = exports.MissedSmsProjectionFromJSONTyped = exports.MissedSmsProjectionFromJSON = void 0;
+exports.MissedSmsProjectionFromJSON = MissedSmsProjectionFromJSON;
+exports.MissedSmsProjectionFromJSONTyped = MissedSmsProjectionFromJSONTyped;
+exports.MissedSmsProjectionToJSON = MissedSmsProjectionToJSON;
 function MissedSmsProjectionFromJSON(json) {
     return MissedSmsProjectionFromJSONTyped(json, false);
 }
-exports.MissedSmsProjectionFromJSON = MissedSmsProjectionFromJSON;
 function MissedSmsProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function MissedSmsProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.MissedSmsProjectionFromJSONTyped = MissedSmsProjectionFromJSONTyped;
 function MissedSmsProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function MissedSmsProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.MissedSmsProjectionToJSON = MissedSmsProjectionToJSON;

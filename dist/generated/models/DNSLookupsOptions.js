@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DNSLookupsOptionsToJSON = exports.DNSLookupsOptionsFromJSONTyped = exports.DNSLookupsOptionsFromJSON = void 0;
+exports.DNSLookupsOptionsFromJSON = DNSLookupsOptionsFromJSON;
+exports.DNSLookupsOptionsFromJSONTyped = DNSLookupsOptionsFromJSONTyped;
+exports.DNSLookupsOptionsToJSON = DNSLookupsOptionsToJSON;
 var _1 = require("./");
 function DNSLookupsOptionsFromJSON(json) {
     return DNSLookupsOptionsFromJSONTyped(json, false);
 }
-exports.DNSLookupsOptionsFromJSON = DNSLookupsOptionsFromJSON;
 function DNSLookupsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function DNSLookupsOptionsFromJSONTyped(json, ignoreDiscriminator) {
         lookups: json['lookups'].map(_1.DNSLookupOptionsFromJSON),
     };
 }
-exports.DNSLookupsOptionsFromJSONTyped = DNSLookupsOptionsFromJSONTyped;
 function DNSLookupsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function DNSLookupsOptionsToJSON(value) {
         lookups: value.lookups.map(_1.DNSLookupOptionsToJSON),
     };
 }
-exports.DNSLookupsOptionsToJSON = DNSLookupsOptionsToJSON;

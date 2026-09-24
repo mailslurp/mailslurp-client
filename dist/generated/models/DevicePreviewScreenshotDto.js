@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewScreenshotDtoToJSON = exports.DevicePreviewScreenshotDtoFromJSONTyped = exports.DevicePreviewScreenshotDtoFromJSON = void 0;
+exports.DevicePreviewScreenshotDtoFromJSON = DevicePreviewScreenshotDtoFromJSON;
+exports.DevicePreviewScreenshotDtoFromJSONTyped = DevicePreviewScreenshotDtoFromJSONTyped;
+exports.DevicePreviewScreenshotDtoToJSON = DevicePreviewScreenshotDtoToJSON;
 var runtime_1 = require("../runtime");
 function DevicePreviewScreenshotDtoFromJSON(json) {
     return DevicePreviewScreenshotDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewScreenshotDtoFromJSON = DevicePreviewScreenshotDtoFromJSON;
 function DevicePreviewScreenshotDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -64,7 +65,6 @@ function DevicePreviewScreenshotDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DevicePreviewScreenshotDtoFromJSONTyped = DevicePreviewScreenshotDtoFromJSONTyped;
 function DevicePreviewScreenshotDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -99,4 +99,3 @@ function DevicePreviewScreenshotDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DevicePreviewScreenshotDtoToJSON = DevicePreviewScreenshotDtoToJSON;

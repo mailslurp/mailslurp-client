@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdatePhoneNumberOptionsToJSON = exports.UpdatePhoneNumberOptionsFromJSONTyped = exports.UpdatePhoneNumberOptionsFromJSON = void 0;
+exports.UpdatePhoneNumberOptionsFromJSON = UpdatePhoneNumberOptionsFromJSON;
+exports.UpdatePhoneNumberOptionsFromJSONTyped = UpdatePhoneNumberOptionsFromJSONTyped;
+exports.UpdatePhoneNumberOptionsToJSON = UpdatePhoneNumberOptionsToJSON;
 var runtime_1 = require("../runtime");
 function UpdatePhoneNumberOptionsFromJSON(json) {
     return UpdatePhoneNumberOptionsFromJSONTyped(json, false);
 }
-exports.UpdatePhoneNumberOptionsFromJSON = UpdatePhoneNumberOptionsFromJSON;
 function UpdatePhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function UpdatePhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
         description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
     };
 }
-exports.UpdatePhoneNumberOptionsFromJSONTyped = UpdatePhoneNumberOptionsFromJSONTyped;
 function UpdatePhoneNumberOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function UpdatePhoneNumberOptionsToJSON(value) {
         description: value.description,
     };
 }
-exports.UpdatePhoneNumberOptionsToJSON = UpdatePhoneNumberOptionsToJSON;

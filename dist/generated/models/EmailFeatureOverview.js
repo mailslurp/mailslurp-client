@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeatureOverviewToJSON = exports.EmailFeatureOverviewFromJSONTyped = exports.EmailFeatureOverviewFromJSON = exports.EmailFeatureOverviewStatusesEnum = exports.EmailFeatureOverviewCategoryEnum = exports.EmailFeatureOverviewFeatureEnum = void 0;
+exports.EmailFeatureOverviewStatusesEnum = exports.EmailFeatureOverviewCategoryEnum = exports.EmailFeatureOverviewFeatureEnum = void 0;
+exports.EmailFeatureOverviewFromJSON = EmailFeatureOverviewFromJSON;
+exports.EmailFeatureOverviewFromJSONTyped = EmailFeatureOverviewFromJSONTyped;
+exports.EmailFeatureOverviewToJSON = EmailFeatureOverviewToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -202,7 +205,7 @@ var EmailFeatureOverviewFeatureEnum;
     EmailFeatureOverviewFeatureEnum["image_svg"] = "image-svg";
     EmailFeatureOverviewFeatureEnum["image_webp"] = "image-webp";
     EmailFeatureOverviewFeatureEnum["unsupported"] = "unsupported";
-})(EmailFeatureOverviewFeatureEnum = exports.EmailFeatureOverviewFeatureEnum || (exports.EmailFeatureOverviewFeatureEnum = {}));
+})(EmailFeatureOverviewFeatureEnum || (exports.EmailFeatureOverviewFeatureEnum = EmailFeatureOverviewFeatureEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -213,7 +216,7 @@ var EmailFeatureOverviewCategoryEnum;
     EmailFeatureOverviewCategoryEnum["html"] = "html";
     EmailFeatureOverviewCategoryEnum["image"] = "image";
     EmailFeatureOverviewCategoryEnum["others"] = "others";
-})(EmailFeatureOverviewCategoryEnum = exports.EmailFeatureOverviewCategoryEnum || (exports.EmailFeatureOverviewCategoryEnum = {}));
+})(EmailFeatureOverviewCategoryEnum || (exports.EmailFeatureOverviewCategoryEnum = EmailFeatureOverviewCategoryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -224,11 +227,10 @@ var EmailFeatureOverviewStatusesEnum;
     EmailFeatureOverviewStatusesEnum["PARTIAL"] = "PARTIAL";
     EmailFeatureOverviewStatusesEnum["NOT_SUPPORTED"] = "NOT_SUPPORTED";
     EmailFeatureOverviewStatusesEnum["UNKNOWN"] = "UNKNOWN";
-})(EmailFeatureOverviewStatusesEnum = exports.EmailFeatureOverviewStatusesEnum || (exports.EmailFeatureOverviewStatusesEnum = {}));
+})(EmailFeatureOverviewStatusesEnum || (exports.EmailFeatureOverviewStatusesEnum = EmailFeatureOverviewStatusesEnum = {}));
 function EmailFeatureOverviewFromJSON(json) {
     return EmailFeatureOverviewFromJSONTyped(json, false);
 }
-exports.EmailFeatureOverviewFromJSON = EmailFeatureOverviewFromJSON;
 function EmailFeatureOverviewFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -250,7 +252,6 @@ function EmailFeatureOverviewFromJSONTyped(json, ignoreDiscriminator) {
         statuses: json['statuses'],
     };
 }
-exports.EmailFeatureOverviewFromJSONTyped = EmailFeatureOverviewFromJSONTyped;
 function EmailFeatureOverviewToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -273,4 +274,3 @@ function EmailFeatureOverviewToJSON(value) {
         statuses: value.statuses,
     };
 }
-exports.EmailFeatureOverviewToJSON = EmailFeatureOverviewToJSON;

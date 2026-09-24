@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookResultDtoToJSON = exports.WebhookResultDtoFromJSONTyped = exports.WebhookResultDtoFromJSON = exports.WebhookResultDtoResultTypeEnum = exports.WebhookResultDtoWebhookEventEnum = exports.WebhookResultDtoHttpMethodEnum = void 0;
+exports.WebhookResultDtoResultTypeEnum = exports.WebhookResultDtoWebhookEventEnum = exports.WebhookResultDtoHttpMethodEnum = void 0;
+exports.WebhookResultDtoFromJSON = WebhookResultDtoFromJSON;
+exports.WebhookResultDtoFromJSONTyped = WebhookResultDtoFromJSONTyped;
+exports.WebhookResultDtoToJSON = WebhookResultDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -29,7 +32,7 @@ var WebhookResultDtoHttpMethodEnum;
     WebhookResultDtoHttpMethodEnum["HEAD"] = "HEAD";
     WebhookResultDtoHttpMethodEnum["OPTIONS"] = "OPTIONS";
     WebhookResultDtoHttpMethodEnum["TRACE"] = "TRACE";
-})(WebhookResultDtoHttpMethodEnum = exports.WebhookResultDtoHttpMethodEnum || (exports.WebhookResultDtoHttpMethodEnum = {}));
+})(WebhookResultDtoHttpMethodEnum || (exports.WebhookResultDtoHttpMethodEnum = WebhookResultDtoHttpMethodEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -48,7 +51,7 @@ var WebhookResultDtoWebhookEventEnum;
     WebhookResultDtoWebhookEventEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookResultDtoWebhookEventEnum["NEW_SMS"] = "NEW_SMS";
     WebhookResultDtoWebhookEventEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookResultDtoWebhookEventEnum = exports.WebhookResultDtoWebhookEventEnum || (exports.WebhookResultDtoWebhookEventEnum = {}));
+})(WebhookResultDtoWebhookEventEnum || (exports.WebhookResultDtoWebhookEventEnum = WebhookResultDtoWebhookEventEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -60,11 +63,10 @@ var WebhookResultDtoResultTypeEnum;
     WebhookResultDtoResultTypeEnum["EXHAUSTED"] = "EXHAUSTED";
     WebhookResultDtoResultTypeEnum["SUCCESS"] = "SUCCESS";
     WebhookResultDtoResultTypeEnum["REDRIVEN"] = "REDRIVEN";
-})(WebhookResultDtoResultTypeEnum = exports.WebhookResultDtoResultTypeEnum || (exports.WebhookResultDtoResultTypeEnum = {}));
+})(WebhookResultDtoResultTypeEnum || (exports.WebhookResultDtoResultTypeEnum = WebhookResultDtoResultTypeEnum = {}));
 function WebhookResultDtoFromJSON(json) {
     return WebhookResultDtoFromJSONTyped(json, false);
 }
-exports.WebhookResultDtoFromJSON = WebhookResultDtoFromJSON;
 function WebhookResultDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -101,7 +103,6 @@ function WebhookResultDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['aiTransformerId'],
     };
 }
-exports.WebhookResultDtoFromJSONTyped = WebhookResultDtoFromJSONTyped;
 function WebhookResultDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -133,4 +134,3 @@ function WebhookResultDtoToJSON(value) {
         aiTransformerId: value.aiTransformerId,
     };
 }
-exports.WebhookResultDtoToJSON = WebhookResultDtoToJSON;

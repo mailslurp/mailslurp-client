@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PublicDeviceRenderTargetDtoToJSON = exports.PublicDeviceRenderTargetDtoFromJSONTyped = exports.PublicDeviceRenderTargetDtoFromJSON = void 0;
+exports.PublicDeviceRenderTargetDtoFromJSON = PublicDeviceRenderTargetDtoFromJSON;
+exports.PublicDeviceRenderTargetDtoFromJSONTyped = PublicDeviceRenderTargetDtoFromJSONTyped;
+exports.PublicDeviceRenderTargetDtoToJSON = PublicDeviceRenderTargetDtoToJSON;
 var runtime_1 = require("../runtime");
 function PublicDeviceRenderTargetDtoFromJSON(json) {
     return PublicDeviceRenderTargetDtoFromJSONTyped(json, false);
 }
-exports.PublicDeviceRenderTargetDtoFromJSON = PublicDeviceRenderTargetDtoFromJSON;
 function PublicDeviceRenderTargetDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function PublicDeviceRenderTargetDtoFromJSONTyped(json, ignoreDiscriminator) {
         appearance: json['appearance'],
     };
 }
-exports.PublicDeviceRenderTargetDtoFromJSONTyped = PublicDeviceRenderTargetDtoFromJSONTyped;
 function PublicDeviceRenderTargetDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function PublicDeviceRenderTargetDtoToJSON(value) {
         appearance: value.appearance,
     };
 }
-exports.PublicDeviceRenderTargetDtoToJSON = PublicDeviceRenderTargetDtoToJSON;

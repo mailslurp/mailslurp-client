@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilitySimulationEmailOptionsToJSON = exports.DeliverabilitySimulationEmailOptionsFromJSONTyped = exports.DeliverabilitySimulationEmailOptionsFromJSON = void 0;
+exports.DeliverabilitySimulationEmailOptionsFromJSON = DeliverabilitySimulationEmailOptionsFromJSON;
+exports.DeliverabilitySimulationEmailOptionsFromJSONTyped = DeliverabilitySimulationEmailOptionsFromJSONTyped;
+exports.DeliverabilitySimulationEmailOptionsToJSON = DeliverabilitySimulationEmailOptionsToJSON;
 var runtime_1 = require("../runtime");
 function DeliverabilitySimulationEmailOptionsFromJSON(json) {
     return DeliverabilitySimulationEmailOptionsFromJSONTyped(json, false);
 }
-exports.DeliverabilitySimulationEmailOptionsFromJSON = DeliverabilitySimulationEmailOptionsFromJSON;
 function DeliverabilitySimulationEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function DeliverabilitySimulationEmailOptionsFromJSONTyped(json, ignoreDiscrimin
             : json['bodyTemplate'],
     };
 }
-exports.DeliverabilitySimulationEmailOptionsFromJSONTyped = DeliverabilitySimulationEmailOptionsFromJSONTyped;
 function DeliverabilitySimulationEmailOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function DeliverabilitySimulationEmailOptionsToJSON(value) {
         bodyTemplate: value.bodyTemplate,
     };
 }
-exports.DeliverabilitySimulationEmailOptionsToJSON = DeliverabilitySimulationEmailOptionsToJSON;

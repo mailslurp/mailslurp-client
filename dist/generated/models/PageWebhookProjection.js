@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageWebhookProjectionToJSON = exports.PageWebhookProjectionFromJSONTyped = exports.PageWebhookProjectionFromJSON = void 0;
+exports.PageWebhookProjectionFromJSON = PageWebhookProjectionFromJSON;
+exports.PageWebhookProjectionFromJSONTyped = PageWebhookProjectionFromJSONTyped;
+exports.PageWebhookProjectionToJSON = PageWebhookProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageWebhookProjectionFromJSON(json) {
     return PageWebhookProjectionFromJSONTyped(json, false);
 }
-exports.PageWebhookProjectionFromJSON = PageWebhookProjectionFromJSON;
 function PageWebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageWebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageWebhookProjectionFromJSONTyped = PageWebhookProjectionFromJSONTyped;
 function PageWebhookProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageWebhookProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageWebhookProjectionToJSON = PageWebhookProjectionToJSON;

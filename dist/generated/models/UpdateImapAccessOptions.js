@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateImapAccessOptionsToJSON = exports.UpdateImapAccessOptionsFromJSONTyped = exports.UpdateImapAccessOptionsFromJSON = void 0;
+exports.UpdateImapAccessOptionsFromJSON = UpdateImapAccessOptionsFromJSON;
+exports.UpdateImapAccessOptionsFromJSONTyped = UpdateImapAccessOptionsFromJSONTyped;
+exports.UpdateImapAccessOptionsToJSON = UpdateImapAccessOptionsToJSON;
 var runtime_1 = require("../runtime");
 function UpdateImapAccessOptionsFromJSON(json) {
     return UpdateImapAccessOptionsFromJSONTyped(json, false);
 }
-exports.UpdateImapAccessOptionsFromJSON = UpdateImapAccessOptionsFromJSON;
 function UpdateImapAccessOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function UpdateImapAccessOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['imapPassword'],
     };
 }
-exports.UpdateImapAccessOptionsFromJSONTyped = UpdateImapAccessOptionsFromJSONTyped;
 function UpdateImapAccessOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function UpdateImapAccessOptionsToJSON(value) {
         imapPassword: value.imapPassword,
     };
 }
-exports.UpdateImapAccessOptionsToJSON = UpdateImapAccessOptionsToJSON;

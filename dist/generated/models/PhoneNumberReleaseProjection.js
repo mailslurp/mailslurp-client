@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneNumberReleaseProjectionToJSON = exports.PhoneNumberReleaseProjectionFromJSONTyped = exports.PhoneNumberReleaseProjectionFromJSON = exports.PhoneNumberReleaseProjectionPhoneCountryEnum = exports.PhoneNumberReleaseProjectionPlanCurrencyEnum = exports.PhoneNumberReleaseProjectionSubscriptionScheduleEnum = void 0;
+exports.PhoneNumberReleaseProjectionPhoneCountryEnum = exports.PhoneNumberReleaseProjectionPlanCurrencyEnum = exports.PhoneNumberReleaseProjectionSubscriptionScheduleEnum = void 0;
+exports.PhoneNumberReleaseProjectionFromJSON = PhoneNumberReleaseProjectionFromJSON;
+exports.PhoneNumberReleaseProjectionFromJSONTyped = PhoneNumberReleaseProjectionFromJSONTyped;
+exports.PhoneNumberReleaseProjectionToJSON = PhoneNumberReleaseProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var PhoneNumberReleaseProjectionSubscriptionScheduleEnum;
 (function (PhoneNumberReleaseProjectionSubscriptionScheduleEnum) {
     PhoneNumberReleaseProjectionSubscriptionScheduleEnum["MONTHLY"] = "MONTHLY";
     PhoneNumberReleaseProjectionSubscriptionScheduleEnum["YEARLY"] = "YEARLY";
-})(PhoneNumberReleaseProjectionSubscriptionScheduleEnum = exports.PhoneNumberReleaseProjectionSubscriptionScheduleEnum || (exports.PhoneNumberReleaseProjectionSubscriptionScheduleEnum = {}));
+})(PhoneNumberReleaseProjectionSubscriptionScheduleEnum || (exports.PhoneNumberReleaseProjectionSubscriptionScheduleEnum = PhoneNumberReleaseProjectionSubscriptionScheduleEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -40,7 +43,7 @@ var PhoneNumberReleaseProjectionPlanCurrencyEnum;
     PhoneNumberReleaseProjectionPlanCurrencyEnum["CNY"] = "CNY";
     PhoneNumberReleaseProjectionPlanCurrencyEnum["INR"] = "INR";
     PhoneNumberReleaseProjectionPlanCurrencyEnum["NZD"] = "NZD";
-})(PhoneNumberReleaseProjectionPlanCurrencyEnum = exports.PhoneNumberReleaseProjectionPlanCurrencyEnum || (exports.PhoneNumberReleaseProjectionPlanCurrencyEnum = {}));
+})(PhoneNumberReleaseProjectionPlanCurrencyEnum || (exports.PhoneNumberReleaseProjectionPlanCurrencyEnum = PhoneNumberReleaseProjectionPlanCurrencyEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -60,11 +63,10 @@ var PhoneNumberReleaseProjectionPhoneCountryEnum;
     PhoneNumberReleaseProjectionPhoneCountryEnum["IL"] = "IL";
     PhoneNumberReleaseProjectionPhoneCountryEnum["FI"] = "FI";
     PhoneNumberReleaseProjectionPhoneCountryEnum["SE"] = "SE";
-})(PhoneNumberReleaseProjectionPhoneCountryEnum = exports.PhoneNumberReleaseProjectionPhoneCountryEnum || (exports.PhoneNumberReleaseProjectionPhoneCountryEnum = {}));
+})(PhoneNumberReleaseProjectionPhoneCountryEnum || (exports.PhoneNumberReleaseProjectionPhoneCountryEnum = PhoneNumberReleaseProjectionPhoneCountryEnum = {}));
 function PhoneNumberReleaseProjectionFromJSON(json) {
     return PhoneNumberReleaseProjectionFromJSONTyped(json, false);
 }
-exports.PhoneNumberReleaseProjectionFromJSON = PhoneNumberReleaseProjectionFromJSON;
 function PhoneNumberReleaseProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -84,7 +86,6 @@ function PhoneNumberReleaseProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.PhoneNumberReleaseProjectionFromJSONTyped = PhoneNumberReleaseProjectionFromJSONTyped;
 function PhoneNumberReleaseProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -103,4 +104,3 @@ function PhoneNumberReleaseProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.PhoneNumberReleaseProjectionToJSON = PhoneNumberReleaseProjectionToJSON;

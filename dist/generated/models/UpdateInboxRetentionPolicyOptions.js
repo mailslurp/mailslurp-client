@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateInboxRetentionPolicyOptionsToJSON = exports.UpdateInboxRetentionPolicyOptionsFromJSONTyped = exports.UpdateInboxRetentionPolicyOptionsFromJSON = exports.UpdateInboxRetentionPolicyOptionsScopeEnum = void 0;
+exports.UpdateInboxRetentionPolicyOptionsScopeEnum = void 0;
+exports.UpdateInboxRetentionPolicyOptionsFromJSON = UpdateInboxRetentionPolicyOptionsFromJSON;
+exports.UpdateInboxRetentionPolicyOptionsFromJSONTyped = UpdateInboxRetentionPolicyOptionsFromJSONTyped;
+exports.UpdateInboxRetentionPolicyOptionsToJSON = UpdateInboxRetentionPolicyOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var UpdateInboxRetentionPolicyOptionsScopeEnum;
     UpdateInboxRetentionPolicyOptionsScopeEnum["ACCOUNT"] = "ACCOUNT";
     UpdateInboxRetentionPolicyOptionsScopeEnum["INBOX"] = "INBOX";
     UpdateInboxRetentionPolicyOptionsScopeEnum["DOMAIN"] = "DOMAIN";
-})(UpdateInboxRetentionPolicyOptionsScopeEnum = exports.UpdateInboxRetentionPolicyOptionsScopeEnum || (exports.UpdateInboxRetentionPolicyOptionsScopeEnum = {}));
+})(UpdateInboxRetentionPolicyOptionsScopeEnum || (exports.UpdateInboxRetentionPolicyOptionsScopeEnum = UpdateInboxRetentionPolicyOptionsScopeEnum = {}));
 function UpdateInboxRetentionPolicyOptionsFromJSON(json) {
     return UpdateInboxRetentionPolicyOptionsFromJSONTyped(json, false);
 }
-exports.UpdateInboxRetentionPolicyOptionsFromJSON = UpdateInboxRetentionPolicyOptionsFromJSON;
 function UpdateInboxRetentionPolicyOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -46,7 +48,6 @@ function UpdateInboxRetentionPolicyOptionsFromJSONTyped(json, ignoreDiscriminato
         excludedDomainNamePatterns: json['excludedDomainNamePatterns'],
     };
 }
-exports.UpdateInboxRetentionPolicyOptionsFromJSONTyped = UpdateInboxRetentionPolicyOptionsFromJSONTyped;
 function UpdateInboxRetentionPolicyOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -67,4 +68,3 @@ function UpdateInboxRetentionPolicyOptionsToJSON(value) {
         excludedDomainNamePatterns: value.excludedDomainNamePatterns,
     };
 }
-exports.UpdateInboxRetentionPolicyOptionsToJSON = UpdateInboxRetentionPolicyOptionsToJSON;

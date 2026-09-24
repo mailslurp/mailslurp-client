@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhonePoolLeaseDtoToJSON = exports.PhonePoolLeaseDtoFromJSONTyped = exports.PhonePoolLeaseDtoFromJSON = exports.PhonePoolLeaseDtoPhoneCountryEnum = void 0;
+exports.PhonePoolLeaseDtoPhoneCountryEnum = void 0;
+exports.PhonePoolLeaseDtoFromJSON = PhonePoolLeaseDtoFromJSON;
+exports.PhonePoolLeaseDtoFromJSONTyped = PhonePoolLeaseDtoFromJSONTyped;
+exports.PhonePoolLeaseDtoToJSON = PhonePoolLeaseDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -34,11 +37,10 @@ var PhonePoolLeaseDtoPhoneCountryEnum;
     PhonePoolLeaseDtoPhoneCountryEnum["IL"] = "IL";
     PhonePoolLeaseDtoPhoneCountryEnum["FI"] = "FI";
     PhonePoolLeaseDtoPhoneCountryEnum["SE"] = "SE";
-})(PhonePoolLeaseDtoPhoneCountryEnum = exports.PhonePoolLeaseDtoPhoneCountryEnum || (exports.PhonePoolLeaseDtoPhoneCountryEnum = {}));
+})(PhonePoolLeaseDtoPhoneCountryEnum || (exports.PhonePoolLeaseDtoPhoneCountryEnum = PhonePoolLeaseDtoPhoneCountryEnum = {}));
 function PhonePoolLeaseDtoFromJSON(json) {
     return PhonePoolLeaseDtoFromJSONTyped(json, false);
 }
-exports.PhonePoolLeaseDtoFromJSON = PhonePoolLeaseDtoFromJSON;
 function PhonePoolLeaseDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -60,7 +62,6 @@ function PhonePoolLeaseDtoFromJSONTyped(json, ignoreDiscriminator) {
                 : new Date(json['expiresAt']),
     };
 }
-exports.PhonePoolLeaseDtoFromJSONTyped = PhonePoolLeaseDtoFromJSONTyped;
 function PhonePoolLeaseDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -85,4 +86,3 @@ function PhonePoolLeaseDtoToJSON(value) {
                 : value.expiresAt.toISOString(),
     };
 }
-exports.PhonePoolLeaseDtoToJSON = PhonePoolLeaseDtoToJSON;

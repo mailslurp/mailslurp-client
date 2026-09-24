@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailAuditDtoToJSON = exports.EmailAuditDtoFromJSONTyped = exports.EmailAuditDtoFromJSON = void 0;
+exports.EmailAuditDtoFromJSON = EmailAuditDtoFromJSON;
+exports.EmailAuditDtoFromJSONTyped = EmailAuditDtoFromJSONTyped;
+exports.EmailAuditDtoToJSON = EmailAuditDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function EmailAuditDtoFromJSON(json) {
     return EmailAuditDtoFromJSONTyped(json, false);
 }
-exports.EmailAuditDtoFromJSON = EmailAuditDtoFromJSON;
 function EmailAuditDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -36,7 +37,6 @@ function EmailAuditDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.EmailAuditDtoFromJSONTyped = EmailAuditDtoFromJSONTyped;
 function EmailAuditDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -56,4 +56,3 @@ function EmailAuditDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.EmailAuditDtoToJSON = EmailAuditDtoToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailBlacklistDomainResultToJSON = exports.EmailBlacklistDomainResultFromJSONTyped = exports.EmailBlacklistDomainResultFromJSON = void 0;
+exports.EmailBlacklistDomainResultFromJSON = EmailBlacklistDomainResultFromJSON;
+exports.EmailBlacklistDomainResultFromJSONTyped = EmailBlacklistDomainResultFromJSONTyped;
+exports.EmailBlacklistDomainResultToJSON = EmailBlacklistDomainResultToJSON;
 var _1 = require("./");
 function EmailBlacklistDomainResultFromJSON(json) {
     return EmailBlacklistDomainResultFromJSONTyped(json, false);
 }
-exports.EmailBlacklistDomainResultFromJSON = EmailBlacklistDomainResultFromJSON;
 function EmailBlacklistDomainResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function EmailBlacklistDomainResultFromJSONTyped(json, ignoreDiscriminator) {
         listings: json['listings'].map(_1.EmailBlacklistListingResultFromJSON),
     };
 }
-exports.EmailBlacklistDomainResultFromJSONTyped = EmailBlacklistDomainResultFromJSONTyped;
 function EmailBlacklistDomainResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function EmailBlacklistDomainResultToJSON(value) {
         listings: value.listings.map(_1.EmailBlacklistListingResultToJSON),
     };
 }
-exports.EmailBlacklistDomainResultToJSON = EmailBlacklistDomainResultToJSON;

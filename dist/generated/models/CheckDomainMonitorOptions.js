@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckDomainMonitorOptionsToJSON = exports.CheckDomainMonitorOptionsFromJSONTyped = exports.CheckDomainMonitorOptionsFromJSON = void 0;
+exports.CheckDomainMonitorOptionsFromJSON = CheckDomainMonitorOptionsFromJSON;
+exports.CheckDomainMonitorOptionsFromJSONTyped = CheckDomainMonitorOptionsFromJSONTyped;
+exports.CheckDomainMonitorOptionsToJSON = CheckDomainMonitorOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CheckDomainMonitorOptionsFromJSON(json) {
     return CheckDomainMonitorOptionsFromJSONTyped(json, false);
 }
-exports.CheckDomainMonitorOptionsFromJSON = CheckDomainMonitorOptionsFromJSON;
 function CheckDomainMonitorOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function CheckDomainMonitorOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['captchaToken'],
     };
 }
-exports.CheckDomainMonitorOptionsFromJSONTyped = CheckDomainMonitorOptionsFromJSONTyped;
 function CheckDomainMonitorOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function CheckDomainMonitorOptionsToJSON(value) {
         captchaToken: value.captchaToken,
     };
 }
-exports.CheckDomainMonitorOptionsToJSON = CheckDomainMonitorOptionsToJSON;

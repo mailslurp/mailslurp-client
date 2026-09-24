@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageSmsMessageMediaToJSON = exports.PageSmsMessageMediaFromJSONTyped = exports.PageSmsMessageMediaFromJSON = void 0;
+exports.PageSmsMessageMediaFromJSON = PageSmsMessageMediaFromJSON;
+exports.PageSmsMessageMediaFromJSONTyped = PageSmsMessageMediaFromJSONTyped;
+exports.PageSmsMessageMediaToJSON = PageSmsMessageMediaToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageSmsMessageMediaFromJSON(json) {
     return PageSmsMessageMediaFromJSONTyped(json, false);
 }
-exports.PageSmsMessageMediaFromJSON = PageSmsMessageMediaFromJSON;
 function PageSmsMessageMediaFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageSmsMessageMediaFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageSmsMessageMediaFromJSONTyped = PageSmsMessageMediaFromJSONTyped;
 function PageSmsMessageMediaToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageSmsMessageMediaToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageSmsMessageMediaToJSON = PageSmsMessageMediaToJSON;

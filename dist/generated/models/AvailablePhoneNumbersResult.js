@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AvailablePhoneNumbersResultToJSON = exports.AvailablePhoneNumbersResultFromJSONTyped = exports.AvailablePhoneNumbersResultFromJSON = void 0;
+exports.AvailablePhoneNumbersResultFromJSON = AvailablePhoneNumbersResultFromJSON;
+exports.AvailablePhoneNumbersResultFromJSONTyped = AvailablePhoneNumbersResultFromJSONTyped;
+exports.AvailablePhoneNumbersResultToJSON = AvailablePhoneNumbersResultToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function AvailablePhoneNumbersResultFromJSON(json) {
     return AvailablePhoneNumbersResultFromJSONTyped(json, false);
 }
-exports.AvailablePhoneNumbersResultFromJSON = AvailablePhoneNumbersResultFromJSON;
 function AvailablePhoneNumbersResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function AvailablePhoneNumbersResultFromJSONTyped(json, ignoreDiscriminator) {
         warning: !(0, runtime_1.exists)(json, 'warning') ? undefined : json['warning'],
     };
 }
-exports.AvailablePhoneNumbersResultFromJSONTyped = AvailablePhoneNumbersResultFromJSONTyped;
 function AvailablePhoneNumbersResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function AvailablePhoneNumbersResultToJSON(value) {
         warning: value.warning,
     };
 }
-exports.AvailablePhoneNumbersResultToJSON = AvailablePhoneNumbersResultToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailVerificationResultToJSON = exports.EmailVerificationResultFromJSONTyped = exports.EmailVerificationResultFromJSON = void 0;
+exports.EmailVerificationResultFromJSON = EmailVerificationResultFromJSON;
+exports.EmailVerificationResultFromJSONTyped = EmailVerificationResultFromJSONTyped;
+exports.EmailVerificationResultToJSON = EmailVerificationResultToJSON;
 var runtime_1 = require("../runtime");
 function EmailVerificationResultFromJSON(json) {
     return EmailVerificationResultFromJSONTyped(json, false);
 }
-exports.EmailVerificationResultFromJSON = EmailVerificationResultFromJSON;
 function EmailVerificationResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function EmailVerificationResultFromJSONTyped(json, ignoreDiscriminator) {
         error: !(0, runtime_1.exists)(json, 'error') ? undefined : json['error'],
     };
 }
-exports.EmailVerificationResultFromJSONTyped = EmailVerificationResultFromJSONTyped;
 function EmailVerificationResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function EmailVerificationResultToJSON(value) {
         error: value.error,
     };
 }
-exports.EmailVerificationResultToJSON = EmailVerificationResultToJSON;

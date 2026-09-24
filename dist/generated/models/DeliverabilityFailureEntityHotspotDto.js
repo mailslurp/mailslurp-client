@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityFailureEntityHotspotDtoToJSON = exports.DeliverabilityFailureEntityHotspotDtoFromJSONTyped = exports.DeliverabilityFailureEntityHotspotDtoFromJSON = exports.DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum = exports.DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum = exports.DeliverabilityFailureEntityHotspotDtoScopeEnum = void 0;
+exports.DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum = exports.DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum = exports.DeliverabilityFailureEntityHotspotDtoScopeEnum = void 0;
+exports.DeliverabilityFailureEntityHotspotDtoFromJSON = DeliverabilityFailureEntityHotspotDtoFromJSON;
+exports.DeliverabilityFailureEntityHotspotDtoFromJSONTyped = DeliverabilityFailureEntityHotspotDtoFromJSONTyped;
+exports.DeliverabilityFailureEntityHotspotDtoToJSON = DeliverabilityFailureEntityHotspotDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var DeliverabilityFailureEntityHotspotDtoScopeEnum;
 (function (DeliverabilityFailureEntityHotspotDtoScopeEnum) {
     DeliverabilityFailureEntityHotspotDtoScopeEnum["INBOX"] = "INBOX";
     DeliverabilityFailureEntityHotspotDtoScopeEnum["PHONE"] = "PHONE";
-})(DeliverabilityFailureEntityHotspotDtoScopeEnum = exports.DeliverabilityFailureEntityHotspotDtoScopeEnum || (exports.DeliverabilityFailureEntityHotspotDtoScopeEnum = {}));
+})(DeliverabilityFailureEntityHotspotDtoScopeEnum || (exports.DeliverabilityFailureEntityHotspotDtoScopeEnum = DeliverabilityFailureEntityHotspotDtoScopeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -43,7 +46,7 @@ var DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum;
     DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum["IL"] = "IL";
     DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum["FI"] = "FI";
     DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum["SE"] = "SE";
-})(DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum = exports.DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum || (exports.DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum = {}));
+})(DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum || (exports.DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum = DeliverabilityFailureEntityHotspotDtoPhoneCountryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -53,11 +56,10 @@ var DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum;
     DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum["LOCAL"] = "LOCAL";
     DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum["MOBILE"] = "MOBILE";
     DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum["TOLL_FREE"] = "TOLL_FREE";
-})(DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum = exports.DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum || (exports.DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum = {}));
+})(DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum || (exports.DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum = DeliverabilityFailureEntityHotspotDtoPhoneVariantEnum = {}));
 function DeliverabilityFailureEntityHotspotDtoFromJSON(json) {
     return DeliverabilityFailureEntityHotspotDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilityFailureEntityHotspotDtoFromJSON = DeliverabilityFailureEntityHotspotDtoFromJSON;
 function DeliverabilityFailureEntityHotspotDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -77,7 +79,6 @@ function DeliverabilityFailureEntityHotspotDtoFromJSONTyped(json, ignoreDiscrimi
         failureRatePercentage: json['failureRatePercentage'],
     };
 }
-exports.DeliverabilityFailureEntityHotspotDtoFromJSONTyped = DeliverabilityFailureEntityHotspotDtoFromJSONTyped;
 function DeliverabilityFailureEntityHotspotDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -96,4 +97,3 @@ function DeliverabilityFailureEntityHotspotDtoToJSON(value) {
         failureRatePercentage: value.failureRatePercentage,
     };
 }
-exports.DeliverabilityFailureEntityHotspotDtoToJSON = DeliverabilityFailureEntityHotspotDtoToJSON;

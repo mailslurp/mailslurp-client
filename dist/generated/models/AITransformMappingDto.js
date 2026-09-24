@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AITransformMappingDtoToJSON = exports.AITransformMappingDtoFromJSONTyped = exports.AITransformMappingDtoFromJSON = exports.AITransformMappingDtoEntityTypeEnum = void 0;
+exports.AITransformMappingDtoEntityTypeEnum = void 0;
+exports.AITransformMappingDtoFromJSON = AITransformMappingDtoFromJSON;
+exports.AITransformMappingDtoFromJSONTyped = AITransformMappingDtoFromJSONTyped;
+exports.AITransformMappingDtoToJSON = AITransformMappingDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,11 +27,10 @@ var AITransformMappingDtoEntityTypeEnum;
 (function (AITransformMappingDtoEntityTypeEnum) {
     AITransformMappingDtoEntityTypeEnum["INBOX"] = "INBOX";
     AITransformMappingDtoEntityTypeEnum["PHONE"] = "PHONE";
-})(AITransformMappingDtoEntityTypeEnum = exports.AITransformMappingDtoEntityTypeEnum || (exports.AITransformMappingDtoEntityTypeEnum = {}));
+})(AITransformMappingDtoEntityTypeEnum || (exports.AITransformMappingDtoEntityTypeEnum = AITransformMappingDtoEntityTypeEnum = {}));
 function AITransformMappingDtoFromJSON(json) {
     return AITransformMappingDtoFromJSONTyped(json, false);
 }
-exports.AITransformMappingDtoFromJSON = AITransformMappingDtoFromJSON;
 function AITransformMappingDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -46,7 +48,6 @@ function AITransformMappingDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.AITransformMappingDtoFromJSONTyped = AITransformMappingDtoFromJSONTyped;
 function AITransformMappingDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -65,4 +66,3 @@ function AITransformMappingDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.AITransformMappingDtoToJSON = AITransformMappingDtoToJSON;

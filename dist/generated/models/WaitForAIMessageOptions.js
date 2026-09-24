@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WaitForAIMessageOptionsToJSON = exports.WaitForAIMessageOptionsFromJSONTyped = exports.WaitForAIMessageOptionsFromJSON = exports.WaitForAIMessageOptionsExtractionPresetEnum = exports.WaitForAIMessageOptionsSortDirectionEnum = void 0;
+exports.WaitForAIMessageOptionsExtractionPresetEnum = exports.WaitForAIMessageOptionsSortDirectionEnum = void 0;
+exports.WaitForAIMessageOptionsFromJSON = WaitForAIMessageOptionsFromJSON;
+exports.WaitForAIMessageOptionsFromJSONTyped = WaitForAIMessageOptionsFromJSONTyped;
+exports.WaitForAIMessageOptionsToJSON = WaitForAIMessageOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,7 +27,7 @@ var WaitForAIMessageOptionsSortDirectionEnum;
 (function (WaitForAIMessageOptionsSortDirectionEnum) {
     WaitForAIMessageOptionsSortDirectionEnum["ASC"] = "ASC";
     WaitForAIMessageOptionsSortDirectionEnum["DESC"] = "DESC";
-})(WaitForAIMessageOptionsSortDirectionEnum = exports.WaitForAIMessageOptionsSortDirectionEnum || (exports.WaitForAIMessageOptionsSortDirectionEnum = {}));
+})(WaitForAIMessageOptionsSortDirectionEnum || (exports.WaitForAIMessageOptionsSortDirectionEnum = WaitForAIMessageOptionsSortDirectionEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -32,11 +35,10 @@ var WaitForAIMessageOptionsSortDirectionEnum;
 var WaitForAIMessageOptionsExtractionPresetEnum;
 (function (WaitForAIMessageOptionsExtractionPresetEnum) {
     WaitForAIMessageOptionsExtractionPresetEnum["OTP_CODE"] = "OTP_CODE";
-})(WaitForAIMessageOptionsExtractionPresetEnum = exports.WaitForAIMessageOptionsExtractionPresetEnum || (exports.WaitForAIMessageOptionsExtractionPresetEnum = {}));
+})(WaitForAIMessageOptionsExtractionPresetEnum || (exports.WaitForAIMessageOptionsExtractionPresetEnum = WaitForAIMessageOptionsExtractionPresetEnum = {}));
 function WaitForAIMessageOptionsFromJSON(json) {
     return WaitForAIMessageOptionsFromJSONTyped(json, false);
 }
-exports.WaitForAIMessageOptionsFromJSON = WaitForAIMessageOptionsFromJSON;
 function WaitForAIMessageOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -75,7 +77,6 @@ function WaitForAIMessageOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['extractionPreset'],
     };
 }
-exports.WaitForAIMessageOptionsFromJSONTyped = WaitForAIMessageOptionsFromJSONTyped;
 function WaitForAIMessageOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -105,4 +106,3 @@ function WaitForAIMessageOptionsToJSON(value) {
         extractionPreset: value.extractionPreset,
     };
 }
-exports.WaitForAIMessageOptionsToJSON = WaitForAIMessageOptionsToJSON;

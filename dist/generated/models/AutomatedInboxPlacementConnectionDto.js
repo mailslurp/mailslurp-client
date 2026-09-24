@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AutomatedInboxPlacementConnectionDtoToJSON = exports.AutomatedInboxPlacementConnectionDtoFromJSONTyped = exports.AutomatedInboxPlacementConnectionDtoFromJSON = exports.AutomatedInboxPlacementConnectionDtoStatusEnum = exports.AutomatedInboxPlacementConnectionDtoSmtpSecurityEnum = exports.AutomatedInboxPlacementConnectionDtoProviderEnum = void 0;
+exports.AutomatedInboxPlacementConnectionDtoStatusEnum = exports.AutomatedInboxPlacementConnectionDtoSmtpSecurityEnum = exports.AutomatedInboxPlacementConnectionDtoProviderEnum = void 0;
+exports.AutomatedInboxPlacementConnectionDtoFromJSON = AutomatedInboxPlacementConnectionDtoFromJSON;
+exports.AutomatedInboxPlacementConnectionDtoFromJSONTyped = AutomatedInboxPlacementConnectionDtoFromJSONTyped;
+exports.AutomatedInboxPlacementConnectionDtoToJSON = AutomatedInboxPlacementConnectionDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -27,7 +30,7 @@ var AutomatedInboxPlacementConnectionDtoProviderEnum;
     AutomatedInboxPlacementConnectionDtoProviderEnum["RESEND"] = "RESEND";
     AutomatedInboxPlacementConnectionDtoProviderEnum["MAILGUN"] = "MAILGUN";
     AutomatedInboxPlacementConnectionDtoProviderEnum["POSTMARK"] = "POSTMARK";
-})(AutomatedInboxPlacementConnectionDtoProviderEnum = exports.AutomatedInboxPlacementConnectionDtoProviderEnum || (exports.AutomatedInboxPlacementConnectionDtoProviderEnum = {}));
+})(AutomatedInboxPlacementConnectionDtoProviderEnum || (exports.AutomatedInboxPlacementConnectionDtoProviderEnum = AutomatedInboxPlacementConnectionDtoProviderEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -36,7 +39,7 @@ var AutomatedInboxPlacementConnectionDtoSmtpSecurityEnum;
 (function (AutomatedInboxPlacementConnectionDtoSmtpSecurityEnum) {
     AutomatedInboxPlacementConnectionDtoSmtpSecurityEnum["START_TLS"] = "START_TLS";
     AutomatedInboxPlacementConnectionDtoSmtpSecurityEnum["TLS"] = "TLS";
-})(AutomatedInboxPlacementConnectionDtoSmtpSecurityEnum = exports.AutomatedInboxPlacementConnectionDtoSmtpSecurityEnum || (exports.AutomatedInboxPlacementConnectionDtoSmtpSecurityEnum = {}));
+})(AutomatedInboxPlacementConnectionDtoSmtpSecurityEnum || (exports.AutomatedInboxPlacementConnectionDtoSmtpSecurityEnum = AutomatedInboxPlacementConnectionDtoSmtpSecurityEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -47,11 +50,10 @@ var AutomatedInboxPlacementConnectionDtoStatusEnum;
     AutomatedInboxPlacementConnectionDtoStatusEnum["CONNECTED"] = "CONNECTED";
     AutomatedInboxPlacementConnectionDtoStatusEnum["ERROR"] = "ERROR";
     AutomatedInboxPlacementConnectionDtoStatusEnum["DISCONNECTED"] = "DISCONNECTED";
-})(AutomatedInboxPlacementConnectionDtoStatusEnum = exports.AutomatedInboxPlacementConnectionDtoStatusEnum || (exports.AutomatedInboxPlacementConnectionDtoStatusEnum = {}));
+})(AutomatedInboxPlacementConnectionDtoStatusEnum || (exports.AutomatedInboxPlacementConnectionDtoStatusEnum = AutomatedInboxPlacementConnectionDtoStatusEnum = {}));
 function AutomatedInboxPlacementConnectionDtoFromJSON(json) {
     return AutomatedInboxPlacementConnectionDtoFromJSONTyped(json, false);
 }
-exports.AutomatedInboxPlacementConnectionDtoFromJSON = AutomatedInboxPlacementConnectionDtoFromJSON;
 function AutomatedInboxPlacementConnectionDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -82,7 +84,6 @@ function AutomatedInboxPlacementConnectionDtoFromJSONTyped(json, ignoreDiscrimin
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.AutomatedInboxPlacementConnectionDtoFromJSONTyped = AutomatedInboxPlacementConnectionDtoFromJSONTyped;
 function AutomatedInboxPlacementConnectionDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -110,4 +111,3 @@ function AutomatedInboxPlacementConnectionDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.AutomatedInboxPlacementConnectionDtoToJSON = AutomatedInboxPlacementConnectionDtoToJSON;

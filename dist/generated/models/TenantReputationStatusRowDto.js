@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TenantReputationStatusRowDtoToJSON = exports.TenantReputationStatusRowDtoFromJSONTyped = exports.TenantReputationStatusRowDtoFromJSON = exports.TenantReputationStatusRowDtoAccountRegionEnum = void 0;
+exports.TenantReputationStatusRowDtoAccountRegionEnum = void 0;
+exports.TenantReputationStatusRowDtoFromJSON = TenantReputationStatusRowDtoFromJSON;
+exports.TenantReputationStatusRowDtoFromJSONTyped = TenantReputationStatusRowDtoFromJSONTyped;
+exports.TenantReputationStatusRowDtoToJSON = TenantReputationStatusRowDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -35,11 +38,10 @@ var TenantReputationStatusRowDtoAccountRegionEnum;
     TenantReputationStatusRowDtoAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
     TenantReputationStatusRowDtoAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
     TenantReputationStatusRowDtoAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
-})(TenantReputationStatusRowDtoAccountRegionEnum = exports.TenantReputationStatusRowDtoAccountRegionEnum || (exports.TenantReputationStatusRowDtoAccountRegionEnum = {}));
+})(TenantReputationStatusRowDtoAccountRegionEnum || (exports.TenantReputationStatusRowDtoAccountRegionEnum = TenantReputationStatusRowDtoAccountRegionEnum = {}));
 function TenantReputationStatusRowDtoFromJSON(json) {
     return TenantReputationStatusRowDtoFromJSONTyped(json, false);
 }
-exports.TenantReputationStatusRowDtoFromJSON = TenantReputationStatusRowDtoFromJSON;
 function TenantReputationStatusRowDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -79,7 +81,6 @@ function TenantReputationStatusRowDtoFromJSONTyped(json, ignoreDiscriminator) {
         error: !(0, runtime_1.exists)(json, 'error') ? undefined : json['error'],
     };
 }
-exports.TenantReputationStatusRowDtoFromJSONTyped = TenantReputationStatusRowDtoFromJSONTyped;
 function TenantReputationStatusRowDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -108,4 +109,3 @@ function TenantReputationStatusRowDtoToJSON(value) {
         error: value.error,
     };
 }
-exports.TenantReputationStatusRowDtoToJSON = TenantReputationStatusRowDtoToJSON;

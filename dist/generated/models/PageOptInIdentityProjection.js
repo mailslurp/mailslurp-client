@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageOptInIdentityProjectionToJSON = exports.PageOptInIdentityProjectionFromJSONTyped = exports.PageOptInIdentityProjectionFromJSON = void 0;
+exports.PageOptInIdentityProjectionFromJSON = PageOptInIdentityProjectionFromJSON;
+exports.PageOptInIdentityProjectionFromJSONTyped = PageOptInIdentityProjectionFromJSONTyped;
+exports.PageOptInIdentityProjectionToJSON = PageOptInIdentityProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageOptInIdentityProjectionFromJSON(json) {
     return PageOptInIdentityProjectionFromJSONTyped(json, false);
 }
-exports.PageOptInIdentityProjectionFromJSON = PageOptInIdentityProjectionFromJSON;
 function PageOptInIdentityProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageOptInIdentityProjectionFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageOptInIdentityProjectionFromJSONTyped = PageOptInIdentityProjectionFromJSONTyped;
 function PageOptInIdentityProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageOptInIdentityProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageOptInIdentityProjectionToJSON = PageOptInIdentityProjectionToJSON;

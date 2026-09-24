@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateInboxReplierActiveOptionsToJSON = exports.UpdateInboxReplierActiveOptionsFromJSONTyped = exports.UpdateInboxReplierActiveOptionsFromJSON = void 0;
+exports.UpdateInboxReplierActiveOptionsFromJSON = UpdateInboxReplierActiveOptionsFromJSON;
+exports.UpdateInboxReplierActiveOptionsFromJSONTyped = UpdateInboxReplierActiveOptionsFromJSONTyped;
+exports.UpdateInboxReplierActiveOptionsToJSON = UpdateInboxReplierActiveOptionsToJSON;
 function UpdateInboxReplierActiveOptionsFromJSON(json) {
     return UpdateInboxReplierActiveOptionsFromJSONTyped(json, false);
 }
-exports.UpdateInboxReplierActiveOptionsFromJSON = UpdateInboxReplierActiveOptionsFromJSON;
 function UpdateInboxReplierActiveOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function UpdateInboxReplierActiveOptionsFromJSONTyped(json, ignoreDiscriminator)
         active: json['active'],
     };
 }
-exports.UpdateInboxReplierActiveOptionsFromJSONTyped = UpdateInboxReplierActiveOptionsFromJSONTyped;
 function UpdateInboxReplierActiveOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function UpdateInboxReplierActiveOptionsToJSON(value) {
         active: value.active,
     };
 }
-exports.UpdateInboxReplierActiveOptionsToJSON = UpdateInboxReplierActiveOptionsToJSON;

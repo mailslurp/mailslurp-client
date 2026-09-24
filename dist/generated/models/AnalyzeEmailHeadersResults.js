@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AnalyzeEmailHeadersResultsToJSON = exports.AnalyzeEmailHeadersResultsFromJSONTyped = exports.AnalyzeEmailHeadersResultsFromJSON = void 0;
+exports.AnalyzeEmailHeadersResultsFromJSON = AnalyzeEmailHeadersResultsFromJSON;
+exports.AnalyzeEmailHeadersResultsFromJSONTyped = AnalyzeEmailHeadersResultsFromJSONTyped;
+exports.AnalyzeEmailHeadersResultsToJSON = AnalyzeEmailHeadersResultsToJSON;
 var _1 = require("./");
 function AnalyzeEmailHeadersResultsFromJSON(json) {
     return AnalyzeEmailHeadersResultsFromJSONTyped(json, false);
 }
-exports.AnalyzeEmailHeadersResultsFromJSON = AnalyzeEmailHeadersResultsFromJSON;
 function AnalyzeEmailHeadersResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function AnalyzeEmailHeadersResultsFromJSONTyped(json, ignoreDiscriminator) {
         errors: json['errors'],
     };
 }
-exports.AnalyzeEmailHeadersResultsFromJSONTyped = AnalyzeEmailHeadersResultsFromJSONTyped;
 function AnalyzeEmailHeadersResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function AnalyzeEmailHeadersResultsToJSON(value) {
         errors: value.errors,
     };
 }
-exports.AnalyzeEmailHeadersResultsToJSON = AnalyzeEmailHeadersResultsToJSON;

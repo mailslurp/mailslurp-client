@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateTotpDeviceBase32SecretKeyOptionsToJSON = exports.CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped = exports.CreateTotpDeviceBase32SecretKeyOptionsFromJSON = void 0;
+exports.CreateTotpDeviceBase32SecretKeyOptionsFromJSON = CreateTotpDeviceBase32SecretKeyOptionsFromJSON;
+exports.CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped = CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped;
+exports.CreateTotpDeviceBase32SecretKeyOptionsToJSON = CreateTotpDeviceBase32SecretKeyOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateTotpDeviceBase32SecretKeyOptionsFromJSON(json) {
     return CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped(json, false);
 }
-exports.CreateTotpDeviceBase32SecretKeyOptionsFromJSON = CreateTotpDeviceBase32SecretKeyOptionsFromJSON;
 function CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped(json, ignoreDiscrim
         algorithm: !(0, runtime_1.exists)(json, 'algorithm') ? undefined : json['algorithm'],
     };
 }
-exports.CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped = CreateTotpDeviceBase32SecretKeyOptionsFromJSONTyped;
 function CreateTotpDeviceBase32SecretKeyOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function CreateTotpDeviceBase32SecretKeyOptionsToJSON(value) {
         algorithm: value.algorithm,
     };
 }
-exports.CreateTotpDeviceBase32SecretKeyOptionsToJSON = CreateTotpDeviceBase32SecretKeyOptionsToJSON;

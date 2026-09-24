@@ -6,3 +6,4 @@ node_modules
 bin
 templates/blocks
 scripts/hyperlink
+test-results

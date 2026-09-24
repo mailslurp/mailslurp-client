@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupDkimDomainResultsToJSON = exports.LookupDkimDomainResultsFromJSONTyped = exports.LookupDkimDomainResultsFromJSON = void 0;
+exports.LookupDkimDomainResultsFromJSON = LookupDkimDomainResultsFromJSON;
+exports.LookupDkimDomainResultsFromJSONTyped = LookupDkimDomainResultsFromJSONTyped;
+exports.LookupDkimDomainResultsToJSON = LookupDkimDomainResultsToJSON;
 var runtime_1 = require("../runtime");
 function LookupDkimDomainResultsFromJSON(json) {
     return LookupDkimDomainResultsFromJSONTyped(json, false);
 }
-exports.LookupDkimDomainResultsFromJSON = LookupDkimDomainResultsFromJSON;
 function LookupDkimDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function LookupDkimDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
         errors: json['errors'],
     };
 }
-exports.LookupDkimDomainResultsFromJSONTyped = LookupDkimDomainResultsFromJSONTyped;
 function LookupDkimDomainResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function LookupDkimDomainResultsToJSON(value) {
         errors: value.errors,
     };
 }
-exports.LookupDkimDomainResultsToJSON = LookupDkimDomainResultsToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AnalyzeEmailHeadersOptionsToJSON = exports.AnalyzeEmailHeadersOptionsFromJSONTyped = exports.AnalyzeEmailHeadersOptionsFromJSON = void 0;
+exports.AnalyzeEmailHeadersOptionsFromJSON = AnalyzeEmailHeadersOptionsFromJSON;
+exports.AnalyzeEmailHeadersOptionsFromJSONTyped = AnalyzeEmailHeadersOptionsFromJSONTyped;
+exports.AnalyzeEmailHeadersOptionsToJSON = AnalyzeEmailHeadersOptionsToJSON;
 function AnalyzeEmailHeadersOptionsFromJSON(json) {
     return AnalyzeEmailHeadersOptionsFromJSONTyped(json, false);
 }
-exports.AnalyzeEmailHeadersOptionsFromJSON = AnalyzeEmailHeadersOptionsFromJSON;
 function AnalyzeEmailHeadersOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function AnalyzeEmailHeadersOptionsFromJSONTyped(json, ignoreDiscriminator) {
         rawHeaders: json['rawHeaders'],
     };
 }
-exports.AnalyzeEmailHeadersOptionsFromJSONTyped = AnalyzeEmailHeadersOptionsFromJSONTyped;
 function AnalyzeEmailHeadersOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function AnalyzeEmailHeadersOptionsToJSON(value) {
         rawHeaders: value.rawHeaders,
     };
 }
-exports.AnalyzeEmailHeadersOptionsToJSON = AnalyzeEmailHeadersOptionsToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WaitForAIMessagesOptionsToJSON = exports.WaitForAIMessagesOptionsFromJSONTyped = exports.WaitForAIMessagesOptionsFromJSON = void 0;
+exports.WaitForAIMessagesOptionsFromJSON = WaitForAIMessagesOptionsFromJSON;
+exports.WaitForAIMessagesOptionsFromJSONTyped = WaitForAIMessagesOptionsFromJSONTyped;
+exports.WaitForAIMessagesOptionsToJSON = WaitForAIMessagesOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function WaitForAIMessagesOptionsFromJSON(json) {
     return WaitForAIMessagesOptionsFromJSONTyped(json, false);
 }
-exports.WaitForAIMessagesOptionsFromJSON = WaitForAIMessagesOptionsFromJSON;
 function WaitForAIMessagesOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function WaitForAIMessagesOptionsFromJSONTyped(json, ignoreDiscriminator) {
         aiOptions: (0, _1.AIMessageAIOptionsFromJSON)(json['aiOptions']),
     };
 }
-exports.WaitForAIMessagesOptionsFromJSONTyped = WaitForAIMessagesOptionsFromJSONTyped;
 function WaitForAIMessagesOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -58,4 +58,3 @@ function WaitForAIMessagesOptionsToJSON(value) {
         aiOptions: (0, _1.AIMessageAIOptionsToJSON)(value.aiOptions),
     };
 }
-exports.WaitForAIMessagesOptionsToJSON = WaitForAIMessagesOptionsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailIntelligenceResultDtoToJSON = exports.EmailIntelligenceResultDtoFromJSONTyped = exports.EmailIntelligenceResultDtoFromJSON = void 0;
+exports.EmailIntelligenceResultDtoFromJSON = EmailIntelligenceResultDtoFromJSON;
+exports.EmailIntelligenceResultDtoFromJSONTyped = EmailIntelligenceResultDtoFromJSONTyped;
+exports.EmailIntelligenceResultDtoToJSON = EmailIntelligenceResultDtoToJSON;
 var _1 = require("./");
 function EmailIntelligenceResultDtoFromJSON(json) {
     return EmailIntelligenceResultDtoFromJSONTyped(json, false);
 }
-exports.EmailIntelligenceResultDtoFromJSON = EmailIntelligenceResultDtoFromJSON;
 function EmailIntelligenceResultDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function EmailIntelligenceResultDtoFromJSONTyped(json, ignoreDiscriminator) {
         signals: (0, _1.EmailIntelligenceSignalsDtoFromJSON)(json['signals']),
     };
 }
-exports.EmailIntelligenceResultDtoFromJSONTyped = EmailIntelligenceResultDtoFromJSONTyped;
 function EmailIntelligenceResultDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function EmailIntelligenceResultDtoToJSON(value) {
         signals: (0, _1.EmailIntelligenceSignalsDtoToJSON)(value.signals),
     };
 }
-exports.EmailIntelligenceResultDtoToJSON = EmailIntelligenceResultDtoToJSON;

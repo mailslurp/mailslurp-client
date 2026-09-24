@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDevicePreviewShareLinkOptionsToJSON = exports.CreateDevicePreviewShareLinkOptionsFromJSONTyped = exports.CreateDevicePreviewShareLinkOptionsFromJSON = void 0;
+exports.CreateDevicePreviewShareLinkOptionsFromJSON = CreateDevicePreviewShareLinkOptionsFromJSON;
+exports.CreateDevicePreviewShareLinkOptionsFromJSONTyped = CreateDevicePreviewShareLinkOptionsFromJSONTyped;
+exports.CreateDevicePreviewShareLinkOptionsToJSON = CreateDevicePreviewShareLinkOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateDevicePreviewShareLinkOptionsFromJSON(json) {
     return CreateDevicePreviewShareLinkOptionsFromJSONTyped(json, false);
 }
-exports.CreateDevicePreviewShareLinkOptionsFromJSON = CreateDevicePreviewShareLinkOptionsFromJSON;
 function CreateDevicePreviewShareLinkOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function CreateDevicePreviewShareLinkOptionsFromJSONTyped(json, ignoreDiscrimina
                 : new Date(json['expiresAt']),
     };
 }
-exports.CreateDevicePreviewShareLinkOptionsFromJSONTyped = CreateDevicePreviewShareLinkOptionsFromJSONTyped;
 function CreateDevicePreviewShareLinkOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function CreateDevicePreviewShareLinkOptionsToJSON(value) {
                 : value.expiresAt.toISOString(),
     };
 }
-exports.CreateDevicePreviewShareLinkOptionsToJSON = CreateDevicePreviewShareLinkOptionsToJSON;

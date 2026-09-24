@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageAssertionResultToJSON = exports.AIMessageAssertionResultFromJSONTyped = exports.AIMessageAssertionResultFromJSON = exports.AIMessageAssertionResultStatusEnum = void 0;
+exports.AIMessageAssertionResultStatusEnum = void 0;
+exports.AIMessageAssertionResultFromJSON = AIMessageAssertionResultFromJSON;
+exports.AIMessageAssertionResultFromJSONTyped = AIMessageAssertionResultFromJSONTyped;
+exports.AIMessageAssertionResultToJSON = AIMessageAssertionResultToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -25,11 +28,10 @@ var AIMessageAssertionResultStatusEnum;
     AIMessageAssertionResultStatusEnum["PASS"] = "PASS";
     AIMessageAssertionResultStatusEnum["FAIL"] = "FAIL";
     AIMessageAssertionResultStatusEnum["INCONCLUSIVE"] = "INCONCLUSIVE";
-})(AIMessageAssertionResultStatusEnum = exports.AIMessageAssertionResultStatusEnum || (exports.AIMessageAssertionResultStatusEnum = {}));
+})(AIMessageAssertionResultStatusEnum || (exports.AIMessageAssertionResultStatusEnum = AIMessageAssertionResultStatusEnum = {}));
 function AIMessageAssertionResultFromJSON(json) {
     return AIMessageAssertionResultFromJSONTyped(json, false);
 }
-exports.AIMessageAssertionResultFromJSON = AIMessageAssertionResultFromJSON;
 function AIMessageAssertionResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +46,6 @@ function AIMessageAssertionResultFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.AIMessageConfidenceFromJSON)(json['confidence']),
     };
 }
-exports.AIMessageAssertionResultFromJSONTyped = AIMessageAssertionResultFromJSONTyped;
 function AIMessageAssertionResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -60,4 +61,3 @@ function AIMessageAssertionResultToJSON(value) {
         confidence: (0, _1.AIMessageConfidenceToJSON)(value.confidence),
     };
 }
-exports.AIMessageAssertionResultToJSON = AIMessageAssertionResultToJSON;

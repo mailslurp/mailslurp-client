@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GuestPortalUserProjectionToJSON = exports.GuestPortalUserProjectionFromJSONTyped = exports.GuestPortalUserProjectionFromJSON = void 0;
+exports.GuestPortalUserProjectionFromJSON = GuestPortalUserProjectionFromJSON;
+exports.GuestPortalUserProjectionFromJSONTyped = GuestPortalUserProjectionFromJSONTyped;
+exports.GuestPortalUserProjectionToJSON = GuestPortalUserProjectionToJSON;
 var runtime_1 = require("../runtime");
 function GuestPortalUserProjectionFromJSON(json) {
     return GuestPortalUserProjectionFromJSONTyped(json, false);
 }
-exports.GuestPortalUserProjectionFromJSON = GuestPortalUserProjectionFromJSON;
 function GuestPortalUserProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function GuestPortalUserProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.GuestPortalUserProjectionFromJSONTyped = GuestPortalUserProjectionFromJSONTyped;
 function GuestPortalUserProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -57,4 +57,3 @@ function GuestPortalUserProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.GuestPortalUserProjectionToJSON = GuestPortalUserProjectionToJSON;

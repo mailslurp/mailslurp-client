@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailThreadDtoToJSON = exports.EmailThreadDtoFromJSONTyped = exports.EmailThreadDtoFromJSON = void 0;
+exports.EmailThreadDtoFromJSON = EmailThreadDtoFromJSON;
+exports.EmailThreadDtoFromJSONTyped = EmailThreadDtoFromJSONTyped;
+exports.EmailThreadDtoToJSON = EmailThreadDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function EmailThreadDtoFromJSON(json) {
     return EmailThreadDtoFromJSONTyped(json, false);
 }
-exports.EmailThreadDtoFromJSON = EmailThreadDtoFromJSON;
 function EmailThreadDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -43,7 +44,6 @@ function EmailThreadDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.EmailThreadDtoFromJSONTyped = EmailThreadDtoFromJSONTyped;
 function EmailThreadDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -66,4 +66,3 @@ function EmailThreadDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.EmailThreadDtoToJSON = EmailThreadDtoToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BasicAuthOptionsToJSON = exports.BasicAuthOptionsFromJSONTyped = exports.BasicAuthOptionsFromJSON = void 0;
+exports.BasicAuthOptionsFromJSON = BasicAuthOptionsFromJSON;
+exports.BasicAuthOptionsFromJSONTyped = BasicAuthOptionsFromJSONTyped;
+exports.BasicAuthOptionsToJSON = BasicAuthOptionsToJSON;
 function BasicAuthOptionsFromJSON(json) {
     return BasicAuthOptionsFromJSONTyped(json, false);
 }
-exports.BasicAuthOptionsFromJSON = BasicAuthOptionsFromJSON;
 function BasicAuthOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function BasicAuthOptionsFromJSONTyped(json, ignoreDiscriminator) {
         password: json['password'],
     };
 }
-exports.BasicAuthOptionsFromJSONTyped = BasicAuthOptionsFromJSONTyped;
 function BasicAuthOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function BasicAuthOptionsToJSON(value) {
         password: value.password,
     };
 }
-exports.BasicAuthOptionsToJSON = BasicAuthOptionsToJSON;

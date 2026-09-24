@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExportTransformerResultJobDtoToJSON = exports.ExportTransformerResultJobDtoFromJSONTyped = exports.ExportTransformerResultJobDtoFromJSON = exports.ExportTransformerResultJobDtoFormatEnum = exports.ExportTransformerResultJobDtoStatusEnum = void 0;
+exports.ExportTransformerResultJobDtoFormatEnum = exports.ExportTransformerResultJobDtoStatusEnum = void 0;
+exports.ExportTransformerResultJobDtoFromJSON = ExportTransformerResultJobDtoFromJSON;
+exports.ExportTransformerResultJobDtoFromJSONTyped = ExportTransformerResultJobDtoFromJSONTyped;
+exports.ExportTransformerResultJobDtoToJSON = ExportTransformerResultJobDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,7 +28,7 @@ var ExportTransformerResultJobDtoStatusEnum;
     ExportTransformerResultJobDtoStatusEnum["IN_PROGRESS"] = "IN_PROGRESS";
     ExportTransformerResultJobDtoStatusEnum["ERROR"] = "ERROR";
     ExportTransformerResultJobDtoStatusEnum["SUCCESS"] = "SUCCESS";
-})(ExportTransformerResultJobDtoStatusEnum = exports.ExportTransformerResultJobDtoStatusEnum || (exports.ExportTransformerResultJobDtoStatusEnum = {}));
+})(ExportTransformerResultJobDtoStatusEnum || (exports.ExportTransformerResultJobDtoStatusEnum = ExportTransformerResultJobDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -36,11 +39,10 @@ var ExportTransformerResultJobDtoFormatEnum;
     ExportTransformerResultJobDtoFormatEnum["EXCEL"] = "EXCEL";
     ExportTransformerResultJobDtoFormatEnum["XML"] = "XML";
     ExportTransformerResultJobDtoFormatEnum["JSON"] = "JSON";
-})(ExportTransformerResultJobDtoFormatEnum = exports.ExportTransformerResultJobDtoFormatEnum || (exports.ExportTransformerResultJobDtoFormatEnum = {}));
+})(ExportTransformerResultJobDtoFormatEnum || (exports.ExportTransformerResultJobDtoFormatEnum = ExportTransformerResultJobDtoFormatEnum = {}));
 function ExportTransformerResultJobDtoFromJSON(json) {
     return ExportTransformerResultJobDtoFromJSONTyped(json, false);
 }
-exports.ExportTransformerResultJobDtoFromJSON = ExportTransformerResultJobDtoFromJSON;
 function ExportTransformerResultJobDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -55,7 +57,6 @@ function ExportTransformerResultJobDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.ExportTransformerResultJobDtoFromJSONTyped = ExportTransformerResultJobDtoFromJSONTyped;
 function ExportTransformerResultJobDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -73,4 +74,3 @@ function ExportTransformerResultJobDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.ExportTransformerResultJobDtoToJSON = ExportTransformerResultJobDtoToJSON;

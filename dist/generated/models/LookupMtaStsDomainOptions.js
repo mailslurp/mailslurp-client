@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupMtaStsDomainOptionsToJSON = exports.LookupMtaStsDomainOptionsFromJSONTyped = exports.LookupMtaStsDomainOptionsFromJSON = void 0;
+exports.LookupMtaStsDomainOptionsFromJSON = LookupMtaStsDomainOptionsFromJSON;
+exports.LookupMtaStsDomainOptionsFromJSONTyped = LookupMtaStsDomainOptionsFromJSONTyped;
+exports.LookupMtaStsDomainOptionsToJSON = LookupMtaStsDomainOptionsToJSON;
 function LookupMtaStsDomainOptionsFromJSON(json) {
     return LookupMtaStsDomainOptionsFromJSONTyped(json, false);
 }
-exports.LookupMtaStsDomainOptionsFromJSON = LookupMtaStsDomainOptionsFromJSON;
 function LookupMtaStsDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function LookupMtaStsDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
         host: json['host'],
     };
 }
-exports.LookupMtaStsDomainOptionsFromJSONTyped = LookupMtaStsDomainOptionsFromJSONTyped;
 function LookupMtaStsDomainOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function LookupMtaStsDomainOptionsToJSON(value) {
         host: value.host,
     };
 }
-exports.LookupMtaStsDomainOptionsToJSON = LookupMtaStsDomainOptionsToJSON;

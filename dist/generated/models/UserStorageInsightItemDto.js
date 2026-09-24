@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserStorageInsightItemDtoToJSON = exports.UserStorageInsightItemDtoFromJSONTyped = exports.UserStorageInsightItemDtoFromJSON = void 0;
+exports.UserStorageInsightItemDtoFromJSON = UserStorageInsightItemDtoFromJSON;
+exports.UserStorageInsightItemDtoFromJSONTyped = UserStorageInsightItemDtoFromJSONTyped;
+exports.UserStorageInsightItemDtoToJSON = UserStorageInsightItemDtoToJSON;
 var runtime_1 = require("../runtime");
 function UserStorageInsightItemDtoFromJSON(json) {
     return UserStorageInsightItemDtoFromJSONTyped(json, false);
 }
-exports.UserStorageInsightItemDtoFromJSON = UserStorageInsightItemDtoFromJSON;
 function UserStorageInsightItemDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +40,6 @@ function UserStorageInsightItemDtoFromJSONTyped(json, ignoreDiscriminator) {
         itemCount: json['itemCount'],
     };
 }
-exports.UserStorageInsightItemDtoFromJSONTyped = UserStorageInsightItemDtoFromJSONTyped;
 function UserStorageInsightItemDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -61,4 +61,3 @@ function UserStorageInsightItemDtoToJSON(value) {
         itemCount: value.itemCount,
     };
 }
-exports.UserStorageInsightItemDtoToJSON = UserStorageInsightItemDtoToJSON;

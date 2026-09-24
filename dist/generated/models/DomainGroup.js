@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainGroupToJSON = exports.DomainGroupFromJSONTyped = exports.DomainGroupFromJSON = exports.DomainGroupLabelEnum = void 0;
+exports.DomainGroupLabelEnum = void 0;
+exports.DomainGroupFromJSON = DomainGroupFromJSON;
+exports.DomainGroupFromJSONTyped = DomainGroupFromJSONTyped;
+exports.DomainGroupToJSON = DomainGroupToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -24,11 +27,10 @@ var DomainGroupLabelEnum;
     DomainGroupLabelEnum["DEFAULT"] = "DEFAULT";
     DomainGroupLabelEnum["DOMAIN_POOL"] = "DOMAIN_POOL";
     DomainGroupLabelEnum["CUSTOM"] = "CUSTOM";
-})(DomainGroupLabelEnum = exports.DomainGroupLabelEnum || (exports.DomainGroupLabelEnum = {}));
+})(DomainGroupLabelEnum || (exports.DomainGroupLabelEnum = DomainGroupLabelEnum = {}));
 function DomainGroupFromJSON(json) {
     return DomainGroupFromJSONTyped(json, false);
 }
-exports.DomainGroupFromJSON = DomainGroupFromJSON;
 function DomainGroupFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +40,6 @@ function DomainGroupFromJSONTyped(json, ignoreDiscriminator) {
         domains: json['domains'].map(_1.DomainInformationFromJSON),
     };
 }
-exports.DomainGroupFromJSONTyped = DomainGroupFromJSONTyped;
 function DomainGroupToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +52,3 @@ function DomainGroupToJSON(value) {
         domains: value.domains.map(_1.DomainInformationToJSON),
     };
 }
-exports.DomainGroupToJSON = DomainGroupToJSON;

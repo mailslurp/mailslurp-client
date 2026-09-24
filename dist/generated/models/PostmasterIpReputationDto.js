@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PostmasterIpReputationDtoToJSON = exports.PostmasterIpReputationDtoFromJSONTyped = exports.PostmasterIpReputationDtoFromJSON = void 0;
+exports.PostmasterIpReputationDtoFromJSON = PostmasterIpReputationDtoFromJSON;
+exports.PostmasterIpReputationDtoFromJSONTyped = PostmasterIpReputationDtoFromJSONTyped;
+exports.PostmasterIpReputationDtoToJSON = PostmasterIpReputationDtoToJSON;
 var runtime_1 = require("../runtime");
 function PostmasterIpReputationDtoFromJSON(json) {
     return PostmasterIpReputationDtoFromJSONTyped(json, false);
 }
-exports.PostmasterIpReputationDtoFromJSON = PostmasterIpReputationDtoFromJSON;
 function PostmasterIpReputationDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function PostmasterIpReputationDtoFromJSONTyped(json, ignoreDiscriminator) {
         sampleIp: !(0, runtime_1.exists)(json, 'sampleIp') ? undefined : json['sampleIp'],
     };
 }
-exports.PostmasterIpReputationDtoFromJSONTyped = PostmasterIpReputationDtoFromJSONTyped;
 function PostmasterIpReputationDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function PostmasterIpReputationDtoToJSON(value) {
         sampleIp: value.sampleIp,
     };
 }
-exports.PostmasterIpReputationDtoToJSON = PostmasterIpReputationDtoToJSON;

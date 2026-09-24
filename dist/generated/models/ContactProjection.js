@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContactProjectionToJSON = exports.ContactProjectionFromJSONTyped = exports.ContactProjectionFromJSON = void 0;
+exports.ContactProjectionFromJSON = ContactProjectionFromJSON;
+exports.ContactProjectionFromJSONTyped = ContactProjectionFromJSONTyped;
+exports.ContactProjectionToJSON = ContactProjectionToJSON;
 var runtime_1 = require("../runtime");
 function ContactProjectionFromJSON(json) {
     return ContactProjectionFromJSONTyped(json, false);
 }
-exports.ContactProjectionFromJSON = ContactProjectionFromJSON;
 function ContactProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +40,6 @@ function ContactProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.ContactProjectionFromJSONTyped = ContactProjectionFromJSONTyped;
 function ContactProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +59,3 @@ function ContactProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.ContactProjectionToJSON = ContactProjectionToJSON;

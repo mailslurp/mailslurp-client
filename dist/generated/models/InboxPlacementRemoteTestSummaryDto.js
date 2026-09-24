@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementRemoteTestSummaryDtoToJSON = exports.InboxPlacementRemoteTestSummaryDtoFromJSONTyped = exports.InboxPlacementRemoteTestSummaryDtoFromJSON = void 0;
+exports.InboxPlacementRemoteTestSummaryDtoFromJSON = InboxPlacementRemoteTestSummaryDtoFromJSON;
+exports.InboxPlacementRemoteTestSummaryDtoFromJSONTyped = InboxPlacementRemoteTestSummaryDtoFromJSONTyped;
+exports.InboxPlacementRemoteTestSummaryDtoToJSON = InboxPlacementRemoteTestSummaryDtoToJSON;
 var runtime_1 = require("../runtime");
 function InboxPlacementRemoteTestSummaryDtoFromJSON(json) {
     return InboxPlacementRemoteTestSummaryDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementRemoteTestSummaryDtoFromJSON = InboxPlacementRemoteTestSummaryDtoFromJSON;
 function InboxPlacementRemoteTestSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -47,7 +48,6 @@ function InboxPlacementRemoteTestSummaryDtoFromJSONTyped(json, ignoreDiscriminat
                 : new Date(json['expiresAt']),
     };
 }
-exports.InboxPlacementRemoteTestSummaryDtoFromJSONTyped = InboxPlacementRemoteTestSummaryDtoFromJSONTyped;
 function InboxPlacementRemoteTestSummaryDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -77,4 +77,3 @@ function InboxPlacementRemoteTestSummaryDtoToJSON(value) {
                 : value.expiresAt.toISOString(),
     };
 }
-exports.InboxPlacementRemoteTestSummaryDtoToJSON = InboxPlacementRemoteTestSummaryDtoToJSON;

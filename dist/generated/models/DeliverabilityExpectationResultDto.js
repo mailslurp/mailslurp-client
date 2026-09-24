@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityExpectationResultDtoToJSON = exports.DeliverabilityExpectationResultDtoFromJSONTyped = exports.DeliverabilityExpectationResultDtoFromJSON = void 0;
+exports.DeliverabilityExpectationResultDtoFromJSON = DeliverabilityExpectationResultDtoFromJSON;
+exports.DeliverabilityExpectationResultDtoFromJSONTyped = DeliverabilityExpectationResultDtoFromJSONTyped;
+exports.DeliverabilityExpectationResultDtoToJSON = DeliverabilityExpectationResultDtoToJSON;
 var runtime_1 = require("../runtime");
 function DeliverabilityExpectationResultDtoFromJSON(json) {
     return DeliverabilityExpectationResultDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilityExpectationResultDtoFromJSON = DeliverabilityExpectationResultDtoFromJSON;
 function DeliverabilityExpectationResultDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -36,7 +37,6 @@ function DeliverabilityExpectationResultDtoFromJSONTyped(json, ignoreDiscriminat
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
     };
 }
-exports.DeliverabilityExpectationResultDtoFromJSONTyped = DeliverabilityExpectationResultDtoFromJSONTyped;
 function DeliverabilityExpectationResultDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function DeliverabilityExpectationResultDtoToJSON(value) {
         subject: value.subject,
     };
 }
-exports.DeliverabilityExpectationResultDtoToJSON = DeliverabilityExpectationResultDtoToJSON;

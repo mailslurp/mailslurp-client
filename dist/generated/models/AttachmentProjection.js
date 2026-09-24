@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AttachmentProjectionToJSON = exports.AttachmentProjectionFromJSONTyped = exports.AttachmentProjectionFromJSON = void 0;
+exports.AttachmentProjectionFromJSON = AttachmentProjectionFromJSON;
+exports.AttachmentProjectionFromJSONTyped = AttachmentProjectionFromJSONTyped;
+exports.AttachmentProjectionToJSON = AttachmentProjectionToJSON;
 var runtime_1 = require("../runtime");
 function AttachmentProjectionFromJSON(json) {
     return AttachmentProjectionFromJSONTyped(json, false);
 }
-exports.AttachmentProjectionFromJSON = AttachmentProjectionFromJSON;
 function AttachmentProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +39,6 @@ function AttachmentProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.AttachmentProjectionFromJSONTyped = AttachmentProjectionFromJSONTyped;
 function AttachmentProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +59,3 @@ function AttachmentProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.AttachmentProjectionToJSON = AttachmentProjectionToJSON;

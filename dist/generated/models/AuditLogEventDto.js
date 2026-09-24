@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuditLogEventDtoToJSON = exports.AuditLogEventDtoFromJSONTyped = exports.AuditLogEventDtoFromJSON = void 0;
+exports.AuditLogEventDtoFromJSON = AuditLogEventDtoFromJSON;
+exports.AuditLogEventDtoFromJSONTyped = AuditLogEventDtoFromJSONTyped;
+exports.AuditLogEventDtoToJSON = AuditLogEventDtoToJSON;
 var runtime_1 = require("../runtime");
 function AuditLogEventDtoFromJSON(json) {
     return AuditLogEventDtoFromJSONTyped(json, false);
 }
-exports.AuditLogEventDtoFromJSON = AuditLogEventDtoFromJSON;
 function AuditLogEventDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -46,7 +47,6 @@ function AuditLogEventDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['metadataJson'],
     };
 }
-exports.AuditLogEventDtoFromJSONTyped = AuditLogEventDtoFromJSONTyped;
 function AuditLogEventDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -71,4 +71,3 @@ function AuditLogEventDtoToJSON(value) {
         metadataJson: value.metadataJson,
     };
 }
-exports.AuditLogEventDtoToJSON = AuditLogEventDtoToJSON;

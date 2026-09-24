@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HomeExperienceDtoToJSON = exports.HomeExperienceDtoFromJSONTyped = exports.HomeExperienceDtoFromJSON = exports.HomeExperienceDtoTeamSizeEnum = exports.HomeExperienceDtoPersonaEnum = exports.HomeExperienceDtoSecondaryPathsEnum = exports.HomeExperienceDtoPrimaryPathEnum = exports.HomeExperienceDtoHomeVariantEnum = void 0;
+exports.HomeExperienceDtoTeamSizeEnum = exports.HomeExperienceDtoPersonaEnum = exports.HomeExperienceDtoSecondaryPathsEnum = exports.HomeExperienceDtoPrimaryPathEnum = exports.HomeExperienceDtoHomeVariantEnum = void 0;
+exports.HomeExperienceDtoFromJSON = HomeExperienceDtoFromJSON;
+exports.HomeExperienceDtoFromJSONTyped = HomeExperienceDtoFromJSONTyped;
+exports.HomeExperienceDtoToJSON = HomeExperienceDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -25,7 +28,7 @@ var HomeExperienceDtoHomeVariantEnum;
     HomeExperienceDtoHomeVariantEnum["NEW_USER"] = "NEW_USER";
     HomeExperienceDtoHomeVariantEnum["RETURNING"] = "RETURNING";
     HomeExperienceDtoHomeVariantEnum["CHILD"] = "CHILD";
-})(HomeExperienceDtoHomeVariantEnum = exports.HomeExperienceDtoHomeVariantEnum || (exports.HomeExperienceDtoHomeVariantEnum = {}));
+})(HomeExperienceDtoHomeVariantEnum || (exports.HomeExperienceDtoHomeVariantEnum = HomeExperienceDtoHomeVariantEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -41,7 +44,7 @@ var HomeExperienceDtoPrimaryPathEnum;
     HomeExperienceDtoPrimaryPathEnum["OBSERVE"] = "OBSERVE";
     HomeExperienceDtoPrimaryPathEnum["AUTOMATIONS_AI"] = "AUTOMATIONS_AI";
     HomeExperienceDtoPrimaryPathEnum["UNDECIDED"] = "UNDECIDED";
-})(HomeExperienceDtoPrimaryPathEnum = exports.HomeExperienceDtoPrimaryPathEnum || (exports.HomeExperienceDtoPrimaryPathEnum = {}));
+})(HomeExperienceDtoPrimaryPathEnum || (exports.HomeExperienceDtoPrimaryPathEnum = HomeExperienceDtoPrimaryPathEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -57,7 +60,7 @@ var HomeExperienceDtoSecondaryPathsEnum;
     HomeExperienceDtoSecondaryPathsEnum["OBSERVE"] = "OBSERVE";
     HomeExperienceDtoSecondaryPathsEnum["AUTOMATIONS_AI"] = "AUTOMATIONS_AI";
     HomeExperienceDtoSecondaryPathsEnum["UNDECIDED"] = "UNDECIDED";
-})(HomeExperienceDtoSecondaryPathsEnum = exports.HomeExperienceDtoSecondaryPathsEnum || (exports.HomeExperienceDtoSecondaryPathsEnum = {}));
+})(HomeExperienceDtoSecondaryPathsEnum || (exports.HomeExperienceDtoSecondaryPathsEnum = HomeExperienceDtoSecondaryPathsEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -70,7 +73,7 @@ var HomeExperienceDtoPersonaEnum;
     HomeExperienceDtoPersonaEnum["OPS"] = "OPS";
     HomeExperienceDtoPersonaEnum["SUPPORT"] = "SUPPORT";
     HomeExperienceDtoPersonaEnum["OTHER"] = "OTHER";
-})(HomeExperienceDtoPersonaEnum = exports.HomeExperienceDtoPersonaEnum || (exports.HomeExperienceDtoPersonaEnum = {}));
+})(HomeExperienceDtoPersonaEnum || (exports.HomeExperienceDtoPersonaEnum = HomeExperienceDtoPersonaEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -80,11 +83,10 @@ var HomeExperienceDtoTeamSizeEnum;
     HomeExperienceDtoTeamSizeEnum["SOLO"] = "SOLO";
     HomeExperienceDtoTeamSizeEnum["TEAM"] = "TEAM";
     HomeExperienceDtoTeamSizeEnum["ENTERPRISE"] = "ENTERPRISE";
-})(HomeExperienceDtoTeamSizeEnum = exports.HomeExperienceDtoTeamSizeEnum || (exports.HomeExperienceDtoTeamSizeEnum = {}));
+})(HomeExperienceDtoTeamSizeEnum || (exports.HomeExperienceDtoTeamSizeEnum = HomeExperienceDtoTeamSizeEnum = {}));
 function HomeExperienceDtoFromJSON(json) {
     return HomeExperienceDtoFromJSONTyped(json, false);
 }
-exports.HomeExperienceDtoFromJSON = HomeExperienceDtoFromJSON;
 function HomeExperienceDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -107,7 +109,6 @@ function HomeExperienceDtoFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.HomeExperienceUpgradeContextDtoFromJSON)(json['upgradeContext']),
     };
 }
-exports.HomeExperienceDtoFromJSONTyped = HomeExperienceDtoFromJSONTyped;
 function HomeExperienceDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -127,4 +128,3 @@ function HomeExperienceDtoToJSON(value) {
         upgradeContext: (0, _1.HomeExperienceUpgradeContextDtoToJSON)(value.upgradeContext),
     };
 }
-exports.HomeExperienceDtoToJSON = HomeExperienceDtoToJSON;

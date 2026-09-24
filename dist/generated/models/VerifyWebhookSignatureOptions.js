@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyWebhookSignatureOptionsToJSON = exports.VerifyWebhookSignatureOptionsFromJSONTyped = exports.VerifyWebhookSignatureOptionsFromJSON = void 0;
+exports.VerifyWebhookSignatureOptionsFromJSON = VerifyWebhookSignatureOptionsFromJSON;
+exports.VerifyWebhookSignatureOptionsFromJSONTyped = VerifyWebhookSignatureOptionsFromJSONTyped;
+exports.VerifyWebhookSignatureOptionsToJSON = VerifyWebhookSignatureOptionsToJSON;
 function VerifyWebhookSignatureOptionsFromJSON(json) {
     return VerifyWebhookSignatureOptionsFromJSONTyped(json, false);
 }
-exports.VerifyWebhookSignatureOptionsFromJSON = VerifyWebhookSignatureOptionsFromJSON;
 function VerifyWebhookSignatureOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function VerifyWebhookSignatureOptionsFromJSONTyped(json, ignoreDiscriminator) {
         signature: json['signature'],
     };
 }
-exports.VerifyWebhookSignatureOptionsFromJSONTyped = VerifyWebhookSignatureOptionsFromJSONTyped;
 function VerifyWebhookSignatureOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function VerifyWebhookSignatureOptionsToJSON(value) {
         signature: value.signature,
     };
 }
-exports.VerifyWebhookSignatureOptionsToJSON = VerifyWebhookSignatureOptionsToJSON;

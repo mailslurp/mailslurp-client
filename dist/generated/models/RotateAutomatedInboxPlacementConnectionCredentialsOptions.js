@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RotateAutomatedInboxPlacementConnectionCredentialsOptionsToJSON = exports.RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSONTyped = exports.RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSON = void 0;
+exports.RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSON = RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSON;
+exports.RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSONTyped = RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSONTyped;
+exports.RotateAutomatedInboxPlacementConnectionCredentialsOptionsToJSON = RotateAutomatedInboxPlacementConnectionCredentialsOptionsToJSON;
 var _1 = require("./");
 function RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSON(json) {
     return RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSONTyped(json, false);
 }
-exports.RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSON = RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSON;
 function RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSONTyped(
         smtp: (0, _1.AutomatedInboxPlacementSmtpOptionsFromJSON)(json['smtp']),
     };
 }
-exports.RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSONTyped = RotateAutomatedInboxPlacementConnectionCredentialsOptionsFromJSONTyped;
 function RotateAutomatedInboxPlacementConnectionCredentialsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function RotateAutomatedInboxPlacementConnectionCredentialsOptionsToJSON(value) 
         smtp: (0, _1.AutomatedInboxPlacementSmtpOptionsToJSON)(value.smtp),
     };
 }
-exports.RotateAutomatedInboxPlacementConnectionCredentialsOptionsToJSON = RotateAutomatedInboxPlacementConnectionCredentialsOptionsToJSON;

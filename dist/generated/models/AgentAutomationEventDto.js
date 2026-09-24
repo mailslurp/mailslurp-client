@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentAutomationEventDtoToJSON = exports.AgentAutomationEventDtoFromJSONTyped = exports.AgentAutomationEventDtoFromJSON = exports.AgentAutomationEventDtoTypeEnum = void 0;
+exports.AgentAutomationEventDtoTypeEnum = void 0;
+exports.AgentAutomationEventDtoFromJSON = AgentAutomationEventDtoFromJSON;
+exports.AgentAutomationEventDtoFromJSONTyped = AgentAutomationEventDtoFromJSONTyped;
+exports.AgentAutomationEventDtoToJSON = AgentAutomationEventDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -38,11 +41,10 @@ var AgentAutomationEventDtoTypeEnum;
     AgentAutomationEventDtoTypeEnum["AGENT_DRAFT_CREATED"] = "AGENT_DRAFT_CREATED";
     AgentAutomationEventDtoTypeEnum["AGENT_DRAFT_SENT"] = "AGENT_DRAFT_SENT";
     AgentAutomationEventDtoTypeEnum["AGENT_ACTION_FAILED"] = "AGENT_ACTION_FAILED";
-})(AgentAutomationEventDtoTypeEnum = exports.AgentAutomationEventDtoTypeEnum || (exports.AgentAutomationEventDtoTypeEnum = {}));
+})(AgentAutomationEventDtoTypeEnum || (exports.AgentAutomationEventDtoTypeEnum = AgentAutomationEventDtoTypeEnum = {}));
 function AgentAutomationEventDtoFromJSON(json) {
     return AgentAutomationEventDtoFromJSONTyped(json, false);
 }
-exports.AgentAutomationEventDtoFromJSON = AgentAutomationEventDtoFromJSON;
 function AgentAutomationEventDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -70,7 +72,6 @@ function AgentAutomationEventDtoFromJSONTyped(json, ignoreDiscriminator) {
         sourceId: !(0, runtime_1.exists)(json, 'sourceId') ? undefined : json['sourceId'],
     };
 }
-exports.AgentAutomationEventDtoFromJSONTyped = AgentAutomationEventDtoFromJSONTyped;
 function AgentAutomationEventDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -95,4 +96,3 @@ function AgentAutomationEventDtoToJSON(value) {
         sourceId: value.sourceId,
     };
 }
-exports.AgentAutomationEventDtoToJSON = AgentAutomationEventDtoToJSON;

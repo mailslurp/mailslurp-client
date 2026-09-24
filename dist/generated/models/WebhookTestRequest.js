@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookTestRequestToJSON = exports.WebhookTestRequestFromJSONTyped = exports.WebhookTestRequestFromJSON = exports.WebhookTestRequestMethodEnum = void 0;
+exports.WebhookTestRequestMethodEnum = void 0;
+exports.WebhookTestRequestFromJSON = WebhookTestRequestFromJSON;
+exports.WebhookTestRequestFromJSONTyped = WebhookTestRequestFromJSONTyped;
+exports.WebhookTestRequestToJSON = WebhookTestRequestToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -29,11 +32,10 @@ var WebhookTestRequestMethodEnum;
     WebhookTestRequestMethodEnum["HEAD"] = "HEAD";
     WebhookTestRequestMethodEnum["OPTIONS"] = "OPTIONS";
     WebhookTestRequestMethodEnum["TRACE"] = "TRACE";
-})(WebhookTestRequestMethodEnum = exports.WebhookTestRequestMethodEnum || (exports.WebhookTestRequestMethodEnum = {}));
+})(WebhookTestRequestMethodEnum || (exports.WebhookTestRequestMethodEnum = WebhookTestRequestMethodEnum = {}));
 function WebhookTestRequestFromJSON(json) {
     return WebhookTestRequestFromJSONTyped(json, false);
 }
-exports.WebhookTestRequestFromJSON = WebhookTestRequestFromJSON;
 function WebhookTestRequestFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -45,7 +47,6 @@ function WebhookTestRequestFromJSONTyped(json, ignoreDiscriminator) {
         payload: !(0, runtime_1.exists)(json, 'payload') ? undefined : json['payload'],
     };
 }
-exports.WebhookTestRequestFromJSONTyped = WebhookTestRequestFromJSONTyped;
 function WebhookTestRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -60,4 +61,3 @@ function WebhookTestRequestToJSON(value) {
         payload: value.payload,
     };
 }
-exports.WebhookTestRequestToJSON = WebhookTestRequestToJSON;

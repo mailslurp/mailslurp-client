@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateSendingConnectionOptionsToJSON = exports.CreateSendingConnectionOptionsFromJSONTyped = exports.CreateSendingConnectionOptionsFromJSON = exports.CreateSendingConnectionOptionsProviderEnum = exports.CreateSendingConnectionOptionsProviderPresetEnum = void 0;
+exports.CreateSendingConnectionOptionsProviderEnum = exports.CreateSendingConnectionOptionsProviderPresetEnum = void 0;
+exports.CreateSendingConnectionOptionsFromJSON = CreateSendingConnectionOptionsFromJSON;
+exports.CreateSendingConnectionOptionsFromJSONTyped = CreateSendingConnectionOptionsFromJSONTyped;
+exports.CreateSendingConnectionOptionsToJSON = CreateSendingConnectionOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -49,7 +52,7 @@ var CreateSendingConnectionOptionsProviderPresetEnum;
     CreateSendingConnectionOptionsProviderPresetEnum["MAILERSEND"] = "MAILERSEND";
     CreateSendingConnectionOptionsProviderPresetEnum["MANDRILL"] = "MANDRILL";
     CreateSendingConnectionOptionsProviderPresetEnum["ELASTIC_EMAIL"] = "ELASTIC_EMAIL";
-})(CreateSendingConnectionOptionsProviderPresetEnum = exports.CreateSendingConnectionOptionsProviderPresetEnum || (exports.CreateSendingConnectionOptionsProviderPresetEnum = {}));
+})(CreateSendingConnectionOptionsProviderPresetEnum || (exports.CreateSendingConnectionOptionsProviderPresetEnum = CreateSendingConnectionOptionsProviderPresetEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -62,11 +65,10 @@ var CreateSendingConnectionOptionsProviderEnum;
     CreateSendingConnectionOptionsProviderEnum["RESEND"] = "RESEND";
     CreateSendingConnectionOptionsProviderEnum["MAILGUN"] = "MAILGUN";
     CreateSendingConnectionOptionsProviderEnum["POSTMARK"] = "POSTMARK";
-})(CreateSendingConnectionOptionsProviderEnum = exports.CreateSendingConnectionOptionsProviderEnum || (exports.CreateSendingConnectionOptionsProviderEnum = {}));
+})(CreateSendingConnectionOptionsProviderEnum || (exports.CreateSendingConnectionOptionsProviderEnum = CreateSendingConnectionOptionsProviderEnum = {}));
 function CreateSendingConnectionOptionsFromJSON(json) {
     return CreateSendingConnectionOptionsFromJSONTyped(json, false);
 }
-exports.CreateSendingConnectionOptionsFromJSON = CreateSendingConnectionOptionsFromJSON;
 function CreateSendingConnectionOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -84,7 +86,6 @@ function CreateSendingConnectionOptionsFromJSONTyped(json, ignoreDiscriminator) 
             : (0, _1.SendingConnectionApiKeyOptionsFromJSON)(json['apiKey']),
     };
 }
-exports.CreateSendingConnectionOptionsFromJSONTyped = CreateSendingConnectionOptionsFromJSONTyped;
 function CreateSendingConnectionOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -101,4 +102,3 @@ function CreateSendingConnectionOptionsToJSON(value) {
         apiKey: (0, _1.SendingConnectionApiKeyOptionsToJSON)(value.apiKey),
     };
 }
-exports.CreateSendingConnectionOptionsToJSON = CreateSendingConnectionOptionsToJSON;

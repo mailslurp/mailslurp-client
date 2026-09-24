@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupTodayDtoToJSON = exports.EmailWarmupTodayDtoFromJSONTyped = exports.EmailWarmupTodayDtoFromJSON = void 0;
+exports.EmailWarmupTodayDtoFromJSON = EmailWarmupTodayDtoFromJSON;
+exports.EmailWarmupTodayDtoFromJSONTyped = EmailWarmupTodayDtoFromJSONTyped;
+exports.EmailWarmupTodayDtoToJSON = EmailWarmupTodayDtoToJSON;
 var runtime_1 = require("../runtime");
 function EmailWarmupTodayDtoFromJSON(json) {
     return EmailWarmupTodayDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupTodayDtoFromJSON = EmailWarmupTodayDtoFromJSON;
 function EmailWarmupTodayDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -36,7 +37,6 @@ function EmailWarmupTodayDtoFromJSONTyped(json, ignoreDiscriminator) {
                 : new Date(json['nextSendAt']),
     };
 }
-exports.EmailWarmupTodayDtoFromJSONTyped = EmailWarmupTodayDtoFromJSONTyped;
 function EmailWarmupTodayDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -57,4 +57,3 @@ function EmailWarmupTodayDtoToJSON(value) {
                 : value.nextSendAt.toISOString(),
     };
 }
-exports.EmailWarmupTodayDtoToJSON = EmailWarmupTodayDtoToJSON;

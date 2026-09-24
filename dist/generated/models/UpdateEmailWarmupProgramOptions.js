@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateEmailWarmupProgramOptionsToJSON = exports.UpdateEmailWarmupProgramOptionsFromJSONTyped = exports.UpdateEmailWarmupProgramOptionsFromJSON = exports.UpdateEmailWarmupProgramOptionsSchedulePresetEnum = void 0;
+exports.UpdateEmailWarmupProgramOptionsSchedulePresetEnum = void 0;
+exports.UpdateEmailWarmupProgramOptionsFromJSON = UpdateEmailWarmupProgramOptionsFromJSON;
+exports.UpdateEmailWarmupProgramOptionsFromJSONTyped = UpdateEmailWarmupProgramOptionsFromJSONTyped;
+exports.UpdateEmailWarmupProgramOptionsToJSON = UpdateEmailWarmupProgramOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -26,11 +29,10 @@ var UpdateEmailWarmupProgramOptionsSchedulePresetEnum;
     UpdateEmailWarmupProgramOptionsSchedulePresetEnum["STANDARD"] = "STANDARD";
     UpdateEmailWarmupProgramOptionsSchedulePresetEnum["REPAIR"] = "REPAIR";
     UpdateEmailWarmupProgramOptionsSchedulePresetEnum["CUSTOM"] = "CUSTOM";
-})(UpdateEmailWarmupProgramOptionsSchedulePresetEnum = exports.UpdateEmailWarmupProgramOptionsSchedulePresetEnum || (exports.UpdateEmailWarmupProgramOptionsSchedulePresetEnum = {}));
+})(UpdateEmailWarmupProgramOptionsSchedulePresetEnum || (exports.UpdateEmailWarmupProgramOptionsSchedulePresetEnum = UpdateEmailWarmupProgramOptionsSchedulePresetEnum = {}));
 function UpdateEmailWarmupProgramOptionsFromJSON(json) {
     return UpdateEmailWarmupProgramOptionsFromJSONTyped(json, false);
 }
-exports.UpdateEmailWarmupProgramOptionsFromJSON = UpdateEmailWarmupProgramOptionsFromJSON;
 function UpdateEmailWarmupProgramOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -65,7 +67,6 @@ function UpdateEmailWarmupProgramOptionsFromJSONTyped(json, ignoreDiscriminator)
             : (0, _1.EmailWarmupContentOptionsFromJSON)(json['content']),
     };
 }
-exports.UpdateEmailWarmupProgramOptionsFromJSONTyped = UpdateEmailWarmupProgramOptionsFromJSONTyped;
 function UpdateEmailWarmupProgramOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -87,4 +88,3 @@ function UpdateEmailWarmupProgramOptionsToJSON(value) {
         content: (0, _1.EmailWarmupContentOptionsToJSON)(value.content),
     };
 }
-exports.UpdateEmailWarmupProgramOptionsToJSON = UpdateEmailWarmupProgramOptionsToJSON;

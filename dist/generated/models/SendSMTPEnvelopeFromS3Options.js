@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendSMTPEnvelopeFromS3OptionsToJSON = exports.SendSMTPEnvelopeFromS3OptionsFromJSONTyped = exports.SendSMTPEnvelopeFromS3OptionsFromJSON = void 0;
+exports.SendSMTPEnvelopeFromS3OptionsFromJSON = SendSMTPEnvelopeFromS3OptionsFromJSON;
+exports.SendSMTPEnvelopeFromS3OptionsFromJSONTyped = SendSMTPEnvelopeFromS3OptionsFromJSONTyped;
+exports.SendSMTPEnvelopeFromS3OptionsToJSON = SendSMTPEnvelopeFromS3OptionsToJSON;
 var _1 = require("./");
 function SendSMTPEnvelopeFromS3OptionsFromJSON(json) {
     return SendSMTPEnvelopeFromS3OptionsFromJSONTyped(json, false);
 }
-exports.SendSMTPEnvelopeFromS3OptionsFromJSON = SendSMTPEnvelopeFromS3OptionsFromJSON;
 function SendSMTPEnvelopeFromS3OptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function SendSMTPEnvelopeFromS3OptionsFromJSONTyped(json, ignoreDiscriminator) {
         bucketPath: (0, _1.SmtpMailMessageBucketPathFromJSON)(json['bucketPath']),
     };
 }
-exports.SendSMTPEnvelopeFromS3OptionsFromJSONTyped = SendSMTPEnvelopeFromS3OptionsFromJSONTyped;
 function SendSMTPEnvelopeFromS3OptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function SendSMTPEnvelopeFromS3OptionsToJSON(value) {
         bucketPath: (0, _1.SmtpMailMessageBucketPathToJSON)(value.bucketPath),
     };
 }
-exports.SendSMTPEnvelopeFromS3OptionsToJSON = SendSMTPEnvelopeFromS3OptionsToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentCapabilityFeaturesDtoToJSON = exports.AgentCapabilityFeaturesDtoFromJSONTyped = exports.AgentCapabilityFeaturesDtoFromJSON = void 0;
+exports.AgentCapabilityFeaturesDtoFromJSON = AgentCapabilityFeaturesDtoFromJSON;
+exports.AgentCapabilityFeaturesDtoFromJSONTyped = AgentCapabilityFeaturesDtoFromJSONTyped;
+exports.AgentCapabilityFeaturesDtoToJSON = AgentCapabilityFeaturesDtoToJSON;
 function AgentCapabilityFeaturesDtoFromJSON(json) {
     return AgentCapabilityFeaturesDtoFromJSONTyped(json, false);
 }
-exports.AgentCapabilityFeaturesDtoFromJSON = AgentCapabilityFeaturesDtoFromJSON;
 function AgentCapabilityFeaturesDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -41,7 +42,6 @@ function AgentCapabilityFeaturesDtoFromJSONTyped(json, ignoreDiscriminator) {
         smsIdempotentSend: json['smsIdempotentSend'],
     };
 }
-exports.AgentCapabilityFeaturesDtoFromJSONTyped = AgentCapabilityFeaturesDtoFromJSONTyped;
 function AgentCapabilityFeaturesDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function AgentCapabilityFeaturesDtoToJSON(value) {
         smsIdempotentSend: value.smsIdempotentSend,
     };
 }
-exports.AgentCapabilityFeaturesDtoToJSON = AgentCapabilityFeaturesDtoToJSON;

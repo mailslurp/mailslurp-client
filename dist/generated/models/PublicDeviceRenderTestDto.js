@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PublicDeviceRenderTestDtoToJSON = exports.PublicDeviceRenderTestDtoFromJSONTyped = exports.PublicDeviceRenderTestDtoFromJSON = exports.PublicDeviceRenderTestDtoPreviewModeEnum = exports.PublicDeviceRenderTestDtoStatusEnum = void 0;
+exports.PublicDeviceRenderTestDtoPreviewModeEnum = exports.PublicDeviceRenderTestDtoStatusEnum = void 0;
+exports.PublicDeviceRenderTestDtoFromJSON = PublicDeviceRenderTestDtoFromJSON;
+exports.PublicDeviceRenderTestDtoFromJSONTyped = PublicDeviceRenderTestDtoFromJSONTyped;
+exports.PublicDeviceRenderTestDtoToJSON = PublicDeviceRenderTestDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -29,7 +32,7 @@ var PublicDeviceRenderTestDtoStatusEnum;
     PublicDeviceRenderTestDtoStatusEnum["REJECTED"] = "REJECTED";
     PublicDeviceRenderTestDtoStatusEnum["FAILED"] = "FAILED";
     PublicDeviceRenderTestDtoStatusEnum["EXPIRED"] = "EXPIRED";
-})(PublicDeviceRenderTestDtoStatusEnum = exports.PublicDeviceRenderTestDtoStatusEnum || (exports.PublicDeviceRenderTestDtoStatusEnum = {}));
+})(PublicDeviceRenderTestDtoStatusEnum || (exports.PublicDeviceRenderTestDtoStatusEnum = PublicDeviceRenderTestDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -38,11 +41,10 @@ var PublicDeviceRenderTestDtoPreviewModeEnum;
 (function (PublicDeviceRenderTestDtoPreviewModeEnum) {
     PublicDeviceRenderTestDtoPreviewModeEnum["DEVICE_RENDER"] = "DEVICE_RENDER";
     PublicDeviceRenderTestDtoPreviewModeEnum["LIGHT_DARK"] = "LIGHT_DARK";
-})(PublicDeviceRenderTestDtoPreviewModeEnum = exports.PublicDeviceRenderTestDtoPreviewModeEnum || (exports.PublicDeviceRenderTestDtoPreviewModeEnum = {}));
+})(PublicDeviceRenderTestDtoPreviewModeEnum || (exports.PublicDeviceRenderTestDtoPreviewModeEnum = PublicDeviceRenderTestDtoPreviewModeEnum = {}));
 function PublicDeviceRenderTestDtoFromJSON(json) {
     return PublicDeviceRenderTestDtoFromJSONTyped(json, false);
 }
-exports.PublicDeviceRenderTestDtoFromJSON = PublicDeviceRenderTestDtoFromJSON;
 function PublicDeviceRenderTestDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -71,7 +73,6 @@ function PublicDeviceRenderTestDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['failureMessage'],
     };
 }
-exports.PublicDeviceRenderTestDtoFromJSONTyped = PublicDeviceRenderTestDtoFromJSONTyped;
 function PublicDeviceRenderTestDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -97,4 +98,3 @@ function PublicDeviceRenderTestDtoToJSON(value) {
         failureMessage: value.failureMessage,
     };
 }
-exports.PublicDeviceRenderTestDtoToJSON = PublicDeviceRenderTestDtoToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HomeExperienceFirstValueDtoToJSON = exports.HomeExperienceFirstValueDtoFromJSONTyped = exports.HomeExperienceFirstValueDtoFromJSON = exports.HomeExperienceFirstValueDtoStatusEnum = void 0;
+exports.HomeExperienceFirstValueDtoStatusEnum = void 0;
+exports.HomeExperienceFirstValueDtoFromJSON = HomeExperienceFirstValueDtoFromJSON;
+exports.HomeExperienceFirstValueDtoFromJSONTyped = HomeExperienceFirstValueDtoFromJSONTyped;
+exports.HomeExperienceFirstValueDtoToJSON = HomeExperienceFirstValueDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var HomeExperienceFirstValueDtoStatusEnum;
 (function (HomeExperienceFirstValueDtoStatusEnum) {
     HomeExperienceFirstValueDtoStatusEnum["NOT_REACHED"] = "NOT_REACHED";
     HomeExperienceFirstValueDtoStatusEnum["REACHED"] = "REACHED";
-})(HomeExperienceFirstValueDtoStatusEnum = exports.HomeExperienceFirstValueDtoStatusEnum || (exports.HomeExperienceFirstValueDtoStatusEnum = {}));
+})(HomeExperienceFirstValueDtoStatusEnum || (exports.HomeExperienceFirstValueDtoStatusEnum = HomeExperienceFirstValueDtoStatusEnum = {}));
 function HomeExperienceFirstValueDtoFromJSON(json) {
     return HomeExperienceFirstValueDtoFromJSONTyped(json, false);
 }
-exports.HomeExperienceFirstValueDtoFromJSON = HomeExperienceFirstValueDtoFromJSON;
 function HomeExperienceFirstValueDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -42,7 +44,6 @@ function HomeExperienceFirstValueDtoFromJSONTyped(json, ignoreDiscriminator) {
                 : new Date(json['at']),
     };
 }
-exports.HomeExperienceFirstValueDtoFromJSONTyped = HomeExperienceFirstValueDtoFromJSONTyped;
 function HomeExperienceFirstValueDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -60,4 +61,3 @@ function HomeExperienceFirstValueDtoToJSON(value) {
                 : value.at.toISOString(),
     };
 }
-exports.HomeExperienceFirstValueDtoToJSON = HomeExperienceFirstValueDtoToJSON;

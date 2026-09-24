@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScimPatchRequestToJSON = exports.ScimPatchRequestFromJSONTyped = exports.ScimPatchRequestFromJSON = void 0;
+exports.ScimPatchRequestFromJSON = ScimPatchRequestFromJSON;
+exports.ScimPatchRequestFromJSONTyped = ScimPatchRequestFromJSONTyped;
+exports.ScimPatchRequestToJSON = ScimPatchRequestToJSON;
 var _1 = require("./");
 function ScimPatchRequestFromJSON(json) {
     return ScimPatchRequestFromJSONTyped(json, false);
 }
-exports.ScimPatchRequestFromJSON = ScimPatchRequestFromJSON;
 function ScimPatchRequestFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function ScimPatchRequestFromJSONTyped(json, ignoreDiscriminator) {
         operations: json['Operations'].map(_1.ScimPatchOperationFromJSON),
     };
 }
-exports.ScimPatchRequestFromJSONTyped = ScimPatchRequestFromJSONTyped;
 function ScimPatchRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function ScimPatchRequestToJSON(value) {
         Operations: value.operations.map(_1.ScimPatchOperationToJSON),
     };
 }
-exports.ScimPatchRequestToJSON = ScimPatchRequestToJSON;

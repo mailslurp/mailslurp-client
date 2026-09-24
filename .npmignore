@@ -16,3 +16,5 @@ scripts
 typedoc.json
 junit.xml
 .env
+/test
+/.oxfmtrc.json

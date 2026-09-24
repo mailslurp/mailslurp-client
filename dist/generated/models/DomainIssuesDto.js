@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainIssuesDtoToJSON = exports.DomainIssuesDtoFromJSONTyped = exports.DomainIssuesDtoFromJSON = void 0;
+exports.DomainIssuesDtoFromJSON = DomainIssuesDtoFromJSON;
+exports.DomainIssuesDtoFromJSONTyped = DomainIssuesDtoFromJSONTyped;
+exports.DomainIssuesDtoToJSON = DomainIssuesDtoToJSON;
 function DomainIssuesDtoFromJSON(json) {
     return DomainIssuesDtoFromJSONTyped(json, false);
 }
-exports.DomainIssuesDtoFromJSON = DomainIssuesDtoFromJSON;
 function DomainIssuesDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function DomainIssuesDtoFromJSONTyped(json, ignoreDiscriminator) {
         hasIssues: json['hasIssues'],
     };
 }
-exports.DomainIssuesDtoFromJSONTyped = DomainIssuesDtoFromJSONTyped;
 function DomainIssuesDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function DomainIssuesDtoToJSON(value) {
         hasIssues: value.hasIssues,
     };
 }
-exports.DomainIssuesDtoToJSON = DomainIssuesDtoToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateAutomatedInboxPlacementConnectionOptionsToJSON = exports.UpdateAutomatedInboxPlacementConnectionOptionsFromJSONTyped = exports.UpdateAutomatedInboxPlacementConnectionOptionsFromJSON = void 0;
+exports.UpdateAutomatedInboxPlacementConnectionOptionsFromJSON = UpdateAutomatedInboxPlacementConnectionOptionsFromJSON;
+exports.UpdateAutomatedInboxPlacementConnectionOptionsFromJSONTyped = UpdateAutomatedInboxPlacementConnectionOptionsFromJSONTyped;
+exports.UpdateAutomatedInboxPlacementConnectionOptionsToJSON = UpdateAutomatedInboxPlacementConnectionOptionsToJSON;
 var runtime_1 = require("../runtime");
 function UpdateAutomatedInboxPlacementConnectionOptionsFromJSON(json) {
     return UpdateAutomatedInboxPlacementConnectionOptionsFromJSONTyped(json, false);
 }
-exports.UpdateAutomatedInboxPlacementConnectionOptionsFromJSON = UpdateAutomatedInboxPlacementConnectionOptionsFromJSON;
 function UpdateAutomatedInboxPlacementConnectionOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function UpdateAutomatedInboxPlacementConnectionOptionsFromJSONTyped(json, ignor
         fromEmail: !(0, runtime_1.exists)(json, 'fromEmail') ? undefined : json['fromEmail'],
     };
 }
-exports.UpdateAutomatedInboxPlacementConnectionOptionsFromJSONTyped = UpdateAutomatedInboxPlacementConnectionOptionsFromJSONTyped;
 function UpdateAutomatedInboxPlacementConnectionOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function UpdateAutomatedInboxPlacementConnectionOptionsToJSON(value) {
         fromEmail: value.fromEmail,
     };
 }
-exports.UpdateAutomatedInboxPlacementConnectionOptionsToJSON = UpdateAutomatedInboxPlacementConnectionOptionsToJSON;

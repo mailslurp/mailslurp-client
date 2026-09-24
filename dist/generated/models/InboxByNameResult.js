@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxByNameResultToJSON = exports.InboxByNameResultFromJSONTyped = exports.InboxByNameResultFromJSON = void 0;
+exports.InboxByNameResultFromJSON = InboxByNameResultFromJSON;
+exports.InboxByNameResultFromJSONTyped = InboxByNameResultFromJSONTyped;
+exports.InboxByNameResultToJSON = InboxByNameResultToJSON;
 var runtime_1 = require("../runtime");
 function InboxByNameResultFromJSON(json) {
     return InboxByNameResultFromJSONTyped(json, false);
 }
-exports.InboxByNameResultFromJSON = InboxByNameResultFromJSON;
 function InboxByNameResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function InboxByNameResultFromJSONTyped(json, ignoreDiscriminator) {
         _exists: json['exists'],
     };
 }
-exports.InboxByNameResultFromJSONTyped = InboxByNameResultFromJSONTyped;
 function InboxByNameResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function InboxByNameResultToJSON(value) {
         exists: value._exists,
     };
 }
-exports.InboxByNameResultToJSON = InboxByNameResultToJSON;

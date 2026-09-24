@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateRulesetOptionsToJSON = exports.CreateRulesetOptionsFromJSONTyped = exports.CreateRulesetOptionsFromJSON = exports.CreateRulesetOptionsActionEnum = exports.CreateRulesetOptionsScopeEnum = void 0;
+exports.CreateRulesetOptionsActionEnum = exports.CreateRulesetOptionsScopeEnum = void 0;
+exports.CreateRulesetOptionsFromJSON = CreateRulesetOptionsFromJSON;
+exports.CreateRulesetOptionsFromJSONTyped = CreateRulesetOptionsFromJSONTyped;
+exports.CreateRulesetOptionsToJSON = CreateRulesetOptionsToJSON;
 /**
  * @export
  * @enum {string}
@@ -24,7 +27,7 @@ var CreateRulesetOptionsScopeEnum;
     CreateRulesetOptionsScopeEnum["SENDING_EMAILS"] = "SENDING_EMAILS";
     CreateRulesetOptionsScopeEnum["RECEIVING_SMS"] = "RECEIVING_SMS";
     CreateRulesetOptionsScopeEnum["SENDING_SMS"] = "SENDING_SMS";
-})(CreateRulesetOptionsScopeEnum = exports.CreateRulesetOptionsScopeEnum || (exports.CreateRulesetOptionsScopeEnum = {}));
+})(CreateRulesetOptionsScopeEnum || (exports.CreateRulesetOptionsScopeEnum = CreateRulesetOptionsScopeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -36,11 +39,10 @@ var CreateRulesetOptionsActionEnum;
     CreateRulesetOptionsActionEnum["FILTER_REMOVE"] = "FILTER_REMOVE";
     CreateRulesetOptionsActionEnum["BOUNCE_SOFT"] = "BOUNCE_SOFT";
     CreateRulesetOptionsActionEnum["BOUNCE_HARD"] = "BOUNCE_HARD";
-})(CreateRulesetOptionsActionEnum = exports.CreateRulesetOptionsActionEnum || (exports.CreateRulesetOptionsActionEnum = {}));
+})(CreateRulesetOptionsActionEnum || (exports.CreateRulesetOptionsActionEnum = CreateRulesetOptionsActionEnum = {}));
 function CreateRulesetOptionsFromJSON(json) {
     return CreateRulesetOptionsFromJSONTyped(json, false);
 }
-exports.CreateRulesetOptionsFromJSON = CreateRulesetOptionsFromJSON;
 function CreateRulesetOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -51,7 +53,6 @@ function CreateRulesetOptionsFromJSONTyped(json, ignoreDiscriminator) {
         target: json['target'],
     };
 }
-exports.CreateRulesetOptionsFromJSONTyped = CreateRulesetOptionsFromJSONTyped;
 function CreateRulesetOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -65,4 +66,3 @@ function CreateRulesetOptionsToJSON(value) {
         target: value.target,
     };
 }
-exports.CreateRulesetOptionsToJSON = CreateRulesetOptionsToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RulesetDtoToJSON = exports.RulesetDtoFromJSONTyped = exports.RulesetDtoFromJSON = exports.RulesetDtoHandlerEnum = exports.RulesetDtoActionEnum = exports.RulesetDtoScopeEnum = void 0;
+exports.RulesetDtoHandlerEnum = exports.RulesetDtoActionEnum = exports.RulesetDtoScopeEnum = void 0;
+exports.RulesetDtoFromJSON = RulesetDtoFromJSON;
+exports.RulesetDtoFromJSONTyped = RulesetDtoFromJSONTyped;
+exports.RulesetDtoToJSON = RulesetDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,7 +28,7 @@ var RulesetDtoScopeEnum;
     RulesetDtoScopeEnum["SENDING_EMAILS"] = "SENDING_EMAILS";
     RulesetDtoScopeEnum["RECEIVING_SMS"] = "RECEIVING_SMS";
     RulesetDtoScopeEnum["SENDING_SMS"] = "SENDING_SMS";
-})(RulesetDtoScopeEnum = exports.RulesetDtoScopeEnum || (exports.RulesetDtoScopeEnum = {}));
+})(RulesetDtoScopeEnum || (exports.RulesetDtoScopeEnum = RulesetDtoScopeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -37,7 +40,7 @@ var RulesetDtoActionEnum;
     RulesetDtoActionEnum["FILTER_REMOVE"] = "FILTER_REMOVE";
     RulesetDtoActionEnum["BOUNCE_SOFT"] = "BOUNCE_SOFT";
     RulesetDtoActionEnum["BOUNCE_HARD"] = "BOUNCE_HARD";
-})(RulesetDtoActionEnum = exports.RulesetDtoActionEnum || (exports.RulesetDtoActionEnum = {}));
+})(RulesetDtoActionEnum || (exports.RulesetDtoActionEnum = RulesetDtoActionEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -45,11 +48,10 @@ var RulesetDtoActionEnum;
 var RulesetDtoHandlerEnum;
 (function (RulesetDtoHandlerEnum) {
     RulesetDtoHandlerEnum["EXCEPTION"] = "EXCEPTION";
-})(RulesetDtoHandlerEnum = exports.RulesetDtoHandlerEnum || (exports.RulesetDtoHandlerEnum = {}));
+})(RulesetDtoHandlerEnum || (exports.RulesetDtoHandlerEnum = RulesetDtoHandlerEnum = {}));
 function RulesetDtoFromJSON(json) {
     return RulesetDtoFromJSONTyped(json, false);
 }
-exports.RulesetDtoFromJSON = RulesetDtoFromJSON;
 function RulesetDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -66,7 +68,6 @@ function RulesetDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.RulesetDtoFromJSONTyped = RulesetDtoFromJSONTyped;
 function RulesetDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -86,4 +87,3 @@ function RulesetDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.RulesetDtoToJSON = RulesetDtoToJSON;

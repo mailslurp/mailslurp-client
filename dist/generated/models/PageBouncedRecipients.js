@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageBouncedRecipientsToJSON = exports.PageBouncedRecipientsFromJSONTyped = exports.PageBouncedRecipientsFromJSON = void 0;
+exports.PageBouncedRecipientsFromJSON = PageBouncedRecipientsFromJSON;
+exports.PageBouncedRecipientsFromJSONTyped = PageBouncedRecipientsFromJSONTyped;
+exports.PageBouncedRecipientsToJSON = PageBouncedRecipientsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageBouncedRecipientsFromJSON(json) {
     return PageBouncedRecipientsFromJSONTyped(json, false);
 }
-exports.PageBouncedRecipientsFromJSON = PageBouncedRecipientsFromJSON;
 function PageBouncedRecipientsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageBouncedRecipientsFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageBouncedRecipientsFromJSONTyped = PageBouncedRecipientsFromJSONTyped;
 function PageBouncedRecipientsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageBouncedRecipientsToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageBouncedRecipientsToJSON = PageBouncedRecipientsToJSON;

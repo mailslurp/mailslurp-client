@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorDkimSignatureDtoToJSON = exports.DomainMonitorDkimSignatureDtoFromJSONTyped = exports.DomainMonitorDkimSignatureDtoFromJSON = void 0;
+exports.DomainMonitorDkimSignatureDtoFromJSON = DomainMonitorDkimSignatureDtoFromJSON;
+exports.DomainMonitorDkimSignatureDtoFromJSONTyped = DomainMonitorDkimSignatureDtoFromJSONTyped;
+exports.DomainMonitorDkimSignatureDtoToJSON = DomainMonitorDkimSignatureDtoToJSON;
 var runtime_1 = require("../runtime");
 function DomainMonitorDkimSignatureDtoFromJSON(json) {
     return DomainMonitorDkimSignatureDtoFromJSONTyped(json, false);
 }
-exports.DomainMonitorDkimSignatureDtoFromJSON = DomainMonitorDkimSignatureDtoFromJSON;
 function DomainMonitorDkimSignatureDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function DomainMonitorDkimSignatureDtoFromJSONTyped(json, ignoreDiscriminator) {
         identity: !(0, runtime_1.exists)(json, 'identity') ? undefined : json['identity'],
     };
 }
-exports.DomainMonitorDkimSignatureDtoFromJSONTyped = DomainMonitorDkimSignatureDtoFromJSONTyped;
 function DomainMonitorDkimSignatureDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function DomainMonitorDkimSignatureDtoToJSON(value) {
         identity: value.identity,
     };
 }
-exports.DomainMonitorDkimSignatureDtoToJSON = DomainMonitorDkimSignatureDtoToJSON;

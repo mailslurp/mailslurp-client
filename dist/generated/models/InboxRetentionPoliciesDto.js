@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxRetentionPoliciesDtoToJSON = exports.InboxRetentionPoliciesDtoFromJSONTyped = exports.InboxRetentionPoliciesDtoFromJSON = void 0;
+exports.InboxRetentionPoliciesDtoFromJSON = InboxRetentionPoliciesDtoFromJSON;
+exports.InboxRetentionPoliciesDtoFromJSONTyped = InboxRetentionPoliciesDtoFromJSONTyped;
+exports.InboxRetentionPoliciesDtoToJSON = InboxRetentionPoliciesDtoToJSON;
 var _1 = require("./");
 function InboxRetentionPoliciesDtoFromJSON(json) {
     return InboxRetentionPoliciesDtoFromJSONTyped(json, false);
 }
-exports.InboxRetentionPoliciesDtoFromJSON = InboxRetentionPoliciesDtoFromJSON;
 function InboxRetentionPoliciesDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function InboxRetentionPoliciesDtoFromJSONTyped(json, ignoreDiscriminator) {
         policies: json['policies'].map(_1.InboxRetentionPolicyDtoFromJSON),
     };
 }
-exports.InboxRetentionPoliciesDtoFromJSONTyped = InboxRetentionPoliciesDtoFromJSONTyped;
 function InboxRetentionPoliciesDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function InboxRetentionPoliciesDtoToJSON(value) {
         policies: value.policies.map(_1.InboxRetentionPolicyDtoToJSON),
     };
 }
-exports.InboxRetentionPoliciesDtoToJSON = InboxRetentionPoliciesDtoToJSON;

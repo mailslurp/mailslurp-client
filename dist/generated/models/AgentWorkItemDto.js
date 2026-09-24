@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentWorkItemDtoToJSON = exports.AgentWorkItemDtoFromJSONTyped = exports.AgentWorkItemDtoFromJSON = void 0;
+exports.AgentWorkItemDtoFromJSON = AgentWorkItemDtoFromJSON;
+exports.AgentWorkItemDtoFromJSONTyped = AgentWorkItemDtoFromJSONTyped;
+exports.AgentWorkItemDtoToJSON = AgentWorkItemDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function AgentWorkItemDtoFromJSON(json) {
     return AgentWorkItemDtoFromJSONTyped(json, false);
 }
-exports.AgentWorkItemDtoFromJSON = AgentWorkItemDtoFromJSON;
 function AgentWorkItemDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function AgentWorkItemDtoFromJSONTyped(json, ignoreDiscriminator) {
         hasMore: json['hasMore'],
     };
 }
-exports.AgentWorkItemDtoFromJSONTyped = AgentWorkItemDtoFromJSONTyped;
 function AgentWorkItemDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function AgentWorkItemDtoToJSON(value) {
         hasMore: value.hasMore,
     };
 }
-exports.AgentWorkItemDtoToJSON = AgentWorkItemDtoToJSON;

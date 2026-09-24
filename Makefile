@@ -1,6 +1,6 @@
 # README.md is generated so edit template instead
 
-.PHONY: docs test
+.PHONY: docs test test-deps
 
 SPEC_URL=/tmp/swagger.json
 
@@ -11,7 +11,10 @@ bin/openapi-generator-cli.jar:
 	mkdir -p bin
 	wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.2.1/openapi-generator-cli-5.2.1.jar -O bin/openapi-generator-cli.jar
 
-test: node_modules
+test-deps: node_modules
+	npm run test:install
+
+test: test-deps
 	API_KEY=$(API_KEY) npm run integration
 
 spec:

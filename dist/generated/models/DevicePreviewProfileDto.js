@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewProfileDtoToJSON = exports.DevicePreviewProfileDtoFromJSONTyped = exports.DevicePreviewProfileDtoFromJSON = void 0;
+exports.DevicePreviewProfileDtoFromJSON = DevicePreviewProfileDtoFromJSON;
+exports.DevicePreviewProfileDtoFromJSONTyped = DevicePreviewProfileDtoFromJSONTyped;
+exports.DevicePreviewProfileDtoToJSON = DevicePreviewProfileDtoToJSON;
 var runtime_1 = require("../runtime");
 function DevicePreviewProfileDtoFromJSON(json) {
     return DevicePreviewProfileDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewProfileDtoFromJSON = DevicePreviewProfileDtoFromJSON;
 function DevicePreviewProfileDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function DevicePreviewProfileDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DevicePreviewProfileDtoFromJSONTyped = DevicePreviewProfileDtoFromJSONTyped;
 function DevicePreviewProfileDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function DevicePreviewProfileDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DevicePreviewProfileDtoToJSON = DevicePreviewProfileDtoToJSON;

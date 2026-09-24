@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxRetentionPolicyDtoToJSON = exports.InboxRetentionPolicyDtoFromJSONTyped = exports.InboxRetentionPolicyDtoFromJSON = exports.InboxRetentionPolicyDtoScopeEnum = void 0;
+exports.InboxRetentionPolicyDtoScopeEnum = void 0;
+exports.InboxRetentionPolicyDtoFromJSON = InboxRetentionPolicyDtoFromJSON;
+exports.InboxRetentionPolicyDtoFromJSONTyped = InboxRetentionPolicyDtoFromJSONTyped;
+exports.InboxRetentionPolicyDtoToJSON = InboxRetentionPolicyDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var InboxRetentionPolicyDtoScopeEnum;
     InboxRetentionPolicyDtoScopeEnum["ACCOUNT"] = "ACCOUNT";
     InboxRetentionPolicyDtoScopeEnum["INBOX"] = "INBOX";
     InboxRetentionPolicyDtoScopeEnum["DOMAIN"] = "DOMAIN";
-})(InboxRetentionPolicyDtoScopeEnum = exports.InboxRetentionPolicyDtoScopeEnum || (exports.InboxRetentionPolicyDtoScopeEnum = {}));
+})(InboxRetentionPolicyDtoScopeEnum || (exports.InboxRetentionPolicyDtoScopeEnum = InboxRetentionPolicyDtoScopeEnum = {}));
 function InboxRetentionPolicyDtoFromJSON(json) {
     return InboxRetentionPolicyDtoFromJSONTyped(json, false);
 }
-exports.InboxRetentionPolicyDtoFromJSON = InboxRetentionPolicyDtoFromJSON;
 function InboxRetentionPolicyDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -49,7 +51,6 @@ function InboxRetentionPolicyDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.InboxRetentionPolicyDtoFromJSONTyped = InboxRetentionPolicyDtoFromJSONTyped;
 function InboxRetentionPolicyDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -73,4 +74,3 @@ function InboxRetentionPolicyDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.InboxRetentionPolicyDtoToJSON = InboxRetentionPolicyDtoToJSON;

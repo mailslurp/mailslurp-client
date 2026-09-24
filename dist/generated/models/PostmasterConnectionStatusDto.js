@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PostmasterConnectionStatusDtoToJSON = exports.PostmasterConnectionStatusDtoFromJSONTyped = exports.PostmasterConnectionStatusDtoFromJSON = void 0;
+exports.PostmasterConnectionStatusDtoFromJSON = PostmasterConnectionStatusDtoFromJSON;
+exports.PostmasterConnectionStatusDtoFromJSONTyped = PostmasterConnectionStatusDtoFromJSONTyped;
+exports.PostmasterConnectionStatusDtoToJSON = PostmasterConnectionStatusDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PostmasterConnectionStatusDtoFromJSON(json) {
     return PostmasterConnectionStatusDtoFromJSONTyped(json, false);
 }
-exports.PostmasterConnectionStatusDtoFromJSON = PostmasterConnectionStatusDtoFromJSON;
 function PostmasterConnectionStatusDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function PostmasterConnectionStatusDtoFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.PostmasterConnectionDtoFromJSON)(json['connection']),
     };
 }
-exports.PostmasterConnectionStatusDtoFromJSONTyped = PostmasterConnectionStatusDtoFromJSONTyped;
 function PostmasterConnectionStatusDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function PostmasterConnectionStatusDtoToJSON(value) {
         connection: (0, _1.PostmasterConnectionDtoToJSON)(value.connection),
     };
 }
-exports.PostmasterConnectionStatusDtoToJSON = PostmasterConnectionStatusDtoToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageModelDtoToJSON = exports.AIMessageModelDtoFromJSONTyped = exports.AIMessageModelDtoFromJSON = exports.AIMessageModelDtoSupportedMessageTypesEnum = exports.AIMessageModelDtoModelEnum = void 0;
+exports.AIMessageModelDtoSupportedMessageTypesEnum = exports.AIMessageModelDtoModelEnum = void 0;
+exports.AIMessageModelDtoFromJSON = AIMessageModelDtoFromJSON;
+exports.AIMessageModelDtoFromJSONTyped = AIMessageModelDtoFromJSONTyped;
+exports.AIMessageModelDtoToJSON = AIMessageModelDtoToJSON;
 /**
  * @export
  * @enum {string}
@@ -23,7 +26,7 @@ var AIMessageModelDtoModelEnum;
     AIMessageModelDtoModelEnum["BALANCED_V1"] = "BALANCED_V1";
     AIMessageModelDtoModelEnum["FLASH_LATEST"] = "FLASH_LATEST";
     AIMessageModelDtoModelEnum["QUALITY_V1"] = "QUALITY_V1";
-})(AIMessageModelDtoModelEnum = exports.AIMessageModelDtoModelEnum || (exports.AIMessageModelDtoModelEnum = {}));
+})(AIMessageModelDtoModelEnum || (exports.AIMessageModelDtoModelEnum = AIMessageModelDtoModelEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -32,11 +35,10 @@ var AIMessageModelDtoSupportedMessageTypesEnum;
 (function (AIMessageModelDtoSupportedMessageTypesEnum) {
     AIMessageModelDtoSupportedMessageTypesEnum["EMAIL"] = "EMAIL";
     AIMessageModelDtoSupportedMessageTypesEnum["SMS"] = "SMS";
-})(AIMessageModelDtoSupportedMessageTypesEnum = exports.AIMessageModelDtoSupportedMessageTypesEnum || (exports.AIMessageModelDtoSupportedMessageTypesEnum = {}));
+})(AIMessageModelDtoSupportedMessageTypesEnum || (exports.AIMessageModelDtoSupportedMessageTypesEnum = AIMessageModelDtoSupportedMessageTypesEnum = {}));
 function AIMessageModelDtoFromJSON(json) {
     return AIMessageModelDtoFromJSONTyped(json, false);
 }
-exports.AIMessageModelDtoFromJSON = AIMessageModelDtoFromJSON;
 function AIMessageModelDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -51,7 +53,6 @@ function AIMessageModelDtoFromJSONTyped(json, ignoreDiscriminator) {
         pricingVersion: json['pricingVersion'],
     };
 }
-exports.AIMessageModelDtoFromJSONTyped = AIMessageModelDtoFromJSONTyped;
 function AIMessageModelDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -69,4 +70,3 @@ function AIMessageModelDtoToJSON(value) {
         pricingVersion: value.pricingVersion,
     };
 }
-exports.AIMessageModelDtoToJSON = AIMessageModelDtoToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMappingMatchOptionsToJSON = exports.AIMappingMatchOptionsFromJSONTyped = exports.AIMappingMatchOptionsFromJSON = void 0;
+exports.AIMappingMatchOptionsFromJSON = AIMappingMatchOptionsFromJSON;
+exports.AIMappingMatchOptionsFromJSONTyped = AIMappingMatchOptionsFromJSONTyped;
+exports.AIMappingMatchOptionsToJSON = AIMappingMatchOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function AIMappingMatchOptionsFromJSON(json) {
     return AIMappingMatchOptionsFromJSONTyped(json, false);
 }
-exports.AIMappingMatchOptionsFromJSON = AIMappingMatchOptionsFromJSON;
 function AIMappingMatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function AIMappingMatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
                 : json['matches'].map(_1.AIMappingMatchOptionFromJSON),
     };
 }
-exports.AIMappingMatchOptionsFromJSONTyped = AIMappingMatchOptionsFromJSONTyped;
 function AIMappingMatchOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function AIMappingMatchOptionsToJSON(value) {
                 : value.matches.map(_1.AIMappingMatchOptionToJSON),
     };
 }
-exports.AIMappingMatchOptionsToJSON = AIMappingMatchOptionsToJSON;

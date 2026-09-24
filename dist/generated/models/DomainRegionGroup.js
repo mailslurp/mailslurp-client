@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainRegionGroupToJSON = exports.DomainRegionGroupFromJSONTyped = exports.DomainRegionGroupFromJSON = exports.DomainRegionGroupLabelEnum = void 0;
+exports.DomainRegionGroupLabelEnum = void 0;
+exports.DomainRegionGroupFromJSON = DomainRegionGroupFromJSON;
+exports.DomainRegionGroupFromJSONTyped = DomainRegionGroupFromJSONTyped;
+exports.DomainRegionGroupToJSON = DomainRegionGroupToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -24,11 +27,10 @@ var DomainRegionGroupLabelEnum;
     DomainRegionGroupLabelEnum["DEFAULT"] = "DEFAULT";
     DomainRegionGroupLabelEnum["DOMAIN_POOL"] = "DOMAIN_POOL";
     DomainRegionGroupLabelEnum["CUSTOM"] = "CUSTOM";
-})(DomainRegionGroupLabelEnum = exports.DomainRegionGroupLabelEnum || (exports.DomainRegionGroupLabelEnum = {}));
+})(DomainRegionGroupLabelEnum || (exports.DomainRegionGroupLabelEnum = DomainRegionGroupLabelEnum = {}));
 function DomainRegionGroupFromJSON(json) {
     return DomainRegionGroupFromJSONTyped(json, false);
 }
-exports.DomainRegionGroupFromJSON = DomainRegionGroupFromJSON;
 function DomainRegionGroupFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +40,6 @@ function DomainRegionGroupFromJSONTyped(json, ignoreDiscriminator) {
         domains: json['domains'].map(_1.DomainRegionInformationFromJSON),
     };
 }
-exports.DomainRegionGroupFromJSONTyped = DomainRegionGroupFromJSONTyped;
 function DomainRegionGroupToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +52,3 @@ function DomainRegionGroupToJSON(value) {
         domains: value.domains.map(_1.DomainRegionInformationToJSON),
     };
 }
-exports.DomainRegionGroupToJSON = DomainRegionGroupToJSON;

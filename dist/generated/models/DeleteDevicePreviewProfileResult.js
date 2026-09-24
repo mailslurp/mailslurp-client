@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDevicePreviewProfileResultToJSON = exports.DeleteDevicePreviewProfileResultFromJSONTyped = exports.DeleteDevicePreviewProfileResultFromJSON = void 0;
+exports.DeleteDevicePreviewProfileResultFromJSON = DeleteDevicePreviewProfileResultFromJSON;
+exports.DeleteDevicePreviewProfileResultFromJSONTyped = DeleteDevicePreviewProfileResultFromJSONTyped;
+exports.DeleteDevicePreviewProfileResultToJSON = DeleteDevicePreviewProfileResultToJSON;
 function DeleteDevicePreviewProfileResultFromJSON(json) {
     return DeleteDevicePreviewProfileResultFromJSONTyped(json, false);
 }
-exports.DeleteDevicePreviewProfileResultFromJSON = DeleteDevicePreviewProfileResultFromJSON;
 function DeleteDevicePreviewProfileResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function DeleteDevicePreviewProfileResultFromJSONTyped(json, ignoreDiscriminator
         deleted: json['deleted'],
     };
 }
-exports.DeleteDevicePreviewProfileResultFromJSONTyped = DeleteDevicePreviewProfileResultFromJSONTyped;
 function DeleteDevicePreviewProfileResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteDevicePreviewProfileResultToJSON(value) {
         deleted: value.deleted,
     };
 }
-exports.DeleteDevicePreviewProfileResultToJSON = DeleteDevicePreviewProfileResultToJSON;

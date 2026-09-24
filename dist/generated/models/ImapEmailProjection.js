@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapEmailProjectionToJSON = exports.ImapEmailProjectionFromJSONTyped = exports.ImapEmailProjectionFromJSON = void 0;
+exports.ImapEmailProjectionFromJSON = ImapEmailProjectionFromJSON;
+exports.ImapEmailProjectionFromJSONTyped = ImapEmailProjectionFromJSONTyped;
+exports.ImapEmailProjectionToJSON = ImapEmailProjectionToJSON;
 var runtime_1 = require("../runtime");
 function ImapEmailProjectionFromJSON(json) {
     return ImapEmailProjectionFromJSONTyped(json, false);
 }
-exports.ImapEmailProjectionFromJSON = ImapEmailProjectionFromJSON;
 function ImapEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function ImapEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.ImapEmailProjectionFromJSONTyped = ImapEmailProjectionFromJSONTyped;
 function ImapEmailProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function ImapEmailProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.ImapEmailProjectionToJSON = ImapEmailProjectionToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentConversationDetailV2DtoToJSON = exports.AgentConversationDetailV2DtoFromJSONTyped = exports.AgentConversationDetailV2DtoFromJSON = void 0;
+exports.AgentConversationDetailV2DtoFromJSON = AgentConversationDetailV2DtoFromJSON;
+exports.AgentConversationDetailV2DtoFromJSONTyped = AgentConversationDetailV2DtoFromJSONTyped;
+exports.AgentConversationDetailV2DtoToJSON = AgentConversationDetailV2DtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function AgentConversationDetailV2DtoFromJSON(json) {
     return AgentConversationDetailV2DtoFromJSONTyped(json, false);
 }
-exports.AgentConversationDetailV2DtoFromJSON = AgentConversationDetailV2DtoFromJSON;
 function AgentConversationDetailV2DtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function AgentConversationDetailV2DtoFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.AgentConversationHandoffDtoFromJSON)(json['activeHandoff']),
     };
 }
-exports.AgentConversationDetailV2DtoFromJSONTyped = AgentConversationDetailV2DtoFromJSONTyped;
 function AgentConversationDetailV2DtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function AgentConversationDetailV2DtoToJSON(value) {
         activeHandoff: (0, _1.AgentConversationHandoffDtoToJSON)(value.activeHandoff),
     };
 }
-exports.AgentConversationDetailV2DtoToJSON = AgentConversationDetailV2DtoToJSON;

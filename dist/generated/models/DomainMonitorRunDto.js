@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorRunDtoToJSON = exports.DomainMonitorRunDtoFromJSONTyped = exports.DomainMonitorRunDtoFromJSON = exports.DomainMonitorRunDtoTriggerSourceEnum = exports.DomainMonitorRunDtoStatusEnum = void 0;
+exports.DomainMonitorRunDtoTriggerSourceEnum = exports.DomainMonitorRunDtoStatusEnum = void 0;
+exports.DomainMonitorRunDtoFromJSON = DomainMonitorRunDtoFromJSON;
+exports.DomainMonitorRunDtoFromJSONTyped = DomainMonitorRunDtoFromJSONTyped;
+exports.DomainMonitorRunDtoToJSON = DomainMonitorRunDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -26,7 +29,7 @@ var DomainMonitorRunDtoStatusEnum;
     DomainMonitorRunDtoStatusEnum["DEGRADED"] = "DEGRADED";
     DomainMonitorRunDtoStatusEnum["CRITICAL"] = "CRITICAL";
     DomainMonitorRunDtoStatusEnum["FAILED"] = "FAILED";
-})(DomainMonitorRunDtoStatusEnum = exports.DomainMonitorRunDtoStatusEnum || (exports.DomainMonitorRunDtoStatusEnum = {}));
+})(DomainMonitorRunDtoStatusEnum || (exports.DomainMonitorRunDtoStatusEnum = DomainMonitorRunDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -37,11 +40,10 @@ var DomainMonitorRunDtoTriggerSourceEnum;
     DomainMonitorRunDtoTriggerSourceEnum["USER_SCHEDULE"] = "USER_SCHEDULE";
     DomainMonitorRunDtoTriggerSourceEnum["CRON"] = "CRON";
     DomainMonitorRunDtoTriggerSourceEnum["SCHEDULER"] = "SCHEDULER";
-})(DomainMonitorRunDtoTriggerSourceEnum = exports.DomainMonitorRunDtoTriggerSourceEnum || (exports.DomainMonitorRunDtoTriggerSourceEnum = {}));
+})(DomainMonitorRunDtoTriggerSourceEnum || (exports.DomainMonitorRunDtoTriggerSourceEnum = DomainMonitorRunDtoTriggerSourceEnum = {}));
 function DomainMonitorRunDtoFromJSON(json) {
     return DomainMonitorRunDtoFromJSONTyped(json, false);
 }
-exports.DomainMonitorRunDtoFromJSON = DomainMonitorRunDtoFromJSON;
 function DomainMonitorRunDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -79,7 +81,6 @@ function DomainMonitorRunDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DomainMonitorRunDtoFromJSONTyped = DomainMonitorRunDtoFromJSONTyped;
 function DomainMonitorRunDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -116,4 +117,3 @@ function DomainMonitorRunDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DomainMonitorRunDtoToJSON = DomainMonitorRunDtoToJSON;

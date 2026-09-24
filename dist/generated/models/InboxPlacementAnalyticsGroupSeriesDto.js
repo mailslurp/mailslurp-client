@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementAnalyticsGroupSeriesDtoToJSON = exports.InboxPlacementAnalyticsGroupSeriesDtoFromJSONTyped = exports.InboxPlacementAnalyticsGroupSeriesDtoFromJSON = void 0;
+exports.InboxPlacementAnalyticsGroupSeriesDtoFromJSON = InboxPlacementAnalyticsGroupSeriesDtoFromJSON;
+exports.InboxPlacementAnalyticsGroupSeriesDtoFromJSONTyped = InboxPlacementAnalyticsGroupSeriesDtoFromJSONTyped;
+exports.InboxPlacementAnalyticsGroupSeriesDtoToJSON = InboxPlacementAnalyticsGroupSeriesDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function InboxPlacementAnalyticsGroupSeriesDtoFromJSON(json) {
     return InboxPlacementAnalyticsGroupSeriesDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementAnalyticsGroupSeriesDtoFromJSON = InboxPlacementAnalyticsGroupSeriesDtoFromJSON;
 function InboxPlacementAnalyticsGroupSeriesDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function InboxPlacementAnalyticsGroupSeriesDtoFromJSONTyped(json, ignoreDiscrimi
         points: json['points'].map(_1.InboxPlacementAnalyticsSeriesPointDtoFromJSON),
     };
 }
-exports.InboxPlacementAnalyticsGroupSeriesDtoFromJSONTyped = InboxPlacementAnalyticsGroupSeriesDtoFromJSONTyped;
 function InboxPlacementAnalyticsGroupSeriesDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -52,4 +52,3 @@ function InboxPlacementAnalyticsGroupSeriesDtoToJSON(value) {
         points: value.points.map(_1.InboxPlacementAnalyticsSeriesPointDtoToJSON),
     };
 }
-exports.InboxPlacementAnalyticsGroupSeriesDtoToJSON = InboxPlacementAnalyticsGroupSeriesDtoToJSON;

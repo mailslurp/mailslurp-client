@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewSharedCommentDtoToJSON = exports.DevicePreviewSharedCommentDtoFromJSONTyped = exports.DevicePreviewSharedCommentDtoFromJSON = exports.DevicePreviewSharedCommentDtoStatusEnum = void 0;
+exports.DevicePreviewSharedCommentDtoStatusEnum = void 0;
+exports.DevicePreviewSharedCommentDtoFromJSON = DevicePreviewSharedCommentDtoFromJSON;
+exports.DevicePreviewSharedCommentDtoFromJSONTyped = DevicePreviewSharedCommentDtoFromJSONTyped;
+exports.DevicePreviewSharedCommentDtoToJSON = DevicePreviewSharedCommentDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,11 +28,10 @@ var DevicePreviewSharedCommentDtoStatusEnum;
     DevicePreviewSharedCommentDtoStatusEnum["ACKNOWLEDGED"] = "ACKNOWLEDGED";
     DevicePreviewSharedCommentDtoStatusEnum["RESOLVED"] = "RESOLVED";
     DevicePreviewSharedCommentDtoStatusEnum["DISMISSED"] = "DISMISSED";
-})(DevicePreviewSharedCommentDtoStatusEnum = exports.DevicePreviewSharedCommentDtoStatusEnum || (exports.DevicePreviewSharedCommentDtoStatusEnum = {}));
+})(DevicePreviewSharedCommentDtoStatusEnum || (exports.DevicePreviewSharedCommentDtoStatusEnum = DevicePreviewSharedCommentDtoStatusEnum = {}));
 function DevicePreviewSharedCommentDtoFromJSON(json) {
     return DevicePreviewSharedCommentDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewSharedCommentDtoFromJSON = DevicePreviewSharedCommentDtoFromJSON;
 function DevicePreviewSharedCommentDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -56,7 +58,6 @@ function DevicePreviewSharedCommentDtoFromJSONTyped(json, ignoreDiscriminator) {
                 : new Date(json['updatedAt']),
     };
 }
-exports.DevicePreviewSharedCommentDtoFromJSONTyped = DevicePreviewSharedCommentDtoFromJSONTyped;
 function DevicePreviewSharedCommentDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -84,4 +85,3 @@ function DevicePreviewSharedCommentDtoToJSON(value) {
                 : value.updatedAt.toISOString(),
     };
 }
-exports.DevicePreviewSharedCommentDtoToJSON = DevicePreviewSharedCommentDtoToJSON;

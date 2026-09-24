@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OptInSendingConsentDtoToJSON = exports.OptInSendingConsentDtoFromJSONTyped = exports.OptInSendingConsentDtoFromJSON = void 0;
+exports.OptInSendingConsentDtoFromJSON = OptInSendingConsentDtoFromJSON;
+exports.OptInSendingConsentDtoFromJSONTyped = OptInSendingConsentDtoFromJSONTyped;
+exports.OptInSendingConsentDtoToJSON = OptInSendingConsentDtoToJSON;
 function OptInSendingConsentDtoFromJSON(json) {
     return OptInSendingConsentDtoFromJSONTyped(json, false);
 }
-exports.OptInSendingConsentDtoFromJSON = OptInSendingConsentDtoFromJSON;
 function OptInSendingConsentDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function OptInSendingConsentDtoFromJSONTyped(json, ignoreDiscriminator) {
         canSend: json['canSend'],
     };
 }
-exports.OptInSendingConsentDtoFromJSONTyped = OptInSendingConsentDtoFromJSONTyped;
 function OptInSendingConsentDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function OptInSendingConsentDtoToJSON(value) {
         canSend: value.canSend,
     };
 }
-exports.OptInSendingConsentDtoToJSON = OptInSendingConsentDtoToJSON;

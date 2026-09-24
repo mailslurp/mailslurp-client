@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewNativeTargetAvailabilityListDtoToJSON = exports.DevicePreviewNativeTargetAvailabilityListDtoFromJSONTyped = exports.DevicePreviewNativeTargetAvailabilityListDtoFromJSON = void 0;
+exports.DevicePreviewNativeTargetAvailabilityListDtoFromJSON = DevicePreviewNativeTargetAvailabilityListDtoFromJSON;
+exports.DevicePreviewNativeTargetAvailabilityListDtoFromJSONTyped = DevicePreviewNativeTargetAvailabilityListDtoFromJSONTyped;
+exports.DevicePreviewNativeTargetAvailabilityListDtoToJSON = DevicePreviewNativeTargetAvailabilityListDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function DevicePreviewNativeTargetAvailabilityListDtoFromJSON(json) {
     return DevicePreviewNativeTargetAvailabilityListDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewNativeTargetAvailabilityListDtoFromJSON = DevicePreviewNativeTargetAvailabilityListDtoFromJSON;
 function DevicePreviewNativeTargetAvailabilityListDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function DevicePreviewNativeTargetAvailabilityListDtoFromJSONTyped(json, ignoreD
         error: !(0, runtime_1.exists)(json, 'error') ? undefined : json['error'],
     };
 }
-exports.DevicePreviewNativeTargetAvailabilityListDtoFromJSONTyped = DevicePreviewNativeTargetAvailabilityListDtoFromJSONTyped;
 function DevicePreviewNativeTargetAvailabilityListDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function DevicePreviewNativeTargetAvailabilityListDtoToJSON(value) {
         error: value.error,
     };
 }
-exports.DevicePreviewNativeTargetAvailabilityListDtoToJSON = DevicePreviewNativeTargetAvailabilityListDtoToJSON;

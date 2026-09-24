@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScimGroupResourceToJSON = exports.ScimGroupResourceFromJSONTyped = exports.ScimGroupResourceFromJSON = void 0;
+exports.ScimGroupResourceFromJSON = ScimGroupResourceFromJSON;
+exports.ScimGroupResourceFromJSONTyped = ScimGroupResourceFromJSONTyped;
+exports.ScimGroupResourceToJSON = ScimGroupResourceToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function ScimGroupResourceFromJSON(json) {
     return ScimGroupResourceFromJSONTyped(json, false);
 }
-exports.ScimGroupResourceFromJSON = ScimGroupResourceFromJSON;
 function ScimGroupResourceFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function ScimGroupResourceFromJSONTyped(json, ignoreDiscriminator) {
         meta: !(0, runtime_1.exists)(json, 'meta') ? undefined : (0, _1.ScimMetaFromJSON)(json['meta']),
     };
 }
-exports.ScimGroupResourceFromJSONTyped = ScimGroupResourceFromJSONTyped;
 function ScimGroupResourceToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -58,4 +58,3 @@ function ScimGroupResourceToJSON(value) {
         meta: (0, _1.ScimMetaToJSON)(value.meta),
     };
 }
-exports.ScimGroupResourceToJSON = ScimGroupResourceToJSON;

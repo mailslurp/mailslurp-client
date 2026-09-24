@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DnsPropagationResolverResultToJSON = exports.DnsPropagationResolverResultFromJSONTyped = exports.DnsPropagationResolverResultFromJSON = void 0;
+exports.DnsPropagationResolverResultFromJSON = DnsPropagationResolverResultFromJSON;
+exports.DnsPropagationResolverResultFromJSONTyped = DnsPropagationResolverResultFromJSONTyped;
+exports.DnsPropagationResolverResultToJSON = DnsPropagationResolverResultToJSON;
 var runtime_1 = require("../runtime");
 function DnsPropagationResolverResultFromJSON(json) {
     return DnsPropagationResolverResultFromJSONTyped(json, false);
 }
-exports.DnsPropagationResolverResultFromJSON = DnsPropagationResolverResultFromJSON;
 function DnsPropagationResolverResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function DnsPropagationResolverResultFromJSONTyped(json, ignoreDiscriminator) {
             : json['matchedExpectedValue'],
     };
 }
-exports.DnsPropagationResolverResultFromJSONTyped = DnsPropagationResolverResultFromJSONTyped;
 function DnsPropagationResolverResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function DnsPropagationResolverResultToJSON(value) {
         matchedExpectedValue: value.matchedExpectedValue,
     };
 }
-exports.DnsPropagationResolverResultToJSON = DnsPropagationResolverResultToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerGetResultToJSON = exports.ImapServerGetResultFromJSONTyped = exports.ImapServerGetResultFromJSON = void 0;
+exports.ImapServerGetResultFromJSON = ImapServerGetResultFromJSON;
+exports.ImapServerGetResultFromJSONTyped = ImapServerGetResultFromJSONTyped;
+exports.ImapServerGetResultToJSON = ImapServerGetResultToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function ImapServerGetResultFromJSON(json) {
     return ImapServerGetResultFromJSONTyped(json, false);
 }
-exports.ImapServerGetResultFromJSON = ImapServerGetResultFromJSON;
 function ImapServerGetResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function ImapServerGetResultFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.ImapEmailProjectionFromJSON)(json['result']),
     };
 }
-exports.ImapServerGetResultFromJSONTyped = ImapServerGetResultFromJSONTyped;
 function ImapServerGetResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ImapServerGetResultToJSON(value) {
         result: (0, _1.ImapEmailProjectionToJSON)(value.result),
     };
 }
-exports.ImapServerGetResultToJSON = ImapServerGetResultToJSON;

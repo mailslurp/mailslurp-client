@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDomainMonitorAlertSinkOptionsToJSON = exports.CreateDomainMonitorAlertSinkOptionsFromJSONTyped = exports.CreateDomainMonitorAlertSinkOptionsFromJSON = exports.CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum = exports.CreateDomainMonitorAlertSinkOptionsTypeEnum = void 0;
+exports.CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum = exports.CreateDomainMonitorAlertSinkOptionsTypeEnum = void 0;
+exports.CreateDomainMonitorAlertSinkOptionsFromJSON = CreateDomainMonitorAlertSinkOptionsFromJSON;
+exports.CreateDomainMonitorAlertSinkOptionsFromJSONTyped = CreateDomainMonitorAlertSinkOptionsFromJSONTyped;
+exports.CreateDomainMonitorAlertSinkOptionsToJSON = CreateDomainMonitorAlertSinkOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,7 +28,7 @@ var CreateDomainMonitorAlertSinkOptionsTypeEnum;
     CreateDomainMonitorAlertSinkOptionsTypeEnum["WEBHOOK"] = "WEBHOOK";
     CreateDomainMonitorAlertSinkOptionsTypeEnum["SLACK"] = "SLACK";
     CreateDomainMonitorAlertSinkOptionsTypeEnum["TEAMS"] = "TEAMS";
-})(CreateDomainMonitorAlertSinkOptionsTypeEnum = exports.CreateDomainMonitorAlertSinkOptionsTypeEnum || (exports.CreateDomainMonitorAlertSinkOptionsTypeEnum = {}));
+})(CreateDomainMonitorAlertSinkOptionsTypeEnum || (exports.CreateDomainMonitorAlertSinkOptionsTypeEnum = CreateDomainMonitorAlertSinkOptionsTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -36,11 +39,10 @@ var CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum;
     CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum["MEDIUM"] = "MEDIUM";
     CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum["HIGH"] = "HIGH";
     CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum["CRITICAL"] = "CRITICAL";
-})(CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum = exports.CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum || (exports.CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum = {}));
+})(CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum || (exports.CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum = CreateDomainMonitorAlertSinkOptionsSeverityThresholdEnum = {}));
 function CreateDomainMonitorAlertSinkOptionsFromJSON(json) {
     return CreateDomainMonitorAlertSinkOptionsFromJSONTyped(json, false);
 }
-exports.CreateDomainMonitorAlertSinkOptionsFromJSON = CreateDomainMonitorAlertSinkOptionsFromJSON;
 function CreateDomainMonitorAlertSinkOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -54,7 +56,6 @@ function CreateDomainMonitorAlertSinkOptionsFromJSONTyped(json, ignoreDiscrimina
         enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
     };
 }
-exports.CreateDomainMonitorAlertSinkOptionsFromJSONTyped = CreateDomainMonitorAlertSinkOptionsFromJSONTyped;
 function CreateDomainMonitorAlertSinkOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -69,4 +70,3 @@ function CreateDomainMonitorAlertSinkOptionsToJSON(value) {
         enabled: value.enabled,
     };
 }
-exports.CreateDomainMonitorAlertSinkOptionsToJSON = CreateDomainMonitorAlertSinkOptionsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewSharedResultDtoToJSON = exports.DevicePreviewSharedResultDtoFromJSONTyped = exports.DevicePreviewSharedResultDtoFromJSON = void 0;
+exports.DevicePreviewSharedResultDtoFromJSON = DevicePreviewSharedResultDtoFromJSON;
+exports.DevicePreviewSharedResultDtoFromJSONTyped = DevicePreviewSharedResultDtoFromJSONTyped;
+exports.DevicePreviewSharedResultDtoToJSON = DevicePreviewSharedResultDtoToJSON;
 var _1 = require("./");
 function DevicePreviewSharedResultDtoFromJSON(json) {
     return DevicePreviewSharedResultDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewSharedResultDtoFromJSON = DevicePreviewSharedResultDtoFromJSON;
 function DevicePreviewSharedResultDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function DevicePreviewSharedResultDtoFromJSONTyped(json, ignoreDiscriminator) {
         comments: json['comments'].map(_1.DevicePreviewSharedCommentDtoFromJSON),
     };
 }
-exports.DevicePreviewSharedResultDtoFromJSONTyped = DevicePreviewSharedResultDtoFromJSONTyped;
 function DevicePreviewSharedResultDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function DevicePreviewSharedResultDtoToJSON(value) {
         comments: value.comments.map(_1.DevicePreviewSharedCommentDtoToJSON),
     };
 }
-exports.DevicePreviewSharedResultDtoToJSON = DevicePreviewSharedResultDtoToJSON;

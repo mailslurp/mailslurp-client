@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageEmailValidationRequestToJSON = exports.PageEmailValidationRequestFromJSONTyped = exports.PageEmailValidationRequestFromJSON = void 0;
+exports.PageEmailValidationRequestFromJSON = PageEmailValidationRequestFromJSON;
+exports.PageEmailValidationRequestFromJSONTyped = PageEmailValidationRequestFromJSONTyped;
+exports.PageEmailValidationRequestToJSON = PageEmailValidationRequestToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageEmailValidationRequestFromJSON(json) {
     return PageEmailValidationRequestFromJSONTyped(json, false);
 }
-exports.PageEmailValidationRequestFromJSON = PageEmailValidationRequestFromJSON;
 function PageEmailValidationRequestFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageEmailValidationRequestFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageEmailValidationRequestFromJSONTyped = PageEmailValidationRequestFromJSONTyped;
 function PageEmailValidationRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageEmailValidationRequestToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageEmailValidationRequestToJSON = PageEmailValidationRequestToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewRunWaitResultToJSON = exports.DevicePreviewRunWaitResultFromJSONTyped = exports.DevicePreviewRunWaitResultFromJSON = void 0;
+exports.DevicePreviewRunWaitResultFromJSON = DevicePreviewRunWaitResultFromJSON;
+exports.DevicePreviewRunWaitResultFromJSONTyped = DevicePreviewRunWaitResultFromJSONTyped;
+exports.DevicePreviewRunWaitResultToJSON = DevicePreviewRunWaitResultToJSON;
 var _1 = require("./");
 function DevicePreviewRunWaitResultFromJSON(json) {
     return DevicePreviewRunWaitResultFromJSONTyped(json, false);
 }
-exports.DevicePreviewRunWaitResultFromJSON = DevicePreviewRunWaitResultFromJSON;
 function DevicePreviewRunWaitResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function DevicePreviewRunWaitResultFromJSONTyped(json, ignoreDiscriminator) {
         run: (0, _1.DevicePreviewRunDtoFromJSON)(json['run']),
     };
 }
-exports.DevicePreviewRunWaitResultFromJSONTyped = DevicePreviewRunWaitResultFromJSONTyped;
 function DevicePreviewRunWaitResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DevicePreviewRunWaitResultToJSON(value) {
         run: (0, _1.DevicePreviewRunDtoToJSON)(value.run),
     };
 }
-exports.DevicePreviewRunWaitResultToJSON = DevicePreviewRunWaitResultToJSON;

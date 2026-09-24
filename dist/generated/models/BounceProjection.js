@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BounceProjectionToJSON = exports.BounceProjectionFromJSONTyped = exports.BounceProjectionFromJSON = void 0;
+exports.BounceProjectionFromJSON = BounceProjectionFromJSON;
+exports.BounceProjectionFromJSONTyped = BounceProjectionFromJSONTyped;
+exports.BounceProjectionToJSON = BounceProjectionToJSON;
 var runtime_1 = require("../runtime");
 function BounceProjectionFromJSON(json) {
     return BounceProjectionFromJSONTyped(json, false);
 }
-exports.BounceProjectionFromJSON = BounceProjectionFromJSON;
 function BounceProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function BounceProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
     };
 }
-exports.BounceProjectionFromJSONTyped = BounceProjectionFromJSONTyped;
 function BounceProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function BounceProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.BounceProjectionToJSON = BounceProjectionToJSON;

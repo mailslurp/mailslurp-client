@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AITransformResultProjectionDtoToJSON = exports.AITransformResultProjectionDtoFromJSONTyped = exports.AITransformResultProjectionDtoFromJSON = exports.AITransformResultProjectionDtoEntityTypeEnum = void 0;
+exports.AITransformResultProjectionDtoEntityTypeEnum = void 0;
+exports.AITransformResultProjectionDtoFromJSON = AITransformResultProjectionDtoFromJSON;
+exports.AITransformResultProjectionDtoFromJSONTyped = AITransformResultProjectionDtoFromJSONTyped;
+exports.AITransformResultProjectionDtoToJSON = AITransformResultProjectionDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var AITransformResultProjectionDtoEntityTypeEnum;
 (function (AITransformResultProjectionDtoEntityTypeEnum) {
     AITransformResultProjectionDtoEntityTypeEnum["INBOX"] = "INBOX";
     AITransformResultProjectionDtoEntityTypeEnum["PHONE"] = "PHONE";
-})(AITransformResultProjectionDtoEntityTypeEnum = exports.AITransformResultProjectionDtoEntityTypeEnum || (exports.AITransformResultProjectionDtoEntityTypeEnum = {}));
+})(AITransformResultProjectionDtoEntityTypeEnum || (exports.AITransformResultProjectionDtoEntityTypeEnum = AITransformResultProjectionDtoEntityTypeEnum = {}));
 function AITransformResultProjectionDtoFromJSON(json) {
     return AITransformResultProjectionDtoFromJSONTyped(json, false);
 }
-exports.AITransformResultProjectionDtoFromJSON = AITransformResultProjectionDtoFromJSON;
 function AITransformResultProjectionDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -50,7 +52,6 @@ function AITransformResultProjectionDtoFromJSONTyped(json, ignoreDiscriminator) 
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.AITransformResultProjectionDtoFromJSONTyped = AITransformResultProjectionDtoFromJSONTyped;
 function AITransformResultProjectionDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -72,4 +73,3 @@ function AITransformResultProjectionDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.AITransformResultProjectionDtoToJSON = AITransformResultProjectionDtoToJSON;

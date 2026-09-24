@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageConnectorToJSON = exports.PageConnectorFromJSONTyped = exports.PageConnectorFromJSON = void 0;
+exports.PageConnectorFromJSON = PageConnectorFromJSON;
+exports.PageConnectorFromJSONTyped = PageConnectorFromJSONTyped;
+exports.PageConnectorToJSON = PageConnectorToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageConnectorFromJSON(json) {
     return PageConnectorFromJSONTyped(json, false);
 }
-exports.PageConnectorFromJSON = PageConnectorFromJSON;
 function PageConnectorFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageConnectorFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageConnectorFromJSONTyped = PageConnectorFromJSONTyped;
 function PageConnectorToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageConnectorToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageConnectorToJSON = PageConnectorToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorSmtpConnectionTestResultToJSON = exports.ConnectorSmtpConnectionTestResultFromJSONTyped = exports.ConnectorSmtpConnectionTestResultFromJSON = void 0;
+exports.ConnectorSmtpConnectionTestResultFromJSON = ConnectorSmtpConnectionTestResultFromJSON;
+exports.ConnectorSmtpConnectionTestResultFromJSONTyped = ConnectorSmtpConnectionTestResultFromJSONTyped;
+exports.ConnectorSmtpConnectionTestResultToJSON = ConnectorSmtpConnectionTestResultToJSON;
 var runtime_1 = require("../runtime");
 function ConnectorSmtpConnectionTestResultFromJSON(json) {
     return ConnectorSmtpConnectionTestResultFromJSONTyped(json, false);
 }
-exports.ConnectorSmtpConnectionTestResultFromJSON = ConnectorSmtpConnectionTestResultFromJSON;
 function ConnectorSmtpConnectionTestResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function ConnectorSmtpConnectionTestResultFromJSONTyped(json, ignoreDiscriminato
         logs: !(0, runtime_1.exists)(json, 'logs') ? undefined : json['logs'],
     };
 }
-exports.ConnectorSmtpConnectionTestResultFromJSONTyped = ConnectorSmtpConnectionTestResultFromJSONTyped;
 function ConnectorSmtpConnectionTestResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ConnectorSmtpConnectionTestResultToJSON(value) {
         logs: value.logs,
     };
 }
-exports.ConnectorSmtpConnectionTestResultToJSON = ConnectorSmtpConnectionTestResultToJSON;

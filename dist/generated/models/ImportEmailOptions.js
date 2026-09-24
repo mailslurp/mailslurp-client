@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImportEmailOptionsToJSON = exports.ImportEmailOptionsFromJSONTyped = exports.ImportEmailOptionsFromJSON = void 0;
+exports.ImportEmailOptionsFromJSON = ImportEmailOptionsFromJSON;
+exports.ImportEmailOptionsFromJSONTyped = ImportEmailOptionsFromJSONTyped;
+exports.ImportEmailOptionsToJSON = ImportEmailOptionsToJSON;
 var runtime_1 = require("../runtime");
 function ImportEmailOptionsFromJSON(json) {
     return ImportEmailOptionsFromJSONTyped(json, false);
 }
-exports.ImportEmailOptionsFromJSON = ImportEmailOptionsFromJSON;
 function ImportEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function ImportEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['overrideMessageId'],
     };
 }
-exports.ImportEmailOptionsFromJSONTyped = ImportEmailOptionsFromJSONTyped;
 function ImportEmailOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function ImportEmailOptionsToJSON(value) {
         overrideMessageId: value.overrideMessageId,
     };
 }
-exports.ImportEmailOptionsToJSON = ImportEmailOptionsToJSON;

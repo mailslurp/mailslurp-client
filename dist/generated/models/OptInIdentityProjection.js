@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OptInIdentityProjectionToJSON = exports.OptInIdentityProjectionFromJSONTyped = exports.OptInIdentityProjectionFromJSON = void 0;
+exports.OptInIdentityProjectionFromJSON = OptInIdentityProjectionFromJSON;
+exports.OptInIdentityProjectionFromJSONTyped = OptInIdentityProjectionFromJSONTyped;
+exports.OptInIdentityProjectionToJSON = OptInIdentityProjectionToJSON;
 var runtime_1 = require("../runtime");
 function OptInIdentityProjectionFromJSON(json) {
     return OptInIdentityProjectionFromJSONTyped(json, false);
 }
-exports.OptInIdentityProjectionFromJSON = OptInIdentityProjectionFromJSON;
 function OptInIdentityProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function OptInIdentityProjectionFromJSONTyped(json, ignoreDiscriminator) {
         verified: !(0, runtime_1.exists)(json, 'verified') ? undefined : json['verified'],
     };
 }
-exports.OptInIdentityProjectionFromJSONTyped = OptInIdentityProjectionFromJSONTyped;
 function OptInIdentityProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function OptInIdentityProjectionToJSON(value) {
         verified: value.verified,
     };
 }
-exports.OptInIdentityProjectionToJSON = OptInIdentityProjectionToJSON;

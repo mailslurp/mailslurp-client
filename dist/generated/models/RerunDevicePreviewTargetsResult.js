@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RerunDevicePreviewTargetsResultToJSON = exports.RerunDevicePreviewTargetsResultFromJSONTyped = exports.RerunDevicePreviewTargetsResultFromJSON = void 0;
+exports.RerunDevicePreviewTargetsResultFromJSON = RerunDevicePreviewTargetsResultFromJSON;
+exports.RerunDevicePreviewTargetsResultFromJSONTyped = RerunDevicePreviewTargetsResultFromJSONTyped;
+exports.RerunDevicePreviewTargetsResultToJSON = RerunDevicePreviewTargetsResultToJSON;
 var _1 = require("./");
 function RerunDevicePreviewTargetsResultFromJSON(json) {
     return RerunDevicePreviewTargetsResultFromJSONTyped(json, false);
 }
-exports.RerunDevicePreviewTargetsResultFromJSON = RerunDevicePreviewTargetsResultFromJSON;
 function RerunDevicePreviewTargetsResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function RerunDevicePreviewTargetsResultFromJSONTyped(json, ignoreDiscriminator)
         warnings: json['warnings'],
     };
 }
-exports.RerunDevicePreviewTargetsResultFromJSONTyped = RerunDevicePreviewTargetsResultFromJSONTyped;
 function RerunDevicePreviewTargetsResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function RerunDevicePreviewTargetsResultToJSON(value) {
         warnings: value.warnings,
     };
 }
-exports.RerunDevicePreviewTargetsResultToJSON = RerunDevicePreviewTargetsResultToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerFetchResultToJSON = exports.ImapServerFetchResultFromJSONTyped = exports.ImapServerFetchResultFromJSON = void 0;
+exports.ImapServerFetchResultFromJSON = ImapServerFetchResultFromJSON;
+exports.ImapServerFetchResultFromJSONTyped = ImapServerFetchResultFromJSONTyped;
+exports.ImapServerFetchResultToJSON = ImapServerFetchResultToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function ImapServerFetchResultFromJSON(json) {
     return ImapServerFetchResultFromJSONTyped(json, false);
 }
-exports.ImapServerFetchResultFromJSON = ImapServerFetchResultFromJSON;
 function ImapServerFetchResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function ImapServerFetchResultFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.ImapServerFetchItemFromJSON)(json['result']),
     };
 }
-exports.ImapServerFetchResultFromJSONTyped = ImapServerFetchResultFromJSONTyped;
 function ImapServerFetchResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ImapServerFetchResultToJSON(value) {
         result: (0, _1.ImapServerFetchItemToJSON)(value.result),
     };
 }
-exports.ImapServerFetchResultToJSON = ImapServerFetchResultToJSON;

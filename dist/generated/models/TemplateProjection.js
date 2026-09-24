@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TemplateProjectionToJSON = exports.TemplateProjectionFromJSONTyped = exports.TemplateProjectionFromJSON = void 0;
+exports.TemplateProjectionFromJSON = TemplateProjectionFromJSON;
+exports.TemplateProjectionFromJSONTyped = TemplateProjectionFromJSONTyped;
+exports.TemplateProjectionToJSON = TemplateProjectionToJSON;
 function TemplateProjectionFromJSON(json) {
     return TemplateProjectionFromJSONTyped(json, false);
 }
-exports.TemplateProjectionFromJSON = TemplateProjectionFromJSON;
 function TemplateProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function TemplateProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.TemplateProjectionFromJSONTyped = TemplateProjectionFromJSONTyped;
 function TemplateProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function TemplateProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.TemplateProjectionToJSON = TemplateProjectionToJSON;

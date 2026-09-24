@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContactDtoToJSON = exports.ContactDtoFromJSONTyped = exports.ContactDtoFromJSON = void 0;
+exports.ContactDtoFromJSON = ContactDtoFromJSON;
+exports.ContactDtoFromJSONTyped = ContactDtoFromJSONTyped;
+exports.ContactDtoToJSON = ContactDtoToJSON;
 var runtime_1 = require("../runtime");
 function ContactDtoFromJSON(json) {
     return ContactDtoFromJSONTyped(json, false);
 }
-exports.ContactDtoFromJSON = ContactDtoFromJSON;
 function ContactDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +40,6 @@ function ContactDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.ContactDtoFromJSONTyped = ContactDtoFromJSONTyped;
 function ContactDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -61,4 +61,3 @@ function ContactDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.ContactDtoToJSON = ContactDtoToJSON;

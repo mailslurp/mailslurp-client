@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxExistsDtoToJSON = exports.InboxExistsDtoFromJSONTyped = exports.InboxExistsDtoFromJSON = void 0;
+exports.InboxExistsDtoFromJSON = InboxExistsDtoFromJSON;
+exports.InboxExistsDtoFromJSONTyped = InboxExistsDtoFromJSONTyped;
+exports.InboxExistsDtoToJSON = InboxExistsDtoToJSON;
 var runtime_1 = require("../runtime");
 function InboxExistsDtoFromJSON(json) {
     return InboxExistsDtoFromJSONTyped(json, false);
 }
-exports.InboxExistsDtoFromJSON = InboxExistsDtoFromJSON;
 function InboxExistsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function InboxExistsDtoFromJSONTyped(json, ignoreDiscriminator) {
         hardBounce: !(0, runtime_1.exists)(json, 'hardBounce') ? undefined : json['hardBounce'],
     };
 }
-exports.InboxExistsDtoFromJSONTyped = InboxExistsDtoFromJSONTyped;
 function InboxExistsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function InboxExistsDtoToJSON(value) {
         hardBounce: value.hardBounce,
     };
 }
-exports.InboxExistsDtoToJSON = InboxExistsDtoToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDevicePreviewOptionsToJSON = exports.CreateDevicePreviewOptionsFromJSONTyped = exports.CreateDevicePreviewOptionsFromJSON = void 0;
+exports.CreateDevicePreviewOptionsFromJSON = CreateDevicePreviewOptionsFromJSON;
+exports.CreateDevicePreviewOptionsFromJSONTyped = CreateDevicePreviewOptionsFromJSONTyped;
+exports.CreateDevicePreviewOptionsToJSON = CreateDevicePreviewOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function CreateDevicePreviewOptionsFromJSON(json) {
     return CreateDevicePreviewOptionsFromJSONTyped(json, false);
 }
-exports.CreateDevicePreviewOptionsFromJSON = CreateDevicePreviewOptionsFromJSON;
 function CreateDevicePreviewOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function CreateDevicePreviewOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.CreateDevicePreviewQaOptionsFromJSON)(json['qa']),
     };
 }
-exports.CreateDevicePreviewOptionsFromJSONTyped = CreateDevicePreviewOptionsFromJSONTyped;
 function CreateDevicePreviewOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function CreateDevicePreviewOptionsToJSON(value) {
         qa: (0, _1.CreateDevicePreviewQaOptionsToJSON)(value.qa),
     };
 }
-exports.CreateDevicePreviewOptionsToJSON = CreateDevicePreviewOptionsToJSON;

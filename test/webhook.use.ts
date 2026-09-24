@@ -1,17 +1,16 @@
 import MailSlurp, { WebhookNewEmailPayload } from '../dist';
 
 import express from 'express';
-import * as bodyParser from 'body-parser';
 import fetch from 'cross-fetch';
 const port = 4567;
 
-test('webhook server', async () => {
+test.skipIf(!process.env.API_KEY)('webhook server', async () => {
   const config = { apiKey: process.env.API_KEY };
   const mailslurp = new MailSlurp(config);
   //<gen>webhook_server
   // example express server that you control
   const app = express();
-  app.use(bodyParser.json());
+  app.use(express.json());
   // receive new email webhook payload via post
   app.post('/new-email-endpoint', async (request, response) => {
     // can use typescript types
@@ -25,6 +24,12 @@ test('webhook server', async () => {
   });
   const server = app.listen(port);
   //</gen>
+  onTestFinished(
+    () =>
+      new Promise<void>((resolve, reject) => {
+        server.close((error) => (error ? reject(error) : resolve()));
+      })
+  );
   //<gen>webhook_server_test
   // get a test payload for NEW_EMAIL event
   const testPayload =
@@ -43,5 +48,4 @@ test('webhook server', async () => {
   // expect 200
   expect(testResponse.status).toEqual(200);
   //</gen>
-  server.close();
 });

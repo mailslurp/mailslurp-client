@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxAutomationMatchOptionsToJSON = exports.InboxAutomationMatchOptionsFromJSONTyped = exports.InboxAutomationMatchOptionsFromJSON = exports.InboxAutomationMatchOptionsOperatorEnum = void 0;
+exports.InboxAutomationMatchOptionsOperatorEnum = void 0;
+exports.InboxAutomationMatchOptionsFromJSON = InboxAutomationMatchOptionsFromJSON;
+exports.InboxAutomationMatchOptionsFromJSONTyped = InboxAutomationMatchOptionsFromJSONTyped;
+exports.InboxAutomationMatchOptionsToJSON = InboxAutomationMatchOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,11 +27,10 @@ var InboxAutomationMatchOptionsOperatorEnum;
 (function (InboxAutomationMatchOptionsOperatorEnum) {
     InboxAutomationMatchOptionsOperatorEnum["AND"] = "AND";
     InboxAutomationMatchOptionsOperatorEnum["OR"] = "OR";
-})(InboxAutomationMatchOptionsOperatorEnum = exports.InboxAutomationMatchOptionsOperatorEnum || (exports.InboxAutomationMatchOptionsOperatorEnum = {}));
+})(InboxAutomationMatchOptionsOperatorEnum || (exports.InboxAutomationMatchOptionsOperatorEnum = InboxAutomationMatchOptionsOperatorEnum = {}));
 function InboxAutomationMatchOptionsFromJSON(json) {
     return InboxAutomationMatchOptionsFromJSONTyped(json, false);
 }
-exports.InboxAutomationMatchOptionsFromJSON = InboxAutomationMatchOptionsFromJSON;
 function InboxAutomationMatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -47,7 +49,6 @@ function InboxAutomationMatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
                 : json['groups'].map(InboxAutomationMatchOptionsFromJSON),
     };
 }
-exports.InboxAutomationMatchOptionsFromJSONTyped = InboxAutomationMatchOptionsFromJSONTyped;
 function InboxAutomationMatchOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -69,4 +70,3 @@ function InboxAutomationMatchOptionsToJSON(value) {
                 : value.groups.map(InboxAutomationMatchOptionsToJSON),
     };
 }
-exports.InboxAutomationMatchOptionsToJSON = InboxAutomationMatchOptionsToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConditionOptionToJSON = exports.ConditionOptionFromJSONTyped = exports.ConditionOptionFromJSON = exports.ConditionOptionValueEnum = exports.ConditionOptionConditionEnum = void 0;
+exports.ConditionOptionValueEnum = exports.ConditionOptionConditionEnum = void 0;
+exports.ConditionOptionFromJSON = ConditionOptionFromJSON;
+exports.ConditionOptionFromJSONTyped = ConditionOptionFromJSONTyped;
+exports.ConditionOptionToJSON = ConditionOptionToJSON;
 /**
  * @export
  * @enum {string}
@@ -21,7 +24,7 @@ exports.ConditionOptionToJSON = exports.ConditionOptionFromJSONTyped = exports.C
 var ConditionOptionConditionEnum;
 (function (ConditionOptionConditionEnum) {
     ConditionOptionConditionEnum["HAS_ATTACHMENTS"] = "HAS_ATTACHMENTS";
-})(ConditionOptionConditionEnum = exports.ConditionOptionConditionEnum || (exports.ConditionOptionConditionEnum = {}));
+})(ConditionOptionConditionEnum || (exports.ConditionOptionConditionEnum = ConditionOptionConditionEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -30,11 +33,10 @@ var ConditionOptionValueEnum;
 (function (ConditionOptionValueEnum) {
     ConditionOptionValueEnum["TRUE"] = "TRUE";
     ConditionOptionValueEnum["FALSE"] = "FALSE";
-})(ConditionOptionValueEnum = exports.ConditionOptionValueEnum || (exports.ConditionOptionValueEnum = {}));
+})(ConditionOptionValueEnum || (exports.ConditionOptionValueEnum = ConditionOptionValueEnum = {}));
 function ConditionOptionFromJSON(json) {
     return ConditionOptionFromJSONTyped(json, false);
 }
-exports.ConditionOptionFromJSON = ConditionOptionFromJSON;
 function ConditionOptionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +46,6 @@ function ConditionOptionFromJSONTyped(json, ignoreDiscriminator) {
         value: json['value'],
     };
 }
-exports.ConditionOptionFromJSONTyped = ConditionOptionFromJSONTyped;
 function ConditionOptionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -57,4 +58,3 @@ function ConditionOptionToJSON(value) {
         value: value.value,
     };
 }
-exports.ConditionOptionToJSON = ConditionOptionToJSON;

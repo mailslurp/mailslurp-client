@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SearchEmailsOptionsToJSON = exports.SearchEmailsOptionsFromJSONTyped = exports.SearchEmailsOptionsFromJSON = exports.SearchEmailsOptionsSortDirectionEnum = void 0;
+exports.SearchEmailsOptionsSortDirectionEnum = void 0;
+exports.SearchEmailsOptionsFromJSON = SearchEmailsOptionsFromJSON;
+exports.SearchEmailsOptionsFromJSONTyped = SearchEmailsOptionsFromJSONTyped;
+exports.SearchEmailsOptionsToJSON = SearchEmailsOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var SearchEmailsOptionsSortDirectionEnum;
 (function (SearchEmailsOptionsSortDirectionEnum) {
     SearchEmailsOptionsSortDirectionEnum["ASC"] = "ASC";
     SearchEmailsOptionsSortDirectionEnum["DESC"] = "DESC";
-})(SearchEmailsOptionsSortDirectionEnum = exports.SearchEmailsOptionsSortDirectionEnum || (exports.SearchEmailsOptionsSortDirectionEnum = {}));
+})(SearchEmailsOptionsSortDirectionEnum || (exports.SearchEmailsOptionsSortDirectionEnum = SearchEmailsOptionsSortDirectionEnum = {}));
 function SearchEmailsOptionsFromJSON(json) {
     return SearchEmailsOptionsFromJSONTyped(json, false);
 }
-exports.SearchEmailsOptionsFromJSON = SearchEmailsOptionsFromJSON;
 function SearchEmailsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -55,7 +57,6 @@ function SearchEmailsOptionsFromJSONTyped(json, ignoreDiscriminator) {
                 : new Date(json['before']),
     };
 }
-exports.SearchEmailsOptionsFromJSONTyped = SearchEmailsOptionsFromJSONTyped;
 function SearchEmailsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -82,4 +83,3 @@ function SearchEmailsOptionsToJSON(value) {
                 : value.before.toISOString(),
     };
 }
-exports.SearchEmailsOptionsToJSON = SearchEmailsOptionsToJSON;

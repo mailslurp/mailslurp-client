@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateWebhookOptionsToJSON = exports.CreateWebhookOptionsFromJSONTyped = exports.CreateWebhookOptionsFromJSON = exports.CreateWebhookOptionsEventNameEnum = void 0;
+exports.CreateWebhookOptionsEventNameEnum = void 0;
+exports.CreateWebhookOptionsFromJSON = CreateWebhookOptionsFromJSON;
+exports.CreateWebhookOptionsFromJSONTyped = CreateWebhookOptionsFromJSONTyped;
+exports.CreateWebhookOptionsToJSON = CreateWebhookOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -34,11 +37,10 @@ var CreateWebhookOptionsEventNameEnum;
     CreateWebhookOptionsEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     CreateWebhookOptionsEventNameEnum["NEW_SMS"] = "NEW_SMS";
     CreateWebhookOptionsEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(CreateWebhookOptionsEventNameEnum = exports.CreateWebhookOptionsEventNameEnum || (exports.CreateWebhookOptionsEventNameEnum = {}));
+})(CreateWebhookOptionsEventNameEnum || (exports.CreateWebhookOptionsEventNameEnum = CreateWebhookOptionsEventNameEnum = {}));
 function CreateWebhookOptionsFromJSON(json) {
     return CreateWebhookOptionsFromJSONTyped(json, false);
 }
-exports.CreateWebhookOptionsFromJSON = CreateWebhookOptionsFromJSON;
 function CreateWebhookOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -68,7 +70,6 @@ function CreateWebhookOptionsFromJSONTyped(json, ignoreDiscriminator) {
         tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
     };
 }
-exports.CreateWebhookOptionsFromJSONTyped = CreateWebhookOptionsFromJSONTyped;
 function CreateWebhookOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -89,4 +90,3 @@ function CreateWebhookOptionsToJSON(value) {
         tags: value.tags,
     };
 }
-exports.CreateWebhookOptionsToJSON = CreateWebhookOptionsToJSON;

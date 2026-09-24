@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageConnectorEventsToJSON = exports.PageConnectorEventsFromJSONTyped = exports.PageConnectorEventsFromJSON = void 0;
+exports.PageConnectorEventsFromJSON = PageConnectorEventsFromJSON;
+exports.PageConnectorEventsFromJSONTyped = PageConnectorEventsFromJSONTyped;
+exports.PageConnectorEventsToJSON = PageConnectorEventsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageConnectorEventsFromJSON(json) {
     return PageConnectorEventsFromJSONTyped(json, false);
 }
-exports.PageConnectorEventsFromJSON = PageConnectorEventsFromJSON;
 function PageConnectorEventsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageConnectorEventsFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageConnectorEventsFromJSONTyped = PageConnectorEventsFromJSONTyped;
 function PageConnectorEventsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageConnectorEventsToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageConnectorEventsToJSON = PageConnectorEventsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityExpectationToJSON = exports.DeliverabilityExpectationFromJSONTyped = exports.DeliverabilityExpectationFromJSON = void 0;
+exports.DeliverabilityExpectationFromJSON = DeliverabilityExpectationFromJSON;
+exports.DeliverabilityExpectationFromJSONTyped = DeliverabilityExpectationFromJSONTyped;
+exports.DeliverabilityExpectationToJSON = DeliverabilityExpectationToJSON;
 var runtime_1 = require("../runtime");
 function DeliverabilityExpectationFromJSON(json) {
     return DeliverabilityExpectationFromJSONTyped(json, false);
 }
-exports.DeliverabilityExpectationFromJSON = DeliverabilityExpectationFromJSON;
 function DeliverabilityExpectationFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function DeliverabilityExpectationFromJSONTyped(json, ignoreDiscriminator) {
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
     };
 }
-exports.DeliverabilityExpectationFromJSONTyped = DeliverabilityExpectationFromJSONTyped;
 function DeliverabilityExpectationToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function DeliverabilityExpectationToJSON(value) {
         subject: value.subject,
     };
 }
-exports.DeliverabilityExpectationToJSON = DeliverabilityExpectationToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NameServerRecordToJSON = exports.NameServerRecordFromJSONTyped = exports.NameServerRecordFromJSON = void 0;
+exports.NameServerRecordFromJSON = NameServerRecordFromJSON;
+exports.NameServerRecordFromJSONTyped = NameServerRecordFromJSONTyped;
+exports.NameServerRecordToJSON = NameServerRecordToJSON;
 function NameServerRecordFromJSON(json) {
     return NameServerRecordFromJSONTyped(json, false);
 }
-exports.NameServerRecordFromJSON = NameServerRecordFromJSON;
 function NameServerRecordFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function NameServerRecordFromJSONTyped(json, ignoreDiscriminator) {
         value: json['value'],
     };
 }
-exports.NameServerRecordFromJSONTyped = NameServerRecordFromJSONTyped;
 function NameServerRecordToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function NameServerRecordToJSON(value) {
         value: value.value,
     };
 }
-exports.NameServerRecordToJSON = NameServerRecordToJSON;

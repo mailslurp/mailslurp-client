@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupPostmasterSignalsDtoToJSON = exports.EmailWarmupPostmasterSignalsDtoFromJSONTyped = exports.EmailWarmupPostmasterSignalsDtoFromJSON = void 0;
+exports.EmailWarmupPostmasterSignalsDtoFromJSON = EmailWarmupPostmasterSignalsDtoFromJSON;
+exports.EmailWarmupPostmasterSignalsDtoFromJSONTyped = EmailWarmupPostmasterSignalsDtoFromJSONTyped;
+exports.EmailWarmupPostmasterSignalsDtoToJSON = EmailWarmupPostmasterSignalsDtoToJSON;
 var runtime_1 = require("../runtime");
 function EmailWarmupPostmasterSignalsDtoFromJSON(json) {
     return EmailWarmupPostmasterSignalsDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupPostmasterSignalsDtoFromJSON = EmailWarmupPostmasterSignalsDtoFromJSON;
 function EmailWarmupPostmasterSignalsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -42,7 +43,6 @@ function EmailWarmupPostmasterSignalsDtoFromJSONTyped(json, ignoreDiscriminator)
             : json['dmarcSuccessRatio'],
     };
 }
-exports.EmailWarmupPostmasterSignalsDtoFromJSONTyped = EmailWarmupPostmasterSignalsDtoFromJSONTyped;
 function EmailWarmupPostmasterSignalsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +59,3 @@ function EmailWarmupPostmasterSignalsDtoToJSON(value) {
         dmarcSuccessRatio: value.dmarcSuccessRatio,
     };
 }
-exports.EmailWarmupPostmasterSignalsDtoToJSON = EmailWarmupPostmasterSignalsDtoToJSON;

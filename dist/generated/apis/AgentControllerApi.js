@@ -43,13 +43,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,8 +70,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -3695,7 +3705,7 @@ var AgentGetEmailThreadSortEnum;
 (function (AgentGetEmailThreadSortEnum) {
     AgentGetEmailThreadSortEnum["ASC"] = "ASC";
     AgentGetEmailThreadSortEnum["DESC"] = "DESC";
-})(AgentGetEmailThreadSortEnum = exports.AgentGetEmailThreadSortEnum || (exports.AgentGetEmailThreadSortEnum = {}));
+})(AgentGetEmailThreadSortEnum || (exports.AgentGetEmailThreadSortEnum = AgentGetEmailThreadSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3704,7 +3714,7 @@ var AgentGetPhoneNumbersSortEnum;
 (function (AgentGetPhoneNumbersSortEnum) {
     AgentGetPhoneNumbersSortEnum["ASC"] = "ASC";
     AgentGetPhoneNumbersSortEnum["DESC"] = "DESC";
-})(AgentGetPhoneNumbersSortEnum = exports.AgentGetPhoneNumbersSortEnum || (exports.AgentGetPhoneNumbersSortEnum = {}));
+})(AgentGetPhoneNumbersSortEnum || (exports.AgentGetPhoneNumbersSortEnum = AgentGetPhoneNumbersSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3713,7 +3723,7 @@ var AgentGetReceivedSmsMessagesSortEnum;
 (function (AgentGetReceivedSmsMessagesSortEnum) {
     AgentGetReceivedSmsMessagesSortEnum["ASC"] = "ASC";
     AgentGetReceivedSmsMessagesSortEnum["DESC"] = "DESC";
-})(AgentGetReceivedSmsMessagesSortEnum = exports.AgentGetReceivedSmsMessagesSortEnum || (exports.AgentGetReceivedSmsMessagesSortEnum = {}));
+})(AgentGetReceivedSmsMessagesSortEnum || (exports.AgentGetReceivedSmsMessagesSortEnum = AgentGetReceivedSmsMessagesSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3722,7 +3732,7 @@ var AgentGetSentSmsMessagesSortEnum;
 (function (AgentGetSentSmsMessagesSortEnum) {
     AgentGetSentSmsMessagesSortEnum["ASC"] = "ASC";
     AgentGetSentSmsMessagesSortEnum["DESC"] = "DESC";
-})(AgentGetSentSmsMessagesSortEnum = exports.AgentGetSentSmsMessagesSortEnum || (exports.AgentGetSentSmsMessagesSortEnum = {}));
+})(AgentGetSentSmsMessagesSortEnum || (exports.AgentGetSentSmsMessagesSortEnum = AgentGetSentSmsMessagesSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3731,7 +3741,7 @@ var AgentGetTotpDevicesSortEnum;
 (function (AgentGetTotpDevicesSortEnum) {
     AgentGetTotpDevicesSortEnum["ASC"] = "ASC";
     AgentGetTotpDevicesSortEnum["DESC"] = "DESC";
-})(AgentGetTotpDevicesSortEnum = exports.AgentGetTotpDevicesSortEnum || (exports.AgentGetTotpDevicesSortEnum = {}));
+})(AgentGetTotpDevicesSortEnum || (exports.AgentGetTotpDevicesSortEnum = AgentGetTotpDevicesSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3740,7 +3750,7 @@ var AgentListAccessibleInboxesSortEnum;
 (function (AgentListAccessibleInboxesSortEnum) {
     AgentListAccessibleInboxesSortEnum["ASC"] = "ASC";
     AgentListAccessibleInboxesSortEnum["DESC"] = "DESC";
-})(AgentListAccessibleInboxesSortEnum = exports.AgentListAccessibleInboxesSortEnum || (exports.AgentListAccessibleInboxesSortEnum = {}));
+})(AgentListAccessibleInboxesSortEnum || (exports.AgentListAccessibleInboxesSortEnum = AgentListAccessibleInboxesSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3764,7 +3774,7 @@ var AgentListAutomationEventsEventTypeEnum;
     AgentListAutomationEventsEventTypeEnum["AGENT_DRAFT_CREATED"] = "AGENT_DRAFT_CREATED";
     AgentListAutomationEventsEventTypeEnum["AGENT_DRAFT_SENT"] = "AGENT_DRAFT_SENT";
     AgentListAutomationEventsEventTypeEnum["AGENT_ACTION_FAILED"] = "AGENT_ACTION_FAILED";
-})(AgentListAutomationEventsEventTypeEnum = exports.AgentListAutomationEventsEventTypeEnum || (exports.AgentListAutomationEventsEventTypeEnum = {}));
+})(AgentListAutomationEventsEventTypeEnum || (exports.AgentListAutomationEventsEventTypeEnum = AgentListAutomationEventsEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3777,7 +3787,7 @@ var AgentListConversationsV2WorkflowStateEnum;
     AgentListConversationsV2WorkflowStateEnum["WAITING_ON_CUSTOMER"] = "WAITING_ON_CUSTOMER";
     AgentListConversationsV2WorkflowStateEnum["REVIEW"] = "REVIEW";
     AgentListConversationsV2WorkflowStateEnum["RESOLVED"] = "RESOLVED";
-})(AgentListConversationsV2WorkflowStateEnum = exports.AgentListConversationsV2WorkflowStateEnum || (exports.AgentListConversationsV2WorkflowStateEnum = {}));
+})(AgentListConversationsV2WorkflowStateEnum || (exports.AgentListConversationsV2WorkflowStateEnum = AgentListConversationsV2WorkflowStateEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3790,7 +3800,7 @@ var AgentListConversationsV2OutcomeEnum;
     AgentListConversationsV2OutcomeEnum["REVIEW_REQUESTED"] = "REVIEW_REQUESTED";
     AgentListConversationsV2OutcomeEnum["FAILED"] = "FAILED";
     AgentListConversationsV2OutcomeEnum["RESOLVED"] = "RESOLVED";
-})(AgentListConversationsV2OutcomeEnum = exports.AgentListConversationsV2OutcomeEnum || (exports.AgentListConversationsV2OutcomeEnum = {}));
+})(AgentListConversationsV2OutcomeEnum || (exports.AgentListConversationsV2OutcomeEnum = AgentListConversationsV2OutcomeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3803,7 +3813,7 @@ var AgentListConversationsV2ReviewStatusEnum;
     AgentListConversationsV2ReviewStatusEnum["APPROVED"] = "APPROVED";
     AgentListConversationsV2ReviewStatusEnum["REJECTED"] = "REJECTED";
     AgentListConversationsV2ReviewStatusEnum["RESOLVED"] = "RESOLVED";
-})(AgentListConversationsV2ReviewStatusEnum = exports.AgentListConversationsV2ReviewStatusEnum || (exports.AgentListConversationsV2ReviewStatusEnum = {}));
+})(AgentListConversationsV2ReviewStatusEnum || (exports.AgentListConversationsV2ReviewStatusEnum = AgentListConversationsV2ReviewStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3813,7 +3823,7 @@ var AgentListConversationsV2SortEnum;
     AgentListConversationsV2SortEnum["LAST_MESSAGE_DESC"] = "LAST_MESSAGE_DESC";
     AgentListConversationsV2SortEnum["OLDEST_UNHANDLED_ASC"] = "OLDEST_UNHANDLED_ASC";
     AgentListConversationsV2SortEnum["REVIEW_PRIORITY_DESC"] = "REVIEW_PRIORITY_DESC";
-})(AgentListConversationsV2SortEnum = exports.AgentListConversationsV2SortEnum || (exports.AgentListConversationsV2SortEnum = {}));
+})(AgentListConversationsV2SortEnum || (exports.AgentListConversationsV2SortEnum = AgentListConversationsV2SortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3822,7 +3832,7 @@ var AgentListEmailDraftsSortEnum;
 (function (AgentListEmailDraftsSortEnum) {
     AgentListEmailDraftsSortEnum["ASC"] = "ASC";
     AgentListEmailDraftsSortEnum["DESC"] = "DESC";
-})(AgentListEmailDraftsSortEnum = exports.AgentListEmailDraftsSortEnum || (exports.AgentListEmailDraftsSortEnum = {}));
+})(AgentListEmailDraftsSortEnum || (exports.AgentListEmailDraftsSortEnum = AgentListEmailDraftsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3831,7 +3841,7 @@ var AgentListInboxEmailsSortEnum;
 (function (AgentListInboxEmailsSortEnum) {
     AgentListInboxEmailsSortEnum["ASC"] = "ASC";
     AgentListInboxEmailsSortEnum["DESC"] = "DESC";
-})(AgentListInboxEmailsSortEnum = exports.AgentListInboxEmailsSortEnum || (exports.AgentListInboxEmailsSortEnum = {}));
+})(AgentListInboxEmailsSortEnum || (exports.AgentListInboxEmailsSortEnum = AgentListInboxEmailsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3840,7 +3850,7 @@ var AgentListInboxThreadsSortEnum;
 (function (AgentListInboxThreadsSortEnum) {
     AgentListInboxThreadsSortEnum["ASC"] = "ASC";
     AgentListInboxThreadsSortEnum["DESC"] = "DESC";
-})(AgentListInboxThreadsSortEnum = exports.AgentListInboxThreadsSortEnum || (exports.AgentListInboxThreadsSortEnum = {}));
+})(AgentListInboxThreadsSortEnum || (exports.AgentListInboxThreadsSortEnum = AgentListInboxThreadsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3853,7 +3863,7 @@ var AgentListSmsConversationsWorkflowStateEnum;
     AgentListSmsConversationsWorkflowStateEnum["WAITING_ON_CUSTOMER"] = "WAITING_ON_CUSTOMER";
     AgentListSmsConversationsWorkflowStateEnum["REVIEW"] = "REVIEW";
     AgentListSmsConversationsWorkflowStateEnum["RESOLVED"] = "RESOLVED";
-})(AgentListSmsConversationsWorkflowStateEnum = exports.AgentListSmsConversationsWorkflowStateEnum || (exports.AgentListSmsConversationsWorkflowStateEnum = {}));
+})(AgentListSmsConversationsWorkflowStateEnum || (exports.AgentListSmsConversationsWorkflowStateEnum = AgentListSmsConversationsWorkflowStateEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3866,7 +3876,7 @@ var AgentListSmsConversationsOutcomeEnum;
     AgentListSmsConversationsOutcomeEnum["REVIEW_REQUESTED"] = "REVIEW_REQUESTED";
     AgentListSmsConversationsOutcomeEnum["FAILED"] = "FAILED";
     AgentListSmsConversationsOutcomeEnum["RESOLVED"] = "RESOLVED";
-})(AgentListSmsConversationsOutcomeEnum = exports.AgentListSmsConversationsOutcomeEnum || (exports.AgentListSmsConversationsOutcomeEnum = {}));
+})(AgentListSmsConversationsOutcomeEnum || (exports.AgentListSmsConversationsOutcomeEnum = AgentListSmsConversationsOutcomeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3879,7 +3889,7 @@ var AgentListSmsConversationsReviewStatusEnum;
     AgentListSmsConversationsReviewStatusEnum["APPROVED"] = "APPROVED";
     AgentListSmsConversationsReviewStatusEnum["REJECTED"] = "REJECTED";
     AgentListSmsConversationsReviewStatusEnum["RESOLVED"] = "RESOLVED";
-})(AgentListSmsConversationsReviewStatusEnum = exports.AgentListSmsConversationsReviewStatusEnum || (exports.AgentListSmsConversationsReviewStatusEnum = {}));
+})(AgentListSmsConversationsReviewStatusEnum || (exports.AgentListSmsConversationsReviewStatusEnum = AgentListSmsConversationsReviewStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3889,7 +3899,7 @@ var AgentListSmsConversationsSortEnum;
     AgentListSmsConversationsSortEnum["LAST_MESSAGE_DESC"] = "LAST_MESSAGE_DESC";
     AgentListSmsConversationsSortEnum["OLDEST_UNHANDLED_ASC"] = "OLDEST_UNHANDLED_ASC";
     AgentListSmsConversationsSortEnum["REVIEW_PRIORITY_DESC"] = "REVIEW_PRIORITY_DESC";
-})(AgentListSmsConversationsSortEnum = exports.AgentListSmsConversationsSortEnum || (exports.AgentListSmsConversationsSortEnum = {}));
+})(AgentListSmsConversationsSortEnum || (exports.AgentListSmsConversationsSortEnum = AgentListSmsConversationsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -3898,4 +3908,4 @@ var AgentSearchInboxEmailsSortEnum;
 (function (AgentSearchInboxEmailsSortEnum) {
     AgentSearchInboxEmailsSortEnum["ASC"] = "ASC";
     AgentSearchInboxEmailsSortEnum["DESC"] = "DESC";
-})(AgentSearchInboxEmailsSortEnum = exports.AgentSearchInboxEmailsSortEnum || (exports.AgentSearchInboxEmailsSortEnum = {}));
+})(AgentSearchInboxEmailsSortEnum || (exports.AgentSearchInboxEmailsSortEnum = AgentSearchInboxEmailsSortEnum = {}));

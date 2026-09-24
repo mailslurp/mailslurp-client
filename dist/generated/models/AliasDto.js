@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AliasDtoToJSON = exports.AliasDtoFromJSONTyped = exports.AliasDtoFromJSON = void 0;
+exports.AliasDtoFromJSON = AliasDtoFromJSON;
+exports.AliasDtoFromJSONTyped = AliasDtoFromJSONTyped;
+exports.AliasDtoToJSON = AliasDtoToJSON;
 var runtime_1 = require("../runtime");
 function AliasDtoFromJSON(json) {
     return AliasDtoFromJSONTyped(json, false);
 }
-exports.AliasDtoFromJSON = AliasDtoFromJSON;
 function AliasDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -47,7 +48,6 @@ function AliasDtoFromJSONTyped(json, ignoreDiscriminator) {
                 : new Date(json['updatedAt']),
     };
 }
-exports.AliasDtoFromJSONTyped = AliasDtoFromJSONTyped;
 function AliasDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -77,4 +77,3 @@ function AliasDtoToJSON(value) {
                 : value.updatedAt.toISOString(),
     };
 }
-exports.AliasDtoToJSON = AliasDtoToJSON;

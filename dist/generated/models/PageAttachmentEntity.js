@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageAttachmentEntityToJSON = exports.PageAttachmentEntityFromJSONTyped = exports.PageAttachmentEntityFromJSON = void 0;
+exports.PageAttachmentEntityFromJSON = PageAttachmentEntityFromJSON;
+exports.PageAttachmentEntityFromJSONTyped = PageAttachmentEntityFromJSONTyped;
+exports.PageAttachmentEntityToJSON = PageAttachmentEntityToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageAttachmentEntityFromJSON(json) {
     return PageAttachmentEntityFromJSONTyped(json, false);
 }
-exports.PageAttachmentEntityFromJSON = PageAttachmentEntityFromJSON;
 function PageAttachmentEntityFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageAttachmentEntityFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageAttachmentEntityFromJSONTyped = PageAttachmentEntityFromJSONTyped;
 function PageAttachmentEntityToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageAttachmentEntityToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageAttachmentEntityToJSON = PageAttachmentEntityToJSON;

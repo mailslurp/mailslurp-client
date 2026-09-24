@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailAvailableResultToJSON = exports.EmailAvailableResultFromJSONTyped = exports.EmailAvailableResultFromJSON = void 0;
+exports.EmailAvailableResultFromJSON = EmailAvailableResultFromJSON;
+exports.EmailAvailableResultFromJSONTyped = EmailAvailableResultFromJSONTyped;
+exports.EmailAvailableResultToJSON = EmailAvailableResultToJSON;
 function EmailAvailableResultFromJSON(json) {
     return EmailAvailableResultFromJSONTyped(json, false);
 }
-exports.EmailAvailableResultFromJSON = EmailAvailableResultFromJSON;
 function EmailAvailableResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function EmailAvailableResultFromJSONTyped(json, ignoreDiscriminator) {
         available: json['available'],
     };
 }
-exports.EmailAvailableResultFromJSONTyped = EmailAvailableResultFromJSONTyped;
 function EmailAvailableResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function EmailAvailableResultToJSON(value) {
         available: value.available,
     };
 }
-exports.EmailAvailableResultToJSON = EmailAvailableResultToJSON;

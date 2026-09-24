@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccessLinkSendResultDtoToJSON = exports.AccessLinkSendResultDtoFromJSONTyped = exports.AccessLinkSendResultDtoFromJSON = void 0;
+exports.AccessLinkSendResultDtoFromJSON = AccessLinkSendResultDtoFromJSON;
+exports.AccessLinkSendResultDtoFromJSONTyped = AccessLinkSendResultDtoFromJSONTyped;
+exports.AccessLinkSendResultDtoToJSON = AccessLinkSendResultDtoToJSON;
 var runtime_1 = require("../runtime");
 function AccessLinkSendResultDtoFromJSON(json) {
     return AccessLinkSendResultDtoFromJSONTyped(json, false);
 }
-exports.AccessLinkSendResultDtoFromJSON = AccessLinkSendResultDtoFromJSON;
 function AccessLinkSendResultDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function AccessLinkSendResultDtoFromJSONTyped(json, ignoreDiscriminator) {
         providerCode: json['providerCode'],
     };
 }
-exports.AccessLinkSendResultDtoFromJSONTyped = AccessLinkSendResultDtoFromJSONTyped;
 function AccessLinkSendResultDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function AccessLinkSendResultDtoToJSON(value) {
         providerCode: value.providerCode,
     };
 }
-exports.AccessLinkSendResultDtoToJSON = AccessLinkSendResultDtoToJSON;

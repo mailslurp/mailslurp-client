@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainRegionInformationToJSON = exports.DomainRegionInformationFromJSONTyped = exports.DomainRegionInformationFromJSON = exports.DomainRegionInformationAccountRegionEnum = exports.DomainRegionInformationDomainTypeEnum = void 0;
+exports.DomainRegionInformationAccountRegionEnum = exports.DomainRegionInformationDomainTypeEnum = void 0;
+exports.DomainRegionInformationFromJSON = DomainRegionInformationFromJSON;
+exports.DomainRegionInformationFromJSONTyped = DomainRegionInformationFromJSONTyped;
+exports.DomainRegionInformationToJSON = DomainRegionInformationToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var DomainRegionInformationDomainTypeEnum;
 (function (DomainRegionInformationDomainTypeEnum) {
     DomainRegionInformationDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     DomainRegionInformationDomainTypeEnum["SMTP_DOMAIN"] = "SMTP_DOMAIN";
-})(DomainRegionInformationDomainTypeEnum = exports.DomainRegionInformationDomainTypeEnum || (exports.DomainRegionInformationDomainTypeEnum = {}));
+})(DomainRegionInformationDomainTypeEnum || (exports.DomainRegionInformationDomainTypeEnum = DomainRegionInformationDomainTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -44,11 +47,10 @@ var DomainRegionInformationAccountRegionEnum;
     DomainRegionInformationAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
     DomainRegionInformationAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
     DomainRegionInformationAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
-})(DomainRegionInformationAccountRegionEnum = exports.DomainRegionInformationAccountRegionEnum || (exports.DomainRegionInformationAccountRegionEnum = {}));
+})(DomainRegionInformationAccountRegionEnum || (exports.DomainRegionInformationAccountRegionEnum = DomainRegionInformationAccountRegionEnum = {}));
 function DomainRegionInformationFromJSON(json) {
     return DomainRegionInformationFromJSONTyped(json, false);
 }
-exports.DomainRegionInformationFromJSON = DomainRegionInformationFromJSON;
 function DomainRegionInformationFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -65,7 +67,6 @@ function DomainRegionInformationFromJSONTyped(json, ignoreDiscriminator) {
         active: json['active'],
     };
 }
-exports.DomainRegionInformationFromJSONTyped = DomainRegionInformationFromJSONTyped;
 function DomainRegionInformationToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -83,4 +84,3 @@ function DomainRegionInformationToJSON(value) {
         active: value.active,
     };
 }
-exports.DomainRegionInformationToJSON = DomainRegionInformationToJSON;

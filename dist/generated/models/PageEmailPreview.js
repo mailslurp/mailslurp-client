@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageEmailPreviewToJSON = exports.PageEmailPreviewFromJSONTyped = exports.PageEmailPreviewFromJSON = void 0;
+exports.PageEmailPreviewFromJSON = PageEmailPreviewFromJSON;
+exports.PageEmailPreviewFromJSONTyped = PageEmailPreviewFromJSONTyped;
+exports.PageEmailPreviewToJSON = PageEmailPreviewToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageEmailPreviewFromJSON(json) {
     return PageEmailPreviewFromJSONTyped(json, false);
 }
-exports.PageEmailPreviewFromJSON = PageEmailPreviewFromJSON;
 function PageEmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageEmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageEmailPreviewFromJSONTyped = PageEmailPreviewFromJSONTyped;
 function PageEmailPreviewToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageEmailPreviewToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageEmailPreviewToJSON = PageEmailPreviewToJSON;

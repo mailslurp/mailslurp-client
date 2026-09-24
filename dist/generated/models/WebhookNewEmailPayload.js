@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookNewEmailPayloadToJSON = exports.WebhookNewEmailPayloadFromJSONTyped = exports.WebhookNewEmailPayloadFromJSON = exports.WebhookNewEmailPayloadEventNameEnum = void 0;
+exports.WebhookNewEmailPayloadEventNameEnum = void 0;
+exports.WebhookNewEmailPayloadFromJSON = WebhookNewEmailPayloadFromJSON;
+exports.WebhookNewEmailPayloadFromJSONTyped = WebhookNewEmailPayloadFromJSONTyped;
+exports.WebhookNewEmailPayloadToJSON = WebhookNewEmailPayloadToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -34,11 +37,10 @@ var WebhookNewEmailPayloadEventNameEnum;
     WebhookNewEmailPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookNewEmailPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookNewEmailPayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookNewEmailPayloadEventNameEnum = exports.WebhookNewEmailPayloadEventNameEnum || (exports.WebhookNewEmailPayloadEventNameEnum = {}));
+})(WebhookNewEmailPayloadEventNameEnum || (exports.WebhookNewEmailPayloadEventNameEnum = WebhookNewEmailPayloadEventNameEnum = {}));
 function WebhookNewEmailPayloadFromJSON(json) {
     return WebhookNewEmailPayloadFromJSONTyped(json, false);
 }
-exports.WebhookNewEmailPayloadFromJSON = WebhookNewEmailPayloadFromJSON;
 function WebhookNewEmailPayloadFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -60,7 +62,6 @@ function WebhookNewEmailPayloadFromJSONTyped(json, ignoreDiscriminator) {
         attachmentMetaDatas: json['attachmentMetaDatas'].map(_1.AttachmentMetaDataFromJSON),
     };
 }
-exports.WebhookNewEmailPayloadFromJSONTyped = WebhookNewEmailPayloadFromJSONTyped;
 function WebhookNewEmailPayloadToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -85,4 +86,3 @@ function WebhookNewEmailPayloadToJSON(value) {
         attachmentMetaDatas: value.attachmentMetaDatas.map(_1.AttachmentMetaDataToJSON),
     };
 }
-exports.WebhookNewEmailPayloadToJSON = WebhookNewEmailPayloadToJSON;

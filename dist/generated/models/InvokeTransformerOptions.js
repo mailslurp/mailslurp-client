@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InvokeTransformerOptionsToJSON = exports.InvokeTransformerOptionsFromJSONTyped = exports.InvokeTransformerOptionsFromJSON = exports.InvokeTransformerOptionsContentSelectorEnum = exports.InvokeTransformerOptionsEntityTypeEnum = void 0;
+exports.InvokeTransformerOptionsContentSelectorEnum = exports.InvokeTransformerOptionsEntityTypeEnum = void 0;
+exports.InvokeTransformerOptionsFromJSON = InvokeTransformerOptionsFromJSON;
+exports.InvokeTransformerOptionsFromJSONTyped = InvokeTransformerOptionsFromJSONTyped;
+exports.InvokeTransformerOptionsToJSON = InvokeTransformerOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -25,7 +28,7 @@ var InvokeTransformerOptionsEntityTypeEnum;
     InvokeTransformerOptionsEntityTypeEnum["EMAIL"] = "EMAIL";
     InvokeTransformerOptionsEntityTypeEnum["SMS"] = "SMS";
     InvokeTransformerOptionsEntityTypeEnum["ATTACHMENT"] = "ATTACHMENT";
-})(InvokeTransformerOptionsEntityTypeEnum = exports.InvokeTransformerOptionsEntityTypeEnum || (exports.InvokeTransformerOptionsEntityTypeEnum = {}));
+})(InvokeTransformerOptionsEntityTypeEnum || (exports.InvokeTransformerOptionsEntityTypeEnum = InvokeTransformerOptionsEntityTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -35,11 +38,10 @@ var InvokeTransformerOptionsContentSelectorEnum;
     InvokeTransformerOptionsContentSelectorEnum["RAW"] = "RAW";
     InvokeTransformerOptionsContentSelectorEnum["BODY"] = "BODY";
     InvokeTransformerOptionsContentSelectorEnum["BODY_ATTACHMENTS"] = "BODY_ATTACHMENTS";
-})(InvokeTransformerOptionsContentSelectorEnum = exports.InvokeTransformerOptionsContentSelectorEnum || (exports.InvokeTransformerOptionsContentSelectorEnum = {}));
+})(InvokeTransformerOptionsContentSelectorEnum || (exports.InvokeTransformerOptionsContentSelectorEnum = InvokeTransformerOptionsContentSelectorEnum = {}));
 function InvokeTransformerOptionsFromJSON(json) {
     return InvokeTransformerOptionsFromJSONTyped(json, false);
 }
-exports.InvokeTransformerOptionsFromJSON = InvokeTransformerOptionsFromJSON;
 function InvokeTransformerOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -69,7 +71,6 @@ function InvokeTransformerOptionsFromJSONTyped(json, ignoreDiscriminator) {
         saveResults: !(0, runtime_1.exists)(json, 'saveResults') ? undefined : json['saveResults'],
     };
 }
-exports.InvokeTransformerOptionsFromJSONTyped = InvokeTransformerOptionsFromJSONTyped;
 function InvokeTransformerOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -90,4 +91,3 @@ function InvokeTransformerOptionsToJSON(value) {
         saveResults: value.saveResults,
     };
 }
-exports.InvokeTransformerOptionsToJSON = InvokeTransformerOptionsToJSON;

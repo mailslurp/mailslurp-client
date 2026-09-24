@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookDeliveryStatusPayloadToJSON = exports.WebhookDeliveryStatusPayloadFromJSONTyped = exports.WebhookDeliveryStatusPayloadFromJSON = exports.WebhookDeliveryStatusPayloadEventNameEnum = void 0;
+exports.WebhookDeliveryStatusPayloadEventNameEnum = void 0;
+exports.WebhookDeliveryStatusPayloadFromJSON = WebhookDeliveryStatusPayloadFromJSON;
+exports.WebhookDeliveryStatusPayloadFromJSONTyped = WebhookDeliveryStatusPayloadFromJSONTyped;
+exports.WebhookDeliveryStatusPayloadToJSON = WebhookDeliveryStatusPayloadToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -33,11 +36,10 @@ var WebhookDeliveryStatusPayloadEventNameEnum;
     WebhookDeliveryStatusPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookDeliveryStatusPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookDeliveryStatusPayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookDeliveryStatusPayloadEventNameEnum = exports.WebhookDeliveryStatusPayloadEventNameEnum || (exports.WebhookDeliveryStatusPayloadEventNameEnum = {}));
+})(WebhookDeliveryStatusPayloadEventNameEnum || (exports.WebhookDeliveryStatusPayloadEventNameEnum = WebhookDeliveryStatusPayloadEventNameEnum = {}));
 function WebhookDeliveryStatusPayloadFromJSON(json) {
     return WebhookDeliveryStatusPayloadFromJSONTyped(json, false);
 }
-exports.WebhookDeliveryStatusPayloadFromJSON = WebhookDeliveryStatusPayloadFromJSON;
 function WebhookDeliveryStatusPayloadFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -73,7 +75,6 @@ function WebhookDeliveryStatusPayloadFromJSONTyped(json, ignoreDiscriminator) {
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
     };
 }
-exports.WebhookDeliveryStatusPayloadFromJSONTyped = WebhookDeliveryStatusPayloadFromJSONTyped;
 function WebhookDeliveryStatusPayloadToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -104,4 +105,3 @@ function WebhookDeliveryStatusPayloadToJSON(value) {
         subject: value.subject,
     };
 }
-exports.WebhookDeliveryStatusPayloadToJSON = WebhookDeliveryStatusPayloadToJSON;

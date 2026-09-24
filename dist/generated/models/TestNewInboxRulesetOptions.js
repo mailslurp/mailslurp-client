@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestNewInboxRulesetOptionsToJSON = exports.TestNewInboxRulesetOptionsFromJSONTyped = exports.TestNewInboxRulesetOptionsFromJSON = void 0;
+exports.TestNewInboxRulesetOptionsFromJSON = TestNewInboxRulesetOptionsFromJSON;
+exports.TestNewInboxRulesetOptionsFromJSONTyped = TestNewInboxRulesetOptionsFromJSONTyped;
+exports.TestNewInboxRulesetOptionsToJSON = TestNewInboxRulesetOptionsToJSON;
 var _1 = require("./");
 function TestNewInboxRulesetOptionsFromJSON(json) {
     return TestNewInboxRulesetOptionsFromJSONTyped(json, false);
 }
-exports.TestNewInboxRulesetOptionsFromJSON = TestNewInboxRulesetOptionsFromJSON;
 function TestNewInboxRulesetOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function TestNewInboxRulesetOptionsFromJSONTyped(json, ignoreDiscriminator) {
         createRulesetOptions: (0, _1.CreateRulesetOptionsFromJSON)(json['createRulesetOptions']),
     };
 }
-exports.TestNewInboxRulesetOptionsFromJSONTyped = TestNewInboxRulesetOptionsFromJSONTyped;
 function TestNewInboxRulesetOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function TestNewInboxRulesetOptionsToJSON(value) {
         createRulesetOptions: (0, _1.CreateRulesetOptionsToJSON)(value.createRulesetOptions),
     };
 }
-exports.TestNewInboxRulesetOptionsToJSON = TestNewInboxRulesetOptionsToJSON;

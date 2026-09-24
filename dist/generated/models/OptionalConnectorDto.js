@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OptionalConnectorDtoToJSON = exports.OptionalConnectorDtoFromJSONTyped = exports.OptionalConnectorDtoFromJSON = void 0;
+exports.OptionalConnectorDtoFromJSON = OptionalConnectorDtoFromJSON;
+exports.OptionalConnectorDtoFromJSONTyped = OptionalConnectorDtoFromJSONTyped;
+exports.OptionalConnectorDtoToJSON = OptionalConnectorDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function OptionalConnectorDtoFromJSON(json) {
     return OptionalConnectorDtoFromJSONTyped(json, false);
 }
-exports.OptionalConnectorDtoFromJSON = OptionalConnectorDtoFromJSON;
 function OptionalConnectorDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function OptionalConnectorDtoFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.ConnectorDtoFromJSON)(json['result']),
     };
 }
-exports.OptionalConnectorDtoFromJSONTyped = OptionalConnectorDtoFromJSONTyped;
 function OptionalConnectorDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function OptionalConnectorDtoToJSON(value) {
         result: (0, _1.ConnectorDtoToJSON)(value.result),
     };
 }
-exports.OptionalConnectorDtoToJSON = OptionalConnectorDtoToJSON;

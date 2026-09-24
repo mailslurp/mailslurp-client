@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AbstractWebhookPayloadToJSON = exports.AbstractWebhookPayloadFromJSONTyped = exports.AbstractWebhookPayloadFromJSON = exports.AbstractWebhookPayloadEventNameEnum = void 0;
+exports.AbstractWebhookPayloadEventNameEnum = void 0;
+exports.AbstractWebhookPayloadFromJSON = AbstractWebhookPayloadFromJSON;
+exports.AbstractWebhookPayloadFromJSONTyped = AbstractWebhookPayloadFromJSONTyped;
+exports.AbstractWebhookPayloadToJSON = AbstractWebhookPayloadToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -33,11 +36,10 @@ var AbstractWebhookPayloadEventNameEnum;
     AbstractWebhookPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     AbstractWebhookPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
     AbstractWebhookPayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(AbstractWebhookPayloadEventNameEnum = exports.AbstractWebhookPayloadEventNameEnum || (exports.AbstractWebhookPayloadEventNameEnum = {}));
+})(AbstractWebhookPayloadEventNameEnum || (exports.AbstractWebhookPayloadEventNameEnum = AbstractWebhookPayloadEventNameEnum = {}));
 function AbstractWebhookPayloadFromJSON(json) {
     return AbstractWebhookPayloadFromJSONTyped(json, false);
 }
-exports.AbstractWebhookPayloadFromJSON = AbstractWebhookPayloadFromJSON;
 function AbstractWebhookPayloadFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -49,7 +51,6 @@ function AbstractWebhookPayloadFromJSONTyped(json, ignoreDiscriminator) {
         webhookName: !(0, runtime_1.exists)(json, 'webhookName') ? undefined : json['webhookName'],
     };
 }
-exports.AbstractWebhookPayloadFromJSONTyped = AbstractWebhookPayloadFromJSONTyped;
 function AbstractWebhookPayloadToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,4 +65,3 @@ function AbstractWebhookPayloadToJSON(value) {
         webhookName: value.webhookName,
     };
 }
-exports.AbstractWebhookPayloadToJSON = AbstractWebhookPayloadToJSON;

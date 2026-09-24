@@ -6,7 +6,6 @@ import {
   Configuration,
 } from '../dist';
 
-jest.setTimeout(120_000);
 integrationTest('can use ruleset controller', async (mailslurp) => {
   const rule = await mailslurp.rulesetController.createNewRuleset({
     createRulesetOptions: {

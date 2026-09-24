@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateConnectorWithOptionsToJSON = exports.CreateConnectorWithOptionsFromJSONTyped = exports.CreateConnectorWithOptionsFromJSON = void 0;
+exports.CreateConnectorWithOptionsFromJSON = CreateConnectorWithOptionsFromJSON;
+exports.CreateConnectorWithOptionsFromJSONTyped = CreateConnectorWithOptionsFromJSONTyped;
+exports.CreateConnectorWithOptionsToJSON = CreateConnectorWithOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function CreateConnectorWithOptionsFromJSON(json) {
     return CreateConnectorWithOptionsFromJSONTyped(json, false);
 }
-exports.CreateConnectorWithOptionsFromJSON = CreateConnectorWithOptionsFromJSON;
 function CreateConnectorWithOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function CreateConnectorWithOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.CreateConnectorSyncSettingsOptionsFromJSON)(json['createConnectorSyncSettingsOptions']),
     };
 }
-exports.CreateConnectorWithOptionsFromJSONTyped = CreateConnectorWithOptionsFromJSONTyped;
 function CreateConnectorWithOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -52,4 +52,3 @@ function CreateConnectorWithOptionsToJSON(value) {
         createConnectorSyncSettingsOptions: (0, _1.CreateConnectorSyncSettingsOptionsToJSON)(value.createConnectorSyncSettingsOptions),
     };
 }
-exports.CreateConnectorWithOptionsToJSON = CreateConnectorWithOptionsToJSON;

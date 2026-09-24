@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentCapabilityScopeDtoToJSON = exports.AgentCapabilityScopeDtoFromJSONTyped = exports.AgentCapabilityScopeDtoFromJSON = void 0;
+exports.AgentCapabilityScopeDtoFromJSON = AgentCapabilityScopeDtoFromJSON;
+exports.AgentCapabilityScopeDtoFromJSONTyped = AgentCapabilityScopeDtoFromJSONTyped;
+exports.AgentCapabilityScopeDtoToJSON = AgentCapabilityScopeDtoToJSON;
 function AgentCapabilityScopeDtoFromJSON(json) {
     return AgentCapabilityScopeDtoFromJSONTyped(json, false);
 }
-exports.AgentCapabilityScopeDtoFromJSON = AgentCapabilityScopeDtoFromJSON;
 function AgentCapabilityScopeDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function AgentCapabilityScopeDtoFromJSONTyped(json, ignoreDiscriminator) {
         phoneNumberIds: json['phoneNumberIds'],
     };
 }
-exports.AgentCapabilityScopeDtoFromJSONTyped = AgentCapabilityScopeDtoFromJSONTyped;
 function AgentCapabilityScopeDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function AgentCapabilityScopeDtoToJSON(value) {
         phoneNumberIds: value.phoneNumberIds,
     };
 }
-exports.AgentCapabilityScopeDtoToJSON = AgentCapabilityScopeDtoToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AutomatedInboxPlacementEventDtoToJSON = exports.AutomatedInboxPlacementEventDtoFromJSONTyped = exports.AutomatedInboxPlacementEventDtoFromJSON = void 0;
+exports.AutomatedInboxPlacementEventDtoFromJSON = AutomatedInboxPlacementEventDtoFromJSON;
+exports.AutomatedInboxPlacementEventDtoFromJSONTyped = AutomatedInboxPlacementEventDtoFromJSONTyped;
+exports.AutomatedInboxPlacementEventDtoToJSON = AutomatedInboxPlacementEventDtoToJSON;
 function AutomatedInboxPlacementEventDtoFromJSON(json) {
     return AutomatedInboxPlacementEventDtoFromJSONTyped(json, false);
 }
-exports.AutomatedInboxPlacementEventDtoFromJSON = AutomatedInboxPlacementEventDtoFromJSON;
 function AutomatedInboxPlacementEventDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function AutomatedInboxPlacementEventDtoFromJSONTyped(json, ignoreDiscriminator)
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.AutomatedInboxPlacementEventDtoFromJSONTyped = AutomatedInboxPlacementEventDtoFromJSONTyped;
 function AutomatedInboxPlacementEventDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function AutomatedInboxPlacementEventDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.AutomatedInboxPlacementEventDtoToJSON = AutomatedInboxPlacementEventDtoToJSON;

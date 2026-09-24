@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendEmailOptionsToJSON = exports.SendEmailOptionsFromJSONTyped = exports.SendEmailOptionsFromJSON = exports.SendEmailOptionsValidateEmailAddressesEnum = exports.SendEmailOptionsSendStrategyEnum = void 0;
+exports.SendEmailOptionsValidateEmailAddressesEnum = exports.SendEmailOptionsSendStrategyEnum = void 0;
+exports.SendEmailOptionsFromJSON = SendEmailOptionsFromJSON;
+exports.SendEmailOptionsFromJSONTyped = SendEmailOptionsFromJSONTyped;
+exports.SendEmailOptionsToJSON = SendEmailOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -23,7 +26,7 @@ var _1 = require("./");
 var SendEmailOptionsSendStrategyEnum;
 (function (SendEmailOptionsSendStrategyEnum) {
     SendEmailOptionsSendStrategyEnum["SINGLE_MESSAGE"] = "SINGLE_MESSAGE";
-})(SendEmailOptionsSendStrategyEnum = exports.SendEmailOptionsSendStrategyEnum || (exports.SendEmailOptionsSendStrategyEnum = {}));
+})(SendEmailOptionsSendStrategyEnum || (exports.SendEmailOptionsSendStrategyEnum = SendEmailOptionsSendStrategyEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -33,11 +36,10 @@ var SendEmailOptionsValidateEmailAddressesEnum;
     SendEmailOptionsValidateEmailAddressesEnum["VALIDATE_FILTER_REMOVE_INVALID"] = "VALIDATE_FILTER_REMOVE_INVALID";
     SendEmailOptionsValidateEmailAddressesEnum["VALIDATE_ERROR_IF_INVALID"] = "VALIDATE_ERROR_IF_INVALID";
     SendEmailOptionsValidateEmailAddressesEnum["NO_VALIDATION"] = "NO_VALIDATION";
-})(SendEmailOptionsValidateEmailAddressesEnum = exports.SendEmailOptionsValidateEmailAddressesEnum || (exports.SendEmailOptionsValidateEmailAddressesEnum = {}));
+})(SendEmailOptionsValidateEmailAddressesEnum || (exports.SendEmailOptionsValidateEmailAddressesEnum = SendEmailOptionsValidateEmailAddressesEnum = {}));
 function SendEmailOptionsFromJSON(json) {
     return SendEmailOptionsFromJSONTyped(json, false);
 }
-exports.SendEmailOptionsFromJSON = SendEmailOptionsFromJSON;
 function SendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -91,7 +93,6 @@ function SendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
     };
 }
-exports.SendEmailOptionsFromJSONTyped = SendEmailOptionsFromJSONTyped;
 function SendEmailOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -132,4 +133,3 @@ function SendEmailOptionsToJSON(value) {
         inboxId: value.inboxId,
     };
 }
-exports.SendEmailOptionsToJSON = SendEmailOptionsToJSON;

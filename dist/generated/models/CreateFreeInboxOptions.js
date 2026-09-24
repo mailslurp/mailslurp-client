@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateFreeInboxOptionsToJSON = exports.CreateFreeInboxOptionsFromJSONTyped = exports.CreateFreeInboxOptionsFromJSON = void 0;
+exports.CreateFreeInboxOptionsFromJSON = CreateFreeInboxOptionsFromJSON;
+exports.CreateFreeInboxOptionsFromJSONTyped = CreateFreeInboxOptionsFromJSONTyped;
+exports.CreateFreeInboxOptionsToJSON = CreateFreeInboxOptionsToJSON;
 function CreateFreeInboxOptionsFromJSON(json) {
     return CreateFreeInboxOptionsFromJSONTyped(json, false);
 }
-exports.CreateFreeInboxOptionsFromJSON = CreateFreeInboxOptionsFromJSON;
 function CreateFreeInboxOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function CreateFreeInboxOptionsFromJSONTyped(json, ignoreDiscriminator) {
         captchaToken: json['captchaToken'],
     };
 }
-exports.CreateFreeInboxOptionsFromJSONTyped = CreateFreeInboxOptionsFromJSONTyped;
 function CreateFreeInboxOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function CreateFreeInboxOptionsToJSON(value) {
         captchaToken: value.captchaToken,
     };
 }
-exports.CreateFreeInboxOptionsToJSON = CreateFreeInboxOptionsToJSON;

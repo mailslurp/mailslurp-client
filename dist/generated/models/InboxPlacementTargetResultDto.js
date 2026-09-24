@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementTargetResultDtoToJSON = exports.InboxPlacementTargetResultDtoFromJSONTyped = exports.InboxPlacementTargetResultDtoFromJSON = void 0;
+exports.InboxPlacementTargetResultDtoFromJSON = InboxPlacementTargetResultDtoFromJSON;
+exports.InboxPlacementTargetResultDtoFromJSONTyped = InboxPlacementTargetResultDtoFromJSONTyped;
+exports.InboxPlacementTargetResultDtoToJSON = InboxPlacementTargetResultDtoToJSON;
 var runtime_1 = require("../runtime");
 function InboxPlacementTargetResultDtoFromJSON(json) {
     return InboxPlacementTargetResultDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementTargetResultDtoFromJSON = InboxPlacementTargetResultDtoFromJSON;
 function InboxPlacementTargetResultDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function InboxPlacementTargetResultDtoFromJSONTyped(json, ignoreDiscriminator) {
         evidence: json['evidence'],
     };
 }
-exports.InboxPlacementTargetResultDtoFromJSONTyped = InboxPlacementTargetResultDtoFromJSONTyped;
 function InboxPlacementTargetResultDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -69,4 +69,3 @@ function InboxPlacementTargetResultDtoToJSON(value) {
         evidence: value.evidence,
     };
 }
-exports.InboxPlacementTargetResultDtoToJSON = InboxPlacementTargetResultDtoToJSON;

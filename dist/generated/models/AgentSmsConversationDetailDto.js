@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentSmsConversationDetailDtoToJSON = exports.AgentSmsConversationDetailDtoFromJSONTyped = exports.AgentSmsConversationDetailDtoFromJSON = void 0;
+exports.AgentSmsConversationDetailDtoFromJSON = AgentSmsConversationDetailDtoFromJSON;
+exports.AgentSmsConversationDetailDtoFromJSONTyped = AgentSmsConversationDetailDtoFromJSONTyped;
+exports.AgentSmsConversationDetailDtoToJSON = AgentSmsConversationDetailDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function AgentSmsConversationDetailDtoFromJSON(json) {
     return AgentSmsConversationDetailDtoFromJSONTyped(json, false);
 }
-exports.AgentSmsConversationDetailDtoFromJSON = AgentSmsConversationDetailDtoFromJSON;
 function AgentSmsConversationDetailDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function AgentSmsConversationDetailDtoFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.AgentConversationHandoffDtoFromJSON)(json['activeHandoff']),
     };
 }
-exports.AgentSmsConversationDetailDtoFromJSONTyped = AgentSmsConversationDetailDtoFromJSONTyped;
 function AgentSmsConversationDetailDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function AgentSmsConversationDetailDtoToJSON(value) {
         activeHandoff: (0, _1.AgentConversationHandoffDtoToJSON)(value.activeHandoff),
     };
 }
-exports.AgentSmsConversationDetailDtoToJSON = AgentSmsConversationDetailDtoToJSON;

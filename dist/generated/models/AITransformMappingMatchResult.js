@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AITransformMappingMatchResultToJSON = exports.AITransformMappingMatchResultFromJSONTyped = exports.AITransformMappingMatchResultFromJSON = void 0;
+exports.AITransformMappingMatchResultFromJSON = AITransformMappingMatchResultFromJSON;
+exports.AITransformMappingMatchResultFromJSONTyped = AITransformMappingMatchResultFromJSONTyped;
+exports.AITransformMappingMatchResultToJSON = AITransformMappingMatchResultToJSON;
 function AITransformMappingMatchResultFromJSON(json) {
     return AITransformMappingMatchResultFromJSONTyped(json, false);
 }
-exports.AITransformMappingMatchResultFromJSON = AITransformMappingMatchResultFromJSON;
 function AITransformMappingMatchResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function AITransformMappingMatchResultFromJSONTyped(json, ignoreDiscriminator) {
         isMatch: json['isMatch'],
     };
 }
-exports.AITransformMappingMatchResultFromJSONTyped = AITransformMappingMatchResultFromJSONTyped;
 function AITransformMappingMatchResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function AITransformMappingMatchResultToJSON(value) {
         isMatch: value.isMatch,
     };
 }
-exports.AITransformMappingMatchResultToJSON = AITransformMappingMatchResultToJSON;

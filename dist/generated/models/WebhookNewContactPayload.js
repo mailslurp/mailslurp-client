@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookNewContactPayloadToJSON = exports.WebhookNewContactPayloadFromJSONTyped = exports.WebhookNewContactPayloadFromJSON = exports.WebhookNewContactPayloadEventNameEnum = void 0;
+exports.WebhookNewContactPayloadEventNameEnum = void 0;
+exports.WebhookNewContactPayloadFromJSON = WebhookNewContactPayloadFromJSON;
+exports.WebhookNewContactPayloadFromJSONTyped = WebhookNewContactPayloadFromJSONTyped;
+exports.WebhookNewContactPayloadToJSON = WebhookNewContactPayloadToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -33,11 +36,10 @@ var WebhookNewContactPayloadEventNameEnum;
     WebhookNewContactPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookNewContactPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookNewContactPayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookNewContactPayloadEventNameEnum = exports.WebhookNewContactPayloadEventNameEnum || (exports.WebhookNewContactPayloadEventNameEnum = {}));
+})(WebhookNewContactPayloadEventNameEnum || (exports.WebhookNewContactPayloadEventNameEnum = WebhookNewContactPayloadEventNameEnum = {}));
 function WebhookNewContactPayloadFromJSON(json) {
     return WebhookNewContactPayloadFromJSONTyped(json, false);
 }
-exports.WebhookNewContactPayloadFromJSON = WebhookNewContactPayloadFromJSON;
 function WebhookNewContactPayloadFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -62,7 +64,6 @@ function WebhookNewContactPayloadFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.WebhookNewContactPayloadFromJSONTyped = WebhookNewContactPayloadFromJSONTyped;
 function WebhookNewContactPayloadToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -88,4 +89,3 @@ function WebhookNewContactPayloadToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.WebhookNewContactPayloadToJSON = WebhookNewContactPayloadToJSON;

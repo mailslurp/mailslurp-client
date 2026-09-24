@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupDailyActivityDtoToJSON = exports.EmailWarmupDailyActivityDtoFromJSONTyped = exports.EmailWarmupDailyActivityDtoFromJSON = void 0;
+exports.EmailWarmupDailyActivityDtoFromJSON = EmailWarmupDailyActivityDtoFromJSON;
+exports.EmailWarmupDailyActivityDtoFromJSONTyped = EmailWarmupDailyActivityDtoFromJSONTyped;
+exports.EmailWarmupDailyActivityDtoToJSON = EmailWarmupDailyActivityDtoToJSON;
 function EmailWarmupDailyActivityDtoFromJSON(json) {
     return EmailWarmupDailyActivityDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupDailyActivityDtoFromJSON = EmailWarmupDailyActivityDtoFromJSON;
 function EmailWarmupDailyActivityDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function EmailWarmupDailyActivityDtoFromJSONTyped(json, ignoreDiscriminator) {
         failedSends: json['failedSends'],
     };
 }
-exports.EmailWarmupDailyActivityDtoFromJSONTyped = EmailWarmupDailyActivityDtoFromJSONTyped;
 function EmailWarmupDailyActivityDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function EmailWarmupDailyActivityDtoToJSON(value) {
         failedSends: value.failedSends,
     };
 }
-exports.EmailWarmupDailyActivityDtoToJSON = EmailWarmupDailyActivityDtoToJSON;

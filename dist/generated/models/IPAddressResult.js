@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IPAddressResultToJSON = exports.IPAddressResultFromJSONTyped = exports.IPAddressResultFromJSON = void 0;
+exports.IPAddressResultFromJSON = IPAddressResultFromJSON;
+exports.IPAddressResultFromJSONTyped = IPAddressResultFromJSONTyped;
+exports.IPAddressResultToJSON = IPAddressResultToJSON;
 function IPAddressResultFromJSON(json) {
     return IPAddressResultFromJSONTyped(json, false);
 }
-exports.IPAddressResultFromJSON = IPAddressResultFromJSON;
 function IPAddressResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function IPAddressResultFromJSONTyped(json, ignoreDiscriminator) {
         hostname: json['hostname'],
     };
 }
-exports.IPAddressResultFromJSONTyped = IPAddressResultFromJSONTyped;
 function IPAddressResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function IPAddressResultToJSON(value) {
         hostname: value.hostname,
     };
 }
-exports.IPAddressResultToJSON = IPAddressResultToJSON;

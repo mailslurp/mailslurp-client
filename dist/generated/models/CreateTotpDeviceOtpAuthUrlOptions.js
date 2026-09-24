@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateTotpDeviceOtpAuthUrlOptionsToJSON = exports.CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped = exports.CreateTotpDeviceOtpAuthUrlOptionsFromJSON = void 0;
+exports.CreateTotpDeviceOtpAuthUrlOptionsFromJSON = CreateTotpDeviceOtpAuthUrlOptionsFromJSON;
+exports.CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped = CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped;
+exports.CreateTotpDeviceOtpAuthUrlOptionsToJSON = CreateTotpDeviceOtpAuthUrlOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateTotpDeviceOtpAuthUrlOptionsFromJSON(json) {
     return CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped(json, false);
 }
-exports.CreateTotpDeviceOtpAuthUrlOptionsFromJSON = CreateTotpDeviceOtpAuthUrlOptionsFromJSON;
 function CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped(json, ignoreDiscriminato
         algorithm: !(0, runtime_1.exists)(json, 'algorithm') ? undefined : json['algorithm'],
     };
 }
-exports.CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped = CreateTotpDeviceOtpAuthUrlOptionsFromJSONTyped;
 function CreateTotpDeviceOtpAuthUrlOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function CreateTotpDeviceOtpAuthUrlOptionsToJSON(value) {
         algorithm: value.algorithm,
     };
 }
-exports.CreateTotpDeviceOtpAuthUrlOptionsToJSON = CreateTotpDeviceOtpAuthUrlOptionsToJSON;

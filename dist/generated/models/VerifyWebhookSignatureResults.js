@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyWebhookSignatureResultsToJSON = exports.VerifyWebhookSignatureResultsFromJSONTyped = exports.VerifyWebhookSignatureResultsFromJSON = void 0;
+exports.VerifyWebhookSignatureResultsFromJSON = VerifyWebhookSignatureResultsFromJSON;
+exports.VerifyWebhookSignatureResultsFromJSONTyped = VerifyWebhookSignatureResultsFromJSONTyped;
+exports.VerifyWebhookSignatureResultsToJSON = VerifyWebhookSignatureResultsToJSON;
 function VerifyWebhookSignatureResultsFromJSON(json) {
     return VerifyWebhookSignatureResultsFromJSONTyped(json, false);
 }
-exports.VerifyWebhookSignatureResultsFromJSON = VerifyWebhookSignatureResultsFromJSON;
 function VerifyWebhookSignatureResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function VerifyWebhookSignatureResultsFromJSONTyped(json, ignoreDiscriminator) {
         isValid: json['isValid'],
     };
 }
-exports.VerifyWebhookSignatureResultsFromJSONTyped = VerifyWebhookSignatureResultsFromJSONTyped;
 function VerifyWebhookSignatureResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function VerifyWebhookSignatureResultsToJSON(value) {
         isValid: value.isValid,
     };
 }
-exports.VerifyWebhookSignatureResultsToJSON = VerifyWebhookSignatureResultsToJSON;

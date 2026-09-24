@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupPlacementCheckDtoToJSON = exports.EmailWarmupPlacementCheckDtoFromJSONTyped = exports.EmailWarmupPlacementCheckDtoFromJSON = exports.EmailWarmupPlacementCheckDtoStatusEnum = exports.EmailWarmupPlacementCheckDtoTypeEnum = void 0;
+exports.EmailWarmupPlacementCheckDtoStatusEnum = exports.EmailWarmupPlacementCheckDtoTypeEnum = void 0;
+exports.EmailWarmupPlacementCheckDtoFromJSON = EmailWarmupPlacementCheckDtoFromJSON;
+exports.EmailWarmupPlacementCheckDtoFromJSONTyped = EmailWarmupPlacementCheckDtoFromJSONTyped;
+exports.EmailWarmupPlacementCheckDtoToJSON = EmailWarmupPlacementCheckDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -25,7 +28,7 @@ var EmailWarmupPlacementCheckDtoTypeEnum;
     EmailWarmupPlacementCheckDtoTypeEnum["BASELINE"] = "BASELINE";
     EmailWarmupPlacementCheckDtoTypeEnum["WEEKLY"] = "WEEKLY";
     EmailWarmupPlacementCheckDtoTypeEnum["FINAL"] = "FINAL";
-})(EmailWarmupPlacementCheckDtoTypeEnum = exports.EmailWarmupPlacementCheckDtoTypeEnum || (exports.EmailWarmupPlacementCheckDtoTypeEnum = {}));
+})(EmailWarmupPlacementCheckDtoTypeEnum || (exports.EmailWarmupPlacementCheckDtoTypeEnum = EmailWarmupPlacementCheckDtoTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -38,11 +41,10 @@ var EmailWarmupPlacementCheckDtoStatusEnum;
     EmailWarmupPlacementCheckDtoStatusEnum["COMPLETED"] = "COMPLETED";
     EmailWarmupPlacementCheckDtoStatusEnum["PARTIAL"] = "PARTIAL";
     EmailWarmupPlacementCheckDtoStatusEnum["FAILED"] = "FAILED";
-})(EmailWarmupPlacementCheckDtoStatusEnum = exports.EmailWarmupPlacementCheckDtoStatusEnum || (exports.EmailWarmupPlacementCheckDtoStatusEnum = {}));
+})(EmailWarmupPlacementCheckDtoStatusEnum || (exports.EmailWarmupPlacementCheckDtoStatusEnum = EmailWarmupPlacementCheckDtoStatusEnum = {}));
 function EmailWarmupPlacementCheckDtoFromJSON(json) {
     return EmailWarmupPlacementCheckDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupPlacementCheckDtoFromJSON = EmailWarmupPlacementCheckDtoFromJSON;
 function EmailWarmupPlacementCheckDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -74,7 +76,6 @@ function EmailWarmupPlacementCheckDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.EmailWarmupPlacementCheckDtoFromJSONTyped = EmailWarmupPlacementCheckDtoFromJSONTyped;
 function EmailWarmupPlacementCheckDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -107,4 +108,3 @@ function EmailWarmupPlacementCheckDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.EmailWarmupPlacementCheckDtoToJSON = EmailWarmupPlacementCheckDtoToJSON;

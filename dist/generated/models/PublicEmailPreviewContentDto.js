@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PublicEmailPreviewContentDtoToJSON = exports.PublicEmailPreviewContentDtoFromJSONTyped = exports.PublicEmailPreviewContentDtoFromJSON = void 0;
+exports.PublicEmailPreviewContentDtoFromJSON = PublicEmailPreviewContentDtoFromJSON;
+exports.PublicEmailPreviewContentDtoFromJSONTyped = PublicEmailPreviewContentDtoFromJSONTyped;
+exports.PublicEmailPreviewContentDtoToJSON = PublicEmailPreviewContentDtoToJSON;
 var runtime_1 = require("../runtime");
 function PublicEmailPreviewContentDtoFromJSON(json) {
     return PublicEmailPreviewContentDtoFromJSONTyped(json, false);
 }
-exports.PublicEmailPreviewContentDtoFromJSON = PublicEmailPreviewContentDtoFromJSON;
 function PublicEmailPreviewContentDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function PublicEmailPreviewContentDtoFromJSONTyped(json, ignoreDiscriminator) {
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
     };
 }
-exports.PublicEmailPreviewContentDtoFromJSONTyped = PublicEmailPreviewContentDtoFromJSONTyped;
 function PublicEmailPreviewContentDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function PublicEmailPreviewContentDtoToJSON(value) {
         from: value.from,
     };
 }
-exports.PublicEmailPreviewContentDtoToJSON = PublicEmailPreviewContentDtoToJSON;

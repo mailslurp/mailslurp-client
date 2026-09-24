@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestPhoneNumberOptionsToJSON = exports.TestPhoneNumberOptionsFromJSONTyped = exports.TestPhoneNumberOptionsFromJSON = void 0;
+exports.TestPhoneNumberOptionsFromJSON = TestPhoneNumberOptionsFromJSON;
+exports.TestPhoneNumberOptionsFromJSONTyped = TestPhoneNumberOptionsFromJSONTyped;
+exports.TestPhoneNumberOptionsToJSON = TestPhoneNumberOptionsToJSON;
 function TestPhoneNumberOptionsFromJSON(json) {
     return TestPhoneNumberOptionsFromJSONTyped(json, false);
 }
-exports.TestPhoneNumberOptionsFromJSON = TestPhoneNumberOptionsFromJSON;
 function TestPhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function TestPhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
         message: json['message'],
     };
 }
-exports.TestPhoneNumberOptionsFromJSONTyped = TestPhoneNumberOptionsFromJSONTyped;
 function TestPhoneNumberOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function TestPhoneNumberOptionsToJSON(value) {
         message: value.message,
     };
 }
-exports.TestPhoneNumberOptionsToJSON = TestPhoneNumberOptionsToJSON;

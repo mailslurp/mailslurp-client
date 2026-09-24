@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateDomainOptionsToJSON = exports.UpdateDomainOptionsFromJSONTyped = exports.UpdateDomainOptionsFromJSON = void 0;
+exports.UpdateDomainOptionsFromJSON = UpdateDomainOptionsFromJSON;
+exports.UpdateDomainOptionsFromJSONTyped = UpdateDomainOptionsFromJSONTyped;
+exports.UpdateDomainOptionsToJSON = UpdateDomainOptionsToJSON;
 var runtime_1 = require("../runtime");
 function UpdateDomainOptionsFromJSON(json) {
     return UpdateDomainOptionsFromJSONTyped(json, false);
 }
-exports.UpdateDomainOptionsFromJSON = UpdateDomainOptionsFromJSON;
 function UpdateDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function UpdateDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['catchAllInboxId'],
     };
 }
-exports.UpdateDomainOptionsFromJSONTyped = UpdateDomainOptionsFromJSONTyped;
 function UpdateDomainOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function UpdateDomainOptionsToJSON(value) {
         catchAllInboxId: value.catchAllInboxId,
     };
 }
-exports.UpdateDomainOptionsToJSON = UpdateDomainOptionsToJSON;

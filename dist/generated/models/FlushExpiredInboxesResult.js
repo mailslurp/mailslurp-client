@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FlushExpiredInboxesResultToJSON = exports.FlushExpiredInboxesResultFromJSONTyped = exports.FlushExpiredInboxesResultFromJSON = void 0;
+exports.FlushExpiredInboxesResultFromJSON = FlushExpiredInboxesResultFromJSON;
+exports.FlushExpiredInboxesResultFromJSONTyped = FlushExpiredInboxesResultFromJSONTyped;
+exports.FlushExpiredInboxesResultToJSON = FlushExpiredInboxesResultToJSON;
 function FlushExpiredInboxesResultFromJSON(json) {
     return FlushExpiredInboxesResultFromJSONTyped(json, false);
 }
-exports.FlushExpiredInboxesResultFromJSON = FlushExpiredInboxesResultFromJSON;
 function FlushExpiredInboxesResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function FlushExpiredInboxesResultFromJSONTyped(json, ignoreDiscriminator) {
         expireBefore: new Date(json['expireBefore']),
     };
 }
-exports.FlushExpiredInboxesResultFromJSONTyped = FlushExpiredInboxesResultFromJSONTyped;
 function FlushExpiredInboxesResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function FlushExpiredInboxesResultToJSON(value) {
         expireBefore: value.expireBefore.toISOString(),
     };
 }
-exports.FlushExpiredInboxesResultToJSON = FlushExpiredInboxesResultToJSON;

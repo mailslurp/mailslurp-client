@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReputationItemProjectionToJSON = exports.ReputationItemProjectionFromJSONTyped = exports.ReputationItemProjectionFromJSON = exports.ReputationItemProjectionSeverityEnum = exports.ReputationItemProjectionReputationTypeEnum = void 0;
+exports.ReputationItemProjectionSeverityEnum = exports.ReputationItemProjectionReputationTypeEnum = void 0;
+exports.ReputationItemProjectionFromJSON = ReputationItemProjectionFromJSON;
+exports.ReputationItemProjectionFromJSONTyped = ReputationItemProjectionFromJSONTyped;
+exports.ReputationItemProjectionToJSON = ReputationItemProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var ReputationItemProjectionReputationTypeEnum;
 (function (ReputationItemProjectionReputationTypeEnum) {
     ReputationItemProjectionReputationTypeEnum["COMPLAINT"] = "COMPLAINT";
     ReputationItemProjectionReputationTypeEnum["BOUNCE"] = "BOUNCE";
-})(ReputationItemProjectionReputationTypeEnum = exports.ReputationItemProjectionReputationTypeEnum || (exports.ReputationItemProjectionReputationTypeEnum = {}));
+})(ReputationItemProjectionReputationTypeEnum || (exports.ReputationItemProjectionReputationTypeEnum = ReputationItemProjectionReputationTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -33,11 +36,10 @@ var ReputationItemProjectionSeverityEnum;
     ReputationItemProjectionSeverityEnum["INFO"] = "INFO";
     ReputationItemProjectionSeverityEnum["WARNING"] = "WARNING";
     ReputationItemProjectionSeverityEnum["DANGER"] = "DANGER";
-})(ReputationItemProjectionSeverityEnum = exports.ReputationItemProjectionSeverityEnum || (exports.ReputationItemProjectionSeverityEnum = {}));
+})(ReputationItemProjectionSeverityEnum || (exports.ReputationItemProjectionSeverityEnum = ReputationItemProjectionSeverityEnum = {}));
 function ReputationItemProjectionFromJSON(json) {
     return ReputationItemProjectionFromJSONTyped(json, false);
 }
-exports.ReputationItemProjectionFromJSON = ReputationItemProjectionFromJSON;
 function ReputationItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -51,7 +53,6 @@ function ReputationItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.ReputationItemProjectionFromJSONTyped = ReputationItemProjectionFromJSONTyped;
 function ReputationItemProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +69,3 @@ function ReputationItemProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.ReputationItemProjectionToJSON = ReputationItemProjectionToJSON;

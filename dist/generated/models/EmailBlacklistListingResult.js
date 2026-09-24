@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailBlacklistListingResultToJSON = exports.EmailBlacklistListingResultFromJSONTyped = exports.EmailBlacklistListingResultFromJSON = exports.EmailBlacklistListingResultStatusEnum = void 0;
+exports.EmailBlacklistListingResultStatusEnum = void 0;
+exports.EmailBlacklistListingResultFromJSON = EmailBlacklistListingResultFromJSON;
+exports.EmailBlacklistListingResultFromJSONTyped = EmailBlacklistListingResultFromJSONTyped;
+exports.EmailBlacklistListingResultToJSON = EmailBlacklistListingResultToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,11 +28,10 @@ var EmailBlacklistListingResultStatusEnum;
     EmailBlacklistListingResultStatusEnum["NOT_LISTED"] = "NOT_LISTED";
     EmailBlacklistListingResultStatusEnum["ERROR"] = "ERROR";
     EmailBlacklistListingResultStatusEnum["NOT_CHECKED"] = "NOT_CHECKED";
-})(EmailBlacklistListingResultStatusEnum = exports.EmailBlacklistListingResultStatusEnum || (exports.EmailBlacklistListingResultStatusEnum = {}));
+})(EmailBlacklistListingResultStatusEnum || (exports.EmailBlacklistListingResultStatusEnum = EmailBlacklistListingResultStatusEnum = {}));
 function EmailBlacklistListingResultFromJSON(json) {
     return EmailBlacklistListingResultFromJSONTyped(json, false);
 }
-exports.EmailBlacklistListingResultFromJSON = EmailBlacklistListingResultFromJSON;
 function EmailBlacklistListingResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -46,7 +48,6 @@ function EmailBlacklistListingResultFromJSONTyped(json, ignoreDiscriminator) {
         provider: json['provider'],
     };
 }
-exports.EmailBlacklistListingResultFromJSONTyped = EmailBlacklistListingResultFromJSONTyped;
 function EmailBlacklistListingResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,4 +65,3 @@ function EmailBlacklistListingResultToJSON(value) {
         provider: value.provider,
     };
 }
-exports.EmailBlacklistListingResultToJSON = EmailBlacklistListingResultToJSON;

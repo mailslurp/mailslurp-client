@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnreadCountToJSON = exports.UnreadCountFromJSONTyped = exports.UnreadCountFromJSON = void 0;
+exports.UnreadCountFromJSON = UnreadCountFromJSON;
+exports.UnreadCountFromJSONTyped = UnreadCountFromJSONTyped;
+exports.UnreadCountToJSON = UnreadCountToJSON;
 function UnreadCountFromJSON(json) {
     return UnreadCountFromJSONTyped(json, false);
 }
-exports.UnreadCountFromJSON = UnreadCountFromJSON;
 function UnreadCountFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function UnreadCountFromJSONTyped(json, ignoreDiscriminator) {
         count: json['count'],
     };
 }
-exports.UnreadCountFromJSONTyped = UnreadCountFromJSONTyped;
 function UnreadCountToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function UnreadCountToJSON(value) {
         count: value.count,
     };
 }
-exports.UnreadCountToJSON = UnreadCountToJSON;

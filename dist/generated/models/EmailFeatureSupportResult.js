@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeatureSupportResultToJSON = exports.EmailFeatureSupportResultFromJSONTyped = exports.EmailFeatureSupportResultFromJSON = exports.EmailFeatureSupportResultDetectedFeaturesEnum = void 0;
+exports.EmailFeatureSupportResultDetectedFeaturesEnum = void 0;
+exports.EmailFeatureSupportResultFromJSON = EmailFeatureSupportResultFromJSON;
+exports.EmailFeatureSupportResultFromJSONTyped = EmailFeatureSupportResultFromJSONTyped;
+exports.EmailFeatureSupportResultToJSON = EmailFeatureSupportResultToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -201,11 +204,10 @@ var EmailFeatureSupportResultDetectedFeaturesEnum;
     EmailFeatureSupportResultDetectedFeaturesEnum["image_svg"] = "image-svg";
     EmailFeatureSupportResultDetectedFeaturesEnum["image_webp"] = "image-webp";
     EmailFeatureSupportResultDetectedFeaturesEnum["unsupported"] = "unsupported";
-})(EmailFeatureSupportResultDetectedFeaturesEnum = exports.EmailFeatureSupportResultDetectedFeaturesEnum || (exports.EmailFeatureSupportResultDetectedFeaturesEnum = {}));
+})(EmailFeatureSupportResultDetectedFeaturesEnum || (exports.EmailFeatureSupportResultDetectedFeaturesEnum = EmailFeatureSupportResultDetectedFeaturesEnum = {}));
 function EmailFeatureSupportResultFromJSON(json) {
     return EmailFeatureSupportResultFromJSONTyped(json, false);
 }
-exports.EmailFeatureSupportResultFromJSON = EmailFeatureSupportResultFromJSON;
 function EmailFeatureSupportResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -217,7 +219,6 @@ function EmailFeatureSupportResultFromJSONTyped(json, ignoreDiscriminator) {
         featurePercentages: json['featurePercentages'].map(_1.EmailFeatureSupportStatusPercentageFromJSON),
     };
 }
-exports.EmailFeatureSupportResultFromJSONTyped = EmailFeatureSupportResultFromJSONTyped;
 function EmailFeatureSupportResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -232,4 +233,3 @@ function EmailFeatureSupportResultToJSON(value) {
         featurePercentages: value.featurePercentages.map(_1.EmailFeatureSupportStatusPercentageToJSON),
     };
 }
-exports.EmailFeatureSupportResultToJSON = EmailFeatureSupportResultToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityFailurePhoneDimensionHotspotDtoToJSON = exports.DeliverabilityFailurePhoneDimensionHotspotDtoFromJSONTyped = exports.DeliverabilityFailurePhoneDimensionHotspotDtoFromJSON = exports.DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum = exports.DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum = void 0;
+exports.DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum = exports.DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum = void 0;
+exports.DeliverabilityFailurePhoneDimensionHotspotDtoFromJSON = DeliverabilityFailurePhoneDimensionHotspotDtoFromJSON;
+exports.DeliverabilityFailurePhoneDimensionHotspotDtoFromJSONTyped = DeliverabilityFailurePhoneDimensionHotspotDtoFromJSONTyped;
+exports.DeliverabilityFailurePhoneDimensionHotspotDtoToJSON = DeliverabilityFailurePhoneDimensionHotspotDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -34,7 +37,7 @@ var DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum;
     DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum["IL"] = "IL";
     DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum["FI"] = "FI";
     DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum["SE"] = "SE";
-})(DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum = exports.DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum || (exports.DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum = {}));
+})(DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum || (exports.DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum = DeliverabilityFailurePhoneDimensionHotspotDtoPhoneCountryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -44,11 +47,10 @@ var DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum;
     DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum["LOCAL"] = "LOCAL";
     DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum["MOBILE"] = "MOBILE";
     DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum["TOLL_FREE"] = "TOLL_FREE";
-})(DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum = exports.DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum || (exports.DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum = {}));
+})(DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum || (exports.DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum = DeliverabilityFailurePhoneDimensionHotspotDtoPhoneVariantEnum = {}));
 function DeliverabilityFailurePhoneDimensionHotspotDtoFromJSON(json) {
     return DeliverabilityFailurePhoneDimensionHotspotDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilityFailurePhoneDimensionHotspotDtoFromJSON = DeliverabilityFailurePhoneDimensionHotspotDtoFromJSON;
 function DeliverabilityFailurePhoneDimensionHotspotDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -65,7 +67,6 @@ function DeliverabilityFailurePhoneDimensionHotspotDtoFromJSONTyped(json, ignore
         failureRatePercentage: json['failureRatePercentage'],
     };
 }
-exports.DeliverabilityFailurePhoneDimensionHotspotDtoFromJSONTyped = DeliverabilityFailurePhoneDimensionHotspotDtoFromJSONTyped;
 function DeliverabilityFailurePhoneDimensionHotspotDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -81,4 +82,3 @@ function DeliverabilityFailurePhoneDimensionHotspotDtoToJSON(value) {
         failureRatePercentage: value.failureRatePercentage,
     };
 }
-exports.DeliverabilityFailurePhoneDimensionHotspotDtoToJSON = DeliverabilityFailurePhoneDimensionHotspotDtoToJSON;

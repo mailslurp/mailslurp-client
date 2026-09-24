@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PostmasterConnectionDtoToJSON = exports.PostmasterConnectionDtoFromJSONTyped = exports.PostmasterConnectionDtoFromJSON = exports.PostmasterConnectionDtoStatusEnum = void 0;
+exports.PostmasterConnectionDtoStatusEnum = void 0;
+exports.PostmasterConnectionDtoFromJSON = PostmasterConnectionDtoFromJSON;
+exports.PostmasterConnectionDtoFromJSONTyped = PostmasterConnectionDtoFromJSONTyped;
+exports.PostmasterConnectionDtoToJSON = PostmasterConnectionDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var PostmasterConnectionDtoStatusEnum;
     PostmasterConnectionDtoStatusEnum["CONNECTED"] = "CONNECTED";
     PostmasterConnectionDtoStatusEnum["DISCONNECTED"] = "DISCONNECTED";
     PostmasterConnectionDtoStatusEnum["ERROR"] = "ERROR";
-})(PostmasterConnectionDtoStatusEnum = exports.PostmasterConnectionDtoStatusEnum || (exports.PostmasterConnectionDtoStatusEnum = {}));
+})(PostmasterConnectionDtoStatusEnum || (exports.PostmasterConnectionDtoStatusEnum = PostmasterConnectionDtoStatusEnum = {}));
 function PostmasterConnectionDtoFromJSON(json) {
     return PostmasterConnectionDtoFromJSONTyped(json, false);
 }
-exports.PostmasterConnectionDtoFromJSON = PostmasterConnectionDtoFromJSON;
 function PostmasterConnectionDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -52,7 +54,6 @@ function PostmasterConnectionDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.PostmasterConnectionDtoFromJSONTyped = PostmasterConnectionDtoFromJSONTyped;
 function PostmasterConnectionDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -77,4 +78,3 @@ function PostmasterConnectionDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.PostmasterConnectionDtoToJSON = PostmasterConnectionDtoToJSON;

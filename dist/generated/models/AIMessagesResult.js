@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessagesResultToJSON = exports.AIMessagesResultFromJSONTyped = exports.AIMessagesResultFromJSON = exports.AIMessagesResultStatusEnum = void 0;
+exports.AIMessagesResultStatusEnum = void 0;
+exports.AIMessagesResultFromJSON = AIMessagesResultFromJSON;
+exports.AIMessagesResultFromJSONTyped = AIMessagesResultFromJSONTyped;
+exports.AIMessagesResultToJSON = AIMessagesResultToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -32,11 +35,10 @@ var AIMessagesResultStatusEnum;
     AIMessagesResultStatusEnum["PROVIDER_ERROR"] = "PROVIDER_ERROR";
     AIMessagesResultStatusEnum["PROVIDER_TIMEOUT"] = "PROVIDER_TIMEOUT";
     AIMessagesResultStatusEnum["INVALID_OUTPUT"] = "INVALID_OUTPUT";
-})(AIMessagesResultStatusEnum = exports.AIMessagesResultStatusEnum || (exports.AIMessagesResultStatusEnum = {}));
+})(AIMessagesResultStatusEnum || (exports.AIMessagesResultStatusEnum = AIMessagesResultStatusEnum = {}));
 function AIMessagesResultFromJSON(json) {
     return AIMessagesResultFromJSONTyped(json, false);
 }
-exports.AIMessagesResultFromJSON = AIMessagesResultFromJSON;
 function AIMessagesResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -52,7 +54,6 @@ function AIMessagesResultFromJSONTyped(json, ignoreDiscriminator) {
         successful: json['successful'],
     };
 }
-exports.AIMessagesResultFromJSONTyped = AIMessagesResultFromJSONTyped;
 function AIMessagesResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +69,3 @@ function AIMessagesResultToJSON(value) {
         elapsedMs: value.elapsedMs,
     };
 }
-exports.AIMessagesResultToJSON = AIMessagesResultToJSON;

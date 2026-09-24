@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OptionalConnectorImapConnectionDtoToJSON = exports.OptionalConnectorImapConnectionDtoFromJSONTyped = exports.OptionalConnectorImapConnectionDtoFromJSON = void 0;
+exports.OptionalConnectorImapConnectionDtoFromJSON = OptionalConnectorImapConnectionDtoFromJSON;
+exports.OptionalConnectorImapConnectionDtoFromJSONTyped = OptionalConnectorImapConnectionDtoFromJSONTyped;
+exports.OptionalConnectorImapConnectionDtoToJSON = OptionalConnectorImapConnectionDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function OptionalConnectorImapConnectionDtoFromJSON(json) {
     return OptionalConnectorImapConnectionDtoFromJSONTyped(json, false);
 }
-exports.OptionalConnectorImapConnectionDtoFromJSON = OptionalConnectorImapConnectionDtoFromJSON;
 function OptionalConnectorImapConnectionDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function OptionalConnectorImapConnectionDtoFromJSONTyped(json, ignoreDiscriminat
             : (0, _1.ConnectorImapConnectionDtoFromJSON)(json['result']),
     };
 }
-exports.OptionalConnectorImapConnectionDtoFromJSONTyped = OptionalConnectorImapConnectionDtoFromJSONTyped;
 function OptionalConnectorImapConnectionDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function OptionalConnectorImapConnectionDtoToJSON(value) {
         result: (0, _1.ConnectorImapConnectionDtoToJSON)(value.result),
     };
 }
-exports.OptionalConnectorImapConnectionDtoToJSON = OptionalConnectorImapConnectionDtoToJSON;

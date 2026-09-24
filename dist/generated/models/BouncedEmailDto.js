@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BouncedEmailDtoToJSON = exports.BouncedEmailDtoFromJSONTyped = exports.BouncedEmailDtoFromJSON = void 0;
+exports.BouncedEmailDtoFromJSON = BouncedEmailDtoFromJSON;
+exports.BouncedEmailDtoFromJSONTyped = BouncedEmailDtoFromJSONTyped;
+exports.BouncedEmailDtoToJSON = BouncedEmailDtoToJSON;
 var runtime_1 = require("../runtime");
 function BouncedEmailDtoFromJSON(json) {
     return BouncedEmailDtoFromJSONTyped(json, false);
 }
-exports.BouncedEmailDtoFromJSON = BouncedEmailDtoFromJSON;
 function BouncedEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function BouncedEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.BouncedEmailDtoFromJSONTyped = BouncedEmailDtoFromJSONTyped;
 function BouncedEmailDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -67,4 +67,3 @@ function BouncedEmailDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.BouncedEmailDtoToJSON = BouncedEmailDtoToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CompleteAgentWorkItemOptionsToJSON = exports.CompleteAgentWorkItemOptionsFromJSONTyped = exports.CompleteAgentWorkItemOptionsFromJSON = void 0;
+exports.CompleteAgentWorkItemOptionsFromJSON = CompleteAgentWorkItemOptionsFromJSON;
+exports.CompleteAgentWorkItemOptionsFromJSONTyped = CompleteAgentWorkItemOptionsFromJSONTyped;
+exports.CompleteAgentWorkItemOptionsToJSON = CompleteAgentWorkItemOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function CompleteAgentWorkItemOptionsFromJSON(json) {
     return CompleteAgentWorkItemOptionsFromJSONTyped(json, false);
 }
-exports.CompleteAgentWorkItemOptionsFromJSON = CompleteAgentWorkItemOptionsFromJSON;
 function CompleteAgentWorkItemOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function CompleteAgentWorkItemOptionsFromJSONTyped(json, ignoreDiscriminator) {
         claimId: !(0, runtime_1.exists)(json, 'claimId') ? undefined : json['claimId'],
     };
 }
-exports.CompleteAgentWorkItemOptionsFromJSONTyped = CompleteAgentWorkItemOptionsFromJSONTyped;
 function CompleteAgentWorkItemOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +54,3 @@ function CompleteAgentWorkItemOptionsToJSON(value) {
         claimId: value.claimId,
     };
 }
-exports.CompleteAgentWorkItemOptionsToJSON = CompleteAgentWorkItemOptionsToJSON;

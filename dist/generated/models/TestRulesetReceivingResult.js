@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestRulesetReceivingResultToJSON = exports.TestRulesetReceivingResultFromJSONTyped = exports.TestRulesetReceivingResultFromJSON = void 0;
+exports.TestRulesetReceivingResultFromJSON = TestRulesetReceivingResultFromJSON;
+exports.TestRulesetReceivingResultFromJSONTyped = TestRulesetReceivingResultFromJSONTyped;
+exports.TestRulesetReceivingResultToJSON = TestRulesetReceivingResultToJSON;
 function TestRulesetReceivingResultFromJSON(json) {
     return TestRulesetReceivingResultFromJSONTyped(json, false);
 }
-exports.TestRulesetReceivingResultFromJSON = TestRulesetReceivingResultFromJSON;
 function TestRulesetReceivingResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function TestRulesetReceivingResultFromJSONTyped(json, ignoreDiscriminator) {
         canReceive: json['canReceive'],
     };
 }
-exports.TestRulesetReceivingResultFromJSONTyped = TestRulesetReceivingResultFromJSONTyped;
 function TestRulesetReceivingResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function TestRulesetReceivingResultToJSON(value) {
         canReceive: value.canReceive,
     };
 }
-exports.TestRulesetReceivingResultToJSON = TestRulesetReceivingResultToJSON;

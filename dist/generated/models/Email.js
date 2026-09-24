@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailToJSON = exports.EmailFromJSONTyped = exports.EmailFromJSON = void 0;
+exports.EmailFromJSON = EmailFromJSON;
+exports.EmailFromJSONTyped = EmailFromJSONTyped;
+exports.EmailToJSON = EmailToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function EmailFromJSON(json) {
     return EmailFromJSONTyped(json, false);
 }
-exports.EmailFromJSON = EmailFromJSON;
 function EmailFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -71,7 +72,6 @@ function EmailFromJSONTyped(json, ignoreDiscriminator) {
         xampHtml: !(0, runtime_1.exists)(json, 'xampHtml') ? undefined : json['xampHtml'],
     };
 }
-exports.EmailFromJSONTyped = EmailFromJSONTyped;
 function EmailToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -118,4 +118,3 @@ function EmailToJSON(value) {
         xampHtml: value.xampHtml,
     };
 }
-exports.EmailToJSON = EmailToJSON;

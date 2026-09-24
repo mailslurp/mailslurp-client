@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageWebhookEndpointProjectionToJSON = exports.PageWebhookEndpointProjectionFromJSONTyped = exports.PageWebhookEndpointProjectionFromJSON = void 0;
+exports.PageWebhookEndpointProjectionFromJSON = PageWebhookEndpointProjectionFromJSON;
+exports.PageWebhookEndpointProjectionFromJSONTyped = PageWebhookEndpointProjectionFromJSONTyped;
+exports.PageWebhookEndpointProjectionToJSON = PageWebhookEndpointProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageWebhookEndpointProjectionFromJSON(json) {
     return PageWebhookEndpointProjectionFromJSONTyped(json, false);
 }
-exports.PageWebhookEndpointProjectionFromJSON = PageWebhookEndpointProjectionFromJSON;
 function PageWebhookEndpointProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageWebhookEndpointProjectionFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageWebhookEndpointProjectionFromJSONTyped = PageWebhookEndpointProjectionFromJSONTyped;
 function PageWebhookEndpointProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageWebhookEndpointProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageWebhookEndpointProjectionToJSON = PageWebhookEndpointProjectionToJSON;

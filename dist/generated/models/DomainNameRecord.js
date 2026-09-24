@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainNameRecordToJSON = exports.DomainNameRecordFromJSONTyped = exports.DomainNameRecordFromJSON = exports.DomainNameRecordRecordTypeEnum = exports.DomainNameRecordLabelEnum = void 0;
+exports.DomainNameRecordRecordTypeEnum = exports.DomainNameRecordLabelEnum = void 0;
+exports.DomainNameRecordFromJSON = DomainNameRecordFromJSON;
+exports.DomainNameRecordFromJSONTyped = DomainNameRecordFromJSONTyped;
+exports.DomainNameRecordToJSON = DomainNameRecordToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,7 +29,7 @@ var DomainNameRecordLabelEnum;
     DomainNameRecordLabelEnum["SPF"] = "SPF";
     DomainNameRecordLabelEnum["DKIM"] = "DKIM";
     DomainNameRecordLabelEnum["DMARC"] = "DMARC";
-})(DomainNameRecordLabelEnum = exports.DomainNameRecordLabelEnum || (exports.DomainNameRecordLabelEnum = {}));
+})(DomainNameRecordLabelEnum || (exports.DomainNameRecordLabelEnum = DomainNameRecordLabelEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -122,11 +125,10 @@ var DomainNameRecordRecordTypeEnum;
     DomainNameRecordRecordTypeEnum["AMTRELAY"] = "AMTRELAY";
     DomainNameRecordRecordTypeEnum["TA"] = "TA";
     DomainNameRecordRecordTypeEnum["DLV"] = "DLV";
-})(DomainNameRecordRecordTypeEnum = exports.DomainNameRecordRecordTypeEnum || (exports.DomainNameRecordRecordTypeEnum = {}));
+})(DomainNameRecordRecordTypeEnum || (exports.DomainNameRecordRecordTypeEnum = DomainNameRecordRecordTypeEnum = {}));
 function DomainNameRecordFromJSON(json) {
     return DomainNameRecordFromJSONTyped(json, false);
 }
-exports.DomainNameRecordFromJSON = DomainNameRecordFromJSON;
 function DomainNameRecordFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -143,7 +145,6 @@ function DomainNameRecordFromJSONTyped(json, ignoreDiscriminator) {
             : json['alternativeRecordEntries'],
     };
 }
-exports.DomainNameRecordFromJSONTyped = DomainNameRecordFromJSONTyped;
 function DomainNameRecordToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -161,4 +162,3 @@ function DomainNameRecordToJSON(value) {
         alternativeRecordEntries: value.alternativeRecordEntries,
     };
 }
-exports.DomainNameRecordToJSON = DomainNameRecordToJSON;

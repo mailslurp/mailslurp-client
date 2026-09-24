@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TotpDeviceOptionalDtoToJSON = exports.TotpDeviceOptionalDtoFromJSONTyped = exports.TotpDeviceOptionalDtoFromJSON = void 0;
+exports.TotpDeviceOptionalDtoFromJSON = TotpDeviceOptionalDtoFromJSON;
+exports.TotpDeviceOptionalDtoFromJSONTyped = TotpDeviceOptionalDtoFromJSONTyped;
+exports.TotpDeviceOptionalDtoToJSON = TotpDeviceOptionalDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function TotpDeviceOptionalDtoFromJSON(json) {
     return TotpDeviceOptionalDtoFromJSONTyped(json, false);
 }
-exports.TotpDeviceOptionalDtoFromJSON = TotpDeviceOptionalDtoFromJSON;
 function TotpDeviceOptionalDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function TotpDeviceOptionalDtoFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.TotpDeviceDtoFromJSON)(json['device']),
     };
 }
-exports.TotpDeviceOptionalDtoFromJSONTyped = TotpDeviceOptionalDtoFromJSONTyped;
 function TotpDeviceOptionalDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function TotpDeviceOptionalDtoToJSON(value) {
         device: (0, _1.TotpDeviceDtoToJSON)(value.device),
     };
 }
-exports.TotpDeviceOptionalDtoToJSON = TotpDeviceOptionalDtoToJSON;

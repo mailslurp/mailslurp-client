@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageInboxReplierEventsToJSON = exports.PageInboxReplierEventsFromJSONTyped = exports.PageInboxReplierEventsFromJSON = void 0;
+exports.PageInboxReplierEventsFromJSON = PageInboxReplierEventsFromJSON;
+exports.PageInboxReplierEventsFromJSONTyped = PageInboxReplierEventsFromJSONTyped;
+exports.PageInboxReplierEventsToJSON = PageInboxReplierEventsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageInboxReplierEventsFromJSON(json) {
     return PageInboxReplierEventsFromJSONTyped(json, false);
 }
-exports.PageInboxReplierEventsFromJSON = PageInboxReplierEventsFromJSON;
 function PageInboxReplierEventsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageInboxReplierEventsFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageInboxReplierEventsFromJSONTyped = PageInboxReplierEventsFromJSONTyped;
 function PageInboxReplierEventsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageInboxReplierEventsToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageInboxReplierEventsToJSON = PageInboxReplierEventsToJSON;

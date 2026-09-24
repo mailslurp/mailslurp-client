@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GroupProjectionToJSON = exports.GroupProjectionFromJSONTyped = exports.GroupProjectionFromJSON = void 0;
+exports.GroupProjectionFromJSON = GroupProjectionFromJSON;
+exports.GroupProjectionFromJSONTyped = GroupProjectionFromJSONTyped;
+exports.GroupProjectionToJSON = GroupProjectionToJSON;
 var runtime_1 = require("../runtime");
 function GroupProjectionFromJSON(json) {
     return GroupProjectionFromJSONTyped(json, false);
 }
-exports.GroupProjectionFromJSON = GroupProjectionFromJSON;
 function GroupProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function GroupProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.GroupProjectionFromJSONTyped = GroupProjectionFromJSONTyped;
 function GroupProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function GroupProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.GroupProjectionToJSON = GroupProjectionToJSON;

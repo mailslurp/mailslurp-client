@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePortalUserOptionsToJSON = exports.CreatePortalUserOptionsFromJSONTyped = exports.CreatePortalUserOptionsFromJSON = void 0;
+exports.CreatePortalUserOptionsFromJSON = CreatePortalUserOptionsFromJSON;
+exports.CreatePortalUserOptionsFromJSONTyped = CreatePortalUserOptionsFromJSONTyped;
+exports.CreatePortalUserOptionsToJSON = CreatePortalUserOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function CreatePortalUserOptionsFromJSON(json) {
     return CreatePortalUserOptionsFromJSONTyped(json, false);
 }
-exports.CreatePortalUserOptionsFromJSON = CreatePortalUserOptionsFromJSON;
 function CreatePortalUserOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function CreatePortalUserOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.CreateInboxDtoFromJSON)(json['createInboxOptions']),
     };
 }
-exports.CreatePortalUserOptionsFromJSONTyped = CreatePortalUserOptionsFromJSONTyped;
 function CreatePortalUserOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +54,3 @@ function CreatePortalUserOptionsToJSON(value) {
         createInboxOptions: (0, _1.CreateInboxDtoToJSON)(value.createInboxOptions),
     };
 }
-exports.CreatePortalUserOptionsToJSON = CreatePortalUserOptionsToJSON;

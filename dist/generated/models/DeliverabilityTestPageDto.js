@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityTestPageDtoToJSON = exports.DeliverabilityTestPageDtoFromJSONTyped = exports.DeliverabilityTestPageDtoFromJSON = void 0;
+exports.DeliverabilityTestPageDtoFromJSON = DeliverabilityTestPageDtoFromJSON;
+exports.DeliverabilityTestPageDtoFromJSONTyped = DeliverabilityTestPageDtoFromJSONTyped;
+exports.DeliverabilityTestPageDtoToJSON = DeliverabilityTestPageDtoToJSON;
 var _1 = require("./");
 function DeliverabilityTestPageDtoFromJSON(json) {
     return DeliverabilityTestPageDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilityTestPageDtoFromJSON = DeliverabilityTestPageDtoFromJSON;
 function DeliverabilityTestPageDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function DeliverabilityTestPageDtoFromJSONTyped(json, ignoreDiscriminator) {
         totalPages: json['totalPages'],
     };
 }
-exports.DeliverabilityTestPageDtoFromJSONTyped = DeliverabilityTestPageDtoFromJSONTyped;
 function DeliverabilityTestPageDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function DeliverabilityTestPageDtoToJSON(value) {
         totalPages: value.totalPages,
     };
 }
-exports.DeliverabilityTestPageDtoToJSON = DeliverabilityTestPageDtoToJSON;

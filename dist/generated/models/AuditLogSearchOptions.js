@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuditLogSearchOptionsToJSON = exports.AuditLogSearchOptionsFromJSONTyped = exports.AuditLogSearchOptionsFromJSON = void 0;
+exports.AuditLogSearchOptionsFromJSON = AuditLogSearchOptionsFromJSON;
+exports.AuditLogSearchOptionsFromJSONTyped = AuditLogSearchOptionsFromJSONTyped;
+exports.AuditLogSearchOptionsToJSON = AuditLogSearchOptionsToJSON;
 var runtime_1 = require("../runtime");
 function AuditLogSearchOptionsFromJSON(json) {
     return AuditLogSearchOptionsFromJSONTyped(json, false);
 }
-exports.AuditLogSearchOptionsFromJSON = AuditLogSearchOptionsFromJSON;
 function AuditLogSearchOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -52,7 +53,6 @@ function AuditLogSearchOptionsFromJSONTyped(json, ignoreDiscriminator) {
         cursor: !(0, runtime_1.exists)(json, 'cursor') ? undefined : json['cursor'],
     };
 }
-exports.AuditLogSearchOptionsFromJSONTyped = AuditLogSearchOptionsFromJSONTyped;
 function AuditLogSearchOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -85,4 +85,3 @@ function AuditLogSearchOptionsToJSON(value) {
         cursor: value.cursor,
     };
 }
-exports.AuditLogSearchOptionsToJSON = AuditLogSearchOptionsToJSON;

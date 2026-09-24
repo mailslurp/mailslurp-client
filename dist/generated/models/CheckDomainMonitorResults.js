@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckDomainMonitorResultsToJSON = exports.CheckDomainMonitorResultsFromJSONTyped = exports.CheckDomainMonitorResultsFromJSON = exports.CheckDomainMonitorResultsStatusEnum = void 0;
+exports.CheckDomainMonitorResultsStatusEnum = void 0;
+exports.CheckDomainMonitorResultsFromJSON = CheckDomainMonitorResultsFromJSON;
+exports.CheckDomainMonitorResultsFromJSONTyped = CheckDomainMonitorResultsFromJSONTyped;
+exports.CheckDomainMonitorResultsToJSON = CheckDomainMonitorResultsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,11 +28,10 @@ var CheckDomainMonitorResultsStatusEnum;
     CheckDomainMonitorResultsStatusEnum["DEGRADED"] = "DEGRADED";
     CheckDomainMonitorResultsStatusEnum["CRITICAL"] = "CRITICAL";
     CheckDomainMonitorResultsStatusEnum["FAILED"] = "FAILED";
-})(CheckDomainMonitorResultsStatusEnum = exports.CheckDomainMonitorResultsStatusEnum || (exports.CheckDomainMonitorResultsStatusEnum = {}));
+})(CheckDomainMonitorResultsStatusEnum || (exports.CheckDomainMonitorResultsStatusEnum = CheckDomainMonitorResultsStatusEnum = {}));
 function CheckDomainMonitorResultsFromJSON(json) {
     return CheckDomainMonitorResultsFromJSONTyped(json, false);
 }
-exports.CheckDomainMonitorResultsFromJSON = CheckDomainMonitorResultsFromJSON;
 function CheckDomainMonitorResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -58,7 +60,6 @@ function CheckDomainMonitorResultsFromJSONTyped(json, ignoreDiscriminator) {
             : json['errorMessage'],
     };
 }
-exports.CheckDomainMonitorResultsFromJSONTyped = CheckDomainMonitorResultsFromJSONTyped;
 function CheckDomainMonitorResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -88,4 +89,3 @@ function CheckDomainMonitorResultsToJSON(value) {
         errorMessage: value.errorMessage,
     };
 }
-exports.CheckDomainMonitorResultsToJSON = CheckDomainMonitorResultsToJSON;

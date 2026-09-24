@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementDeliverabilitySummaryDtoToJSON = exports.InboxPlacementDeliverabilitySummaryDtoFromJSONTyped = exports.InboxPlacementDeliverabilitySummaryDtoFromJSON = void 0;
+exports.InboxPlacementDeliverabilitySummaryDtoFromJSON = InboxPlacementDeliverabilitySummaryDtoFromJSON;
+exports.InboxPlacementDeliverabilitySummaryDtoFromJSONTyped = InboxPlacementDeliverabilitySummaryDtoFromJSONTyped;
+exports.InboxPlacementDeliverabilitySummaryDtoToJSON = InboxPlacementDeliverabilitySummaryDtoToJSON;
 function InboxPlacementDeliverabilitySummaryDtoFromJSON(json) {
     return InboxPlacementDeliverabilitySummaryDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementDeliverabilitySummaryDtoFromJSON = InboxPlacementDeliverabilitySummaryDtoFromJSON;
 function InboxPlacementDeliverabilitySummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function InboxPlacementDeliverabilitySummaryDtoFromJSONTyped(json, ignoreDiscrim
         notReceivedTargets: json['notReceivedTargets'],
     };
 }
-exports.InboxPlacementDeliverabilitySummaryDtoFromJSONTyped = InboxPlacementDeliverabilitySummaryDtoFromJSONTyped;
 function InboxPlacementDeliverabilitySummaryDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function InboxPlacementDeliverabilitySummaryDtoToJSON(value) {
         notReceivedTargets: value.notReceivedTargets,
     };
 }
-exports.InboxPlacementDeliverabilitySummaryDtoToJSON = InboxPlacementDeliverabilitySummaryDtoToJSON;

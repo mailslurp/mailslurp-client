@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrganizationInboxProjectionToJSON = exports.OrganizationInboxProjectionFromJSONTyped = exports.OrganizationInboxProjectionFromJSON = exports.OrganizationInboxProjectionAccountRegionEnum = exports.OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionInboxTypeEnum = void 0;
+exports.OrganizationInboxProjectionAccountRegionEnum = exports.OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionInboxTypeEnum = void 0;
+exports.OrganizationInboxProjectionFromJSON = OrganizationInboxProjectionFromJSON;
+exports.OrganizationInboxProjectionFromJSONTyped = OrganizationInboxProjectionFromJSONTyped;
+exports.OrganizationInboxProjectionToJSON = OrganizationInboxProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var OrganizationInboxProjectionInboxTypeEnum;
 (function (OrganizationInboxProjectionInboxTypeEnum) {
     OrganizationInboxProjectionInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     OrganizationInboxProjectionInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(OrganizationInboxProjectionInboxTypeEnum = exports.OrganizationInboxProjectionInboxTypeEnum || (exports.OrganizationInboxProjectionInboxTypeEnum = {}));
+})(OrganizationInboxProjectionInboxTypeEnum || (exports.OrganizationInboxProjectionInboxTypeEnum = OrganizationInboxProjectionInboxTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -38,7 +41,7 @@ var OrganizationInboxProjectionFunctionsAsEnum;
     OrganizationInboxProjectionFunctionsAsEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
     OrganizationInboxProjectionFunctionsAsEnum["GUEST"] = "GUEST";
     OrganizationInboxProjectionFunctionsAsEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
-})(OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionFunctionsAsEnum || (exports.OrganizationInboxProjectionFunctionsAsEnum = {}));
+})(OrganizationInboxProjectionFunctionsAsEnum || (exports.OrganizationInboxProjectionFunctionsAsEnum = OrganizationInboxProjectionFunctionsAsEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -59,11 +62,10 @@ var OrganizationInboxProjectionAccountRegionEnum;
     OrganizationInboxProjectionAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
     OrganizationInboxProjectionAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
     OrganizationInboxProjectionAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
-})(OrganizationInboxProjectionAccountRegionEnum = exports.OrganizationInboxProjectionAccountRegionEnum || (exports.OrganizationInboxProjectionAccountRegionEnum = {}));
+})(OrganizationInboxProjectionAccountRegionEnum || (exports.OrganizationInboxProjectionAccountRegionEnum = OrganizationInboxProjectionAccountRegionEnum = {}));
 function OrganizationInboxProjectionFromJSON(json) {
     return OrganizationInboxProjectionFromJSONTyped(json, false);
 }
-exports.OrganizationInboxProjectionFromJSON = OrganizationInboxProjectionFromJSON;
 function OrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -96,7 +98,6 @@ function OrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
             : json['mergedIntoInboxId'],
     };
 }
-exports.OrganizationInboxProjectionFromJSONTyped = OrganizationInboxProjectionFromJSONTyped;
 function OrganizationInboxProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -128,4 +129,3 @@ function OrganizationInboxProjectionToJSON(value) {
         mergedIntoInboxId: value.mergedIntoInboxId,
     };
 }
-exports.OrganizationInboxProjectionToJSON = OrganizationInboxProjectionToJSON;

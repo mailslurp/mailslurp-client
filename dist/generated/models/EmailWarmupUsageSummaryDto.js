@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupUsageSummaryDtoToJSON = exports.EmailWarmupUsageSummaryDtoFromJSONTyped = exports.EmailWarmupUsageSummaryDtoFromJSON = void 0;
+exports.EmailWarmupUsageSummaryDtoFromJSON = EmailWarmupUsageSummaryDtoFromJSON;
+exports.EmailWarmupUsageSummaryDtoFromJSONTyped = EmailWarmupUsageSummaryDtoFromJSONTyped;
+exports.EmailWarmupUsageSummaryDtoToJSON = EmailWarmupUsageSummaryDtoToJSON;
 function EmailWarmupUsageSummaryDtoFromJSON(json) {
     return EmailWarmupUsageSummaryDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupUsageSummaryDtoFromJSON = EmailWarmupUsageSummaryDtoFromJSON;
 function EmailWarmupUsageSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -42,7 +43,6 @@ function EmailWarmupUsageSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
         premiumRecipientCreditWeight: json['premiumRecipientCreditWeight'],
     };
 }
-exports.EmailWarmupUsageSummaryDtoFromJSONTyped = EmailWarmupUsageSummaryDtoFromJSONTyped;
 function EmailWarmupUsageSummaryDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -72,4 +72,3 @@ function EmailWarmupUsageSummaryDtoToJSON(value) {
         premiumRecipientCreditWeight: value.premiumRecipientCreditWeight,
     };
 }
-exports.EmailWarmupUsageSummaryDtoToJSON = EmailWarmupUsageSummaryDtoToJSON;

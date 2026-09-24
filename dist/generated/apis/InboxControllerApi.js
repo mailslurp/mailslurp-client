@@ -43,13 +43,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,8 +70,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -4188,7 +4198,7 @@ var CreateInboxInboxTypeEnum;
 (function (CreateInboxInboxTypeEnum) {
     CreateInboxInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     CreateInboxInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(CreateInboxInboxTypeEnum = exports.CreateInboxInboxTypeEnum || (exports.CreateInboxInboxTypeEnum = {}));
+})(CreateInboxInboxTypeEnum || (exports.CreateInboxInboxTypeEnum = CreateInboxInboxTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4197,7 +4207,7 @@ var GetAllInboxesSortEnum;
 (function (GetAllInboxesSortEnum) {
     GetAllInboxesSortEnum["ASC"] = "ASC";
     GetAllInboxesSortEnum["DESC"] = "DESC";
-})(GetAllInboxesSortEnum = exports.GetAllInboxesSortEnum || (exports.GetAllInboxesSortEnum = {}));
+})(GetAllInboxesSortEnum || (exports.GetAllInboxesSortEnum = GetAllInboxesSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4206,7 +4216,7 @@ var GetAllInboxesInboxTypeEnum;
 (function (GetAllInboxesInboxTypeEnum) {
     GetAllInboxesInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     GetAllInboxesInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(GetAllInboxesInboxTypeEnum = exports.GetAllInboxesInboxTypeEnum || (exports.GetAllInboxesInboxTypeEnum = {}));
+})(GetAllInboxesInboxTypeEnum || (exports.GetAllInboxesInboxTypeEnum = GetAllInboxesInboxTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4221,7 +4231,7 @@ var GetAllInboxesInboxFunctionEnum;
     GetAllInboxesInboxFunctionEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
     GetAllInboxesInboxFunctionEnum["GUEST"] = "GUEST";
     GetAllInboxesInboxFunctionEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
-})(GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxFunctionEnum || (exports.GetAllInboxesInboxFunctionEnum = {}));
+})(GetAllInboxesInboxFunctionEnum || (exports.GetAllInboxesInboxFunctionEnum = GetAllInboxesInboxFunctionEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4230,7 +4240,7 @@ var GetAllInboxesOffsetPaginatedSortEnum;
 (function (GetAllInboxesOffsetPaginatedSortEnum) {
     GetAllInboxesOffsetPaginatedSortEnum["ASC"] = "ASC";
     GetAllInboxesOffsetPaginatedSortEnum["DESC"] = "DESC";
-})(GetAllInboxesOffsetPaginatedSortEnum = exports.GetAllInboxesOffsetPaginatedSortEnum || (exports.GetAllInboxesOffsetPaginatedSortEnum = {}));
+})(GetAllInboxesOffsetPaginatedSortEnum || (exports.GetAllInboxesOffsetPaginatedSortEnum = GetAllInboxesOffsetPaginatedSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4239,7 +4249,7 @@ var GetAllInboxesOffsetPaginatedInboxTypeEnum;
 (function (GetAllInboxesOffsetPaginatedInboxTypeEnum) {
     GetAllInboxesOffsetPaginatedInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     GetAllInboxesOffsetPaginatedInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(GetAllInboxesOffsetPaginatedInboxTypeEnum = exports.GetAllInboxesOffsetPaginatedInboxTypeEnum || (exports.GetAllInboxesOffsetPaginatedInboxTypeEnum = {}));
+})(GetAllInboxesOffsetPaginatedInboxTypeEnum || (exports.GetAllInboxesOffsetPaginatedInboxTypeEnum = GetAllInboxesOffsetPaginatedInboxTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4254,7 +4264,7 @@ var GetAllInboxesOffsetPaginatedInboxFunctionEnum;
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["GUEST"] = "GUEST";
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
-})(GetAllInboxesOffsetPaginatedInboxFunctionEnum = exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum || (exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = {}));
+})(GetAllInboxesOffsetPaginatedInboxFunctionEnum || (exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = GetAllInboxesOffsetPaginatedInboxFunctionEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4263,7 +4273,7 @@ var GetAllPlusAddressesSortEnum;
 (function (GetAllPlusAddressesSortEnum) {
     GetAllPlusAddressesSortEnum["ASC"] = "ASC";
     GetAllPlusAddressesSortEnum["DESC"] = "DESC";
-})(GetAllPlusAddressesSortEnum = exports.GetAllPlusAddressesSortEnum || (exports.GetAllPlusAddressesSortEnum = {}));
+})(GetAllPlusAddressesSortEnum || (exports.GetAllPlusAddressesSortEnum = GetAllPlusAddressesSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4272,7 +4282,7 @@ var GetAllScheduledJobsSortEnum;
 (function (GetAllScheduledJobsSortEnum) {
     GetAllScheduledJobsSortEnum["ASC"] = "ASC";
     GetAllScheduledJobsSortEnum["DESC"] = "DESC";
-})(GetAllScheduledJobsSortEnum = exports.GetAllScheduledJobsSortEnum || (exports.GetAllScheduledJobsSortEnum = {}));
+})(GetAllScheduledJobsSortEnum || (exports.GetAllScheduledJobsSortEnum = GetAllScheduledJobsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4281,7 +4291,7 @@ var GetDeliveryStatusesByInboxIdSortEnum;
 (function (GetDeliveryStatusesByInboxIdSortEnum) {
     GetDeliveryStatusesByInboxIdSortEnum["ASC"] = "ASC";
     GetDeliveryStatusesByInboxIdSortEnum["DESC"] = "DESC";
-})(GetDeliveryStatusesByInboxIdSortEnum = exports.GetDeliveryStatusesByInboxIdSortEnum || (exports.GetDeliveryStatusesByInboxIdSortEnum = {}));
+})(GetDeliveryStatusesByInboxIdSortEnum || (exports.GetDeliveryStatusesByInboxIdSortEnum = GetDeliveryStatusesByInboxIdSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4290,7 +4300,7 @@ var GetEmailsSortEnum;
 (function (GetEmailsSortEnum) {
     GetEmailsSortEnum["ASC"] = "ASC";
     GetEmailsSortEnum["DESC"] = "DESC";
-})(GetEmailsSortEnum = exports.GetEmailsSortEnum || (exports.GetEmailsSortEnum = {}));
+})(GetEmailsSortEnum || (exports.GetEmailsSortEnum = GetEmailsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4299,7 +4309,7 @@ var GetInboxEmailsPaginatedSortEnum;
 (function (GetInboxEmailsPaginatedSortEnum) {
     GetInboxEmailsPaginatedSortEnum["ASC"] = "ASC";
     GetInboxEmailsPaginatedSortEnum["DESC"] = "DESC";
-})(GetInboxEmailsPaginatedSortEnum = exports.GetInboxEmailsPaginatedSortEnum || (exports.GetInboxEmailsPaginatedSortEnum = {}));
+})(GetInboxEmailsPaginatedSortEnum || (exports.GetInboxEmailsPaginatedSortEnum = GetInboxEmailsPaginatedSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4308,7 +4318,7 @@ var GetInboxPlusAddressEmailsSortEnum;
 (function (GetInboxPlusAddressEmailsSortEnum) {
     GetInboxPlusAddressEmailsSortEnum["ASC"] = "ASC";
     GetInboxPlusAddressEmailsSortEnum["DESC"] = "DESC";
-})(GetInboxPlusAddressEmailsSortEnum = exports.GetInboxPlusAddressEmailsSortEnum || (exports.GetInboxPlusAddressEmailsSortEnum = {}));
+})(GetInboxPlusAddressEmailsSortEnum || (exports.GetInboxPlusAddressEmailsSortEnum = GetInboxPlusAddressEmailsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4317,7 +4327,7 @@ var GetInboxPlusAddressEmailsForPlusAddressIdSortEnum;
 (function (GetInboxPlusAddressEmailsForPlusAddressIdSortEnum) {
     GetInboxPlusAddressEmailsForPlusAddressIdSortEnum["ASC"] = "ASC";
     GetInboxPlusAddressEmailsForPlusAddressIdSortEnum["DESC"] = "DESC";
-})(GetInboxPlusAddressEmailsForPlusAddressIdSortEnum = exports.GetInboxPlusAddressEmailsForPlusAddressIdSortEnum || (exports.GetInboxPlusAddressEmailsForPlusAddressIdSortEnum = {}));
+})(GetInboxPlusAddressEmailsForPlusAddressIdSortEnum || (exports.GetInboxPlusAddressEmailsForPlusAddressIdSortEnum = GetInboxPlusAddressEmailsForPlusAddressIdSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4326,7 +4336,7 @@ var GetInboxPlusAddressesSortEnum;
 (function (GetInboxPlusAddressesSortEnum) {
     GetInboxPlusAddressesSortEnum["ASC"] = "ASC";
     GetInboxPlusAddressesSortEnum["DESC"] = "DESC";
-})(GetInboxPlusAddressesSortEnum = exports.GetInboxPlusAddressesSortEnum || (exports.GetInboxPlusAddressesSortEnum = {}));
+})(GetInboxPlusAddressesSortEnum || (exports.GetInboxPlusAddressesSortEnum = GetInboxPlusAddressesSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4335,7 +4345,7 @@ var GetInboxSentEmailsSortEnum;
 (function (GetInboxSentEmailsSortEnum) {
     GetInboxSentEmailsSortEnum["ASC"] = "ASC";
     GetInboxSentEmailsSortEnum["DESC"] = "DESC";
-})(GetInboxSentEmailsSortEnum = exports.GetInboxSentEmailsSortEnum || (exports.GetInboxSentEmailsSortEnum = {}));
+})(GetInboxSentEmailsSortEnum || (exports.GetInboxSentEmailsSortEnum = GetInboxSentEmailsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4344,7 +4354,7 @@ var GetInboxTagsSortEnum;
 (function (GetInboxTagsSortEnum) {
     GetInboxTagsSortEnum["ASC"] = "ASC";
     GetInboxTagsSortEnum["DESC"] = "DESC";
-})(GetInboxTagsSortEnum = exports.GetInboxTagsSortEnum || (exports.GetInboxTagsSortEnum = {}));
+})(GetInboxTagsSortEnum || (exports.GetInboxTagsSortEnum = GetInboxTagsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4353,7 +4363,7 @@ var GetInboxTagsPaginatedSortEnum;
 (function (GetInboxTagsPaginatedSortEnum) {
     GetInboxTagsPaginatedSortEnum["ASC"] = "ASC";
     GetInboxTagsPaginatedSortEnum["DESC"] = "DESC";
-})(GetInboxTagsPaginatedSortEnum = exports.GetInboxTagsPaginatedSortEnum || (exports.GetInboxTagsPaginatedSortEnum = {}));
+})(GetInboxTagsPaginatedSortEnum || (exports.GetInboxTagsPaginatedSortEnum = GetInboxTagsPaginatedSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4362,7 +4372,7 @@ var GetInboxesSortEnum;
 (function (GetInboxesSortEnum) {
     GetInboxesSortEnum["ASC"] = "ASC";
     GetInboxesSortEnum["DESC"] = "DESC";
-})(GetInboxesSortEnum = exports.GetInboxesSortEnum || (exports.GetInboxesSortEnum = {}));
+})(GetInboxesSortEnum || (exports.GetInboxesSortEnum = GetInboxesSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4371,7 +4381,7 @@ var GetInboxesByTagSortEnum;
 (function (GetInboxesByTagSortEnum) {
     GetInboxesByTagSortEnum["ASC"] = "ASC";
     GetInboxesByTagSortEnum["DESC"] = "DESC";
-})(GetInboxesByTagSortEnum = exports.GetInboxesByTagSortEnum || (exports.GetInboxesByTagSortEnum = {}));
+})(GetInboxesByTagSortEnum || (exports.GetInboxesByTagSortEnum = GetInboxesByTagSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4380,7 +4390,7 @@ var GetOrganizationInboxesSortEnum;
 (function (GetOrganizationInboxesSortEnum) {
     GetOrganizationInboxesSortEnum["ASC"] = "ASC";
     GetOrganizationInboxesSortEnum["DESC"] = "DESC";
-})(GetOrganizationInboxesSortEnum = exports.GetOrganizationInboxesSortEnum || (exports.GetOrganizationInboxesSortEnum = {}));
+})(GetOrganizationInboxesSortEnum || (exports.GetOrganizationInboxesSortEnum = GetOrganizationInboxesSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4389,7 +4399,7 @@ var GetOutboxesSortEnum;
 (function (GetOutboxesSortEnum) {
     GetOutboxesSortEnum["ASC"] = "ASC";
     GetOutboxesSortEnum["DESC"] = "DESC";
-})(GetOutboxesSortEnum = exports.GetOutboxesSortEnum || (exports.GetOutboxesSortEnum = {}));
+})(GetOutboxesSortEnum || (exports.GetOutboxesSortEnum = GetOutboxesSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4398,7 +4408,7 @@ var GetScheduledJobsByInboxIdSortEnum;
 (function (GetScheduledJobsByInboxIdSortEnum) {
     GetScheduledJobsByInboxIdSortEnum["ASC"] = "ASC";
     GetScheduledJobsByInboxIdSortEnum["DESC"] = "DESC";
-})(GetScheduledJobsByInboxIdSortEnum = exports.GetScheduledJobsByInboxIdSortEnum || (exports.GetScheduledJobsByInboxIdSortEnum = {}));
+})(GetScheduledJobsByInboxIdSortEnum || (exports.GetScheduledJobsByInboxIdSortEnum = GetScheduledJobsByInboxIdSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4407,7 +4417,7 @@ var ListInboxRulesetsSortEnum;
 (function (ListInboxRulesetsSortEnum) {
     ListInboxRulesetsSortEnum["ASC"] = "ASC";
     ListInboxRulesetsSortEnum["DESC"] = "DESC";
-})(ListInboxRulesetsSortEnum = exports.ListInboxRulesetsSortEnum || (exports.ListInboxRulesetsSortEnum = {}));
+})(ListInboxRulesetsSortEnum || (exports.ListInboxRulesetsSortEnum = ListInboxRulesetsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -4416,4 +4426,4 @@ var ListInboxTrackingPixelsSortEnum;
 (function (ListInboxTrackingPixelsSortEnum) {
     ListInboxTrackingPixelsSortEnum["ASC"] = "ASC";
     ListInboxTrackingPixelsSortEnum["DESC"] = "DESC";
-})(ListInboxTrackingPixelsSortEnum = exports.ListInboxTrackingPixelsSortEnum || (exports.ListInboxTrackingPixelsSortEnum = {}));
+})(ListInboxTrackingPixelsSortEnum || (exports.ListInboxTrackingPixelsSortEnum = ListInboxTrackingPixelsSortEnum = {}));

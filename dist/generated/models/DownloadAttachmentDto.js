@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DownloadAttachmentDtoToJSON = exports.DownloadAttachmentDtoFromJSONTyped = exports.DownloadAttachmentDtoFromJSON = void 0;
+exports.DownloadAttachmentDtoFromJSON = DownloadAttachmentDtoFromJSON;
+exports.DownloadAttachmentDtoFromJSONTyped = DownloadAttachmentDtoFromJSONTyped;
+exports.DownloadAttachmentDtoToJSON = DownloadAttachmentDtoToJSON;
 function DownloadAttachmentDtoFromJSON(json) {
     return DownloadAttachmentDtoFromJSONTyped(json, false);
 }
-exports.DownloadAttachmentDtoFromJSON = DownloadAttachmentDtoFromJSON;
 function DownloadAttachmentDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function DownloadAttachmentDtoFromJSONTyped(json, ignoreDiscriminator) {
         sizeBytes: json['sizeBytes'],
     };
 }
-exports.DownloadAttachmentDtoFromJSONTyped = DownloadAttachmentDtoFromJSONTyped;
 function DownloadAttachmentDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function DownloadAttachmentDtoToJSON(value) {
         sizeBytes: value.sizeBytes,
     };
 }
-exports.DownloadAttachmentDtoToJSON = DownloadAttachmentDtoToJSON;

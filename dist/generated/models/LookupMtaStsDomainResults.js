@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupMtaStsDomainResultsToJSON = exports.LookupMtaStsDomainResultsFromJSONTyped = exports.LookupMtaStsDomainResultsFromJSON = void 0;
+exports.LookupMtaStsDomainResultsFromJSON = LookupMtaStsDomainResultsFromJSON;
+exports.LookupMtaStsDomainResultsFromJSONTyped = LookupMtaStsDomainResultsFromJSONTyped;
+exports.LookupMtaStsDomainResultsToJSON = LookupMtaStsDomainResultsToJSON;
 var _1 = require("./");
 function LookupMtaStsDomainResultsFromJSON(json) {
     return LookupMtaStsDomainResultsFromJSONTyped(json, false);
 }
-exports.LookupMtaStsDomainResultsFromJSON = LookupMtaStsDomainResultsFromJSON;
 function LookupMtaStsDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -34,7 +35,6 @@ function LookupMtaStsDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
         warnings: json['warnings'],
     };
 }
-exports.LookupMtaStsDomainResultsFromJSONTyped = LookupMtaStsDomainResultsFromJSONTyped;
 function LookupMtaStsDomainResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function LookupMtaStsDomainResultsToJSON(value) {
         warnings: value.warnings,
     };
 }
-exports.LookupMtaStsDomainResultsToJSON = LookupMtaStsDomainResultsToJSON;

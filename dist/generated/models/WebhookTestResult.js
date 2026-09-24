@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookTestResultToJSON = exports.WebhookTestResultFromJSONTyped = exports.WebhookTestResultFromJSON = void 0;
+exports.WebhookTestResultFromJSON = WebhookTestResultFromJSON;
+exports.WebhookTestResultFromJSONTyped = WebhookTestResultFromJSONTyped;
+exports.WebhookTestResultToJSON = WebhookTestResultToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function WebhookTestResultFromJSON(json) {
     return WebhookTestResultFromJSONTyped(json, false);
 }
-exports.WebhookTestResultFromJSON = WebhookTestResultFromJSON;
 function WebhookTestResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function WebhookTestResultFromJSONTyped(json, ignoreDiscriminator) {
         request: (0, _1.WebhookTestRequestFromJSON)(json['request']),
     };
 }
-exports.WebhookTestResultFromJSONTyped = WebhookTestResultFromJSONTyped;
 function WebhookTestResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function WebhookTestResultToJSON(value) {
         request: (0, _1.WebhookTestRequestToJSON)(value.request),
     };
 }
-exports.WebhookTestResultToJSON = WebhookTestResultToJSON;

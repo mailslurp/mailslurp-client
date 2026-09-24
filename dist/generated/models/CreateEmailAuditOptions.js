@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateEmailAuditOptionsToJSON = exports.CreateEmailAuditOptionsFromJSONTyped = exports.CreateEmailAuditOptionsFromJSON = void 0;
+exports.CreateEmailAuditOptionsFromJSON = CreateEmailAuditOptionsFromJSON;
+exports.CreateEmailAuditOptionsFromJSONTyped = CreateEmailAuditOptionsFromJSONTyped;
+exports.CreateEmailAuditOptionsToJSON = CreateEmailAuditOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function CreateEmailAuditOptionsFromJSON(json) {
     return CreateEmailAuditOptionsFromJSONTyped(json, false);
 }
-exports.CreateEmailAuditOptionsFromJSON = CreateEmailAuditOptionsFromJSON;
 function CreateEmailAuditOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +39,6 @@ function CreateEmailAuditOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['hasAttachments'],
     };
 }
-exports.CreateEmailAuditOptionsFromJSONTyped = CreateEmailAuditOptionsFromJSONTyped;
 function CreateEmailAuditOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -56,4 +56,3 @@ function CreateEmailAuditOptionsToJSON(value) {
         hasAttachments: value.hasAttachments,
     };
 }
-exports.CreateEmailAuditOptionsToJSON = CreateEmailAuditOptionsToJSON;

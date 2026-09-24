@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailAuditAnalysisResultToJSON = exports.EmailAuditAnalysisResultFromJSONTyped = exports.EmailAuditAnalysisResultFromJSON = exports.EmailAuditAnalysisResultStatusEnum = void 0;
+exports.EmailAuditAnalysisResultStatusEnum = void 0;
+exports.EmailAuditAnalysisResultFromJSON = EmailAuditAnalysisResultFromJSON;
+exports.EmailAuditAnalysisResultFromJSONTyped = EmailAuditAnalysisResultFromJSONTyped;
+exports.EmailAuditAnalysisResultToJSON = EmailAuditAnalysisResultToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -25,11 +28,10 @@ var EmailAuditAnalysisResultStatusEnum;
     EmailAuditAnalysisResultStatusEnum["HEALTHY"] = "HEALTHY";
     EmailAuditAnalysisResultStatusEnum["WARNING"] = "WARNING";
     EmailAuditAnalysisResultStatusEnum["FAILED"] = "FAILED";
-})(EmailAuditAnalysisResultStatusEnum = exports.EmailAuditAnalysisResultStatusEnum || (exports.EmailAuditAnalysisResultStatusEnum = {}));
+})(EmailAuditAnalysisResultStatusEnum || (exports.EmailAuditAnalysisResultStatusEnum = EmailAuditAnalysisResultStatusEnum = {}));
 function EmailAuditAnalysisResultFromJSON(json) {
     return EmailAuditAnalysisResultFromJSONTyped(json, false);
 }
-exports.EmailAuditAnalysisResultFromJSON = EmailAuditAnalysisResultFromJSON;
 function EmailAuditAnalysisResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -85,7 +87,6 @@ function EmailAuditAnalysisResultFromJSONTyped(json, ignoreDiscriminator) {
             : json['dmarcVerdict'],
     };
 }
-exports.EmailAuditAnalysisResultFromJSONTyped = EmailAuditAnalysisResultFromJSONTyped;
 function EmailAuditAnalysisResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -134,4 +135,3 @@ function EmailAuditAnalysisResultToJSON(value) {
         dmarcVerdict: value.dmarcVerdict,
     };
 }
-exports.EmailAuditAnalysisResultToJSON = EmailAuditAnalysisResultToJSON;

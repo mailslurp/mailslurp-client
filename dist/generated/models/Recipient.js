@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RecipientToJSON = exports.RecipientFromJSONTyped = exports.RecipientFromJSON = void 0;
+exports.RecipientFromJSON = RecipientFromJSON;
+exports.RecipientFromJSONTyped = RecipientFromJSONTyped;
+exports.RecipientToJSON = RecipientToJSON;
 var runtime_1 = require("../runtime");
 function RecipientFromJSON(json) {
     return RecipientFromJSONTyped(json, false);
 }
-exports.RecipientFromJSON = RecipientFromJSON;
 function RecipientFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function RecipientFromJSONTyped(json, ignoreDiscriminator) {
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
     };
 }
-exports.RecipientFromJSONTyped = RecipientFromJSONTyped;
 function RecipientToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function RecipientToJSON(value) {
         name: value.name,
     };
 }
-exports.RecipientToJSON = RecipientToJSON;

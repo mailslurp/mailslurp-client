@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExtractAttachmentTextOptionsToJSON = exports.ExtractAttachmentTextOptionsFromJSONTyped = exports.ExtractAttachmentTextOptionsFromJSON = exports.ExtractAttachmentTextOptionsMethodEnum = void 0;
+exports.ExtractAttachmentTextOptionsMethodEnum = void 0;
+exports.ExtractAttachmentTextOptionsFromJSON = ExtractAttachmentTextOptionsFromJSON;
+exports.ExtractAttachmentTextOptionsFromJSONTyped = ExtractAttachmentTextOptionsFromJSONTyped;
+exports.ExtractAttachmentTextOptionsToJSON = ExtractAttachmentTextOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,11 +29,10 @@ var ExtractAttachmentTextOptionsMethodEnum;
     ExtractAttachmentTextOptionsMethodEnum["OCR"] = "OCR";
     ExtractAttachmentTextOptionsMethodEnum["LLM"] = "LLM";
     ExtractAttachmentTextOptionsMethodEnum["OCR_THEN_LLM"] = "OCR_THEN_LLM";
-})(ExtractAttachmentTextOptionsMethodEnum = exports.ExtractAttachmentTextOptionsMethodEnum || (exports.ExtractAttachmentTextOptionsMethodEnum = {}));
+})(ExtractAttachmentTextOptionsMethodEnum || (exports.ExtractAttachmentTextOptionsMethodEnum = ExtractAttachmentTextOptionsMethodEnum = {}));
 function ExtractAttachmentTextOptionsFromJSON(json) {
     return ExtractAttachmentTextOptionsFromJSONTyped(json, false);
 }
-exports.ExtractAttachmentTextOptionsFromJSON = ExtractAttachmentTextOptionsFromJSON;
 function ExtractAttachmentTextOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -43,7 +45,6 @@ function ExtractAttachmentTextOptionsFromJSONTyped(json, ignoreDiscriminator) {
         maxBytes: !(0, runtime_1.exists)(json, 'maxBytes') ? undefined : json['maxBytes'],
     };
 }
-exports.ExtractAttachmentTextOptionsFromJSONTyped = ExtractAttachmentTextOptionsFromJSONTyped;
 function ExtractAttachmentTextOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -57,4 +58,3 @@ function ExtractAttachmentTextOptionsToJSON(value) {
         maxBytes: value.maxBytes,
     };
 }
-exports.ExtractAttachmentTextOptionsToJSON = ExtractAttachmentTextOptionsToJSON;

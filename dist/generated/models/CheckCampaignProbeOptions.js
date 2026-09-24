@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckCampaignProbeOptionsToJSON = exports.CheckCampaignProbeOptionsFromJSONTyped = exports.CheckCampaignProbeOptionsFromJSON = void 0;
+exports.CheckCampaignProbeOptionsFromJSON = CheckCampaignProbeOptionsFromJSON;
+exports.CheckCampaignProbeOptionsFromJSONTyped = CheckCampaignProbeOptionsFromJSONTyped;
+exports.CheckCampaignProbeOptionsToJSON = CheckCampaignProbeOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CheckCampaignProbeOptionsFromJSON(json) {
     return CheckCampaignProbeOptionsFromJSONTyped(json, false);
 }
-exports.CheckCampaignProbeOptionsFromJSON = CheckCampaignProbeOptionsFromJSON;
 function CheckCampaignProbeOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function CheckCampaignProbeOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['captchaToken'],
     };
 }
-exports.CheckCampaignProbeOptionsFromJSONTyped = CheckCampaignProbeOptionsFromJSONTyped;
 function CheckCampaignProbeOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function CheckCampaignProbeOptionsToJSON(value) {
         captchaToken: value.captchaToken,
     };
 }
-exports.CheckCampaignProbeOptionsToJSON = CheckCampaignProbeOptionsToJSON;

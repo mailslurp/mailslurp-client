@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapSmtpAccessServersToJSON = exports.ImapSmtpAccessServersFromJSONTyped = exports.ImapSmtpAccessServersFromJSON = void 0;
+exports.ImapSmtpAccessServersFromJSON = ImapSmtpAccessServersFromJSON;
+exports.ImapSmtpAccessServersFromJSONTyped = ImapSmtpAccessServersFromJSONTyped;
+exports.ImapSmtpAccessServersToJSON = ImapSmtpAccessServersToJSON;
 var _1 = require("./");
 function ImapSmtpAccessServersFromJSON(json) {
     return ImapSmtpAccessServersFromJSONTyped(json, false);
 }
-exports.ImapSmtpAccessServersFromJSON = ImapSmtpAccessServersFromJSON;
 function ImapSmtpAccessServersFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function ImapSmtpAccessServersFromJSONTyped(json, ignoreDiscriminator) {
         secureSmtpServer: (0, _1.ServerEndpointsFromJSON)(json['secureSmtpServer']),
     };
 }
-exports.ImapSmtpAccessServersFromJSONTyped = ImapSmtpAccessServersFromJSONTyped;
 function ImapSmtpAccessServersToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ImapSmtpAccessServersToJSON(value) {
         secureSmtpServer: (0, _1.ServerEndpointsToJSON)(value.secureSmtpServer),
     };
 }
-exports.ImapSmtpAccessServersToJSON = ImapSmtpAccessServersToJSON;

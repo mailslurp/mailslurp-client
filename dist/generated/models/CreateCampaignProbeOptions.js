@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateCampaignProbeOptionsToJSON = exports.CreateCampaignProbeOptionsFromJSONTyped = exports.CreateCampaignProbeOptionsFromJSON = void 0;
+exports.CreateCampaignProbeOptionsFromJSON = CreateCampaignProbeOptionsFromJSON;
+exports.CreateCampaignProbeOptionsFromJSONTyped = CreateCampaignProbeOptionsFromJSONTyped;
+exports.CreateCampaignProbeOptionsToJSON = CreateCampaignProbeOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateCampaignProbeOptionsFromJSON(json) {
     return CreateCampaignProbeOptionsFromJSONTyped(json, false);
 }
-exports.CreateCampaignProbeOptionsFromJSON = CreateCampaignProbeOptionsFromJSON;
 function CreateCampaignProbeOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -34,7 +35,6 @@ function CreateCampaignProbeOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['schedulingEnabled'],
     };
 }
-exports.CreateCampaignProbeOptionsFromJSONTyped = CreateCampaignProbeOptionsFromJSONTyped;
 function CreateCampaignProbeOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function CreateCampaignProbeOptionsToJSON(value) {
         schedulingEnabled: value.schedulingEnabled,
     };
 }
-exports.CreateCampaignProbeOptionsToJSON = CreateCampaignProbeOptionsToJSON;

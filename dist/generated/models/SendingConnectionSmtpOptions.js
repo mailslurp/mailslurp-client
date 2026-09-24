@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendingConnectionSmtpOptionsToJSON = exports.SendingConnectionSmtpOptionsFromJSONTyped = exports.SendingConnectionSmtpOptionsFromJSON = exports.SendingConnectionSmtpOptionsSecurityEnum = void 0;
+exports.SendingConnectionSmtpOptionsSecurityEnum = void 0;
+exports.SendingConnectionSmtpOptionsFromJSON = SendingConnectionSmtpOptionsFromJSON;
+exports.SendingConnectionSmtpOptionsFromJSONTyped = SendingConnectionSmtpOptionsFromJSONTyped;
+exports.SendingConnectionSmtpOptionsToJSON = SendingConnectionSmtpOptionsToJSON;
 /**
  * @export
  * @enum {string}
@@ -22,11 +25,10 @@ var SendingConnectionSmtpOptionsSecurityEnum;
 (function (SendingConnectionSmtpOptionsSecurityEnum) {
     SendingConnectionSmtpOptionsSecurityEnum["START_TLS"] = "START_TLS";
     SendingConnectionSmtpOptionsSecurityEnum["TLS"] = "TLS";
-})(SendingConnectionSmtpOptionsSecurityEnum = exports.SendingConnectionSmtpOptionsSecurityEnum || (exports.SendingConnectionSmtpOptionsSecurityEnum = {}));
+})(SendingConnectionSmtpOptionsSecurityEnum || (exports.SendingConnectionSmtpOptionsSecurityEnum = SendingConnectionSmtpOptionsSecurityEnum = {}));
 function SendingConnectionSmtpOptionsFromJSON(json) {
     return SendingConnectionSmtpOptionsFromJSONTyped(json, false);
 }
-exports.SendingConnectionSmtpOptionsFromJSON = SendingConnectionSmtpOptionsFromJSON;
 function SendingConnectionSmtpOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +41,6 @@ function SendingConnectionSmtpOptionsFromJSONTyped(json, ignoreDiscriminator) {
         password: json['password'],
     };
 }
-exports.SendingConnectionSmtpOptionsFromJSONTyped = SendingConnectionSmtpOptionsFromJSONTyped;
 function SendingConnectionSmtpOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +56,3 @@ function SendingConnectionSmtpOptionsToJSON(value) {
         password: value.password,
     };
 }
-exports.SendingConnectionSmtpOptionsToJSON = SendingConnectionSmtpOptionsToJSON;

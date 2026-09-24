@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageScheduledJobsToJSON = exports.PageScheduledJobsFromJSONTyped = exports.PageScheduledJobsFromJSON = void 0;
+exports.PageScheduledJobsFromJSON = PageScheduledJobsFromJSON;
+exports.PageScheduledJobsFromJSONTyped = PageScheduledJobsFromJSONTyped;
+exports.PageScheduledJobsToJSON = PageScheduledJobsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageScheduledJobsFromJSON(json) {
     return PageScheduledJobsFromJSONTyped(json, false);
 }
-exports.PageScheduledJobsFromJSON = PageScheduledJobsFromJSON;
 function PageScheduledJobsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageScheduledJobsFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageScheduledJobsFromJSONTyped = PageScheduledJobsFromJSONTyped;
 function PageScheduledJobsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageScheduledJobsToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageScheduledJobsToJSON = PageScheduledJobsToJSON;

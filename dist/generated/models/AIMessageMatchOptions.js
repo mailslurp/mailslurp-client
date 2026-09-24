@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageMatchOptionsToJSON = exports.AIMessageMatchOptionsFromJSONTyped = exports.AIMessageMatchOptionsFromJSON = void 0;
+exports.AIMessageMatchOptionsFromJSON = AIMessageMatchOptionsFromJSON;
+exports.AIMessageMatchOptionsFromJSONTyped = AIMessageMatchOptionsFromJSONTyped;
+exports.AIMessageMatchOptionsToJSON = AIMessageMatchOptionsToJSON;
 var _1 = require("./");
 function AIMessageMatchOptionsFromJSON(json) {
     return AIMessageMatchOptionsFromJSONTyped(json, false);
 }
-exports.AIMessageMatchOptionsFromJSON = AIMessageMatchOptionsFromJSON;
 function AIMessageMatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function AIMessageMatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
         aiOptions: (0, _1.AIMessageAIOptionsFromJSON)(json['aiOptions']),
     };
 }
-exports.AIMessageMatchOptionsFromJSONTyped = AIMessageMatchOptionsFromJSONTyped;
 function AIMessageMatchOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function AIMessageMatchOptionsToJSON(value) {
         aiOptions: (0, _1.AIMessageAIOptionsToJSON)(value.aiOptions),
     };
 }
-exports.AIMessageMatchOptionsToJSON = AIMessageMatchOptionsToJSON;

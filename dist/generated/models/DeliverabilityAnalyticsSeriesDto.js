@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityAnalyticsSeriesDtoToJSON = exports.DeliverabilityAnalyticsSeriesDtoFromJSONTyped = exports.DeliverabilityAnalyticsSeriesDtoFromJSON = exports.DeliverabilityAnalyticsSeriesDtoBucketEnum = exports.DeliverabilityAnalyticsSeriesDtoScopeEnum = void 0;
+exports.DeliverabilityAnalyticsSeriesDtoBucketEnum = exports.DeliverabilityAnalyticsSeriesDtoScopeEnum = void 0;
+exports.DeliverabilityAnalyticsSeriesDtoFromJSON = DeliverabilityAnalyticsSeriesDtoFromJSON;
+exports.DeliverabilityAnalyticsSeriesDtoFromJSONTyped = DeliverabilityAnalyticsSeriesDtoFromJSONTyped;
+exports.DeliverabilityAnalyticsSeriesDtoToJSON = DeliverabilityAnalyticsSeriesDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,7 +27,7 @@ var DeliverabilityAnalyticsSeriesDtoScopeEnum;
 (function (DeliverabilityAnalyticsSeriesDtoScopeEnum) {
     DeliverabilityAnalyticsSeriesDtoScopeEnum["INBOX"] = "INBOX";
     DeliverabilityAnalyticsSeriesDtoScopeEnum["PHONE"] = "PHONE";
-})(DeliverabilityAnalyticsSeriesDtoScopeEnum = exports.DeliverabilityAnalyticsSeriesDtoScopeEnum || (exports.DeliverabilityAnalyticsSeriesDtoScopeEnum = {}));
+})(DeliverabilityAnalyticsSeriesDtoScopeEnum || (exports.DeliverabilityAnalyticsSeriesDtoScopeEnum = DeliverabilityAnalyticsSeriesDtoScopeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -33,11 +36,10 @@ var DeliverabilityAnalyticsSeriesDtoBucketEnum;
 (function (DeliverabilityAnalyticsSeriesDtoBucketEnum) {
     DeliverabilityAnalyticsSeriesDtoBucketEnum["HOUR"] = "HOUR";
     DeliverabilityAnalyticsSeriesDtoBucketEnum["DAY"] = "DAY";
-})(DeliverabilityAnalyticsSeriesDtoBucketEnum = exports.DeliverabilityAnalyticsSeriesDtoBucketEnum || (exports.DeliverabilityAnalyticsSeriesDtoBucketEnum = {}));
+})(DeliverabilityAnalyticsSeriesDtoBucketEnum || (exports.DeliverabilityAnalyticsSeriesDtoBucketEnum = DeliverabilityAnalyticsSeriesDtoBucketEnum = {}));
 function DeliverabilityAnalyticsSeriesDtoFromJSON(json) {
     return DeliverabilityAnalyticsSeriesDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilityAnalyticsSeriesDtoFromJSON = DeliverabilityAnalyticsSeriesDtoFromJSON;
 function DeliverabilityAnalyticsSeriesDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -52,7 +54,6 @@ function DeliverabilityAnalyticsSeriesDtoFromJSONTyped(json, ignoreDiscriminator
         points: json['points'].map(_1.DeliverabilityAnalyticsSeriesPointDtoFromJSON),
     };
 }
-exports.DeliverabilityAnalyticsSeriesDtoFromJSONTyped = DeliverabilityAnalyticsSeriesDtoFromJSONTyped;
 function DeliverabilityAnalyticsSeriesDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -70,4 +71,3 @@ function DeliverabilityAnalyticsSeriesDtoToJSON(value) {
         points: value.points.map(_1.DeliverabilityAnalyticsSeriesPointDtoToJSON),
     };
 }
-exports.DeliverabilityAnalyticsSeriesDtoToJSON = DeliverabilityAnalyticsSeriesDtoToJSON;

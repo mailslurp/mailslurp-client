@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FakeEmailPreviewToJSON = exports.FakeEmailPreviewFromJSONTyped = exports.FakeEmailPreviewFromJSON = void 0;
+exports.FakeEmailPreviewFromJSON = FakeEmailPreviewFromJSON;
+exports.FakeEmailPreviewFromJSONTyped = FakeEmailPreviewFromJSONTyped;
+exports.FakeEmailPreviewToJSON = FakeEmailPreviewToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function FakeEmailPreviewFromJSON(json) {
     return FakeEmailPreviewFromJSONTyped(json, false);
 }
-exports.FakeEmailPreviewFromJSON = FakeEmailPreviewFromJSON;
 function FakeEmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +41,6 @@ function FakeEmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
         seen: json['seen'],
     };
 }
-exports.FakeEmailPreviewFromJSONTyped = FakeEmailPreviewFromJSONTyped;
 function FakeEmailPreviewToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -60,4 +60,3 @@ function FakeEmailPreviewToJSON(value) {
         seen: value.seen,
     };
 }
-exports.FakeEmailPreviewToJSON = FakeEmailPreviewToJSON;

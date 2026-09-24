@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageTableDataToJSON = exports.PageTableDataFromJSONTyped = exports.PageTableDataFromJSON = void 0;
+exports.PageTableDataFromJSON = PageTableDataFromJSON;
+exports.PageTableDataFromJSONTyped = PageTableDataFromJSONTyped;
+exports.PageTableDataToJSON = PageTableDataToJSON;
 var _1 = require("./");
 function PageTableDataFromJSON(json) {
     return PageTableDataFromJSONTyped(json, false);
 }
-exports.PageTableDataFromJSON = PageTableDataFromJSON;
 function PageTableDataFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function PageTableDataFromJSONTyped(json, ignoreDiscriminator) {
         pagination: (0, _1.PaginationFromJSON)(json['pagination']),
     };
 }
-exports.PageTableDataFromJSONTyped = PageTableDataFromJSONTyped;
 function PageTableDataToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function PageTableDataToJSON(value) {
         pagination: (0, _1.PaginationToJSON)(value.pagination),
     };
 }
-exports.PageTableDataToJSON = PageTableDataToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorSeriesPointDtoToJSON = exports.DomainMonitorSeriesPointDtoFromJSONTyped = exports.DomainMonitorSeriesPointDtoFromJSON = void 0;
+exports.DomainMonitorSeriesPointDtoFromJSON = DomainMonitorSeriesPointDtoFromJSON;
+exports.DomainMonitorSeriesPointDtoFromJSONTyped = DomainMonitorSeriesPointDtoFromJSONTyped;
+exports.DomainMonitorSeriesPointDtoToJSON = DomainMonitorSeriesPointDtoToJSON;
 function DomainMonitorSeriesPointDtoFromJSON(json) {
     return DomainMonitorSeriesPointDtoFromJSONTyped(json, false);
 }
-exports.DomainMonitorSeriesPointDtoFromJSON = DomainMonitorSeriesPointDtoFromJSON;
 function DomainMonitorSeriesPointDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function DomainMonitorSeriesPointDtoFromJSONTyped(json, ignoreDiscriminator) {
         averageHealthScore: json['averageHealthScore'],
     };
 }
-exports.DomainMonitorSeriesPointDtoFromJSONTyped = DomainMonitorSeriesPointDtoFromJSONTyped;
 function DomainMonitorSeriesPointDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -52,4 +52,3 @@ function DomainMonitorSeriesPointDtoToJSON(value) {
         averageHealthScore: value.averageHealthScore,
     };
 }
-exports.DomainMonitorSeriesPointDtoToJSON = DomainMonitorSeriesPointDtoToJSON;

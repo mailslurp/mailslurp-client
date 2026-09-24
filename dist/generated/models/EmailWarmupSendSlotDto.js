@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupSendSlotDtoToJSON = exports.EmailWarmupSendSlotDtoFromJSONTyped = exports.EmailWarmupSendSlotDtoFromJSON = exports.EmailWarmupSendSlotDtoOutcomeClassEnum = exports.EmailWarmupSendSlotDtoTargetClassEnum = exports.EmailWarmupSendSlotDtoStatusEnum = void 0;
+exports.EmailWarmupSendSlotDtoOutcomeClassEnum = exports.EmailWarmupSendSlotDtoTargetClassEnum = exports.EmailWarmupSendSlotDtoStatusEnum = void 0;
+exports.EmailWarmupSendSlotDtoFromJSON = EmailWarmupSendSlotDtoFromJSON;
+exports.EmailWarmupSendSlotDtoFromJSONTyped = EmailWarmupSendSlotDtoFromJSONTyped;
+exports.EmailWarmupSendSlotDtoToJSON = EmailWarmupSendSlotDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -28,7 +31,7 @@ var EmailWarmupSendSlotDtoStatusEnum;
     EmailWarmupSendSlotDtoStatusEnum["AMBIGUOUS"] = "AMBIGUOUS";
     EmailWarmupSendSlotDtoStatusEnum["FAILED"] = "FAILED";
     EmailWarmupSendSlotDtoStatusEnum["SKIPPED"] = "SKIPPED";
-})(EmailWarmupSendSlotDtoStatusEnum = exports.EmailWarmupSendSlotDtoStatusEnum || (exports.EmailWarmupSendSlotDtoStatusEnum = {}));
+})(EmailWarmupSendSlotDtoStatusEnum || (exports.EmailWarmupSendSlotDtoStatusEnum = EmailWarmupSendSlotDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -37,7 +40,7 @@ var EmailWarmupSendSlotDtoTargetClassEnum;
 (function (EmailWarmupSendSlotDtoTargetClassEnum) {
     EmailWarmupSendSlotDtoTargetClassEnum["MS2_CONTROLLED_MX"] = "MS2_CONTROLLED_MX";
     EmailWarmupSendSlotDtoTargetClassEnum["PROVIDER_SEED_PASSIVE"] = "PROVIDER_SEED_PASSIVE";
-})(EmailWarmupSendSlotDtoTargetClassEnum = exports.EmailWarmupSendSlotDtoTargetClassEnum || (exports.EmailWarmupSendSlotDtoTargetClassEnum = {}));
+})(EmailWarmupSendSlotDtoTargetClassEnum || (exports.EmailWarmupSendSlotDtoTargetClassEnum = EmailWarmupSendSlotDtoTargetClassEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -49,11 +52,10 @@ var EmailWarmupSendSlotDtoOutcomeClassEnum;
     EmailWarmupSendSlotDtoOutcomeClassEnum["RETRYABLE"] = "RETRYABLE";
     EmailWarmupSendSlotDtoOutcomeClassEnum["PERMANENT"] = "PERMANENT";
     EmailWarmupSendSlotDtoOutcomeClassEnum["SKIPPED"] = "SKIPPED";
-})(EmailWarmupSendSlotDtoOutcomeClassEnum = exports.EmailWarmupSendSlotDtoOutcomeClassEnum || (exports.EmailWarmupSendSlotDtoOutcomeClassEnum = {}));
+})(EmailWarmupSendSlotDtoOutcomeClassEnum || (exports.EmailWarmupSendSlotDtoOutcomeClassEnum = EmailWarmupSendSlotDtoOutcomeClassEnum = {}));
 function EmailWarmupSendSlotDtoFromJSON(json) {
     return EmailWarmupSendSlotDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupSendSlotDtoFromJSON = EmailWarmupSendSlotDtoFromJSON;
 function EmailWarmupSendSlotDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -89,7 +91,6 @@ function EmailWarmupSendSlotDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.EmailWarmupSendSlotDtoFromJSONTyped = EmailWarmupSendSlotDtoFromJSONTyped;
 function EmailWarmupSendSlotDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -126,4 +127,3 @@ function EmailWarmupSendSlotDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.EmailWarmupSendSlotDtoToJSON = EmailWarmupSendSlotDtoToJSON;

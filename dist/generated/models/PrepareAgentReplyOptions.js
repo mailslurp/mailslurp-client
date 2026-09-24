@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PrepareAgentReplyOptionsToJSON = exports.PrepareAgentReplyOptionsFromJSONTyped = exports.PrepareAgentReplyOptionsFromJSON = void 0;
+exports.PrepareAgentReplyOptionsFromJSON = PrepareAgentReplyOptionsFromJSON;
+exports.PrepareAgentReplyOptionsFromJSONTyped = PrepareAgentReplyOptionsFromJSONTyped;
+exports.PrepareAgentReplyOptionsToJSON = PrepareAgentReplyOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PrepareAgentReplyOptionsFromJSON(json) {
     return PrepareAgentReplyOptionsFromJSONTyped(json, false);
 }
-exports.PrepareAgentReplyOptionsFromJSON = PrepareAgentReplyOptionsFromJSON;
 function PrepareAgentReplyOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +40,6 @@ function PrepareAgentReplyOptionsFromJSONTyped(json, ignoreDiscriminator) {
         claimId: !(0, runtime_1.exists)(json, 'claimId') ? undefined : json['claimId'],
     };
 }
-exports.PrepareAgentReplyOptionsFromJSONTyped = PrepareAgentReplyOptionsFromJSONTyped;
 function PrepareAgentReplyOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -56,4 +56,3 @@ function PrepareAgentReplyOptionsToJSON(value) {
         claimId: value.claimId,
     };
 }
-exports.PrepareAgentReplyOptionsToJSON = PrepareAgentReplyOptionsToJSON;

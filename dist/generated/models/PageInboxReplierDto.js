@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageInboxReplierDtoToJSON = exports.PageInboxReplierDtoFromJSONTyped = exports.PageInboxReplierDtoFromJSON = void 0;
+exports.PageInboxReplierDtoFromJSON = PageInboxReplierDtoFromJSON;
+exports.PageInboxReplierDtoFromJSONTyped = PageInboxReplierDtoFromJSONTyped;
+exports.PageInboxReplierDtoToJSON = PageInboxReplierDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageInboxReplierDtoFromJSON(json) {
     return PageInboxReplierDtoFromJSONTyped(json, false);
 }
-exports.PageInboxReplierDtoFromJSON = PageInboxReplierDtoFromJSON;
 function PageInboxReplierDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageInboxReplierDtoFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageInboxReplierDtoFromJSONTyped = PageInboxReplierDtoFromJSONTyped;
 function PageInboxReplierDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageInboxReplierDtoToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageInboxReplierDtoToJSON = PageInboxReplierDtoToJSON;

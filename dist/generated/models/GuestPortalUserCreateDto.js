@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GuestPortalUserCreateDtoToJSON = exports.GuestPortalUserCreateDtoFromJSONTyped = exports.GuestPortalUserCreateDtoFromJSON = void 0;
+exports.GuestPortalUserCreateDtoFromJSON = GuestPortalUserCreateDtoFromJSON;
+exports.GuestPortalUserCreateDtoFromJSONTyped = GuestPortalUserCreateDtoFromJSONTyped;
+exports.GuestPortalUserCreateDtoToJSON = GuestPortalUserCreateDtoToJSON;
 var _1 = require("./");
 function GuestPortalUserCreateDtoFromJSON(json) {
     return GuestPortalUserCreateDtoFromJSONTyped(json, false);
 }
-exports.GuestPortalUserCreateDtoFromJSON = GuestPortalUserCreateDtoFromJSON;
 function GuestPortalUserCreateDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function GuestPortalUserCreateDtoFromJSONTyped(json, ignoreDiscriminator) {
         password: json['password'],
     };
 }
-exports.GuestPortalUserCreateDtoFromJSONTyped = GuestPortalUserCreateDtoFromJSONTyped;
 function GuestPortalUserCreateDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function GuestPortalUserCreateDtoToJSON(value) {
         password: value.password,
     };
 }
-exports.GuestPortalUserCreateDtoToJSON = GuestPortalUserCreateDtoToJSON;

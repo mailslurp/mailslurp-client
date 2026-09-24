@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GuestPortalDtoToJSON = exports.GuestPortalDtoFromJSONTyped = exports.GuestPortalDtoFromJSON = void 0;
+exports.GuestPortalDtoFromJSON = GuestPortalDtoFromJSON;
+exports.GuestPortalDtoFromJSONTyped = GuestPortalDtoFromJSONTyped;
+exports.GuestPortalDtoToJSON = GuestPortalDtoToJSON;
 var runtime_1 = require("../runtime");
 function GuestPortalDtoFromJSON(json) {
     return GuestPortalDtoFromJSONTyped(json, false);
 }
-exports.GuestPortalDtoFromJSON = GuestPortalDtoFromJSON;
 function GuestPortalDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function GuestPortalDtoFromJSONTyped(json, ignoreDiscriminator) {
         loginUrl: json['loginUrl'],
     };
 }
-exports.GuestPortalDtoFromJSONTyped = GuestPortalDtoFromJSONTyped;
 function GuestPortalDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function GuestPortalDtoToJSON(value) {
         loginUrl: value.loginUrl,
     };
 }
-exports.GuestPortalDtoToJSON = GuestPortalDtoToJSON;

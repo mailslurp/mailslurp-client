@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxAutomationMatchOptionToJSON = exports.InboxAutomationMatchOptionFromJSONTyped = exports.InboxAutomationMatchOptionFromJSON = exports.InboxAutomationMatchOptionShouldEnum = exports.InboxAutomationMatchOptionFieldEnum = void 0;
+exports.InboxAutomationMatchOptionShouldEnum = exports.InboxAutomationMatchOptionFieldEnum = void 0;
+exports.InboxAutomationMatchOptionFromJSON = InboxAutomationMatchOptionFromJSON;
+exports.InboxAutomationMatchOptionFromJSONTyped = InboxAutomationMatchOptionFromJSONTyped;
+exports.InboxAutomationMatchOptionToJSON = InboxAutomationMatchOptionToJSON;
 /**
  * @export
  * @enum {string}
@@ -26,7 +29,7 @@ var InboxAutomationMatchOptionFieldEnum;
     InboxAutomationMatchOptionFieldEnum["ATTACHMENTS"] = "ATTACHMENTS";
     InboxAutomationMatchOptionFieldEnum["ATTACHMENT_FILENAME"] = "ATTACHMENT_FILENAME";
     InboxAutomationMatchOptionFieldEnum["ATTACHMENT_TEXT"] = "ATTACHMENT_TEXT";
-})(InboxAutomationMatchOptionFieldEnum = exports.InboxAutomationMatchOptionFieldEnum || (exports.InboxAutomationMatchOptionFieldEnum = {}));
+})(InboxAutomationMatchOptionFieldEnum || (exports.InboxAutomationMatchOptionFieldEnum = InboxAutomationMatchOptionFieldEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -37,11 +40,10 @@ var InboxAutomationMatchOptionShouldEnum;
     InboxAutomationMatchOptionShouldEnum["MATCH"] = "MATCH";
     InboxAutomationMatchOptionShouldEnum["CONTAIN"] = "CONTAIN";
     InboxAutomationMatchOptionShouldEnum["EQUAL"] = "EQUAL";
-})(InboxAutomationMatchOptionShouldEnum = exports.InboxAutomationMatchOptionShouldEnum || (exports.InboxAutomationMatchOptionShouldEnum = {}));
+})(InboxAutomationMatchOptionShouldEnum || (exports.InboxAutomationMatchOptionShouldEnum = InboxAutomationMatchOptionShouldEnum = {}));
 function InboxAutomationMatchOptionFromJSON(json) {
     return InboxAutomationMatchOptionFromJSONTyped(json, false);
 }
-exports.InboxAutomationMatchOptionFromJSON = InboxAutomationMatchOptionFromJSON;
 function InboxAutomationMatchOptionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -52,7 +54,6 @@ function InboxAutomationMatchOptionFromJSONTyped(json, ignoreDiscriminator) {
         value: json['value'],
     };
 }
-exports.InboxAutomationMatchOptionFromJSONTyped = InboxAutomationMatchOptionFromJSONTyped;
 function InboxAutomationMatchOptionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -66,4 +67,3 @@ function InboxAutomationMatchOptionToJSON(value) {
         value: value.value,
     };
 }
-exports.InboxAutomationMatchOptionToJSON = InboxAutomationMatchOptionToJSON;

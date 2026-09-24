@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupSpfDomainResultsToJSON = exports.LookupSpfDomainResultsFromJSONTyped = exports.LookupSpfDomainResultsFromJSON = void 0;
+exports.LookupSpfDomainResultsFromJSON = LookupSpfDomainResultsFromJSON;
+exports.LookupSpfDomainResultsFromJSONTyped = LookupSpfDomainResultsFromJSONTyped;
+exports.LookupSpfDomainResultsToJSON = LookupSpfDomainResultsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function LookupSpfDomainResultsFromJSON(json) {
     return LookupSpfDomainResultsFromJSONTyped(json, false);
 }
-exports.LookupSpfDomainResultsFromJSON = LookupSpfDomainResultsFromJSON;
 function LookupSpfDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function LookupSpfDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
         errors: json['errors'],
     };
 }
-exports.LookupSpfDomainResultsFromJSONTyped = LookupSpfDomainResultsFromJSONTyped;
 function LookupSpfDomainResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -56,4 +56,3 @@ function LookupSpfDomainResultsToJSON(value) {
         errors: value.errors,
     };
 }
-exports.LookupSpfDomainResultsToJSON = LookupSpfDomainResultsToJSON;

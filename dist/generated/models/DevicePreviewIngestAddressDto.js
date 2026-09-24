@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewIngestAddressDtoToJSON = exports.DevicePreviewIngestAddressDtoFromJSONTyped = exports.DevicePreviewIngestAddressDtoFromJSON = exports.DevicePreviewIngestAddressDtoStatusEnum = void 0;
+exports.DevicePreviewIngestAddressDtoStatusEnum = void 0;
+exports.DevicePreviewIngestAddressDtoFromJSON = DevicePreviewIngestAddressDtoFromJSON;
+exports.DevicePreviewIngestAddressDtoFromJSONTyped = DevicePreviewIngestAddressDtoFromJSONTyped;
+exports.DevicePreviewIngestAddressDtoToJSON = DevicePreviewIngestAddressDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,11 +28,10 @@ var DevicePreviewIngestAddressDtoStatusEnum;
     DevicePreviewIngestAddressDtoStatusEnum["RUN_CREATED"] = "RUN_CREATED";
     DevicePreviewIngestAddressDtoStatusEnum["EXPIRED"] = "EXPIRED";
     DevicePreviewIngestAddressDtoStatusEnum["FAILED"] = "FAILED";
-})(DevicePreviewIngestAddressDtoStatusEnum = exports.DevicePreviewIngestAddressDtoStatusEnum || (exports.DevicePreviewIngestAddressDtoStatusEnum = {}));
+})(DevicePreviewIngestAddressDtoStatusEnum || (exports.DevicePreviewIngestAddressDtoStatusEnum = DevicePreviewIngestAddressDtoStatusEnum = {}));
 function DevicePreviewIngestAddressDtoFromJSON(json) {
     return DevicePreviewIngestAddressDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewIngestAddressDtoFromJSON = DevicePreviewIngestAddressDtoFromJSON;
 function DevicePreviewIngestAddressDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -56,7 +58,6 @@ function DevicePreviewIngestAddressDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DevicePreviewIngestAddressDtoFromJSONTyped = DevicePreviewIngestAddressDtoFromJSONTyped;
 function DevicePreviewIngestAddressDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -80,4 +81,3 @@ function DevicePreviewIngestAddressDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DevicePreviewIngestAddressDtoToJSON = DevicePreviewIngestAddressDtoToJSON;

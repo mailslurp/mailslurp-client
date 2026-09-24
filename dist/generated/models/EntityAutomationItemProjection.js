@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EntityAutomationItemProjectionToJSON = exports.EntityAutomationItemProjectionFromJSONTyped = exports.EntityAutomationItemProjectionFromJSON = exports.EntityAutomationItemProjectionAutomationTypeEnum = void 0;
+exports.EntityAutomationItemProjectionAutomationTypeEnum = void 0;
+exports.EntityAutomationItemProjectionFromJSON = EntityAutomationItemProjectionFromJSON;
+exports.EntityAutomationItemProjectionFromJSONTyped = EntityAutomationItemProjectionFromJSONTyped;
+exports.EntityAutomationItemProjectionToJSON = EntityAutomationItemProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var EntityAutomationItemProjectionAutomationTypeEnum;
     EntityAutomationItemProjectionAutomationTypeEnum["FORWARDER"] = "INBOX_FORWARDER";
     EntityAutomationItemProjectionAutomationTypeEnum["REPLIER"] = "INBOX_REPLIER";
     EntityAutomationItemProjectionAutomationTypeEnum["RULESET"] = "INBOX_RULESET";
-})(EntityAutomationItemProjectionAutomationTypeEnum = exports.EntityAutomationItemProjectionAutomationTypeEnum || (exports.EntityAutomationItemProjectionAutomationTypeEnum = {}));
+})(EntityAutomationItemProjectionAutomationTypeEnum || (exports.EntityAutomationItemProjectionAutomationTypeEnum = EntityAutomationItemProjectionAutomationTypeEnum = {}));
 function EntityAutomationItemProjectionFromJSON(json) {
     return EntityAutomationItemProjectionFromJSONTyped(json, false);
 }
-exports.EntityAutomationItemProjectionFromJSON = EntityAutomationItemProjectionFromJSON;
 function EntityAutomationItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -42,7 +44,6 @@ function EntityAutomationItemProjectionFromJSONTyped(json, ignoreDiscriminator) 
         id: json['id'],
     };
 }
-exports.EntityAutomationItemProjectionFromJSONTyped = EntityAutomationItemProjectionFromJSONTyped;
 function EntityAutomationItemProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +60,3 @@ function EntityAutomationItemProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.EntityAutomationItemProjectionToJSON = EntityAutomationItemProjectionToJSON;

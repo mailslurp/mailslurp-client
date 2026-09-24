@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InlineObject6ToJSON = exports.InlineObject6FromJSONTyped = exports.InlineObject6FromJSON = void 0;
+exports.InlineObject6FromJSON = InlineObject6FromJSON;
+exports.InlineObject6FromJSONTyped = InlineObject6FromJSONTyped;
+exports.InlineObject6ToJSON = InlineObject6ToJSON;
 function InlineObject6FromJSON(json) {
     return InlineObject6FromJSONTyped(json, false);
 }
-exports.InlineObject6FromJSON = InlineObject6FromJSON;
 function InlineObject6FromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function InlineObject6FromJSONTyped(json, ignoreDiscriminator) {
         file: json['file'],
     };
 }
-exports.InlineObject6FromJSONTyped = InlineObject6FromJSONTyped;
 function InlineObject6ToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function InlineObject6ToJSON(value) {
         file: value.file,
     };
 }
-exports.InlineObject6ToJSON = InlineObject6ToJSON;

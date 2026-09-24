@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckDnsPropagationResultsToJSON = exports.CheckDnsPropagationResultsFromJSONTyped = exports.CheckDnsPropagationResultsFromJSON = exports.CheckDnsPropagationResultsRecordTypeEnum = void 0;
+exports.CheckDnsPropagationResultsRecordTypeEnum = void 0;
+exports.CheckDnsPropagationResultsFromJSON = CheckDnsPropagationResultsFromJSON;
+exports.CheckDnsPropagationResultsFromJSONTyped = CheckDnsPropagationResultsFromJSONTyped;
+exports.CheckDnsPropagationResultsToJSON = CheckDnsPropagationResultsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -111,11 +114,10 @@ var CheckDnsPropagationResultsRecordTypeEnum;
     CheckDnsPropagationResultsRecordTypeEnum["AMTRELAY"] = "AMTRELAY";
     CheckDnsPropagationResultsRecordTypeEnum["TA"] = "TA";
     CheckDnsPropagationResultsRecordTypeEnum["DLV"] = "DLV";
-})(CheckDnsPropagationResultsRecordTypeEnum = exports.CheckDnsPropagationResultsRecordTypeEnum || (exports.CheckDnsPropagationResultsRecordTypeEnum = {}));
+})(CheckDnsPropagationResultsRecordTypeEnum || (exports.CheckDnsPropagationResultsRecordTypeEnum = CheckDnsPropagationResultsRecordTypeEnum = {}));
 function CheckDnsPropagationResultsFromJSON(json) {
     return CheckDnsPropagationResultsFromJSONTyped(json, false);
 }
-exports.CheckDnsPropagationResultsFromJSON = CheckDnsPropagationResultsFromJSON;
 function CheckDnsPropagationResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -134,7 +136,6 @@ function CheckDnsPropagationResultsFromJSONTyped(json, ignoreDiscriminator) {
         errors: json['errors'],
     };
 }
-exports.CheckDnsPropagationResultsFromJSONTyped = CheckDnsPropagationResultsFromJSONTyped;
 function CheckDnsPropagationResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -154,4 +155,3 @@ function CheckDnsPropagationResultsToJSON(value) {
         errors: value.errors,
     };
 }
-exports.CheckDnsPropagationResultsToJSON = CheckDnsPropagationResultsToJSON;

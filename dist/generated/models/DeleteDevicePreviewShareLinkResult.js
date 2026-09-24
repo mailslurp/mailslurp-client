@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDevicePreviewShareLinkResultToJSON = exports.DeleteDevicePreviewShareLinkResultFromJSONTyped = exports.DeleteDevicePreviewShareLinkResultFromJSON = void 0;
+exports.DeleteDevicePreviewShareLinkResultFromJSON = DeleteDevicePreviewShareLinkResultFromJSON;
+exports.DeleteDevicePreviewShareLinkResultFromJSONTyped = DeleteDevicePreviewShareLinkResultFromJSONTyped;
+exports.DeleteDevicePreviewShareLinkResultToJSON = DeleteDevicePreviewShareLinkResultToJSON;
 function DeleteDevicePreviewShareLinkResultFromJSON(json) {
     return DeleteDevicePreviewShareLinkResultFromJSONTyped(json, false);
 }
-exports.DeleteDevicePreviewShareLinkResultFromJSON = DeleteDevicePreviewShareLinkResultFromJSON;
 function DeleteDevicePreviewShareLinkResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function DeleteDevicePreviewShareLinkResultFromJSONTyped(json, ignoreDiscriminat
         revoked: json['revoked'],
     };
 }
-exports.DeleteDevicePreviewShareLinkResultFromJSONTyped = DeleteDevicePreviewShareLinkResultFromJSONTyped;
 function DeleteDevicePreviewShareLinkResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function DeleteDevicePreviewShareLinkResultToJSON(value) {
         revoked: value.revoked,
     };
 }
-exports.DeleteDevicePreviewShareLinkResultToJSON = DeleteDevicePreviewShareLinkResultToJSON;

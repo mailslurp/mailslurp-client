@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookNewSmsPayloadToJSON = exports.WebhookNewSmsPayloadFromJSONTyped = exports.WebhookNewSmsPayloadFromJSON = exports.WebhookNewSmsPayloadEventNameEnum = void 0;
+exports.WebhookNewSmsPayloadEventNameEnum = void 0;
+exports.WebhookNewSmsPayloadFromJSON = WebhookNewSmsPayloadFromJSON;
+exports.WebhookNewSmsPayloadFromJSONTyped = WebhookNewSmsPayloadFromJSONTyped;
+exports.WebhookNewSmsPayloadToJSON = WebhookNewSmsPayloadToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -34,11 +37,10 @@ var WebhookNewSmsPayloadEventNameEnum;
     WebhookNewSmsPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookNewSmsPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookNewSmsPayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookNewSmsPayloadEventNameEnum = exports.WebhookNewSmsPayloadEventNameEnum || (exports.WebhookNewSmsPayloadEventNameEnum = {}));
+})(WebhookNewSmsPayloadEventNameEnum || (exports.WebhookNewSmsPayloadEventNameEnum = WebhookNewSmsPayloadEventNameEnum = {}));
 function WebhookNewSmsPayloadFromJSON(json) {
     return WebhookNewSmsPayloadFromJSONTyped(json, false);
 }
-exports.WebhookNewSmsPayloadFromJSON = WebhookNewSmsPayloadFromJSON;
 function WebhookNewSmsPayloadFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -58,7 +60,6 @@ function WebhookNewSmsPayloadFromJSONTyped(json, ignoreDiscriminator) {
         media: json['media'].map(_1.SmsMessageMediaDtoFromJSON),
     };
 }
-exports.WebhookNewSmsPayloadFromJSONTyped = WebhookNewSmsPayloadFromJSONTyped;
 function WebhookNewSmsPayloadToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -81,4 +82,3 @@ function WebhookNewSmsPayloadToJSON(value) {
         media: value.media.map(_1.SmsMessageMediaDtoToJSON),
     };
 }
-exports.WebhookNewSmsPayloadToJSON = WebhookNewSmsPayloadToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AITransformDtoToJSON = exports.AITransformDtoFromJSONTyped = exports.AITransformDtoFromJSON = void 0;
+exports.AITransformDtoFromJSON = AITransformDtoFromJSON;
+exports.AITransformDtoFromJSONTyped = AITransformDtoFromJSONTyped;
+exports.AITransformDtoToJSON = AITransformDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function AITransformDtoFromJSON(json) {
     return AITransformDtoFromJSONTyped(json, false);
 }
-exports.AITransformDtoFromJSON = AITransformDtoFromJSON;
 function AITransformDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function AITransformDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.AITransformDtoFromJSONTyped = AITransformDtoFromJSONTyped;
 function AITransformDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +54,3 @@ function AITransformDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.AITransformDtoToJSON = AITransformDtoToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageAssertionToJSON = exports.AIMessageAssertionFromJSONTyped = exports.AIMessageAssertionFromJSON = void 0;
+exports.AIMessageAssertionFromJSON = AIMessageAssertionFromJSON;
+exports.AIMessageAssertionFromJSONTyped = AIMessageAssertionFromJSONTyped;
+exports.AIMessageAssertionToJSON = AIMessageAssertionToJSON;
 function AIMessageAssertionFromJSON(json) {
     return AIMessageAssertionFromJSONTyped(json, false);
 }
-exports.AIMessageAssertionFromJSON = AIMessageAssertionFromJSON;
 function AIMessageAssertionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function AIMessageAssertionFromJSONTyped(json, ignoreDiscriminator) {
         prompt: json['prompt'],
     };
 }
-exports.AIMessageAssertionFromJSONTyped = AIMessageAssertionFromJSONTyped;
 function AIMessageAssertionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function AIMessageAssertionToJSON(value) {
         prompt: value.prompt,
     };
 }
-exports.AIMessageAssertionToJSON = AIMessageAssertionToJSON;

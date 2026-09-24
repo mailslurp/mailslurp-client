@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateSpfRecordResultsToJSON = exports.GenerateSpfRecordResultsFromJSONTyped = exports.GenerateSpfRecordResultsFromJSON = exports.GenerateSpfRecordResultsTypeEnum = void 0;
+exports.GenerateSpfRecordResultsTypeEnum = void 0;
+exports.GenerateSpfRecordResultsFromJSON = GenerateSpfRecordResultsFromJSON;
+exports.GenerateSpfRecordResultsFromJSONTyped = GenerateSpfRecordResultsFromJSONTyped;
+exports.GenerateSpfRecordResultsToJSON = GenerateSpfRecordResultsToJSON;
 /**
  * @export
  * @enum {string}
@@ -109,11 +112,10 @@ var GenerateSpfRecordResultsTypeEnum;
     GenerateSpfRecordResultsTypeEnum["AMTRELAY"] = "AMTRELAY";
     GenerateSpfRecordResultsTypeEnum["TA"] = "TA";
     GenerateSpfRecordResultsTypeEnum["DLV"] = "DLV";
-})(GenerateSpfRecordResultsTypeEnum = exports.GenerateSpfRecordResultsTypeEnum || (exports.GenerateSpfRecordResultsTypeEnum = {}));
+})(GenerateSpfRecordResultsTypeEnum || (exports.GenerateSpfRecordResultsTypeEnum = GenerateSpfRecordResultsTypeEnum = {}));
 function GenerateSpfRecordResultsFromJSON(json) {
     return GenerateSpfRecordResultsFromJSONTyped(json, false);
 }
-exports.GenerateSpfRecordResultsFromJSON = GenerateSpfRecordResultsFromJSON;
 function GenerateSpfRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -127,7 +129,6 @@ function GenerateSpfRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
         warnings: json['warnings'],
     };
 }
-exports.GenerateSpfRecordResultsFromJSONTyped = GenerateSpfRecordResultsFromJSONTyped;
 function GenerateSpfRecordResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -144,4 +145,3 @@ function GenerateSpfRecordResultsToJSON(value) {
         warnings: value.warnings,
     };
 }
-exports.GenerateSpfRecordResultsToJSON = GenerateSpfRecordResultsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateSendingConnectionOptionsToJSON = exports.UpdateSendingConnectionOptionsFromJSONTyped = exports.UpdateSendingConnectionOptionsFromJSON = void 0;
+exports.UpdateSendingConnectionOptionsFromJSON = UpdateSendingConnectionOptionsFromJSON;
+exports.UpdateSendingConnectionOptionsFromJSONTyped = UpdateSendingConnectionOptionsFromJSONTyped;
+exports.UpdateSendingConnectionOptionsToJSON = UpdateSendingConnectionOptionsToJSON;
 var runtime_1 = require("../runtime");
 function UpdateSendingConnectionOptionsFromJSON(json) {
     return UpdateSendingConnectionOptionsFromJSONTyped(json, false);
 }
-exports.UpdateSendingConnectionOptionsFromJSON = UpdateSendingConnectionOptionsFromJSON;
 function UpdateSendingConnectionOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function UpdateSendingConnectionOptionsFromJSONTyped(json, ignoreDiscriminator) 
         fromEmail: !(0, runtime_1.exists)(json, 'fromEmail') ? undefined : json['fromEmail'],
     };
 }
-exports.UpdateSendingConnectionOptionsFromJSONTyped = UpdateSendingConnectionOptionsFromJSONTyped;
 function UpdateSendingConnectionOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function UpdateSendingConnectionOptionsToJSON(value) {
         fromEmail: value.fromEmail,
     };
 }
-exports.UpdateSendingConnectionOptionsToJSON = UpdateSendingConnectionOptionsToJSON;

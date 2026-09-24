@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookHeadersToJSON = exports.WebhookHeadersFromJSONTyped = exports.WebhookHeadersFromJSON = void 0;
+exports.WebhookHeadersFromJSON = WebhookHeadersFromJSON;
+exports.WebhookHeadersFromJSONTyped = WebhookHeadersFromJSONTyped;
+exports.WebhookHeadersToJSON = WebhookHeadersToJSON;
 var _1 = require("./");
 function WebhookHeadersFromJSON(json) {
     return WebhookHeadersFromJSONTyped(json, false);
 }
-exports.WebhookHeadersFromJSON = WebhookHeadersFromJSON;
 function WebhookHeadersFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function WebhookHeadersFromJSONTyped(json, ignoreDiscriminator) {
         headers: json['headers'].map(_1.WebhookHeaderNameValueFromJSON),
     };
 }
-exports.WebhookHeadersFromJSONTyped = WebhookHeadersFromJSONTyped;
 function WebhookHeadersToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function WebhookHeadersToJSON(value) {
         headers: value.headers.map(_1.WebhookHeaderNameValueToJSON),
     };
 }
-exports.WebhookHeadersToJSON = WebhookHeadersToJSON;

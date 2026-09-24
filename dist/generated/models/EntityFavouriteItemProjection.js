@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EntityFavouriteItemProjectionToJSON = exports.EntityFavouriteItemProjectionFromJSONTyped = exports.EntityFavouriteItemProjectionFromJSON = exports.EntityFavouriteItemProjectionEntityTypeEnum = void 0;
+exports.EntityFavouriteItemProjectionEntityTypeEnum = void 0;
+exports.EntityFavouriteItemProjectionFromJSON = EntityFavouriteItemProjectionFromJSON;
+exports.EntityFavouriteItemProjectionFromJSONTyped = EntityFavouriteItemProjectionFromJSONTyped;
+exports.EntityFavouriteItemProjectionToJSON = EntityFavouriteItemProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,11 +29,10 @@ var EntityFavouriteItemProjectionEntityTypeEnum;
     EntityFavouriteItemProjectionEntityTypeEnum["ATTACHMENT"] = "ATTACHMENT";
     EntityFavouriteItemProjectionEntityTypeEnum["PHONE"] = "PHONE";
     EntityFavouriteItemProjectionEntityTypeEnum["SMS"] = "SMS";
-})(EntityFavouriteItemProjectionEntityTypeEnum = exports.EntityFavouriteItemProjectionEntityTypeEnum || (exports.EntityFavouriteItemProjectionEntityTypeEnum = {}));
+})(EntityFavouriteItemProjectionEntityTypeEnum || (exports.EntityFavouriteItemProjectionEntityTypeEnum = EntityFavouriteItemProjectionEntityTypeEnum = {}));
 function EntityFavouriteItemProjectionFromJSON(json) {
     return EntityFavouriteItemProjectionFromJSONTyped(json, false);
 }
-exports.EntityFavouriteItemProjectionFromJSON = EntityFavouriteItemProjectionFromJSON;
 function EntityFavouriteItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -43,7 +45,6 @@ function EntityFavouriteItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.EntityFavouriteItemProjectionFromJSONTyped = EntityFavouriteItemProjectionFromJSONTyped;
 function EntityFavouriteItemProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +60,3 @@ function EntityFavouriteItemProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.EntityFavouriteItemProjectionToJSON = EntityFavouriteItemProjectionToJSON;

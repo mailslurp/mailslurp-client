@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateTlsReportingRecordResultsToJSON = exports.GenerateTlsReportingRecordResultsFromJSONTyped = exports.GenerateTlsReportingRecordResultsFromJSON = exports.GenerateTlsReportingRecordResultsTypeEnum = void 0;
+exports.GenerateTlsReportingRecordResultsTypeEnum = void 0;
+exports.GenerateTlsReportingRecordResultsFromJSON = GenerateTlsReportingRecordResultsFromJSON;
+exports.GenerateTlsReportingRecordResultsFromJSONTyped = GenerateTlsReportingRecordResultsFromJSONTyped;
+exports.GenerateTlsReportingRecordResultsToJSON = GenerateTlsReportingRecordResultsToJSON;
 /**
  * @export
  * @enum {string}
@@ -109,11 +112,10 @@ var GenerateTlsReportingRecordResultsTypeEnum;
     GenerateTlsReportingRecordResultsTypeEnum["AMTRELAY"] = "AMTRELAY";
     GenerateTlsReportingRecordResultsTypeEnum["TA"] = "TA";
     GenerateTlsReportingRecordResultsTypeEnum["DLV"] = "DLV";
-})(GenerateTlsReportingRecordResultsTypeEnum = exports.GenerateTlsReportingRecordResultsTypeEnum || (exports.GenerateTlsReportingRecordResultsTypeEnum = {}));
+})(GenerateTlsReportingRecordResultsTypeEnum || (exports.GenerateTlsReportingRecordResultsTypeEnum = GenerateTlsReportingRecordResultsTypeEnum = {}));
 function GenerateTlsReportingRecordResultsFromJSON(json) {
     return GenerateTlsReportingRecordResultsFromJSONTyped(json, false);
 }
-exports.GenerateTlsReportingRecordResultsFromJSON = GenerateTlsReportingRecordResultsFromJSON;
 function GenerateTlsReportingRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -125,7 +127,6 @@ function GenerateTlsReportingRecordResultsFromJSONTyped(json, ignoreDiscriminato
         value: json['value'],
     };
 }
-exports.GenerateTlsReportingRecordResultsFromJSONTyped = GenerateTlsReportingRecordResultsFromJSONTyped;
 function GenerateTlsReportingRecordResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -140,4 +141,3 @@ function GenerateTlsReportingRecordResultsToJSON(value) {
         value: value.value,
     };
 }
-exports.GenerateTlsReportingRecordResultsToJSON = GenerateTlsReportingRecordResultsToJSON;

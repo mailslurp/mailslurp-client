@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorRunDueResultToJSON = exports.DomainMonitorRunDueResultFromJSONTyped = exports.DomainMonitorRunDueResultFromJSON = exports.DomainMonitorRunDueResultTriggerSourceEnum = void 0;
+exports.DomainMonitorRunDueResultTriggerSourceEnum = void 0;
+exports.DomainMonitorRunDueResultFromJSON = DomainMonitorRunDueResultFromJSON;
+exports.DomainMonitorRunDueResultFromJSONTyped = DomainMonitorRunDueResultFromJSONTyped;
+exports.DomainMonitorRunDueResultToJSON = DomainMonitorRunDueResultToJSON;
 /**
  * @export
  * @enum {string}
@@ -24,11 +27,10 @@ var DomainMonitorRunDueResultTriggerSourceEnum;
     DomainMonitorRunDueResultTriggerSourceEnum["USER_SCHEDULE"] = "USER_SCHEDULE";
     DomainMonitorRunDueResultTriggerSourceEnum["CRON"] = "CRON";
     DomainMonitorRunDueResultTriggerSourceEnum["SCHEDULER"] = "SCHEDULER";
-})(DomainMonitorRunDueResultTriggerSourceEnum = exports.DomainMonitorRunDueResultTriggerSourceEnum || (exports.DomainMonitorRunDueResultTriggerSourceEnum = {}));
+})(DomainMonitorRunDueResultTriggerSourceEnum || (exports.DomainMonitorRunDueResultTriggerSourceEnum = DomainMonitorRunDueResultTriggerSourceEnum = {}));
 function DomainMonitorRunDueResultFromJSON(json) {
     return DomainMonitorRunDueResultFromJSONTyped(json, false);
 }
-exports.DomainMonitorRunDueResultFromJSON = DomainMonitorRunDueResultFromJSON;
 function DomainMonitorRunDueResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +42,6 @@ function DomainMonitorRunDueResultFromJSONTyped(json, ignoreDiscriminator) {
         executedAt: new Date(json['executedAt']),
     };
 }
-exports.DomainMonitorRunDueResultFromJSONTyped = DomainMonitorRunDueResultFromJSONTyped;
 function DomainMonitorRunDueResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +56,3 @@ function DomainMonitorRunDueResultToJSON(value) {
         executedAt: value.executedAt.toISOString(),
     };
 }
-exports.DomainMonitorRunDueResultToJSON = DomainMonitorRunDueResultToJSON;

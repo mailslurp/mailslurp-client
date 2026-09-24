@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilitySimulationJobEventPageDtoToJSON = exports.DeliverabilitySimulationJobEventPageDtoFromJSONTyped = exports.DeliverabilitySimulationJobEventPageDtoFromJSON = void 0;
+exports.DeliverabilitySimulationJobEventPageDtoFromJSON = DeliverabilitySimulationJobEventPageDtoFromJSON;
+exports.DeliverabilitySimulationJobEventPageDtoFromJSONTyped = DeliverabilitySimulationJobEventPageDtoFromJSONTyped;
+exports.DeliverabilitySimulationJobEventPageDtoToJSON = DeliverabilitySimulationJobEventPageDtoToJSON;
 var _1 = require("./");
 function DeliverabilitySimulationJobEventPageDtoFromJSON(json) {
     return DeliverabilitySimulationJobEventPageDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilitySimulationJobEventPageDtoFromJSON = DeliverabilitySimulationJobEventPageDtoFromJSON;
 function DeliverabilitySimulationJobEventPageDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function DeliverabilitySimulationJobEventPageDtoFromJSONTyped(json, ignoreDiscri
         totalPages: json['totalPages'],
     };
 }
-exports.DeliverabilitySimulationJobEventPageDtoFromJSONTyped = DeliverabilitySimulationJobEventPageDtoFromJSONTyped;
 function DeliverabilitySimulationJobEventPageDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function DeliverabilitySimulationJobEventPageDtoToJSON(value) {
         totalPages: value.totalPages,
     };
 }
-exports.DeliverabilitySimulationJobEventPageDtoToJSON = DeliverabilitySimulationJobEventPageDtoToJSON;

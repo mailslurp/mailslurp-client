@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeatureFamilyStatisticsToJSON = exports.EmailFeatureFamilyStatisticsFromJSONTyped = exports.EmailFeatureFamilyStatisticsFromJSON = exports.EmailFeatureFamilyStatisticsFamilyEnum = exports.EmailFeatureFamilyStatisticsFeatureEnum = void 0;
+exports.EmailFeatureFamilyStatisticsFamilyEnum = exports.EmailFeatureFamilyStatisticsFeatureEnum = void 0;
+exports.EmailFeatureFamilyStatisticsFromJSON = EmailFeatureFamilyStatisticsFromJSON;
+exports.EmailFeatureFamilyStatisticsFromJSONTyped = EmailFeatureFamilyStatisticsFromJSONTyped;
+exports.EmailFeatureFamilyStatisticsToJSON = EmailFeatureFamilyStatisticsToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -201,7 +204,7 @@ var EmailFeatureFamilyStatisticsFeatureEnum;
     EmailFeatureFamilyStatisticsFeatureEnum["image_svg"] = "image-svg";
     EmailFeatureFamilyStatisticsFeatureEnum["image_webp"] = "image-webp";
     EmailFeatureFamilyStatisticsFeatureEnum["unsupported"] = "unsupported";
-})(EmailFeatureFamilyStatisticsFeatureEnum = exports.EmailFeatureFamilyStatisticsFeatureEnum || (exports.EmailFeatureFamilyStatisticsFeatureEnum = {}));
+})(EmailFeatureFamilyStatisticsFeatureEnum || (exports.EmailFeatureFamilyStatisticsFeatureEnum = EmailFeatureFamilyStatisticsFeatureEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -229,11 +232,10 @@ var EmailFeatureFamilyStatisticsFamilyEnum;
     EmailFeatureFamilyStatisticsFamilyEnum["thunderbird"] = "thunderbird";
     EmailFeatureFamilyStatisticsFamilyEnum["web_de"] = "web-de";
     EmailFeatureFamilyStatisticsFamilyEnum["yahoo"] = "yahoo";
-})(EmailFeatureFamilyStatisticsFamilyEnum = exports.EmailFeatureFamilyStatisticsFamilyEnum || (exports.EmailFeatureFamilyStatisticsFamilyEnum = {}));
+})(EmailFeatureFamilyStatisticsFamilyEnum || (exports.EmailFeatureFamilyStatisticsFamilyEnum = EmailFeatureFamilyStatisticsFamilyEnum = {}));
 function EmailFeatureFamilyStatisticsFromJSON(json) {
     return EmailFeatureFamilyStatisticsFromJSONTyped(json, false);
 }
-exports.EmailFeatureFamilyStatisticsFromJSON = EmailFeatureFamilyStatisticsFromJSON;
 function EmailFeatureFamilyStatisticsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -244,7 +246,6 @@ function EmailFeatureFamilyStatisticsFromJSONTyped(json, ignoreDiscriminator) {
         platforms: json['platforms'].map(_1.EmailFeaturePlatformStatisticsFromJSON),
     };
 }
-exports.EmailFeatureFamilyStatisticsFromJSONTyped = EmailFeatureFamilyStatisticsFromJSONTyped;
 function EmailFeatureFamilyStatisticsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -258,4 +259,3 @@ function EmailFeatureFamilyStatisticsToJSON(value) {
         platforms: value.platforms.map(_1.EmailFeaturePlatformStatisticsToJSON),
     };
 }
-exports.EmailFeatureFamilyStatisticsToJSON = EmailFeatureFamilyStatisticsToJSON;

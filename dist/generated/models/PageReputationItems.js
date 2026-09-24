@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageReputationItemsToJSON = exports.PageReputationItemsFromJSONTyped = exports.PageReputationItemsFromJSON = void 0;
+exports.PageReputationItemsFromJSON = PageReputationItemsFromJSON;
+exports.PageReputationItemsFromJSONTyped = PageReputationItemsFromJSONTyped;
+exports.PageReputationItemsToJSON = PageReputationItemsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageReputationItemsFromJSON(json) {
     return PageReputationItemsFromJSONTyped(json, false);
 }
-exports.PageReputationItemsFromJSON = PageReputationItemsFromJSON;
 function PageReputationItemsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageReputationItemsFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageReputationItemsFromJSONTyped = PageReputationItemsFromJSONTyped;
 function PageReputationItemsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageReputationItemsToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageReputationItemsToJSON = PageReputationItemsToJSON;

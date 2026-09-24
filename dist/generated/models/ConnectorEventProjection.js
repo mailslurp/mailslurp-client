@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorEventProjectionToJSON = exports.ConnectorEventProjectionFromJSONTyped = exports.ConnectorEventProjectionFromJSON = exports.ConnectorEventProjectionStatusEnum = exports.ConnectorEventProjectionEventTypeEnum = void 0;
+exports.ConnectorEventProjectionStatusEnum = exports.ConnectorEventProjectionEventTypeEnum = void 0;
+exports.ConnectorEventProjectionFromJSON = ConnectorEventProjectionFromJSON;
+exports.ConnectorEventProjectionFromJSONTyped = ConnectorEventProjectionFromJSONTyped;
+exports.ConnectorEventProjectionToJSON = ConnectorEventProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var ConnectorEventProjectionEventTypeEnum;
 (function (ConnectorEventProjectionEventTypeEnum) {
     ConnectorEventProjectionEventTypeEnum["SEND"] = "SEND";
     ConnectorEventProjectionEventTypeEnum["SYNC"] = "SYNC";
-})(ConnectorEventProjectionEventTypeEnum = exports.ConnectorEventProjectionEventTypeEnum || (exports.ConnectorEventProjectionEventTypeEnum = {}));
+})(ConnectorEventProjectionEventTypeEnum || (exports.ConnectorEventProjectionEventTypeEnum = ConnectorEventProjectionEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -35,11 +38,10 @@ var ConnectorEventProjectionStatusEnum;
     ConnectorEventProjectionStatusEnum["SUBSCRIPTION_ERROR"] = "SUBSCRIPTION_ERROR";
     ConnectorEventProjectionStatusEnum["CONNECTION_ERROR"] = "CONNECTION_ERROR";
     ConnectorEventProjectionStatusEnum["NOT_FOUND"] = "NOT_FOUND";
-})(ConnectorEventProjectionStatusEnum = exports.ConnectorEventProjectionStatusEnum || (exports.ConnectorEventProjectionStatusEnum = {}));
+})(ConnectorEventProjectionStatusEnum || (exports.ConnectorEventProjectionStatusEnum = ConnectorEventProjectionStatusEnum = {}));
 function ConnectorEventProjectionFromJSON(json) {
     return ConnectorEventProjectionFromJSONTyped(json, false);
 }
-exports.ConnectorEventProjectionFromJSON = ConnectorEventProjectionFromJSON;
 function ConnectorEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -55,7 +57,6 @@ function ConnectorEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
         size: json['size'],
     };
 }
-exports.ConnectorEventProjectionFromJSONTyped = ConnectorEventProjectionFromJSONTyped;
 function ConnectorEventProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -74,4 +75,3 @@ function ConnectorEventProjectionToJSON(value) {
         size: value.size,
     };
 }
-exports.ConnectorEventProjectionToJSON = ConnectorEventProjectionToJSON;

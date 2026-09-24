@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailThreadItemToJSON = exports.EmailThreadItemFromJSONTyped = exports.EmailThreadItemFromJSON = exports.EmailThreadItemItemTypeEnum = void 0;
+exports.EmailThreadItemItemTypeEnum = void 0;
+exports.EmailThreadItemFromJSON = EmailThreadItemFromJSON;
+exports.EmailThreadItemFromJSONTyped = EmailThreadItemFromJSONTyped;
+exports.EmailThreadItemToJSON = EmailThreadItemToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,11 +27,10 @@ var EmailThreadItemItemTypeEnum;
 (function (EmailThreadItemItemTypeEnum) {
     EmailThreadItemItemTypeEnum["RECEIVED_EMAIL"] = "RECEIVED_EMAIL";
     EmailThreadItemItemTypeEnum["SENT_EMAIL"] = "SENT_EMAIL";
-})(EmailThreadItemItemTypeEnum = exports.EmailThreadItemItemTypeEnum || (exports.EmailThreadItemItemTypeEnum = {}));
+})(EmailThreadItemItemTypeEnum || (exports.EmailThreadItemItemTypeEnum = EmailThreadItemItemTypeEnum = {}));
 function EmailThreadItemFromJSON(json) {
     return EmailThreadItemFromJSONTyped(json, false);
 }
-exports.EmailThreadItemFromJSON = EmailThreadItemFromJSON;
 function EmailThreadItemFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -57,7 +59,6 @@ function EmailThreadItemFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
     };
 }
-exports.EmailThreadItemFromJSONTyped = EmailThreadItemFromJSONTyped;
 function EmailThreadItemToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -85,4 +86,3 @@ function EmailThreadItemToJSON(value) {
         recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
     };
 }
-exports.EmailThreadItemToJSON = EmailThreadItemToJSON;

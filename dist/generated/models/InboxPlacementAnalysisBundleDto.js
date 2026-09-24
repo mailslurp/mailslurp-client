@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementAnalysisBundleDtoToJSON = exports.InboxPlacementAnalysisBundleDtoFromJSONTyped = exports.InboxPlacementAnalysisBundleDtoFromJSON = void 0;
+exports.InboxPlacementAnalysisBundleDtoFromJSON = InboxPlacementAnalysisBundleDtoFromJSON;
+exports.InboxPlacementAnalysisBundleDtoFromJSONTyped = InboxPlacementAnalysisBundleDtoFromJSONTyped;
+exports.InboxPlacementAnalysisBundleDtoToJSON = InboxPlacementAnalysisBundleDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function InboxPlacementAnalysisBundleDtoFromJSON(json) {
     return InboxPlacementAnalysisBundleDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementAnalysisBundleDtoFromJSON = InboxPlacementAnalysisBundleDtoFromJSON;
 function InboxPlacementAnalysisBundleDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function InboxPlacementAnalysisBundleDtoFromJSONTyped(json, ignoreDiscriminator)
             : (0, _1.InboxPlacementDomainMonitorSummaryDtoFromJSON)(json['domainMonitor']),
     };
 }
-exports.InboxPlacementAnalysisBundleDtoFromJSONTyped = InboxPlacementAnalysisBundleDtoFromJSONTyped;
 function InboxPlacementAnalysisBundleDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +54,3 @@ function InboxPlacementAnalysisBundleDtoToJSON(value) {
         domainMonitor: (0, _1.InboxPlacementDomainMonitorSummaryDtoToJSON)(value.domainMonitor),
     };
 }
-exports.InboxPlacementAnalysisBundleDtoToJSON = InboxPlacementAnalysisBundleDtoToJSON;

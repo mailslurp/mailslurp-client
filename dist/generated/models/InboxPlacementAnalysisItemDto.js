@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementAnalysisItemDtoToJSON = exports.InboxPlacementAnalysisItemDtoFromJSONTyped = exports.InboxPlacementAnalysisItemDtoFromJSON = exports.InboxPlacementAnalysisItemDtoStatusEnum = void 0;
+exports.InboxPlacementAnalysisItemDtoStatusEnum = void 0;
+exports.InboxPlacementAnalysisItemDtoFromJSON = InboxPlacementAnalysisItemDtoFromJSON;
+exports.InboxPlacementAnalysisItemDtoFromJSONTyped = InboxPlacementAnalysisItemDtoFromJSONTyped;
+exports.InboxPlacementAnalysisItemDtoToJSON = InboxPlacementAnalysisItemDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -26,11 +29,10 @@ var InboxPlacementAnalysisItemDtoStatusEnum;
     InboxPlacementAnalysisItemDtoStatusEnum["WARN"] = "WARN";
     InboxPlacementAnalysisItemDtoStatusEnum["FAIL"] = "FAIL";
     InboxPlacementAnalysisItemDtoStatusEnum["INFO"] = "INFO";
-})(InboxPlacementAnalysisItemDtoStatusEnum = exports.InboxPlacementAnalysisItemDtoStatusEnum || (exports.InboxPlacementAnalysisItemDtoStatusEnum = {}));
+})(InboxPlacementAnalysisItemDtoStatusEnum || (exports.InboxPlacementAnalysisItemDtoStatusEnum = InboxPlacementAnalysisItemDtoStatusEnum = {}));
 function InboxPlacementAnalysisItemDtoFromJSON(json) {
     return InboxPlacementAnalysisItemDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementAnalysisItemDtoFromJSON = InboxPlacementAnalysisItemDtoFromJSON;
 function InboxPlacementAnalysisItemDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -48,7 +50,6 @@ function InboxPlacementAnalysisItemDtoFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.InboxPlacementAnalysisDetailTableDtoFromJSON)(json['detailTable']),
     };
 }
-exports.InboxPlacementAnalysisItemDtoFromJSONTyped = InboxPlacementAnalysisItemDtoFromJSONTyped;
 function InboxPlacementAnalysisItemDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -67,4 +68,3 @@ function InboxPlacementAnalysisItemDtoToJSON(value) {
         detailTable: (0, _1.InboxPlacementAnalysisDetailTableDtoToJSON)(value.detailTable),
     };
 }
-exports.InboxPlacementAnalysisItemDtoToJSON = InboxPlacementAnalysisItemDtoToJSON;

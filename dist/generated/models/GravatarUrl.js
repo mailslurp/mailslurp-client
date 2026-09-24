@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GravatarUrlToJSON = exports.GravatarUrlFromJSONTyped = exports.GravatarUrlFromJSON = void 0;
+exports.GravatarUrlFromJSON = GravatarUrlFromJSON;
+exports.GravatarUrlFromJSONTyped = GravatarUrlFromJSONTyped;
+exports.GravatarUrlToJSON = GravatarUrlToJSON;
 function GravatarUrlFromJSON(json) {
     return GravatarUrlFromJSONTyped(json, false);
 }
-exports.GravatarUrlFromJSON = GravatarUrlFromJSON;
 function GravatarUrlFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function GravatarUrlFromJSONTyped(json, ignoreDiscriminator) {
         hash: json['hash'],
     };
 }
-exports.GravatarUrlFromJSONTyped = GravatarUrlFromJSONTyped;
 function GravatarUrlToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function GravatarUrlToJSON(value) {
         hash: value.hash,
     };
 }
-exports.GravatarUrlToJSON = GravatarUrlToJSON;

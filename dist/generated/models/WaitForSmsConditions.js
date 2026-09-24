@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WaitForSmsConditionsToJSON = exports.WaitForSmsConditionsFromJSONTyped = exports.WaitForSmsConditionsFromJSON = exports.WaitForSmsConditionsSortDirectionEnum = exports.WaitForSmsConditionsCountTypeEnum = void 0;
+exports.WaitForSmsConditionsSortDirectionEnum = exports.WaitForSmsConditionsCountTypeEnum = void 0;
+exports.WaitForSmsConditionsFromJSON = WaitForSmsConditionsFromJSON;
+exports.WaitForSmsConditionsFromJSONTyped = WaitForSmsConditionsFromJSONTyped;
+exports.WaitForSmsConditionsToJSON = WaitForSmsConditionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,7 +27,7 @@ var WaitForSmsConditionsCountTypeEnum;
 (function (WaitForSmsConditionsCountTypeEnum) {
     WaitForSmsConditionsCountTypeEnum["EXACTLY"] = "EXACTLY";
     WaitForSmsConditionsCountTypeEnum["ATLEAST"] = "ATLEAST";
-})(WaitForSmsConditionsCountTypeEnum = exports.WaitForSmsConditionsCountTypeEnum || (exports.WaitForSmsConditionsCountTypeEnum = {}));
+})(WaitForSmsConditionsCountTypeEnum || (exports.WaitForSmsConditionsCountTypeEnum = WaitForSmsConditionsCountTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -33,11 +36,10 @@ var WaitForSmsConditionsSortDirectionEnum;
 (function (WaitForSmsConditionsSortDirectionEnum) {
     WaitForSmsConditionsSortDirectionEnum["ASC"] = "ASC";
     WaitForSmsConditionsSortDirectionEnum["DESC"] = "DESC";
-})(WaitForSmsConditionsSortDirectionEnum = exports.WaitForSmsConditionsSortDirectionEnum || (exports.WaitForSmsConditionsSortDirectionEnum = {}));
+})(WaitForSmsConditionsSortDirectionEnum || (exports.WaitForSmsConditionsSortDirectionEnum = WaitForSmsConditionsSortDirectionEnum = {}));
 function WaitForSmsConditionsFromJSON(json) {
     return WaitForSmsConditionsFromJSONTyped(json, false);
 }
-exports.WaitForSmsConditionsFromJSON = WaitForSmsConditionsFromJSON;
 function WaitForSmsConditionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -75,7 +77,6 @@ function WaitForSmsConditionsFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.AIMessageMatchOptionsFromJSON)(json['ai']),
     };
 }
-exports.WaitForSmsConditionsFromJSONTyped = WaitForSmsConditionsFromJSONTyped;
 function WaitForSmsConditionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -110,4 +111,3 @@ function WaitForSmsConditionsToJSON(value) {
         ai: (0, _1.AIMessageMatchOptionsToJSON)(value.ai),
     };
 }
-exports.WaitForSmsConditionsToJSON = WaitForSmsConditionsToJSON;

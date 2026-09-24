@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxIdsResultToJSON = exports.InboxIdsResultFromJSONTyped = exports.InboxIdsResultFromJSON = void 0;
+exports.InboxIdsResultFromJSON = InboxIdsResultFromJSON;
+exports.InboxIdsResultFromJSONTyped = InboxIdsResultFromJSONTyped;
+exports.InboxIdsResultToJSON = InboxIdsResultToJSON;
 var _1 = require("./");
 function InboxIdsResultFromJSON(json) {
     return InboxIdsResultFromJSONTyped(json, false);
 }
-exports.InboxIdsResultFromJSON = InboxIdsResultFromJSON;
 function InboxIdsResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function InboxIdsResultFromJSONTyped(json, ignoreDiscriminator) {
         inboxIds: json['inboxIds'].map(_1.InboxIdItemFromJSON),
     };
 }
-exports.InboxIdsResultFromJSONTyped = InboxIdsResultFromJSONTyped;
 function InboxIdsResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function InboxIdsResultToJSON(value) {
         inboxIds: value.inboxIds.map(_1.InboxIdItemToJSON),
     };
 }
-exports.InboxIdsResultToJSON = InboxIdsResultToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementRemoteResultsDtoToJSON = exports.InboxPlacementRemoteResultsDtoFromJSONTyped = exports.InboxPlacementRemoteResultsDtoFromJSON = void 0;
+exports.InboxPlacementRemoteResultsDtoFromJSON = InboxPlacementRemoteResultsDtoFromJSON;
+exports.InboxPlacementRemoteResultsDtoFromJSONTyped = InboxPlacementRemoteResultsDtoFromJSONTyped;
+exports.InboxPlacementRemoteResultsDtoToJSON = InboxPlacementRemoteResultsDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function InboxPlacementRemoteResultsDtoFromJSON(json) {
     return InboxPlacementRemoteResultsDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementRemoteResultsDtoFromJSON = InboxPlacementRemoteResultsDtoFromJSON;
 function InboxPlacementRemoteResultsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +41,6 @@ function InboxPlacementRemoteResultsDtoFromJSONTyped(json, ignoreDiscriminator) 
         share: !(0, runtime_1.exists)(json, 'share') ? undefined : json['share'],
     };
 }
-exports.InboxPlacementRemoteResultsDtoFromJSONTyped = InboxPlacementRemoteResultsDtoFromJSONTyped;
 function InboxPlacementRemoteResultsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -60,4 +60,3 @@ function InboxPlacementRemoteResultsDtoToJSON(value) {
         share: value.share,
     };
 }
-exports.InboxPlacementRemoteResultsDtoToJSON = InboxPlacementRemoteResultsDtoToJSON;

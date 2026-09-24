@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateInboxOptionsToJSON = exports.UpdateInboxOptionsFromJSONTyped = exports.UpdateInboxOptionsFromJSON = void 0;
+exports.UpdateInboxOptionsFromJSON = UpdateInboxOptionsFromJSON;
+exports.UpdateInboxOptionsFromJSONTyped = UpdateInboxOptionsFromJSONTyped;
+exports.UpdateInboxOptionsToJSON = UpdateInboxOptionsToJSON;
 var runtime_1 = require("../runtime");
 function UpdateInboxOptionsFromJSON(json) {
     return UpdateInboxOptionsFromJSONTyped(json, false);
 }
-exports.UpdateInboxOptionsFromJSON = UpdateInboxOptionsFromJSON;
 function UpdateInboxOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function UpdateInboxOptionsFromJSONTyped(json, ignoreDiscriminator) {
         favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
     };
 }
-exports.UpdateInboxOptionsFromJSONTyped = UpdateInboxOptionsFromJSONTyped;
 function UpdateInboxOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function UpdateInboxOptionsToJSON(value) {
         favourite: value.favourite,
     };
 }
-exports.UpdateInboxOptionsToJSON = UpdateInboxOptionsToJSON;

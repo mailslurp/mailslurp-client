@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SearchInboxesOptionsToJSON = exports.SearchInboxesOptionsFromJSONTyped = exports.SearchInboxesOptionsFromJSON = exports.SearchInboxesOptionsInboxFunctionEnum = exports.SearchInboxesOptionsInboxTypeEnum = exports.SearchInboxesOptionsSortDirectionEnum = void 0;
+exports.SearchInboxesOptionsInboxFunctionEnum = exports.SearchInboxesOptionsInboxTypeEnum = exports.SearchInboxesOptionsSortDirectionEnum = void 0;
+exports.SearchInboxesOptionsFromJSON = SearchInboxesOptionsFromJSON;
+exports.SearchInboxesOptionsFromJSONTyped = SearchInboxesOptionsFromJSONTyped;
+exports.SearchInboxesOptionsToJSON = SearchInboxesOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var SearchInboxesOptionsSortDirectionEnum;
 (function (SearchInboxesOptionsSortDirectionEnum) {
     SearchInboxesOptionsSortDirectionEnum["ASC"] = "ASC";
     SearchInboxesOptionsSortDirectionEnum["DESC"] = "DESC";
-})(SearchInboxesOptionsSortDirectionEnum = exports.SearchInboxesOptionsSortDirectionEnum || (exports.SearchInboxesOptionsSortDirectionEnum = {}));
+})(SearchInboxesOptionsSortDirectionEnum || (exports.SearchInboxesOptionsSortDirectionEnum = SearchInboxesOptionsSortDirectionEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -32,7 +35,7 @@ var SearchInboxesOptionsInboxTypeEnum;
 (function (SearchInboxesOptionsInboxTypeEnum) {
     SearchInboxesOptionsInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     SearchInboxesOptionsInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(SearchInboxesOptionsInboxTypeEnum = exports.SearchInboxesOptionsInboxTypeEnum || (exports.SearchInboxesOptionsInboxTypeEnum = {}));
+})(SearchInboxesOptionsInboxTypeEnum || (exports.SearchInboxesOptionsInboxTypeEnum = SearchInboxesOptionsInboxTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -47,11 +50,10 @@ var SearchInboxesOptionsInboxFunctionEnum;
     SearchInboxesOptionsInboxFunctionEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
     SearchInboxesOptionsInboxFunctionEnum["GUEST"] = "GUEST";
     SearchInboxesOptionsInboxFunctionEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
-})(SearchInboxesOptionsInboxFunctionEnum = exports.SearchInboxesOptionsInboxFunctionEnum || (exports.SearchInboxesOptionsInboxFunctionEnum = {}));
+})(SearchInboxesOptionsInboxFunctionEnum || (exports.SearchInboxesOptionsInboxFunctionEnum = SearchInboxesOptionsInboxFunctionEnum = {}));
 function SearchInboxesOptionsFromJSON(json) {
     return SearchInboxesOptionsFromJSONTyped(json, false);
 }
-exports.SearchInboxesOptionsFromJSON = SearchInboxesOptionsFromJSON;
 function SearchInboxesOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -82,7 +84,6 @@ function SearchInboxesOptionsFromJSONTyped(json, ignoreDiscriminator) {
         domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
     };
 }
-exports.SearchInboxesOptionsFromJSONTyped = SearchInboxesOptionsFromJSONTyped;
 function SearchInboxesOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -112,4 +113,3 @@ function SearchInboxesOptionsToJSON(value) {
         domainId: value.domainId,
     };
 }
-exports.SearchInboxesOptionsToJSON = SearchInboxesOptionsToJSON;

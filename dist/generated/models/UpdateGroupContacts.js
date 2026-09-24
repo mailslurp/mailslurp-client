@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateGroupContactsToJSON = exports.UpdateGroupContactsFromJSONTyped = exports.UpdateGroupContactsFromJSON = void 0;
+exports.UpdateGroupContactsFromJSON = UpdateGroupContactsFromJSON;
+exports.UpdateGroupContactsFromJSONTyped = UpdateGroupContactsFromJSONTyped;
+exports.UpdateGroupContactsToJSON = UpdateGroupContactsToJSON;
 function UpdateGroupContactsFromJSON(json) {
     return UpdateGroupContactsFromJSONTyped(json, false);
 }
-exports.UpdateGroupContactsFromJSON = UpdateGroupContactsFromJSON;
 function UpdateGroupContactsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function UpdateGroupContactsFromJSONTyped(json, ignoreDiscriminator) {
         contactIds: json['contactIds'],
     };
 }
-exports.UpdateGroupContactsFromJSONTyped = UpdateGroupContactsFromJSONTyped;
 function UpdateGroupContactsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function UpdateGroupContactsToJSON(value) {
         contactIds: value.contactIds,
     };
 }
-exports.UpdateGroupContactsToJSON = UpdateGroupContactsToJSON;

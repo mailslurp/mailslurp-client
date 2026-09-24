@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateInboxPlacementTestOptionsToJSON = exports.CreateInboxPlacementTestOptionsFromJSONTyped = exports.CreateInboxPlacementTestOptionsFromJSON = exports.CreateInboxPlacementTestOptionsAddressFormatEnum = exports.CreateInboxPlacementTestOptionsRequestedSegmentEnum = void 0;
+exports.CreateInboxPlacementTestOptionsAddressFormatEnum = exports.CreateInboxPlacementTestOptionsRequestedSegmentEnum = void 0;
+exports.CreateInboxPlacementTestOptionsFromJSON = CreateInboxPlacementTestOptionsFromJSON;
+exports.CreateInboxPlacementTestOptionsFromJSONTyped = CreateInboxPlacementTestOptionsFromJSONTyped;
+exports.CreateInboxPlacementTestOptionsToJSON = CreateInboxPlacementTestOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,7 +27,7 @@ var CreateInboxPlacementTestOptionsRequestedSegmentEnum;
     CreateInboxPlacementTestOptionsRequestedSegmentEnum["ALL_INBOXES"] = "ALL_INBOXES";
     CreateInboxPlacementTestOptionsRequestedSegmentEnum["PERSONAL_INBOXES"] = "PERSONAL_INBOXES";
     CreateInboxPlacementTestOptionsRequestedSegmentEnum["PROFESSIONAL_INBOXES"] = "PROFESSIONAL_INBOXES";
-})(CreateInboxPlacementTestOptionsRequestedSegmentEnum = exports.CreateInboxPlacementTestOptionsRequestedSegmentEnum || (exports.CreateInboxPlacementTestOptionsRequestedSegmentEnum = {}));
+})(CreateInboxPlacementTestOptionsRequestedSegmentEnum || (exports.CreateInboxPlacementTestOptionsRequestedSegmentEnum = CreateInboxPlacementTestOptionsRequestedSegmentEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -33,11 +36,10 @@ var CreateInboxPlacementTestOptionsAddressFormatEnum;
 (function (CreateInboxPlacementTestOptionsAddressFormatEnum) {
     CreateInboxPlacementTestOptionsAddressFormatEnum["COMMA"] = "COMMA";
     CreateInboxPlacementTestOptionsAddressFormatEnum["NEWLINE"] = "NEWLINE";
-})(CreateInboxPlacementTestOptionsAddressFormatEnum = exports.CreateInboxPlacementTestOptionsAddressFormatEnum || (exports.CreateInboxPlacementTestOptionsAddressFormatEnum = {}));
+})(CreateInboxPlacementTestOptionsAddressFormatEnum || (exports.CreateInboxPlacementTestOptionsAddressFormatEnum = CreateInboxPlacementTestOptionsAddressFormatEnum = {}));
 function CreateInboxPlacementTestOptionsFromJSON(json) {
     return CreateInboxPlacementTestOptionsFromJSONTyped(json, false);
 }
-exports.CreateInboxPlacementTestOptionsFromJSON = CreateInboxPlacementTestOptionsFromJSON;
 function CreateInboxPlacementTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -55,7 +57,6 @@ function CreateInboxPlacementTestOptionsFromJSONTyped(json, ignoreDiscriminator)
         addressFormat: json['addressFormat'],
     };
 }
-exports.CreateInboxPlacementTestOptionsFromJSONTyped = CreateInboxPlacementTestOptionsFromJSONTyped;
 function CreateInboxPlacementTestOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -72,4 +73,3 @@ function CreateInboxPlacementTestOptionsToJSON(value) {
         addressFormat: value.addressFormat,
     };
 }
-exports.CreateInboxPlacementTestOptionsToJSON = CreateInboxPlacementTestOptionsToJSON;

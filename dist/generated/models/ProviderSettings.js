@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProviderSettingsToJSON = exports.ProviderSettingsFromJSONTyped = exports.ProviderSettingsFromJSON = exports.ProviderSettingsMailProviderEnum = void 0;
+exports.ProviderSettingsMailProviderEnum = void 0;
+exports.ProviderSettingsFromJSON = ProviderSettingsFromJSON;
+exports.ProviderSettingsFromJSONTyped = ProviderSettingsFromJSONTyped;
+exports.ProviderSettingsToJSON = ProviderSettingsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var ProviderSettingsMailProviderEnum;
 (function (ProviderSettingsMailProviderEnum) {
     ProviderSettingsMailProviderEnum["GOOGLE"] = "GOOGLE";
     ProviderSettingsMailProviderEnum["MICROSOFT"] = "MICROSOFT";
-})(ProviderSettingsMailProviderEnum = exports.ProviderSettingsMailProviderEnum || (exports.ProviderSettingsMailProviderEnum = {}));
+})(ProviderSettingsMailProviderEnum || (exports.ProviderSettingsMailProviderEnum = ProviderSettingsMailProviderEnum = {}));
 function ProviderSettingsFromJSON(json) {
     return ProviderSettingsFromJSONTyped(json, false);
 }
-exports.ProviderSettingsFromJSON = ProviderSettingsFromJSON;
 function ProviderSettingsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -48,7 +50,6 @@ function ProviderSettingsFromJSONTyped(json, ignoreDiscriminator) {
             : json['smtpStartTls'],
     };
 }
-exports.ProviderSettingsFromJSONTyped = ProviderSettingsFromJSONTyped;
 function ProviderSettingsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +69,3 @@ function ProviderSettingsToJSON(value) {
         smtpStartTls: value.smtpStartTls,
     };
 }
-exports.ProviderSettingsToJSON = ProviderSettingsToJSON;

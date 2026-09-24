@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityPollStatusResultDtoToJSON = exports.DeliverabilityPollStatusResultDtoFromJSONTyped = exports.DeliverabilityPollStatusResultDtoFromJSON = void 0;
+exports.DeliverabilityPollStatusResultDtoFromJSON = DeliverabilityPollStatusResultDtoFromJSON;
+exports.DeliverabilityPollStatusResultDtoFromJSONTyped = DeliverabilityPollStatusResultDtoFromJSONTyped;
+exports.DeliverabilityPollStatusResultDtoToJSON = DeliverabilityPollStatusResultDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function DeliverabilityPollStatusResultDtoFromJSON(json) {
     return DeliverabilityPollStatusResultDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilityPollStatusResultDtoFromJSON = DeliverabilityPollStatusResultDtoFromJSON;
 function DeliverabilityPollStatusResultDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function DeliverabilityPollStatusResultDtoFromJSONTyped(json, ignoreDiscriminato
                 : new Date(json['nextRefreshAt']),
     };
 }
-exports.DeliverabilityPollStatusResultDtoFromJSONTyped = DeliverabilityPollStatusResultDtoFromJSONTyped;
 function DeliverabilityPollStatusResultDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +54,3 @@ function DeliverabilityPollStatusResultDtoToJSON(value) {
                 : value.nextRefreshAt.toISOString(),
     };
 }
-exports.DeliverabilityPollStatusResultDtoToJSON = DeliverabilityPollStatusResultDtoToJSON;

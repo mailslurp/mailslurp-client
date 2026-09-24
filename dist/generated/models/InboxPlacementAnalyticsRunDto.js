@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementAnalyticsRunDtoToJSON = exports.InboxPlacementAnalyticsRunDtoFromJSONTyped = exports.InboxPlacementAnalyticsRunDtoFromJSON = void 0;
+exports.InboxPlacementAnalyticsRunDtoFromJSON = InboxPlacementAnalyticsRunDtoFromJSON;
+exports.InboxPlacementAnalyticsRunDtoFromJSONTyped = InboxPlacementAnalyticsRunDtoFromJSONTyped;
+exports.InboxPlacementAnalyticsRunDtoToJSON = InboxPlacementAnalyticsRunDtoToJSON;
 var runtime_1 = require("../runtime");
 function InboxPlacementAnalyticsRunDtoFromJSON(json) {
     return InboxPlacementAnalyticsRunDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementAnalyticsRunDtoFromJSON = InboxPlacementAnalyticsRunDtoFromJSON;
 function InboxPlacementAnalyticsRunDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -63,7 +64,6 @@ function InboxPlacementAnalyticsRunDtoFromJSONTyped(json, ignoreDiscriminator) {
         notReceivedRatePercentage: json['notReceivedRatePercentage'],
     };
 }
-exports.InboxPlacementAnalyticsRunDtoFromJSONTyped = InboxPlacementAnalyticsRunDtoFromJSONTyped;
 function InboxPlacementAnalyticsRunDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -107,4 +107,3 @@ function InboxPlacementAnalyticsRunDtoToJSON(value) {
         notReceivedRatePercentage: value.notReceivedRatePercentage,
     };
 }
-exports.InboxPlacementAnalyticsRunDtoToJSON = InboxPlacementAnalyticsRunDtoToJSON;

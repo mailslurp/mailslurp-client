@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookEmailOpenedPayloadToJSON = exports.WebhookEmailOpenedPayloadFromJSONTyped = exports.WebhookEmailOpenedPayloadFromJSON = exports.WebhookEmailOpenedPayloadEventNameEnum = void 0;
+exports.WebhookEmailOpenedPayloadEventNameEnum = void 0;
+exports.WebhookEmailOpenedPayloadFromJSON = WebhookEmailOpenedPayloadFromJSON;
+exports.WebhookEmailOpenedPayloadFromJSONTyped = WebhookEmailOpenedPayloadFromJSONTyped;
+exports.WebhookEmailOpenedPayloadToJSON = WebhookEmailOpenedPayloadToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -33,11 +36,10 @@ var WebhookEmailOpenedPayloadEventNameEnum;
     WebhookEmailOpenedPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookEmailOpenedPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookEmailOpenedPayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookEmailOpenedPayloadEventNameEnum = exports.WebhookEmailOpenedPayloadEventNameEnum || (exports.WebhookEmailOpenedPayloadEventNameEnum = {}));
+})(WebhookEmailOpenedPayloadEventNameEnum || (exports.WebhookEmailOpenedPayloadEventNameEnum = WebhookEmailOpenedPayloadEventNameEnum = {}));
 function WebhookEmailOpenedPayloadFromJSON(json) {
     return WebhookEmailOpenedPayloadFromJSONTyped(json, false);
 }
-exports.WebhookEmailOpenedPayloadFromJSON = WebhookEmailOpenedPayloadFromJSON;
 function WebhookEmailOpenedPayloadFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -54,7 +56,6 @@ function WebhookEmailOpenedPayloadFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.WebhookEmailOpenedPayloadFromJSONTyped = WebhookEmailOpenedPayloadFromJSONTyped;
 function WebhookEmailOpenedPayloadToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -74,4 +75,3 @@ function WebhookEmailOpenedPayloadToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.WebhookEmailOpenedPayloadToJSON = WebhookEmailOpenedPayloadToJSON;

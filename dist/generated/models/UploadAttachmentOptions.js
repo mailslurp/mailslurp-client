@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UploadAttachmentOptionsToJSON = exports.UploadAttachmentOptionsFromJSONTyped = exports.UploadAttachmentOptionsFromJSON = void 0;
+exports.UploadAttachmentOptionsFromJSON = UploadAttachmentOptionsFromJSON;
+exports.UploadAttachmentOptionsFromJSONTyped = UploadAttachmentOptionsFromJSONTyped;
+exports.UploadAttachmentOptionsToJSON = UploadAttachmentOptionsToJSON;
 var runtime_1 = require("../runtime");
 function UploadAttachmentOptionsFromJSON(json) {
     return UploadAttachmentOptionsFromJSONTyped(json, false);
 }
-exports.UploadAttachmentOptionsFromJSON = UploadAttachmentOptionsFromJSON;
 function UploadAttachmentOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function UploadAttachmentOptionsFromJSONTyped(json, ignoreDiscriminator) {
         base64Contents: json['base64Contents'],
     };
 }
-exports.UploadAttachmentOptionsFromJSONTyped = UploadAttachmentOptionsFromJSONTyped;
 function UploadAttachmentOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function UploadAttachmentOptionsToJSON(value) {
         base64Contents: value.base64Contents,
     };
 }
-exports.UploadAttachmentOptionsToJSON = UploadAttachmentOptionsToJSON;

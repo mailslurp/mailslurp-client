@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.JSONSchemaDtoToJSON = exports.JSONSchemaDtoFromJSONTyped = exports.JSONSchemaDtoFromJSON = void 0;
+exports.JSONSchemaDtoFromJSON = JSONSchemaDtoFromJSON;
+exports.JSONSchemaDtoFromJSONTyped = JSONSchemaDtoFromJSONTyped;
+exports.JSONSchemaDtoToJSON = JSONSchemaDtoToJSON;
 function JSONSchemaDtoFromJSON(json) {
     return JSONSchemaDtoFromJSONTyped(json, false);
 }
-exports.JSONSchemaDtoFromJSON = JSONSchemaDtoFromJSON;
 function JSONSchemaDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function JSONSchemaDtoFromJSONTyped(json, ignoreDiscriminator) {
         value: json['value'],
     };
 }
-exports.JSONSchemaDtoFromJSONTyped = JSONSchemaDtoFromJSONTyped;
 function JSONSchemaDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function JSONSchemaDtoToJSON(value) {
         value: value.value,
     };
 }
-exports.JSONSchemaDtoToJSON = JSONSchemaDtoToJSON;

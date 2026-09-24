@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilitySelectorOptionsToJSON = exports.DeliverabilitySelectorOptionsFromJSONTyped = exports.DeliverabilitySelectorOptionsFromJSON = exports.DeliverabilitySelectorOptionsPhoneCountryEnum = exports.DeliverabilitySelectorOptionsTypeEnum = void 0;
+exports.DeliverabilitySelectorOptionsPhoneCountryEnum = exports.DeliverabilitySelectorOptionsTypeEnum = void 0;
+exports.DeliverabilitySelectorOptionsFromJSON = DeliverabilitySelectorOptionsFromJSON;
+exports.DeliverabilitySelectorOptionsFromJSONTyped = DeliverabilitySelectorOptionsFromJSONTyped;
+exports.DeliverabilitySelectorOptionsToJSON = DeliverabilitySelectorOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,7 +27,7 @@ var DeliverabilitySelectorOptionsTypeEnum;
     DeliverabilitySelectorOptionsTypeEnum["ALL"] = "ALL";
     DeliverabilitySelectorOptionsTypeEnum["PATTERN"] = "PATTERN";
     DeliverabilitySelectorOptionsTypeEnum["EXPLICIT"] = "EXPLICIT";
-})(DeliverabilitySelectorOptionsTypeEnum = exports.DeliverabilitySelectorOptionsTypeEnum || (exports.DeliverabilitySelectorOptionsTypeEnum = {}));
+})(DeliverabilitySelectorOptionsTypeEnum || (exports.DeliverabilitySelectorOptionsTypeEnum = DeliverabilitySelectorOptionsTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -44,11 +47,10 @@ var DeliverabilitySelectorOptionsPhoneCountryEnum;
     DeliverabilitySelectorOptionsPhoneCountryEnum["IL"] = "IL";
     DeliverabilitySelectorOptionsPhoneCountryEnum["FI"] = "FI";
     DeliverabilitySelectorOptionsPhoneCountryEnum["SE"] = "SE";
-})(DeliverabilitySelectorOptionsPhoneCountryEnum = exports.DeliverabilitySelectorOptionsPhoneCountryEnum || (exports.DeliverabilitySelectorOptionsPhoneCountryEnum = {}));
+})(DeliverabilitySelectorOptionsPhoneCountryEnum || (exports.DeliverabilitySelectorOptionsPhoneCountryEnum = DeliverabilitySelectorOptionsPhoneCountryEnum = {}));
 function DeliverabilitySelectorOptionsFromJSON(json) {
     return DeliverabilitySelectorOptionsFromJSONTyped(json, false);
 }
-exports.DeliverabilitySelectorOptionsFromJSON = DeliverabilitySelectorOptionsFromJSON;
 function DeliverabilitySelectorOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -66,7 +68,6 @@ function DeliverabilitySelectorOptionsFromJSONTyped(json, ignoreDiscriminator) {
         tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
     };
 }
-exports.DeliverabilitySelectorOptionsFromJSONTyped = DeliverabilitySelectorOptionsFromJSONTyped;
 function DeliverabilitySelectorOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -83,4 +84,3 @@ function DeliverabilitySelectorOptionsToJSON(value) {
         tags: value.tags,
     };
 }
-exports.DeliverabilitySelectorOptionsToJSON = DeliverabilitySelectorOptionsToJSON;

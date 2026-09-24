@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupPtrOptionsToJSON = exports.LookupPtrOptionsFromJSONTyped = exports.LookupPtrOptionsFromJSON = void 0;
+exports.LookupPtrOptionsFromJSON = LookupPtrOptionsFromJSON;
+exports.LookupPtrOptionsFromJSONTyped = LookupPtrOptionsFromJSONTyped;
+exports.LookupPtrOptionsToJSON = LookupPtrOptionsToJSON;
 var runtime_1 = require("../runtime");
 function LookupPtrOptionsFromJSON(json) {
     return LookupPtrOptionsFromJSONTyped(json, false);
 }
-exports.LookupPtrOptionsFromJSON = LookupPtrOptionsFromJSON;
 function LookupPtrOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function LookupPtrOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['captchaToken'],
     };
 }
-exports.LookupPtrOptionsFromJSONTyped = LookupPtrOptionsFromJSONTyped;
 function LookupPtrOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function LookupPtrOptionsToJSON(value) {
         captchaToken: value.captchaToken,
     };
 }
-exports.LookupPtrOptionsToJSON = LookupPtrOptionsToJSON;

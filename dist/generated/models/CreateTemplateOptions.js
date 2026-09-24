@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateTemplateOptionsToJSON = exports.CreateTemplateOptionsFromJSONTyped = exports.CreateTemplateOptionsFromJSON = void 0;
+exports.CreateTemplateOptionsFromJSON = CreateTemplateOptionsFromJSON;
+exports.CreateTemplateOptionsFromJSONTyped = CreateTemplateOptionsFromJSONTyped;
+exports.CreateTemplateOptionsToJSON = CreateTemplateOptionsToJSON;
 function CreateTemplateOptionsFromJSON(json) {
     return CreateTemplateOptionsFromJSONTyped(json, false);
 }
-exports.CreateTemplateOptionsFromJSON = CreateTemplateOptionsFromJSON;
 function CreateTemplateOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function CreateTemplateOptionsFromJSONTyped(json, ignoreDiscriminator) {
         content: json['content'],
     };
 }
-exports.CreateTemplateOptionsFromJSONTyped = CreateTemplateOptionsFromJSONTyped;
 function CreateTemplateOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function CreateTemplateOptionsToJSON(value) {
         content: value.content,
     };
 }
-exports.CreateTemplateOptionsToJSON = CreateTemplateOptionsToJSON;

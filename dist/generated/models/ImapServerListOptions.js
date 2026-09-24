@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerListOptionsToJSON = exports.ImapServerListOptionsFromJSONTyped = exports.ImapServerListOptionsFromJSON = void 0;
+exports.ImapServerListOptionsFromJSON = ImapServerListOptionsFromJSON;
+exports.ImapServerListOptionsFromJSONTyped = ImapServerListOptionsFromJSONTyped;
+exports.ImapServerListOptionsToJSON = ImapServerListOptionsToJSON;
 var runtime_1 = require("../runtime");
 function ImapServerListOptionsFromJSON(json) {
     return ImapServerListOptionsFromJSONTyped(json, false);
 }
-exports.ImapServerListOptionsFromJSON = ImapServerListOptionsFromJSON;
 function ImapServerListOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function ImapServerListOptionsFromJSONTyped(json, ignoreDiscriminator) {
         seqSet: !(0, runtime_1.exists)(json, 'seqSet') ? undefined : json['seqSet'],
     };
 }
-exports.ImapServerListOptionsFromJSONTyped = ImapServerListOptionsFromJSONTyped;
 function ImapServerListOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function ImapServerListOptionsToJSON(value) {
         seqSet: value.seqSet,
     };
 }
-exports.ImapServerListOptionsToJSON = ImapServerListOptionsToJSON;

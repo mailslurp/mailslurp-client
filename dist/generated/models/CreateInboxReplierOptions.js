@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateInboxReplierOptionsToJSON = exports.CreateInboxReplierOptionsFromJSONTyped = exports.CreateInboxReplierOptionsFromJSON = exports.CreateInboxReplierOptionsShouldEnum = exports.CreateInboxReplierOptionsFieldEnum = void 0;
+exports.CreateInboxReplierOptionsShouldEnum = exports.CreateInboxReplierOptionsFieldEnum = void 0;
+exports.CreateInboxReplierOptionsFromJSON = CreateInboxReplierOptionsFromJSON;
+exports.CreateInboxReplierOptionsFromJSONTyped = CreateInboxReplierOptionsFromJSONTyped;
+exports.CreateInboxReplierOptionsToJSON = CreateInboxReplierOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -28,7 +31,7 @@ var CreateInboxReplierOptionsFieldEnum;
     CreateInboxReplierOptionsFieldEnum["ATTACHMENTS"] = "ATTACHMENTS";
     CreateInboxReplierOptionsFieldEnum["ATTACHMENT_FILENAME"] = "ATTACHMENT_FILENAME";
     CreateInboxReplierOptionsFieldEnum["ATTACHMENT_TEXT"] = "ATTACHMENT_TEXT";
-})(CreateInboxReplierOptionsFieldEnum = exports.CreateInboxReplierOptionsFieldEnum || (exports.CreateInboxReplierOptionsFieldEnum = {}));
+})(CreateInboxReplierOptionsFieldEnum || (exports.CreateInboxReplierOptionsFieldEnum = CreateInboxReplierOptionsFieldEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -39,11 +42,10 @@ var CreateInboxReplierOptionsShouldEnum;
     CreateInboxReplierOptionsShouldEnum["MATCH"] = "MATCH";
     CreateInboxReplierOptionsShouldEnum["CONTAIN"] = "CONTAIN";
     CreateInboxReplierOptionsShouldEnum["EQUAL"] = "EQUAL";
-})(CreateInboxReplierOptionsShouldEnum = exports.CreateInboxReplierOptionsShouldEnum || (exports.CreateInboxReplierOptionsShouldEnum = {}));
+})(CreateInboxReplierOptionsShouldEnum || (exports.CreateInboxReplierOptionsShouldEnum = CreateInboxReplierOptionsShouldEnum = {}));
 function CreateInboxReplierOptionsFromJSON(json) {
     return CreateInboxReplierOptionsFromJSONTyped(json, false);
 }
-exports.CreateInboxReplierOptionsFromJSON = CreateInboxReplierOptionsFromJSON;
 function CreateInboxReplierOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -73,7 +75,6 @@ function CreateInboxReplierOptionsFromJSONTyped(json, ignoreDiscriminator) {
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
     };
 }
-exports.CreateInboxReplierOptionsFromJSONTyped = CreateInboxReplierOptionsFromJSONTyped;
 function CreateInboxReplierOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -100,4 +101,3 @@ function CreateInboxReplierOptionsToJSON(value) {
         attachments: value.attachments,
     };
 }
-exports.CreateInboxReplierOptionsToJSON = CreateInboxReplierOptionsToJSON;

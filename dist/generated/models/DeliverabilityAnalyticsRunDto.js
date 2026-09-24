@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityAnalyticsRunDtoToJSON = exports.DeliverabilityAnalyticsRunDtoFromJSONTyped = exports.DeliverabilityAnalyticsRunDtoFromJSON = exports.DeliverabilityAnalyticsRunDtoThresholdStatusEnum = exports.DeliverabilityAnalyticsRunDtoStatusEnum = exports.DeliverabilityAnalyticsRunDtoScopeEnum = void 0;
+exports.DeliverabilityAnalyticsRunDtoThresholdStatusEnum = exports.DeliverabilityAnalyticsRunDtoStatusEnum = exports.DeliverabilityAnalyticsRunDtoScopeEnum = void 0;
+exports.DeliverabilityAnalyticsRunDtoFromJSON = DeliverabilityAnalyticsRunDtoFromJSON;
+exports.DeliverabilityAnalyticsRunDtoFromJSONTyped = DeliverabilityAnalyticsRunDtoFromJSONTyped;
+exports.DeliverabilityAnalyticsRunDtoToJSON = DeliverabilityAnalyticsRunDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var DeliverabilityAnalyticsRunDtoScopeEnum;
 (function (DeliverabilityAnalyticsRunDtoScopeEnum) {
     DeliverabilityAnalyticsRunDtoScopeEnum["INBOX"] = "INBOX";
     DeliverabilityAnalyticsRunDtoScopeEnum["PHONE"] = "PHONE";
-})(DeliverabilityAnalyticsRunDtoScopeEnum = exports.DeliverabilityAnalyticsRunDtoScopeEnum || (exports.DeliverabilityAnalyticsRunDtoScopeEnum = {}));
+})(DeliverabilityAnalyticsRunDtoScopeEnum || (exports.DeliverabilityAnalyticsRunDtoScopeEnum = DeliverabilityAnalyticsRunDtoScopeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -37,7 +40,7 @@ var DeliverabilityAnalyticsRunDtoStatusEnum;
     DeliverabilityAnalyticsRunDtoStatusEnum["STOPPED"] = "STOPPED";
     DeliverabilityAnalyticsRunDtoStatusEnum["COMPLETE"] = "COMPLETE";
     DeliverabilityAnalyticsRunDtoStatusEnum["FAILED"] = "FAILED";
-})(DeliverabilityAnalyticsRunDtoStatusEnum = exports.DeliverabilityAnalyticsRunDtoStatusEnum || (exports.DeliverabilityAnalyticsRunDtoStatusEnum = {}));
+})(DeliverabilityAnalyticsRunDtoStatusEnum || (exports.DeliverabilityAnalyticsRunDtoStatusEnum = DeliverabilityAnalyticsRunDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -47,11 +50,10 @@ var DeliverabilityAnalyticsRunDtoThresholdStatusEnum;
     DeliverabilityAnalyticsRunDtoThresholdStatusEnum["NOT_CONFIGURED"] = "NOT_CONFIGURED";
     DeliverabilityAnalyticsRunDtoThresholdStatusEnum["PASSING"] = "PASSING";
     DeliverabilityAnalyticsRunDtoThresholdStatusEnum["FAILING"] = "FAILING";
-})(DeliverabilityAnalyticsRunDtoThresholdStatusEnum = exports.DeliverabilityAnalyticsRunDtoThresholdStatusEnum || (exports.DeliverabilityAnalyticsRunDtoThresholdStatusEnum = {}));
+})(DeliverabilityAnalyticsRunDtoThresholdStatusEnum || (exports.DeliverabilityAnalyticsRunDtoThresholdStatusEnum = DeliverabilityAnalyticsRunDtoThresholdStatusEnum = {}));
 function DeliverabilityAnalyticsRunDtoFromJSON(json) {
     return DeliverabilityAnalyticsRunDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilityAnalyticsRunDtoFromJSON = DeliverabilityAnalyticsRunDtoFromJSON;
 function DeliverabilityAnalyticsRunDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -78,7 +80,6 @@ function DeliverabilityAnalyticsRunDtoFromJSONTyped(json, ignoreDiscriminator) {
         thresholdStatus: json['thresholdStatus'],
     };
 }
-exports.DeliverabilityAnalyticsRunDtoFromJSONTyped = DeliverabilityAnalyticsRunDtoFromJSONTyped;
 function DeliverabilityAnalyticsRunDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -106,4 +107,3 @@ function DeliverabilityAnalyticsRunDtoToJSON(value) {
         thresholdStatus: value.thresholdStatus,
     };
 }
-exports.DeliverabilityAnalyticsRunDtoToJSON = DeliverabilityAnalyticsRunDtoToJSON;

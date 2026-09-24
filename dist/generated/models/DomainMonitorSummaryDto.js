@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorSummaryDtoToJSON = exports.DomainMonitorSummaryDtoFromJSONTyped = exports.DomainMonitorSummaryDtoFromJSON = void 0;
+exports.DomainMonitorSummaryDtoFromJSON = DomainMonitorSummaryDtoFromJSON;
+exports.DomainMonitorSummaryDtoFromJSONTyped = DomainMonitorSummaryDtoFromJSONTyped;
+exports.DomainMonitorSummaryDtoToJSON = DomainMonitorSummaryDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function DomainMonitorSummaryDtoFromJSON(json) {
     return DomainMonitorSummaryDtoFromJSONTyped(json, false);
 }
-exports.DomainMonitorSummaryDtoFromJSON = DomainMonitorSummaryDtoFromJSON;
 function DomainMonitorSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function DomainMonitorSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
         authStack: (0, _1.CheckEmailAuthStackResultsFromJSON)(json['authStack']),
     };
 }
-exports.DomainMonitorSummaryDtoFromJSONTyped = DomainMonitorSummaryDtoFromJSONTyped;
 function DomainMonitorSummaryDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function DomainMonitorSummaryDtoToJSON(value) {
         authStack: (0, _1.CheckEmailAuthStackResultsToJSON)(value.authStack),
     };
 }
-exports.DomainMonitorSummaryDtoToJSON = DomainMonitorSummaryDtoToJSON;

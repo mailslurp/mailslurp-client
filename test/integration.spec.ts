@@ -15,7 +15,6 @@ import MailSlurp_defaultImport, {
 
 // node require style
 const TIMEOUT = 120000;
-jest.setTimeout(TIMEOUT);
 
 const { MailSlurp: MailSlurp_nodeRequire } = require('../dist/index');
 

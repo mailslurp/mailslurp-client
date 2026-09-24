@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewAccountSettingsDtoToJSON = exports.DevicePreviewAccountSettingsDtoFromJSONTyped = exports.DevicePreviewAccountSettingsDtoFromJSON = void 0;
+exports.DevicePreviewAccountSettingsDtoFromJSON = DevicePreviewAccountSettingsDtoFromJSON;
+exports.DevicePreviewAccountSettingsDtoFromJSONTyped = DevicePreviewAccountSettingsDtoFromJSONTyped;
+exports.DevicePreviewAccountSettingsDtoToJSON = DevicePreviewAccountSettingsDtoToJSON;
 var _1 = require("./");
 function DevicePreviewAccountSettingsDtoFromJSON(json) {
     return DevicePreviewAccountSettingsDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewAccountSettingsDtoFromJSON = DevicePreviewAccountSettingsDtoFromJSON;
 function DevicePreviewAccountSettingsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function DevicePreviewAccountSettingsDtoFromJSONTyped(json, ignoreDiscriminator)
         profiles: json['profiles'].map(_1.DevicePreviewProfileDtoFromJSON),
     };
 }
-exports.DevicePreviewAccountSettingsDtoFromJSONTyped = DevicePreviewAccountSettingsDtoFromJSONTyped;
 function DevicePreviewAccountSettingsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DevicePreviewAccountSettingsDtoToJSON(value) {
         profiles: value.profiles.map(_1.DevicePreviewProfileDtoToJSON),
     };
 }
-exports.DevicePreviewAccountSettingsDtoToJSON = DevicePreviewAccountSettingsDtoToJSON;

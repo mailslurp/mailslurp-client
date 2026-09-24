@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentAutomationEventPageDtoToJSON = exports.AgentAutomationEventPageDtoFromJSONTyped = exports.AgentAutomationEventPageDtoFromJSON = void 0;
+exports.AgentAutomationEventPageDtoFromJSON = AgentAutomationEventPageDtoFromJSON;
+exports.AgentAutomationEventPageDtoFromJSONTyped = AgentAutomationEventPageDtoFromJSONTyped;
+exports.AgentAutomationEventPageDtoToJSON = AgentAutomationEventPageDtoToJSON;
 var _1 = require("./");
 function AgentAutomationEventPageDtoFromJSON(json) {
     return AgentAutomationEventPageDtoFromJSONTyped(json, false);
 }
-exports.AgentAutomationEventPageDtoFromJSON = AgentAutomationEventPageDtoFromJSON;
 function AgentAutomationEventPageDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function AgentAutomationEventPageDtoFromJSONTyped(json, ignoreDiscriminator) {
         hasMore: json['hasMore'],
     };
 }
-exports.AgentAutomationEventPageDtoFromJSONTyped = AgentAutomationEventPageDtoFromJSONTyped;
 function AgentAutomationEventPageDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function AgentAutomationEventPageDtoToJSON(value) {
         hasMore: value.hasMore,
     };
 }
-exports.AgentAutomationEventPageDtoToJSON = AgentAutomationEventPageDtoToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageAITransformMappingProjectionToJSON = exports.PageAITransformMappingProjectionFromJSONTyped = exports.PageAITransformMappingProjectionFromJSON = void 0;
+exports.PageAITransformMappingProjectionFromJSON = PageAITransformMappingProjectionFromJSON;
+exports.PageAITransformMappingProjectionFromJSONTyped = PageAITransformMappingProjectionFromJSONTyped;
+exports.PageAITransformMappingProjectionToJSON = PageAITransformMappingProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageAITransformMappingProjectionFromJSON(json) {
     return PageAITransformMappingProjectionFromJSONTyped(json, false);
 }
-exports.PageAITransformMappingProjectionFromJSON = PageAITransformMappingProjectionFromJSON;
 function PageAITransformMappingProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageAITransformMappingProjectionFromJSONTyped(json, ignoreDiscriminator
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageAITransformMappingProjectionFromJSONTyped = PageAITransformMappingProjectionFromJSONTyped;
 function PageAITransformMappingProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageAITransformMappingProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageAITransformMappingProjectionToJSON = PageAITransformMappingProjectionToJSON;

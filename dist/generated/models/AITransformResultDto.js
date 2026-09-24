@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AITransformResultDtoToJSON = exports.AITransformResultDtoFromJSONTyped = exports.AITransformResultDtoFromJSON = exports.AITransformResultDtoEntityTypeEnum = void 0;
+exports.AITransformResultDtoEntityTypeEnum = void 0;
+exports.AITransformResultDtoFromJSON = AITransformResultDtoFromJSON;
+exports.AITransformResultDtoFromJSONTyped = AITransformResultDtoFromJSONTyped;
+exports.AITransformResultDtoToJSON = AITransformResultDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var AITransformResultDtoEntityTypeEnum;
 (function (AITransformResultDtoEntityTypeEnum) {
     AITransformResultDtoEntityTypeEnum["INBOX"] = "INBOX";
     AITransformResultDtoEntityTypeEnum["PHONE"] = "PHONE";
-})(AITransformResultDtoEntityTypeEnum = exports.AITransformResultDtoEntityTypeEnum || (exports.AITransformResultDtoEntityTypeEnum = {}));
+})(AITransformResultDtoEntityTypeEnum || (exports.AITransformResultDtoEntityTypeEnum = AITransformResultDtoEntityTypeEnum = {}));
 function AITransformResultDtoFromJSON(json) {
     return AITransformResultDtoFromJSONTyped(json, false);
 }
-exports.AITransformResultDtoFromJSON = AITransformResultDtoFromJSON;
 function AITransformResultDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -52,7 +54,6 @@ function AITransformResultDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.AITransformResultDtoFromJSONTyped = AITransformResultDtoFromJSONTyped;
 function AITransformResultDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -76,4 +77,3 @@ function AITransformResultDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.AITransformResultDtoToJSON = AITransformResultDtoToJSON;

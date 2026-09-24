@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DNSLookupResultToJSON = exports.DNSLookupResultFromJSONTyped = exports.DNSLookupResultFromJSON = exports.DNSLookupResultRecordTypeEnum = void 0;
+exports.DNSLookupResultRecordTypeEnum = void 0;
+exports.DNSLookupResultFromJSON = DNSLookupResultFromJSON;
+exports.DNSLookupResultFromJSONTyped = DNSLookupResultFromJSONTyped;
+exports.DNSLookupResultToJSON = DNSLookupResultToJSON;
 /**
  * @export
  * @enum {string}
@@ -109,11 +112,10 @@ var DNSLookupResultRecordTypeEnum;
     DNSLookupResultRecordTypeEnum["AMTRELAY"] = "AMTRELAY";
     DNSLookupResultRecordTypeEnum["TA"] = "TA";
     DNSLookupResultRecordTypeEnum["DLV"] = "DLV";
-})(DNSLookupResultRecordTypeEnum = exports.DNSLookupResultRecordTypeEnum || (exports.DNSLookupResultRecordTypeEnum = {}));
+})(DNSLookupResultRecordTypeEnum || (exports.DNSLookupResultRecordTypeEnum = DNSLookupResultRecordTypeEnum = {}));
 function DNSLookupResultFromJSON(json) {
     return DNSLookupResultFromJSONTyped(json, false);
 }
-exports.DNSLookupResultFromJSON = DNSLookupResultFromJSON;
 function DNSLookupResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -125,7 +127,6 @@ function DNSLookupResultFromJSONTyped(json, ignoreDiscriminator) {
         name: json['name'],
     };
 }
-exports.DNSLookupResultFromJSONTyped = DNSLookupResultFromJSONTyped;
 function DNSLookupResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -140,4 +141,3 @@ function DNSLookupResultToJSON(value) {
         name: value.name,
     };
 }
-exports.DNSLookupResultToJSON = DNSLookupResultToJSON;

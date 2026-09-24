@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MissedSmsDtoToJSON = exports.MissedSmsDtoFromJSONTyped = exports.MissedSmsDtoFromJSON = void 0;
+exports.MissedSmsDtoFromJSON = MissedSmsDtoFromJSON;
+exports.MissedSmsDtoFromJSONTyped = MissedSmsDtoFromJSONTyped;
+exports.MissedSmsDtoToJSON = MissedSmsDtoToJSON;
 var runtime_1 = require("../runtime");
 function MissedSmsDtoFromJSON(json) {
     return MissedSmsDtoFromJSONTyped(json, false);
 }
-exports.MissedSmsDtoFromJSON = MissedSmsDtoFromJSON;
 function MissedSmsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function MissedSmsDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.MissedSmsDtoFromJSONTyped = MissedSmsDtoFromJSONTyped;
 function MissedSmsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function MissedSmsDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.MissedSmsDtoToJSON = MissedSmsDtoToJSON;

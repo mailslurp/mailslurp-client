@@ -1,6 +1,6 @@
 import { ApiResponse, Configuration, InboxDto, MailSlurp } from '../dist';
 
-test('quick start', async () => {
+test.skipIf(!process.env.API_KEY)('quick start', async () => {
   //<gen>quick_start
   // CommonJS
   const { MailSlurp } = require('mailslurp-client');
@@ -17,7 +17,7 @@ test('quick start', async () => {
   //</gen>
 });
 
-test('fetch setup', async () => {
+test.skipIf(!process.env.API_KEY)('fetch setup', async () => {
   const apiKey = process.env.API_KEY ?? 'your-api-key';
   //<gen>fetch_setup
   const { MailSlurp } = require('mailslurp-client');
@@ -37,7 +37,7 @@ test('fetch setup', async () => {
   expect(inbox.id).toBeTruthy();
   //</gen>
 });
-test('controller use', async () => {
+test.skipIf(!process.env.API_KEY)('controller use', async () => {
   const apiKey = process.env.API_KEY ?? 'your-api-key';
   //<gen>controller_use
   // controllers are available on a MailSlurp instance

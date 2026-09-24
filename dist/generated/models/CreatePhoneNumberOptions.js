@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePhoneNumberOptionsToJSON = exports.CreatePhoneNumberOptionsFromJSONTyped = exports.CreatePhoneNumberOptionsFromJSON = exports.CreatePhoneNumberOptionsPhoneLineFilterEnum = exports.CreatePhoneNumberOptionsPhoneProviderEnum = exports.CreatePhoneNumberOptionsPhoneNumberVariantEnum = exports.CreatePhoneNumberOptionsScheduleEnum = exports.CreatePhoneNumberOptionsPhoneCountryEnum = void 0;
+exports.CreatePhoneNumberOptionsPhoneLineFilterEnum = exports.CreatePhoneNumberOptionsPhoneProviderEnum = exports.CreatePhoneNumberOptionsPhoneNumberVariantEnum = exports.CreatePhoneNumberOptionsScheduleEnum = exports.CreatePhoneNumberOptionsPhoneCountryEnum = void 0;
+exports.CreatePhoneNumberOptionsFromJSON = CreatePhoneNumberOptionsFromJSON;
+exports.CreatePhoneNumberOptionsFromJSONTyped = CreatePhoneNumberOptionsFromJSONTyped;
+exports.CreatePhoneNumberOptionsToJSON = CreatePhoneNumberOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -34,7 +37,7 @@ var CreatePhoneNumberOptionsPhoneCountryEnum;
     CreatePhoneNumberOptionsPhoneCountryEnum["IL"] = "IL";
     CreatePhoneNumberOptionsPhoneCountryEnum["FI"] = "FI";
     CreatePhoneNumberOptionsPhoneCountryEnum["SE"] = "SE";
-})(CreatePhoneNumberOptionsPhoneCountryEnum = exports.CreatePhoneNumberOptionsPhoneCountryEnum || (exports.CreatePhoneNumberOptionsPhoneCountryEnum = {}));
+})(CreatePhoneNumberOptionsPhoneCountryEnum || (exports.CreatePhoneNumberOptionsPhoneCountryEnum = CreatePhoneNumberOptionsPhoneCountryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -43,7 +46,7 @@ var CreatePhoneNumberOptionsScheduleEnum;
 (function (CreatePhoneNumberOptionsScheduleEnum) {
     CreatePhoneNumberOptionsScheduleEnum["MONTHLY"] = "MONTHLY";
     CreatePhoneNumberOptionsScheduleEnum["YEARLY"] = "YEARLY";
-})(CreatePhoneNumberOptionsScheduleEnum = exports.CreatePhoneNumberOptionsScheduleEnum || (exports.CreatePhoneNumberOptionsScheduleEnum = {}));
+})(CreatePhoneNumberOptionsScheduleEnum || (exports.CreatePhoneNumberOptionsScheduleEnum = CreatePhoneNumberOptionsScheduleEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -53,7 +56,7 @@ var CreatePhoneNumberOptionsPhoneNumberVariantEnum;
     CreatePhoneNumberOptionsPhoneNumberVariantEnum["LOCAL"] = "LOCAL";
     CreatePhoneNumberOptionsPhoneNumberVariantEnum["MOBILE"] = "MOBILE";
     CreatePhoneNumberOptionsPhoneNumberVariantEnum["TOLL_FREE"] = "TOLL_FREE";
-})(CreatePhoneNumberOptionsPhoneNumberVariantEnum = exports.CreatePhoneNumberOptionsPhoneNumberVariantEnum || (exports.CreatePhoneNumberOptionsPhoneNumberVariantEnum = {}));
+})(CreatePhoneNumberOptionsPhoneNumberVariantEnum || (exports.CreatePhoneNumberOptionsPhoneNumberVariantEnum = CreatePhoneNumberOptionsPhoneNumberVariantEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -62,7 +65,7 @@ var CreatePhoneNumberOptionsPhoneProviderEnum;
 (function (CreatePhoneNumberOptionsPhoneProviderEnum) {
     CreatePhoneNumberOptionsPhoneProviderEnum["T1"] = "T1";
     CreatePhoneNumberOptionsPhoneProviderEnum["T2"] = "T2";
-})(CreatePhoneNumberOptionsPhoneProviderEnum = exports.CreatePhoneNumberOptionsPhoneProviderEnum || (exports.CreatePhoneNumberOptionsPhoneProviderEnum = {}));
+})(CreatePhoneNumberOptionsPhoneProviderEnum || (exports.CreatePhoneNumberOptionsPhoneProviderEnum = CreatePhoneNumberOptionsPhoneProviderEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -72,11 +75,10 @@ var CreatePhoneNumberOptionsPhoneLineFilterEnum;
     CreatePhoneNumberOptionsPhoneLineFilterEnum["ANY"] = "ANY";
     CreatePhoneNumberOptionsPhoneLineFilterEnum["OTP_FRIENDLY"] = "OTP_FRIENDLY";
     CreatePhoneNumberOptionsPhoneLineFilterEnum["NON_VOIP"] = "NON_VOIP";
-})(CreatePhoneNumberOptionsPhoneLineFilterEnum = exports.CreatePhoneNumberOptionsPhoneLineFilterEnum || (exports.CreatePhoneNumberOptionsPhoneLineFilterEnum = {}));
+})(CreatePhoneNumberOptionsPhoneLineFilterEnum || (exports.CreatePhoneNumberOptionsPhoneLineFilterEnum = CreatePhoneNumberOptionsPhoneLineFilterEnum = {}));
 function CreatePhoneNumberOptionsFromJSON(json) {
     return CreatePhoneNumberOptionsFromJSONTyped(json, false);
 }
-exports.CreatePhoneNumberOptionsFromJSON = CreatePhoneNumberOptionsFromJSON;
 function CreatePhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -104,7 +106,6 @@ function CreatePhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['environmentAccountId'],
     };
 }
-exports.CreatePhoneNumberOptionsFromJSONTyped = CreatePhoneNumberOptionsFromJSONTyped;
 function CreatePhoneNumberOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -125,4 +126,3 @@ function CreatePhoneNumberOptionsToJSON(value) {
         environmentAccountId: value.environmentAccountId,
     };
 }
-exports.CreatePhoneNumberOptionsToJSON = CreatePhoneNumberOptionsToJSON;

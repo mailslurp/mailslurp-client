@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AttachmentEntityDtoToJSON = exports.AttachmentEntityDtoFromJSONTyped = exports.AttachmentEntityDtoFromJSON = void 0;
+exports.AttachmentEntityDtoFromJSON = AttachmentEntityDtoFromJSON;
+exports.AttachmentEntityDtoFromJSONTyped = AttachmentEntityDtoFromJSONTyped;
+exports.AttachmentEntityDtoToJSON = AttachmentEntityDtoToJSON;
 var runtime_1 = require("../runtime");
 function AttachmentEntityDtoFromJSON(json) {
     return AttachmentEntityDtoFromJSONTyped(json, false);
 }
-exports.AttachmentEntityDtoFromJSON = AttachmentEntityDtoFromJSON;
 function AttachmentEntityDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +39,6 @@ function AttachmentEntityDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.AttachmentEntityDtoFromJSONTyped = AttachmentEntityDtoFromJSONTyped;
 function AttachmentEntityDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +59,3 @@ function AttachmentEntityDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.AttachmentEntityDtoToJSON = AttachmentEntityDtoToJSON;

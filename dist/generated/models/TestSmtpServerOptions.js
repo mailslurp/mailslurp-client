@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestSmtpServerOptionsToJSON = exports.TestSmtpServerOptionsFromJSONTyped = exports.TestSmtpServerOptionsFromJSON = void 0;
+exports.TestSmtpServerOptionsFromJSON = TestSmtpServerOptionsFromJSON;
+exports.TestSmtpServerOptionsFromJSONTyped = TestSmtpServerOptionsFromJSONTyped;
+exports.TestSmtpServerOptionsToJSON = TestSmtpServerOptionsToJSON;
 var runtime_1 = require("../runtime");
 function TestSmtpServerOptionsFromJSON(json) {
     return TestSmtpServerOptionsFromJSONTyped(json, false);
 }
-exports.TestSmtpServerOptionsFromJSON = TestSmtpServerOptionsFromJSON;
 function TestSmtpServerOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -36,7 +37,6 @@ function TestSmtpServerOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['captchaToken'],
     };
 }
-exports.TestSmtpServerOptionsFromJSONTyped = TestSmtpServerOptionsFromJSONTyped;
 function TestSmtpServerOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function TestSmtpServerOptionsToJSON(value) {
         captchaToken: value.captchaToken,
     };
 }
-exports.TestSmtpServerOptionsToJSON = TestSmtpServerOptionsToJSON;

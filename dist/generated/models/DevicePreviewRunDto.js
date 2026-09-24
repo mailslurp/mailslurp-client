@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewRunDtoToJSON = exports.DevicePreviewRunDtoFromJSONTyped = exports.DevicePreviewRunDtoFromJSON = exports.DevicePreviewRunDtoStatusEnum = exports.DevicePreviewRunDtoSourceTypeEnum = void 0;
+exports.DevicePreviewRunDtoStatusEnum = exports.DevicePreviewRunDtoSourceTypeEnum = void 0;
+exports.DevicePreviewRunDtoFromJSON = DevicePreviewRunDtoFromJSON;
+exports.DevicePreviewRunDtoFromJSONTyped = DevicePreviewRunDtoFromJSONTyped;
+exports.DevicePreviewRunDtoToJSON = DevicePreviewRunDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -27,7 +30,7 @@ var DevicePreviewRunDtoSourceTypeEnum;
     DevicePreviewRunDtoSourceTypeEnum["DEVICE_PREVIEW_INGEST"] = "DEVICE_PREVIEW_INGEST";
     DevicePreviewRunDtoSourceTypeEnum["PUBLIC_FREE_TEST"] = "PUBLIC_FREE_TEST";
     DevicePreviewRunDtoSourceTypeEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
-})(DevicePreviewRunDtoSourceTypeEnum = exports.DevicePreviewRunDtoSourceTypeEnum || (exports.DevicePreviewRunDtoSourceTypeEnum = {}));
+})(DevicePreviewRunDtoSourceTypeEnum || (exports.DevicePreviewRunDtoSourceTypeEnum = DevicePreviewRunDtoSourceTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -40,11 +43,10 @@ var DevicePreviewRunDtoStatusEnum;
     DevicePreviewRunDtoStatusEnum["PARTIAL_COMPLETE"] = "PARTIAL_COMPLETE";
     DevicePreviewRunDtoStatusEnum["COMPLETE"] = "COMPLETE";
     DevicePreviewRunDtoStatusEnum["FAILED"] = "FAILED";
-})(DevicePreviewRunDtoStatusEnum = exports.DevicePreviewRunDtoStatusEnum || (exports.DevicePreviewRunDtoStatusEnum = {}));
+})(DevicePreviewRunDtoStatusEnum || (exports.DevicePreviewRunDtoStatusEnum = DevicePreviewRunDtoStatusEnum = {}));
 function DevicePreviewRunDtoFromJSON(json) {
     return DevicePreviewRunDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewRunDtoFromJSON = DevicePreviewRunDtoFromJSON;
 function DevicePreviewRunDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -134,7 +136,6 @@ function DevicePreviewRunDtoFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.DevicePreviewQaBundleDtoFromJSON)(json['qaBundle']),
     };
 }
-exports.DevicePreviewRunDtoFromJSONTyped = DevicePreviewRunDtoFromJSONTyped;
 function DevicePreviewRunDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -181,4 +182,3 @@ function DevicePreviewRunDtoToJSON(value) {
         qaBundle: (0, _1.DevicePreviewQaBundleDtoToJSON)(value.qaBundle),
     };
 }
-exports.DevicePreviewRunDtoToJSON = DevicePreviewRunDtoToJSON;

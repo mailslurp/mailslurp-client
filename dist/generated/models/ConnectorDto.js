@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorDtoToJSON = exports.ConnectorDtoFromJSONTyped = exports.ConnectorDtoFromJSON = void 0;
+exports.ConnectorDtoFromJSON = ConnectorDtoFromJSON;
+exports.ConnectorDtoFromJSONTyped = ConnectorDtoFromJSONTyped;
+exports.ConnectorDtoToJSON = ConnectorDtoToJSON;
 var runtime_1 = require("../runtime");
 function ConnectorDtoFromJSON(json) {
     return ConnectorDtoFromJSONTyped(json, false);
 }
-exports.ConnectorDtoFromJSON = ConnectorDtoFromJSON;
 function ConnectorDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function ConnectorDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.ConnectorDtoFromJSONTyped = ConnectorDtoFromJSONTyped;
 function ConnectorDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function ConnectorDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.ConnectorDtoToJSON = ConnectorDtoToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupContentOptionsToJSON = exports.EmailWarmupContentOptionsFromJSONTyped = exports.EmailWarmupContentOptionsFromJSON = exports.EmailWarmupContentOptionsSourceEnum = void 0;
+exports.EmailWarmupContentOptionsSourceEnum = void 0;
+exports.EmailWarmupContentOptionsFromJSON = EmailWarmupContentOptionsFromJSON;
+exports.EmailWarmupContentOptionsFromJSONTyped = EmailWarmupContentOptionsFromJSONTyped;
+exports.EmailWarmupContentOptionsToJSON = EmailWarmupContentOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var EmailWarmupContentOptionsSourceEnum;
     EmailWarmupContentOptionsSourceEnum["MANAGED_CONTROL"] = "MANAGED_CONTROL";
     EmailWarmupContentOptionsSourceEnum["CUSTOM_TEMPLATE"] = "CUSTOM_TEMPLATE";
     EmailWarmupContentOptionsSourceEnum["AI_ASSISTED_TEMPLATE"] = "AI_ASSISTED_TEMPLATE";
-})(EmailWarmupContentOptionsSourceEnum = exports.EmailWarmupContentOptionsSourceEnum || (exports.EmailWarmupContentOptionsSourceEnum = {}));
+})(EmailWarmupContentOptionsSourceEnum || (exports.EmailWarmupContentOptionsSourceEnum = EmailWarmupContentOptionsSourceEnum = {}));
 function EmailWarmupContentOptionsFromJSON(json) {
     return EmailWarmupContentOptionsFromJSONTyped(json, false);
 }
-exports.EmailWarmupContentOptionsFromJSON = EmailWarmupContentOptionsFromJSON;
 function EmailWarmupContentOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +42,6 @@ function EmailWarmupContentOptionsFromJSONTyped(json, ignoreDiscriminator) {
         htmlBody: !(0, runtime_1.exists)(json, 'htmlBody') ? undefined : json['htmlBody'],
     };
 }
-exports.EmailWarmupContentOptionsFromJSONTyped = EmailWarmupContentOptionsFromJSONTyped;
 function EmailWarmupContentOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +56,3 @@ function EmailWarmupContentOptionsToJSON(value) {
         htmlBody: value.htmlBody,
     };
 }
-exports.EmailWarmupContentOptionsToJSON = EmailWarmupContentOptionsToJSON;

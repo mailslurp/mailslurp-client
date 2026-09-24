@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValidateEmailAddressListResultToJSON = exports.ValidateEmailAddressListResultFromJSONTyped = exports.ValidateEmailAddressListResultFromJSON = void 0;
+exports.ValidateEmailAddressListResultFromJSON = ValidateEmailAddressListResultFromJSON;
+exports.ValidateEmailAddressListResultFromJSONTyped = ValidateEmailAddressListResultFromJSONTyped;
+exports.ValidateEmailAddressListResultToJSON = ValidateEmailAddressListResultToJSON;
 function ValidateEmailAddressListResultFromJSON(json) {
     return ValidateEmailAddressListResultFromJSONTyped(json, false);
 }
-exports.ValidateEmailAddressListResultFromJSON = ValidateEmailAddressListResultFromJSON;
 function ValidateEmailAddressListResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function ValidateEmailAddressListResultFromJSONTyped(json, ignoreDiscriminator) 
         resultMapEmailAddressIsValid: json['resultMapEmailAddressIsValid'],
     };
 }
-exports.ValidateEmailAddressListResultFromJSONTyped = ValidateEmailAddressListResultFromJSONTyped;
 function ValidateEmailAddressListResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ValidateEmailAddressListResultToJSON(value) {
         resultMapEmailAddressIsValid: value.resultMapEmailAddressIsValid,
     };
 }
-exports.ValidateEmailAddressListResultToJSON = ValidateEmailAddressListResultToJSON;

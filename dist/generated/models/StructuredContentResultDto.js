@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StructuredContentResultDtoToJSON = exports.StructuredContentResultDtoFromJSONTyped = exports.StructuredContentResultDtoFromJSON = void 0;
+exports.StructuredContentResultDtoFromJSON = StructuredContentResultDtoFromJSON;
+exports.StructuredContentResultDtoFromJSONTyped = StructuredContentResultDtoFromJSONTyped;
+exports.StructuredContentResultDtoToJSON = StructuredContentResultDtoToJSON;
 function StructuredContentResultDtoFromJSON(json) {
     return StructuredContentResultDtoFromJSONTyped(json, false);
 }
-exports.StructuredContentResultDtoFromJSON = StructuredContentResultDtoFromJSON;
 function StructuredContentResultDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function StructuredContentResultDtoFromJSONTyped(json, ignoreDiscriminator) {
         result: json['result'],
     };
 }
-exports.StructuredContentResultDtoFromJSONTyped = StructuredContentResultDtoFromJSONTyped;
 function StructuredContentResultDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function StructuredContentResultDtoToJSON(value) {
         result: value.result,
     };
 }
-exports.StructuredContentResultDtoToJSON = StructuredContentResultDtoToJSON;

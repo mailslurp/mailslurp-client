@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmtpMailMessageBucketPathToJSON = exports.SmtpMailMessageBucketPathFromJSONTyped = exports.SmtpMailMessageBucketPathFromJSON = void 0;
+exports.SmtpMailMessageBucketPathFromJSON = SmtpMailMessageBucketPathFromJSON;
+exports.SmtpMailMessageBucketPathFromJSONTyped = SmtpMailMessageBucketPathFromJSONTyped;
+exports.SmtpMailMessageBucketPathToJSON = SmtpMailMessageBucketPathToJSON;
 var runtime_1 = require("../runtime");
 function SmtpMailMessageBucketPathFromJSON(json) {
     return SmtpMailMessageBucketPathFromJSONTyped(json, false);
 }
-exports.SmtpMailMessageBucketPathFromJSON = SmtpMailMessageBucketPathFromJSON;
 function SmtpMailMessageBucketPathFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function SmtpMailMessageBucketPathFromJSONTyped(json, ignoreDiscriminator) {
         sha256: !(0, runtime_1.exists)(json, 'sha256') ? undefined : json['sha256'],
     };
 }
-exports.SmtpMailMessageBucketPathFromJSONTyped = SmtpMailMessageBucketPathFromJSONTyped;
 function SmtpMailMessageBucketPathToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function SmtpMailMessageBucketPathToJSON(value) {
         sha256: value.sha256,
     };
 }
-exports.SmtpMailMessageBucketPathToJSON = SmtpMailMessageBucketPathToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValidationMessageToJSON = exports.ValidationMessageFromJSONTyped = exports.ValidationMessageFromJSON = void 0;
+exports.ValidationMessageFromJSON = ValidationMessageFromJSON;
+exports.ValidationMessageFromJSONTyped = ValidationMessageFromJSONTyped;
+exports.ValidationMessageToJSON = ValidationMessageToJSON;
 var runtime_1 = require("../runtime");
 function ValidationMessageFromJSON(json) {
     return ValidationMessageFromJSONTyped(json, false);
 }
-exports.ValidationMessageFromJSON = ValidationMessageFromJSON;
 function ValidationMessageFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function ValidationMessageFromJSONTyped(json, ignoreDiscriminator) {
         message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
     };
 }
-exports.ValidationMessageFromJSONTyped = ValidationMessageFromJSONTyped;
 function ValidationMessageToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function ValidationMessageToJSON(value) {
         message: value.message,
     };
 }
-exports.ValidationMessageToJSON = ValidationMessageToJSON;

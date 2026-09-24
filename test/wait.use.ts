@@ -6,8 +6,7 @@ import MailSlurp, {
   WaitForEmailCountSortEnum,
 } from '../dist';
 
-jest.setTimeout(120_000);
-describe('wait for', () => {
+describe.skipIf(!process.env.API_KEY)('wait for', () => {
   const config = { apiKey: process.env.API_KEY };
 
   //<gen>wait_for_multiple
@@ -42,11 +41,11 @@ describe('wait for', () => {
   //</gen>
 });
 
-describe('wait for matching', () => {
+describe.skipIf(!process.env.API_KEY)('wait for matching', () => {
   const config = { apiKey: process.env.API_KEY };
-  const mailslurp = new MailSlurp(config);
   const timeoutMillis = 30_000;
   it('can wait for matching emails', async () => {
+    const mailslurp = new MailSlurp(config);
     //<gen>wait_for_matching
     const inbox1 = await mailslurp.createInbox();
     const inbox2 = await mailslurp.createInbox();
@@ -84,14 +83,14 @@ describe('wait for matching', () => {
   });
 });
 
-describe('extract email content', () => {
+describe.skipIf(!process.env.API_KEY)('extract email content', () => {
   const config = { apiKey: process.env.API_KEY };
-  const mailslurp = new MailSlurp(config);
   const timeoutMillis = 30_000;
 
   const inboxId = '';
 
   it('extract content', async () => {
+    const mailslurp = new MailSlurp(config);
     /*
         //<gen>create_webhook
         await mailslurp.webhookController.createWebhook({

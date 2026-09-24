@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AutomatedInboxPlacementProviderDtoToJSON = exports.AutomatedInboxPlacementProviderDtoFromJSONTyped = exports.AutomatedInboxPlacementProviderDtoFromJSON = exports.AutomatedInboxPlacementProviderDtoAvailabilityEnum = exports.AutomatedInboxPlacementProviderDtoProviderEnum = void 0;
+exports.AutomatedInboxPlacementProviderDtoAvailabilityEnum = exports.AutomatedInboxPlacementProviderDtoProviderEnum = void 0;
+exports.AutomatedInboxPlacementProviderDtoFromJSON = AutomatedInboxPlacementProviderDtoFromJSON;
+exports.AutomatedInboxPlacementProviderDtoFromJSONTyped = AutomatedInboxPlacementProviderDtoFromJSONTyped;
+exports.AutomatedInboxPlacementProviderDtoToJSON = AutomatedInboxPlacementProviderDtoToJSON;
 /**
  * @export
  * @enum {string}
@@ -26,7 +29,7 @@ var AutomatedInboxPlacementProviderDtoProviderEnum;
     AutomatedInboxPlacementProviderDtoProviderEnum["RESEND"] = "RESEND";
     AutomatedInboxPlacementProviderDtoProviderEnum["MAILGUN"] = "MAILGUN";
     AutomatedInboxPlacementProviderDtoProviderEnum["POSTMARK"] = "POSTMARK";
-})(AutomatedInboxPlacementProviderDtoProviderEnum = exports.AutomatedInboxPlacementProviderDtoProviderEnum || (exports.AutomatedInboxPlacementProviderDtoProviderEnum = {}));
+})(AutomatedInboxPlacementProviderDtoProviderEnum || (exports.AutomatedInboxPlacementProviderDtoProviderEnum = AutomatedInboxPlacementProviderDtoProviderEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -35,11 +38,10 @@ var AutomatedInboxPlacementProviderDtoAvailabilityEnum;
 (function (AutomatedInboxPlacementProviderDtoAvailabilityEnum) {
     AutomatedInboxPlacementProviderDtoAvailabilityEnum["AVAILABLE"] = "AVAILABLE";
     AutomatedInboxPlacementProviderDtoAvailabilityEnum["PLANNED"] = "PLANNED";
-})(AutomatedInboxPlacementProviderDtoAvailabilityEnum = exports.AutomatedInboxPlacementProviderDtoAvailabilityEnum || (exports.AutomatedInboxPlacementProviderDtoAvailabilityEnum = {}));
+})(AutomatedInboxPlacementProviderDtoAvailabilityEnum || (exports.AutomatedInboxPlacementProviderDtoAvailabilityEnum = AutomatedInboxPlacementProviderDtoAvailabilityEnum = {}));
 function AutomatedInboxPlacementProviderDtoFromJSON(json) {
     return AutomatedInboxPlacementProviderDtoFromJSONTyped(json, false);
 }
-exports.AutomatedInboxPlacementProviderDtoFromJSON = AutomatedInboxPlacementProviderDtoFromJSON;
 function AutomatedInboxPlacementProviderDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -51,7 +53,6 @@ function AutomatedInboxPlacementProviderDtoFromJSONTyped(json, ignoreDiscriminat
         credentialType: json['credentialType'],
     };
 }
-exports.AutomatedInboxPlacementProviderDtoFromJSONTyped = AutomatedInboxPlacementProviderDtoFromJSONTyped;
 function AutomatedInboxPlacementProviderDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -66,4 +67,3 @@ function AutomatedInboxPlacementProviderDtoToJSON(value) {
         credentialType: value.credentialType,
     };
 }
-exports.AutomatedInboxPlacementProviderDtoToJSON = AutomatedInboxPlacementProviderDtoToJSON;

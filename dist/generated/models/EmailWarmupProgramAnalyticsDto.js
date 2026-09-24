@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupProgramAnalyticsDtoToJSON = exports.EmailWarmupProgramAnalyticsDtoFromJSONTyped = exports.EmailWarmupProgramAnalyticsDtoFromJSON = void 0;
+exports.EmailWarmupProgramAnalyticsDtoFromJSON = EmailWarmupProgramAnalyticsDtoFromJSON;
+exports.EmailWarmupProgramAnalyticsDtoFromJSONTyped = EmailWarmupProgramAnalyticsDtoFromJSONTyped;
+exports.EmailWarmupProgramAnalyticsDtoToJSON = EmailWarmupProgramAnalyticsDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function EmailWarmupProgramAnalyticsDtoFromJSON(json) {
     return EmailWarmupProgramAnalyticsDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupProgramAnalyticsDtoFromJSON = EmailWarmupProgramAnalyticsDtoFromJSON;
 function EmailWarmupProgramAnalyticsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -41,7 +42,6 @@ function EmailWarmupProgramAnalyticsDtoFromJSONTyped(json, ignoreDiscriminator) 
             : (0, _1.EmailWarmupReadinessDtoFromJSON)(json['readiness']),
     };
 }
-exports.EmailWarmupProgramAnalyticsDtoFromJSONTyped = EmailWarmupProgramAnalyticsDtoFromJSONTyped;
 function EmailWarmupProgramAnalyticsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,4 +64,3 @@ function EmailWarmupProgramAnalyticsDtoToJSON(value) {
         readiness: (0, _1.EmailWarmupReadinessDtoToJSON)(value.readiness),
     };
 }
-exports.EmailWarmupProgramAnalyticsDtoToJSON = EmailWarmupProgramAnalyticsDtoToJSON;

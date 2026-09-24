@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhonePlanAvailabilityItemToJSON = exports.PhonePlanAvailabilityItemFromJSONTyped = exports.PhonePlanAvailabilityItemFromJSON = exports.PhonePlanAvailabilityItemVariantsEnum = exports.PhonePlanAvailabilityItemAvailabilityStatusEnum = exports.PhonePlanAvailabilityItemPhoneCountryEnum = void 0;
+exports.PhonePlanAvailabilityItemVariantsEnum = exports.PhonePlanAvailabilityItemAvailabilityStatusEnum = exports.PhonePlanAvailabilityItemPhoneCountryEnum = void 0;
+exports.PhonePlanAvailabilityItemFromJSON = PhonePlanAvailabilityItemFromJSON;
+exports.PhonePlanAvailabilityItemFromJSONTyped = PhonePlanAvailabilityItemFromJSONTyped;
+exports.PhonePlanAvailabilityItemToJSON = PhonePlanAvailabilityItemToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -34,7 +37,7 @@ var PhonePlanAvailabilityItemPhoneCountryEnum;
     PhonePlanAvailabilityItemPhoneCountryEnum["IL"] = "IL";
     PhonePlanAvailabilityItemPhoneCountryEnum["FI"] = "FI";
     PhonePlanAvailabilityItemPhoneCountryEnum["SE"] = "SE";
-})(PhonePlanAvailabilityItemPhoneCountryEnum = exports.PhonePlanAvailabilityItemPhoneCountryEnum || (exports.PhonePlanAvailabilityItemPhoneCountryEnum = {}));
+})(PhonePlanAvailabilityItemPhoneCountryEnum || (exports.PhonePlanAvailabilityItemPhoneCountryEnum = PhonePlanAvailabilityItemPhoneCountryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -45,7 +48,7 @@ var PhonePlanAvailabilityItemAvailabilityStatusEnum;
     PhonePlanAvailabilityItemAvailabilityStatusEnum["NON_MATCHING_SUBSCRIPTION_CURRENCY"] = "NON_MATCHING_SUBSCRIPTION_CURRENCY";
     PhonePlanAvailabilityItemAvailabilityStatusEnum["NON_MATCHING_SUBSCRIPTION_TYPE"] = "NON_MATCHING_SUBSCRIPTION_TYPE";
     PhonePlanAvailabilityItemAvailabilityStatusEnum["ALREADY_ASSIGNED"] = "ALREADY_ASSIGNED";
-})(PhonePlanAvailabilityItemAvailabilityStatusEnum = exports.PhonePlanAvailabilityItemAvailabilityStatusEnum || (exports.PhonePlanAvailabilityItemAvailabilityStatusEnum = {}));
+})(PhonePlanAvailabilityItemAvailabilityStatusEnum || (exports.PhonePlanAvailabilityItemAvailabilityStatusEnum = PhonePlanAvailabilityItemAvailabilityStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -55,11 +58,10 @@ var PhonePlanAvailabilityItemVariantsEnum;
     PhonePlanAvailabilityItemVariantsEnum["LOCAL"] = "LOCAL";
     PhonePlanAvailabilityItemVariantsEnum["MOBILE"] = "MOBILE";
     PhonePlanAvailabilityItemVariantsEnum["TOLL_FREE"] = "TOLL_FREE";
-})(PhonePlanAvailabilityItemVariantsEnum = exports.PhonePlanAvailabilityItemVariantsEnum || (exports.PhonePlanAvailabilityItemVariantsEnum = {}));
+})(PhonePlanAvailabilityItemVariantsEnum || (exports.PhonePlanAvailabilityItemVariantsEnum = PhonePlanAvailabilityItemVariantsEnum = {}));
 function PhonePlanAvailabilityItemFromJSON(json) {
     return PhonePlanAvailabilityItemFromJSONTyped(json, false);
 }
-exports.PhonePlanAvailabilityItemFromJSON = PhonePlanAvailabilityItemFromJSON;
 function PhonePlanAvailabilityItemFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -70,7 +72,6 @@ function PhonePlanAvailabilityItemFromJSONTyped(json, ignoreDiscriminator) {
         variants: !(0, runtime_1.exists)(json, 'variants') ? undefined : json['variants'],
     };
 }
-exports.PhonePlanAvailabilityItemFromJSONTyped = PhonePlanAvailabilityItemFromJSONTyped;
 function PhonePlanAvailabilityItemToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -84,4 +85,3 @@ function PhonePlanAvailabilityItemToJSON(value) {
         variants: value.variants,
     };
 }
-exports.PhonePlanAvailabilityItemToJSON = PhonePlanAvailabilityItemToJSON;

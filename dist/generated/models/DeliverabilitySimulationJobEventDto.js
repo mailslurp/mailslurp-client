@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilitySimulationJobEventDtoToJSON = exports.DeliverabilitySimulationJobEventDtoFromJSONTyped = exports.DeliverabilitySimulationJobEventDtoFromJSON = exports.DeliverabilitySimulationJobEventDtoEventTypeEnum = void 0;
+exports.DeliverabilitySimulationJobEventDtoEventTypeEnum = void 0;
+exports.DeliverabilitySimulationJobEventDtoFromJSON = DeliverabilitySimulationJobEventDtoFromJSON;
+exports.DeliverabilitySimulationJobEventDtoFromJSONTyped = DeliverabilitySimulationJobEventDtoFromJSONTyped;
+exports.DeliverabilitySimulationJobEventDtoToJSON = DeliverabilitySimulationJobEventDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -30,11 +33,10 @@ var DeliverabilitySimulationJobEventDtoEventTypeEnum;
     DeliverabilitySimulationJobEventDtoEventTypeEnum["JOB_FAILED"] = "JOB_FAILED";
     DeliverabilitySimulationJobEventDtoEventTypeEnum["SEND_SUCCESS"] = "SEND_SUCCESS";
     DeliverabilitySimulationJobEventDtoEventTypeEnum["SEND_FAILURE"] = "SEND_FAILURE";
-})(DeliverabilitySimulationJobEventDtoEventTypeEnum = exports.DeliverabilitySimulationJobEventDtoEventTypeEnum || (exports.DeliverabilitySimulationJobEventDtoEventTypeEnum = {}));
+})(DeliverabilitySimulationJobEventDtoEventTypeEnum || (exports.DeliverabilitySimulationJobEventDtoEventTypeEnum = DeliverabilitySimulationJobEventDtoEventTypeEnum = {}));
 function DeliverabilitySimulationJobEventDtoFromJSON(json) {
     return DeliverabilitySimulationJobEventDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilitySimulationJobEventDtoFromJSON = DeliverabilitySimulationJobEventDtoFromJSON;
 function DeliverabilitySimulationJobEventDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -54,7 +56,6 @@ function DeliverabilitySimulationJobEventDtoFromJSONTyped(json, ignoreDiscrimina
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.DeliverabilitySimulationJobEventDtoFromJSONTyped = DeliverabilitySimulationJobEventDtoFromJSONTyped;
 function DeliverabilitySimulationJobEventDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -75,4 +76,3 @@ function DeliverabilitySimulationJobEventDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.DeliverabilitySimulationJobEventDtoToJSON = DeliverabilitySimulationJobEventDtoToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DmarcReportMetadataToJSON = exports.DmarcReportMetadataFromJSONTyped = exports.DmarcReportMetadataFromJSON = void 0;
+exports.DmarcReportMetadataFromJSON = DmarcReportMetadataFromJSON;
+exports.DmarcReportMetadataFromJSONTyped = DmarcReportMetadataFromJSONTyped;
+exports.DmarcReportMetadataToJSON = DmarcReportMetadataToJSON;
 var runtime_1 = require("../runtime");
 function DmarcReportMetadataFromJSON(json) {
     return DmarcReportMetadataFromJSONTyped(json, false);
 }
-exports.DmarcReportMetadataFromJSON = DmarcReportMetadataFromJSON;
 function DmarcReportMetadataFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -47,7 +48,6 @@ function DmarcReportMetadataFromJSONTyped(json, ignoreDiscriminator) {
                 : new Date(json['dateRangeEnd']),
     };
 }
-exports.DmarcReportMetadataFromJSONTyped = DmarcReportMetadataFromJSONTyped;
 function DmarcReportMetadataToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -77,4 +77,3 @@ function DmarcReportMetadataToJSON(value) {
                 : value.dateRangeEnd.toISOString(),
     };
 }
-exports.DmarcReportMetadataToJSON = DmarcReportMetadataToJSON;

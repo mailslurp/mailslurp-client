@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentMatchOptionsToJSON = exports.ContentMatchOptionsFromJSONTyped = exports.ContentMatchOptionsFromJSON = void 0;
+exports.ContentMatchOptionsFromJSON = ContentMatchOptionsFromJSON;
+exports.ContentMatchOptionsFromJSONTyped = ContentMatchOptionsFromJSONTyped;
+exports.ContentMatchOptionsToJSON = ContentMatchOptionsToJSON;
 function ContentMatchOptionsFromJSON(json) {
     return ContentMatchOptionsFromJSONTyped(json, false);
 }
-exports.ContentMatchOptionsFromJSON = ContentMatchOptionsFromJSON;
 function ContentMatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function ContentMatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
         pattern: json['pattern'],
     };
 }
-exports.ContentMatchOptionsFromJSONTyped = ContentMatchOptionsFromJSONTyped;
 function ContentMatchOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function ContentMatchOptionsToJSON(value) {
         pattern: value.pattern,
     };
 }
-exports.ContentMatchOptionsToJSON = ContentMatchOptionsToJSON;

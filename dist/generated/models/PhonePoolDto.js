@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhonePoolDtoToJSON = exports.PhonePoolDtoFromJSONTyped = exports.PhonePoolDtoFromJSON = void 0;
+exports.PhonePoolDtoFromJSON = PhonePoolDtoFromJSON;
+exports.PhonePoolDtoFromJSONTyped = PhonePoolDtoFromJSONTyped;
+exports.PhonePoolDtoToJSON = PhonePoolDtoToJSON;
 var runtime_1 = require("../runtime");
 function PhonePoolDtoFromJSON(json) {
     return PhonePoolDtoFromJSONTyped(json, false);
 }
-exports.PhonePoolDtoFromJSON = PhonePoolDtoFromJSON;
 function PhonePoolDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function PhonePoolDtoFromJSONTyped(json, ignoreDiscriminator) {
         leasedMemberCount: json['leasedMemberCount'],
     };
 }
-exports.PhonePoolDtoFromJSONTyped = PhonePoolDtoFromJSONTyped;
 function PhonePoolDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function PhonePoolDtoToJSON(value) {
         leasedMemberCount: value.leasedMemberCount,
     };
 }
-exports.PhonePoolDtoToJSON = PhonePoolDtoToJSON;

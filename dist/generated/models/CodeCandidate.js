@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CodeCandidateToJSON = exports.CodeCandidateFromJSONTyped = exports.CodeCandidateFromJSON = exports.CodeCandidateMethodEnum = void 0;
+exports.CodeCandidateMethodEnum = void 0;
+exports.CodeCandidateFromJSON = CodeCandidateFromJSON;
+exports.CodeCandidateFromJSONTyped = CodeCandidateFromJSONTyped;
+exports.CodeCandidateToJSON = CodeCandidateToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,11 +29,10 @@ var CodeCandidateMethodEnum;
     CodeCandidateMethodEnum["LLM"] = "LLM";
     CodeCandidateMethodEnum["OCR"] = "OCR";
     CodeCandidateMethodEnum["OCR_THEN_LLM"] = "OCR_THEN_LLM";
-})(CodeCandidateMethodEnum = exports.CodeCandidateMethodEnum || (exports.CodeCandidateMethodEnum = {}));
+})(CodeCandidateMethodEnum || (exports.CodeCandidateMethodEnum = CodeCandidateMethodEnum = {}));
 function CodeCandidateFromJSON(json) {
     return CodeCandidateFromJSONTyped(json, false);
 }
-exports.CodeCandidateFromJSON = CodeCandidateFromJSON;
 function CodeCandidateFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -43,7 +45,6 @@ function CodeCandidateFromJSONTyped(json, ignoreDiscriminator) {
         context: !(0, runtime_1.exists)(json, 'context') ? undefined : json['context'],
     };
 }
-exports.CodeCandidateFromJSONTyped = CodeCandidateFromJSONTyped;
 function CodeCandidateToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +60,3 @@ function CodeCandidateToJSON(value) {
         context: value.context,
     };
 }
-exports.CodeCandidateToJSON = CodeCandidateToJSON;

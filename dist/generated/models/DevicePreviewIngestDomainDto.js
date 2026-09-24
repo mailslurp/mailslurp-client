@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewIngestDomainDtoToJSON = exports.DevicePreviewIngestDomainDtoFromJSONTyped = exports.DevicePreviewIngestDomainDtoFromJSON = void 0;
+exports.DevicePreviewIngestDomainDtoFromJSON = DevicePreviewIngestDomainDtoFromJSON;
+exports.DevicePreviewIngestDomainDtoFromJSONTyped = DevicePreviewIngestDomainDtoFromJSONTyped;
+exports.DevicePreviewIngestDomainDtoToJSON = DevicePreviewIngestDomainDtoToJSON;
 function DevicePreviewIngestDomainDtoFromJSON(json) {
     return DevicePreviewIngestDomainDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewIngestDomainDtoFromJSON = DevicePreviewIngestDomainDtoFromJSON;
 function DevicePreviewIngestDomainDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function DevicePreviewIngestDomainDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DevicePreviewIngestDomainDtoFromJSONTyped = DevicePreviewIngestDomainDtoFromJSONTyped;
 function DevicePreviewIngestDomainDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -52,4 +52,3 @@ function DevicePreviewIngestDomainDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DevicePreviewIngestDomainDtoToJSON = DevicePreviewIngestDomainDtoToJSON;

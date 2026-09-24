@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateInboxDtoToJSON = exports.CreateInboxDtoFromJSONTyped = exports.CreateInboxDtoFromJSON = exports.CreateInboxDtoInboxTypeEnum = void 0;
+exports.CreateInboxDtoInboxTypeEnum = void 0;
+exports.CreateInboxDtoFromJSON = CreateInboxDtoFromJSON;
+exports.CreateInboxDtoFromJSONTyped = CreateInboxDtoFromJSONTyped;
+exports.CreateInboxDtoToJSON = CreateInboxDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var CreateInboxDtoInboxTypeEnum;
 (function (CreateInboxDtoInboxTypeEnum) {
     CreateInboxDtoInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     CreateInboxDtoInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(CreateInboxDtoInboxTypeEnum = exports.CreateInboxDtoInboxTypeEnum || (exports.CreateInboxDtoInboxTypeEnum = {}));
+})(CreateInboxDtoInboxTypeEnum || (exports.CreateInboxDtoInboxTypeEnum = CreateInboxDtoInboxTypeEnum = {}));
 function CreateInboxDtoFromJSON(json) {
     return CreateInboxDtoFromJSONTyped(json, false);
 }
-exports.CreateInboxDtoFromJSON = CreateInboxDtoFromJSON;
 function CreateInboxDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -64,7 +66,6 @@ function CreateInboxDtoFromJSONTyped(json, ignoreDiscriminator) {
         prefix: !(0, runtime_1.exists)(json, 'prefix') ? undefined : json['prefix'],
     };
 }
-exports.CreateInboxDtoFromJSONTyped = CreateInboxDtoFromJSONTyped;
 function CreateInboxDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -94,4 +95,3 @@ function CreateInboxDtoToJSON(value) {
         prefix: value.prefix,
     };
 }
-exports.CreateInboxDtoToJSON = CreateInboxDtoToJSON;

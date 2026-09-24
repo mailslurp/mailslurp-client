@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestInboxRulesetSendingOptionsToJSON = exports.TestInboxRulesetSendingOptionsFromJSONTyped = exports.TestInboxRulesetSendingOptionsFromJSON = void 0;
+exports.TestInboxRulesetSendingOptionsFromJSON = TestInboxRulesetSendingOptionsFromJSON;
+exports.TestInboxRulesetSendingOptionsFromJSONTyped = TestInboxRulesetSendingOptionsFromJSONTyped;
+exports.TestInboxRulesetSendingOptionsToJSON = TestInboxRulesetSendingOptionsToJSON;
 var runtime_1 = require("../runtime");
 function TestInboxRulesetSendingOptionsFromJSON(json) {
     return TestInboxRulesetSendingOptionsFromJSONTyped(json, false);
 }
-exports.TestInboxRulesetSendingOptionsFromJSON = TestInboxRulesetSendingOptionsFromJSON;
 function TestInboxRulesetSendingOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function TestInboxRulesetSendingOptionsFromJSONTyped(json, ignoreDiscriminator) 
         recipient: json['recipient'],
     };
 }
-exports.TestInboxRulesetSendingOptionsFromJSONTyped = TestInboxRulesetSendingOptionsFromJSONTyped;
 function TestInboxRulesetSendingOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function TestInboxRulesetSendingOptionsToJSON(value) {
         recipient: value.recipient,
     };
 }
-exports.TestInboxRulesetSendingOptionsToJSON = TestInboxRulesetSendingOptionsToJSON;

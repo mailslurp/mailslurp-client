@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainHealthEventDtoToJSON = exports.DomainHealthEventDtoFromJSONTyped = exports.DomainHealthEventDtoFromJSON = exports.DomainHealthEventDtoSeverityEnum = exports.DomainHealthEventDtoStatusEnum = exports.DomainHealthEventDtoEventTypeEnum = exports.DomainHealthEventDtoAccountRegionEnum = void 0;
+exports.DomainHealthEventDtoSeverityEnum = exports.DomainHealthEventDtoStatusEnum = exports.DomainHealthEventDtoEventTypeEnum = exports.DomainHealthEventDtoAccountRegionEnum = void 0;
+exports.DomainHealthEventDtoFromJSON = DomainHealthEventDtoFromJSON;
+exports.DomainHealthEventDtoFromJSONTyped = DomainHealthEventDtoFromJSONTyped;
+exports.DomainHealthEventDtoToJSON = DomainHealthEventDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -35,7 +38,7 @@ var DomainHealthEventDtoAccountRegionEnum;
     DomainHealthEventDtoAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
     DomainHealthEventDtoAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
     DomainHealthEventDtoAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
-})(DomainHealthEventDtoAccountRegionEnum = exports.DomainHealthEventDtoAccountRegionEnum || (exports.DomainHealthEventDtoAccountRegionEnum = {}));
+})(DomainHealthEventDtoAccountRegionEnum || (exports.DomainHealthEventDtoAccountRegionEnum = DomainHealthEventDtoAccountRegionEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -51,7 +54,7 @@ var DomainHealthEventDtoEventTypeEnum;
     DomainHealthEventDtoEventTypeEnum["SENDING_DISABLED"] = "SENDING_DISABLED";
     DomainHealthEventDtoEventTypeEnum["SENDING_ENABLED"] = "SENDING_ENABLED";
     DomainHealthEventDtoEventTypeEnum["DOMAIN_AUTHENTICATION_ISSUE"] = "DOMAIN_AUTHENTICATION_ISSUE";
-})(DomainHealthEventDtoEventTypeEnum = exports.DomainHealthEventDtoEventTypeEnum || (exports.DomainHealthEventDtoEventTypeEnum = {}));
+})(DomainHealthEventDtoEventTypeEnum || (exports.DomainHealthEventDtoEventTypeEnum = DomainHealthEventDtoEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -60,7 +63,7 @@ var DomainHealthEventDtoStatusEnum;
 (function (DomainHealthEventDtoStatusEnum) {
     DomainHealthEventDtoStatusEnum["OPEN"] = "OPEN";
     DomainHealthEventDtoStatusEnum["RESOLVED"] = "RESOLVED";
-})(DomainHealthEventDtoStatusEnum = exports.DomainHealthEventDtoStatusEnum || (exports.DomainHealthEventDtoStatusEnum = {}));
+})(DomainHealthEventDtoStatusEnum || (exports.DomainHealthEventDtoStatusEnum = DomainHealthEventDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -70,11 +73,10 @@ var DomainHealthEventDtoSeverityEnum;
     DomainHealthEventDtoSeverityEnum["INFO"] = "INFO";
     DomainHealthEventDtoSeverityEnum["WARNING"] = "WARNING";
     DomainHealthEventDtoSeverityEnum["CRITICAL"] = "CRITICAL";
-})(DomainHealthEventDtoSeverityEnum = exports.DomainHealthEventDtoSeverityEnum || (exports.DomainHealthEventDtoSeverityEnum = {}));
+})(DomainHealthEventDtoSeverityEnum || (exports.DomainHealthEventDtoSeverityEnum = DomainHealthEventDtoSeverityEnum = {}));
 function DomainHealthEventDtoFromJSON(json) {
     return DomainHealthEventDtoFromJSONTyped(json, false);
 }
-exports.DomainHealthEventDtoFromJSON = DomainHealthEventDtoFromJSON;
 function DomainHealthEventDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -98,7 +100,6 @@ function DomainHealthEventDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.DomainHealthEventDtoFromJSONTyped = DomainHealthEventDtoFromJSONTyped;
 function DomainHealthEventDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -121,4 +122,3 @@ function DomainHealthEventDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.DomainHealthEventDtoToJSON = DomainHealthEventDtoToJSON;

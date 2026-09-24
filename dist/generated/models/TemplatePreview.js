@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TemplatePreviewToJSON = exports.TemplatePreviewFromJSONTyped = exports.TemplatePreviewFromJSON = void 0;
+exports.TemplatePreviewFromJSON = TemplatePreviewFromJSON;
+exports.TemplatePreviewFromJSONTyped = TemplatePreviewFromJSONTyped;
+exports.TemplatePreviewToJSON = TemplatePreviewToJSON;
 function TemplatePreviewFromJSON(json) {
     return TemplatePreviewFromJSONTyped(json, false);
 }
-exports.TemplatePreviewFromJSON = TemplatePreviewFromJSON;
 function TemplatePreviewFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function TemplatePreviewFromJSONTyped(json, ignoreDiscriminator) {
         preview: json['preview'],
     };
 }
-exports.TemplatePreviewFromJSONTyped = TemplatePreviewFromJSONTyped;
 function TemplatePreviewToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function TemplatePreviewToJSON(value) {
         preview: value.preview,
     };
 }
-exports.TemplatePreviewToJSON = TemplatePreviewToJSON;

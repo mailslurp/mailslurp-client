@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentCompletedWorkItemDtoToJSON = exports.AgentCompletedWorkItemDtoFromJSONTyped = exports.AgentCompletedWorkItemDtoFromJSON = void 0;
+exports.AgentCompletedWorkItemDtoFromJSON = AgentCompletedWorkItemDtoFromJSON;
+exports.AgentCompletedWorkItemDtoFromJSONTyped = AgentCompletedWorkItemDtoFromJSONTyped;
+exports.AgentCompletedWorkItemDtoToJSON = AgentCompletedWorkItemDtoToJSON;
 var _1 = require("./");
 function AgentCompletedWorkItemDtoFromJSON(json) {
     return AgentCompletedWorkItemDtoFromJSONTyped(json, false);
 }
-exports.AgentCompletedWorkItemDtoFromJSON = AgentCompletedWorkItemDtoFromJSON;
 function AgentCompletedWorkItemDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function AgentCompletedWorkItemDtoFromJSONTyped(json, ignoreDiscriminator) {
         claimReleased: json['claimReleased'],
     };
 }
-exports.AgentCompletedWorkItemDtoFromJSONTyped = AgentCompletedWorkItemDtoFromJSONTyped;
 function AgentCompletedWorkItemDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function AgentCompletedWorkItemDtoToJSON(value) {
         claimReleased: value.claimReleased,
     };
 }
-exports.AgentCompletedWorkItemDtoToJSON = AgentCompletedWorkItemDtoToJSON;

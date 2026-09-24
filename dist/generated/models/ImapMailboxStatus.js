@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapMailboxStatusToJSON = exports.ImapMailboxStatusFromJSONTyped = exports.ImapMailboxStatusFromJSON = void 0;
+exports.ImapMailboxStatusFromJSON = ImapMailboxStatusFromJSON;
+exports.ImapMailboxStatusFromJSONTyped = ImapMailboxStatusFromJSONTyped;
+exports.ImapMailboxStatusToJSON = ImapMailboxStatusToJSON;
 var runtime_1 = require("../runtime");
 function ImapMailboxStatusFromJSON(json) {
     return ImapMailboxStatusFromJSONTyped(json, false);
 }
-exports.ImapMailboxStatusFromJSON = ImapMailboxStatusFromJSON;
 function ImapMailboxStatusFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +39,6 @@ function ImapMailboxStatusFromJSONTyped(json, ignoreDiscriminator) {
         appendLimit: !(0, runtime_1.exists)(json, 'appendLimit') ? undefined : json['appendLimit'],
     };
 }
-exports.ImapMailboxStatusFromJSONTyped = ImapMailboxStatusFromJSONTyped;
 function ImapMailboxStatusToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -61,4 +61,3 @@ function ImapMailboxStatusToJSON(value) {
         appendLimit: value.appendLimit,
     };
 }
-exports.ImapMailboxStatusToJSON = ImapMailboxStatusToJSON;

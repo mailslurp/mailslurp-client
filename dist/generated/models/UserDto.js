@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserDtoToJSON = exports.UserDtoFromJSONTyped = exports.UserDtoFromJSON = exports.UserDtoAccountRegionEnum = exports.UserDtoVerifiedPhoneEnum = exports.UserDtoVerifiedEnum = exports.UserDtoUserTypeEnum = void 0;
+exports.UserDtoAccountRegionEnum = exports.UserDtoVerifiedPhoneEnum = exports.UserDtoVerifiedEnum = exports.UserDtoUserTypeEnum = void 0;
+exports.UserDtoFromJSON = UserDtoFromJSON;
+exports.UserDtoFromJSONTyped = UserDtoFromJSONTyped;
+exports.UserDtoToJSON = UserDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -26,7 +29,7 @@ var UserDtoUserTypeEnum;
     UserDtoUserTypeEnum["CHILD_SOLO"] = "CHILD_SOLO";
     UserDtoUserTypeEnum["CHILD_TEAM"] = "CHILD_TEAM";
     UserDtoUserTypeEnum["CHILD_ADMIN"] = "CHILD_ADMIN";
-})(UserDtoUserTypeEnum = exports.UserDtoUserTypeEnum || (exports.UserDtoUserTypeEnum = {}));
+})(UserDtoUserTypeEnum || (exports.UserDtoUserTypeEnum = UserDtoUserTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -35,7 +38,7 @@ var UserDtoVerifiedEnum;
 (function (UserDtoVerifiedEnum) {
     UserDtoVerifiedEnum["VERIFIED"] = "VERIFIED";
     UserDtoVerifiedEnum["PENDING"] = "PENDING";
-})(UserDtoVerifiedEnum = exports.UserDtoVerifiedEnum || (exports.UserDtoVerifiedEnum = {}));
+})(UserDtoVerifiedEnum || (exports.UserDtoVerifiedEnum = UserDtoVerifiedEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -44,7 +47,7 @@ var UserDtoVerifiedPhoneEnum;
 (function (UserDtoVerifiedPhoneEnum) {
     UserDtoVerifiedPhoneEnum["VERIFIED"] = "VERIFIED";
     UserDtoVerifiedPhoneEnum["PENDING"] = "PENDING";
-})(UserDtoVerifiedPhoneEnum = exports.UserDtoVerifiedPhoneEnum || (exports.UserDtoVerifiedPhoneEnum = {}));
+})(UserDtoVerifiedPhoneEnum || (exports.UserDtoVerifiedPhoneEnum = UserDtoVerifiedPhoneEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -65,11 +68,10 @@ var UserDtoAccountRegionEnum;
     UserDtoAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
     UserDtoAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
     UserDtoAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
-})(UserDtoAccountRegionEnum = exports.UserDtoAccountRegionEnum || (exports.UserDtoAccountRegionEnum = {}));
+})(UserDtoAccountRegionEnum || (exports.UserDtoAccountRegionEnum = UserDtoAccountRegionEnum = {}));
 function UserDtoFromJSON(json) {
     return UserDtoFromJSONTyped(json, false);
 }
-exports.UserDtoFromJSON = UserDtoFromJSON;
 function UserDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -140,7 +142,6 @@ function UserDtoFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.AccessLinkSendResultDtoFromJSON)(json['accessLinkSendResult']),
     };
 }
-exports.UserDtoFromJSONTyped = UserDtoFromJSONTyped;
 function UserDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -184,4 +185,3 @@ function UserDtoToJSON(value) {
         accessLinkSendResult: (0, _1.AccessLinkSendResultDtoToJSON)(value.accessLinkSendResult),
     };
 }
-exports.UserDtoToJSON = UserDtoToJSON;

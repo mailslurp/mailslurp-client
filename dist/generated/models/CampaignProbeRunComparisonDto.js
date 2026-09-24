@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CampaignProbeRunComparisonDtoToJSON = exports.CampaignProbeRunComparisonDtoFromJSONTyped = exports.CampaignProbeRunComparisonDtoFromJSON = void 0;
+exports.CampaignProbeRunComparisonDtoFromJSON = CampaignProbeRunComparisonDtoFromJSON;
+exports.CampaignProbeRunComparisonDtoFromJSONTyped = CampaignProbeRunComparisonDtoFromJSONTyped;
+exports.CampaignProbeRunComparisonDtoToJSON = CampaignProbeRunComparisonDtoToJSON;
 var _1 = require("./");
 function CampaignProbeRunComparisonDtoFromJSON(json) {
     return CampaignProbeRunComparisonDtoFromJSONTyped(json, false);
 }
-exports.CampaignProbeRunComparisonDtoFromJSON = CampaignProbeRunComparisonDtoFromJSON;
 function CampaignProbeRunComparisonDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +41,6 @@ function CampaignProbeRunComparisonDtoFromJSONTyped(json, ignoreDiscriminator) {
         removedInsights: json['removedInsights'],
     };
 }
-exports.CampaignProbeRunComparisonDtoFromJSONTyped = CampaignProbeRunComparisonDtoFromJSONTyped;
 function CampaignProbeRunComparisonDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -65,4 +65,3 @@ function CampaignProbeRunComparisonDtoToJSON(value) {
         removedInsights: value.removedInsights,
     };
 }
-exports.CampaignProbeRunComparisonDtoToJSON = CampaignProbeRunComparisonDtoToJSON;

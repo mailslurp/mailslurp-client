@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RotateSendingConnectionCredentialsOptionsToJSON = exports.RotateSendingConnectionCredentialsOptionsFromJSONTyped = exports.RotateSendingConnectionCredentialsOptionsFromJSON = void 0;
+exports.RotateSendingConnectionCredentialsOptionsFromJSON = RotateSendingConnectionCredentialsOptionsFromJSON;
+exports.RotateSendingConnectionCredentialsOptionsFromJSONTyped = RotateSendingConnectionCredentialsOptionsFromJSONTyped;
+exports.RotateSendingConnectionCredentialsOptionsToJSON = RotateSendingConnectionCredentialsOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function RotateSendingConnectionCredentialsOptionsFromJSON(json) {
     return RotateSendingConnectionCredentialsOptionsFromJSONTyped(json, false);
 }
-exports.RotateSendingConnectionCredentialsOptionsFromJSON = RotateSendingConnectionCredentialsOptionsFromJSON;
 function RotateSendingConnectionCredentialsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function RotateSendingConnectionCredentialsOptionsFromJSONTyped(json, ignoreDisc
             : (0, _1.SendingConnectionApiKeyOptionsFromJSON)(json['apiKey']),
     };
 }
-exports.RotateSendingConnectionCredentialsOptionsFromJSONTyped = RotateSendingConnectionCredentialsOptionsFromJSONTyped;
 function RotateSendingConnectionCredentialsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function RotateSendingConnectionCredentialsOptionsToJSON(value) {
         apiKey: (0, _1.SendingConnectionApiKeyOptionsToJSON)(value.apiKey),
     };
 }
-exports.RotateSendingConnectionCredentialsOptionsToJSON = RotateSendingConnectionCredentialsOptionsToJSON;

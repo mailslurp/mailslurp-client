@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmsPreviewToJSON = exports.SmsPreviewFromJSONTyped = exports.SmsPreviewFromJSON = void 0;
+exports.SmsPreviewFromJSON = SmsPreviewFromJSON;
+exports.SmsPreviewFromJSONTyped = SmsPreviewFromJSONTyped;
+exports.SmsPreviewToJSON = SmsPreviewToJSON;
 function SmsPreviewFromJSON(json) {
     return SmsPreviewFromJSONTyped(json, false);
 }
-exports.SmsPreviewFromJSON = SmsPreviewFromJSON;
 function SmsPreviewFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function SmsPreviewFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.SmsPreviewFromJSONTyped = SmsPreviewFromJSONTyped;
 function SmsPreviewToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function SmsPreviewToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.SmsPreviewToJSON = SmsPreviewToJSON;

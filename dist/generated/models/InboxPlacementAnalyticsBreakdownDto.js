@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementAnalyticsBreakdownDtoToJSON = exports.InboxPlacementAnalyticsBreakdownDtoFromJSONTyped = exports.InboxPlacementAnalyticsBreakdownDtoFromJSON = void 0;
+exports.InboxPlacementAnalyticsBreakdownDtoFromJSON = InboxPlacementAnalyticsBreakdownDtoFromJSON;
+exports.InboxPlacementAnalyticsBreakdownDtoFromJSONTyped = InboxPlacementAnalyticsBreakdownDtoFromJSONTyped;
+exports.InboxPlacementAnalyticsBreakdownDtoToJSON = InboxPlacementAnalyticsBreakdownDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function InboxPlacementAnalyticsBreakdownDtoFromJSON(json) {
     return InboxPlacementAnalyticsBreakdownDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementAnalyticsBreakdownDtoFromJSON = InboxPlacementAnalyticsBreakdownDtoFromJSON;
 function InboxPlacementAnalyticsBreakdownDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +39,6 @@ function InboxPlacementAnalyticsBreakdownDtoFromJSONTyped(json, ignoreDiscrimina
         fromEmails: json['fromEmails'].map(_1.InboxPlacementSenderBreakdownDtoFromJSON),
     };
 }
-exports.InboxPlacementAnalyticsBreakdownDtoFromJSONTyped = InboxPlacementAnalyticsBreakdownDtoFromJSONTyped;
 function InboxPlacementAnalyticsBreakdownDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -58,4 +58,3 @@ function InboxPlacementAnalyticsBreakdownDtoToJSON(value) {
         fromEmails: value.fromEmails.map(_1.InboxPlacementSenderBreakdownDtoToJSON),
     };
 }
-exports.InboxPlacementAnalyticsBreakdownDtoToJSON = InboxPlacementAnalyticsBreakdownDtoToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OptInConsentOptionsToJSON = exports.OptInConsentOptionsFromJSONTyped = exports.OptInConsentOptionsFromJSON = void 0;
+exports.OptInConsentOptionsFromJSON = OptInConsentOptionsFromJSON;
+exports.OptInConsentOptionsFromJSONTyped = OptInConsentOptionsFromJSONTyped;
+exports.OptInConsentOptionsToJSON = OptInConsentOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function OptInConsentOptionsFromJSON(json) {
     return OptInConsentOptionsFromJSONTyped(json, false);
 }
-exports.OptInConsentOptionsFromJSON = OptInConsentOptionsFromJSON;
 function OptInConsentOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function OptInConsentOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.SendOptInConsentEmailOptionsFromJSON)(json['sendOptInOptions']),
     };
 }
-exports.OptInConsentOptionsFromJSONTyped = OptInConsentOptionsFromJSONTyped;
 function OptInConsentOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function OptInConsentOptionsToJSON(value) {
         sendOptInOptions: (0, _1.SendOptInConsentEmailOptionsToJSON)(value.sendOptInOptions),
     };
 }
-exports.OptInConsentOptionsToJSON = OptInConsentOptionsToJSON;

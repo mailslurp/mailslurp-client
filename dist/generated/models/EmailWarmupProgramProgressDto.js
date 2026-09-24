@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupProgramProgressDtoToJSON = exports.EmailWarmupProgramProgressDtoFromJSONTyped = exports.EmailWarmupProgramProgressDtoFromJSON = void 0;
+exports.EmailWarmupProgramProgressDtoFromJSON = EmailWarmupProgramProgressDtoFromJSON;
+exports.EmailWarmupProgramProgressDtoFromJSONTyped = EmailWarmupProgramProgressDtoFromJSONTyped;
+exports.EmailWarmupProgramProgressDtoToJSON = EmailWarmupProgramProgressDtoToJSON;
 function EmailWarmupProgramProgressDtoFromJSON(json) {
     return EmailWarmupProgramProgressDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupProgramProgressDtoFromJSON = EmailWarmupProgramProgressDtoFromJSON;
 function EmailWarmupProgramProgressDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function EmailWarmupProgramProgressDtoFromJSONTyped(json, ignoreDiscriminator) {
         totalAcceptedSends: json['totalAcceptedSends'],
     };
 }
-exports.EmailWarmupProgramProgressDtoFromJSONTyped = EmailWarmupProgramProgressDtoFromJSONTyped;
 function EmailWarmupProgramProgressDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function EmailWarmupProgramProgressDtoToJSON(value) {
         totalAcceptedSends: value.totalAcceptedSends,
     };
 }
-exports.EmailWarmupProgramProgressDtoToJSON = EmailWarmupProgramProgressDtoToJSON;

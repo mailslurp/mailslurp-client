@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScopedEmailThreadToJSON = exports.ScopedEmailThreadFromJSONTyped = exports.ScopedEmailThreadFromJSON = void 0;
+exports.ScopedEmailThreadFromJSON = ScopedEmailThreadFromJSON;
+exports.ScopedEmailThreadFromJSONTyped = ScopedEmailThreadFromJSONTyped;
+exports.ScopedEmailThreadToJSON = ScopedEmailThreadToJSON;
 var _1 = require("./");
 function ScopedEmailThreadFromJSON(json) {
     return ScopedEmailThreadFromJSONTyped(json, false);
 }
-exports.ScopedEmailThreadFromJSON = ScopedEmailThreadFromJSON;
 function ScopedEmailThreadFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function ScopedEmailThreadFromJSONTyped(json, ignoreDiscriminator) {
         items: json['items'].map(_1.EmailThreadItemFromJSON),
     };
 }
-exports.ScopedEmailThreadFromJSONTyped = ScopedEmailThreadFromJSONTyped;
 function ScopedEmailThreadToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function ScopedEmailThreadToJSON(value) {
         items: value.items.map(_1.EmailThreadItemToJSON),
     };
 }
-exports.ScopedEmailThreadToJSON = ScopedEmailThreadToJSON;

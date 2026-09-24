@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageUsageToJSON = exports.AIMessageUsageFromJSONTyped = exports.AIMessageUsageFromJSON = void 0;
+exports.AIMessageUsageFromJSON = AIMessageUsageFromJSON;
+exports.AIMessageUsageFromJSONTyped = AIMessageUsageFromJSONTyped;
+exports.AIMessageUsageToJSON = AIMessageUsageToJSON;
 function AIMessageUsageFromJSON(json) {
     return AIMessageUsageFromJSONTyped(json, false);
 }
-exports.AIMessageUsageFromJSON = AIMessageUsageFromJSON;
 function AIMessageUsageFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function AIMessageUsageFromJSONTyped(json, ignoreDiscriminator) {
         reservedTokens: json['reservedTokens'],
     };
 }
-exports.AIMessageUsageFromJSONTyped = AIMessageUsageFromJSONTyped;
 function AIMessageUsageToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function AIMessageUsageToJSON(value) {
         reservedTokens: value.reservedTokens,
     };
 }
-exports.AIMessageUsageToJSON = AIMessageUsageToJSON;

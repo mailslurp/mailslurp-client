@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageGuestPortalUsersToJSON = exports.PageGuestPortalUsersFromJSONTyped = exports.PageGuestPortalUsersFromJSON = void 0;
+exports.PageGuestPortalUsersFromJSON = PageGuestPortalUsersFromJSON;
+exports.PageGuestPortalUsersFromJSONTyped = PageGuestPortalUsersFromJSONTyped;
+exports.PageGuestPortalUsersToJSON = PageGuestPortalUsersToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageGuestPortalUsersFromJSON(json) {
     return PageGuestPortalUsersFromJSONTyped(json, false);
 }
-exports.PageGuestPortalUsersFromJSON = PageGuestPortalUsersFromJSON;
 function PageGuestPortalUsersFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageGuestPortalUsersFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageGuestPortalUsersFromJSONTyped = PageGuestPortalUsersFromJSONTyped;
 function PageGuestPortalUsersToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageGuestPortalUsersToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageGuestPortalUsersToJSON = PageGuestPortalUsersToJSON;

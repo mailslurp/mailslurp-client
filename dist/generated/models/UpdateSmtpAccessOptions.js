@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateSmtpAccessOptionsToJSON = exports.UpdateSmtpAccessOptionsFromJSONTyped = exports.UpdateSmtpAccessOptionsFromJSON = void 0;
+exports.UpdateSmtpAccessOptionsFromJSON = UpdateSmtpAccessOptionsFromJSON;
+exports.UpdateSmtpAccessOptionsFromJSONTyped = UpdateSmtpAccessOptionsFromJSONTyped;
+exports.UpdateSmtpAccessOptionsToJSON = UpdateSmtpAccessOptionsToJSON;
 var runtime_1 = require("../runtime");
 function UpdateSmtpAccessOptionsFromJSON(json) {
     return UpdateSmtpAccessOptionsFromJSONTyped(json, false);
 }
-exports.UpdateSmtpAccessOptionsFromJSON = UpdateSmtpAccessOptionsFromJSON;
 function UpdateSmtpAccessOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function UpdateSmtpAccessOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['smtpPassword'],
     };
 }
-exports.UpdateSmtpAccessOptionsFromJSONTyped = UpdateSmtpAccessOptionsFromJSONTyped;
 function UpdateSmtpAccessOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function UpdateSmtpAccessOptionsToJSON(value) {
         smtpPassword: value.smtpPassword,
     };
 }
-exports.UpdateSmtpAccessOptionsToJSON = UpdateSmtpAccessOptionsToJSON;

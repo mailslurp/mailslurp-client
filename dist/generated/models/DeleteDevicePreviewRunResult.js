@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteDevicePreviewRunResultToJSON = exports.DeleteDevicePreviewRunResultFromJSONTyped = exports.DeleteDevicePreviewRunResultFromJSON = void 0;
+exports.DeleteDevicePreviewRunResultFromJSON = DeleteDevicePreviewRunResultFromJSON;
+exports.DeleteDevicePreviewRunResultFromJSONTyped = DeleteDevicePreviewRunResultFromJSONTyped;
+exports.DeleteDevicePreviewRunResultToJSON = DeleteDevicePreviewRunResultToJSON;
 function DeleteDevicePreviewRunResultFromJSON(json) {
     return DeleteDevicePreviewRunResultFromJSONTyped(json, false);
 }
-exports.DeleteDevicePreviewRunResultFromJSON = DeleteDevicePreviewRunResultFromJSON;
 function DeleteDevicePreviewRunResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function DeleteDevicePreviewRunResultFromJSONTyped(json, ignoreDiscriminator) {
         remoteCleanupSucceeded: json['remoteCleanupSucceeded'],
     };
 }
-exports.DeleteDevicePreviewRunResultFromJSONTyped = DeleteDevicePreviewRunResultFromJSONTyped;
 function DeleteDevicePreviewRunResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function DeleteDevicePreviewRunResultToJSON(value) {
         remoteCleanupSucceeded: value.remoteCleanupSucceeded,
     };
 }
-exports.DeleteDevicePreviewRunResultToJSON = DeleteDevicePreviewRunResultToJSON;

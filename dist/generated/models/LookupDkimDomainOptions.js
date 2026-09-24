@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupDkimDomainOptionsToJSON = exports.LookupDkimDomainOptionsFromJSONTyped = exports.LookupDkimDomainOptionsFromJSON = void 0;
+exports.LookupDkimDomainOptionsFromJSON = LookupDkimDomainOptionsFromJSON;
+exports.LookupDkimDomainOptionsFromJSONTyped = LookupDkimDomainOptionsFromJSONTyped;
+exports.LookupDkimDomainOptionsToJSON = LookupDkimDomainOptionsToJSON;
 var runtime_1 = require("../runtime");
 function LookupDkimDomainOptionsFromJSON(json) {
     return LookupDkimDomainOptionsFromJSONTyped(json, false);
 }
-exports.LookupDkimDomainOptionsFromJSON = LookupDkimDomainOptionsFromJSON;
 function LookupDkimDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function LookupDkimDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
         selector: !(0, runtime_1.exists)(json, 'selector') ? undefined : json['selector'],
     };
 }
-exports.LookupDkimDomainOptionsFromJSONTyped = LookupDkimDomainOptionsFromJSONTyped;
 function LookupDkimDomainOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function LookupDkimDomainOptionsToJSON(value) {
         selector: value.selector,
     };
 }
-exports.LookupDkimDomainOptionsToJSON = LookupDkimDomainOptionsToJSON;

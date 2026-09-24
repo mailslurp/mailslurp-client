@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxForwarderTestResultToJSON = exports.InboxForwarderTestResultFromJSONTyped = exports.InboxForwarderTestResultFromJSON = void 0;
+exports.InboxForwarderTestResultFromJSON = InboxForwarderTestResultFromJSON;
+exports.InboxForwarderTestResultFromJSONTyped = InboxForwarderTestResultFromJSONTyped;
+exports.InboxForwarderTestResultToJSON = InboxForwarderTestResultToJSON;
 function InboxForwarderTestResultFromJSON(json) {
     return InboxForwarderTestResultFromJSONTyped(json, false);
 }
-exports.InboxForwarderTestResultFromJSON = InboxForwarderTestResultFromJSON;
 function InboxForwarderTestResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function InboxForwarderTestResultFromJSONTyped(json, ignoreDiscriminator) {
         doesMatch: json['doesMatch'],
     };
 }
-exports.InboxForwarderTestResultFromJSONTyped = InboxForwarderTestResultFromJSONTyped;
 function InboxForwarderTestResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function InboxForwarderTestResultToJSON(value) {
         doesMatch: value.doesMatch,
     };
 }
-exports.InboxForwarderTestResultToJSON = InboxForwarderTestResultToJSON;

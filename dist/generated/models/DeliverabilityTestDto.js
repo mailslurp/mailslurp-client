@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityTestDtoToJSON = exports.DeliverabilityTestDtoFromJSONTyped = exports.DeliverabilityTestDtoFromJSON = exports.DeliverabilityTestDtoThresholdStatusEnum = exports.DeliverabilityTestDtoStatusEnum = exports.DeliverabilityTestDtoScopeEnum = void 0;
+exports.DeliverabilityTestDtoThresholdStatusEnum = exports.DeliverabilityTestDtoStatusEnum = exports.DeliverabilityTestDtoScopeEnum = void 0;
+exports.DeliverabilityTestDtoFromJSON = DeliverabilityTestDtoFromJSON;
+exports.DeliverabilityTestDtoFromJSONTyped = DeliverabilityTestDtoFromJSONTyped;
+exports.DeliverabilityTestDtoToJSON = DeliverabilityTestDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,7 +27,7 @@ var DeliverabilityTestDtoScopeEnum;
 (function (DeliverabilityTestDtoScopeEnum) {
     DeliverabilityTestDtoScopeEnum["INBOX"] = "INBOX";
     DeliverabilityTestDtoScopeEnum["PHONE"] = "PHONE";
-})(DeliverabilityTestDtoScopeEnum = exports.DeliverabilityTestDtoScopeEnum || (exports.DeliverabilityTestDtoScopeEnum = {}));
+})(DeliverabilityTestDtoScopeEnum || (exports.DeliverabilityTestDtoScopeEnum = DeliverabilityTestDtoScopeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -38,7 +41,7 @@ var DeliverabilityTestDtoStatusEnum;
     DeliverabilityTestDtoStatusEnum["STOPPED"] = "STOPPED";
     DeliverabilityTestDtoStatusEnum["COMPLETE"] = "COMPLETE";
     DeliverabilityTestDtoStatusEnum["FAILED"] = "FAILED";
-})(DeliverabilityTestDtoStatusEnum = exports.DeliverabilityTestDtoStatusEnum || (exports.DeliverabilityTestDtoStatusEnum = {}));
+})(DeliverabilityTestDtoStatusEnum || (exports.DeliverabilityTestDtoStatusEnum = DeliverabilityTestDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -48,11 +51,10 @@ var DeliverabilityTestDtoThresholdStatusEnum;
     DeliverabilityTestDtoThresholdStatusEnum["NOT_CONFIGURED"] = "NOT_CONFIGURED";
     DeliverabilityTestDtoThresholdStatusEnum["PASSING"] = "PASSING";
     DeliverabilityTestDtoThresholdStatusEnum["FAILING"] = "FAILING";
-})(DeliverabilityTestDtoThresholdStatusEnum = exports.DeliverabilityTestDtoThresholdStatusEnum || (exports.DeliverabilityTestDtoThresholdStatusEnum = {}));
+})(DeliverabilityTestDtoThresholdStatusEnum || (exports.DeliverabilityTestDtoThresholdStatusEnum = DeliverabilityTestDtoThresholdStatusEnum = {}));
 function DeliverabilityTestDtoFromJSON(json) {
     return DeliverabilityTestDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilityTestDtoFromJSON = DeliverabilityTestDtoFromJSON;
 function DeliverabilityTestDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -104,7 +106,6 @@ function DeliverabilityTestDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DeliverabilityTestDtoFromJSONTyped = DeliverabilityTestDtoFromJSONTyped;
 function DeliverabilityTestDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -151,4 +152,3 @@ function DeliverabilityTestDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DeliverabilityTestDtoToJSON = DeliverabilityTestDtoToJSON;

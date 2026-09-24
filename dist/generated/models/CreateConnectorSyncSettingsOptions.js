@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateConnectorSyncSettingsOptionsToJSON = exports.CreateConnectorSyncSettingsOptionsFromJSONTyped = exports.CreateConnectorSyncSettingsOptionsFromJSON = exports.CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum = void 0;
+exports.CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum = void 0;
+exports.CreateConnectorSyncSettingsOptionsFromJSON = CreateConnectorSyncSettingsOptionsFromJSON;
+exports.CreateConnectorSyncSettingsOptionsFromJSONTyped = CreateConnectorSyncSettingsOptionsFromJSONTyped;
+exports.CreateConnectorSyncSettingsOptionsToJSON = CreateConnectorSyncSettingsOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -22,11 +25,10 @@ var runtime_1 = require("../runtime");
 var CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum;
 (function (CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum) {
     CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum["INTERVAL"] = "INTERVAL";
-})(CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum = exports.CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum || (exports.CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum = {}));
+})(CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum || (exports.CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum = CreateConnectorSyncSettingsOptionsSyncScheduleTypeEnum = {}));
 function CreateConnectorSyncSettingsOptionsFromJSON(json) {
     return CreateConnectorSyncSettingsOptionsFromJSONTyped(json, false);
 }
-exports.CreateConnectorSyncSettingsOptionsFromJSON = CreateConnectorSyncSettingsOptionsFromJSON;
 function CreateConnectorSyncSettingsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -41,7 +43,6 @@ function CreateConnectorSyncSettingsOptionsFromJSONTyped(json, ignoreDiscriminat
             : json['syncInterval'],
     };
 }
-exports.CreateConnectorSyncSettingsOptionsFromJSONTyped = CreateConnectorSyncSettingsOptionsFromJSONTyped;
 function CreateConnectorSyncSettingsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +56,3 @@ function CreateConnectorSyncSettingsOptionsToJSON(value) {
         syncInterval: value.syncInterval,
     };
 }
-exports.CreateConnectorSyncSettingsOptionsToJSON = CreateConnectorSyncSettingsOptionsToJSON;

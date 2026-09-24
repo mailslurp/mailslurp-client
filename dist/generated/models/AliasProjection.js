@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AliasProjectionToJSON = exports.AliasProjectionFromJSONTyped = exports.AliasProjectionFromJSON = void 0;
+exports.AliasProjectionFromJSON = AliasProjectionFromJSON;
+exports.AliasProjectionFromJSONTyped = AliasProjectionFromJSONTyped;
+exports.AliasProjectionToJSON = AliasProjectionToJSON;
 var runtime_1 = require("../runtime");
 function AliasProjectionFromJSON(json) {
     return AliasProjectionFromJSONTyped(json, false);
 }
-exports.AliasProjectionFromJSON = AliasProjectionFromJSON;
 function AliasProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -34,7 +35,6 @@ function AliasProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.AliasProjectionFromJSONTyped = AliasProjectionFromJSONTyped;
 function AliasProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function AliasProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.AliasProjectionToJSON = AliasProjectionToJSON;

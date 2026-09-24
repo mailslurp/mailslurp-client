@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TenantReputationStatusSummaryDtoToJSON = exports.TenantReputationStatusSummaryDtoFromJSONTyped = exports.TenantReputationStatusSummaryDtoFromJSON = void 0;
+exports.TenantReputationStatusSummaryDtoFromJSON = TenantReputationStatusSummaryDtoFromJSON;
+exports.TenantReputationStatusSummaryDtoFromJSONTyped = TenantReputationStatusSummaryDtoFromJSONTyped;
+exports.TenantReputationStatusSummaryDtoToJSON = TenantReputationStatusSummaryDtoToJSON;
 var _1 = require("./");
 function TenantReputationStatusSummaryDtoFromJSON(json) {
     return TenantReputationStatusSummaryDtoFromJSONTyped(json, false);
 }
-exports.TenantReputationStatusSummaryDtoFromJSON = TenantReputationStatusSummaryDtoFromJSON;
 function TenantReputationStatusSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function TenantReputationStatusSummaryDtoFromJSONTyped(json, ignoreDiscriminator
         rows: json['rows'].map(_1.TenantReputationStatusRowDtoFromJSON),
     };
 }
-exports.TenantReputationStatusSummaryDtoFromJSONTyped = TenantReputationStatusSummaryDtoFromJSONTyped;
 function TenantReputationStatusSummaryDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function TenantReputationStatusSummaryDtoToJSON(value) {
         rows: value.rows.map(_1.TenantReputationStatusRowDtoToJSON),
     };
 }
-exports.TenantReputationStatusSummaryDtoToJSON = TenantReputationStatusSummaryDtoToJSON;

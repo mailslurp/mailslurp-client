@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewNativeTargetListDtoToJSON = exports.DevicePreviewNativeTargetListDtoFromJSONTyped = exports.DevicePreviewNativeTargetListDtoFromJSON = void 0;
+exports.DevicePreviewNativeTargetListDtoFromJSON = DevicePreviewNativeTargetListDtoFromJSON;
+exports.DevicePreviewNativeTargetListDtoFromJSONTyped = DevicePreviewNativeTargetListDtoFromJSONTyped;
+exports.DevicePreviewNativeTargetListDtoToJSON = DevicePreviewNativeTargetListDtoToJSON;
 var _1 = require("./");
 function DevicePreviewNativeTargetListDtoFromJSON(json) {
     return DevicePreviewNativeTargetListDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewNativeTargetListDtoFromJSON = DevicePreviewNativeTargetListDtoFromJSON;
 function DevicePreviewNativeTargetListDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function DevicePreviewNativeTargetListDtoFromJSONTyped(json, ignoreDiscriminator
         targets: json['targets'].map(_1.DevicePreviewNativeTargetDtoFromJSON),
     };
 }
-exports.DevicePreviewNativeTargetListDtoFromJSONTyped = DevicePreviewNativeTargetListDtoFromJSONTyped;
 function DevicePreviewNativeTargetListDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function DevicePreviewNativeTargetListDtoToJSON(value) {
         targets: value.targets.map(_1.DevicePreviewNativeTargetDtoToJSON),
     };
 }
-exports.DevicePreviewNativeTargetListDtoToJSON = DevicePreviewNativeTargetListDtoToJSON;

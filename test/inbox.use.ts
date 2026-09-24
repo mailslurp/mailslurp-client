@@ -1,7 +1,6 @@
 import { integrationTest } from './_helpers';
 import MailSlurp from '../dist';
 
-jest.setTimeout(120_000);
 integrationTest('can create inboxes', async (mailslurp) => {
   // check account
   const userInfo = await mailslurp.userController.getUserInfo();
@@ -56,7 +55,7 @@ integrationTest('send with queue', async (mailslurp) => {
   expect(email.subject).toContain('Sent with a queue');
 });
 
-describe('email verification', () => {
+describe.skipIf(!process.env.API_KEY)('email verification', () => {
   const config = { apiKey: process.env.API_KEY };
 
   it.skip('can verify email addresses', async () => {
@@ -80,7 +79,7 @@ describe('email verification', () => {
 /**
  * Get an inbox
  */
-describe('get an inbox', () => {
+describe.skipIf(!process.env.API_KEY)('get an inbox', () => {
   const config = { apiKey: process.env.API_KEY };
 
   it('can get a full inbox', async () => {
@@ -93,7 +92,7 @@ describe('get an inbox', () => {
   });
 });
 
-describe('inbox pagination', () => {
+describe.skipIf(!process.env.API_KEY)('inbox pagination', () => {
   const config = { apiKey: process.env.API_KEY };
   /**
    * List inboxes
@@ -112,10 +111,10 @@ describe('inbox pagination', () => {
   });
 });
 
-describe('wait_for_latest', () => {
+describe.skipIf(!process.env.API_KEY)('wait_for_latest', () => {
   const config = { apiKey: process.env.API_KEY };
-  const mailslurp = new MailSlurp(config);
   test('inbox wait for', async () => {
+    const mailslurp = new MailSlurp(config);
     const timeoutMs = 30_000;
     //<gen>wait_for_latest
     const inbox = await mailslurp.createInbox();
@@ -149,7 +148,7 @@ describe('wait_for_latest', () => {
 import * as fs from 'fs';
 import * as path from 'path';
 
-describe('send email', () => {
+describe.skipIf(!process.env.API_KEY)('send email', () => {
   test('can send simple', async () => {
     const config = { apiKey: process.env.API_KEY };
     const mailslurp = new MailSlurp(config);

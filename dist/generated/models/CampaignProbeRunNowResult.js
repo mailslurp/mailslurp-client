@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CampaignProbeRunNowResultToJSON = exports.CampaignProbeRunNowResultFromJSONTyped = exports.CampaignProbeRunNowResultFromJSON = void 0;
+exports.CampaignProbeRunNowResultFromJSON = CampaignProbeRunNowResultFromJSON;
+exports.CampaignProbeRunNowResultFromJSONTyped = CampaignProbeRunNowResultFromJSONTyped;
+exports.CampaignProbeRunNowResultToJSON = CampaignProbeRunNowResultToJSON;
 var _1 = require("./");
 function CampaignProbeRunNowResultFromJSON(json) {
     return CampaignProbeRunNowResultFromJSONTyped(json, false);
 }
-exports.CampaignProbeRunNowResultFromJSON = CampaignProbeRunNowResultFromJSON;
 function CampaignProbeRunNowResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function CampaignProbeRunNowResultFromJSONTyped(json, ignoreDiscriminator) {
         run: (0, _1.CampaignProbeRunDtoFromJSON)(json['run']),
     };
 }
-exports.CampaignProbeRunNowResultFromJSONTyped = CampaignProbeRunNowResultFromJSONTyped;
 function CampaignProbeRunNowResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function CampaignProbeRunNowResultToJSON(value) {
         run: (0, _1.CampaignProbeRunDtoToJSON)(value.run),
     };
 }
-exports.CampaignProbeRunNowResultToJSON = CampaignProbeRunNowResultToJSON;

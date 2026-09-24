@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxDtoToJSON = exports.InboxDtoFromJSONTyped = exports.InboxDtoFromJSON = exports.InboxDtoAccountRegionEnum = exports.InboxDtoFunctionsAsEnum = exports.InboxDtoInboxTypeEnum = void 0;
+exports.InboxDtoAccountRegionEnum = exports.InboxDtoFunctionsAsEnum = exports.InboxDtoInboxTypeEnum = void 0;
+exports.InboxDtoFromJSON = InboxDtoFromJSON;
+exports.InboxDtoFromJSONTyped = InboxDtoFromJSONTyped;
+exports.InboxDtoToJSON = InboxDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var InboxDtoInboxTypeEnum;
 (function (InboxDtoInboxTypeEnum) {
     InboxDtoInboxTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     InboxDtoInboxTypeEnum["SMTP_INBOX"] = "SMTP_INBOX";
-})(InboxDtoInboxTypeEnum = exports.InboxDtoInboxTypeEnum || (exports.InboxDtoInboxTypeEnum = {}));
+})(InboxDtoInboxTypeEnum || (exports.InboxDtoInboxTypeEnum = InboxDtoInboxTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -38,7 +41,7 @@ var InboxDtoFunctionsAsEnum;
     InboxDtoFunctionsAsEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
     InboxDtoFunctionsAsEnum["GUEST"] = "GUEST";
     InboxDtoFunctionsAsEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
-})(InboxDtoFunctionsAsEnum = exports.InboxDtoFunctionsAsEnum || (exports.InboxDtoFunctionsAsEnum = {}));
+})(InboxDtoFunctionsAsEnum || (exports.InboxDtoFunctionsAsEnum = InboxDtoFunctionsAsEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -59,11 +62,10 @@ var InboxDtoAccountRegionEnum;
     InboxDtoAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
     InboxDtoAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
     InboxDtoAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
-})(InboxDtoAccountRegionEnum = exports.InboxDtoAccountRegionEnum || (exports.InboxDtoAccountRegionEnum = {}));
+})(InboxDtoAccountRegionEnum || (exports.InboxDtoAccountRegionEnum = InboxDtoAccountRegionEnum = {}));
 function InboxDtoFromJSON(json) {
     return InboxDtoFromJSONTyped(json, false);
 }
-exports.InboxDtoFromJSON = InboxDtoFromJSON;
 function InboxDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -97,7 +99,6 @@ function InboxDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['mergedIntoInboxId'],
     };
 }
-exports.InboxDtoFromJSONTyped = InboxDtoFromJSONTyped;
 function InboxDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -130,4 +131,3 @@ function InboxDtoToJSON(value) {
         mergedIntoInboxId: value.mergedIntoInboxId,
     };
 }
-exports.InboxDtoToJSON = InboxDtoToJSON;

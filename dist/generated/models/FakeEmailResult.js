@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FakeEmailResultToJSON = exports.FakeEmailResultFromJSONTyped = exports.FakeEmailResultFromJSON = void 0;
+exports.FakeEmailResultFromJSON = FakeEmailResultFromJSON;
+exports.FakeEmailResultFromJSONTyped = FakeEmailResultFromJSONTyped;
+exports.FakeEmailResultToJSON = FakeEmailResultToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function FakeEmailResultFromJSON(json) {
     return FakeEmailResultFromJSONTyped(json, false);
 }
-exports.FakeEmailResultFromJSON = FakeEmailResultFromJSON;
 function FakeEmailResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function FakeEmailResultFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.FakeEmailDtoFromJSON)(json['email']),
     };
 }
-exports.FakeEmailResultFromJSONTyped = FakeEmailResultFromJSONTyped;
 function FakeEmailResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function FakeEmailResultToJSON(value) {
         email: (0, _1.FakeEmailDtoToJSON)(value.email),
     };
 }
-exports.FakeEmailResultToJSON = FakeEmailResultToJSON;

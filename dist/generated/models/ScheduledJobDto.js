@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScheduledJobDtoToJSON = exports.ScheduledJobDtoFromJSONTyped = exports.ScheduledJobDtoFromJSON = exports.ScheduledJobDtoStatusEnum = void 0;
+exports.ScheduledJobDtoStatusEnum = void 0;
+exports.ScheduledJobDtoFromJSON = ScheduledJobDtoFromJSON;
+exports.ScheduledJobDtoFromJSONTyped = ScheduledJobDtoFromJSONTyped;
+exports.ScheduledJobDtoToJSON = ScheduledJobDtoToJSON;
 /**
  * @export
  * @enum {string}
@@ -25,11 +28,10 @@ var ScheduledJobDtoStatusEnum;
     ScheduledJobDtoStatusEnum["ABORTED"] = "ABORTED";
     ScheduledJobDtoStatusEnum["FAILED"] = "FAILED";
     ScheduledJobDtoStatusEnum["CANCELLED"] = "CANCELLED";
-})(ScheduledJobDtoStatusEnum = exports.ScheduledJobDtoStatusEnum || (exports.ScheduledJobDtoStatusEnum = {}));
+})(ScheduledJobDtoStatusEnum || (exports.ScheduledJobDtoStatusEnum = ScheduledJobDtoStatusEnum = {}));
 function ScheduledJobDtoFromJSON(json) {
     return ScheduledJobDtoFromJSONTyped(json, false);
 }
-exports.ScheduledJobDtoFromJSON = ScheduledJobDtoFromJSON;
 function ScheduledJobDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -47,7 +49,6 @@ function ScheduledJobDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.ScheduledJobDtoFromJSONTyped = ScheduledJobDtoFromJSONTyped;
 function ScheduledJobDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +69,3 @@ function ScheduledJobDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.ScheduledJobDtoToJSON = ScheduledJobDtoToJSON;

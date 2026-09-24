@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneSmsPrepaidCreditDtoToJSON = exports.PhoneSmsPrepaidCreditDtoFromJSONTyped = exports.PhoneSmsPrepaidCreditDtoFromJSON = exports.PhoneSmsPrepaidCreditDtoPhoneCountryEnum = void 0;
+exports.PhoneSmsPrepaidCreditDtoPhoneCountryEnum = void 0;
+exports.PhoneSmsPrepaidCreditDtoFromJSON = PhoneSmsPrepaidCreditDtoFromJSON;
+exports.PhoneSmsPrepaidCreditDtoFromJSONTyped = PhoneSmsPrepaidCreditDtoFromJSONTyped;
+exports.PhoneSmsPrepaidCreditDtoToJSON = PhoneSmsPrepaidCreditDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -34,11 +37,10 @@ var PhoneSmsPrepaidCreditDtoPhoneCountryEnum;
     PhoneSmsPrepaidCreditDtoPhoneCountryEnum["IL"] = "IL";
     PhoneSmsPrepaidCreditDtoPhoneCountryEnum["FI"] = "FI";
     PhoneSmsPrepaidCreditDtoPhoneCountryEnum["SE"] = "SE";
-})(PhoneSmsPrepaidCreditDtoPhoneCountryEnum = exports.PhoneSmsPrepaidCreditDtoPhoneCountryEnum || (exports.PhoneSmsPrepaidCreditDtoPhoneCountryEnum = {}));
+})(PhoneSmsPrepaidCreditDtoPhoneCountryEnum || (exports.PhoneSmsPrepaidCreditDtoPhoneCountryEnum = PhoneSmsPrepaidCreditDtoPhoneCountryEnum = {}));
 function PhoneSmsPrepaidCreditDtoFromJSON(json) {
     return PhoneSmsPrepaidCreditDtoFromJSONTyped(json, false);
 }
-exports.PhoneSmsPrepaidCreditDtoFromJSON = PhoneSmsPrepaidCreditDtoFromJSON;
 function PhoneSmsPrepaidCreditDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -56,7 +58,6 @@ function PhoneSmsPrepaidCreditDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.PhoneSmsPrepaidCreditDtoFromJSONTyped = PhoneSmsPrepaidCreditDtoFromJSONTyped;
 function PhoneSmsPrepaidCreditDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -75,4 +76,3 @@ function PhoneSmsPrepaidCreditDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.PhoneSmsPrepaidCreditDtoToJSON = PhoneSmsPrepaidCreditDtoToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeaturePlatformNameToJSON = exports.EmailFeaturePlatformNameFromJSONTyped = exports.EmailFeaturePlatformNameFromJSON = exports.EmailFeaturePlatformNameSlugEnum = void 0;
+exports.EmailFeaturePlatformNameSlugEnum = void 0;
+exports.EmailFeaturePlatformNameFromJSON = EmailFeaturePlatformNameFromJSON;
+exports.EmailFeaturePlatformNameFromJSONTyped = EmailFeaturePlatformNameFromJSONTyped;
+exports.EmailFeaturePlatformNameToJSON = EmailFeaturePlatformNameToJSON;
 /**
  * @export
  * @enum {string}
@@ -30,11 +33,10 @@ var EmailFeaturePlatformNameSlugEnum;
     EmailFeaturePlatformNameSlugEnum["webmail"] = "webmail";
     EmailFeaturePlatformNameSlugEnum["windows"] = "windows";
     EmailFeaturePlatformNameSlugEnum["windows_mail"] = "windows-mail";
-})(EmailFeaturePlatformNameSlugEnum = exports.EmailFeaturePlatformNameSlugEnum || (exports.EmailFeaturePlatformNameSlugEnum = {}));
+})(EmailFeaturePlatformNameSlugEnum || (exports.EmailFeaturePlatformNameSlugEnum = EmailFeaturePlatformNameSlugEnum = {}));
 function EmailFeaturePlatformNameFromJSON(json) {
     return EmailFeaturePlatformNameFromJSONTyped(json, false);
 }
-exports.EmailFeaturePlatformNameFromJSON = EmailFeaturePlatformNameFromJSON;
 function EmailFeaturePlatformNameFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +46,6 @@ function EmailFeaturePlatformNameFromJSONTyped(json, ignoreDiscriminator) {
         name: json['name'],
     };
 }
-exports.EmailFeaturePlatformNameFromJSONTyped = EmailFeaturePlatformNameFromJSONTyped;
 function EmailFeaturePlatformNameToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -57,4 +58,3 @@ function EmailFeaturePlatformNameToJSON(value) {
         name: value.name,
     };
 }
-exports.EmailFeaturePlatformNameToJSON = EmailFeaturePlatformNameToJSON;

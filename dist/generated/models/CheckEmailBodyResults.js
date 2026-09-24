@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckEmailBodyResultsToJSON = exports.CheckEmailBodyResultsFromJSONTyped = exports.CheckEmailBodyResultsFromJSON = void 0;
+exports.CheckEmailBodyResultsFromJSON = CheckEmailBodyResultsFromJSON;
+exports.CheckEmailBodyResultsFromJSONTyped = CheckEmailBodyResultsFromJSONTyped;
+exports.CheckEmailBodyResultsToJSON = CheckEmailBodyResultsToJSON;
 var _1 = require("./");
 function CheckEmailBodyResultsFromJSON(json) {
     return CheckEmailBodyResultsFromJSONTyped(json, false);
 }
-exports.CheckEmailBodyResultsFromJSON = CheckEmailBodyResultsFromJSON;
 function CheckEmailBodyResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function CheckEmailBodyResultsFromJSONTyped(json, ignoreDiscriminator) {
         spellingIssues: json['spellingIssues'].map(_1.SpellingIssueFromJSON),
     };
 }
-exports.CheckEmailBodyResultsFromJSONTyped = CheckEmailBodyResultsFromJSONTyped;
 function CheckEmailBodyResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CheckEmailBodyResultsToJSON(value) {
         spellingIssues: value.spellingIssues.map(_1.SpellingIssueToJSON),
     };
 }
-exports.CheckEmailBodyResultsToJSON = CheckEmailBodyResultsToJSON;

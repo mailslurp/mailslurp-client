@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetEmailScreenshotOptionsToJSON = exports.GetEmailScreenshotOptionsFromJSONTyped = exports.GetEmailScreenshotOptionsFromJSON = void 0;
+exports.GetEmailScreenshotOptionsFromJSON = GetEmailScreenshotOptionsFromJSON;
+exports.GetEmailScreenshotOptionsFromJSONTyped = GetEmailScreenshotOptionsFromJSONTyped;
+exports.GetEmailScreenshotOptionsToJSON = GetEmailScreenshotOptionsToJSON;
 var runtime_1 = require("../runtime");
 function GetEmailScreenshotOptionsFromJSON(json) {
     return GetEmailScreenshotOptionsFromJSONTyped(json, false);
 }
-exports.GetEmailScreenshotOptionsFromJSON = GetEmailScreenshotOptionsFromJSON;
 function GetEmailScreenshotOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function GetEmailScreenshotOptionsFromJSONTyped(json, ignoreDiscriminator) {
         width: !(0, runtime_1.exists)(json, 'width') ? undefined : json['width'],
     };
 }
-exports.GetEmailScreenshotOptionsFromJSONTyped = GetEmailScreenshotOptionsFromJSONTyped;
 function GetEmailScreenshotOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function GetEmailScreenshotOptionsToJSON(value) {
         width: value.width,
     };
 }
-exports.GetEmailScreenshotOptionsToJSON = GetEmailScreenshotOptionsToJSON;

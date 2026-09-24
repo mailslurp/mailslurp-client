@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupMxRecordsResultsToJSON = exports.LookupMxRecordsResultsFromJSONTyped = exports.LookupMxRecordsResultsFromJSON = void 0;
+exports.LookupMxRecordsResultsFromJSON = LookupMxRecordsResultsFromJSON;
+exports.LookupMxRecordsResultsFromJSONTyped = LookupMxRecordsResultsFromJSONTyped;
+exports.LookupMxRecordsResultsToJSON = LookupMxRecordsResultsToJSON;
 var _1 = require("./");
 function LookupMxRecordsResultsFromJSON(json) {
     return LookupMxRecordsResultsFromJSONTyped(json, false);
 }
-exports.LookupMxRecordsResultsFromJSON = LookupMxRecordsResultsFromJSON;
 function LookupMxRecordsResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function LookupMxRecordsResultsFromJSONTyped(json, ignoreDiscriminator) {
         warnings: json['warnings'],
     };
 }
-exports.LookupMxRecordsResultsFromJSONTyped = LookupMxRecordsResultsFromJSONTyped;
 function LookupMxRecordsResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function LookupMxRecordsResultsToJSON(value) {
         warnings: value.warnings,
     };
 }
-exports.LookupMxRecordsResultsToJSON = LookupMxRecordsResultsToJSON;

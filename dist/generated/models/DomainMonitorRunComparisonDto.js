@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorRunComparisonDtoToJSON = exports.DomainMonitorRunComparisonDtoFromJSONTyped = exports.DomainMonitorRunComparisonDtoFromJSON = void 0;
+exports.DomainMonitorRunComparisonDtoFromJSON = DomainMonitorRunComparisonDtoFromJSON;
+exports.DomainMonitorRunComparisonDtoFromJSONTyped = DomainMonitorRunComparisonDtoFromJSONTyped;
+exports.DomainMonitorRunComparisonDtoToJSON = DomainMonitorRunComparisonDtoToJSON;
 var _1 = require("./");
 function DomainMonitorRunComparisonDtoFromJSON(json) {
     return DomainMonitorRunComparisonDtoFromJSONTyped(json, false);
 }
-exports.DomainMonitorRunComparisonDtoFromJSON = DomainMonitorRunComparisonDtoFromJSON;
 function DomainMonitorRunComparisonDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -43,7 +44,6 @@ function DomainMonitorRunComparisonDtoFromJSONTyped(json, ignoreDiscriminator) {
         removedInsights: json['removedInsights'],
     };
 }
-exports.DomainMonitorRunComparisonDtoFromJSONTyped = DomainMonitorRunComparisonDtoFromJSONTyped;
 function DomainMonitorRunComparisonDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -71,4 +71,3 @@ function DomainMonitorRunComparisonDtoToJSON(value) {
         removedInsights: value.removedInsights,
     };
 }
-exports.DomainMonitorRunComparisonDtoToJSON = DomainMonitorRunComparisonDtoToJSON;

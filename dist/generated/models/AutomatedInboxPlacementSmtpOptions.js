@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AutomatedInboxPlacementSmtpOptionsToJSON = exports.AutomatedInboxPlacementSmtpOptionsFromJSONTyped = exports.AutomatedInboxPlacementSmtpOptionsFromJSON = exports.AutomatedInboxPlacementSmtpOptionsSecurityEnum = void 0;
+exports.AutomatedInboxPlacementSmtpOptionsSecurityEnum = void 0;
+exports.AutomatedInboxPlacementSmtpOptionsFromJSON = AutomatedInboxPlacementSmtpOptionsFromJSON;
+exports.AutomatedInboxPlacementSmtpOptionsFromJSONTyped = AutomatedInboxPlacementSmtpOptionsFromJSONTyped;
+exports.AutomatedInboxPlacementSmtpOptionsToJSON = AutomatedInboxPlacementSmtpOptionsToJSON;
 /**
  * @export
  * @enum {string}
@@ -22,11 +25,10 @@ var AutomatedInboxPlacementSmtpOptionsSecurityEnum;
 (function (AutomatedInboxPlacementSmtpOptionsSecurityEnum) {
     AutomatedInboxPlacementSmtpOptionsSecurityEnum["START_TLS"] = "START_TLS";
     AutomatedInboxPlacementSmtpOptionsSecurityEnum["TLS"] = "TLS";
-})(AutomatedInboxPlacementSmtpOptionsSecurityEnum = exports.AutomatedInboxPlacementSmtpOptionsSecurityEnum || (exports.AutomatedInboxPlacementSmtpOptionsSecurityEnum = {}));
+})(AutomatedInboxPlacementSmtpOptionsSecurityEnum || (exports.AutomatedInboxPlacementSmtpOptionsSecurityEnum = AutomatedInboxPlacementSmtpOptionsSecurityEnum = {}));
 function AutomatedInboxPlacementSmtpOptionsFromJSON(json) {
     return AutomatedInboxPlacementSmtpOptionsFromJSONTyped(json, false);
 }
-exports.AutomatedInboxPlacementSmtpOptionsFromJSON = AutomatedInboxPlacementSmtpOptionsFromJSON;
 function AutomatedInboxPlacementSmtpOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +41,6 @@ function AutomatedInboxPlacementSmtpOptionsFromJSONTyped(json, ignoreDiscriminat
         password: json['password'],
     };
 }
-exports.AutomatedInboxPlacementSmtpOptionsFromJSONTyped = AutomatedInboxPlacementSmtpOptionsFromJSONTyped;
 function AutomatedInboxPlacementSmtpOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +56,3 @@ function AutomatedInboxPlacementSmtpOptionsToJSON(value) {
         password: value.password,
     };
 }
-exports.AutomatedInboxPlacementSmtpOptionsToJSON = AutomatedInboxPlacementSmtpOptionsToJSON;

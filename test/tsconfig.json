@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "target": "es2020",
+    "moduleResolution": "node",
+    "types": ["vitest/globals", "node"],
+    "noEmit": true,
+    "rootDir": ".."
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules"]
+}

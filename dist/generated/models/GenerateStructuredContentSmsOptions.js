@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateStructuredContentSmsOptionsToJSON = exports.GenerateStructuredContentSmsOptionsFromJSONTyped = exports.GenerateStructuredContentSmsOptionsFromJSON = void 0;
+exports.GenerateStructuredContentSmsOptionsFromJSON = GenerateStructuredContentSmsOptionsFromJSON;
+exports.GenerateStructuredContentSmsOptionsFromJSONTyped = GenerateStructuredContentSmsOptionsFromJSONTyped;
+exports.GenerateStructuredContentSmsOptionsToJSON = GenerateStructuredContentSmsOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function GenerateStructuredContentSmsOptionsFromJSON(json) {
     return GenerateStructuredContentSmsOptionsFromJSONTyped(json, false);
 }
-exports.GenerateStructuredContentSmsOptionsFromJSON = GenerateStructuredContentSmsOptionsFromJSON;
 function GenerateStructuredContentSmsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function GenerateStructuredContentSmsOptionsFromJSONTyped(json, ignoreDiscrimina
         transformId: !(0, runtime_1.exists)(json, 'transformId') ? undefined : json['transformId'],
     };
 }
-exports.GenerateStructuredContentSmsOptionsFromJSONTyped = GenerateStructuredContentSmsOptionsFromJSONTyped;
 function GenerateStructuredContentSmsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function GenerateStructuredContentSmsOptionsToJSON(value) {
         transformId: value.transformId,
     };
 }
-exports.GenerateStructuredContentSmsOptionsToJSON = GenerateStructuredContentSmsOptionsToJSON;

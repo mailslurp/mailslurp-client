@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SearchAvailablePhoneNumbersOptionsToJSON = exports.SearchAvailablePhoneNumbersOptionsFromJSONTyped = exports.SearchAvailablePhoneNumbersOptionsFromJSON = exports.SearchAvailablePhoneNumbersOptionsQualityFilterEnum = exports.SearchAvailablePhoneNumbersOptionsPhoneVariantEnum = exports.SearchAvailablePhoneNumbersOptionsPhoneCountryEnum = void 0;
+exports.SearchAvailablePhoneNumbersOptionsQualityFilterEnum = exports.SearchAvailablePhoneNumbersOptionsPhoneVariantEnum = exports.SearchAvailablePhoneNumbersOptionsPhoneCountryEnum = void 0;
+exports.SearchAvailablePhoneNumbersOptionsFromJSON = SearchAvailablePhoneNumbersOptionsFromJSON;
+exports.SearchAvailablePhoneNumbersOptionsFromJSONTyped = SearchAvailablePhoneNumbersOptionsFromJSONTyped;
+exports.SearchAvailablePhoneNumbersOptionsToJSON = SearchAvailablePhoneNumbersOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -34,7 +37,7 @@ var SearchAvailablePhoneNumbersOptionsPhoneCountryEnum;
     SearchAvailablePhoneNumbersOptionsPhoneCountryEnum["IL"] = "IL";
     SearchAvailablePhoneNumbersOptionsPhoneCountryEnum["FI"] = "FI";
     SearchAvailablePhoneNumbersOptionsPhoneCountryEnum["SE"] = "SE";
-})(SearchAvailablePhoneNumbersOptionsPhoneCountryEnum = exports.SearchAvailablePhoneNumbersOptionsPhoneCountryEnum || (exports.SearchAvailablePhoneNumbersOptionsPhoneCountryEnum = {}));
+})(SearchAvailablePhoneNumbersOptionsPhoneCountryEnum || (exports.SearchAvailablePhoneNumbersOptionsPhoneCountryEnum = SearchAvailablePhoneNumbersOptionsPhoneCountryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -44,7 +47,7 @@ var SearchAvailablePhoneNumbersOptionsPhoneVariantEnum;
     SearchAvailablePhoneNumbersOptionsPhoneVariantEnum["LOCAL"] = "LOCAL";
     SearchAvailablePhoneNumbersOptionsPhoneVariantEnum["MOBILE"] = "MOBILE";
     SearchAvailablePhoneNumbersOptionsPhoneVariantEnum["TOLL_FREE"] = "TOLL_FREE";
-})(SearchAvailablePhoneNumbersOptionsPhoneVariantEnum = exports.SearchAvailablePhoneNumbersOptionsPhoneVariantEnum || (exports.SearchAvailablePhoneNumbersOptionsPhoneVariantEnum = {}));
+})(SearchAvailablePhoneNumbersOptionsPhoneVariantEnum || (exports.SearchAvailablePhoneNumbersOptionsPhoneVariantEnum = SearchAvailablePhoneNumbersOptionsPhoneVariantEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -55,11 +58,10 @@ var SearchAvailablePhoneNumbersOptionsQualityFilterEnum;
     SearchAvailablePhoneNumbersOptionsQualityFilterEnum["NON_VOIP"] = "NON_VOIP";
     SearchAvailablePhoneNumbersOptionsQualityFilterEnum["MOBILE_ONLY"] = "MOBILE_ONLY";
     SearchAvailablePhoneNumbersOptionsQualityFilterEnum["ANY"] = "ANY";
-})(SearchAvailablePhoneNumbersOptionsQualityFilterEnum = exports.SearchAvailablePhoneNumbersOptionsQualityFilterEnum || (exports.SearchAvailablePhoneNumbersOptionsQualityFilterEnum = {}));
+})(SearchAvailablePhoneNumbersOptionsQualityFilterEnum || (exports.SearchAvailablePhoneNumbersOptionsQualityFilterEnum = SearchAvailablePhoneNumbersOptionsQualityFilterEnum = {}));
 function SearchAvailablePhoneNumbersOptionsFromJSON(json) {
     return SearchAvailablePhoneNumbersOptionsFromJSONTyped(json, false);
 }
-exports.SearchAvailablePhoneNumbersOptionsFromJSON = SearchAvailablePhoneNumbersOptionsFromJSON;
 function SearchAvailablePhoneNumbersOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -86,7 +88,6 @@ function SearchAvailablePhoneNumbersOptionsFromJSONTyped(json, ignoreDiscriminat
         limit: !(0, runtime_1.exists)(json, 'limit') ? undefined : json['limit'],
     };
 }
-exports.SearchAvailablePhoneNumbersOptionsFromJSONTyped = SearchAvailablePhoneNumbersOptionsFromJSONTyped;
 function SearchAvailablePhoneNumbersOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -106,4 +107,3 @@ function SearchAvailablePhoneNumbersOptionsToJSON(value) {
         limit: value.limit,
     };
 }
-exports.SearchAvailablePhoneNumbersOptionsToJSON = SearchAvailablePhoneNumbersOptionsToJSON;

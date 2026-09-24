@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteResultToJSON = exports.DeleteResultFromJSONTyped = exports.DeleteResultFromJSON = exports.DeleteResultStatusEnum = void 0;
+exports.DeleteResultStatusEnum = void 0;
+exports.DeleteResultFromJSON = DeleteResultFromJSON;
+exports.DeleteResultFromJSONTyped = DeleteResultFromJSONTyped;
+exports.DeleteResultToJSON = DeleteResultToJSON;
 /**
  * @export
  * @enum {string}
@@ -21,11 +24,10 @@ exports.DeleteResultToJSON = exports.DeleteResultFromJSONTyped = exports.DeleteR
 var DeleteResultStatusEnum;
 (function (DeleteResultStatusEnum) {
     DeleteResultStatusEnum["SUCCESS"] = "SUCCESS";
-})(DeleteResultStatusEnum = exports.DeleteResultStatusEnum || (exports.DeleteResultStatusEnum = {}));
+})(DeleteResultStatusEnum || (exports.DeleteResultStatusEnum = DeleteResultStatusEnum = {}));
 function DeleteResultFromJSON(json) {
     return DeleteResultFromJSONTyped(json, false);
 }
-exports.DeleteResultFromJSON = DeleteResultFromJSON;
 function DeleteResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -34,7 +36,6 @@ function DeleteResultFromJSONTyped(json, ignoreDiscriminator) {
         status: json['status'],
     };
 }
-exports.DeleteResultFromJSONTyped = DeleteResultFromJSONTyped;
 function DeleteResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +47,3 @@ function DeleteResultToJSON(value) {
         status: value.status,
     };
 }
-exports.DeleteResultToJSON = DeleteResultToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmsMessageMediaDtoToJSON = exports.SmsMessageMediaDtoFromJSONTyped = exports.SmsMessageMediaDtoFromJSON = void 0;
+exports.SmsMessageMediaDtoFromJSON = SmsMessageMediaDtoFromJSON;
+exports.SmsMessageMediaDtoFromJSONTyped = SmsMessageMediaDtoFromJSONTyped;
+exports.SmsMessageMediaDtoToJSON = SmsMessageMediaDtoToJSON;
 var runtime_1 = require("../runtime");
 function SmsMessageMediaDtoFromJSON(json) {
     return SmsMessageMediaDtoFromJSONTyped(json, false);
 }
-exports.SmsMessageMediaDtoFromJSON = SmsMessageMediaDtoFromJSON;
 function SmsMessageMediaDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function SmsMessageMediaDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.SmsMessageMediaDtoFromJSONTyped = SmsMessageMediaDtoFromJSONTyped;
 function SmsMessageMediaDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function SmsMessageMediaDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.SmsMessageMediaDtoToJSON = SmsMessageMediaDtoToJSON;

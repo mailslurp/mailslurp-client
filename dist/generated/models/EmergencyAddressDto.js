@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmergencyAddressDtoToJSON = exports.EmergencyAddressDtoFromJSONTyped = exports.EmergencyAddressDtoFromJSON = exports.EmergencyAddressDtoPhoneCountryEnum = void 0;
+exports.EmergencyAddressDtoPhoneCountryEnum = void 0;
+exports.EmergencyAddressDtoFromJSON = EmergencyAddressDtoFromJSON;
+exports.EmergencyAddressDtoFromJSONTyped = EmergencyAddressDtoFromJSONTyped;
+exports.EmergencyAddressDtoToJSON = EmergencyAddressDtoToJSON;
 /**
  * @export
  * @enum {string}
@@ -33,11 +36,10 @@ var EmergencyAddressDtoPhoneCountryEnum;
     EmergencyAddressDtoPhoneCountryEnum["IL"] = "IL";
     EmergencyAddressDtoPhoneCountryEnum["FI"] = "FI";
     EmergencyAddressDtoPhoneCountryEnum["SE"] = "SE";
-})(EmergencyAddressDtoPhoneCountryEnum = exports.EmergencyAddressDtoPhoneCountryEnum || (exports.EmergencyAddressDtoPhoneCountryEnum = {}));
+})(EmergencyAddressDtoPhoneCountryEnum || (exports.EmergencyAddressDtoPhoneCountryEnum = EmergencyAddressDtoPhoneCountryEnum = {}));
 function EmergencyAddressDtoFromJSON(json) {
     return EmergencyAddressDtoFromJSONTyped(json, false);
 }
-exports.EmergencyAddressDtoFromJSON = EmergencyAddressDtoFromJSON;
 function EmergencyAddressDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -48,7 +50,6 @@ function EmergencyAddressDtoFromJSONTyped(json, ignoreDiscriminator) {
         phoneCountry: json['phoneCountry'],
     };
 }
-exports.EmergencyAddressDtoFromJSONTyped = EmergencyAddressDtoFromJSONTyped;
 function EmergencyAddressDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -62,4 +63,3 @@ function EmergencyAddressDtoToJSON(value) {
         phoneCountry: value.phoneCountry,
     };
 }
-exports.EmergencyAddressDtoToJSON = EmergencyAddressDtoToJSON;

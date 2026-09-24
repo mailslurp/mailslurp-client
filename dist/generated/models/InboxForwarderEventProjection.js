@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxForwarderEventProjectionToJSON = exports.InboxForwarderEventProjectionFromJSONTyped = exports.InboxForwarderEventProjectionFromJSON = exports.InboxForwarderEventProjectionStatusEnum = void 0;
+exports.InboxForwarderEventProjectionStatusEnum = void 0;
+exports.InboxForwarderEventProjectionFromJSON = InboxForwarderEventProjectionFromJSON;
+exports.InboxForwarderEventProjectionFromJSONTyped = InboxForwarderEventProjectionFromJSONTyped;
+exports.InboxForwarderEventProjectionToJSON = InboxForwarderEventProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var InboxForwarderEventProjectionStatusEnum;
 (function (InboxForwarderEventProjectionStatusEnum) {
     InboxForwarderEventProjectionStatusEnum["SUCCESS"] = "SUCCESS";
     InboxForwarderEventProjectionStatusEnum["FAILURE"] = "FAILURE";
-})(InboxForwarderEventProjectionStatusEnum = exports.InboxForwarderEventProjectionStatusEnum || (exports.InboxForwarderEventProjectionStatusEnum = {}));
+})(InboxForwarderEventProjectionStatusEnum || (exports.InboxForwarderEventProjectionStatusEnum = InboxForwarderEventProjectionStatusEnum = {}));
 function InboxForwarderEventProjectionFromJSON(json) {
     return InboxForwarderEventProjectionFromJSONTyped(json, false);
 }
-exports.InboxForwarderEventProjectionFromJSON = InboxForwarderEventProjectionFromJSON;
 function InboxForwarderEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +46,6 @@ function InboxForwarderEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
     };
 }
-exports.InboxForwarderEventProjectionFromJSONTyped = InboxForwarderEventProjectionFromJSONTyped;
 function InboxForwarderEventProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,4 +65,3 @@ function InboxForwarderEventProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.InboxForwarderEventProjectionToJSON = InboxForwarderEventProjectionToJSON;

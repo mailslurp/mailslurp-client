@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailIntelligenceScoreBreakdownDtoToJSON = exports.EmailIntelligenceScoreBreakdownDtoFromJSONTyped = exports.EmailIntelligenceScoreBreakdownDtoFromJSON = void 0;
+exports.EmailIntelligenceScoreBreakdownDtoFromJSON = EmailIntelligenceScoreBreakdownDtoFromJSON;
+exports.EmailIntelligenceScoreBreakdownDtoFromJSONTyped = EmailIntelligenceScoreBreakdownDtoFromJSONTyped;
+exports.EmailIntelligenceScoreBreakdownDtoToJSON = EmailIntelligenceScoreBreakdownDtoToJSON;
 function EmailIntelligenceScoreBreakdownDtoFromJSON(json) {
     return EmailIntelligenceScoreBreakdownDtoFromJSONTyped(json, false);
 }
-exports.EmailIntelligenceScoreBreakdownDtoFromJSON = EmailIntelligenceScoreBreakdownDtoFromJSON;
 function EmailIntelligenceScoreBreakdownDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function EmailIntelligenceScoreBreakdownDtoFromJSONTyped(json, ignoreDiscriminat
         totalPenalty: json['totalPenalty'],
     };
 }
-exports.EmailIntelligenceScoreBreakdownDtoFromJSONTyped = EmailIntelligenceScoreBreakdownDtoFromJSONTyped;
 function EmailIntelligenceScoreBreakdownDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function EmailIntelligenceScoreBreakdownDtoToJSON(value) {
         totalPenalty: value.totalPenalty,
     };
 }
-exports.EmailIntelligenceScoreBreakdownDtoToJSON = EmailIntelligenceScoreBreakdownDtoToJSON;

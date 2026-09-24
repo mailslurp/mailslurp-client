@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuditLogPageDtoToJSON = exports.AuditLogPageDtoFromJSONTyped = exports.AuditLogPageDtoFromJSON = void 0;
+exports.AuditLogPageDtoFromJSON = AuditLogPageDtoFromJSON;
+exports.AuditLogPageDtoFromJSONTyped = AuditLogPageDtoFromJSONTyped;
+exports.AuditLogPageDtoToJSON = AuditLogPageDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function AuditLogPageDtoFromJSON(json) {
     return AuditLogPageDtoFromJSONTyped(json, false);
 }
-exports.AuditLogPageDtoFromJSON = AuditLogPageDtoFromJSON;
 function AuditLogPageDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function AuditLogPageDtoFromJSONTyped(json, ignoreDiscriminator) {
         nextCursor: !(0, runtime_1.exists)(json, 'nextCursor') ? undefined : json['nextCursor'],
     };
 }
-exports.AuditLogPageDtoFromJSONTyped = AuditLogPageDtoFromJSONTyped;
 function AuditLogPageDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function AuditLogPageDtoToJSON(value) {
         nextCursor: value.nextCursor,
     };
 }
-exports.AuditLogPageDtoToJSON = AuditLogPageDtoToJSON;

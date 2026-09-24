@@ -4,7 +4,10 @@
     "downlevelIteration": true,
     "esModuleInterop": true,
     "target": "es5",
+    "rootDir": "src",
+    "ignoreDeprecations": "6.0",
     "declaration": true,
+    "noEmitOnError": true,
     "lib": [
       "es6",
       "es2015",
@@ -13,7 +16,6 @@
     ],
     "module": "commonjs",
     "types": [
-      "jest",
       "node"
     ],
     "paths": {

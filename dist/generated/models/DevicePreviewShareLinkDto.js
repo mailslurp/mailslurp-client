@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewShareLinkDtoToJSON = exports.DevicePreviewShareLinkDtoFromJSONTyped = exports.DevicePreviewShareLinkDtoFromJSON = void 0;
+exports.DevicePreviewShareLinkDtoFromJSON = DevicePreviewShareLinkDtoFromJSON;
+exports.DevicePreviewShareLinkDtoFromJSONTyped = DevicePreviewShareLinkDtoFromJSONTyped;
+exports.DevicePreviewShareLinkDtoToJSON = DevicePreviewShareLinkDtoToJSON;
 var runtime_1 = require("../runtime");
 function DevicePreviewShareLinkDtoFromJSON(json) {
     return DevicePreviewShareLinkDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewShareLinkDtoFromJSON = DevicePreviewShareLinkDtoFromJSON;
 function DevicePreviewShareLinkDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -50,7 +51,6 @@ function DevicePreviewShareLinkDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DevicePreviewShareLinkDtoFromJSONTyped = DevicePreviewShareLinkDtoFromJSONTyped;
 function DevicePreviewShareLinkDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -85,4 +85,3 @@ function DevicePreviewShareLinkDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DevicePreviewShareLinkDtoToJSON = DevicePreviewShareLinkDtoToJSON;

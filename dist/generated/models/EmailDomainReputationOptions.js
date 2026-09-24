@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailDomainReputationOptionsToJSON = exports.EmailDomainReputationOptionsFromJSONTyped = exports.EmailDomainReputationOptionsFromJSON = void 0;
+exports.EmailDomainReputationOptionsFromJSON = EmailDomainReputationOptionsFromJSON;
+exports.EmailDomainReputationOptionsFromJSONTyped = EmailDomainReputationOptionsFromJSONTyped;
+exports.EmailDomainReputationOptionsToJSON = EmailDomainReputationOptionsToJSON;
 var runtime_1 = require("../runtime");
 function EmailDomainReputationOptionsFromJSON(json) {
     return EmailDomainReputationOptionsFromJSONTyped(json, false);
 }
-exports.EmailDomainReputationOptionsFromJSON = EmailDomainReputationOptionsFromJSON;
 function EmailDomainReputationOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function EmailDomainReputationOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['includeBlacklist'],
     };
 }
-exports.EmailDomainReputationOptionsFromJSONTyped = EmailDomainReputationOptionsFromJSONTyped;
 function EmailDomainReputationOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function EmailDomainReputationOptionsToJSON(value) {
         includeBlacklist: value.includeBlacklist,
     };
 }
-exports.EmailDomainReputationOptionsToJSON = EmailDomainReputationOptionsToJSON;

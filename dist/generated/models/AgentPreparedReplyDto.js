@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentPreparedReplyDtoToJSON = exports.AgentPreparedReplyDtoFromJSONTyped = exports.AgentPreparedReplyDtoFromJSON = void 0;
+exports.AgentPreparedReplyDtoFromJSON = AgentPreparedReplyDtoFromJSON;
+exports.AgentPreparedReplyDtoFromJSONTyped = AgentPreparedReplyDtoFromJSONTyped;
+exports.AgentPreparedReplyDtoToJSON = AgentPreparedReplyDtoToJSON;
 var _1 = require("./");
 function AgentPreparedReplyDtoFromJSON(json) {
     return AgentPreparedReplyDtoFromJSONTyped(json, false);
 }
-exports.AgentPreparedReplyDtoFromJSON = AgentPreparedReplyDtoFromJSON;
 function AgentPreparedReplyDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function AgentPreparedReplyDtoFromJSONTyped(json, ignoreDiscriminator) {
         claimReleased: json['claimReleased'],
     };
 }
-exports.AgentPreparedReplyDtoFromJSONTyped = AgentPreparedReplyDtoFromJSONTyped;
 function AgentPreparedReplyDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function AgentPreparedReplyDtoToJSON(value) {
         claimReleased: value.claimReleased,
     };
 }
-exports.AgentPreparedReplyDtoToJSON = AgentPreparedReplyDtoToJSON;

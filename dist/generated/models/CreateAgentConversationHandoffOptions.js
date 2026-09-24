@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateAgentConversationHandoffOptionsToJSON = exports.CreateAgentConversationHandoffOptionsFromJSONTyped = exports.CreateAgentConversationHandoffOptionsFromJSON = exports.CreateAgentConversationHandoffOptionsPriorityEnum = void 0;
+exports.CreateAgentConversationHandoffOptionsPriorityEnum = void 0;
+exports.CreateAgentConversationHandoffOptionsFromJSON = CreateAgentConversationHandoffOptionsFromJSON;
+exports.CreateAgentConversationHandoffOptionsFromJSONTyped = CreateAgentConversationHandoffOptionsFromJSONTyped;
+exports.CreateAgentConversationHandoffOptionsToJSON = CreateAgentConversationHandoffOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,11 +28,10 @@ var CreateAgentConversationHandoffOptionsPriorityEnum;
     CreateAgentConversationHandoffOptionsPriorityEnum["NORMAL"] = "NORMAL";
     CreateAgentConversationHandoffOptionsPriorityEnum["HIGH"] = "HIGH";
     CreateAgentConversationHandoffOptionsPriorityEnum["URGENT"] = "URGENT";
-})(CreateAgentConversationHandoffOptionsPriorityEnum = exports.CreateAgentConversationHandoffOptionsPriorityEnum || (exports.CreateAgentConversationHandoffOptionsPriorityEnum = {}));
+})(CreateAgentConversationHandoffOptionsPriorityEnum || (exports.CreateAgentConversationHandoffOptionsPriorityEnum = CreateAgentConversationHandoffOptionsPriorityEnum = {}));
 function CreateAgentConversationHandoffOptionsFromJSON(json) {
     return CreateAgentConversationHandoffOptionsFromJSONTyped(json, false);
 }
-exports.CreateAgentConversationHandoffOptionsFromJSON = CreateAgentConversationHandoffOptionsFromJSON;
 function CreateAgentConversationHandoffOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -47,7 +49,6 @@ function CreateAgentConversationHandoffOptionsFromJSONTyped(json, ignoreDiscrimi
             : json['expectedVersion'],
     };
 }
-exports.CreateAgentConversationHandoffOptionsFromJSONTyped = CreateAgentConversationHandoffOptionsFromJSONTyped;
 function CreateAgentConversationHandoffOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,4 +65,3 @@ function CreateAgentConversationHandoffOptionsToJSON(value) {
         expectedVersion: value.expectedVersion,
     };
 }
-exports.CreateAgentConversationHandoffOptionsToJSON = CreateAgentConversationHandoffOptionsToJSON;

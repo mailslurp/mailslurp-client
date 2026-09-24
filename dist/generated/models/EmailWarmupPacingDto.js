@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupPacingDtoToJSON = exports.EmailWarmupPacingDtoFromJSONTyped = exports.EmailWarmupPacingDtoFromJSON = exports.EmailWarmupPacingDtoActionEnum = void 0;
+exports.EmailWarmupPacingDtoActionEnum = void 0;
+exports.EmailWarmupPacingDtoFromJSON = EmailWarmupPacingDtoFromJSON;
+exports.EmailWarmupPacingDtoFromJSONTyped = EmailWarmupPacingDtoFromJSONTyped;
+exports.EmailWarmupPacingDtoToJSON = EmailWarmupPacingDtoToJSON;
 /**
  * @export
  * @enum {string}
@@ -23,11 +26,10 @@ var EmailWarmupPacingDtoActionEnum;
     EmailWarmupPacingDtoActionEnum["INCREASE"] = "INCREASE";
     EmailWarmupPacingDtoActionEnum["HOLD"] = "HOLD";
     EmailWarmupPacingDtoActionEnum["REDUCE"] = "REDUCE";
-})(EmailWarmupPacingDtoActionEnum = exports.EmailWarmupPacingDtoActionEnum || (exports.EmailWarmupPacingDtoActionEnum = {}));
+})(EmailWarmupPacingDtoActionEnum || (exports.EmailWarmupPacingDtoActionEnum = EmailWarmupPacingDtoActionEnum = {}));
 function EmailWarmupPacingDtoFromJSON(json) {
     return EmailWarmupPacingDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupPacingDtoFromJSON = EmailWarmupPacingDtoFromJSON;
 function EmailWarmupPacingDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +42,6 @@ function EmailWarmupPacingDtoFromJSONTyped(json, ignoreDiscriminator) {
         explanation: json['explanation'],
     };
 }
-exports.EmailWarmupPacingDtoFromJSONTyped = EmailWarmupPacingDtoFromJSONTyped;
 function EmailWarmupPacingDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -56,4 +57,3 @@ function EmailWarmupPacingDtoToJSON(value) {
         explanation: value.explanation,
     };
 }
-exports.EmailWarmupPacingDtoToJSON = EmailWarmupPacingDtoToJSON;

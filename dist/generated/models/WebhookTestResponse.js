@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookTestResponseToJSON = exports.WebhookTestResponseFromJSONTyped = exports.WebhookTestResponseFromJSON = void 0;
+exports.WebhookTestResponseFromJSON = WebhookTestResponseFromJSON;
+exports.WebhookTestResponseFromJSONTyped = WebhookTestResponseFromJSONTyped;
+exports.WebhookTestResponseToJSON = WebhookTestResponseToJSON;
 var runtime_1 = require("../runtime");
 function WebhookTestResponseFromJSON(json) {
     return WebhookTestResponseFromJSONTyped(json, false);
 }
-exports.WebhookTestResponseFromJSON = WebhookTestResponseFromJSON;
 function WebhookTestResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function WebhookTestResponseFromJSONTyped(json, ignoreDiscriminator) {
         message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
     };
 }
-exports.WebhookTestResponseFromJSONTyped = WebhookTestResponseFromJSONTyped;
 function WebhookTestResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function WebhookTestResponseToJSON(value) {
         message: value.message,
     };
 }
-exports.WebhookTestResponseToJSON = WebhookTestResponseToJSON;

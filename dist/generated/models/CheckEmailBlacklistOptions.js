@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckEmailBlacklistOptionsToJSON = exports.CheckEmailBlacklistOptionsFromJSONTyped = exports.CheckEmailBlacklistOptionsFromJSON = void 0;
+exports.CheckEmailBlacklistOptionsFromJSON = CheckEmailBlacklistOptionsFromJSON;
+exports.CheckEmailBlacklistOptionsFromJSONTyped = CheckEmailBlacklistOptionsFromJSONTyped;
+exports.CheckEmailBlacklistOptionsToJSON = CheckEmailBlacklistOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CheckEmailBlacklistOptionsFromJSON(json) {
     return CheckEmailBlacklistOptionsFromJSONTyped(json, false);
 }
-exports.CheckEmailBlacklistOptionsFromJSON = CheckEmailBlacklistOptionsFromJSON;
 function CheckEmailBlacklistOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function CheckEmailBlacklistOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['captchaToken'],
     };
 }
-exports.CheckEmailBlacklistOptionsFromJSONTyped = CheckEmailBlacklistOptionsFromJSONTyped;
 function CheckEmailBlacklistOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function CheckEmailBlacklistOptionsToJSON(value) {
         captchaToken: value.captchaToken,
     };
 }
-exports.CheckEmailBlacklistOptionsToJSON = CheckEmailBlacklistOptionsToJSON;

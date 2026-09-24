@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CampaignProbeRunDtoToJSON = exports.CampaignProbeRunDtoFromJSONTyped = exports.CampaignProbeRunDtoFromJSON = exports.CampaignProbeRunDtoSourceEnum = exports.CampaignProbeRunDtoStatusEnum = void 0;
+exports.CampaignProbeRunDtoSourceEnum = exports.CampaignProbeRunDtoStatusEnum = void 0;
+exports.CampaignProbeRunDtoFromJSON = CampaignProbeRunDtoFromJSON;
+exports.CampaignProbeRunDtoFromJSONTyped = CampaignProbeRunDtoFromJSONTyped;
+exports.CampaignProbeRunDtoToJSON = CampaignProbeRunDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,7 +27,7 @@ var CampaignProbeRunDtoStatusEnum;
     CampaignProbeRunDtoStatusEnum["HEALTHY"] = "HEALTHY";
     CampaignProbeRunDtoStatusEnum["WARNING"] = "WARNING";
     CampaignProbeRunDtoStatusEnum["FAILED"] = "FAILED";
-})(CampaignProbeRunDtoStatusEnum = exports.CampaignProbeRunDtoStatusEnum || (exports.CampaignProbeRunDtoStatusEnum = {}));
+})(CampaignProbeRunDtoStatusEnum || (exports.CampaignProbeRunDtoStatusEnum = CampaignProbeRunDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -36,11 +39,10 @@ var CampaignProbeRunDtoSourceEnum;
     CampaignProbeRunDtoSourceEnum["USER_SCHEDULE"] = "USER_SCHEDULE";
     CampaignProbeRunDtoSourceEnum["CRON"] = "CRON";
     CampaignProbeRunDtoSourceEnum["SCHEDULER"] = "SCHEDULER";
-})(CampaignProbeRunDtoSourceEnum = exports.CampaignProbeRunDtoSourceEnum || (exports.CampaignProbeRunDtoSourceEnum = {}));
+})(CampaignProbeRunDtoSourceEnum || (exports.CampaignProbeRunDtoSourceEnum = CampaignProbeRunDtoSourceEnum = {}));
 function CampaignProbeRunDtoFromJSON(json) {
     return CampaignProbeRunDtoFromJSONTyped(json, false);
 }
-exports.CampaignProbeRunDtoFromJSON = CampaignProbeRunDtoFromJSON;
 function CampaignProbeRunDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -85,7 +87,6 @@ function CampaignProbeRunDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.CampaignProbeRunDtoFromJSONTyped = CampaignProbeRunDtoFromJSONTyped;
 function CampaignProbeRunDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -127,4 +128,3 @@ function CampaignProbeRunDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.CampaignProbeRunDtoToJSON = CampaignProbeRunDtoToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePhoneProvisioningJobOptionsToJSON = exports.CreatePhoneProvisioningJobOptionsFromJSONTyped = exports.CreatePhoneProvisioningJobOptionsFromJSON = exports.CreatePhoneProvisioningJobOptionsPhoneVariantEnum = exports.CreatePhoneProvisioningJobOptionsPhoneCountryEnum = void 0;
+exports.CreatePhoneProvisioningJobOptionsPhoneVariantEnum = exports.CreatePhoneProvisioningJobOptionsPhoneCountryEnum = void 0;
+exports.CreatePhoneProvisioningJobOptionsFromJSON = CreatePhoneProvisioningJobOptionsFromJSON;
+exports.CreatePhoneProvisioningJobOptionsFromJSONTyped = CreatePhoneProvisioningJobOptionsFromJSONTyped;
+exports.CreatePhoneProvisioningJobOptionsToJSON = CreatePhoneProvisioningJobOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -35,7 +38,7 @@ var CreatePhoneProvisioningJobOptionsPhoneCountryEnum;
     CreatePhoneProvisioningJobOptionsPhoneCountryEnum["IL"] = "IL";
     CreatePhoneProvisioningJobOptionsPhoneCountryEnum["FI"] = "FI";
     CreatePhoneProvisioningJobOptionsPhoneCountryEnum["SE"] = "SE";
-})(CreatePhoneProvisioningJobOptionsPhoneCountryEnum = exports.CreatePhoneProvisioningJobOptionsPhoneCountryEnum || (exports.CreatePhoneProvisioningJobOptionsPhoneCountryEnum = {}));
+})(CreatePhoneProvisioningJobOptionsPhoneCountryEnum || (exports.CreatePhoneProvisioningJobOptionsPhoneCountryEnum = CreatePhoneProvisioningJobOptionsPhoneCountryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -45,11 +48,10 @@ var CreatePhoneProvisioningJobOptionsPhoneVariantEnum;
     CreatePhoneProvisioningJobOptionsPhoneVariantEnum["LOCAL"] = "LOCAL";
     CreatePhoneProvisioningJobOptionsPhoneVariantEnum["MOBILE"] = "MOBILE";
     CreatePhoneProvisioningJobOptionsPhoneVariantEnum["TOLL_FREE"] = "TOLL_FREE";
-})(CreatePhoneProvisioningJobOptionsPhoneVariantEnum = exports.CreatePhoneProvisioningJobOptionsPhoneVariantEnum || (exports.CreatePhoneProvisioningJobOptionsPhoneVariantEnum = {}));
+})(CreatePhoneProvisioningJobOptionsPhoneVariantEnum || (exports.CreatePhoneProvisioningJobOptionsPhoneVariantEnum = CreatePhoneProvisioningJobOptionsPhoneVariantEnum = {}));
 function CreatePhoneProvisioningJobOptionsFromJSON(json) {
     return CreatePhoneProvisioningJobOptionsFromJSONTyped(json, false);
 }
-exports.CreatePhoneProvisioningJobOptionsFromJSON = CreatePhoneProvisioningJobOptionsFromJSON;
 function CreatePhoneProvisioningJobOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -62,7 +64,6 @@ function CreatePhoneProvisioningJobOptionsFromJSONTyped(json, ignoreDiscriminato
         items: json['items'].map(_1.CreatePhoneProvisioningJobItemOptionsFromJSON),
     };
 }
-exports.CreatePhoneProvisioningJobOptionsFromJSONTyped = CreatePhoneProvisioningJobOptionsFromJSONTyped;
 function CreatePhoneProvisioningJobOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -76,4 +77,3 @@ function CreatePhoneProvisioningJobOptionsToJSON(value) {
         items: value.items.map(_1.CreatePhoneProvisioningJobItemOptionsToJSON),
     };
 }
-exports.CreatePhoneProvisioningJobOptionsToJSON = CreatePhoneProvisioningJobOptionsToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementAnalyticsSummaryDtoToJSON = exports.InboxPlacementAnalyticsSummaryDtoFromJSONTyped = exports.InboxPlacementAnalyticsSummaryDtoFromJSON = void 0;
+exports.InboxPlacementAnalyticsSummaryDtoFromJSON = InboxPlacementAnalyticsSummaryDtoFromJSON;
+exports.InboxPlacementAnalyticsSummaryDtoFromJSONTyped = InboxPlacementAnalyticsSummaryDtoFromJSONTyped;
+exports.InboxPlacementAnalyticsSummaryDtoToJSON = InboxPlacementAnalyticsSummaryDtoToJSON;
 function InboxPlacementAnalyticsSummaryDtoFromJSON(json) {
     return InboxPlacementAnalyticsSummaryDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementAnalyticsSummaryDtoFromJSON = InboxPlacementAnalyticsSummaryDtoFromJSON;
 function InboxPlacementAnalyticsSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -45,7 +46,6 @@ function InboxPlacementAnalyticsSummaryDtoFromJSONTyped(json, ignoreDiscriminato
         averageNotReceivedRatePercentage: json['averageNotReceivedRatePercentage'],
     };
 }
-exports.InboxPlacementAnalyticsSummaryDtoFromJSONTyped = InboxPlacementAnalyticsSummaryDtoFromJSONTyped;
 function InboxPlacementAnalyticsSummaryDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -76,4 +76,3 @@ function InboxPlacementAnalyticsSummaryDtoToJSON(value) {
         averageNotReceivedRatePercentage: value.averageNotReceivedRatePercentage,
     };
 }
-exports.InboxPlacementAnalyticsSummaryDtoToJSON = InboxPlacementAnalyticsSummaryDtoToJSON;

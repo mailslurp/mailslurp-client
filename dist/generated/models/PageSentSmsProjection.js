@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageSentSmsProjectionToJSON = exports.PageSentSmsProjectionFromJSONTyped = exports.PageSentSmsProjectionFromJSON = void 0;
+exports.PageSentSmsProjectionFromJSON = PageSentSmsProjectionFromJSON;
+exports.PageSentSmsProjectionFromJSONTyped = PageSentSmsProjectionFromJSONTyped;
+exports.PageSentSmsProjectionToJSON = PageSentSmsProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageSentSmsProjectionFromJSON(json) {
     return PageSentSmsProjectionFromJSONTyped(json, false);
 }
-exports.PageSentSmsProjectionFromJSON = PageSentSmsProjectionFromJSON;
 function PageSentSmsProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageSentSmsProjectionFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageSentSmsProjectionFromJSONTyped = PageSentSmsProjectionFromJSONTyped;
 function PageSentSmsProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageSentSmsProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageSentSmsProjectionToJSON = PageSentSmsProjectionToJSON;

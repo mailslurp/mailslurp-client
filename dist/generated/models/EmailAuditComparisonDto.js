@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailAuditComparisonDtoToJSON = exports.EmailAuditComparisonDtoFromJSONTyped = exports.EmailAuditComparisonDtoFromJSON = void 0;
+exports.EmailAuditComparisonDtoFromJSON = EmailAuditComparisonDtoFromJSON;
+exports.EmailAuditComparisonDtoFromJSONTyped = EmailAuditComparisonDtoFromJSONTyped;
+exports.EmailAuditComparisonDtoToJSON = EmailAuditComparisonDtoToJSON;
 var _1 = require("./");
 function EmailAuditComparisonDtoFromJSON(json) {
     return EmailAuditComparisonDtoFromJSONTyped(json, false);
 }
-exports.EmailAuditComparisonDtoFromJSON = EmailAuditComparisonDtoFromJSON;
 function EmailAuditComparisonDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -41,7 +42,6 @@ function EmailAuditComparisonDtoFromJSONTyped(json, ignoreDiscriminator) {
         removedInsights: json['removedInsights'],
     };
 }
-exports.EmailAuditComparisonDtoFromJSONTyped = EmailAuditComparisonDtoFromJSONTyped;
 function EmailAuditComparisonDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -67,4 +67,3 @@ function EmailAuditComparisonDtoToJSON(value) {
         removedInsights: value.removedInsights,
     };
 }
-exports.EmailAuditComparisonDtoToJSON = EmailAuditComparisonDtoToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckEmailClientSupportOptionsToJSON = exports.CheckEmailClientSupportOptionsFromJSONTyped = exports.CheckEmailClientSupportOptionsFromJSON = void 0;
+exports.CheckEmailClientSupportOptionsFromJSON = CheckEmailClientSupportOptionsFromJSON;
+exports.CheckEmailClientSupportOptionsFromJSONTyped = CheckEmailClientSupportOptionsFromJSONTyped;
+exports.CheckEmailClientSupportOptionsToJSON = CheckEmailClientSupportOptionsToJSON;
 function CheckEmailClientSupportOptionsFromJSON(json) {
     return CheckEmailClientSupportOptionsFromJSONTyped(json, false);
 }
-exports.CheckEmailClientSupportOptionsFromJSON = CheckEmailClientSupportOptionsFromJSON;
 function CheckEmailClientSupportOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function CheckEmailClientSupportOptionsFromJSONTyped(json, ignoreDiscriminator) 
         emailBody: json['emailBody'],
     };
 }
-exports.CheckEmailClientSupportOptionsFromJSONTyped = CheckEmailClientSupportOptionsFromJSONTyped;
 function CheckEmailClientSupportOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function CheckEmailClientSupportOptionsToJSON(value) {
         emailBody: value.emailBody,
     };
 }
-exports.CheckEmailClientSupportOptionsToJSON = CheckEmailClientSupportOptionsToJSON;

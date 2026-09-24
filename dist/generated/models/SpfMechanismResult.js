@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SpfMechanismResultToJSON = exports.SpfMechanismResultFromJSONTyped = exports.SpfMechanismResultFromJSON = void 0;
+exports.SpfMechanismResultFromJSON = SpfMechanismResultFromJSON;
+exports.SpfMechanismResultFromJSONTyped = SpfMechanismResultFromJSONTyped;
+exports.SpfMechanismResultToJSON = SpfMechanismResultToJSON;
 var runtime_1 = require("../runtime");
 function SpfMechanismResultFromJSON(json) {
     return SpfMechanismResultFromJSONTyped(json, false);
 }
-exports.SpfMechanismResultFromJSON = SpfMechanismResultFromJSON;
 function SpfMechanismResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function SpfMechanismResultFromJSONTyped(json, ignoreDiscriminator) {
         qualifier: !(0, runtime_1.exists)(json, 'qualifier') ? undefined : json['qualifier'],
     };
 }
-exports.SpfMechanismResultFromJSONTyped = SpfMechanismResultFromJSONTyped;
 function SpfMechanismResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function SpfMechanismResultToJSON(value) {
         qualifier: value.qualifier,
     };
 }
-exports.SpfMechanismResultToJSON = SpfMechanismResultToJSON;

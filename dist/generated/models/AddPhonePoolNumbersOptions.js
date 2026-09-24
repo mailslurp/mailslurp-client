@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AddPhonePoolNumbersOptionsToJSON = exports.AddPhonePoolNumbersOptionsFromJSONTyped = exports.AddPhonePoolNumbersOptionsFromJSON = void 0;
+exports.AddPhonePoolNumbersOptionsFromJSON = AddPhonePoolNumbersOptionsFromJSON;
+exports.AddPhonePoolNumbersOptionsFromJSONTyped = AddPhonePoolNumbersOptionsFromJSONTyped;
+exports.AddPhonePoolNumbersOptionsToJSON = AddPhonePoolNumbersOptionsToJSON;
 function AddPhonePoolNumbersOptionsFromJSON(json) {
     return AddPhonePoolNumbersOptionsFromJSONTyped(json, false);
 }
-exports.AddPhonePoolNumbersOptionsFromJSON = AddPhonePoolNumbersOptionsFromJSON;
 function AddPhonePoolNumbersOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function AddPhonePoolNumbersOptionsFromJSONTyped(json, ignoreDiscriminator) {
         phoneNumberIds: json['phoneNumberIds'],
     };
 }
-exports.AddPhonePoolNumbersOptionsFromJSONTyped = AddPhonePoolNumbersOptionsFromJSONTyped;
 function AddPhonePoolNumbersOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function AddPhonePoolNumbersOptionsToJSON(value) {
         phoneNumberIds: value.phoneNumberIds,
     };
 }
-exports.AddPhonePoolNumbersOptionsToJSON = AddPhonePoolNumbersOptionsToJSON;

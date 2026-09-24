@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateDeliverabilityTestOptionsToJSON = exports.UpdateDeliverabilityTestOptionsFromJSONTyped = exports.UpdateDeliverabilityTestOptionsFromJSON = void 0;
+exports.UpdateDeliverabilityTestOptionsFromJSON = UpdateDeliverabilityTestOptionsFromJSON;
+exports.UpdateDeliverabilityTestOptionsFromJSONTyped = UpdateDeliverabilityTestOptionsFromJSONTyped;
+exports.UpdateDeliverabilityTestOptionsToJSON = UpdateDeliverabilityTestOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function UpdateDeliverabilityTestOptionsFromJSON(json) {
     return UpdateDeliverabilityTestOptionsFromJSONTyped(json, false);
 }
-exports.UpdateDeliverabilityTestOptionsFromJSON = UpdateDeliverabilityTestOptionsFromJSON;
 function UpdateDeliverabilityTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -51,7 +52,6 @@ function UpdateDeliverabilityTestOptionsFromJSONTyped(json, ignoreDiscriminator)
                 : json['expectations'].map(_1.DeliverabilityExpectationFromJSON),
     };
 }
-exports.UpdateDeliverabilityTestOptionsFromJSONTyped = UpdateDeliverabilityTestOptionsFromJSONTyped;
 function UpdateDeliverabilityTestOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -78,4 +78,3 @@ function UpdateDeliverabilityTestOptionsToJSON(value) {
                 : value.expectations.map(_1.DeliverabilityExpectationToJSON),
     };
 }
-exports.UpdateDeliverabilityTestOptionsToJSON = UpdateDeliverabilityTestOptionsToJSON;

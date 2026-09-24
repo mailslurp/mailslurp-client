@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateConnectorOptionsToJSON = exports.CreateConnectorOptionsFromJSONTyped = exports.CreateConnectorOptionsFromJSON = void 0;
+exports.CreateConnectorOptionsFromJSON = CreateConnectorOptionsFromJSON;
+exports.CreateConnectorOptionsFromJSONTyped = CreateConnectorOptionsFromJSONTyped;
+exports.CreateConnectorOptionsToJSON = CreateConnectorOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateConnectorOptionsFromJSON(json) {
     return CreateConnectorOptionsFromJSONTyped(json, false);
 }
-exports.CreateConnectorOptionsFromJSON = CreateConnectorOptionsFromJSON;
 function CreateConnectorOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function CreateConnectorOptionsFromJSONTyped(json, ignoreDiscriminator) {
         enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
     };
 }
-exports.CreateConnectorOptionsFromJSONTyped = CreateConnectorOptionsFromJSONTyped;
 function CreateConnectorOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CreateConnectorOptionsToJSON(value) {
         enabled: value.enabled,
     };
 }
-exports.CreateConnectorOptionsToJSON = CreateConnectorOptionsToJSON;

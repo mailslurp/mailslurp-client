@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateStructuredContentEmailOptionsToJSON = exports.GenerateStructuredContentEmailOptionsFromJSONTyped = exports.GenerateStructuredContentEmailOptionsFromJSON = exports.GenerateStructuredContentEmailOptionsContentSelectorEnum = void 0;
+exports.GenerateStructuredContentEmailOptionsContentSelectorEnum = void 0;
+exports.GenerateStructuredContentEmailOptionsFromJSON = GenerateStructuredContentEmailOptionsFromJSON;
+exports.GenerateStructuredContentEmailOptionsFromJSONTyped = GenerateStructuredContentEmailOptionsFromJSONTyped;
+exports.GenerateStructuredContentEmailOptionsToJSON = GenerateStructuredContentEmailOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -25,11 +28,10 @@ var GenerateStructuredContentEmailOptionsContentSelectorEnum;
     GenerateStructuredContentEmailOptionsContentSelectorEnum["RAW"] = "RAW";
     GenerateStructuredContentEmailOptionsContentSelectorEnum["BODY"] = "BODY";
     GenerateStructuredContentEmailOptionsContentSelectorEnum["BODY_ATTACHMENTS"] = "BODY_ATTACHMENTS";
-})(GenerateStructuredContentEmailOptionsContentSelectorEnum = exports.GenerateStructuredContentEmailOptionsContentSelectorEnum || (exports.GenerateStructuredContentEmailOptionsContentSelectorEnum = {}));
+})(GenerateStructuredContentEmailOptionsContentSelectorEnum || (exports.GenerateStructuredContentEmailOptionsContentSelectorEnum = GenerateStructuredContentEmailOptionsContentSelectorEnum = {}));
 function GenerateStructuredContentEmailOptionsFromJSON(json) {
     return GenerateStructuredContentEmailOptionsFromJSONTyped(json, false);
 }
-exports.GenerateStructuredContentEmailOptionsFromJSON = GenerateStructuredContentEmailOptionsFromJSON;
 function GenerateStructuredContentEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -48,7 +50,6 @@ function GenerateStructuredContentEmailOptionsFromJSONTyped(json, ignoreDiscrimi
         transformId: !(0, runtime_1.exists)(json, 'transformId') ? undefined : json['transformId'],
     };
 }
-exports.GenerateStructuredContentEmailOptionsFromJSONTyped = GenerateStructuredContentEmailOptionsFromJSONTyped;
 function GenerateStructuredContentEmailOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,4 +65,3 @@ function GenerateStructuredContentEmailOptionsToJSON(value) {
         transformId: value.transformId,
     };
 }
-exports.GenerateStructuredContentEmailOptionsToJSON = GenerateStructuredContentEmailOptionsToJSON;

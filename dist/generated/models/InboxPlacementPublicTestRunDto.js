@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementPublicTestRunDtoToJSON = exports.InboxPlacementPublicTestRunDtoFromJSONTyped = exports.InboxPlacementPublicTestRunDtoFromJSON = void 0;
+exports.InboxPlacementPublicTestRunDtoFromJSON = InboxPlacementPublicTestRunDtoFromJSON;
+exports.InboxPlacementPublicTestRunDtoFromJSONTyped = InboxPlacementPublicTestRunDtoFromJSONTyped;
+exports.InboxPlacementPublicTestRunDtoToJSON = InboxPlacementPublicTestRunDtoToJSON;
 var runtime_1 = require("../runtime");
 function InboxPlacementPublicTestRunDtoFromJSON(json) {
     return InboxPlacementPublicTestRunDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementPublicTestRunDtoFromJSON = InboxPlacementPublicTestRunDtoFromJSON;
 function InboxPlacementPublicTestRunDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -69,7 +70,6 @@ function InboxPlacementPublicTestRunDtoFromJSONTyped(json, ignoreDiscriminator) 
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.InboxPlacementPublicTestRunDtoFromJSONTyped = InboxPlacementPublicTestRunDtoFromJSONTyped;
 function InboxPlacementPublicTestRunDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -115,4 +115,3 @@ function InboxPlacementPublicTestRunDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.InboxPlacementPublicTestRunDtoToJSON = InboxPlacementPublicTestRunDtoToJSON;

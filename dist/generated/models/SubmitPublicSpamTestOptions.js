@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SubmitPublicSpamTestOptionsToJSON = exports.SubmitPublicSpamTestOptionsFromJSONTyped = exports.SubmitPublicSpamTestOptionsFromJSON = void 0;
+exports.SubmitPublicSpamTestOptionsFromJSON = SubmitPublicSpamTestOptionsFromJSON;
+exports.SubmitPublicSpamTestOptionsFromJSONTyped = SubmitPublicSpamTestOptionsFromJSONTyped;
+exports.SubmitPublicSpamTestOptionsToJSON = SubmitPublicSpamTestOptionsToJSON;
 var runtime_1 = require("../runtime");
 function SubmitPublicSpamTestOptionsFromJSON(json) {
     return SubmitPublicSpamTestOptionsFromJSONTyped(json, false);
 }
-exports.SubmitPublicSpamTestOptionsFromJSON = SubmitPublicSpamTestOptionsFromJSON;
 function SubmitPublicSpamTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function SubmitPublicSpamTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['captchaToken'],
     };
 }
-exports.SubmitPublicSpamTestOptionsFromJSONTyped = SubmitPublicSpamTestOptionsFromJSONTyped;
 function SubmitPublicSpamTestOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function SubmitPublicSpamTestOptionsToJSON(value) {
         captchaToken: value.captchaToken,
     };
 }
-exports.SubmitPublicSpamTestOptionsToJSON = SubmitPublicSpamTestOptionsToJSON;

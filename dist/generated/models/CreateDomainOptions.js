@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDomainOptionsToJSON = exports.CreateDomainOptionsFromJSONTyped = exports.CreateDomainOptionsFromJSON = exports.CreateDomainOptionsDomainTypeEnum = void 0;
+exports.CreateDomainOptionsDomainTypeEnum = void 0;
+exports.CreateDomainOptionsFromJSON = CreateDomainOptionsFromJSON;
+exports.CreateDomainOptionsFromJSONTyped = CreateDomainOptionsFromJSONTyped;
+exports.CreateDomainOptionsToJSON = CreateDomainOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var CreateDomainOptionsDomainTypeEnum;
 (function (CreateDomainOptionsDomainTypeEnum) {
     CreateDomainOptionsDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     CreateDomainOptionsDomainTypeEnum["SMTP_DOMAIN"] = "SMTP_DOMAIN";
-})(CreateDomainOptionsDomainTypeEnum = exports.CreateDomainOptionsDomainTypeEnum || (exports.CreateDomainOptionsDomainTypeEnum = {}));
+})(CreateDomainOptionsDomainTypeEnum || (exports.CreateDomainOptionsDomainTypeEnum = CreateDomainOptionsDomainTypeEnum = {}));
 function CreateDomainOptionsFromJSON(json) {
     return CreateDomainOptionsFromJSONTyped(json, false);
 }
-exports.CreateDomainOptionsFromJSON = CreateDomainOptionsFromJSON;
 function CreateDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -41,7 +43,6 @@ function CreateDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
         domainType: !(0, runtime_1.exists)(json, 'domainType') ? undefined : json['domainType'],
     };
 }
-exports.CreateDomainOptionsFromJSONTyped = CreateDomainOptionsFromJSONTyped;
 function CreateDomainOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -56,4 +57,3 @@ function CreateDomainOptionsToJSON(value) {
         domainType: value.domainType,
     };
 }
-exports.CreateDomainOptionsToJSON = CreateDomainOptionsToJSON;

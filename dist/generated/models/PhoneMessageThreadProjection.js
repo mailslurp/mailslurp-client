@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneMessageThreadProjectionToJSON = exports.PhoneMessageThreadProjectionFromJSONTyped = exports.PhoneMessageThreadProjectionFromJSON = exports.PhoneMessageThreadProjectionLastMessageDirectionEnum = void 0;
+exports.PhoneMessageThreadProjectionLastMessageDirectionEnum = void 0;
+exports.PhoneMessageThreadProjectionFromJSON = PhoneMessageThreadProjectionFromJSON;
+exports.PhoneMessageThreadProjectionFromJSONTyped = PhoneMessageThreadProjectionFromJSONTyped;
+exports.PhoneMessageThreadProjectionToJSON = PhoneMessageThreadProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var PhoneMessageThreadProjectionLastMessageDirectionEnum;
 (function (PhoneMessageThreadProjectionLastMessageDirectionEnum) {
     PhoneMessageThreadProjectionLastMessageDirectionEnum["OUTBOUND"] = "OUTBOUND";
     PhoneMessageThreadProjectionLastMessageDirectionEnum["INBOUND"] = "INBOUND";
-})(PhoneMessageThreadProjectionLastMessageDirectionEnum = exports.PhoneMessageThreadProjectionLastMessageDirectionEnum || (exports.PhoneMessageThreadProjectionLastMessageDirectionEnum = {}));
+})(PhoneMessageThreadProjectionLastMessageDirectionEnum || (exports.PhoneMessageThreadProjectionLastMessageDirectionEnum = PhoneMessageThreadProjectionLastMessageDirectionEnum = {}));
 function PhoneMessageThreadProjectionFromJSON(json) {
     return PhoneMessageThreadProjectionFromJSONTyped(json, false);
 }
-exports.PhoneMessageThreadProjectionFromJSON = PhoneMessageThreadProjectionFromJSON;
 function PhoneMessageThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -43,7 +45,6 @@ function PhoneMessageThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         lastCreated: new Date(json['lastCreated']),
     };
 }
-exports.PhoneMessageThreadProjectionFromJSONTyped = PhoneMessageThreadProjectionFromJSONTyped;
 function PhoneMessageThreadProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -60,4 +61,3 @@ function PhoneMessageThreadProjectionToJSON(value) {
         lastCreated: value.lastCreated.toISOString(),
     };
 }
-exports.PhoneMessageThreadProjectionToJSON = PhoneMessageThreadProjectionToJSON;

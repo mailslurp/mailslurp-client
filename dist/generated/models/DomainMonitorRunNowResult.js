@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorRunNowResultToJSON = exports.DomainMonitorRunNowResultFromJSONTyped = exports.DomainMonitorRunNowResultFromJSON = void 0;
+exports.DomainMonitorRunNowResultFromJSON = DomainMonitorRunNowResultFromJSON;
+exports.DomainMonitorRunNowResultFromJSONTyped = DomainMonitorRunNowResultFromJSONTyped;
+exports.DomainMonitorRunNowResultToJSON = DomainMonitorRunNowResultToJSON;
 var _1 = require("./");
 function DomainMonitorRunNowResultFromJSON(json) {
     return DomainMonitorRunNowResultFromJSONTyped(json, false);
 }
-exports.DomainMonitorRunNowResultFromJSON = DomainMonitorRunNowResultFromJSON;
 function DomainMonitorRunNowResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function DomainMonitorRunNowResultFromJSONTyped(json, ignoreDiscriminator) {
         run: (0, _1.DomainMonitorRunDtoFromJSON)(json['run']),
     };
 }
-exports.DomainMonitorRunNowResultFromJSONTyped = DomainMonitorRunNowResultFromJSONTyped;
 function DomainMonitorRunNowResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function DomainMonitorRunNowResultToJSON(value) {
         run: (0, _1.DomainMonitorRunDtoToJSON)(value.run),
     };
 }
-exports.DomainMonitorRunNowResultToJSON = DomainMonitorRunNowResultToJSON;

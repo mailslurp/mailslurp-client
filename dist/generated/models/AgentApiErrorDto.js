@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentApiErrorDtoToJSON = exports.AgentApiErrorDtoFromJSONTyped = exports.AgentApiErrorDtoFromJSON = void 0;
+exports.AgentApiErrorDtoFromJSON = AgentApiErrorDtoFromJSON;
+exports.AgentApiErrorDtoFromJSONTyped = AgentApiErrorDtoFromJSONTyped;
+exports.AgentApiErrorDtoToJSON = AgentApiErrorDtoToJSON;
 var runtime_1 = require("../runtime");
 function AgentApiErrorDtoFromJSON(json) {
     return AgentApiErrorDtoFromJSONTyped(json, false);
 }
-exports.AgentApiErrorDtoFromJSON = AgentApiErrorDtoFromJSON;
 function AgentApiErrorDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -34,7 +35,6 @@ function AgentApiErrorDtoFromJSONTyped(json, ignoreDiscriminator) {
         details: json['details'],
     };
 }
-exports.AgentApiErrorDtoFromJSONTyped = AgentApiErrorDtoFromJSONTyped;
 function AgentApiErrorDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function AgentApiErrorDtoToJSON(value) {
         details: value.details,
     };
 }
-exports.AgentApiErrorDtoToJSON = AgentApiErrorDtoToJSON;

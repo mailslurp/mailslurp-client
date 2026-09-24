@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SimpleSendEmailOptionsToJSON = exports.SimpleSendEmailOptionsFromJSONTyped = exports.SimpleSendEmailOptionsFromJSON = void 0;
+exports.SimpleSendEmailOptionsFromJSON = SimpleSendEmailOptionsFromJSON;
+exports.SimpleSendEmailOptionsFromJSONTyped = SimpleSendEmailOptionsFromJSONTyped;
+exports.SimpleSendEmailOptionsToJSON = SimpleSendEmailOptionsToJSON;
 var runtime_1 = require("../runtime");
 function SimpleSendEmailOptionsFromJSON(json) {
     return SimpleSendEmailOptionsFromJSONTyped(json, false);
 }
-exports.SimpleSendEmailOptionsFromJSON = SimpleSendEmailOptionsFromJSON;
 function SimpleSendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function SimpleSendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
     };
 }
-exports.SimpleSendEmailOptionsFromJSONTyped = SimpleSendEmailOptionsFromJSONTyped;
 function SimpleSendEmailOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function SimpleSendEmailOptionsToJSON(value) {
         subject: value.subject,
     };
 }
-exports.SimpleSendEmailOptionsToJSON = SimpleSendEmailOptionsToJSON;

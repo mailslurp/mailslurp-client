@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorObservedAuthSampleDtoToJSON = exports.DomainMonitorObservedAuthSampleDtoFromJSONTyped = exports.DomainMonitorObservedAuthSampleDtoFromJSON = exports.DomainMonitorObservedAuthSampleDtoDmarcStatusEnum = exports.DomainMonitorObservedAuthSampleDtoDkimStatusEnum = exports.DomainMonitorObservedAuthSampleDtoSpfStatusEnum = void 0;
+exports.DomainMonitorObservedAuthSampleDtoDmarcStatusEnum = exports.DomainMonitorObservedAuthSampleDtoDkimStatusEnum = exports.DomainMonitorObservedAuthSampleDtoSpfStatusEnum = void 0;
+exports.DomainMonitorObservedAuthSampleDtoFromJSON = DomainMonitorObservedAuthSampleDtoFromJSON;
+exports.DomainMonitorObservedAuthSampleDtoFromJSONTyped = DomainMonitorObservedAuthSampleDtoFromJSONTyped;
+exports.DomainMonitorObservedAuthSampleDtoToJSON = DomainMonitorObservedAuthSampleDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -26,7 +29,7 @@ var DomainMonitorObservedAuthSampleDtoSpfStatusEnum;
     DomainMonitorObservedAuthSampleDtoSpfStatusEnum["FAIL"] = "FAIL";
     DomainMonitorObservedAuthSampleDtoSpfStatusEnum["WARNING"] = "WARNING";
     DomainMonitorObservedAuthSampleDtoSpfStatusEnum["NOT_CHECKED"] = "NOT_CHECKED";
-})(DomainMonitorObservedAuthSampleDtoSpfStatusEnum = exports.DomainMonitorObservedAuthSampleDtoSpfStatusEnum || (exports.DomainMonitorObservedAuthSampleDtoSpfStatusEnum = {}));
+})(DomainMonitorObservedAuthSampleDtoSpfStatusEnum || (exports.DomainMonitorObservedAuthSampleDtoSpfStatusEnum = DomainMonitorObservedAuthSampleDtoSpfStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -37,7 +40,7 @@ var DomainMonitorObservedAuthSampleDtoDkimStatusEnum;
     DomainMonitorObservedAuthSampleDtoDkimStatusEnum["FAIL"] = "FAIL";
     DomainMonitorObservedAuthSampleDtoDkimStatusEnum["WARNING"] = "WARNING";
     DomainMonitorObservedAuthSampleDtoDkimStatusEnum["NOT_CHECKED"] = "NOT_CHECKED";
-})(DomainMonitorObservedAuthSampleDtoDkimStatusEnum = exports.DomainMonitorObservedAuthSampleDtoDkimStatusEnum || (exports.DomainMonitorObservedAuthSampleDtoDkimStatusEnum = {}));
+})(DomainMonitorObservedAuthSampleDtoDkimStatusEnum || (exports.DomainMonitorObservedAuthSampleDtoDkimStatusEnum = DomainMonitorObservedAuthSampleDtoDkimStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -48,11 +51,10 @@ var DomainMonitorObservedAuthSampleDtoDmarcStatusEnum;
     DomainMonitorObservedAuthSampleDtoDmarcStatusEnum["FAIL"] = "FAIL";
     DomainMonitorObservedAuthSampleDtoDmarcStatusEnum["WARNING"] = "WARNING";
     DomainMonitorObservedAuthSampleDtoDmarcStatusEnum["NOT_CHECKED"] = "NOT_CHECKED";
-})(DomainMonitorObservedAuthSampleDtoDmarcStatusEnum = exports.DomainMonitorObservedAuthSampleDtoDmarcStatusEnum || (exports.DomainMonitorObservedAuthSampleDtoDmarcStatusEnum = {}));
+})(DomainMonitorObservedAuthSampleDtoDmarcStatusEnum || (exports.DomainMonitorObservedAuthSampleDtoDmarcStatusEnum = DomainMonitorObservedAuthSampleDtoDmarcStatusEnum = {}));
 function DomainMonitorObservedAuthSampleDtoFromJSON(json) {
     return DomainMonitorObservedAuthSampleDtoFromJSONTyped(json, false);
 }
-exports.DomainMonitorObservedAuthSampleDtoFromJSON = DomainMonitorObservedAuthSampleDtoFromJSON;
 function DomainMonitorObservedAuthSampleDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -96,7 +98,6 @@ function DomainMonitorObservedAuthSampleDtoFromJSONTyped(json, ignoreDiscriminat
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DomainMonitorObservedAuthSampleDtoFromJSONTyped = DomainMonitorObservedAuthSampleDtoFromJSONTyped;
 function DomainMonitorObservedAuthSampleDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -131,4 +132,3 @@ function DomainMonitorObservedAuthSampleDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DomainMonitorObservedAuthSampleDtoToJSON = DomainMonitorObservedAuthSampleDtoToJSON;

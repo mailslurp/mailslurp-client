@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PublicDeviceRenderTargetListDtoToJSON = exports.PublicDeviceRenderTargetListDtoFromJSONTyped = exports.PublicDeviceRenderTargetListDtoFromJSON = void 0;
+exports.PublicDeviceRenderTargetListDtoFromJSON = PublicDeviceRenderTargetListDtoFromJSON;
+exports.PublicDeviceRenderTargetListDtoFromJSONTyped = PublicDeviceRenderTargetListDtoFromJSONTyped;
+exports.PublicDeviceRenderTargetListDtoToJSON = PublicDeviceRenderTargetListDtoToJSON;
 var _1 = require("./");
 function PublicDeviceRenderTargetListDtoFromJSON(json) {
     return PublicDeviceRenderTargetListDtoFromJSONTyped(json, false);
 }
-exports.PublicDeviceRenderTargetListDtoFromJSON = PublicDeviceRenderTargetListDtoFromJSON;
 function PublicDeviceRenderTargetListDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function PublicDeviceRenderTargetListDtoFromJSONTyped(json, ignoreDiscriminator)
         targets: json['targets'].map(_1.PublicDeviceRenderTargetDtoFromJSON),
     };
 }
-exports.PublicDeviceRenderTargetListDtoFromJSONTyped = PublicDeviceRenderTargetListDtoFromJSONTyped;
 function PublicDeviceRenderTargetListDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function PublicDeviceRenderTargetListDtoToJSON(value) {
         targets: value.targets.map(_1.PublicDeviceRenderTargetDtoToJSON),
     };
 }
-exports.PublicDeviceRenderTargetListDtoToJSON = PublicDeviceRenderTargetListDtoToJSON;

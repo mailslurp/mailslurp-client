@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewSharedRunDtoToJSON = exports.DevicePreviewSharedRunDtoFromJSONTyped = exports.DevicePreviewSharedRunDtoFromJSON = exports.DevicePreviewSharedRunDtoStatusEnum = exports.DevicePreviewSharedRunDtoSourceTypeEnum = void 0;
+exports.DevicePreviewSharedRunDtoStatusEnum = exports.DevicePreviewSharedRunDtoSourceTypeEnum = void 0;
+exports.DevicePreviewSharedRunDtoFromJSON = DevicePreviewSharedRunDtoFromJSON;
+exports.DevicePreviewSharedRunDtoFromJSONTyped = DevicePreviewSharedRunDtoFromJSONTyped;
+exports.DevicePreviewSharedRunDtoToJSON = DevicePreviewSharedRunDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,7 +29,7 @@ var DevicePreviewSharedRunDtoSourceTypeEnum;
     DevicePreviewSharedRunDtoSourceTypeEnum["DEVICE_PREVIEW_INGEST"] = "DEVICE_PREVIEW_INGEST";
     DevicePreviewSharedRunDtoSourceTypeEnum["PUBLIC_FREE_TEST"] = "PUBLIC_FREE_TEST";
     DevicePreviewSharedRunDtoSourceTypeEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
-})(DevicePreviewSharedRunDtoSourceTypeEnum = exports.DevicePreviewSharedRunDtoSourceTypeEnum || (exports.DevicePreviewSharedRunDtoSourceTypeEnum = {}));
+})(DevicePreviewSharedRunDtoSourceTypeEnum || (exports.DevicePreviewSharedRunDtoSourceTypeEnum = DevicePreviewSharedRunDtoSourceTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -39,11 +42,10 @@ var DevicePreviewSharedRunDtoStatusEnum;
     DevicePreviewSharedRunDtoStatusEnum["PARTIAL_COMPLETE"] = "PARTIAL_COMPLETE";
     DevicePreviewSharedRunDtoStatusEnum["COMPLETE"] = "COMPLETE";
     DevicePreviewSharedRunDtoStatusEnum["FAILED"] = "FAILED";
-})(DevicePreviewSharedRunDtoStatusEnum = exports.DevicePreviewSharedRunDtoStatusEnum || (exports.DevicePreviewSharedRunDtoStatusEnum = {}));
+})(DevicePreviewSharedRunDtoStatusEnum || (exports.DevicePreviewSharedRunDtoStatusEnum = DevicePreviewSharedRunDtoStatusEnum = {}));
 function DevicePreviewSharedRunDtoFromJSON(json) {
     return DevicePreviewSharedRunDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewSharedRunDtoFromJSON = DevicePreviewSharedRunDtoFromJSON;
 function DevicePreviewSharedRunDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -79,7 +81,6 @@ function DevicePreviewSharedRunDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DevicePreviewSharedRunDtoFromJSONTyped = DevicePreviewSharedRunDtoFromJSONTyped;
 function DevicePreviewSharedRunDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -106,4 +107,3 @@ function DevicePreviewSharedRunDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DevicePreviewSharedRunDtoToJSON = DevicePreviewSharedRunDtoToJSON;

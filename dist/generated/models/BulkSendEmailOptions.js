@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BulkSendEmailOptionsToJSON = exports.BulkSendEmailOptionsFromJSONTyped = exports.BulkSendEmailOptionsFromJSON = void 0;
+exports.BulkSendEmailOptionsFromJSON = BulkSendEmailOptionsFromJSON;
+exports.BulkSendEmailOptionsFromJSONTyped = BulkSendEmailOptionsFromJSONTyped;
+exports.BulkSendEmailOptionsToJSON = BulkSendEmailOptionsToJSON;
 var _1 = require("./");
 function BulkSendEmailOptionsFromJSON(json) {
     return BulkSendEmailOptionsFromJSONTyped(json, false);
 }
-exports.BulkSendEmailOptionsFromJSON = BulkSendEmailOptionsFromJSON;
 function BulkSendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function BulkSendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         sendEmailOptions: (0, _1.SendEmailOptionsFromJSON)(json['sendEmailOptions']),
     };
 }
-exports.BulkSendEmailOptionsFromJSONTyped = BulkSendEmailOptionsFromJSONTyped;
 function BulkSendEmailOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function BulkSendEmailOptionsToJSON(value) {
         sendEmailOptions: (0, _1.SendEmailOptionsToJSON)(value.sendEmailOptions),
     };
 }
-exports.BulkSendEmailOptionsToJSON = BulkSendEmailOptionsToJSON;

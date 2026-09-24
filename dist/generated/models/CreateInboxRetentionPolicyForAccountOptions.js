@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateInboxRetentionPolicyForAccountOptionsToJSON = exports.CreateInboxRetentionPolicyForAccountOptionsFromJSONTyped = exports.CreateInboxRetentionPolicyForAccountOptionsFromJSON = void 0;
+exports.CreateInboxRetentionPolicyForAccountOptionsFromJSON = CreateInboxRetentionPolicyForAccountOptionsFromJSON;
+exports.CreateInboxRetentionPolicyForAccountOptionsFromJSONTyped = CreateInboxRetentionPolicyForAccountOptionsFromJSONTyped;
+exports.CreateInboxRetentionPolicyForAccountOptionsToJSON = CreateInboxRetentionPolicyForAccountOptionsToJSON;
 function CreateInboxRetentionPolicyForAccountOptionsFromJSON(json) {
     return CreateInboxRetentionPolicyForAccountOptionsFromJSONTyped(json, false);
 }
-exports.CreateInboxRetentionPolicyForAccountOptionsFromJSON = CreateInboxRetentionPolicyForAccountOptionsFromJSON;
 function CreateInboxRetentionPolicyForAccountOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function CreateInboxRetentionPolicyForAccountOptionsFromJSONTyped(json, ignoreDi
         retentionDays: json['retentionDays'],
     };
 }
-exports.CreateInboxRetentionPolicyForAccountOptionsFromJSONTyped = CreateInboxRetentionPolicyForAccountOptionsFromJSONTyped;
 function CreateInboxRetentionPolicyForAccountOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function CreateInboxRetentionPolicyForAccountOptionsToJSON(value) {
         retentionDays: value.retentionDays,
     };
 }
-exports.CreateInboxRetentionPolicyForAccountOptionsToJSON = CreateInboxRetentionPolicyForAccountOptionsToJSON;

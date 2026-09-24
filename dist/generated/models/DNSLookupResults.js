@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DNSLookupResultsToJSON = exports.DNSLookupResultsFromJSONTyped = exports.DNSLookupResultsFromJSON = void 0;
+exports.DNSLookupResultsFromJSON = DNSLookupResultsFromJSON;
+exports.DNSLookupResultsFromJSONTyped = DNSLookupResultsFromJSONTyped;
+exports.DNSLookupResultsToJSON = DNSLookupResultsToJSON;
 var _1 = require("./");
 function DNSLookupResultsFromJSON(json) {
     return DNSLookupResultsFromJSONTyped(json, false);
 }
-exports.DNSLookupResultsFromJSON = DNSLookupResultsFromJSON;
 function DNSLookupResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function DNSLookupResultsFromJSONTyped(json, ignoreDiscriminator) {
         results: json['results'].map(_1.DNSLookupResultFromJSON),
     };
 }
-exports.DNSLookupResultsFromJSONTyped = DNSLookupResultsFromJSONTyped;
 function DNSLookupResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function DNSLookupResultsToJSON(value) {
         results: value.results.map(_1.DNSLookupResultToJSON),
     };
 }
-exports.DNSLookupResultsToJSON = DNSLookupResultsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementProviderAnalysisPreviewDtoToJSON = exports.InboxPlacementProviderAnalysisPreviewDtoFromJSONTyped = exports.InboxPlacementProviderAnalysisPreviewDtoFromJSON = void 0;
+exports.InboxPlacementProviderAnalysisPreviewDtoFromJSON = InboxPlacementProviderAnalysisPreviewDtoFromJSON;
+exports.InboxPlacementProviderAnalysisPreviewDtoFromJSONTyped = InboxPlacementProviderAnalysisPreviewDtoFromJSONTyped;
+exports.InboxPlacementProviderAnalysisPreviewDtoToJSON = InboxPlacementProviderAnalysisPreviewDtoToJSON;
 var runtime_1 = require("../runtime");
 function InboxPlacementProviderAnalysisPreviewDtoFromJSON(json) {
     return InboxPlacementProviderAnalysisPreviewDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementProviderAnalysisPreviewDtoFromJSON = InboxPlacementProviderAnalysisPreviewDtoFromJSON;
 function InboxPlacementProviderAnalysisPreviewDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function InboxPlacementProviderAnalysisPreviewDtoFromJSONTyped(json, ignoreDiscr
         details: json['details'],
     };
 }
-exports.InboxPlacementProviderAnalysisPreviewDtoFromJSONTyped = InboxPlacementProviderAnalysisPreviewDtoFromJSONTyped;
 function InboxPlacementProviderAnalysisPreviewDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function InboxPlacementProviderAnalysisPreviewDtoToJSON(value) {
         details: value.details,
     };
 }
-exports.InboxPlacementProviderAnalysisPreviewDtoToJSON = InboxPlacementProviderAnalysisPreviewDtoToJSON;

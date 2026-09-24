@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateRulesetOptionsToJSON = exports.UpdateRulesetOptionsFromJSONTyped = exports.UpdateRulesetOptionsFromJSON = void 0;
+exports.UpdateRulesetOptionsFromJSON = UpdateRulesetOptionsFromJSON;
+exports.UpdateRulesetOptionsFromJSONTyped = UpdateRulesetOptionsFromJSONTyped;
+exports.UpdateRulesetOptionsToJSON = UpdateRulesetOptionsToJSON;
 function UpdateRulesetOptionsFromJSON(json) {
     return UpdateRulesetOptionsFromJSONTyped(json, false);
 }
-exports.UpdateRulesetOptionsFromJSON = UpdateRulesetOptionsFromJSON;
 function UpdateRulesetOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function UpdateRulesetOptionsFromJSONTyped(json, ignoreDiscriminator) {
         active: json['active'],
     };
 }
-exports.UpdateRulesetOptionsFromJSONTyped = UpdateRulesetOptionsFromJSONTyped;
 function UpdateRulesetOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function UpdateRulesetOptionsToJSON(value) {
         active: value.active,
     };
 }
-exports.UpdateRulesetOptionsToJSON = UpdateRulesetOptionsToJSON;

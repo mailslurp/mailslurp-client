@@ -37,7 +37,7 @@ See the [guides page](https://www.mailslurp.com/guides/) for more examples and u
 
 See the method documentation for a [list of all functions](https://mailslurp.github.io/mailslurp-client/index.html). 
 
-> See the `test/integration.spec.ts` in this package for usage examples of this client.
+> See [test/integration.spec.ts](https://github.com/mailslurp/mailslurp-client/blob/master/test/integration.spec.ts) in the source repository for usage examples. For development setup and test commands, see [test/README.md](https://github.com/mailslurp/mailslurp-client/blob/master/test/README.md).
 
 ### Create API Key
 

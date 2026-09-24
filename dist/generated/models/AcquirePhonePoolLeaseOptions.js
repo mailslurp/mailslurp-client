@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AcquirePhonePoolLeaseOptionsToJSON = exports.AcquirePhonePoolLeaseOptionsFromJSONTyped = exports.AcquirePhonePoolLeaseOptionsFromJSON = void 0;
+exports.AcquirePhonePoolLeaseOptionsFromJSON = AcquirePhonePoolLeaseOptionsFromJSON;
+exports.AcquirePhonePoolLeaseOptionsFromJSONTyped = AcquirePhonePoolLeaseOptionsFromJSONTyped;
+exports.AcquirePhonePoolLeaseOptionsToJSON = AcquirePhonePoolLeaseOptionsToJSON;
 var runtime_1 = require("../runtime");
 function AcquirePhonePoolLeaseOptionsFromJSON(json) {
     return AcquirePhonePoolLeaseOptionsFromJSONTyped(json, false);
 }
-exports.AcquirePhonePoolLeaseOptionsFromJSON = AcquirePhonePoolLeaseOptionsFromJSON;
 function AcquirePhonePoolLeaseOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -34,7 +35,6 @@ function AcquirePhonePoolLeaseOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['acquireTimeoutMillis'],
     };
 }
-exports.AcquirePhonePoolLeaseOptionsFromJSONTyped = AcquirePhonePoolLeaseOptionsFromJSONTyped;
 function AcquirePhonePoolLeaseOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function AcquirePhonePoolLeaseOptionsToJSON(value) {
         acquireTimeoutMillis: value.acquireTimeoutMillis,
     };
 }
-exports.AcquirePhonePoolLeaseOptionsToJSON = AcquirePhonePoolLeaseOptionsToJSON;

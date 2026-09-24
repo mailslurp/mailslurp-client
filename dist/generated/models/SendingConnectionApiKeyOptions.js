@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendingConnectionApiKeyOptionsToJSON = exports.SendingConnectionApiKeyOptionsFromJSONTyped = exports.SendingConnectionApiKeyOptionsFromJSON = exports.SendingConnectionApiKeyOptionsRegionEnum = void 0;
+exports.SendingConnectionApiKeyOptionsRegionEnum = void 0;
+exports.SendingConnectionApiKeyOptionsFromJSON = SendingConnectionApiKeyOptionsFromJSON;
+exports.SendingConnectionApiKeyOptionsFromJSONTyped = SendingConnectionApiKeyOptionsFromJSONTyped;
+exports.SendingConnectionApiKeyOptionsToJSON = SendingConnectionApiKeyOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var SendingConnectionApiKeyOptionsRegionEnum;
 (function (SendingConnectionApiKeyOptionsRegionEnum) {
     SendingConnectionApiKeyOptionsRegionEnum["US"] = "US";
     SendingConnectionApiKeyOptionsRegionEnum["EU"] = "EU";
-})(SendingConnectionApiKeyOptionsRegionEnum = exports.SendingConnectionApiKeyOptionsRegionEnum || (exports.SendingConnectionApiKeyOptionsRegionEnum = {}));
+})(SendingConnectionApiKeyOptionsRegionEnum || (exports.SendingConnectionApiKeyOptionsRegionEnum = SendingConnectionApiKeyOptionsRegionEnum = {}));
 function SendingConnectionApiKeyOptionsFromJSON(json) {
     return SendingConnectionApiKeyOptionsFromJSONTyped(json, false);
 }
-exports.SendingConnectionApiKeyOptionsFromJSON = SendingConnectionApiKeyOptionsFromJSON;
 function SendingConnectionApiKeyOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +42,6 @@ function SendingConnectionApiKeyOptionsFromJSONTyped(json, ignoreDiscriminator) 
         region: !(0, runtime_1.exists)(json, 'region') ? undefined : json['region'],
     };
 }
-exports.SendingConnectionApiKeyOptionsFromJSONTyped = SendingConnectionApiKeyOptionsFromJSONTyped;
 function SendingConnectionApiKeyOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +55,3 @@ function SendingConnectionApiKeyOptionsToJSON(value) {
         region: value.region,
     };
 }
-exports.SendingConnectionApiKeyOptionsToJSON = SendingConnectionApiKeyOptionsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementAnalyticsSeriesPointDtoToJSON = exports.InboxPlacementAnalyticsSeriesPointDtoFromJSONTyped = exports.InboxPlacementAnalyticsSeriesPointDtoFromJSON = void 0;
+exports.InboxPlacementAnalyticsSeriesPointDtoFromJSON = InboxPlacementAnalyticsSeriesPointDtoFromJSON;
+exports.InboxPlacementAnalyticsSeriesPointDtoFromJSONTyped = InboxPlacementAnalyticsSeriesPointDtoFromJSONTyped;
+exports.InboxPlacementAnalyticsSeriesPointDtoToJSON = InboxPlacementAnalyticsSeriesPointDtoToJSON;
 var _1 = require("./");
 function InboxPlacementAnalyticsSeriesPointDtoFromJSON(json) {
     return InboxPlacementAnalyticsSeriesPointDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementAnalyticsSeriesPointDtoFromJSON = InboxPlacementAnalyticsSeriesPointDtoFromJSON;
 function InboxPlacementAnalyticsSeriesPointDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function InboxPlacementAnalyticsSeriesPointDtoFromJSONTyped(json, ignoreDiscrimi
         metrics: (0, _1.InboxPlacementAnalyticsSummaryDtoFromJSON)(json['metrics']),
     };
 }
-exports.InboxPlacementAnalyticsSeriesPointDtoFromJSONTyped = InboxPlacementAnalyticsSeriesPointDtoFromJSONTyped;
 function InboxPlacementAnalyticsSeriesPointDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function InboxPlacementAnalyticsSeriesPointDtoToJSON(value) {
         metrics: (0, _1.InboxPlacementAnalyticsSummaryDtoToJSON)(value.metrics),
     };
 }
-exports.InboxPlacementAnalyticsSeriesPointDtoToJSON = InboxPlacementAnalyticsSeriesPointDtoToJSON;

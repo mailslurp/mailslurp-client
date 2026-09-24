@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorSyncRequestResultToJSON = exports.ConnectorSyncRequestResultFromJSONTyped = exports.ConnectorSyncRequestResultFromJSON = void 0;
+exports.ConnectorSyncRequestResultFromJSON = ConnectorSyncRequestResultFromJSON;
+exports.ConnectorSyncRequestResultFromJSONTyped = ConnectorSyncRequestResultFromJSONTyped;
+exports.ConnectorSyncRequestResultToJSON = ConnectorSyncRequestResultToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function ConnectorSyncRequestResultFromJSON(json) {
     return ConnectorSyncRequestResultFromJSONTyped(json, false);
 }
-exports.ConnectorSyncRequestResultFromJSON = ConnectorSyncRequestResultFromJSON;
 function ConnectorSyncRequestResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function ConnectorSyncRequestResultFromJSONTyped(json, ignoreDiscriminator) {
         eventId: !(0, runtime_1.exists)(json, 'eventId') ? undefined : json['eventId'],
     };
 }
-exports.ConnectorSyncRequestResultFromJSONTyped = ConnectorSyncRequestResultFromJSONTyped;
 function ConnectorSyncRequestResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ConnectorSyncRequestResultToJSON(value) {
         eventId: value.eventId,
     };
 }
-exports.ConnectorSyncRequestResultToJSON = ConnectorSyncRequestResultToJSON;

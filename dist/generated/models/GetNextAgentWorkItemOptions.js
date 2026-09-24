@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetNextAgentWorkItemOptionsToJSON = exports.GetNextAgentWorkItemOptionsFromJSONTyped = exports.GetNextAgentWorkItemOptionsFromJSON = void 0;
+exports.GetNextAgentWorkItemOptionsFromJSON = GetNextAgentWorkItemOptionsFromJSON;
+exports.GetNextAgentWorkItemOptionsFromJSONTyped = GetNextAgentWorkItemOptionsFromJSONTyped;
+exports.GetNextAgentWorkItemOptionsToJSON = GetNextAgentWorkItemOptionsToJSON;
 var runtime_1 = require("../runtime");
 function GetNextAgentWorkItemOptionsFromJSON(json) {
     return GetNextAgentWorkItemOptionsFromJSONTyped(json, false);
 }
-exports.GetNextAgentWorkItemOptionsFromJSON = GetNextAgentWorkItemOptionsFromJSON;
 function GetNextAgentWorkItemOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function GetNextAgentWorkItemOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['hasAttachments'],
     };
 }
-exports.GetNextAgentWorkItemOptionsFromJSONTyped = GetNextAgentWorkItemOptionsFromJSONTyped;
 function GetNextAgentWorkItemOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function GetNextAgentWorkItemOptionsToJSON(value) {
         hasAttachments: value.hasAttachments,
     };
 }
-exports.GetNextAgentWorkItemOptionsToJSON = GetNextAgentWorkItemOptionsToJSON;

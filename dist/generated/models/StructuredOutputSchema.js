@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StructuredOutputSchemaToJSON = exports.StructuredOutputSchemaFromJSONTyped = exports.StructuredOutputSchemaFromJSON = exports.StructuredOutputSchemaTypeEnum = void 0;
+exports.StructuredOutputSchemaTypeEnum = void 0;
+exports.StructuredOutputSchemaFromJSON = StructuredOutputSchemaFromJSON;
+exports.StructuredOutputSchemaFromJSONTyped = StructuredOutputSchemaFromJSONTyped;
+exports.StructuredOutputSchemaToJSON = StructuredOutputSchemaToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -28,11 +31,10 @@ var StructuredOutputSchemaTypeEnum;
     StructuredOutputSchemaTypeEnum["object"] = "object";
     StructuredOutputSchemaTypeEnum["array"] = "array";
     StructuredOutputSchemaTypeEnum["null"] = "null";
-})(StructuredOutputSchemaTypeEnum = exports.StructuredOutputSchemaTypeEnum || (exports.StructuredOutputSchemaTypeEnum = {}));
+})(StructuredOutputSchemaTypeEnum || (exports.StructuredOutputSchemaTypeEnum = StructuredOutputSchemaTypeEnum = {}));
 function StructuredOutputSchemaFromJSON(json) {
     return StructuredOutputSchemaFromJSONTyped(json, false);
 }
-exports.StructuredOutputSchemaFromJSON = StructuredOutputSchemaFromJSON;
 function StructuredOutputSchemaFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -78,7 +80,6 @@ function StructuredOutputSchemaFromJSONTyped(json, ignoreDiscriminator) {
         type: !(0, runtime_1.exists)(json, 'type') ? undefined : json['type'],
     };
 }
-exports.StructuredOutputSchemaFromJSONTyped = StructuredOutputSchemaFromJSONTyped;
 function StructuredOutputSchemaToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -119,4 +120,3 @@ function StructuredOutputSchemaToJSON(value) {
         type: value.type,
     };
 }
-exports.StructuredOutputSchemaToJSON = StructuredOutputSchemaToJSON;

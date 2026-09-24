@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageAliasToJSON = exports.PageAliasFromJSONTyped = exports.PageAliasFromJSON = void 0;
+exports.PageAliasFromJSON = PageAliasFromJSON;
+exports.PageAliasFromJSONTyped = PageAliasFromJSONTyped;
+exports.PageAliasToJSON = PageAliasToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageAliasFromJSON(json) {
     return PageAliasFromJSONTyped(json, false);
 }
-exports.PageAliasFromJSON = PageAliasFromJSON;
 function PageAliasFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageAliasFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageAliasFromJSONTyped = PageAliasFromJSONTyped;
 function PageAliasToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageAliasToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageAliasToJSON = PageAliasToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookNewAITransformResultPayloadToJSON = exports.WebhookNewAITransformResultPayloadFromJSONTyped = exports.WebhookNewAITransformResultPayloadFromJSON = exports.WebhookNewAITransformResultPayloadEntityTypeEnum = exports.WebhookNewAITransformResultPayloadEventNameEnum = void 0;
+exports.WebhookNewAITransformResultPayloadEntityTypeEnum = exports.WebhookNewAITransformResultPayloadEventNameEnum = void 0;
+exports.WebhookNewAITransformResultPayloadFromJSON = WebhookNewAITransformResultPayloadFromJSON;
+exports.WebhookNewAITransformResultPayloadFromJSONTyped = WebhookNewAITransformResultPayloadFromJSONTyped;
+exports.WebhookNewAITransformResultPayloadToJSON = WebhookNewAITransformResultPayloadToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -33,7 +36,7 @@ var WebhookNewAITransformResultPayloadEventNameEnum;
     WebhookNewAITransformResultPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookNewAITransformResultPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookNewAITransformResultPayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookNewAITransformResultPayloadEventNameEnum = exports.WebhookNewAITransformResultPayloadEventNameEnum || (exports.WebhookNewAITransformResultPayloadEventNameEnum = {}));
+})(WebhookNewAITransformResultPayloadEventNameEnum || (exports.WebhookNewAITransformResultPayloadEventNameEnum = WebhookNewAITransformResultPayloadEventNameEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -42,11 +45,10 @@ var WebhookNewAITransformResultPayloadEntityTypeEnum;
 (function (WebhookNewAITransformResultPayloadEntityTypeEnum) {
     WebhookNewAITransformResultPayloadEntityTypeEnum["INBOX"] = "INBOX";
     WebhookNewAITransformResultPayloadEntityTypeEnum["PHONE"] = "PHONE";
-})(WebhookNewAITransformResultPayloadEntityTypeEnum = exports.WebhookNewAITransformResultPayloadEntityTypeEnum || (exports.WebhookNewAITransformResultPayloadEntityTypeEnum = {}));
+})(WebhookNewAITransformResultPayloadEntityTypeEnum || (exports.WebhookNewAITransformResultPayloadEntityTypeEnum = WebhookNewAITransformResultPayloadEntityTypeEnum = {}));
 function WebhookNewAITransformResultPayloadFromJSON(json) {
     return WebhookNewAITransformResultPayloadFromJSONTyped(json, false);
 }
-exports.WebhookNewAITransformResultPayloadFromJSON = WebhookNewAITransformResultPayloadFromJSON;
 function WebhookNewAITransformResultPayloadFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -67,7 +69,6 @@ function WebhookNewAITransformResultPayloadFromJSONTyped(json, ignoreDiscriminat
         result: !(0, runtime_1.exists)(json, 'result') ? undefined : json['result'],
     };
 }
-exports.WebhookNewAITransformResultPayloadFromJSONTyped = WebhookNewAITransformResultPayloadFromJSONTyped;
 function WebhookNewAITransformResultPayloadToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -89,4 +90,3 @@ function WebhookNewAITransformResultPayloadToJSON(value) {
         result: value.result,
     };
 }
-exports.WebhookNewAITransformResultPayloadToJSON = WebhookNewAITransformResultPayloadToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookHeaderNameValueToJSON = exports.WebhookHeaderNameValueFromJSONTyped = exports.WebhookHeaderNameValueFromJSON = void 0;
+exports.WebhookHeaderNameValueFromJSON = WebhookHeaderNameValueFromJSON;
+exports.WebhookHeaderNameValueFromJSONTyped = WebhookHeaderNameValueFromJSONTyped;
+exports.WebhookHeaderNameValueToJSON = WebhookHeaderNameValueToJSON;
 function WebhookHeaderNameValueFromJSON(json) {
     return WebhookHeaderNameValueFromJSONTyped(json, false);
 }
-exports.WebhookHeaderNameValueFromJSON = WebhookHeaderNameValueFromJSON;
 function WebhookHeaderNameValueFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function WebhookHeaderNameValueFromJSONTyped(json, ignoreDiscriminator) {
         value: json['value'],
     };
 }
-exports.WebhookHeaderNameValueFromJSONTyped = WebhookHeaderNameValueFromJSONTyped;
 function WebhookHeaderNameValueToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function WebhookHeaderNameValueToJSON(value) {
         value: value.value,
     };
 }
-exports.WebhookHeaderNameValueToJSON = WebhookHeaderNameValueToJSON;

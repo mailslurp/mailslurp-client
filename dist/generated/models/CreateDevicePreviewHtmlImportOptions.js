@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDevicePreviewHtmlImportOptionsToJSON = exports.CreateDevicePreviewHtmlImportOptionsFromJSONTyped = exports.CreateDevicePreviewHtmlImportOptionsFromJSON = void 0;
+exports.CreateDevicePreviewHtmlImportOptionsFromJSON = CreateDevicePreviewHtmlImportOptionsFromJSON;
+exports.CreateDevicePreviewHtmlImportOptionsFromJSONTyped = CreateDevicePreviewHtmlImportOptionsFromJSONTyped;
+exports.CreateDevicePreviewHtmlImportOptionsToJSON = CreateDevicePreviewHtmlImportOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function CreateDevicePreviewHtmlImportOptionsFromJSON(json) {
     return CreateDevicePreviewHtmlImportOptionsFromJSONTyped(json, false);
 }
-exports.CreateDevicePreviewHtmlImportOptionsFromJSON = CreateDevicePreviewHtmlImportOptionsFromJSON;
 function CreateDevicePreviewHtmlImportOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -36,7 +37,6 @@ function CreateDevicePreviewHtmlImportOptionsFromJSONTyped(json, ignoreDiscrimin
             : (0, _1.CreateDevicePreviewOptionsFromJSON)(json['options']),
     };
 }
-exports.CreateDevicePreviewHtmlImportOptionsFromJSONTyped = CreateDevicePreviewHtmlImportOptionsFromJSONTyped;
 function CreateDevicePreviewHtmlImportOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +54,3 @@ function CreateDevicePreviewHtmlImportOptionsToJSON(value) {
         options: (0, _1.CreateDevicePreviewOptionsToJSON)(value.options),
     };
 }
-exports.CreateDevicePreviewHtmlImportOptionsToJSON = CreateDevicePreviewHtmlImportOptionsToJSON;

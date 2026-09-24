@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorSyncResultToJSON = exports.ConnectorSyncResultFromJSONTyped = exports.ConnectorSyncResultFromJSON = void 0;
+exports.ConnectorSyncResultFromJSON = ConnectorSyncResultFromJSON;
+exports.ConnectorSyncResultFromJSONTyped = ConnectorSyncResultFromJSONTyped;
+exports.ConnectorSyncResultToJSON = ConnectorSyncResultToJSON;
 var runtime_1 = require("../runtime");
 function ConnectorSyncResultFromJSON(json) {
     return ConnectorSyncResultFromJSONTyped(json, false);
 }
-exports.ConnectorSyncResultFromJSON = ConnectorSyncResultFromJSON;
 function ConnectorSyncResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function ConnectorSyncResultFromJSONTyped(json, ignoreDiscriminator) {
         emailIds: !(0, runtime_1.exists)(json, 'emailIds') ? undefined : json['emailIds'],
     };
 }
-exports.ConnectorSyncResultFromJSONTyped = ConnectorSyncResultFromJSONTyped;
 function ConnectorSyncResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ConnectorSyncResultToJSON(value) {
         emailIds: value.emailIds,
     };
 }
-exports.ConnectorSyncResultToJSON = ConnectorSyncResultToJSON;

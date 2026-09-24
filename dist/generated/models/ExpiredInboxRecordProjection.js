@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExpiredInboxRecordProjectionToJSON = exports.ExpiredInboxRecordProjectionFromJSONTyped = exports.ExpiredInboxRecordProjectionFromJSON = void 0;
+exports.ExpiredInboxRecordProjectionFromJSON = ExpiredInboxRecordProjectionFromJSON;
+exports.ExpiredInboxRecordProjectionFromJSONTyped = ExpiredInboxRecordProjectionFromJSONTyped;
+exports.ExpiredInboxRecordProjectionToJSON = ExpiredInboxRecordProjectionToJSON;
 function ExpiredInboxRecordProjectionFromJSON(json) {
     return ExpiredInboxRecordProjectionFromJSONTyped(json, false);
 }
-exports.ExpiredInboxRecordProjectionFromJSON = ExpiredInboxRecordProjectionFromJSON;
 function ExpiredInboxRecordProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function ExpiredInboxRecordProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.ExpiredInboxRecordProjectionFromJSONTyped = ExpiredInboxRecordProjectionFromJSONTyped;
 function ExpiredInboxRecordProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function ExpiredInboxRecordProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.ExpiredInboxRecordProjectionToJSON = ExpiredInboxRecordProjectionToJSON;

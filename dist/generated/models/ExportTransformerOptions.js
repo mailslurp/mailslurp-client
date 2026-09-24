@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExportTransformerOptionsToJSON = exports.ExportTransformerOptionsFromJSONTyped = exports.ExportTransformerOptionsFromJSON = exports.ExportTransformerOptionsFormatEnum = void 0;
+exports.ExportTransformerOptionsFormatEnum = void 0;
+exports.ExportTransformerOptionsFromJSON = ExportTransformerOptionsFromJSON;
+exports.ExportTransformerOptionsFromJSONTyped = ExportTransformerOptionsFromJSONTyped;
+exports.ExportTransformerOptionsToJSON = ExportTransformerOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,11 +28,10 @@ var ExportTransformerOptionsFormatEnum;
     ExportTransformerOptionsFormatEnum["EXCEL"] = "EXCEL";
     ExportTransformerOptionsFormatEnum["XML"] = "XML";
     ExportTransformerOptionsFormatEnum["JSON"] = "JSON";
-})(ExportTransformerOptionsFormatEnum = exports.ExportTransformerOptionsFormatEnum || (exports.ExportTransformerOptionsFormatEnum = {}));
+})(ExportTransformerOptionsFormatEnum || (exports.ExportTransformerOptionsFormatEnum = ExportTransformerOptionsFormatEnum = {}));
 function ExportTransformerOptionsFromJSON(json) {
     return ExportTransformerOptionsFromJSONTyped(json, false);
 }
-exports.ExportTransformerOptionsFromJSON = ExportTransformerOptionsFromJSON;
 function ExportTransformerOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -68,7 +70,6 @@ function ExportTransformerOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['includeMetaDataColumns'],
     };
 }
-exports.ExportTransformerOptionsFromJSONTyped = ExportTransformerOptionsFromJSONTyped;
 function ExportTransformerOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -102,4 +103,3 @@ function ExportTransformerOptionsToJSON(value) {
         includeMetaDataColumns: value.includeMetaDataColumns,
     };
 }
-exports.ExportTransformerOptionsToJSON = ExportTransformerOptionsToJSON;

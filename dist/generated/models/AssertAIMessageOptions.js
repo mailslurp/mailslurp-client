@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AssertAIMessageOptionsToJSON = exports.AssertAIMessageOptionsFromJSONTyped = exports.AssertAIMessageOptionsFromJSON = void 0;
+exports.AssertAIMessageOptionsFromJSON = AssertAIMessageOptionsFromJSON;
+exports.AssertAIMessageOptionsFromJSONTyped = AssertAIMessageOptionsFromJSONTyped;
+exports.AssertAIMessageOptionsToJSON = AssertAIMessageOptionsToJSON;
 var _1 = require("./");
 function AssertAIMessageOptionsFromJSON(json) {
     return AssertAIMessageOptionsFromJSONTyped(json, false);
 }
-exports.AssertAIMessageOptionsFromJSON = AssertAIMessageOptionsFromJSON;
 function AssertAIMessageOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function AssertAIMessageOptionsFromJSONTyped(json, ignoreDiscriminator) {
         aiOptions: (0, _1.AIMessageAIOptionsFromJSON)(json['aiOptions']),
     };
 }
-exports.AssertAIMessageOptionsFromJSONTyped = AssertAIMessageOptionsFromJSONTyped;
 function AssertAIMessageOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function AssertAIMessageOptionsToJSON(value) {
         aiOptions: (0, _1.AIMessageAIOptionsToJSON)(value.aiOptions),
     };
 }
-exports.AssertAIMessageOptionsToJSON = AssertAIMessageOptionsToJSON;

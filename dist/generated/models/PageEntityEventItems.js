@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageEntityEventItemsToJSON = exports.PageEntityEventItemsFromJSONTyped = exports.PageEntityEventItemsFromJSON = void 0;
+exports.PageEntityEventItemsFromJSON = PageEntityEventItemsFromJSON;
+exports.PageEntityEventItemsFromJSONTyped = PageEntityEventItemsFromJSONTyped;
+exports.PageEntityEventItemsToJSON = PageEntityEventItemsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageEntityEventItemsFromJSON(json) {
     return PageEntityEventItemsFromJSONTyped(json, false);
 }
-exports.PageEntityEventItemsFromJSON = PageEntityEventItemsFromJSON;
 function PageEntityEventItemsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageEntityEventItemsFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageEntityEventItemsFromJSONTyped = PageEntityEventItemsFromJSONTyped;
 function PageEntityEventItemsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageEntityEventItemsToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageEntityEventItemsToJSON = PageEntityEventItemsToJSON;

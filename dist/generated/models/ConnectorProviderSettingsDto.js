@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorProviderSettingsDtoToJSON = exports.ConnectorProviderSettingsDtoFromJSONTyped = exports.ConnectorProviderSettingsDtoFromJSON = void 0;
+exports.ConnectorProviderSettingsDtoFromJSON = ConnectorProviderSettingsDtoFromJSON;
+exports.ConnectorProviderSettingsDtoFromJSONTyped = ConnectorProviderSettingsDtoFromJSONTyped;
+exports.ConnectorProviderSettingsDtoToJSON = ConnectorProviderSettingsDtoToJSON;
 var _1 = require("./");
 function ConnectorProviderSettingsDtoFromJSON(json) {
     return ConnectorProviderSettingsDtoFromJSONTyped(json, false);
 }
-exports.ConnectorProviderSettingsDtoFromJSON = ConnectorProviderSettingsDtoFromJSON;
 function ConnectorProviderSettingsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function ConnectorProviderSettingsDtoFromJSONTyped(json, ignoreDiscriminator) {
         microsoftSettings: (0, _1.ProviderSettingsFromJSON)(json['microsoftSettings']),
     };
 }
-exports.ConnectorProviderSettingsDtoFromJSONTyped = ConnectorProviderSettingsDtoFromJSONTyped;
 function ConnectorProviderSettingsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function ConnectorProviderSettingsDtoToJSON(value) {
         microsoftSettings: (0, _1.ProviderSettingsToJSON)(value.microsoftSettings),
     };
 }
-exports.ConnectorProviderSettingsDtoToJSON = ConnectorProviderSettingsDtoToJSON;

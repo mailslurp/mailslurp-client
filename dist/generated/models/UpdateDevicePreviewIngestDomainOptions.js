@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateDevicePreviewIngestDomainOptionsToJSON = exports.UpdateDevicePreviewIngestDomainOptionsFromJSONTyped = exports.UpdateDevicePreviewIngestDomainOptionsFromJSON = void 0;
+exports.UpdateDevicePreviewIngestDomainOptionsFromJSON = UpdateDevicePreviewIngestDomainOptionsFromJSON;
+exports.UpdateDevicePreviewIngestDomainOptionsFromJSONTyped = UpdateDevicePreviewIngestDomainOptionsFromJSONTyped;
+exports.UpdateDevicePreviewIngestDomainOptionsToJSON = UpdateDevicePreviewIngestDomainOptionsToJSON;
 function UpdateDevicePreviewIngestDomainOptionsFromJSON(json) {
     return UpdateDevicePreviewIngestDomainOptionsFromJSONTyped(json, false);
 }
-exports.UpdateDevicePreviewIngestDomainOptionsFromJSON = UpdateDevicePreviewIngestDomainOptionsFromJSON;
 function UpdateDevicePreviewIngestDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function UpdateDevicePreviewIngestDomainOptionsFromJSONTyped(json, ignoreDiscrim
         subdomain: json['subdomain'],
     };
 }
-exports.UpdateDevicePreviewIngestDomainOptionsFromJSONTyped = UpdateDevicePreviewIngestDomainOptionsFromJSONTyped;
 function UpdateDevicePreviewIngestDomainOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function UpdateDevicePreviewIngestDomainOptionsToJSON(value) {
         subdomain: value.subdomain,
     };
 }
-exports.UpdateDevicePreviewIngestDomainOptionsToJSON = UpdateDevicePreviewIngestDomainOptionsToJSON;

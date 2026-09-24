@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxIdItemToJSON = exports.InboxIdItemFromJSONTyped = exports.InboxIdItemFromJSON = void 0;
+exports.InboxIdItemFromJSON = InboxIdItemFromJSON;
+exports.InboxIdItemFromJSONTyped = InboxIdItemFromJSONTyped;
+exports.InboxIdItemToJSON = InboxIdItemToJSON;
 function InboxIdItemFromJSON(json) {
     return InboxIdItemFromJSONTyped(json, false);
 }
-exports.InboxIdItemFromJSON = InboxIdItemFromJSON;
 function InboxIdItemFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function InboxIdItemFromJSONTyped(json, ignoreDiscriminator) {
         emailAddress: json['emailAddress'],
     };
 }
-exports.InboxIdItemFromJSONTyped = InboxIdItemFromJSONTyped;
 function InboxIdItemToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function InboxIdItemToJSON(value) {
         emailAddress: value.emailAddress,
     };
 }
-exports.InboxIdItemToJSON = InboxIdItemToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewProviderProgressDtoToJSON = exports.DevicePreviewProviderProgressDtoFromJSONTyped = exports.DevicePreviewProviderProgressDtoFromJSON = exports.DevicePreviewProviderProgressDtoStatusEnum = exports.DevicePreviewProviderProgressDtoProviderEnum = void 0;
+exports.DevicePreviewProviderProgressDtoStatusEnum = exports.DevicePreviewProviderProgressDtoProviderEnum = void 0;
+exports.DevicePreviewProviderProgressDtoFromJSON = DevicePreviewProviderProgressDtoFromJSON;
+exports.DevicePreviewProviderProgressDtoFromJSONTyped = DevicePreviewProviderProgressDtoFromJSONTyped;
+exports.DevicePreviewProviderProgressDtoToJSON = DevicePreviewProviderProgressDtoToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -24,7 +27,7 @@ var DevicePreviewProviderProgressDtoProviderEnum;
     DevicePreviewProviderProgressDtoProviderEnum["GMAIL"] = "GMAIL";
     DevicePreviewProviderProgressDtoProviderEnum["OUTLOOK"] = "OUTLOOK";
     DevicePreviewProviderProgressDtoProviderEnum["YAHOO"] = "YAHOO";
-})(DevicePreviewProviderProgressDtoProviderEnum = exports.DevicePreviewProviderProgressDtoProviderEnum || (exports.DevicePreviewProviderProgressDtoProviderEnum = {}));
+})(DevicePreviewProviderProgressDtoProviderEnum || (exports.DevicePreviewProviderProgressDtoProviderEnum = DevicePreviewProviderProgressDtoProviderEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -36,11 +39,10 @@ var DevicePreviewProviderProgressDtoStatusEnum;
     DevicePreviewProviderProgressDtoStatusEnum["PARTIAL_COMPLETE"] = "PARTIAL_COMPLETE";
     DevicePreviewProviderProgressDtoStatusEnum["COMPLETE"] = "COMPLETE";
     DevicePreviewProviderProgressDtoStatusEnum["FAILED"] = "FAILED";
-})(DevicePreviewProviderProgressDtoStatusEnum = exports.DevicePreviewProviderProgressDtoStatusEnum || (exports.DevicePreviewProviderProgressDtoStatusEnum = {}));
+})(DevicePreviewProviderProgressDtoStatusEnum || (exports.DevicePreviewProviderProgressDtoStatusEnum = DevicePreviewProviderProgressDtoStatusEnum = {}));
 function DevicePreviewProviderProgressDtoFromJSON(json) {
     return DevicePreviewProviderProgressDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewProviderProgressDtoFromJSON = DevicePreviewProviderProgressDtoFromJSON;
 function DevicePreviewProviderProgressDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -58,7 +60,6 @@ function DevicePreviewProviderProgressDtoFromJSONTyped(json, ignoreDiscriminator
         screenshots: json['screenshots'].map(_1.DevicePreviewScreenshotDtoFromJSON),
     };
 }
-exports.DevicePreviewProviderProgressDtoFromJSONTyped = DevicePreviewProviderProgressDtoFromJSONTyped;
 function DevicePreviewProviderProgressDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -79,4 +80,3 @@ function DevicePreviewProviderProgressDtoToJSON(value) {
         screenshots: value.screenshots.map(_1.DevicePreviewScreenshotDtoToJSON),
     };
 }
-exports.DevicePreviewProviderProgressDtoToJSON = DevicePreviewProviderProgressDtoToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneNumberLineTypeLookupDtoToJSON = exports.PhoneNumberLineTypeLookupDtoFromJSONTyped = exports.PhoneNumberLineTypeLookupDtoFromJSON = void 0;
+exports.PhoneNumberLineTypeLookupDtoFromJSON = PhoneNumberLineTypeLookupDtoFromJSON;
+exports.PhoneNumberLineTypeLookupDtoFromJSONTyped = PhoneNumberLineTypeLookupDtoFromJSONTyped;
+exports.PhoneNumberLineTypeLookupDtoToJSON = PhoneNumberLineTypeLookupDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PhoneNumberLineTypeLookupDtoFromJSON(json) {
     return PhoneNumberLineTypeLookupDtoFromJSONTyped(json, false);
 }
-exports.PhoneNumberLineTypeLookupDtoFromJSON = PhoneNumberLineTypeLookupDtoFromJSON;
 function PhoneNumberLineTypeLookupDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -43,7 +44,6 @@ function PhoneNumberLineTypeLookupDtoFromJSONTyped(json, ignoreDiscriminator) {
         mailslurpPhoneNumber: json['mailslurpPhoneNumber'],
     };
 }
-exports.PhoneNumberLineTypeLookupDtoFromJSONTyped = PhoneNumberLineTypeLookupDtoFromJSONTyped;
 function PhoneNumberLineTypeLookupDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -62,4 +62,3 @@ function PhoneNumberLineTypeLookupDtoToJSON(value) {
         mailslurpPhoneNumber: value.mailslurpPhoneNumber,
     };
 }
-exports.PhoneNumberLineTypeLookupDtoToJSON = PhoneNumberLineTypeLookupDtoToJSON;

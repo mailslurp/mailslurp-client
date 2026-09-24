@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupPlacementDeltaDtoToJSON = exports.EmailWarmupPlacementDeltaDtoFromJSONTyped = exports.EmailWarmupPlacementDeltaDtoFromJSON = void 0;
+exports.EmailWarmupPlacementDeltaDtoFromJSON = EmailWarmupPlacementDeltaDtoFromJSON;
+exports.EmailWarmupPlacementDeltaDtoFromJSONTyped = EmailWarmupPlacementDeltaDtoFromJSONTyped;
+exports.EmailWarmupPlacementDeltaDtoToJSON = EmailWarmupPlacementDeltaDtoToJSON;
 function EmailWarmupPlacementDeltaDtoFromJSON(json) {
     return EmailWarmupPlacementDeltaDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupPlacementDeltaDtoFromJSON = EmailWarmupPlacementDeltaDtoFromJSON;
 function EmailWarmupPlacementDeltaDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function EmailWarmupPlacementDeltaDtoFromJSONTyped(json, ignoreDiscriminator) {
         latestSampleSize: json['latestSampleSize'],
     };
 }
-exports.EmailWarmupPlacementDeltaDtoFromJSONTyped = EmailWarmupPlacementDeltaDtoFromJSONTyped;
 function EmailWarmupPlacementDeltaDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function EmailWarmupPlacementDeltaDtoToJSON(value) {
         latestSampleSize: value.latestSampleSize,
     };
 }
-exports.EmailWarmupPlacementDeltaDtoToJSON = EmailWarmupPlacementDeltaDtoToJSON;

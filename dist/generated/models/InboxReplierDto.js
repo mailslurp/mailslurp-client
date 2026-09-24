@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxReplierDtoToJSON = exports.InboxReplierDtoFromJSONTyped = exports.InboxReplierDtoFromJSON = exports.InboxReplierDtoShouldEnum = exports.InboxReplierDtoFieldEnum = void 0;
+exports.InboxReplierDtoShouldEnum = exports.InboxReplierDtoFieldEnum = void 0;
+exports.InboxReplierDtoFromJSON = InboxReplierDtoFromJSON;
+exports.InboxReplierDtoFromJSONTyped = InboxReplierDtoFromJSONTyped;
+exports.InboxReplierDtoToJSON = InboxReplierDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -28,7 +31,7 @@ var InboxReplierDtoFieldEnum;
     InboxReplierDtoFieldEnum["ATTACHMENTS"] = "ATTACHMENTS";
     InboxReplierDtoFieldEnum["ATTACHMENT_FILENAME"] = "ATTACHMENT_FILENAME";
     InboxReplierDtoFieldEnum["ATTACHMENT_TEXT"] = "ATTACHMENT_TEXT";
-})(InboxReplierDtoFieldEnum = exports.InboxReplierDtoFieldEnum || (exports.InboxReplierDtoFieldEnum = {}));
+})(InboxReplierDtoFieldEnum || (exports.InboxReplierDtoFieldEnum = InboxReplierDtoFieldEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -39,11 +42,10 @@ var InboxReplierDtoShouldEnum;
     InboxReplierDtoShouldEnum["MATCH"] = "MATCH";
     InboxReplierDtoShouldEnum["CONTAIN"] = "CONTAIN";
     InboxReplierDtoShouldEnum["EQUAL"] = "EQUAL";
-})(InboxReplierDtoShouldEnum = exports.InboxReplierDtoShouldEnum || (exports.InboxReplierDtoShouldEnum = {}));
+})(InboxReplierDtoShouldEnum || (exports.InboxReplierDtoShouldEnum = InboxReplierDtoShouldEnum = {}));
 function InboxReplierDtoFromJSON(json) {
     return InboxReplierDtoFromJSONTyped(json, false);
 }
-exports.InboxReplierDtoFromJSON = InboxReplierDtoFromJSON;
 function InboxReplierDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -74,7 +76,6 @@ function InboxReplierDtoFromJSONTyped(json, ignoreDiscriminator) {
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
     };
 }
-exports.InboxReplierDtoFromJSONTyped = InboxReplierDtoFromJSONTyped;
 function InboxReplierDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -104,4 +105,3 @@ function InboxReplierDtoToJSON(value) {
         attachments: value.attachments,
     };
 }
-exports.InboxReplierDtoToJSON = InboxReplierDtoToJSON;

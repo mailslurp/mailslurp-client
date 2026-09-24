@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendingConnectionProviderDtoToJSON = exports.SendingConnectionProviderDtoFromJSONTyped = exports.SendingConnectionProviderDtoFromJSON = exports.SendingConnectionProviderDtoCapabilitiesEnum = exports.SendingConnectionProviderDtoSupportedApiRegionsEnum = exports.SendingConnectionProviderDtoSetupTypeEnum = exports.SendingConnectionProviderDtoAvailabilityEnum = exports.SendingConnectionProviderDtoCategoryEnum = exports.SendingConnectionProviderDtoProviderEnum = exports.SendingConnectionProviderDtoProviderPresetEnum = void 0;
+exports.SendingConnectionProviderDtoCapabilitiesEnum = exports.SendingConnectionProviderDtoSupportedApiRegionsEnum = exports.SendingConnectionProviderDtoSetupTypeEnum = exports.SendingConnectionProviderDtoAvailabilityEnum = exports.SendingConnectionProviderDtoCategoryEnum = exports.SendingConnectionProviderDtoProviderEnum = exports.SendingConnectionProviderDtoProviderPresetEnum = void 0;
+exports.SendingConnectionProviderDtoFromJSON = SendingConnectionProviderDtoFromJSON;
+exports.SendingConnectionProviderDtoFromJSONTyped = SendingConnectionProviderDtoFromJSONTyped;
+exports.SendingConnectionProviderDtoToJSON = SendingConnectionProviderDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -49,7 +52,7 @@ var SendingConnectionProviderDtoProviderPresetEnum;
     SendingConnectionProviderDtoProviderPresetEnum["MAILERSEND"] = "MAILERSEND";
     SendingConnectionProviderDtoProviderPresetEnum["MANDRILL"] = "MANDRILL";
     SendingConnectionProviderDtoProviderPresetEnum["ELASTIC_EMAIL"] = "ELASTIC_EMAIL";
-})(SendingConnectionProviderDtoProviderPresetEnum = exports.SendingConnectionProviderDtoProviderPresetEnum || (exports.SendingConnectionProviderDtoProviderPresetEnum = {}));
+})(SendingConnectionProviderDtoProviderPresetEnum || (exports.SendingConnectionProviderDtoProviderPresetEnum = SendingConnectionProviderDtoProviderPresetEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -62,7 +65,7 @@ var SendingConnectionProviderDtoProviderEnum;
     SendingConnectionProviderDtoProviderEnum["RESEND"] = "RESEND";
     SendingConnectionProviderDtoProviderEnum["MAILGUN"] = "MAILGUN";
     SendingConnectionProviderDtoProviderEnum["POSTMARK"] = "POSTMARK";
-})(SendingConnectionProviderDtoProviderEnum = exports.SendingConnectionProviderDtoProviderEnum || (exports.SendingConnectionProviderDtoProviderEnum = {}));
+})(SendingConnectionProviderDtoProviderEnum || (exports.SendingConnectionProviderDtoProviderEnum = SendingConnectionProviderDtoProviderEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -72,7 +75,7 @@ var SendingConnectionProviderDtoCategoryEnum;
     SendingConnectionProviderDtoCategoryEnum["CUSTOM"] = "CUSTOM";
     SendingConnectionProviderDtoCategoryEnum["MAILBOX"] = "MAILBOX";
     SendingConnectionProviderDtoCategoryEnum["TRANSACTIONAL"] = "TRANSACTIONAL";
-})(SendingConnectionProviderDtoCategoryEnum = exports.SendingConnectionProviderDtoCategoryEnum || (exports.SendingConnectionProviderDtoCategoryEnum = {}));
+})(SendingConnectionProviderDtoCategoryEnum || (exports.SendingConnectionProviderDtoCategoryEnum = SendingConnectionProviderDtoCategoryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -81,7 +84,7 @@ var SendingConnectionProviderDtoAvailabilityEnum;
 (function (SendingConnectionProviderDtoAvailabilityEnum) {
     SendingConnectionProviderDtoAvailabilityEnum["AVAILABLE"] = "AVAILABLE";
     SendingConnectionProviderDtoAvailabilityEnum["PLANNED"] = "PLANNED";
-})(SendingConnectionProviderDtoAvailabilityEnum = exports.SendingConnectionProviderDtoAvailabilityEnum || (exports.SendingConnectionProviderDtoAvailabilityEnum = {}));
+})(SendingConnectionProviderDtoAvailabilityEnum || (exports.SendingConnectionProviderDtoAvailabilityEnum = SendingConnectionProviderDtoAvailabilityEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -93,7 +96,7 @@ var SendingConnectionProviderDtoSetupTypeEnum;
     SendingConnectionProviderDtoSetupTypeEnum["AWS_CREDENTIALS"] = "AWS_CREDENTIALS";
     SendingConnectionProviderDtoSetupTypeEnum["OAUTH"] = "OAUTH";
     SendingConnectionProviderDtoSetupTypeEnum["UNAVAILABLE"] = "UNAVAILABLE";
-})(SendingConnectionProviderDtoSetupTypeEnum = exports.SendingConnectionProviderDtoSetupTypeEnum || (exports.SendingConnectionProviderDtoSetupTypeEnum = {}));
+})(SendingConnectionProviderDtoSetupTypeEnum || (exports.SendingConnectionProviderDtoSetupTypeEnum = SendingConnectionProviderDtoSetupTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -102,7 +105,7 @@ var SendingConnectionProviderDtoSupportedApiRegionsEnum;
 (function (SendingConnectionProviderDtoSupportedApiRegionsEnum) {
     SendingConnectionProviderDtoSupportedApiRegionsEnum["US"] = "US";
     SendingConnectionProviderDtoSupportedApiRegionsEnum["EU"] = "EU";
-})(SendingConnectionProviderDtoSupportedApiRegionsEnum = exports.SendingConnectionProviderDtoSupportedApiRegionsEnum || (exports.SendingConnectionProviderDtoSupportedApiRegionsEnum = {}));
+})(SendingConnectionProviderDtoSupportedApiRegionsEnum || (exports.SendingConnectionProviderDtoSupportedApiRegionsEnum = SendingConnectionProviderDtoSupportedApiRegionsEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -113,11 +116,10 @@ var SendingConnectionProviderDtoCapabilitiesEnum;
     SendingConnectionProviderDtoCapabilitiesEnum["VERIFY_CONNECTION"] = "VERIFY_CONNECTION";
     SendingConnectionProviderDtoCapabilitiesEnum["ROTATE_CREDENTIALS"] = "ROTATE_CREDENTIALS";
     SendingConnectionProviderDtoCapabilitiesEnum["DELIVERY_PROBE"] = "DELIVERY_PROBE";
-})(SendingConnectionProviderDtoCapabilitiesEnum = exports.SendingConnectionProviderDtoCapabilitiesEnum || (exports.SendingConnectionProviderDtoCapabilitiesEnum = {}));
+})(SendingConnectionProviderDtoCapabilitiesEnum || (exports.SendingConnectionProviderDtoCapabilitiesEnum = SendingConnectionProviderDtoCapabilitiesEnum = {}));
 function SendingConnectionProviderDtoFromJSON(json) {
     return SendingConnectionProviderDtoFromJSONTyped(json, false);
 }
-exports.SendingConnectionProviderDtoFromJSON = SendingConnectionProviderDtoFromJSON;
 function SendingConnectionProviderDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -140,7 +142,6 @@ function SendingConnectionProviderDtoFromJSONTyped(json, ignoreDiscriminator) {
         capabilities: json['capabilities'],
     };
 }
-exports.SendingConnectionProviderDtoFromJSONTyped = SendingConnectionProviderDtoFromJSONTyped;
 function SendingConnectionProviderDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -164,4 +165,3 @@ function SendingConnectionProviderDtoToJSON(value) {
         capabilities: value.capabilities,
     };
 }
-exports.SendingConnectionProviderDtoToJSON = SendingConnectionProviderDtoToJSON;

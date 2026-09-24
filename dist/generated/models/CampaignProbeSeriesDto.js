@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CampaignProbeSeriesDtoToJSON = exports.CampaignProbeSeriesDtoFromJSONTyped = exports.CampaignProbeSeriesDtoFromJSON = exports.CampaignProbeSeriesDtoBucketEnum = void 0;
+exports.CampaignProbeSeriesDtoBucketEnum = void 0;
+exports.CampaignProbeSeriesDtoFromJSON = CampaignProbeSeriesDtoFromJSON;
+exports.CampaignProbeSeriesDtoFromJSONTyped = CampaignProbeSeriesDtoFromJSONTyped;
+exports.CampaignProbeSeriesDtoToJSON = CampaignProbeSeriesDtoToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -23,11 +26,10 @@ var CampaignProbeSeriesDtoBucketEnum;
 (function (CampaignProbeSeriesDtoBucketEnum) {
     CampaignProbeSeriesDtoBucketEnum["HOUR"] = "HOUR";
     CampaignProbeSeriesDtoBucketEnum["DAY"] = "DAY";
-})(CampaignProbeSeriesDtoBucketEnum = exports.CampaignProbeSeriesDtoBucketEnum || (exports.CampaignProbeSeriesDtoBucketEnum = {}));
+})(CampaignProbeSeriesDtoBucketEnum || (exports.CampaignProbeSeriesDtoBucketEnum = CampaignProbeSeriesDtoBucketEnum = {}));
 function CampaignProbeSeriesDtoFromJSON(json) {
     return CampaignProbeSeriesDtoFromJSONTyped(json, false);
 }
-exports.CampaignProbeSeriesDtoFromJSON = CampaignProbeSeriesDtoFromJSON;
 function CampaignProbeSeriesDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +42,6 @@ function CampaignProbeSeriesDtoFromJSONTyped(json, ignoreDiscriminator) {
         points: json['points'].map(_1.CampaignProbeSeriesPointDtoFromJSON),
     };
 }
-exports.CampaignProbeSeriesDtoFromJSONTyped = CampaignProbeSeriesDtoFromJSONTyped;
 function CampaignProbeSeriesDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -56,4 +57,3 @@ function CampaignProbeSeriesDtoToJSON(value) {
         points: value.points.map(_1.CampaignProbeSeriesPointDtoToJSON),
     };
 }
-exports.CampaignProbeSeriesDtoToJSON = CampaignProbeSeriesDtoToJSON;

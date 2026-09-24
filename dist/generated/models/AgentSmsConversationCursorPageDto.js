@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentSmsConversationCursorPageDtoToJSON = exports.AgentSmsConversationCursorPageDtoFromJSONTyped = exports.AgentSmsConversationCursorPageDtoFromJSON = void 0;
+exports.AgentSmsConversationCursorPageDtoFromJSON = AgentSmsConversationCursorPageDtoFromJSON;
+exports.AgentSmsConversationCursorPageDtoFromJSONTyped = AgentSmsConversationCursorPageDtoFromJSONTyped;
+exports.AgentSmsConversationCursorPageDtoToJSON = AgentSmsConversationCursorPageDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function AgentSmsConversationCursorPageDtoFromJSON(json) {
     return AgentSmsConversationCursorPageDtoFromJSONTyped(json, false);
 }
-exports.AgentSmsConversationCursorPageDtoFromJSON = AgentSmsConversationCursorPageDtoFromJSON;
 function AgentSmsConversationCursorPageDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function AgentSmsConversationCursorPageDtoFromJSONTyped(json, ignoreDiscriminato
         hasMore: json['hasMore'],
     };
 }
-exports.AgentSmsConversationCursorPageDtoFromJSONTyped = AgentSmsConversationCursorPageDtoFromJSONTyped;
 function AgentSmsConversationCursorPageDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function AgentSmsConversationCursorPageDtoToJSON(value) {
         hasMore: value.hasMore,
     };
 }
-exports.AgentSmsConversationCursorPageDtoToJSON = AgentSmsConversationCursorPageDtoToJSON;

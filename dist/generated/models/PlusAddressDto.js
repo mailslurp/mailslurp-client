@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlusAddressDtoToJSON = exports.PlusAddressDtoFromJSONTyped = exports.PlusAddressDtoFromJSON = void 0;
+exports.PlusAddressDtoFromJSON = PlusAddressDtoFromJSON;
+exports.PlusAddressDtoFromJSONTyped = PlusAddressDtoFromJSONTyped;
+exports.PlusAddressDtoToJSON = PlusAddressDtoToJSON;
 function PlusAddressDtoFromJSON(json) {
     return PlusAddressDtoFromJSONTyped(json, false);
 }
-exports.PlusAddressDtoFromJSON = PlusAddressDtoFromJSON;
 function PlusAddressDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function PlusAddressDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.PlusAddressDtoFromJSONTyped = PlusAddressDtoFromJSONTyped;
 function PlusAddressDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function PlusAddressDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.PlusAddressDtoToJSON = PlusAddressDtoToJSON;

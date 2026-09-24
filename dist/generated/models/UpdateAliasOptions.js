@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateAliasOptionsToJSON = exports.UpdateAliasOptionsFromJSONTyped = exports.UpdateAliasOptionsFromJSON = void 0;
+exports.UpdateAliasOptionsFromJSON = UpdateAliasOptionsFromJSON;
+exports.UpdateAliasOptionsFromJSONTyped = UpdateAliasOptionsFromJSONTyped;
+exports.UpdateAliasOptionsToJSON = UpdateAliasOptionsToJSON;
 var runtime_1 = require("../runtime");
 function UpdateAliasOptionsFromJSON(json) {
     return UpdateAliasOptionsFromJSONTyped(json, false);
 }
-exports.UpdateAliasOptionsFromJSON = UpdateAliasOptionsFromJSON;
 function UpdateAliasOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function UpdateAliasOptionsFromJSONTyped(json, ignoreDiscriminator) {
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
     };
 }
-exports.UpdateAliasOptionsFromJSONTyped = UpdateAliasOptionsFromJSONTyped;
 function UpdateAliasOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function UpdateAliasOptionsToJSON(value) {
         name: value.name,
     };
 }
-exports.UpdateAliasOptionsToJSON = UpdateAliasOptionsToJSON;

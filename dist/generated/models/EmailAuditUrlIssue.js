@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailAuditUrlIssueToJSON = exports.EmailAuditUrlIssueFromJSONTyped = exports.EmailAuditUrlIssueFromJSON = void 0;
+exports.EmailAuditUrlIssueFromJSON = EmailAuditUrlIssueFromJSON;
+exports.EmailAuditUrlIssueFromJSONTyped = EmailAuditUrlIssueFromJSONTyped;
+exports.EmailAuditUrlIssueToJSON = EmailAuditUrlIssueToJSON;
 var runtime_1 = require("../runtime");
 function EmailAuditUrlIssueFromJSON(json) {
     return EmailAuditUrlIssueFromJSONTyped(json, false);
 }
-exports.EmailAuditUrlIssueFromJSON = EmailAuditUrlIssueFromJSON;
 function EmailAuditUrlIssueFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function EmailAuditUrlIssueFromJSONTyped(json, ignoreDiscriminator) {
         message: json['message'],
     };
 }
-exports.EmailAuditUrlIssueFromJSONTyped = EmailAuditUrlIssueFromJSONTyped;
 function EmailAuditUrlIssueToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function EmailAuditUrlIssueToJSON(value) {
         message: value.message,
     };
 }
-exports.EmailAuditUrlIssueToJSON = EmailAuditUrlIssueToJSON;

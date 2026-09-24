@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewSharedScreenshotDtoToJSON = exports.DevicePreviewSharedScreenshotDtoFromJSONTyped = exports.DevicePreviewSharedScreenshotDtoFromJSON = void 0;
+exports.DevicePreviewSharedScreenshotDtoFromJSON = DevicePreviewSharedScreenshotDtoFromJSON;
+exports.DevicePreviewSharedScreenshotDtoFromJSONTyped = DevicePreviewSharedScreenshotDtoFromJSONTyped;
+exports.DevicePreviewSharedScreenshotDtoToJSON = DevicePreviewSharedScreenshotDtoToJSON;
 var runtime_1 = require("../runtime");
 function DevicePreviewSharedScreenshotDtoFromJSON(json) {
     return DevicePreviewSharedScreenshotDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewSharedScreenshotDtoFromJSON = DevicePreviewSharedScreenshotDtoFromJSON;
 function DevicePreviewSharedScreenshotDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +40,6 @@ function DevicePreviewSharedScreenshotDtoFromJSONTyped(json, ignoreDiscriminator
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DevicePreviewSharedScreenshotDtoFromJSONTyped = DevicePreviewSharedScreenshotDtoFromJSONTyped;
 function DevicePreviewSharedScreenshotDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -63,4 +63,3 @@ function DevicePreviewSharedScreenshotDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DevicePreviewSharedScreenshotDtoToJSON = DevicePreviewSharedScreenshotDtoToJSON;

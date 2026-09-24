@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailHeaderAnalysisSummaryToJSON = exports.EmailHeaderAnalysisSummaryFromJSONTyped = exports.EmailHeaderAnalysisSummaryFromJSON = void 0;
+exports.EmailHeaderAnalysisSummaryFromJSON = EmailHeaderAnalysisSummaryFromJSON;
+exports.EmailHeaderAnalysisSummaryFromJSONTyped = EmailHeaderAnalysisSummaryFromJSONTyped;
+exports.EmailHeaderAnalysisSummaryToJSON = EmailHeaderAnalysisSummaryToJSON;
 var runtime_1 = require("../runtime");
 function EmailHeaderAnalysisSummaryFromJSON(json) {
     return EmailHeaderAnalysisSummaryFromJSONTyped(json, false);
 }
-exports.EmailHeaderAnalysisSummaryFromJSON = EmailHeaderAnalysisSummaryFromJSON;
 function EmailHeaderAnalysisSummaryFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function EmailHeaderAnalysisSummaryFromJSONTyped(json, ignoreDiscriminator) {
             : json['returnPathDomain'],
     };
 }
-exports.EmailHeaderAnalysisSummaryFromJSONTyped = EmailHeaderAnalysisSummaryFromJSONTyped;
 function EmailHeaderAnalysisSummaryToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function EmailHeaderAnalysisSummaryToJSON(value) {
         returnPathDomain: value.returnPathDomain,
     };
 }
-exports.EmailHeaderAnalysisSummaryToJSON = EmailHeaderAnalysisSummaryToJSON;

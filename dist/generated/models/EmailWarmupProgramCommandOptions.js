@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupProgramCommandOptionsToJSON = exports.EmailWarmupProgramCommandOptionsFromJSONTyped = exports.EmailWarmupProgramCommandOptionsFromJSON = void 0;
+exports.EmailWarmupProgramCommandOptionsFromJSON = EmailWarmupProgramCommandOptionsFromJSON;
+exports.EmailWarmupProgramCommandOptionsFromJSONTyped = EmailWarmupProgramCommandOptionsFromJSONTyped;
+exports.EmailWarmupProgramCommandOptionsToJSON = EmailWarmupProgramCommandOptionsToJSON;
 function EmailWarmupProgramCommandOptionsFromJSON(json) {
     return EmailWarmupProgramCommandOptionsFromJSONTyped(json, false);
 }
-exports.EmailWarmupProgramCommandOptionsFromJSON = EmailWarmupProgramCommandOptionsFromJSON;
 function EmailWarmupProgramCommandOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function EmailWarmupProgramCommandOptionsFromJSONTyped(json, ignoreDiscriminator
         expectedVersion: json['expectedVersion'],
     };
 }
-exports.EmailWarmupProgramCommandOptionsFromJSONTyped = EmailWarmupProgramCommandOptionsFromJSONTyped;
 function EmailWarmupProgramCommandOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function EmailWarmupProgramCommandOptionsToJSON(value) {
         expectedVersion: value.expectedVersion,
     };
 }
-exports.EmailWarmupProgramCommandOptionsToJSON = EmailWarmupProgramCommandOptionsToJSON;

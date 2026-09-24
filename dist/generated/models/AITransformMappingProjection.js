@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AITransformMappingProjectionToJSON = exports.AITransformMappingProjectionFromJSONTyped = exports.AITransformMappingProjectionFromJSON = exports.AITransformMappingProjectionTriggerSelectorEnum = exports.AITransformMappingProjectionContentSelectorEnum = exports.AITransformMappingProjectionEntityTypeEnum = void 0;
+exports.AITransformMappingProjectionTriggerSelectorEnum = exports.AITransformMappingProjectionContentSelectorEnum = exports.AITransformMappingProjectionEntityTypeEnum = void 0;
+exports.AITransformMappingProjectionFromJSON = AITransformMappingProjectionFromJSON;
+exports.AITransformMappingProjectionFromJSONTyped = AITransformMappingProjectionFromJSONTyped;
+exports.AITransformMappingProjectionToJSON = AITransformMappingProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var AITransformMappingProjectionEntityTypeEnum;
 (function (AITransformMappingProjectionEntityTypeEnum) {
     AITransformMappingProjectionEntityTypeEnum["INBOX"] = "INBOX";
     AITransformMappingProjectionEntityTypeEnum["PHONE"] = "PHONE";
-})(AITransformMappingProjectionEntityTypeEnum = exports.AITransformMappingProjectionEntityTypeEnum || (exports.AITransformMappingProjectionEntityTypeEnum = {}));
+})(AITransformMappingProjectionEntityTypeEnum || (exports.AITransformMappingProjectionEntityTypeEnum = AITransformMappingProjectionEntityTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -33,7 +36,7 @@ var AITransformMappingProjectionContentSelectorEnum;
     AITransformMappingProjectionContentSelectorEnum["RAW"] = "RAW";
     AITransformMappingProjectionContentSelectorEnum["BODY"] = "BODY";
     AITransformMappingProjectionContentSelectorEnum["BODY_ATTACHMENTS"] = "BODY_ATTACHMENTS";
-})(AITransformMappingProjectionContentSelectorEnum = exports.AITransformMappingProjectionContentSelectorEnum || (exports.AITransformMappingProjectionContentSelectorEnum = {}));
+})(AITransformMappingProjectionContentSelectorEnum || (exports.AITransformMappingProjectionContentSelectorEnum = AITransformMappingProjectionContentSelectorEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -42,11 +45,10 @@ var AITransformMappingProjectionTriggerSelectorEnum;
 (function (AITransformMappingProjectionTriggerSelectorEnum) {
     AITransformMappingProjectionTriggerSelectorEnum["MESSAGE"] = "PER_MESSAGE";
     AITransformMappingProjectionTriggerSelectorEnum["ATTACHMENT"] = "PER_ATTACHMENT";
-})(AITransformMappingProjectionTriggerSelectorEnum = exports.AITransformMappingProjectionTriggerSelectorEnum || (exports.AITransformMappingProjectionTriggerSelectorEnum = {}));
+})(AITransformMappingProjectionTriggerSelectorEnum || (exports.AITransformMappingProjectionTriggerSelectorEnum = AITransformMappingProjectionTriggerSelectorEnum = {}));
 function AITransformMappingProjectionFromJSON(json) {
     return AITransformMappingProjectionFromJSONTyped(json, false);
 }
-exports.AITransformMappingProjectionFromJSON = AITransformMappingProjectionFromJSON;
 function AITransformMappingProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -67,7 +69,6 @@ function AITransformMappingProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.AITransformMappingProjectionFromJSONTyped = AITransformMappingProjectionFromJSONTyped;
 function AITransformMappingProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -87,4 +88,3 @@ function AITransformMappingProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.AITransformMappingProjectionToJSON = AITransformMappingProjectionToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnseenErrorCountDtoToJSON = exports.UnseenErrorCountDtoFromJSONTyped = exports.UnseenErrorCountDtoFromJSON = void 0;
+exports.UnseenErrorCountDtoFromJSON = UnseenErrorCountDtoFromJSON;
+exports.UnseenErrorCountDtoFromJSONTyped = UnseenErrorCountDtoFromJSONTyped;
+exports.UnseenErrorCountDtoToJSON = UnseenErrorCountDtoToJSON;
 function UnseenErrorCountDtoFromJSON(json) {
     return UnseenErrorCountDtoFromJSONTyped(json, false);
 }
-exports.UnseenErrorCountDtoFromJSON = UnseenErrorCountDtoFromJSON;
 function UnseenErrorCountDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function UnseenErrorCountDtoFromJSONTyped(json, ignoreDiscriminator) {
         count: json['count'],
     };
 }
-exports.UnseenErrorCountDtoFromJSONTyped = UnseenErrorCountDtoFromJSONTyped;
 function UnseenErrorCountDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function UnseenErrorCountDtoToJSON(value) {
         count: value.count,
     };
 }
-exports.UnseenErrorCountDtoToJSON = UnseenErrorCountDtoToJSON;

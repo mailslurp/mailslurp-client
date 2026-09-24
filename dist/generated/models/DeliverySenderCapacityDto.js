@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverySenderCapacityDtoToJSON = exports.DeliverySenderCapacityDtoFromJSONTyped = exports.DeliverySenderCapacityDtoFromJSON = void 0;
+exports.DeliverySenderCapacityDtoFromJSON = DeliverySenderCapacityDtoFromJSON;
+exports.DeliverySenderCapacityDtoFromJSONTyped = DeliverySenderCapacityDtoFromJSONTyped;
+exports.DeliverySenderCapacityDtoToJSON = DeliverySenderCapacityDtoToJSON;
 function DeliverySenderCapacityDtoFromJSON(json) {
     return DeliverySenderCapacityDtoFromJSONTyped(json, false);
 }
-exports.DeliverySenderCapacityDtoFromJSON = DeliverySenderCapacityDtoFromJSON;
 function DeliverySenderCapacityDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function DeliverySenderCapacityDtoFromJSONTyped(json, ignoreDiscriminator) {
         activeSenderConnections: json['activeSenderConnections'],
     };
 }
-exports.DeliverySenderCapacityDtoFromJSONTyped = DeliverySenderCapacityDtoFromJSONTyped;
 function DeliverySenderCapacityDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function DeliverySenderCapacityDtoToJSON(value) {
         activeSenderConnections: value.activeSenderConnections,
     };
 }
-exports.DeliverySenderCapacityDtoToJSON = DeliverySenderCapacityDtoToJSON;

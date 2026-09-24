@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateAgentConversationNoteOptionsToJSON = exports.CreateAgentConversationNoteOptionsFromJSONTyped = exports.CreateAgentConversationNoteOptionsFromJSON = void 0;
+exports.CreateAgentConversationNoteOptionsFromJSON = CreateAgentConversationNoteOptionsFromJSON;
+exports.CreateAgentConversationNoteOptionsFromJSONTyped = CreateAgentConversationNoteOptionsFromJSONTyped;
+exports.CreateAgentConversationNoteOptionsToJSON = CreateAgentConversationNoteOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateAgentConversationNoteOptionsFromJSON(json) {
     return CreateAgentConversationNoteOptionsFromJSONTyped(json, false);
 }
-exports.CreateAgentConversationNoteOptionsFromJSON = CreateAgentConversationNoteOptionsFromJSON;
 function CreateAgentConversationNoteOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function CreateAgentConversationNoteOptionsFromJSONTyped(json, ignoreDiscriminat
         draftId: !(0, runtime_1.exists)(json, 'draftId') ? undefined : json['draftId'],
     };
 }
-exports.CreateAgentConversationNoteOptionsFromJSONTyped = CreateAgentConversationNoteOptionsFromJSONTyped;
 function CreateAgentConversationNoteOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function CreateAgentConversationNoteOptionsToJSON(value) {
         draftId: value.draftId,
     };
 }
-exports.CreateAgentConversationNoteOptionsToJSON = CreateAgentConversationNoteOptionsToJSON;

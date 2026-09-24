@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorSeriesDtoToJSON = exports.DomainMonitorSeriesDtoFromJSONTyped = exports.DomainMonitorSeriesDtoFromJSON = exports.DomainMonitorSeriesDtoBucketEnum = void 0;
+exports.DomainMonitorSeriesDtoBucketEnum = void 0;
+exports.DomainMonitorSeriesDtoFromJSON = DomainMonitorSeriesDtoFromJSON;
+exports.DomainMonitorSeriesDtoFromJSONTyped = DomainMonitorSeriesDtoFromJSONTyped;
+exports.DomainMonitorSeriesDtoToJSON = DomainMonitorSeriesDtoToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -23,11 +26,10 @@ var DomainMonitorSeriesDtoBucketEnum;
 (function (DomainMonitorSeriesDtoBucketEnum) {
     DomainMonitorSeriesDtoBucketEnum["HOUR"] = "HOUR";
     DomainMonitorSeriesDtoBucketEnum["DAY"] = "DAY";
-})(DomainMonitorSeriesDtoBucketEnum = exports.DomainMonitorSeriesDtoBucketEnum || (exports.DomainMonitorSeriesDtoBucketEnum = {}));
+})(DomainMonitorSeriesDtoBucketEnum || (exports.DomainMonitorSeriesDtoBucketEnum = DomainMonitorSeriesDtoBucketEnum = {}));
 function DomainMonitorSeriesDtoFromJSON(json) {
     return DomainMonitorSeriesDtoFromJSONTyped(json, false);
 }
-exports.DomainMonitorSeriesDtoFromJSON = DomainMonitorSeriesDtoFromJSON;
 function DomainMonitorSeriesDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +42,6 @@ function DomainMonitorSeriesDtoFromJSONTyped(json, ignoreDiscriminator) {
         points: json['points'].map(_1.DomainMonitorSeriesPointDtoFromJSON),
     };
 }
-exports.DomainMonitorSeriesDtoFromJSONTyped = DomainMonitorSeriesDtoFromJSONTyped;
 function DomainMonitorSeriesDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -56,4 +57,3 @@ function DomainMonitorSeriesDtoToJSON(value) {
         points: value.points.map(_1.DomainMonitorSeriesPointDtoToJSON),
     };
 }
-exports.DomainMonitorSeriesDtoToJSON = DomainMonitorSeriesDtoToJSON;

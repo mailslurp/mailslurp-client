@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AnalyzeDmarcReportResultsToJSON = exports.AnalyzeDmarcReportResultsFromJSONTyped = exports.AnalyzeDmarcReportResultsFromJSON = void 0;
+exports.AnalyzeDmarcReportResultsFromJSON = AnalyzeDmarcReportResultsFromJSON;
+exports.AnalyzeDmarcReportResultsFromJSONTyped = AnalyzeDmarcReportResultsFromJSONTyped;
+exports.AnalyzeDmarcReportResultsToJSON = AnalyzeDmarcReportResultsToJSON;
 var _1 = require("./");
 function AnalyzeDmarcReportResultsFromJSON(json) {
     return AnalyzeDmarcReportResultsFromJSONTyped(json, false);
 }
-exports.AnalyzeDmarcReportResultsFromJSON = AnalyzeDmarcReportResultsFromJSON;
 function AnalyzeDmarcReportResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +40,6 @@ function AnalyzeDmarcReportResultsFromJSONTyped(json, ignoreDiscriminator) {
         errors: json['errors'],
     };
 }
-exports.AnalyzeDmarcReportResultsFromJSONTyped = AnalyzeDmarcReportResultsFromJSONTyped;
 function AnalyzeDmarcReportResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -63,4 +63,3 @@ function AnalyzeDmarcReportResultsToJSON(value) {
         errors: value.errors,
     };
 }
-exports.AnalyzeDmarcReportResultsToJSON = AnalyzeDmarcReportResultsToJSON;

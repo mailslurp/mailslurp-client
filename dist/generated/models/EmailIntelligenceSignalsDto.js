@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailIntelligenceSignalsDtoToJSON = exports.EmailIntelligenceSignalsDtoFromJSONTyped = exports.EmailIntelligenceSignalsDtoFromJSON = void 0;
+exports.EmailIntelligenceSignalsDtoFromJSON = EmailIntelligenceSignalsDtoFromJSON;
+exports.EmailIntelligenceSignalsDtoFromJSONTyped = EmailIntelligenceSignalsDtoFromJSONTyped;
+exports.EmailIntelligenceSignalsDtoToJSON = EmailIntelligenceSignalsDtoToJSON;
 var runtime_1 = require("../runtime");
 function EmailIntelligenceSignalsDtoFromJSON(json) {
     return EmailIntelligenceSignalsDtoFromJSONTyped(json, false);
 }
-exports.EmailIntelligenceSignalsDtoFromJSON = EmailIntelligenceSignalsDtoFromJSON;
 function EmailIntelligenceSignalsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -60,7 +61,6 @@ function EmailIntelligenceSignalsDtoFromJSONTyped(json, ignoreDiscriminator) {
         notes: json['notes'],
     };
 }
-exports.EmailIntelligenceSignalsDtoFromJSONTyped = EmailIntelligenceSignalsDtoFromJSONTyped;
 function EmailIntelligenceSignalsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -85,4 +85,3 @@ function EmailIntelligenceSignalsDtoToJSON(value) {
         notes: value.notes,
     };
 }
-exports.EmailIntelligenceSignalsDtoToJSON = EmailIntelligenceSignalsDtoToJSON;

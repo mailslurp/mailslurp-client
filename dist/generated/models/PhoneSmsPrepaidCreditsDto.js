@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneSmsPrepaidCreditsDtoToJSON = exports.PhoneSmsPrepaidCreditsDtoFromJSONTyped = exports.PhoneSmsPrepaidCreditsDtoFromJSON = void 0;
+exports.PhoneSmsPrepaidCreditsDtoFromJSON = PhoneSmsPrepaidCreditsDtoFromJSON;
+exports.PhoneSmsPrepaidCreditsDtoFromJSONTyped = PhoneSmsPrepaidCreditsDtoFromJSONTyped;
+exports.PhoneSmsPrepaidCreditsDtoToJSON = PhoneSmsPrepaidCreditsDtoToJSON;
 var _1 = require("./");
 function PhoneSmsPrepaidCreditsDtoFromJSON(json) {
     return PhoneSmsPrepaidCreditsDtoFromJSONTyped(json, false);
 }
-exports.PhoneSmsPrepaidCreditsDtoFromJSON = PhoneSmsPrepaidCreditsDtoFromJSON;
 function PhoneSmsPrepaidCreditsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function PhoneSmsPrepaidCreditsDtoFromJSONTyped(json, ignoreDiscriminator) {
         items: json['items'].map(_1.PhoneSmsPrepaidCreditDtoFromJSON),
     };
 }
-exports.PhoneSmsPrepaidCreditsDtoFromJSONTyped = PhoneSmsPrepaidCreditsDtoFromJSONTyped;
 function PhoneSmsPrepaidCreditsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function PhoneSmsPrepaidCreditsDtoToJSON(value) {
         items: value.items.map(_1.PhoneSmsPrepaidCreditDtoToJSON),
     };
 }
-exports.PhoneSmsPrepaidCreditsDtoToJSON = PhoneSmsPrepaidCreditsDtoToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupTlsReportingDomainResultsToJSON = exports.LookupTlsReportingDomainResultsFromJSONTyped = exports.LookupTlsReportingDomainResultsFromJSON = void 0;
+exports.LookupTlsReportingDomainResultsFromJSON = LookupTlsReportingDomainResultsFromJSON;
+exports.LookupTlsReportingDomainResultsFromJSONTyped = LookupTlsReportingDomainResultsFromJSONTyped;
+exports.LookupTlsReportingDomainResultsToJSON = LookupTlsReportingDomainResultsToJSON;
 var _1 = require("./");
 function LookupTlsReportingDomainResultsFromJSON(json) {
     return LookupTlsReportingDomainResultsFromJSONTyped(json, false);
 }
-exports.LookupTlsReportingDomainResultsFromJSON = LookupTlsReportingDomainResultsFromJSON;
 function LookupTlsReportingDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function LookupTlsReportingDomainResultsFromJSONTyped(json, ignoreDiscriminator)
         warnings: json['warnings'],
     };
 }
-exports.LookupTlsReportingDomainResultsFromJSONTyped = LookupTlsReportingDomainResultsFromJSONTyped;
 function LookupTlsReportingDomainResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function LookupTlsReportingDomainResultsToJSON(value) {
         warnings: value.warnings,
     };
 }
-exports.LookupTlsReportingDomainResultsToJSON = LookupTlsReportingDomainResultsToJSON;

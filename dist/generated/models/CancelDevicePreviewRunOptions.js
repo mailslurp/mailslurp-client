@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CancelDevicePreviewRunOptionsToJSON = exports.CancelDevicePreviewRunOptionsFromJSONTyped = exports.CancelDevicePreviewRunOptionsFromJSON = void 0;
+exports.CancelDevicePreviewRunOptionsFromJSON = CancelDevicePreviewRunOptionsFromJSON;
+exports.CancelDevicePreviewRunOptionsFromJSONTyped = CancelDevicePreviewRunOptionsFromJSONTyped;
+exports.CancelDevicePreviewRunOptionsToJSON = CancelDevicePreviewRunOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CancelDevicePreviewRunOptionsFromJSON(json) {
     return CancelDevicePreviewRunOptionsFromJSONTyped(json, false);
 }
-exports.CancelDevicePreviewRunOptionsFromJSON = CancelDevicePreviewRunOptionsFromJSON;
 function CancelDevicePreviewRunOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function CancelDevicePreviewRunOptionsFromJSONTyped(json, ignoreDiscriminator) {
         reason: !(0, runtime_1.exists)(json, 'reason') ? undefined : json['reason'],
     };
 }
-exports.CancelDevicePreviewRunOptionsFromJSONTyped = CancelDevicePreviewRunOptionsFromJSONTyped;
 function CancelDevicePreviewRunOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function CancelDevicePreviewRunOptionsToJSON(value) {
         reason: value.reason,
     };
 }
-exports.CancelDevicePreviewRunOptionsToJSON = CancelDevicePreviewRunOptionsToJSON;

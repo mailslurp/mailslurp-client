@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageResultToJSON = exports.AIMessageResultFromJSONTyped = exports.AIMessageResultFromJSON = exports.AIMessageResultAssertionStatusEnum = exports.AIMessageResultStatusEnum = void 0;
+exports.AIMessageResultAssertionStatusEnum = exports.AIMessageResultStatusEnum = void 0;
+exports.AIMessageResultFromJSON = AIMessageResultFromJSON;
+exports.AIMessageResultFromJSONTyped = AIMessageResultFromJSONTyped;
+exports.AIMessageResultToJSON = AIMessageResultToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -33,7 +36,7 @@ var AIMessageResultStatusEnum;
     AIMessageResultStatusEnum["PROVIDER_ERROR"] = "PROVIDER_ERROR";
     AIMessageResultStatusEnum["PROVIDER_TIMEOUT"] = "PROVIDER_TIMEOUT";
     AIMessageResultStatusEnum["INVALID_OUTPUT"] = "INVALID_OUTPUT";
-})(AIMessageResultStatusEnum = exports.AIMessageResultStatusEnum || (exports.AIMessageResultStatusEnum = {}));
+})(AIMessageResultStatusEnum || (exports.AIMessageResultStatusEnum = AIMessageResultStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -43,11 +46,10 @@ var AIMessageResultAssertionStatusEnum;
     AIMessageResultAssertionStatusEnum["PASS"] = "PASS";
     AIMessageResultAssertionStatusEnum["FAIL"] = "FAIL";
     AIMessageResultAssertionStatusEnum["INCONCLUSIVE"] = "INCONCLUSIVE";
-})(AIMessageResultAssertionStatusEnum = exports.AIMessageResultAssertionStatusEnum || (exports.AIMessageResultAssertionStatusEnum = {}));
+})(AIMessageResultAssertionStatusEnum || (exports.AIMessageResultAssertionStatusEnum = AIMessageResultAssertionStatusEnum = {}));
 function AIMessageResultFromJSON(json) {
     return AIMessageResultFromJSONTyped(json, false);
 }
-exports.AIMessageResultFromJSON = AIMessageResultFromJSON;
 function AIMessageResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -81,7 +83,6 @@ function AIMessageResultFromJSONTyped(json, ignoreDiscriminator) {
         failedAssertionIds: json['failedAssertionIds'],
     };
 }
-exports.AIMessageResultFromJSONTyped = AIMessageResultFromJSONTyped;
 function AIMessageResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -108,4 +109,3 @@ function AIMessageResultToJSON(value) {
         extractionReason: value.extractionReason,
     };
 }
-exports.AIMessageResultToJSON = AIMessageResultToJSON;

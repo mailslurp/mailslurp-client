@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExpiredInboxDtoToJSON = exports.ExpiredInboxDtoFromJSONTyped = exports.ExpiredInboxDtoFromJSON = void 0;
+exports.ExpiredInboxDtoFromJSON = ExpiredInboxDtoFromJSON;
+exports.ExpiredInboxDtoFromJSONTyped = ExpiredInboxDtoFromJSONTyped;
+exports.ExpiredInboxDtoToJSON = ExpiredInboxDtoToJSON;
 function ExpiredInboxDtoFromJSON(json) {
     return ExpiredInboxDtoFromJSONTyped(json, false);
 }
-exports.ExpiredInboxDtoFromJSON = ExpiredInboxDtoFromJSON;
 function ExpiredInboxDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function ExpiredInboxDtoFromJSONTyped(json, ignoreDiscriminator) {
         emailAddress: json['emailAddress'],
     };
 }
-exports.ExpiredInboxDtoFromJSONTyped = ExpiredInboxDtoFromJSONTyped;
 function ExpiredInboxDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ExpiredInboxDtoToJSON(value) {
         emailAddress: value.emailAddress,
     };
 }
-exports.ExpiredInboxDtoToJSON = ExpiredInboxDtoToJSON;

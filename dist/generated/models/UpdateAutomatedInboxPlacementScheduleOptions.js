@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateAutomatedInboxPlacementScheduleOptionsToJSON = exports.UpdateAutomatedInboxPlacementScheduleOptionsFromJSONTyped = exports.UpdateAutomatedInboxPlacementScheduleOptionsFromJSON = exports.UpdateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum = void 0;
+exports.UpdateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum = void 0;
+exports.UpdateAutomatedInboxPlacementScheduleOptionsFromJSON = UpdateAutomatedInboxPlacementScheduleOptionsFromJSON;
+exports.UpdateAutomatedInboxPlacementScheduleOptionsFromJSONTyped = UpdateAutomatedInboxPlacementScheduleOptionsFromJSONTyped;
+exports.UpdateAutomatedInboxPlacementScheduleOptionsToJSON = UpdateAutomatedInboxPlacementScheduleOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var UpdateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum;
     UpdateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum["ALL_INBOXES"] = "ALL_INBOXES";
     UpdateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum["PERSONAL_INBOXES"] = "PERSONAL_INBOXES";
     UpdateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum["PROFESSIONAL_INBOXES"] = "PROFESSIONAL_INBOXES";
-})(UpdateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum = exports.UpdateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum || (exports.UpdateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum = {}));
+})(UpdateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum || (exports.UpdateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum = UpdateAutomatedInboxPlacementScheduleOptionsRequestedSegmentEnum = {}));
 function UpdateAutomatedInboxPlacementScheduleOptionsFromJSON(json) {
     return UpdateAutomatedInboxPlacementScheduleOptionsFromJSONTyped(json, false);
 }
-exports.UpdateAutomatedInboxPlacementScheduleOptionsFromJSON = UpdateAutomatedInboxPlacementScheduleOptionsFromJSON;
 function UpdateAutomatedInboxPlacementScheduleOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -56,7 +58,6 @@ function UpdateAutomatedInboxPlacementScheduleOptionsFromJSONTyped(json, ignoreD
             : json['htmlBodyTemplate'],
     };
 }
-exports.UpdateAutomatedInboxPlacementScheduleOptionsFromJSONTyped = UpdateAutomatedInboxPlacementScheduleOptionsFromJSONTyped;
 function UpdateAutomatedInboxPlacementScheduleOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -75,4 +76,3 @@ function UpdateAutomatedInboxPlacementScheduleOptionsToJSON(value) {
         htmlBodyTemplate: value.htmlBodyTemplate,
     };
 }
-exports.UpdateAutomatedInboxPlacementScheduleOptionsToJSON = UpdateAutomatedInboxPlacementScheduleOptionsToJSON;

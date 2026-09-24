@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorEventDtoToJSON = exports.ConnectorEventDtoFromJSONTyped = exports.ConnectorEventDtoFromJSON = exports.ConnectorEventDtoEventTypeEnum = exports.ConnectorEventDtoStatusEnum = void 0;
+exports.ConnectorEventDtoEventTypeEnum = exports.ConnectorEventDtoStatusEnum = void 0;
+exports.ConnectorEventDtoFromJSON = ConnectorEventDtoFromJSON;
+exports.ConnectorEventDtoFromJSONTyped = ConnectorEventDtoFromJSONTyped;
+exports.ConnectorEventDtoToJSON = ConnectorEventDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,7 +29,7 @@ var ConnectorEventDtoStatusEnum;
     ConnectorEventDtoStatusEnum["SUBSCRIPTION_ERROR"] = "SUBSCRIPTION_ERROR";
     ConnectorEventDtoStatusEnum["CONNECTION_ERROR"] = "CONNECTION_ERROR";
     ConnectorEventDtoStatusEnum["NOT_FOUND"] = "NOT_FOUND";
-})(ConnectorEventDtoStatusEnum = exports.ConnectorEventDtoStatusEnum || (exports.ConnectorEventDtoStatusEnum = {}));
+})(ConnectorEventDtoStatusEnum || (exports.ConnectorEventDtoStatusEnum = ConnectorEventDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -35,11 +38,10 @@ var ConnectorEventDtoEventTypeEnum;
 (function (ConnectorEventDtoEventTypeEnum) {
     ConnectorEventDtoEventTypeEnum["SEND"] = "SEND";
     ConnectorEventDtoEventTypeEnum["SYNC"] = "SYNC";
-})(ConnectorEventDtoEventTypeEnum = exports.ConnectorEventDtoEventTypeEnum || (exports.ConnectorEventDtoEventTypeEnum = {}));
+})(ConnectorEventDtoEventTypeEnum || (exports.ConnectorEventDtoEventTypeEnum = ConnectorEventDtoEventTypeEnum = {}));
 function ConnectorEventDtoFromJSON(json) {
     return ConnectorEventDtoFromJSONTyped(json, false);
 }
-exports.ConnectorEventDtoFromJSON = ConnectorEventDtoFromJSON;
 function ConnectorEventDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -56,7 +58,6 @@ function ConnectorEventDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.ConnectorEventDtoFromJSONTyped = ConnectorEventDtoFromJSONTyped;
 function ConnectorEventDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -76,4 +77,3 @@ function ConnectorEventDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.ConnectorEventDtoToJSON = ConnectorEventDtoToJSON;

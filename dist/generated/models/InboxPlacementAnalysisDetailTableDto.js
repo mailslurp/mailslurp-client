@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementAnalysisDetailTableDtoToJSON = exports.InboxPlacementAnalysisDetailTableDtoFromJSONTyped = exports.InboxPlacementAnalysisDetailTableDtoFromJSON = void 0;
+exports.InboxPlacementAnalysisDetailTableDtoFromJSON = InboxPlacementAnalysisDetailTableDtoFromJSON;
+exports.InboxPlacementAnalysisDetailTableDtoFromJSONTyped = InboxPlacementAnalysisDetailTableDtoFromJSONTyped;
+exports.InboxPlacementAnalysisDetailTableDtoToJSON = InboxPlacementAnalysisDetailTableDtoToJSON;
 function InboxPlacementAnalysisDetailTableDtoFromJSON(json) {
     return InboxPlacementAnalysisDetailTableDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementAnalysisDetailTableDtoFromJSON = InboxPlacementAnalysisDetailTableDtoFromJSON;
 function InboxPlacementAnalysisDetailTableDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function InboxPlacementAnalysisDetailTableDtoFromJSONTyped(json, ignoreDiscrimin
         rows: json['rows'],
     };
 }
-exports.InboxPlacementAnalysisDetailTableDtoFromJSONTyped = InboxPlacementAnalysisDetailTableDtoFromJSONTyped;
 function InboxPlacementAnalysisDetailTableDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function InboxPlacementAnalysisDetailTableDtoToJSON(value) {
         rows: value.rows,
     };
 }
-exports.InboxPlacementAnalysisDetailTableDtoToJSON = InboxPlacementAnalysisDetailTableDtoToJSON;

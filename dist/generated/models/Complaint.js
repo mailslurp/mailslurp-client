@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ComplaintToJSON = exports.ComplaintFromJSONTyped = exports.ComplaintFromJSON = void 0;
+exports.ComplaintFromJSON = ComplaintFromJSON;
+exports.ComplaintFromJSONTyped = ComplaintFromJSONTyped;
+exports.ComplaintToJSON = ComplaintToJSON;
 var runtime_1 = require("../runtime");
 function ComplaintFromJSON(json) {
     return ComplaintFromJSONTyped(json, false);
 }
-exports.ComplaintFromJSON = ComplaintFromJSON;
 function ComplaintFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -36,7 +37,6 @@ function ComplaintFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.ComplaintFromJSONTyped = ComplaintFromJSONTyped;
 function ComplaintToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function ComplaintToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.ComplaintToJSON = ComplaintToJSON;

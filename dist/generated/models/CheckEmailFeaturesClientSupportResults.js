@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckEmailFeaturesClientSupportResultsToJSON = exports.CheckEmailFeaturesClientSupportResultsFromJSONTyped = exports.CheckEmailFeaturesClientSupportResultsFromJSON = void 0;
+exports.CheckEmailFeaturesClientSupportResultsFromJSON = CheckEmailFeaturesClientSupportResultsFromJSON;
+exports.CheckEmailFeaturesClientSupportResultsFromJSONTyped = CheckEmailFeaturesClientSupportResultsFromJSONTyped;
+exports.CheckEmailFeaturesClientSupportResultsToJSON = CheckEmailFeaturesClientSupportResultsToJSON;
 var _1 = require("./");
 function CheckEmailFeaturesClientSupportResultsFromJSON(json) {
     return CheckEmailFeaturesClientSupportResultsFromJSONTyped(json, false);
 }
-exports.CheckEmailFeaturesClientSupportResultsFromJSON = CheckEmailFeaturesClientSupportResultsFromJSON;
 function CheckEmailFeaturesClientSupportResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function CheckEmailFeaturesClientSupportResultsFromJSONTyped(json, ignoreDiscrim
         result: (0, _1.EmailFeatureSupportResultFromJSON)(json['result']),
     };
 }
-exports.CheckEmailFeaturesClientSupportResultsFromJSONTyped = CheckEmailFeaturesClientSupportResultsFromJSONTyped;
 function CheckEmailFeaturesClientSupportResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function CheckEmailFeaturesClientSupportResultsToJSON(value) {
         result: (0, _1.EmailFeatureSupportResultToJSON)(value.result),
     };
 }
-exports.CheckEmailFeaturesClientSupportResultsToJSON = CheckEmailFeaturesClientSupportResultsToJSON;

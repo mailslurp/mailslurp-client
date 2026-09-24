@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateContactOptionsToJSON = exports.CreateContactOptionsFromJSONTyped = exports.CreateContactOptionsFromJSON = void 0;
+exports.CreateContactOptionsFromJSON = CreateContactOptionsFromJSON;
+exports.CreateContactOptionsFromJSONTyped = CreateContactOptionsFromJSONTyped;
+exports.CreateContactOptionsToJSON = CreateContactOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateContactOptionsFromJSON(json) {
     return CreateContactOptionsFromJSONTyped(json, false);
 }
-exports.CreateContactOptionsFromJSON = CreateContactOptionsFromJSON;
 function CreateContactOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +40,6 @@ function CreateContactOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['verifyEmailAddresses'],
     };
 }
-exports.CreateContactOptionsFromJSONTyped = CreateContactOptionsFromJSONTyped;
 function CreateContactOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +59,3 @@ function CreateContactOptionsToJSON(value) {
         verifyEmailAddresses: value.verifyEmailAddresses,
     };
 }
-exports.CreateContactOptionsToJSON = CreateContactOptionsToJSON;

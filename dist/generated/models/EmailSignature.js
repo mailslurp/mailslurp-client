@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailSignatureToJSON = exports.EmailSignatureFromJSONTyped = exports.EmailSignatureFromJSON = void 0;
+exports.EmailSignatureFromJSON = EmailSignatureFromJSON;
+exports.EmailSignatureFromJSONTyped = EmailSignatureFromJSONTyped;
+exports.EmailSignatureToJSON = EmailSignatureToJSON;
 var runtime_1 = require("../runtime");
 function EmailSignatureFromJSON(json) {
     return EmailSignatureFromJSONTyped(json, false);
 }
-exports.EmailSignatureFromJSON = EmailSignatureFromJSON;
 function EmailSignatureFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function EmailSignatureFromJSONTyped(json, ignoreDiscriminator) {
         detectionType: json['detectionType'],
     };
 }
-exports.EmailSignatureFromJSONTyped = EmailSignatureFromJSONTyped;
 function EmailSignatureToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function EmailSignatureToJSON(value) {
         detectionType: value.detectionType,
     };
 }
-exports.EmailSignatureToJSON = EmailSignatureToJSON;

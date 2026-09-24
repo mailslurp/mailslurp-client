@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateEmailWarmupSenderSeatsOptionsToJSON = exports.UpdateEmailWarmupSenderSeatsOptionsFromJSONTyped = exports.UpdateEmailWarmupSenderSeatsOptionsFromJSON = void 0;
+exports.UpdateEmailWarmupSenderSeatsOptionsFromJSON = UpdateEmailWarmupSenderSeatsOptionsFromJSON;
+exports.UpdateEmailWarmupSenderSeatsOptionsFromJSONTyped = UpdateEmailWarmupSenderSeatsOptionsFromJSONTyped;
+exports.UpdateEmailWarmupSenderSeatsOptionsToJSON = UpdateEmailWarmupSenderSeatsOptionsToJSON;
 function UpdateEmailWarmupSenderSeatsOptionsFromJSON(json) {
     return UpdateEmailWarmupSenderSeatsOptionsFromJSONTyped(json, false);
 }
-exports.UpdateEmailWarmupSenderSeatsOptionsFromJSON = UpdateEmailWarmupSenderSeatsOptionsFromJSON;
 function UpdateEmailWarmupSenderSeatsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function UpdateEmailWarmupSenderSeatsOptionsFromJSONTyped(json, ignoreDiscrimina
         quantity: json['quantity'],
     };
 }
-exports.UpdateEmailWarmupSenderSeatsOptionsFromJSONTyped = UpdateEmailWarmupSenderSeatsOptionsFromJSONTyped;
 function UpdateEmailWarmupSenderSeatsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function UpdateEmailWarmupSenderSeatsOptionsToJSON(value) {
         quantity: value.quantity,
     };
 }
-exports.UpdateEmailWarmupSenderSeatsOptionsToJSON = UpdateEmailWarmupSenderSeatsOptionsToJSON;

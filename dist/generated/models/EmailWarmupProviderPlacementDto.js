@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupProviderPlacementDtoToJSON = exports.EmailWarmupProviderPlacementDtoFromJSONTyped = exports.EmailWarmupProviderPlacementDtoFromJSON = void 0;
+exports.EmailWarmupProviderPlacementDtoFromJSON = EmailWarmupProviderPlacementDtoFromJSON;
+exports.EmailWarmupProviderPlacementDtoFromJSONTyped = EmailWarmupProviderPlacementDtoFromJSONTyped;
+exports.EmailWarmupProviderPlacementDtoToJSON = EmailWarmupProviderPlacementDtoToJSON;
 function EmailWarmupProviderPlacementDtoFromJSON(json) {
     return EmailWarmupProviderPlacementDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupProviderPlacementDtoFromJSON = EmailWarmupProviderPlacementDtoFromJSON;
 function EmailWarmupProviderPlacementDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function EmailWarmupProviderPlacementDtoFromJSONTyped(json, ignoreDiscriminator)
         inboxPercent: json['inboxPercent'],
     };
 }
-exports.EmailWarmupProviderPlacementDtoFromJSONTyped = EmailWarmupProviderPlacementDtoFromJSONTyped;
 function EmailWarmupProviderPlacementDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function EmailWarmupProviderPlacementDtoToJSON(value) {
         inboxPercent: value.inboxPercent,
     };
 }
-exports.EmailWarmupProviderPlacementDtoToJSON = EmailWarmupProviderPlacementDtoToJSON;

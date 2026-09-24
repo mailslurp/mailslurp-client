@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerSearchResultToJSON = exports.ImapServerSearchResultFromJSONTyped = exports.ImapServerSearchResultFromJSON = void 0;
+exports.ImapServerSearchResultFromJSON = ImapServerSearchResultFromJSON;
+exports.ImapServerSearchResultFromJSONTyped = ImapServerSearchResultFromJSONTyped;
+exports.ImapServerSearchResultToJSON = ImapServerSearchResultToJSON;
 var _1 = require("./");
 function ImapServerSearchResultFromJSON(json) {
     return ImapServerSearchResultFromJSONTyped(json, false);
 }
-exports.ImapServerSearchResultFromJSON = ImapServerSearchResultFromJSON;
 function ImapServerSearchResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function ImapServerSearchResultFromJSONTyped(json, ignoreDiscriminator) {
         results: json['results'].map(_1.ImapEmailProjectionFromJSON),
     };
 }
-exports.ImapServerSearchResultFromJSONTyped = ImapServerSearchResultFromJSONTyped;
 function ImapServerSearchResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function ImapServerSearchResultToJSON(value) {
         results: value.results.map(_1.ImapEmailProjectionToJSON),
     };
 }
-exports.ImapServerSearchResultToJSON = ImapServerSearchResultToJSON;

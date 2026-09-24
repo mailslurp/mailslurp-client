@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeatureVersionStatisticsToJSON = exports.EmailFeatureVersionStatisticsFromJSONTyped = exports.EmailFeatureVersionStatisticsFromJSON = void 0;
+exports.EmailFeatureVersionStatisticsFromJSON = EmailFeatureVersionStatisticsFromJSON;
+exports.EmailFeatureVersionStatisticsFromJSONTyped = EmailFeatureVersionStatisticsFromJSONTyped;
+exports.EmailFeatureVersionStatisticsToJSON = EmailFeatureVersionStatisticsToJSON;
 var _1 = require("./");
 function EmailFeatureVersionStatisticsFromJSON(json) {
     return EmailFeatureVersionStatisticsFromJSONTyped(json, false);
 }
-exports.EmailFeatureVersionStatisticsFromJSON = EmailFeatureVersionStatisticsFromJSON;
 function EmailFeatureVersionStatisticsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function EmailFeatureVersionStatisticsFromJSONTyped(json, ignoreDiscriminator) {
         supportFlags: (0, _1.EmailFeatureSupportFlagsFromJSON)(json['supportFlags']),
     };
 }
-exports.EmailFeatureVersionStatisticsFromJSONTyped = EmailFeatureVersionStatisticsFromJSONTyped;
 function EmailFeatureVersionStatisticsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function EmailFeatureVersionStatisticsToJSON(value) {
         supportFlags: (0, _1.EmailFeatureSupportFlagsToJSON)(value.supportFlags),
     };
 }
-exports.EmailFeatureVersionStatisticsToJSON = EmailFeatureVersionStatisticsToJSON;

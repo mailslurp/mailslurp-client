@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SetInboxFavouritedOptionsToJSON = exports.SetInboxFavouritedOptionsFromJSONTyped = exports.SetInboxFavouritedOptionsFromJSON = void 0;
+exports.SetInboxFavouritedOptionsFromJSON = SetInboxFavouritedOptionsFromJSON;
+exports.SetInboxFavouritedOptionsFromJSONTyped = SetInboxFavouritedOptionsFromJSONTyped;
+exports.SetInboxFavouritedOptionsToJSON = SetInboxFavouritedOptionsToJSON;
 function SetInboxFavouritedOptionsFromJSON(json) {
     return SetInboxFavouritedOptionsFromJSONTyped(json, false);
 }
-exports.SetInboxFavouritedOptionsFromJSON = SetInboxFavouritedOptionsFromJSON;
 function SetInboxFavouritedOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function SetInboxFavouritedOptionsFromJSONTyped(json, ignoreDiscriminator) {
         state: json['state'],
     };
 }
-exports.SetInboxFavouritedOptionsFromJSONTyped = SetInboxFavouritedOptionsFromJSONTyped;
 function SetInboxFavouritedOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function SetInboxFavouritedOptionsToJSON(value) {
         state: value.state,
     };
 }
-exports.SetInboxFavouritedOptionsToJSON = SetInboxFavouritedOptionsToJSON;

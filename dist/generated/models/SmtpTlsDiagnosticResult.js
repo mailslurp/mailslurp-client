@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmtpTlsDiagnosticResultToJSON = exports.SmtpTlsDiagnosticResultFromJSONTyped = exports.SmtpTlsDiagnosticResultFromJSON = void 0;
+exports.SmtpTlsDiagnosticResultFromJSON = SmtpTlsDiagnosticResultFromJSON;
+exports.SmtpTlsDiagnosticResultFromJSONTyped = SmtpTlsDiagnosticResultFromJSONTyped;
+exports.SmtpTlsDiagnosticResultToJSON = SmtpTlsDiagnosticResultToJSON;
 var runtime_1 = require("../runtime");
 function SmtpTlsDiagnosticResultFromJSON(json) {
     return SmtpTlsDiagnosticResultFromJSONTyped(json, false);
 }
-exports.SmtpTlsDiagnosticResultFromJSON = SmtpTlsDiagnosticResultFromJSON;
 function SmtpTlsDiagnosticResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function SmtpTlsDiagnosticResultFromJSONTyped(json, ignoreDiscriminator) {
         cipher: !(0, runtime_1.exists)(json, 'cipher') ? undefined : json['cipher'],
     };
 }
-exports.SmtpTlsDiagnosticResultFromJSONTyped = SmtpTlsDiagnosticResultFromJSONTyped;
 function SmtpTlsDiagnosticResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function SmtpTlsDiagnosticResultToJSON(value) {
         cipher: value.cipher,
     };
 }
-exports.SmtpTlsDiagnosticResultToJSON = SmtpTlsDiagnosticResultToJSON;

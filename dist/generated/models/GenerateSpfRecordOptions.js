@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateSpfRecordOptionsToJSON = exports.GenerateSpfRecordOptionsFromJSONTyped = exports.GenerateSpfRecordOptionsFromJSON = exports.GenerateSpfRecordOptionsAllPolicyEnum = void 0;
+exports.GenerateSpfRecordOptionsAllPolicyEnum = void 0;
+exports.GenerateSpfRecordOptionsFromJSON = GenerateSpfRecordOptionsFromJSON;
+exports.GenerateSpfRecordOptionsFromJSONTyped = GenerateSpfRecordOptionsFromJSONTyped;
+exports.GenerateSpfRecordOptionsToJSON = GenerateSpfRecordOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var GenerateSpfRecordOptionsAllPolicyEnum;
     GenerateSpfRecordOptionsAllPolicyEnum["FAIL"] = "FAIL";
     GenerateSpfRecordOptionsAllPolicyEnum["SOFTFAIL"] = "SOFTFAIL";
     GenerateSpfRecordOptionsAllPolicyEnum["NEUTRAL"] = "NEUTRAL";
-})(GenerateSpfRecordOptionsAllPolicyEnum = exports.GenerateSpfRecordOptionsAllPolicyEnum || (exports.GenerateSpfRecordOptionsAllPolicyEnum = {}));
+})(GenerateSpfRecordOptionsAllPolicyEnum || (exports.GenerateSpfRecordOptionsAllPolicyEnum = GenerateSpfRecordOptionsAllPolicyEnum = {}));
 function GenerateSpfRecordOptionsFromJSON(json) {
     return GenerateSpfRecordOptionsFromJSONTyped(json, false);
 }
-exports.GenerateSpfRecordOptionsFromJSON = GenerateSpfRecordOptionsFromJSON;
 function GenerateSpfRecordOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -45,7 +47,6 @@ function GenerateSpfRecordOptionsFromJSONTyped(json, ignoreDiscriminator) {
         allPolicy: json['allPolicy'],
     };
 }
-exports.GenerateSpfRecordOptionsFromJSONTyped = GenerateSpfRecordOptionsFromJSONTyped;
 function GenerateSpfRecordOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -63,4 +64,3 @@ function GenerateSpfRecordOptionsToJSON(value) {
         allPolicy: value.allPolicy,
     };
 }
-exports.GenerateSpfRecordOptionsToJSON = GenerateSpfRecordOptionsToJSON;

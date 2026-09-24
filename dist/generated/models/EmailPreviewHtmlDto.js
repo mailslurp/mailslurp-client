@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailPreviewHtmlDtoToJSON = exports.EmailPreviewHtmlDtoFromJSONTyped = exports.EmailPreviewHtmlDtoFromJSON = exports.EmailPreviewHtmlDtoLinkBehaviorEnum = void 0;
+exports.EmailPreviewHtmlDtoLinkBehaviorEnum = void 0;
+exports.EmailPreviewHtmlDtoFromJSON = EmailPreviewHtmlDtoFromJSON;
+exports.EmailPreviewHtmlDtoFromJSONTyped = EmailPreviewHtmlDtoFromJSONTyped;
+exports.EmailPreviewHtmlDtoToJSON = EmailPreviewHtmlDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var EmailPreviewHtmlDtoLinkBehaviorEnum;
     EmailPreviewHtmlDtoLinkBehaviorEnum["PRESERVE"] = "PRESERVE";
     EmailPreviewHtmlDtoLinkBehaviorEnum["NEW_TAB"] = "NEW_TAB";
     EmailPreviewHtmlDtoLinkBehaviorEnum["DISABLED"] = "DISABLED";
-})(EmailPreviewHtmlDtoLinkBehaviorEnum = exports.EmailPreviewHtmlDtoLinkBehaviorEnum || (exports.EmailPreviewHtmlDtoLinkBehaviorEnum = {}));
+})(EmailPreviewHtmlDtoLinkBehaviorEnum || (exports.EmailPreviewHtmlDtoLinkBehaviorEnum = EmailPreviewHtmlDtoLinkBehaviorEnum = {}));
 function EmailPreviewHtmlDtoFromJSON(json) {
     return EmailPreviewHtmlDtoFromJSONTyped(json, false);
 }
-exports.EmailPreviewHtmlDtoFromJSON = EmailPreviewHtmlDtoFromJSON;
 function EmailPreviewHtmlDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +41,6 @@ function EmailPreviewHtmlDtoFromJSONTyped(json, ignoreDiscriminator) {
         linkBehavior: json['linkBehavior'],
     };
 }
-exports.EmailPreviewHtmlDtoFromJSONTyped = EmailPreviewHtmlDtoFromJSONTyped;
 function EmailPreviewHtmlDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +54,3 @@ function EmailPreviewHtmlDtoToJSON(value) {
         linkBehavior: value.linkBehavior,
     };
 }
-exports.EmailPreviewHtmlDtoToJSON = EmailPreviewHtmlDtoToJSON;

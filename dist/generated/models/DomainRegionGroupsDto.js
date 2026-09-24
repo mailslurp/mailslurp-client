@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainRegionGroupsDtoToJSON = exports.DomainRegionGroupsDtoFromJSONTyped = exports.DomainRegionGroupsDtoFromJSON = void 0;
+exports.DomainRegionGroupsDtoFromJSON = DomainRegionGroupsDtoFromJSON;
+exports.DomainRegionGroupsDtoFromJSONTyped = DomainRegionGroupsDtoFromJSONTyped;
+exports.DomainRegionGroupsDtoToJSON = DomainRegionGroupsDtoToJSON;
 var _1 = require("./");
 function DomainRegionGroupsDtoFromJSON(json) {
     return DomainRegionGroupsDtoFromJSONTyped(json, false);
 }
-exports.DomainRegionGroupsDtoFromJSON = DomainRegionGroupsDtoFromJSON;
 function DomainRegionGroupsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function DomainRegionGroupsDtoFromJSONTyped(json, ignoreDiscriminator) {
         domainGroups: json['domainGroups'].map(_1.DomainRegionGroupFromJSON),
     };
 }
-exports.DomainRegionGroupsDtoFromJSONTyped = DomainRegionGroupsDtoFromJSONTyped;
 function DomainRegionGroupsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function DomainRegionGroupsDtoToJSON(value) {
         domainGroups: value.domainGroups.map(_1.DomainRegionGroupToJSON),
     };
 }
-exports.DomainRegionGroupsDtoToJSON = DomainRegionGroupsDtoToJSON;

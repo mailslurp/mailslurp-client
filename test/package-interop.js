@@ -44,6 +44,10 @@ try {
   );
 
   var packedPackage = path.join(temporaryDirectory, 'package');
+  assert(
+    !fs.existsSync(path.join(packedPackage, 'test')),
+    'The published SDK must not contain the private test package'
+  );
   var consumerDirectory = path.join(temporaryDirectory, 'consumer');
   var consumerNodeModules = path.join(consumerDirectory, 'node_modules');
   fs.mkdirSync(consumerNodeModules, { recursive: true });

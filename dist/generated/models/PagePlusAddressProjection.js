@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PagePlusAddressProjectionToJSON = exports.PagePlusAddressProjectionFromJSONTyped = exports.PagePlusAddressProjectionFromJSON = void 0;
+exports.PagePlusAddressProjectionFromJSON = PagePlusAddressProjectionFromJSON;
+exports.PagePlusAddressProjectionFromJSONTyped = PagePlusAddressProjectionFromJSONTyped;
+exports.PagePlusAddressProjectionToJSON = PagePlusAddressProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PagePlusAddressProjectionFromJSON(json) {
     return PagePlusAddressProjectionFromJSONTyped(json, false);
 }
-exports.PagePlusAddressProjectionFromJSON = PagePlusAddressProjectionFromJSON;
 function PagePlusAddressProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PagePlusAddressProjectionFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PagePlusAddressProjectionFromJSONTyped = PagePlusAddressProjectionFromJSONTyped;
 function PagePlusAddressProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PagePlusAddressProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PagePlusAddressProjectionToJSON = PagePlusAddressProjectionToJSON;

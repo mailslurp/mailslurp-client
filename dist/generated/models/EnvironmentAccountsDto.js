@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EnvironmentAccountsDtoToJSON = exports.EnvironmentAccountsDtoFromJSONTyped = exports.EnvironmentAccountsDtoFromJSON = exports.EnvironmentAccountsDtoCallerRoleEnum = void 0;
+exports.EnvironmentAccountsDtoCallerRoleEnum = void 0;
+exports.EnvironmentAccountsDtoFromJSON = EnvironmentAccountsDtoFromJSON;
+exports.EnvironmentAccountsDtoFromJSONTyped = EnvironmentAccountsDtoFromJSONTyped;
+exports.EnvironmentAccountsDtoToJSON = EnvironmentAccountsDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -25,11 +28,10 @@ var EnvironmentAccountsDtoCallerRoleEnum;
     EnvironmentAccountsDtoCallerRoleEnum["OWNER"] = "OWNER";
     EnvironmentAccountsDtoCallerRoleEnum["ADMIN"] = "ADMIN";
     EnvironmentAccountsDtoCallerRoleEnum["MEMBER"] = "MEMBER";
-})(EnvironmentAccountsDtoCallerRoleEnum = exports.EnvironmentAccountsDtoCallerRoleEnum || (exports.EnvironmentAccountsDtoCallerRoleEnum = {}));
+})(EnvironmentAccountsDtoCallerRoleEnum || (exports.EnvironmentAccountsDtoCallerRoleEnum = EnvironmentAccountsDtoCallerRoleEnum = {}));
 function EnvironmentAccountsDtoFromJSON(json) {
     return EnvironmentAccountsDtoFromJSONTyped(json, false);
 }
-exports.EnvironmentAccountsDtoFromJSON = EnvironmentAccountsDtoFromJSON;
 function EnvironmentAccountsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -48,7 +50,6 @@ function EnvironmentAccountsDtoFromJSONTyped(json, ignoreDiscriminator) {
         links: json['links'].map(_1.EnvironmentAccountLinkDtoFromJSON),
     };
 }
-exports.EnvironmentAccountsDtoFromJSONTyped = EnvironmentAccountsDtoFromJSONTyped;
 function EnvironmentAccountsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -66,4 +67,3 @@ function EnvironmentAccountsDtoToJSON(value) {
         links: value.links.map(_1.EnvironmentAccountLinkDtoToJSON),
     };
 }
-exports.EnvironmentAccountsDtoToJSON = EnvironmentAccountsDtoToJSON;

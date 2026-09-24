@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewRunThumbnailDtoToJSON = exports.DevicePreviewRunThumbnailDtoFromJSONTyped = exports.DevicePreviewRunThumbnailDtoFromJSON = void 0;
+exports.DevicePreviewRunThumbnailDtoFromJSON = DevicePreviewRunThumbnailDtoFromJSON;
+exports.DevicePreviewRunThumbnailDtoFromJSONTyped = DevicePreviewRunThumbnailDtoFromJSONTyped;
+exports.DevicePreviewRunThumbnailDtoToJSON = DevicePreviewRunThumbnailDtoToJSON;
 var runtime_1 = require("../runtime");
 function DevicePreviewRunThumbnailDtoFromJSON(json) {
     return DevicePreviewRunThumbnailDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewRunThumbnailDtoFromJSON = DevicePreviewRunThumbnailDtoFromJSON;
 function DevicePreviewRunThumbnailDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function DevicePreviewRunThumbnailDtoFromJSONTyped(json, ignoreDiscriminator) {
         height: !(0, runtime_1.exists)(json, 'height') ? undefined : json['height'],
     };
 }
-exports.DevicePreviewRunThumbnailDtoFromJSONTyped = DevicePreviewRunThumbnailDtoFromJSONTyped;
 function DevicePreviewRunThumbnailDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function DevicePreviewRunThumbnailDtoToJSON(value) {
         height: value.height,
     };
 }
-exports.DevicePreviewRunThumbnailDtoToJSON = DevicePreviewRunThumbnailDtoToJSON;

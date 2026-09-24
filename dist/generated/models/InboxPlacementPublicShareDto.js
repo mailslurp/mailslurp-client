@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementPublicShareDtoToJSON = exports.InboxPlacementPublicShareDtoFromJSONTyped = exports.InboxPlacementPublicShareDtoFromJSON = void 0;
+exports.InboxPlacementPublicShareDtoFromJSON = InboxPlacementPublicShareDtoFromJSON;
+exports.InboxPlacementPublicShareDtoFromJSONTyped = InboxPlacementPublicShareDtoFromJSONTyped;
+exports.InboxPlacementPublicShareDtoToJSON = InboxPlacementPublicShareDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function InboxPlacementPublicShareDtoFromJSON(json) {
     return InboxPlacementPublicShareDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementPublicShareDtoFromJSON = InboxPlacementPublicShareDtoFromJSON;
 function InboxPlacementPublicShareDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function InboxPlacementPublicShareDtoFromJSONTyped(json, ignoreDiscriminator) {
         spamScores: json['spamScores'].map(_1.InboxPlacementSpamScoreDtoFromJSON),
     };
 }
-exports.InboxPlacementPublicShareDtoFromJSONTyped = InboxPlacementPublicShareDtoFromJSONTyped;
 function InboxPlacementPublicShareDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function InboxPlacementPublicShareDtoToJSON(value) {
         spamScores: value.spamScores.map(_1.InboxPlacementSpamScoreDtoToJSON),
     };
 }
-exports.InboxPlacementPublicShareDtoToJSON = InboxPlacementPublicShareDtoToJSON;

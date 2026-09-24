@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePostmasterConnectionOptionsToJSON = exports.CreatePostmasterConnectionOptionsFromJSONTyped = exports.CreatePostmasterConnectionOptionsFromJSON = void 0;
+exports.CreatePostmasterConnectionOptionsFromJSON = CreatePostmasterConnectionOptionsFromJSON;
+exports.CreatePostmasterConnectionOptionsFromJSONTyped = CreatePostmasterConnectionOptionsFromJSONTyped;
+exports.CreatePostmasterConnectionOptionsToJSON = CreatePostmasterConnectionOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreatePostmasterConnectionOptionsFromJSON(json) {
     return CreatePostmasterConnectionOptionsFromJSONTyped(json, false);
 }
-exports.CreatePostmasterConnectionOptionsFromJSON = CreatePostmasterConnectionOptionsFromJSON;
 function CreatePostmasterConnectionOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -34,7 +35,6 @@ function CreatePostmasterConnectionOptionsFromJSONTyped(json, ignoreDiscriminato
         state: !(0, runtime_1.exists)(json, 'state') ? undefined : json['state'],
     };
 }
-exports.CreatePostmasterConnectionOptionsFromJSONTyped = CreatePostmasterConnectionOptionsFromJSONTyped;
 function CreatePostmasterConnectionOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function CreatePostmasterConnectionOptionsToJSON(value) {
         state: value.state,
     };
 }
-exports.CreatePostmasterConnectionOptionsToJSON = CreatePostmasterConnectionOptionsToJSON;

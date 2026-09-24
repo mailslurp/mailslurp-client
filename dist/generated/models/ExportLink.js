@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExportLinkToJSON = exports.ExportLinkFromJSONTyped = exports.ExportLinkFromJSON = void 0;
+exports.ExportLinkFromJSON = ExportLinkFromJSON;
+exports.ExportLinkFromJSONTyped = ExportLinkFromJSONTyped;
+exports.ExportLinkToJSON = ExportLinkToJSON;
 function ExportLinkFromJSON(json) {
     return ExportLinkFromJSONTyped(json, false);
 }
-exports.ExportLinkFromJSON = ExportLinkFromJSON;
 function ExportLinkFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function ExportLinkFromJSONTyped(json, ignoreDiscriminator) {
         downloadLink: json['downloadLink'],
     };
 }
-exports.ExportLinkFromJSONTyped = ExportLinkFromJSONTyped;
 function ExportLinkToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function ExportLinkToJSON(value) {
         downloadLink: value.downloadLink,
     };
 }
-exports.ExportLinkToJSON = ExportLinkToJSON;

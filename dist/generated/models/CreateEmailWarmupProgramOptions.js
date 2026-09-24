@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateEmailWarmupProgramOptionsToJSON = exports.CreateEmailWarmupProgramOptionsFromJSONTyped = exports.CreateEmailWarmupProgramOptionsFromJSON = exports.CreateEmailWarmupProgramOptionsRequestedCoverageEnum = exports.CreateEmailWarmupProgramOptionsSchedulePresetEnum = exports.CreateEmailWarmupProgramOptionsCustomerIntentEnum = void 0;
+exports.CreateEmailWarmupProgramOptionsRequestedCoverageEnum = exports.CreateEmailWarmupProgramOptionsSchedulePresetEnum = exports.CreateEmailWarmupProgramOptionsCustomerIntentEnum = void 0;
+exports.CreateEmailWarmupProgramOptionsFromJSON = CreateEmailWarmupProgramOptionsFromJSON;
+exports.CreateEmailWarmupProgramOptionsFromJSONTyped = CreateEmailWarmupProgramOptionsFromJSONTyped;
+exports.CreateEmailWarmupProgramOptionsToJSON = CreateEmailWarmupProgramOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,7 +27,7 @@ var CreateEmailWarmupProgramOptionsCustomerIntentEnum;
 (function (CreateEmailWarmupProgramOptionsCustomerIntentEnum) {
     CreateEmailWarmupProgramOptionsCustomerIntentEnum["NEW_SENDER_WARMUP"] = "NEW_SENDER_WARMUP";
     CreateEmailWarmupProgramOptionsCustomerIntentEnum["EXISTING_SENDER_REPAIR"] = "EXISTING_SENDER_REPAIR";
-})(CreateEmailWarmupProgramOptionsCustomerIntentEnum = exports.CreateEmailWarmupProgramOptionsCustomerIntentEnum || (exports.CreateEmailWarmupProgramOptionsCustomerIntentEnum = {}));
+})(CreateEmailWarmupProgramOptionsCustomerIntentEnum || (exports.CreateEmailWarmupProgramOptionsCustomerIntentEnum = CreateEmailWarmupProgramOptionsCustomerIntentEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -35,7 +38,7 @@ var CreateEmailWarmupProgramOptionsSchedulePresetEnum;
     CreateEmailWarmupProgramOptionsSchedulePresetEnum["STANDARD"] = "STANDARD";
     CreateEmailWarmupProgramOptionsSchedulePresetEnum["REPAIR"] = "REPAIR";
     CreateEmailWarmupProgramOptionsSchedulePresetEnum["CUSTOM"] = "CUSTOM";
-})(CreateEmailWarmupProgramOptionsSchedulePresetEnum = exports.CreateEmailWarmupProgramOptionsSchedulePresetEnum || (exports.CreateEmailWarmupProgramOptionsSchedulePresetEnum = {}));
+})(CreateEmailWarmupProgramOptionsSchedulePresetEnum || (exports.CreateEmailWarmupProgramOptionsSchedulePresetEnum = CreateEmailWarmupProgramOptionsSchedulePresetEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -46,11 +49,10 @@ var CreateEmailWarmupProgramOptionsRequestedCoverageEnum;
     CreateEmailWarmupProgramOptionsRequestedCoverageEnum["CONTROLLED"] = "CONTROLLED";
     CreateEmailWarmupProgramOptionsRequestedCoverageEnum["CORE"] = "CORE";
     CreateEmailWarmupProgramOptionsRequestedCoverageEnum["EXPANDED"] = "EXPANDED";
-})(CreateEmailWarmupProgramOptionsRequestedCoverageEnum = exports.CreateEmailWarmupProgramOptionsRequestedCoverageEnum || (exports.CreateEmailWarmupProgramOptionsRequestedCoverageEnum = {}));
+})(CreateEmailWarmupProgramOptionsRequestedCoverageEnum || (exports.CreateEmailWarmupProgramOptionsRequestedCoverageEnum = CreateEmailWarmupProgramOptionsRequestedCoverageEnum = {}));
 function CreateEmailWarmupProgramOptionsFromJSON(json) {
     return CreateEmailWarmupProgramOptionsFromJSONTyped(json, false);
 }
-exports.CreateEmailWarmupProgramOptionsFromJSON = CreateEmailWarmupProgramOptionsFromJSON;
 function CreateEmailWarmupProgramOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -77,7 +79,6 @@ function CreateEmailWarmupProgramOptionsFromJSONTyped(json, ignoreDiscriminator)
         permissionBasedSendingAttested: json['permissionBasedSendingAttested'],
     };
 }
-exports.CreateEmailWarmupProgramOptionsFromJSONTyped = CreateEmailWarmupProgramOptionsFromJSONTyped;
 function CreateEmailWarmupProgramOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -105,4 +106,3 @@ function CreateEmailWarmupProgramOptionsToJSON(value) {
         permissionBasedSendingAttested: value.permissionBasedSendingAttested,
     };
 }
-exports.CreateEmailWarmupProgramOptionsToJSON = CreateEmailWarmupProgramOptionsToJSON;

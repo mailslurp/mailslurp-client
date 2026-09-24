@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendWithQueueResultToJSON = exports.SendWithQueueResultFromJSONTyped = exports.SendWithQueueResultFromJSON = void 0;
+exports.SendWithQueueResultFromJSON = SendWithQueueResultFromJSON;
+exports.SendWithQueueResultFromJSONTyped = SendWithQueueResultFromJSONTyped;
+exports.SendWithQueueResultToJSON = SendWithQueueResultToJSON;
 var runtime_1 = require("../runtime");
 function SendWithQueueResultFromJSON(json) {
     return SendWithQueueResultFromJSONTyped(json, false);
 }
-exports.SendWithQueueResultFromJSON = SendWithQueueResultFromJSON;
 function SendWithQueueResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +39,6 @@ function SendWithQueueResultFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.SendWithQueueResultFromJSONTyped = SendWithQueueResultFromJSONTyped;
 function SendWithQueueResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +59,3 @@ function SendWithQueueResultToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.SendWithQueueResultToJSON = SendWithQueueResultToJSON;

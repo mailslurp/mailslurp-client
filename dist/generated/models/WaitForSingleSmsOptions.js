@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WaitForSingleSmsOptionsToJSON = exports.WaitForSingleSmsOptionsFromJSONTyped = exports.WaitForSingleSmsOptionsFromJSON = exports.WaitForSingleSmsOptionsSortDirectionEnum = void 0;
+exports.WaitForSingleSmsOptionsSortDirectionEnum = void 0;
+exports.WaitForSingleSmsOptionsFromJSON = WaitForSingleSmsOptionsFromJSON;
+exports.WaitForSingleSmsOptionsFromJSONTyped = WaitForSingleSmsOptionsFromJSONTyped;
+exports.WaitForSingleSmsOptionsToJSON = WaitForSingleSmsOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var WaitForSingleSmsOptionsSortDirectionEnum;
 (function (WaitForSingleSmsOptionsSortDirectionEnum) {
     WaitForSingleSmsOptionsSortDirectionEnum["ASC"] = "ASC";
     WaitForSingleSmsOptionsSortDirectionEnum["DESC"] = "DESC";
-})(WaitForSingleSmsOptionsSortDirectionEnum = exports.WaitForSingleSmsOptionsSortDirectionEnum || (exports.WaitForSingleSmsOptionsSortDirectionEnum = {}));
+})(WaitForSingleSmsOptionsSortDirectionEnum || (exports.WaitForSingleSmsOptionsSortDirectionEnum = WaitForSingleSmsOptionsSortDirectionEnum = {}));
 function WaitForSingleSmsOptionsFromJSON(json) {
     return WaitForSingleSmsOptionsFromJSONTyped(json, false);
 }
-exports.WaitForSingleSmsOptionsFromJSON = WaitForSingleSmsOptionsFromJSON;
 function WaitForSingleSmsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -52,7 +54,6 @@ function WaitForSingleSmsOptionsFromJSONTyped(json, ignoreDiscriminator) {
         delay: !(0, runtime_1.exists)(json, 'delay') ? undefined : json['delay'],
     };
 }
-exports.WaitForSingleSmsOptionsFromJSONTyped = WaitForSingleSmsOptionsFromJSONTyped;
 function WaitForSingleSmsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -78,4 +79,3 @@ function WaitForSingleSmsOptionsToJSON(value) {
         delay: value.delay,
     };
 }
-exports.WaitForSingleSmsOptionsToJSON = WaitForSingleSmsOptionsToJSON;

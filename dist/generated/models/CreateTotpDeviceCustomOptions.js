@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateTotpDeviceCustomOptionsToJSON = exports.CreateTotpDeviceCustomOptionsFromJSONTyped = exports.CreateTotpDeviceCustomOptionsFromJSON = void 0;
+exports.CreateTotpDeviceCustomOptionsFromJSON = CreateTotpDeviceCustomOptionsFromJSON;
+exports.CreateTotpDeviceCustomOptionsFromJSONTyped = CreateTotpDeviceCustomOptionsFromJSONTyped;
+exports.CreateTotpDeviceCustomOptionsToJSON = CreateTotpDeviceCustomOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateTotpDeviceCustomOptionsFromJSON(json) {
     return CreateTotpDeviceCustomOptionsFromJSONTyped(json, false);
 }
-exports.CreateTotpDeviceCustomOptionsFromJSON = CreateTotpDeviceCustomOptionsFromJSON;
 function CreateTotpDeviceCustomOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function CreateTotpDeviceCustomOptionsFromJSONTyped(json, ignoreDiscriminator) {
         algorithm: !(0, runtime_1.exists)(json, 'algorithm') ? undefined : json['algorithm'],
     };
 }
-exports.CreateTotpDeviceCustomOptionsFromJSONTyped = CreateTotpDeviceCustomOptionsFromJSONTyped;
 function CreateTotpDeviceCustomOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function CreateTotpDeviceCustomOptionsToJSON(value) {
         algorithm: value.algorithm,
     };
 }
-exports.CreateTotpDeviceCustomOptionsToJSON = CreateTotpDeviceCustomOptionsToJSON;

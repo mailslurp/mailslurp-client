@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewSharedTargetDtoToJSON = exports.DevicePreviewSharedTargetDtoFromJSONTyped = exports.DevicePreviewSharedTargetDtoFromJSON = exports.DevicePreviewSharedTargetDtoStatusEnum = void 0;
+exports.DevicePreviewSharedTargetDtoStatusEnum = void 0;
+exports.DevicePreviewSharedTargetDtoFromJSON = DevicePreviewSharedTargetDtoFromJSON;
+exports.DevicePreviewSharedTargetDtoFromJSONTyped = DevicePreviewSharedTargetDtoFromJSONTyped;
+exports.DevicePreviewSharedTargetDtoToJSON = DevicePreviewSharedTargetDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -30,11 +33,10 @@ var DevicePreviewSharedTargetDtoStatusEnum;
     DevicePreviewSharedTargetDtoStatusEnum["TIMED_OUT"] = "TIMED_OUT";
     DevicePreviewSharedTargetDtoStatusEnum["SKIPPED_OFFLINE"] = "SKIPPED_OFFLINE";
     DevicePreviewSharedTargetDtoStatusEnum["SETUP_REQUIRED"] = "SETUP_REQUIRED";
-})(DevicePreviewSharedTargetDtoStatusEnum = exports.DevicePreviewSharedTargetDtoStatusEnum || (exports.DevicePreviewSharedTargetDtoStatusEnum = {}));
+})(DevicePreviewSharedTargetDtoStatusEnum || (exports.DevicePreviewSharedTargetDtoStatusEnum = DevicePreviewSharedTargetDtoStatusEnum = {}));
 function DevicePreviewSharedTargetDtoFromJSON(json) {
     return DevicePreviewSharedTargetDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewSharedTargetDtoFromJSON = DevicePreviewSharedTargetDtoFromJSON;
 function DevicePreviewSharedTargetDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -61,7 +63,6 @@ function DevicePreviewSharedTargetDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DevicePreviewSharedTargetDtoFromJSONTyped = DevicePreviewSharedTargetDtoFromJSONTyped;
 function DevicePreviewSharedTargetDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -85,4 +86,3 @@ function DevicePreviewSharedTargetDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DevicePreviewSharedTargetDtoToJSON = DevicePreviewSharedTargetDtoToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhonePlanDtoToJSON = exports.PhonePlanDtoFromJSONTyped = exports.PhonePlanDtoFromJSON = exports.PhonePlanDtoPhoneCountryEnum = void 0;
+exports.PhonePlanDtoPhoneCountryEnum = void 0;
+exports.PhonePlanDtoFromJSON = PhonePlanDtoFromJSON;
+exports.PhonePlanDtoFromJSONTyped = PhonePlanDtoFromJSONTyped;
+exports.PhonePlanDtoToJSON = PhonePlanDtoToJSON;
 /**
  * @export
  * @enum {string}
@@ -33,11 +36,10 @@ var PhonePlanDtoPhoneCountryEnum;
     PhonePlanDtoPhoneCountryEnum["IL"] = "IL";
     PhonePlanDtoPhoneCountryEnum["FI"] = "FI";
     PhonePlanDtoPhoneCountryEnum["SE"] = "SE";
-})(PhonePlanDtoPhoneCountryEnum = exports.PhonePlanDtoPhoneCountryEnum || (exports.PhonePlanDtoPhoneCountryEnum = {}));
+})(PhonePlanDtoPhoneCountryEnum || (exports.PhonePlanDtoPhoneCountryEnum = PhonePlanDtoPhoneCountryEnum = {}));
 function PhonePlanDtoFromJSON(json) {
     return PhonePlanDtoFromJSONTyped(json, false);
 }
-exports.PhonePlanDtoFromJSON = PhonePlanDtoFromJSON;
 function PhonePlanDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -49,7 +51,6 @@ function PhonePlanDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.PhonePlanDtoFromJSONTyped = PhonePlanDtoFromJSONTyped;
 function PhonePlanDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,4 +65,3 @@ function PhonePlanDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.PhonePlanDtoToJSON = PhonePlanDtoToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AutomatedInboxPlacementScheduleDtoToJSON = exports.AutomatedInboxPlacementScheduleDtoFromJSONTyped = exports.AutomatedInboxPlacementScheduleDtoFromJSON = exports.AutomatedInboxPlacementScheduleDtoLastStatusEnum = exports.AutomatedInboxPlacementScheduleDtoRequestedSegmentEnum = void 0;
+exports.AutomatedInboxPlacementScheduleDtoLastStatusEnum = exports.AutomatedInboxPlacementScheduleDtoRequestedSegmentEnum = void 0;
+exports.AutomatedInboxPlacementScheduleDtoFromJSON = AutomatedInboxPlacementScheduleDtoFromJSON;
+exports.AutomatedInboxPlacementScheduleDtoFromJSONTyped = AutomatedInboxPlacementScheduleDtoFromJSONTyped;
+exports.AutomatedInboxPlacementScheduleDtoToJSON = AutomatedInboxPlacementScheduleDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,7 +27,7 @@ var AutomatedInboxPlacementScheduleDtoRequestedSegmentEnum;
     AutomatedInboxPlacementScheduleDtoRequestedSegmentEnum["ALL_INBOXES"] = "ALL_INBOXES";
     AutomatedInboxPlacementScheduleDtoRequestedSegmentEnum["PERSONAL_INBOXES"] = "PERSONAL_INBOXES";
     AutomatedInboxPlacementScheduleDtoRequestedSegmentEnum["PROFESSIONAL_INBOXES"] = "PROFESSIONAL_INBOXES";
-})(AutomatedInboxPlacementScheduleDtoRequestedSegmentEnum = exports.AutomatedInboxPlacementScheduleDtoRequestedSegmentEnum || (exports.AutomatedInboxPlacementScheduleDtoRequestedSegmentEnum = {}));
+})(AutomatedInboxPlacementScheduleDtoRequestedSegmentEnum || (exports.AutomatedInboxPlacementScheduleDtoRequestedSegmentEnum = AutomatedInboxPlacementScheduleDtoRequestedSegmentEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -38,11 +41,10 @@ var AutomatedInboxPlacementScheduleDtoLastStatusEnum;
     AutomatedInboxPlacementScheduleDtoLastStatusEnum["PARTIAL"] = "PARTIAL";
     AutomatedInboxPlacementScheduleDtoLastStatusEnum["FAILED"] = "FAILED";
     AutomatedInboxPlacementScheduleDtoLastStatusEnum["UNCERTAIN"] = "UNCERTAIN";
-})(AutomatedInboxPlacementScheduleDtoLastStatusEnum = exports.AutomatedInboxPlacementScheduleDtoLastStatusEnum || (exports.AutomatedInboxPlacementScheduleDtoLastStatusEnum = {}));
+})(AutomatedInboxPlacementScheduleDtoLastStatusEnum || (exports.AutomatedInboxPlacementScheduleDtoLastStatusEnum = AutomatedInboxPlacementScheduleDtoLastStatusEnum = {}));
 function AutomatedInboxPlacementScheduleDtoFromJSON(json) {
     return AutomatedInboxPlacementScheduleDtoFromJSONTyped(json, false);
 }
-exports.AutomatedInboxPlacementScheduleDtoFromJSON = AutomatedInboxPlacementScheduleDtoFromJSON;
 function AutomatedInboxPlacementScheduleDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -81,7 +83,6 @@ function AutomatedInboxPlacementScheduleDtoFromJSONTyped(json, ignoreDiscriminat
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.AutomatedInboxPlacementScheduleDtoFromJSONTyped = AutomatedInboxPlacementScheduleDtoFromJSONTyped;
 function AutomatedInboxPlacementScheduleDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -117,4 +118,3 @@ function AutomatedInboxPlacementScheduleDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.AutomatedInboxPlacementScheduleDtoToJSON = AutomatedInboxPlacementScheduleDtoToJSON;

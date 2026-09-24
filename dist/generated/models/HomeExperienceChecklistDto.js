@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HomeExperienceChecklistDtoToJSON = exports.HomeExperienceChecklistDtoFromJSONTyped = exports.HomeExperienceChecklistDtoFromJSON = exports.HomeExperienceChecklistDtoStatusEnum = void 0;
+exports.HomeExperienceChecklistDtoStatusEnum = void 0;
+exports.HomeExperienceChecklistDtoFromJSON = HomeExperienceChecklistDtoFromJSON;
+exports.HomeExperienceChecklistDtoFromJSONTyped = HomeExperienceChecklistDtoFromJSONTyped;
+exports.HomeExperienceChecklistDtoToJSON = HomeExperienceChecklistDtoToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -25,11 +28,10 @@ var HomeExperienceChecklistDtoStatusEnum;
     HomeExperienceChecklistDtoStatusEnum["IN_PROGRESS"] = "IN_PROGRESS";
     HomeExperienceChecklistDtoStatusEnum["COMPLETED"] = "COMPLETED";
     HomeExperienceChecklistDtoStatusEnum["SKIPPED"] = "SKIPPED";
-})(HomeExperienceChecklistDtoStatusEnum = exports.HomeExperienceChecklistDtoStatusEnum || (exports.HomeExperienceChecklistDtoStatusEnum = {}));
+})(HomeExperienceChecklistDtoStatusEnum || (exports.HomeExperienceChecklistDtoStatusEnum = HomeExperienceChecklistDtoStatusEnum = {}));
 function HomeExperienceChecklistDtoFromJSON(json) {
     return HomeExperienceChecklistDtoFromJSONTyped(json, false);
 }
-exports.HomeExperienceChecklistDtoFromJSON = HomeExperienceChecklistDtoFromJSON;
 function HomeExperienceChecklistDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +42,6 @@ function HomeExperienceChecklistDtoFromJSONTyped(json, ignoreDiscriminator) {
         steps: json['steps'].map(_1.HomeExperienceChecklistStepDtoFromJSON),
     };
 }
-exports.HomeExperienceChecklistDtoFromJSONTyped = HomeExperienceChecklistDtoFromJSONTyped;
 function HomeExperienceChecklistDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +55,3 @@ function HomeExperienceChecklistDtoToJSON(value) {
         steps: value.steps.map(_1.HomeExperienceChecklistStepDtoToJSON),
     };
 }
-exports.HomeExperienceChecklistDtoToJSON = HomeExperienceChecklistDtoToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValidateEmailAddressListOptionsToJSON = exports.ValidateEmailAddressListOptionsFromJSONTyped = exports.ValidateEmailAddressListOptionsFromJSON = void 0;
+exports.ValidateEmailAddressListOptionsFromJSON = ValidateEmailAddressListOptionsFromJSON;
+exports.ValidateEmailAddressListOptionsFromJSONTyped = ValidateEmailAddressListOptionsFromJSONTyped;
+exports.ValidateEmailAddressListOptionsToJSON = ValidateEmailAddressListOptionsToJSON;
 var runtime_1 = require("../runtime");
 function ValidateEmailAddressListOptionsFromJSON(json) {
     return ValidateEmailAddressListOptionsFromJSONTyped(json, false);
 }
-exports.ValidateEmailAddressListOptionsFromJSON = ValidateEmailAddressListOptionsFromJSON;
 function ValidateEmailAddressListOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function ValidateEmailAddressListOptionsFromJSONTyped(json, ignoreDiscriminator)
             : json['ignoreOldResults'],
     };
 }
-exports.ValidateEmailAddressListOptionsFromJSONTyped = ValidateEmailAddressListOptionsFromJSONTyped;
 function ValidateEmailAddressListOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ValidateEmailAddressListOptionsToJSON(value) {
         ignoreOldResults: value.ignoreOldResults,
     };
 }
-exports.ValidateEmailAddressListOptionsToJSON = ValidateEmailAddressListOptionsToJSON;

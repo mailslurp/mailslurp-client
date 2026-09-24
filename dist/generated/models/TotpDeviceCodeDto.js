@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TotpDeviceCodeDtoToJSON = exports.TotpDeviceCodeDtoFromJSONTyped = exports.TotpDeviceCodeDtoFromJSON = void 0;
+exports.TotpDeviceCodeDtoFromJSON = TotpDeviceCodeDtoFromJSON;
+exports.TotpDeviceCodeDtoFromJSONTyped = TotpDeviceCodeDtoFromJSONTyped;
+exports.TotpDeviceCodeDtoToJSON = TotpDeviceCodeDtoToJSON;
 var runtime_1 = require("../runtime");
 function TotpDeviceCodeDtoFromJSON(json) {
     return TotpDeviceCodeDtoFromJSONTyped(json, false);
 }
-exports.TotpDeviceCodeDtoFromJSON = TotpDeviceCodeDtoFromJSON;
 function TotpDeviceCodeDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function TotpDeviceCodeDtoFromJSONTyped(json, ignoreDiscriminator) {
                 : new Date(json['expiresAt']),
     };
 }
-exports.TotpDeviceCodeDtoFromJSONTyped = TotpDeviceCodeDtoFromJSONTyped;
 function TotpDeviceCodeDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function TotpDeviceCodeDtoToJSON(value) {
                 : value.expiresAt.toISOString(),
     };
 }
-exports.TotpDeviceCodeDtoToJSON = TotpDeviceCodeDtoToJSON;

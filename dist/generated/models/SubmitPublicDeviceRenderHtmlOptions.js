@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SubmitPublicDeviceRenderHtmlOptionsToJSON = exports.SubmitPublicDeviceRenderHtmlOptionsFromJSONTyped = exports.SubmitPublicDeviceRenderHtmlOptionsFromJSON = void 0;
+exports.SubmitPublicDeviceRenderHtmlOptionsFromJSON = SubmitPublicDeviceRenderHtmlOptionsFromJSON;
+exports.SubmitPublicDeviceRenderHtmlOptionsFromJSONTyped = SubmitPublicDeviceRenderHtmlOptionsFromJSONTyped;
+exports.SubmitPublicDeviceRenderHtmlOptionsToJSON = SubmitPublicDeviceRenderHtmlOptionsToJSON;
 var runtime_1 = require("../runtime");
 function SubmitPublicDeviceRenderHtmlOptionsFromJSON(json) {
     return SubmitPublicDeviceRenderHtmlOptionsFromJSONTyped(json, false);
 }
-exports.SubmitPublicDeviceRenderHtmlOptionsFromJSON = SubmitPublicDeviceRenderHtmlOptionsFromJSON;
 function SubmitPublicDeviceRenderHtmlOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function SubmitPublicDeviceRenderHtmlOptionsFromJSONTyped(json, ignoreDiscrimina
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
     };
 }
-exports.SubmitPublicDeviceRenderHtmlOptionsFromJSONTyped = SubmitPublicDeviceRenderHtmlOptionsFromJSONTyped;
 function SubmitPublicDeviceRenderHtmlOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function SubmitPublicDeviceRenderHtmlOptionsToJSON(value) {
         from: value.from,
     };
 }
-exports.SubmitPublicDeviceRenderHtmlOptionsToJSON = SubmitPublicDeviceRenderHtmlOptionsToJSON;

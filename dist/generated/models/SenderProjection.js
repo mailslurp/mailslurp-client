@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SenderProjectionToJSON = exports.SenderProjectionFromJSONTyped = exports.SenderProjectionFromJSON = void 0;
+exports.SenderProjectionFromJSON = SenderProjectionFromJSON;
+exports.SenderProjectionFromJSONTyped = SenderProjectionFromJSONTyped;
+exports.SenderProjectionToJSON = SenderProjectionToJSON;
 var runtime_1 = require("../runtime");
 function SenderProjectionFromJSON(json) {
     return SenderProjectionFromJSONTyped(json, false);
 }
-exports.SenderProjectionFromJSON = SenderProjectionFromJSON;
 function SenderProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function SenderProjectionFromJSONTyped(json, ignoreDiscriminator) {
         name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
     };
 }
-exports.SenderProjectionFromJSONTyped = SenderProjectionFromJSONTyped;
 function SenderProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function SenderProjectionToJSON(value) {
         name: value.name,
     };
 }
-exports.SenderProjectionToJSON = SenderProjectionToJSON;

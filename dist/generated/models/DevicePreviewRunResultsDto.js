@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewRunResultsDtoToJSON = exports.DevicePreviewRunResultsDtoFromJSONTyped = exports.DevicePreviewRunResultsDtoFromJSON = void 0;
+exports.DevicePreviewRunResultsDtoFromJSON = DevicePreviewRunResultsDtoFromJSON;
+exports.DevicePreviewRunResultsDtoFromJSONTyped = DevicePreviewRunResultsDtoFromJSONTyped;
+exports.DevicePreviewRunResultsDtoToJSON = DevicePreviewRunResultsDtoToJSON;
 var _1 = require("./");
 function DevicePreviewRunResultsDtoFromJSON(json) {
     return DevicePreviewRunResultsDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewRunResultsDtoFromJSON = DevicePreviewRunResultsDtoFromJSON;
 function DevicePreviewRunResultsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function DevicePreviewRunResultsDtoFromJSONTyped(json, ignoreDiscriminator) {
         screenshots: json['screenshots'].map(_1.DevicePreviewScreenshotDtoFromJSON),
     };
 }
-exports.DevicePreviewRunResultsDtoFromJSONTyped = DevicePreviewRunResultsDtoFromJSONTyped;
 function DevicePreviewRunResultsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function DevicePreviewRunResultsDtoToJSON(value) {
         screenshots: value.screenshots.map(_1.DevicePreviewScreenshotDtoToJSON),
     };
 }
-exports.DevicePreviewRunResultsDtoToJSON = DevicePreviewRunResultsDtoToJSON;

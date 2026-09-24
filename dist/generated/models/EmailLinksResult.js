@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailLinksResultToJSON = exports.EmailLinksResultFromJSONTyped = exports.EmailLinksResultFromJSON = void 0;
+exports.EmailLinksResultFromJSON = EmailLinksResultFromJSON;
+exports.EmailLinksResultFromJSONTyped = EmailLinksResultFromJSONTyped;
+exports.EmailLinksResultToJSON = EmailLinksResultToJSON;
 function EmailLinksResultFromJSON(json) {
     return EmailLinksResultFromJSONTyped(json, false);
 }
-exports.EmailLinksResultFromJSON = EmailLinksResultFromJSON;
 function EmailLinksResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function EmailLinksResultFromJSONTyped(json, ignoreDiscriminator) {
         body: json['body'],
     };
 }
-exports.EmailLinksResultFromJSONTyped = EmailLinksResultFromJSONTyped;
 function EmailLinksResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function EmailLinksResultToJSON(value) {
         body: value.body,
     };
 }
-exports.EmailLinksResultToJSON = EmailLinksResultToJSON;

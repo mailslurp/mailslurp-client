@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementProviderAnalysisCheckDtoToJSON = exports.InboxPlacementProviderAnalysisCheckDtoFromJSONTyped = exports.InboxPlacementProviderAnalysisCheckDtoFromJSON = void 0;
+exports.InboxPlacementProviderAnalysisCheckDtoFromJSON = InboxPlacementProviderAnalysisCheckDtoFromJSON;
+exports.InboxPlacementProviderAnalysisCheckDtoFromJSONTyped = InboxPlacementProviderAnalysisCheckDtoFromJSONTyped;
+exports.InboxPlacementProviderAnalysisCheckDtoToJSON = InboxPlacementProviderAnalysisCheckDtoToJSON;
 function InboxPlacementProviderAnalysisCheckDtoFromJSON(json) {
     return InboxPlacementProviderAnalysisCheckDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementProviderAnalysisCheckDtoFromJSON = InboxPlacementProviderAnalysisCheckDtoFromJSON;
 function InboxPlacementProviderAnalysisCheckDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +41,6 @@ function InboxPlacementProviderAnalysisCheckDtoFromJSONTyped(json, ignoreDiscrim
         evidence: json['evidence'],
     };
 }
-exports.InboxPlacementProviderAnalysisCheckDtoFromJSONTyped = InboxPlacementProviderAnalysisCheckDtoFromJSONTyped;
 function InboxPlacementProviderAnalysisCheckDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -66,4 +66,3 @@ function InboxPlacementProviderAnalysisCheckDtoToJSON(value) {
         evidence: value.evidence,
     };
 }
-exports.InboxPlacementProviderAnalysisCheckDtoToJSON = InboxPlacementProviderAnalysisCheckDtoToJSON;

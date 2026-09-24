@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilitySimulationJobDtoToJSON = exports.DeliverabilitySimulationJobDtoFromJSONTyped = exports.DeliverabilitySimulationJobDtoFromJSON = exports.DeliverabilitySimulationJobDtoStatusEnum = exports.DeliverabilitySimulationJobDtoScopeEnum = void 0;
+exports.DeliverabilitySimulationJobDtoStatusEnum = exports.DeliverabilitySimulationJobDtoScopeEnum = void 0;
+exports.DeliverabilitySimulationJobDtoFromJSON = DeliverabilitySimulationJobDtoFromJSON;
+exports.DeliverabilitySimulationJobDtoFromJSONTyped = DeliverabilitySimulationJobDtoFromJSONTyped;
+exports.DeliverabilitySimulationJobDtoToJSON = DeliverabilitySimulationJobDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,7 +27,7 @@ var DeliverabilitySimulationJobDtoScopeEnum;
 (function (DeliverabilitySimulationJobDtoScopeEnum) {
     DeliverabilitySimulationJobDtoScopeEnum["INBOX"] = "INBOX";
     DeliverabilitySimulationJobDtoScopeEnum["PHONE"] = "PHONE";
-})(DeliverabilitySimulationJobDtoScopeEnum = exports.DeliverabilitySimulationJobDtoScopeEnum || (exports.DeliverabilitySimulationJobDtoScopeEnum = {}));
+})(DeliverabilitySimulationJobDtoScopeEnum || (exports.DeliverabilitySimulationJobDtoScopeEnum = DeliverabilitySimulationJobDtoScopeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -36,11 +39,10 @@ var DeliverabilitySimulationJobDtoStatusEnum;
     DeliverabilitySimulationJobDtoStatusEnum["CANCELLED"] = "CANCELLED";
     DeliverabilitySimulationJobDtoStatusEnum["COMPLETED"] = "COMPLETED";
     DeliverabilitySimulationJobDtoStatusEnum["FAILED"] = "FAILED";
-})(DeliverabilitySimulationJobDtoStatusEnum = exports.DeliverabilitySimulationJobDtoStatusEnum || (exports.DeliverabilitySimulationJobDtoStatusEnum = {}));
+})(DeliverabilitySimulationJobDtoStatusEnum || (exports.DeliverabilitySimulationJobDtoStatusEnum = DeliverabilitySimulationJobDtoStatusEnum = {}));
 function DeliverabilitySimulationJobDtoFromJSON(json) {
     return DeliverabilitySimulationJobDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilitySimulationJobDtoFromJSON = DeliverabilitySimulationJobDtoFromJSON;
 function DeliverabilitySimulationJobDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -79,7 +81,6 @@ function DeliverabilitySimulationJobDtoFromJSONTyped(json, ignoreDiscriminator) 
         errorSummary: (0, _1.DeliverabilitySimulationJobErrorSummaryDtoFromJSON)(json['errorSummary']),
     };
 }
-exports.DeliverabilitySimulationJobDtoFromJSONTyped = DeliverabilitySimulationJobDtoFromJSONTyped;
 function DeliverabilitySimulationJobDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -117,4 +118,3 @@ function DeliverabilitySimulationJobDtoToJSON(value) {
         errorSummary: (0, _1.DeliverabilitySimulationJobErrorSummaryDtoToJSON)(value.errorSummary),
     };
 }
-exports.DeliverabilitySimulationJobDtoToJSON = DeliverabilitySimulationJobDtoToJSON;

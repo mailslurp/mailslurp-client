@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeMailServerDomainResultToJSON = exports.DescribeMailServerDomainResultFromJSONTyped = exports.DescribeMailServerDomainResultFromJSON = void 0;
+exports.DescribeMailServerDomainResultFromJSON = DescribeMailServerDomainResultFromJSON;
+exports.DescribeMailServerDomainResultFromJSONTyped = DescribeMailServerDomainResultFromJSONTyped;
+exports.DescribeMailServerDomainResultToJSON = DescribeMailServerDomainResultToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function DescribeMailServerDomainResultFromJSON(json) {
     return DescribeMailServerDomainResultFromJSONTyped(json, false);
 }
-exports.DescribeMailServerDomainResultFromJSON = DescribeMailServerDomainResultFromJSON;
 function DescribeMailServerDomainResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function DescribeMailServerDomainResultFromJSONTyped(json, ignoreDiscriminator) 
         message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
     };
 }
-exports.DescribeMailServerDomainResultFromJSONTyped = DescribeMailServerDomainResultFromJSONTyped;
 function DescribeMailServerDomainResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function DescribeMailServerDomainResultToJSON(value) {
         message: value.message,
     };
 }
-exports.DescribeMailServerDomainResultToJSON = DescribeMailServerDomainResultToJSON;

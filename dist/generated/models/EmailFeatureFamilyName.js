@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeatureFamilyNameToJSON = exports.EmailFeatureFamilyNameFromJSONTyped = exports.EmailFeatureFamilyNameFromJSON = exports.EmailFeatureFamilyNameSlugEnum = void 0;
+exports.EmailFeatureFamilyNameSlugEnum = void 0;
+exports.EmailFeatureFamilyNameFromJSON = EmailFeatureFamilyNameFromJSON;
+exports.EmailFeatureFamilyNameFromJSONTyped = EmailFeatureFamilyNameFromJSONTyped;
+exports.EmailFeatureFamilyNameToJSON = EmailFeatureFamilyNameToJSON;
 /**
  * @export
  * @enum {string}
@@ -41,11 +44,10 @@ var EmailFeatureFamilyNameSlugEnum;
     EmailFeatureFamilyNameSlugEnum["thunderbird"] = "thunderbird";
     EmailFeatureFamilyNameSlugEnum["web_de"] = "web-de";
     EmailFeatureFamilyNameSlugEnum["yahoo"] = "yahoo";
-})(EmailFeatureFamilyNameSlugEnum = exports.EmailFeatureFamilyNameSlugEnum || (exports.EmailFeatureFamilyNameSlugEnum = {}));
+})(EmailFeatureFamilyNameSlugEnum || (exports.EmailFeatureFamilyNameSlugEnum = EmailFeatureFamilyNameSlugEnum = {}));
 function EmailFeatureFamilyNameFromJSON(json) {
     return EmailFeatureFamilyNameFromJSONTyped(json, false);
 }
-exports.EmailFeatureFamilyNameFromJSON = EmailFeatureFamilyNameFromJSON;
 function EmailFeatureFamilyNameFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -55,7 +57,6 @@ function EmailFeatureFamilyNameFromJSONTyped(json, ignoreDiscriminator) {
         name: json['name'],
     };
 }
-exports.EmailFeatureFamilyNameFromJSONTyped = EmailFeatureFamilyNameFromJSONTyped;
 function EmailFeatureFamilyNameToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +69,3 @@ function EmailFeatureFamilyNameToJSON(value) {
         name: value.name,
     };
 }
-exports.EmailFeatureFamilyNameToJSON = EmailFeatureFamilyNameToJSON;

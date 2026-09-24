@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AvailablePhoneNumberDtoToJSON = exports.AvailablePhoneNumberDtoFromJSONTyped = exports.AvailablePhoneNumberDtoFromJSON = exports.AvailablePhoneNumberDtoPhoneVariantEnum = exports.AvailablePhoneNumberDtoPhoneCountryEnum = void 0;
+exports.AvailablePhoneNumberDtoPhoneVariantEnum = exports.AvailablePhoneNumberDtoPhoneCountryEnum = void 0;
+exports.AvailablePhoneNumberDtoFromJSON = AvailablePhoneNumberDtoFromJSON;
+exports.AvailablePhoneNumberDtoFromJSONTyped = AvailablePhoneNumberDtoFromJSONTyped;
+exports.AvailablePhoneNumberDtoToJSON = AvailablePhoneNumberDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -34,7 +37,7 @@ var AvailablePhoneNumberDtoPhoneCountryEnum;
     AvailablePhoneNumberDtoPhoneCountryEnum["IL"] = "IL";
     AvailablePhoneNumberDtoPhoneCountryEnum["FI"] = "FI";
     AvailablePhoneNumberDtoPhoneCountryEnum["SE"] = "SE";
-})(AvailablePhoneNumberDtoPhoneCountryEnum = exports.AvailablePhoneNumberDtoPhoneCountryEnum || (exports.AvailablePhoneNumberDtoPhoneCountryEnum = {}));
+})(AvailablePhoneNumberDtoPhoneCountryEnum || (exports.AvailablePhoneNumberDtoPhoneCountryEnum = AvailablePhoneNumberDtoPhoneCountryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -44,11 +47,10 @@ var AvailablePhoneNumberDtoPhoneVariantEnum;
     AvailablePhoneNumberDtoPhoneVariantEnum["LOCAL"] = "LOCAL";
     AvailablePhoneNumberDtoPhoneVariantEnum["MOBILE"] = "MOBILE";
     AvailablePhoneNumberDtoPhoneVariantEnum["TOLL_FREE"] = "TOLL_FREE";
-})(AvailablePhoneNumberDtoPhoneVariantEnum = exports.AvailablePhoneNumberDtoPhoneVariantEnum || (exports.AvailablePhoneNumberDtoPhoneVariantEnum = {}));
+})(AvailablePhoneNumberDtoPhoneVariantEnum || (exports.AvailablePhoneNumberDtoPhoneVariantEnum = AvailablePhoneNumberDtoPhoneVariantEnum = {}));
 function AvailablePhoneNumberDtoFromJSON(json) {
     return AvailablePhoneNumberDtoFromJSONTyped(json, false);
 }
-exports.AvailablePhoneNumberDtoFromJSON = AvailablePhoneNumberDtoFromJSON;
 function AvailablePhoneNumberDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -72,7 +74,6 @@ function AvailablePhoneNumberDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['providerLabel'],
     };
 }
-exports.AvailablePhoneNumberDtoFromJSONTyped = AvailablePhoneNumberDtoFromJSONTyped;
 function AvailablePhoneNumberDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -91,4 +92,3 @@ function AvailablePhoneNumberDtoToJSON(value) {
         providerLabel: value.providerLabel,
     };
 }
-exports.AvailablePhoneNumberDtoToJSON = AvailablePhoneNumberDtoToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthV2BootstrapDtoToJSON = exports.AuthV2BootstrapDtoFromJSONTyped = exports.AuthV2BootstrapDtoFromJSON = void 0;
+exports.AuthV2BootstrapDtoFromJSON = AuthV2BootstrapDtoFromJSON;
+exports.AuthV2BootstrapDtoFromJSONTyped = AuthV2BootstrapDtoFromJSONTyped;
+exports.AuthV2BootstrapDtoToJSON = AuthV2BootstrapDtoToJSON;
 var _1 = require("./");
 function AuthV2BootstrapDtoFromJSON(json) {
     return AuthV2BootstrapDtoFromJSONTyped(json, false);
 }
-exports.AuthV2BootstrapDtoFromJSON = AuthV2BootstrapDtoFromJSON;
 function AuthV2BootstrapDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function AuthV2BootstrapDtoFromJSONTyped(json, ignoreDiscriminator) {
         sessionExpiresAt: new Date(json['sessionExpiresAt']),
     };
 }
-exports.AuthV2BootstrapDtoFromJSONTyped = AuthV2BootstrapDtoFromJSONTyped;
 function AuthV2BootstrapDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function AuthV2BootstrapDtoToJSON(value) {
         sessionExpiresAt: value.sessionExpiresAt.toISOString(),
     };
 }
-exports.AuthV2BootstrapDtoToJSON = AuthV2BootstrapDtoToJSON;

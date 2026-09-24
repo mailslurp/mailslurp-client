@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewNativeTargetDtoToJSON = exports.DevicePreviewNativeTargetDtoFromJSONTyped = exports.DevicePreviewNativeTargetDtoFromJSON = exports.DevicePreviewNativeTargetDtoTierEnum = void 0;
+exports.DevicePreviewNativeTargetDtoTierEnum = void 0;
+exports.DevicePreviewNativeTargetDtoFromJSON = DevicePreviewNativeTargetDtoFromJSON;
+exports.DevicePreviewNativeTargetDtoFromJSONTyped = DevicePreviewNativeTargetDtoFromJSONTyped;
+exports.DevicePreviewNativeTargetDtoToJSON = DevicePreviewNativeTargetDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var DevicePreviewNativeTargetDtoTierEnum;
 (function (DevicePreviewNativeTargetDtoTierEnum) {
     DevicePreviewNativeTargetDtoTierEnum["STANDARD"] = "STANDARD";
     DevicePreviewNativeTargetDtoTierEnum["PREMIUM"] = "PREMIUM";
-})(DevicePreviewNativeTargetDtoTierEnum = exports.DevicePreviewNativeTargetDtoTierEnum || (exports.DevicePreviewNativeTargetDtoTierEnum = {}));
+})(DevicePreviewNativeTargetDtoTierEnum || (exports.DevicePreviewNativeTargetDtoTierEnum = DevicePreviewNativeTargetDtoTierEnum = {}));
 function DevicePreviewNativeTargetDtoFromJSON(json) {
     return DevicePreviewNativeTargetDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewNativeTargetDtoFromJSON = DevicePreviewNativeTargetDtoFromJSON;
 function DevicePreviewNativeTargetDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -47,7 +49,6 @@ function DevicePreviewNativeTargetDtoFromJSONTyped(json, ignoreDiscriminator) {
         timeoutSeconds: json['timeoutSeconds'],
     };
 }
-exports.DevicePreviewNativeTargetDtoFromJSONTyped = DevicePreviewNativeTargetDtoFromJSONTyped;
 function DevicePreviewNativeTargetDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -70,4 +71,3 @@ function DevicePreviewNativeTargetDtoToJSON(value) {
         timeoutSeconds: value.timeoutSeconds,
     };
 }
-exports.DevicePreviewNativeTargetDtoToJSON = DevicePreviewNativeTargetDtoToJSON;

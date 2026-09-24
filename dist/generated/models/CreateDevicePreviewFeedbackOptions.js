@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDevicePreviewFeedbackOptionsToJSON = exports.CreateDevicePreviewFeedbackOptionsFromJSONTyped = exports.CreateDevicePreviewFeedbackOptionsFromJSON = exports.CreateDevicePreviewFeedbackOptionsProviderEnum = exports.CreateDevicePreviewFeedbackOptionsStatusEnum = exports.CreateDevicePreviewFeedbackOptionsCategoryEnum = exports.CreateDevicePreviewFeedbackOptionsSourceEnum = void 0;
+exports.CreateDevicePreviewFeedbackOptionsProviderEnum = exports.CreateDevicePreviewFeedbackOptionsStatusEnum = exports.CreateDevicePreviewFeedbackOptionsCategoryEnum = exports.CreateDevicePreviewFeedbackOptionsSourceEnum = void 0;
+exports.CreateDevicePreviewFeedbackOptionsFromJSON = CreateDevicePreviewFeedbackOptionsFromJSON;
+exports.CreateDevicePreviewFeedbackOptionsFromJSONTyped = CreateDevicePreviewFeedbackOptionsFromJSONTyped;
+exports.CreateDevicePreviewFeedbackOptionsToJSON = CreateDevicePreviewFeedbackOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,7 +28,7 @@ var CreateDevicePreviewFeedbackOptionsSourceEnum;
     CreateDevicePreviewFeedbackOptionsSourceEnum["LAB_USER"] = "LAB_USER";
     CreateDevicePreviewFeedbackOptionsSourceEnum["END_USER"] = "END_USER";
     CreateDevicePreviewFeedbackOptionsSourceEnum["SYSTEM"] = "SYSTEM";
-})(CreateDevicePreviewFeedbackOptionsSourceEnum = exports.CreateDevicePreviewFeedbackOptionsSourceEnum || (exports.CreateDevicePreviewFeedbackOptionsSourceEnum = {}));
+})(CreateDevicePreviewFeedbackOptionsSourceEnum || (exports.CreateDevicePreviewFeedbackOptionsSourceEnum = CreateDevicePreviewFeedbackOptionsSourceEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -39,7 +42,7 @@ var CreateDevicePreviewFeedbackOptionsCategoryEnum;
     CreateDevicePreviewFeedbackOptionsCategoryEnum["BUG_REPORT"] = "BUG_REPORT";
     CreateDevicePreviewFeedbackOptionsCategoryEnum["FEATURE_REQUEST"] = "FEATURE_REQUEST";
     CreateDevicePreviewFeedbackOptionsCategoryEnum["NOTE"] = "NOTE";
-})(CreateDevicePreviewFeedbackOptionsCategoryEnum = exports.CreateDevicePreviewFeedbackOptionsCategoryEnum || (exports.CreateDevicePreviewFeedbackOptionsCategoryEnum = {}));
+})(CreateDevicePreviewFeedbackOptionsCategoryEnum || (exports.CreateDevicePreviewFeedbackOptionsCategoryEnum = CreateDevicePreviewFeedbackOptionsCategoryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -50,7 +53,7 @@ var CreateDevicePreviewFeedbackOptionsStatusEnum;
     CreateDevicePreviewFeedbackOptionsStatusEnum["ACKNOWLEDGED"] = "ACKNOWLEDGED";
     CreateDevicePreviewFeedbackOptionsStatusEnum["RESOLVED"] = "RESOLVED";
     CreateDevicePreviewFeedbackOptionsStatusEnum["DISMISSED"] = "DISMISSED";
-})(CreateDevicePreviewFeedbackOptionsStatusEnum = exports.CreateDevicePreviewFeedbackOptionsStatusEnum || (exports.CreateDevicePreviewFeedbackOptionsStatusEnum = {}));
+})(CreateDevicePreviewFeedbackOptionsStatusEnum || (exports.CreateDevicePreviewFeedbackOptionsStatusEnum = CreateDevicePreviewFeedbackOptionsStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -60,11 +63,10 @@ var CreateDevicePreviewFeedbackOptionsProviderEnum;
     CreateDevicePreviewFeedbackOptionsProviderEnum["GMAIL"] = "GMAIL";
     CreateDevicePreviewFeedbackOptionsProviderEnum["OUTLOOK"] = "OUTLOOK";
     CreateDevicePreviewFeedbackOptionsProviderEnum["YAHOO"] = "YAHOO";
-})(CreateDevicePreviewFeedbackOptionsProviderEnum = exports.CreateDevicePreviewFeedbackOptionsProviderEnum || (exports.CreateDevicePreviewFeedbackOptionsProviderEnum = {}));
+})(CreateDevicePreviewFeedbackOptionsProviderEnum || (exports.CreateDevicePreviewFeedbackOptionsProviderEnum = CreateDevicePreviewFeedbackOptionsProviderEnum = {}));
 function CreateDevicePreviewFeedbackOptionsFromJSON(json) {
     return CreateDevicePreviewFeedbackOptionsFromJSONTyped(json, false);
 }
-exports.CreateDevicePreviewFeedbackOptionsFromJSON = CreateDevicePreviewFeedbackOptionsFromJSON;
 function CreateDevicePreviewFeedbackOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -90,7 +92,6 @@ function CreateDevicePreviewFeedbackOptionsFromJSONTyped(json, ignoreDiscriminat
         metadata: !(0, runtime_1.exists)(json, 'metadata') ? undefined : json['metadata'],
     };
 }
-exports.CreateDevicePreviewFeedbackOptionsFromJSONTyped = CreateDevicePreviewFeedbackOptionsFromJSONTyped;
 function CreateDevicePreviewFeedbackOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -115,4 +116,3 @@ function CreateDevicePreviewFeedbackOptionsToJSON(value) {
         metadata: value.metadata,
     };
 }
-exports.CreateDevicePreviewFeedbackOptionsToJSON = CreateDevicePreviewFeedbackOptionsToJSON;

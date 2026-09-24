@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AITransformCreateOptionsToJSON = exports.AITransformCreateOptionsFromJSONTyped = exports.AITransformCreateOptionsFromJSON = void 0;
+exports.AITransformCreateOptionsFromJSON = AITransformCreateOptionsFromJSON;
+exports.AITransformCreateOptionsFromJSONTyped = AITransformCreateOptionsFromJSONTyped;
+exports.AITransformCreateOptionsToJSON = AITransformCreateOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function AITransformCreateOptionsFromJSON(json) {
     return AITransformCreateOptionsFromJSONTyped(json, false);
 }
-exports.AITransformCreateOptionsFromJSON = AITransformCreateOptionsFromJSON;
 function AITransformCreateOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -41,7 +42,6 @@ function AITransformCreateOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['extractPrompt'],
     };
 }
-exports.AITransformCreateOptionsFromJSONTyped = AITransformCreateOptionsFromJSONTyped;
 function AITransformCreateOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -58,4 +58,3 @@ function AITransformCreateOptionsToJSON(value) {
         extractPrompt: value.extractPrompt,
     };
 }
-exports.AITransformCreateOptionsToJSON = AITransformCreateOptionsToJSON;

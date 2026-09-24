@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccountDtoToJSON = exports.AccountDtoFromJSONTyped = exports.AccountDtoFromJSON = exports.AccountDtoFreeAccountModeEnum = exports.AccountDtoFreeAccountEvaluationDeniedReasonEnum = exports.AccountDtoDefaultScheduleEnum = exports.AccountDtoDefaultCurrencyEnum = exports.AccountDtoRequiredVerificationTypesEnum = exports.AccountDtoAddonsEnum = void 0;
+exports.AccountDtoFreeAccountModeEnum = exports.AccountDtoFreeAccountEvaluationDeniedReasonEnum = exports.AccountDtoDefaultScheduleEnum = exports.AccountDtoDefaultCurrencyEnum = exports.AccountDtoRequiredVerificationTypesEnum = exports.AccountDtoAddonsEnum = void 0;
+exports.AccountDtoFromJSON = AccountDtoFromJSON;
+exports.AccountDtoFromJSONTyped = AccountDtoFromJSONTyped;
+exports.AccountDtoToJSON = AccountDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -34,7 +37,7 @@ var AccountDtoAddonsEnum;
     AccountDtoAddonsEnum["AI"] = "AI";
     AccountDtoAddonsEnum["VALIDATION"] = "VALIDATION";
     AccountDtoAddonsEnum["GUEST"] = "GUEST";
-})(AccountDtoAddonsEnum = exports.AccountDtoAddonsEnum || (exports.AccountDtoAddonsEnum = {}));
+})(AccountDtoAddonsEnum || (exports.AccountDtoAddonsEnum = AccountDtoAddonsEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -43,7 +46,7 @@ var AccountDtoRequiredVerificationTypesEnum;
 (function (AccountDtoRequiredVerificationTypesEnum) {
     AccountDtoRequiredVerificationTypesEnum["EMAIL_ADDRESS"] = "EMAIL_ADDRESS";
     AccountDtoRequiredVerificationTypesEnum["PHONE_NUMBER"] = "PHONE_NUMBER";
-})(AccountDtoRequiredVerificationTypesEnum = exports.AccountDtoRequiredVerificationTypesEnum || (exports.AccountDtoRequiredVerificationTypesEnum = {}));
+})(AccountDtoRequiredVerificationTypesEnum || (exports.AccountDtoRequiredVerificationTypesEnum = AccountDtoRequiredVerificationTypesEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -60,7 +63,7 @@ var AccountDtoDefaultCurrencyEnum;
     AccountDtoDefaultCurrencyEnum["CNY"] = "CNY";
     AccountDtoDefaultCurrencyEnum["INR"] = "INR";
     AccountDtoDefaultCurrencyEnum["NZD"] = "NZD";
-})(AccountDtoDefaultCurrencyEnum = exports.AccountDtoDefaultCurrencyEnum || (exports.AccountDtoDefaultCurrencyEnum = {}));
+})(AccountDtoDefaultCurrencyEnum || (exports.AccountDtoDefaultCurrencyEnum = AccountDtoDefaultCurrencyEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -69,7 +72,7 @@ var AccountDtoDefaultScheduleEnum;
 (function (AccountDtoDefaultScheduleEnum) {
     AccountDtoDefaultScheduleEnum["MONTHLY"] = "MONTHLY";
     AccountDtoDefaultScheduleEnum["YEARLY"] = "YEARLY";
-})(AccountDtoDefaultScheduleEnum = exports.AccountDtoDefaultScheduleEnum || (exports.AccountDtoDefaultScheduleEnum = {}));
+})(AccountDtoDefaultScheduleEnum || (exports.AccountDtoDefaultScheduleEnum = AccountDtoDefaultScheduleEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -79,7 +82,7 @@ var AccountDtoFreeAccountEvaluationDeniedReasonEnum;
     AccountDtoFreeAccountEvaluationDeniedReasonEnum["COUNTRY"] = "COUNTRY";
     AccountDtoFreeAccountEvaluationDeniedReasonEnum["DOMAIN"] = "DOMAIN";
     AccountDtoFreeAccountEvaluationDeniedReasonEnum["FREE_EMAIL_PROVIDER"] = "FREE_EMAIL_PROVIDER";
-})(AccountDtoFreeAccountEvaluationDeniedReasonEnum = exports.AccountDtoFreeAccountEvaluationDeniedReasonEnum || (exports.AccountDtoFreeAccountEvaluationDeniedReasonEnum = {}));
+})(AccountDtoFreeAccountEvaluationDeniedReasonEnum || (exports.AccountDtoFreeAccountEvaluationDeniedReasonEnum = AccountDtoFreeAccountEvaluationDeniedReasonEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -89,11 +92,10 @@ var AccountDtoFreeAccountModeEnum;
     AccountDtoFreeAccountModeEnum["NONE"] = "NONE";
     AccountDtoFreeAccountModeEnum["LEGACY_EVALUATION"] = "LEGACY_EVALUATION";
     AccountDtoFreeAccountModeEnum["PERMANENT_SANDBOX"] = "PERMANENT_SANDBOX";
-})(AccountDtoFreeAccountModeEnum = exports.AccountDtoFreeAccountModeEnum || (exports.AccountDtoFreeAccountModeEnum = {}));
+})(AccountDtoFreeAccountModeEnum || (exports.AccountDtoFreeAccountModeEnum = AccountDtoFreeAccountModeEnum = {}));
 function AccountDtoFromJSON(json) {
     return AccountDtoFromJSONTyped(json, false);
 }
-exports.AccountDtoFromJSON = AccountDtoFromJSON;
 function AccountDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -166,7 +168,6 @@ function AccountDtoFromJSONTyped(json, ignoreDiscriminator) {
         requiresDashboardOnboardingV2: json['requiresDashboardOnboardingV2'],
     };
 }
-exports.AccountDtoFromJSONTyped = AccountDtoFromJSONTyped;
 function AccountDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -210,4 +211,3 @@ function AccountDtoToJSON(value) {
         requiresDashboardOnboardingV2: value.requiresDashboardOnboardingV2,
     };
 }
-exports.AccountDtoToJSON = AccountDtoToJSON;

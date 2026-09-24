@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AITransformProjectionToJSON = exports.AITransformProjectionFromJSONTyped = exports.AITransformProjectionFromJSON = void 0;
+exports.AITransformProjectionFromJSON = AITransformProjectionFromJSON;
+exports.AITransformProjectionFromJSONTyped = AITransformProjectionFromJSONTyped;
+exports.AITransformProjectionToJSON = AITransformProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function AITransformProjectionFromJSON(json) {
     return AITransformProjectionFromJSONTyped(json, false);
 }
-exports.AITransformProjectionFromJSON = AITransformProjectionFromJSON;
 function AITransformProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function AITransformProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.AITransformProjectionFromJSONTyped = AITransformProjectionFromJSONTyped;
 function AITransformProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +54,3 @@ function AITransformProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.AITransformProjectionToJSON = AITransformProjectionToJSON;

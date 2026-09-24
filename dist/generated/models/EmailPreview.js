@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailPreviewToJSON = exports.EmailPreviewFromJSONTyped = exports.EmailPreviewFromJSON = void 0;
+exports.EmailPreviewFromJSON = EmailPreviewFromJSON;
+exports.EmailPreviewFromJSONTyped = EmailPreviewFromJSONTyped;
+exports.EmailPreviewToJSON = EmailPreviewToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function EmailPreviewFromJSON(json) {
     return EmailPreviewFromJSONTyped(json, false);
 }
-exports.EmailPreviewFromJSON = EmailPreviewFromJSON;
 function EmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -53,7 +54,6 @@ function EmailPreviewFromJSONTyped(json, ignoreDiscriminator) {
         sizeBytes: !(0, runtime_1.exists)(json, 'sizeBytes') ? undefined : json['sizeBytes'],
     };
 }
-exports.EmailPreviewFromJSONTyped = EmailPreviewFromJSONTyped;
 function EmailPreviewToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -84,4 +84,3 @@ function EmailPreviewToJSON(value) {
         sizeBytes: value.sizeBytes,
     };
 }
-exports.EmailPreviewToJSON = EmailPreviewToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserInfoDtoToJSON = exports.UserInfoDtoFromJSONTyped = exports.UserInfoDtoFromJSON = exports.UserInfoDtoAccountTypeEnum = exports.UserInfoDtoSubscriptionTypeEnum = exports.UserInfoDtoAccountStateEnum = void 0;
+exports.UserInfoDtoAccountTypeEnum = exports.UserInfoDtoSubscriptionTypeEnum = exports.UserInfoDtoAccountStateEnum = void 0;
+exports.UserInfoDtoFromJSON = UserInfoDtoFromJSON;
+exports.UserInfoDtoFromJSONTyped = UserInfoDtoFromJSONTyped;
+exports.UserInfoDtoToJSON = UserInfoDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var UserInfoDtoAccountStateEnum;
 (function (UserInfoDtoAccountStateEnum) {
     UserInfoDtoAccountStateEnum["FROZEN"] = "FROZEN";
     UserInfoDtoAccountStateEnum["ACTIVE"] = "ACTIVE";
-})(UserInfoDtoAccountStateEnum = exports.UserInfoDtoAccountStateEnum || (exports.UserInfoDtoAccountStateEnum = {}));
+})(UserInfoDtoAccountStateEnum || (exports.UserInfoDtoAccountStateEnum = UserInfoDtoAccountStateEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -35,7 +38,7 @@ var UserInfoDtoSubscriptionTypeEnum;
     UserInfoDtoSubscriptionTypeEnum["PRO"] = "PRO";
     UserInfoDtoSubscriptionTypeEnum["TEAM"] = "TEAM";
     UserInfoDtoSubscriptionTypeEnum["ENTERPRISE"] = "ENTERPRISE";
-})(UserInfoDtoSubscriptionTypeEnum = exports.UserInfoDtoSubscriptionTypeEnum || (exports.UserInfoDtoSubscriptionTypeEnum = {}));
+})(UserInfoDtoSubscriptionTypeEnum || (exports.UserInfoDtoSubscriptionTypeEnum = UserInfoDtoSubscriptionTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -46,11 +49,10 @@ var UserInfoDtoAccountTypeEnum;
     UserInfoDtoAccountTypeEnum["CHILD_SOLO"] = "CHILD_SOLO";
     UserInfoDtoAccountTypeEnum["CHILD_TEAM"] = "CHILD_TEAM";
     UserInfoDtoAccountTypeEnum["CHILD_ADMIN"] = "CHILD_ADMIN";
-})(UserInfoDtoAccountTypeEnum = exports.UserInfoDtoAccountTypeEnum || (exports.UserInfoDtoAccountTypeEnum = {}));
+})(UserInfoDtoAccountTypeEnum || (exports.UserInfoDtoAccountTypeEnum = UserInfoDtoAccountTypeEnum = {}));
 function UserInfoDtoFromJSON(json) {
     return UserInfoDtoFromJSONTyped(json, false);
 }
-exports.UserInfoDtoFromJSON = UserInfoDtoFromJSON;
 function UserInfoDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -66,7 +68,6 @@ function UserInfoDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.UserInfoDtoFromJSONTyped = UserInfoDtoFromJSONTyped;
 function UserInfoDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -83,4 +84,3 @@ function UserInfoDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.UserInfoDtoToJSON = UserInfoDtoToJSON;

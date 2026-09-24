@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorImapConnectionTestResultToJSON = exports.ConnectorImapConnectionTestResultFromJSONTyped = exports.ConnectorImapConnectionTestResultFromJSON = void 0;
+exports.ConnectorImapConnectionTestResultFromJSON = ConnectorImapConnectionTestResultFromJSON;
+exports.ConnectorImapConnectionTestResultFromJSONTyped = ConnectorImapConnectionTestResultFromJSONTyped;
+exports.ConnectorImapConnectionTestResultToJSON = ConnectorImapConnectionTestResultToJSON;
 var runtime_1 = require("../runtime");
 function ConnectorImapConnectionTestResultFromJSON(json) {
     return ConnectorImapConnectionTestResultFromJSONTyped(json, false);
 }
-exports.ConnectorImapConnectionTestResultFromJSON = ConnectorImapConnectionTestResultFromJSON;
 function ConnectorImapConnectionTestResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function ConnectorImapConnectionTestResultFromJSONTyped(json, ignoreDiscriminato
         logs: !(0, runtime_1.exists)(json, 'logs') ? undefined : json['logs'],
     };
 }
-exports.ConnectorImapConnectionTestResultFromJSONTyped = ConnectorImapConnectionTestResultFromJSONTyped;
 function ConnectorImapConnectionTestResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ConnectorImapConnectionTestResultToJSON(value) {
         logs: value.logs,
     };
 }
-exports.ConnectorImapConnectionTestResultToJSON = ConnectorImapConnectionTestResultToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageEvidenceToJSON = exports.AIMessageEvidenceFromJSONTyped = exports.AIMessageEvidenceFromJSON = exports.AIMessageEvidenceFieldEnum = void 0;
+exports.AIMessageEvidenceFieldEnum = void 0;
+exports.AIMessageEvidenceFromJSON = AIMessageEvidenceFromJSON;
+exports.AIMessageEvidenceFromJSONTyped = AIMessageEvidenceFromJSONTyped;
+exports.AIMessageEvidenceToJSON = AIMessageEvidenceToJSON;
 /**
  * @export
  * @enum {string}
@@ -25,11 +28,10 @@ var AIMessageEvidenceFieldEnum;
     AIMessageEvidenceFieldEnum["FROM"] = "FROM";
     AIMessageEvidenceFieldEnum["TO"] = "TO";
     AIMessageEvidenceFieldEnum["LINK"] = "LINK";
-})(AIMessageEvidenceFieldEnum = exports.AIMessageEvidenceFieldEnum || (exports.AIMessageEvidenceFieldEnum = {}));
+})(AIMessageEvidenceFieldEnum || (exports.AIMessageEvidenceFieldEnum = AIMessageEvidenceFieldEnum = {}));
 function AIMessageEvidenceFromJSON(json) {
     return AIMessageEvidenceFromJSONTyped(json, false);
 }
-exports.AIMessageEvidenceFromJSON = AIMessageEvidenceFromJSON;
 function AIMessageEvidenceFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +41,6 @@ function AIMessageEvidenceFromJSONTyped(json, ignoreDiscriminator) {
         text: json['text'],
     };
 }
-exports.AIMessageEvidenceFromJSONTyped = AIMessageEvidenceFromJSONTyped;
 function AIMessageEvidenceToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -52,4 +53,3 @@ function AIMessageEvidenceToJSON(value) {
         text: value.text,
     };
 }
-exports.AIMessageEvidenceToJSON = AIMessageEvidenceToJSON;

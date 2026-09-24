@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckEmailBlacklistResultsToJSON = exports.CheckEmailBlacklistResultsFromJSONTyped = exports.CheckEmailBlacklistResultsFromJSON = exports.CheckEmailBlacklistResultsCheckStatusEnum = exports.CheckEmailBlacklistResultsStatusEnum = void 0;
+exports.CheckEmailBlacklistResultsCheckStatusEnum = exports.CheckEmailBlacklistResultsStatusEnum = void 0;
+exports.CheckEmailBlacklistResultsFromJSON = CheckEmailBlacklistResultsFromJSON;
+exports.CheckEmailBlacklistResultsFromJSONTyped = CheckEmailBlacklistResultsFromJSONTyped;
+exports.CheckEmailBlacklistResultsToJSON = CheckEmailBlacklistResultsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -26,7 +29,7 @@ var CheckEmailBlacklistResultsStatusEnum;
     CheckEmailBlacklistResultsStatusEnum["DEGRADED"] = "DEGRADED";
     CheckEmailBlacklistResultsStatusEnum["CRITICAL"] = "CRITICAL";
     CheckEmailBlacklistResultsStatusEnum["FAILED"] = "FAILED";
-})(CheckEmailBlacklistResultsStatusEnum = exports.CheckEmailBlacklistResultsStatusEnum || (exports.CheckEmailBlacklistResultsStatusEnum = {}));
+})(CheckEmailBlacklistResultsStatusEnum || (exports.CheckEmailBlacklistResultsStatusEnum = CheckEmailBlacklistResultsStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -37,11 +40,10 @@ var CheckEmailBlacklistResultsCheckStatusEnum;
     CheckEmailBlacklistResultsCheckStatusEnum["NOT_LISTED"] = "NOT_LISTED";
     CheckEmailBlacklistResultsCheckStatusEnum["ERROR"] = "ERROR";
     CheckEmailBlacklistResultsCheckStatusEnum["NOT_CHECKED"] = "NOT_CHECKED";
-})(CheckEmailBlacklistResultsCheckStatusEnum = exports.CheckEmailBlacklistResultsCheckStatusEnum || (exports.CheckEmailBlacklistResultsCheckStatusEnum = {}));
+})(CheckEmailBlacklistResultsCheckStatusEnum || (exports.CheckEmailBlacklistResultsCheckStatusEnum = CheckEmailBlacklistResultsCheckStatusEnum = {}));
 function CheckEmailBlacklistResultsFromJSON(json) {
     return CheckEmailBlacklistResultsFromJSONTyped(json, false);
 }
-exports.CheckEmailBlacklistResultsFromJSON = CheckEmailBlacklistResultsFromJSON;
 function CheckEmailBlacklistResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -67,7 +69,6 @@ function CheckEmailBlacklistResultsFromJSONTyped(json, ignoreDiscriminator) {
         evidenceVersion: json['evidenceVersion'],
     };
 }
-exports.CheckEmailBlacklistResultsFromJSONTyped = CheckEmailBlacklistResultsFromJSONTyped;
 function CheckEmailBlacklistResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -92,4 +93,3 @@ function CheckEmailBlacklistResultsToJSON(value) {
         evidenceVersion: value.evidenceVersion,
     };
 }
-exports.CheckEmailBlacklistResultsToJSON = CheckEmailBlacklistResultsToJSON;

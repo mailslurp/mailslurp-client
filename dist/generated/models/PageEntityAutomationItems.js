@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageEntityAutomationItemsToJSON = exports.PageEntityAutomationItemsFromJSONTyped = exports.PageEntityAutomationItemsFromJSON = void 0;
+exports.PageEntityAutomationItemsFromJSON = PageEntityAutomationItemsFromJSON;
+exports.PageEntityAutomationItemsFromJSONTyped = PageEntityAutomationItemsFromJSONTyped;
+exports.PageEntityAutomationItemsToJSON = PageEntityAutomationItemsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageEntityAutomationItemsFromJSON(json) {
     return PageEntityAutomationItemsFromJSONTyped(json, false);
 }
-exports.PageEntityAutomationItemsFromJSON = PageEntityAutomationItemsFromJSON;
 function PageEntityAutomationItemsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageEntityAutomationItemsFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageEntityAutomationItemsFromJSONTyped = PageEntityAutomationItemsFromJSONTyped;
 function PageEntityAutomationItemsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageEntityAutomationItemsToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageEntityAutomationItemsToJSON = PageEntityAutomationItemsToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LinkIssueToJSON = exports.LinkIssueFromJSONTyped = exports.LinkIssueFromJSON = exports.LinkIssueSeverityEnum = void 0;
+exports.LinkIssueSeverityEnum = void 0;
+exports.LinkIssueFromJSON = LinkIssueFromJSON;
+exports.LinkIssueFromJSONTyped = LinkIssueFromJSONTyped;
+exports.LinkIssueToJSON = LinkIssueToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var LinkIssueSeverityEnum;
 (function (LinkIssueSeverityEnum) {
     LinkIssueSeverityEnum["Warning"] = "Warning";
     LinkIssueSeverityEnum["Error"] = "Error";
-})(LinkIssueSeverityEnum = exports.LinkIssueSeverityEnum || (exports.LinkIssueSeverityEnum = {}));
+})(LinkIssueSeverityEnum || (exports.LinkIssueSeverityEnum = LinkIssueSeverityEnum = {}));
 function LinkIssueFromJSON(json) {
     return LinkIssueFromJSONTyped(json, false);
 }
-exports.LinkIssueFromJSON = LinkIssueFromJSON;
 function LinkIssueFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -41,7 +43,6 @@ function LinkIssueFromJSONTyped(json, ignoreDiscriminator) {
         message: json['message'],
     };
 }
-exports.LinkIssueFromJSONTyped = LinkIssueFromJSONTyped;
 function LinkIssueToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -56,4 +57,3 @@ function LinkIssueToJSON(value) {
         message: value.message,
     };
 }
-exports.LinkIssueToJSON = LinkIssueToJSON;

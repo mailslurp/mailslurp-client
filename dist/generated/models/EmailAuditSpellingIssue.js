@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailAuditSpellingIssueToJSON = exports.EmailAuditSpellingIssueFromJSONTyped = exports.EmailAuditSpellingIssueFromJSON = exports.EmailAuditSpellingIssueSeverityEnum = void 0;
+exports.EmailAuditSpellingIssueSeverityEnum = void 0;
+exports.EmailAuditSpellingIssueFromJSON = EmailAuditSpellingIssueFromJSON;
+exports.EmailAuditSpellingIssueFromJSONTyped = EmailAuditSpellingIssueFromJSONTyped;
+exports.EmailAuditSpellingIssueToJSON = EmailAuditSpellingIssueToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var EmailAuditSpellingIssueSeverityEnum;
 (function (EmailAuditSpellingIssueSeverityEnum) {
     EmailAuditSpellingIssueSeverityEnum["Warning"] = "Warning";
     EmailAuditSpellingIssueSeverityEnum["Error"] = "Error";
-})(EmailAuditSpellingIssueSeverityEnum = exports.EmailAuditSpellingIssueSeverityEnum || (exports.EmailAuditSpellingIssueSeverityEnum = {}));
+})(EmailAuditSpellingIssueSeverityEnum || (exports.EmailAuditSpellingIssueSeverityEnum = EmailAuditSpellingIssueSeverityEnum = {}));
 function EmailAuditSpellingIssueFromJSON(json) {
     return EmailAuditSpellingIssueFromJSONTyped(json, false);
 }
-exports.EmailAuditSpellingIssueFromJSON = EmailAuditSpellingIssueFromJSON;
 function EmailAuditSpellingIssueFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +41,6 @@ function EmailAuditSpellingIssueFromJSONTyped(json, ignoreDiscriminator) {
         message: json['message'],
     };
 }
-exports.EmailAuditSpellingIssueFromJSONTyped = EmailAuditSpellingIssueFromJSONTyped;
 function EmailAuditSpellingIssueToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +55,3 @@ function EmailAuditSpellingIssueToJSON(value) {
         message: value.message,
     };
 }
-exports.EmailAuditSpellingIssueToJSON = EmailAuditSpellingIssueToJSON;

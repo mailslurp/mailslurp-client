@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorSyncSettingsDtoToJSON = exports.ConnectorSyncSettingsDtoFromJSONTyped = exports.ConnectorSyncSettingsDtoFromJSON = exports.ConnectorSyncSettingsDtoSyncScheduleTypeEnum = void 0;
+exports.ConnectorSyncSettingsDtoSyncScheduleTypeEnum = void 0;
+exports.ConnectorSyncSettingsDtoFromJSON = ConnectorSyncSettingsDtoFromJSON;
+exports.ConnectorSyncSettingsDtoFromJSONTyped = ConnectorSyncSettingsDtoFromJSONTyped;
+exports.ConnectorSyncSettingsDtoToJSON = ConnectorSyncSettingsDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -22,11 +25,10 @@ var runtime_1 = require("../runtime");
 var ConnectorSyncSettingsDtoSyncScheduleTypeEnum;
 (function (ConnectorSyncSettingsDtoSyncScheduleTypeEnum) {
     ConnectorSyncSettingsDtoSyncScheduleTypeEnum["INTERVAL"] = "INTERVAL";
-})(ConnectorSyncSettingsDtoSyncScheduleTypeEnum = exports.ConnectorSyncSettingsDtoSyncScheduleTypeEnum || (exports.ConnectorSyncSettingsDtoSyncScheduleTypeEnum = {}));
+})(ConnectorSyncSettingsDtoSyncScheduleTypeEnum || (exports.ConnectorSyncSettingsDtoSyncScheduleTypeEnum = ConnectorSyncSettingsDtoSyncScheduleTypeEnum = {}));
 function ConnectorSyncSettingsDtoFromJSON(json) {
     return ConnectorSyncSettingsDtoFromJSONTyped(json, false);
 }
-exports.ConnectorSyncSettingsDtoFromJSON = ConnectorSyncSettingsDtoFromJSON;
 function ConnectorSyncSettingsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +46,6 @@ function ConnectorSyncSettingsDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['syncInterval'],
     };
 }
-exports.ConnectorSyncSettingsDtoFromJSONTyped = ConnectorSyncSettingsDtoFromJSONTyped;
 function ConnectorSyncSettingsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -61,4 +62,3 @@ function ConnectorSyncSettingsDtoToJSON(value) {
         syncInterval: value.syncInterval,
     };
 }
-exports.ConnectorSyncSettingsDtoToJSON = ConnectorSyncSettingsDtoToJSON;

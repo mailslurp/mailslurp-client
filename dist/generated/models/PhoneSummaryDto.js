@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneSummaryDtoToJSON = exports.PhoneSummaryDtoFromJSONTyped = exports.PhoneSummaryDtoFromJSON = void 0;
+exports.PhoneSummaryDtoFromJSON = PhoneSummaryDtoFromJSON;
+exports.PhoneSummaryDtoFromJSONTyped = PhoneSummaryDtoFromJSONTyped;
+exports.PhoneSummaryDtoToJSON = PhoneSummaryDtoToJSON;
 var _1 = require("./");
 function PhoneSummaryDtoFromJSON(json) {
     return PhoneSummaryDtoFromJSONTyped(json, false);
 }
-exports.PhoneSummaryDtoFromJSON = PhoneSummaryDtoFromJSON;
 function PhoneSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function PhoneSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
         plans: json['plans'].map(_1.PlanSummaryDtoFromJSON),
     };
 }
-exports.PhoneSummaryDtoFromJSONTyped = PhoneSummaryDtoFromJSONTyped;
 function PhoneSummaryDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function PhoneSummaryDtoToJSON(value) {
         plans: value.plans.map(_1.PlanSummaryDtoToJSON),
     };
 }
-exports.PhoneSummaryDtoToJSON = PhoneSummaryDtoToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImageIssueToJSON = exports.ImageIssueFromJSONTyped = exports.ImageIssueFromJSON = exports.ImageIssueSeverityEnum = void 0;
+exports.ImageIssueSeverityEnum = void 0;
+exports.ImageIssueFromJSON = ImageIssueFromJSON;
+exports.ImageIssueFromJSONTyped = ImageIssueFromJSONTyped;
+exports.ImageIssueToJSON = ImageIssueToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var ImageIssueSeverityEnum;
 (function (ImageIssueSeverityEnum) {
     ImageIssueSeverityEnum["Warning"] = "Warning";
     ImageIssueSeverityEnum["Error"] = "Error";
-})(ImageIssueSeverityEnum = exports.ImageIssueSeverityEnum || (exports.ImageIssueSeverityEnum = {}));
+})(ImageIssueSeverityEnum || (exports.ImageIssueSeverityEnum = ImageIssueSeverityEnum = {}));
 function ImageIssueFromJSON(json) {
     return ImageIssueFromJSONTyped(json, false);
 }
-exports.ImageIssueFromJSON = ImageIssueFromJSON;
 function ImageIssueFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -41,7 +43,6 @@ function ImageIssueFromJSONTyped(json, ignoreDiscriminator) {
         message: json['message'],
     };
 }
-exports.ImageIssueFromJSONTyped = ImageIssueFromJSONTyped;
 function ImageIssueToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -56,4 +57,3 @@ function ImageIssueToJSON(value) {
         message: value.message,
     };
 }
-exports.ImageIssueToJSON = ImageIssueToJSON;

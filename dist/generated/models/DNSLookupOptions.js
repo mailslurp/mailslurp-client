@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DNSLookupOptionsToJSON = exports.DNSLookupOptionsFromJSONTyped = exports.DNSLookupOptionsFromJSON = exports.DNSLookupOptionsRecordTypesEnum = void 0;
+exports.DNSLookupOptionsRecordTypesEnum = void 0;
+exports.DNSLookupOptionsFromJSON = DNSLookupOptionsFromJSON;
+exports.DNSLookupOptionsFromJSONTyped = DNSLookupOptionsFromJSONTyped;
+exports.DNSLookupOptionsToJSON = DNSLookupOptionsToJSON;
 /**
  * @export
  * @enum {string}
@@ -109,11 +112,10 @@ var DNSLookupOptionsRecordTypesEnum;
     DNSLookupOptionsRecordTypesEnum["AMTRELAY"] = "AMTRELAY";
     DNSLookupOptionsRecordTypesEnum["TA"] = "TA";
     DNSLookupOptionsRecordTypesEnum["DLV"] = "DLV";
-})(DNSLookupOptionsRecordTypesEnum = exports.DNSLookupOptionsRecordTypesEnum || (exports.DNSLookupOptionsRecordTypesEnum = {}));
+})(DNSLookupOptionsRecordTypesEnum || (exports.DNSLookupOptionsRecordTypesEnum = DNSLookupOptionsRecordTypesEnum = {}));
 function DNSLookupOptionsFromJSON(json) {
     return DNSLookupOptionsFromJSONTyped(json, false);
 }
-exports.DNSLookupOptionsFromJSON = DNSLookupOptionsFromJSON;
 function DNSLookupOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -124,7 +126,6 @@ function DNSLookupOptionsFromJSONTyped(json, ignoreDiscriminator) {
         omitFinalDNSDot: json['omitFinalDNSDot'],
     };
 }
-exports.DNSLookupOptionsFromJSONTyped = DNSLookupOptionsFromJSONTyped;
 function DNSLookupOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -138,4 +139,3 @@ function DNSLookupOptionsToJSON(value) {
         omitFinalDNSDot: value.omitFinalDNSDot,
     };
 }
-exports.DNSLookupOptionsToJSON = DNSLookupOptionsToJSON;

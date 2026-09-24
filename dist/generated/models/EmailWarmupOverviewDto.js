@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupOverviewDtoToJSON = exports.EmailWarmupOverviewDtoFromJSONTyped = exports.EmailWarmupOverviewDtoFromJSON = void 0;
+exports.EmailWarmupOverviewDtoFromJSON = EmailWarmupOverviewDtoFromJSON;
+exports.EmailWarmupOverviewDtoFromJSONTyped = EmailWarmupOverviewDtoFromJSONTyped;
+exports.EmailWarmupOverviewDtoToJSON = EmailWarmupOverviewDtoToJSON;
 var _1 = require("./");
 function EmailWarmupOverviewDtoFromJSON(json) {
     return EmailWarmupOverviewDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupOverviewDtoFromJSON = EmailWarmupOverviewDtoFromJSON;
 function EmailWarmupOverviewDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +39,6 @@ function EmailWarmupOverviewDtoFromJSONTyped(json, ignoreDiscriminator) {
         programProgress: json['programProgress'].map(_1.EmailWarmupProgramProgressDtoFromJSON),
     };
 }
-exports.EmailWarmupOverviewDtoFromJSONTyped = EmailWarmupOverviewDtoFromJSONTyped;
 function EmailWarmupOverviewDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -61,4 +61,3 @@ function EmailWarmupOverviewDtoToJSON(value) {
         programProgress: value.programProgress.map(_1.EmailWarmupProgramProgressDtoToJSON),
     };
 }
-exports.EmailWarmupOverviewDtoToJSON = EmailWarmupOverviewDtoToJSON;

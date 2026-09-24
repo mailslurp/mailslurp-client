@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageAIOptionsToJSON = exports.AIMessageAIOptionsFromJSONTyped = exports.AIMessageAIOptionsFromJSON = exports.AIMessageAIOptionsModelEnum = void 0;
+exports.AIMessageAIOptionsModelEnum = void 0;
+exports.AIMessageAIOptionsFromJSON = AIMessageAIOptionsFromJSON;
+exports.AIMessageAIOptionsFromJSONTyped = AIMessageAIOptionsFromJSONTyped;
+exports.AIMessageAIOptionsToJSON = AIMessageAIOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var AIMessageAIOptionsModelEnum;
     AIMessageAIOptionsModelEnum["BALANCED_V1"] = "BALANCED_V1";
     AIMessageAIOptionsModelEnum["FLASH_LATEST"] = "FLASH_LATEST";
     AIMessageAIOptionsModelEnum["QUALITY_V1"] = "QUALITY_V1";
-})(AIMessageAIOptionsModelEnum = exports.AIMessageAIOptionsModelEnum || (exports.AIMessageAIOptionsModelEnum = {}));
+})(AIMessageAIOptionsModelEnum || (exports.AIMessageAIOptionsModelEnum = AIMessageAIOptionsModelEnum = {}));
 function AIMessageAIOptionsFromJSON(json) {
     return AIMessageAIOptionsFromJSONTyped(json, false);
 }
-exports.AIMessageAIOptionsFromJSON = AIMessageAIOptionsFromJSON;
 function AIMessageAIOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -43,7 +45,6 @@ function AIMessageAIOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['minimumConfidence'],
     };
 }
-exports.AIMessageAIOptionsFromJSONTyped = AIMessageAIOptionsFromJSONTyped;
 function AIMessageAIOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +60,3 @@ function AIMessageAIOptionsToJSON(value) {
         minimumConfidence: value.minimumConfidence,
     };
 }
-exports.AIMessageAIOptionsToJSON = AIMessageAIOptionsToJSON;

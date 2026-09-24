@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HomeExperienceChecklistStepDtoToJSON = exports.HomeExperienceChecklistStepDtoFromJSONTyped = exports.HomeExperienceChecklistStepDtoFromJSON = exports.HomeExperienceChecklistStepDtoStatusEnum = void 0;
+exports.HomeExperienceChecklistStepDtoStatusEnum = void 0;
+exports.HomeExperienceChecklistStepDtoFromJSON = HomeExperienceChecklistStepDtoFromJSON;
+exports.HomeExperienceChecklistStepDtoFromJSONTyped = HomeExperienceChecklistStepDtoFromJSONTyped;
+exports.HomeExperienceChecklistStepDtoToJSON = HomeExperienceChecklistStepDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var HomeExperienceChecklistStepDtoStatusEnum;
     HomeExperienceChecklistStepDtoStatusEnum["TODO"] = "TODO";
     HomeExperienceChecklistStepDtoStatusEnum["DONE"] = "DONE";
     HomeExperienceChecklistStepDtoStatusEnum["SKIPPED"] = "SKIPPED";
-})(HomeExperienceChecklistStepDtoStatusEnum = exports.HomeExperienceChecklistStepDtoStatusEnum || (exports.HomeExperienceChecklistStepDtoStatusEnum = {}));
+})(HomeExperienceChecklistStepDtoStatusEnum || (exports.HomeExperienceChecklistStepDtoStatusEnum = HomeExperienceChecklistStepDtoStatusEnum = {}));
 function HomeExperienceChecklistStepDtoFromJSON(json) {
     return HomeExperienceChecklistStepDtoFromJSONTyped(json, false);
 }
-exports.HomeExperienceChecklistStepDtoFromJSON = HomeExperienceChecklistStepDtoFromJSON;
 function HomeExperienceChecklistStepDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -45,7 +47,6 @@ function HomeExperienceChecklistStepDtoFromJSONTyped(json, ignoreDiscriminator) 
                 : new Date(json['completedAt']),
     };
 }
-exports.HomeExperienceChecklistStepDtoFromJSONTyped = HomeExperienceChecklistStepDtoFromJSONTyped;
 function HomeExperienceChecklistStepDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -65,4 +66,3 @@ function HomeExperienceChecklistStepDtoToJSON(value) {
                 : value.completedAt.toISOString(),
     };
 }
-exports.HomeExperienceChecklistStepDtoToJSON = HomeExperienceChecklistStepDtoToJSON;

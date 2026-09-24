@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorProjectionToJSON = exports.ConnectorProjectionFromJSONTyped = exports.ConnectorProjectionFromJSON = void 0;
+exports.ConnectorProjectionFromJSON = ConnectorProjectionFromJSON;
+exports.ConnectorProjectionFromJSONTyped = ConnectorProjectionFromJSONTyped;
+exports.ConnectorProjectionToJSON = ConnectorProjectionToJSON;
 var runtime_1 = require("../runtime");
 function ConnectorProjectionFromJSON(json) {
     return ConnectorProjectionFromJSONTyped(json, false);
 }
-exports.ConnectorProjectionFromJSON = ConnectorProjectionFromJSON;
 function ConnectorProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function ConnectorProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.ConnectorProjectionFromJSONTyped = ConnectorProjectionFromJSONTyped;
 function ConnectorProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function ConnectorProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.ConnectorProjectionToJSON = ConnectorProjectionToJSON;

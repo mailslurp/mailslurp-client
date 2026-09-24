@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneSummaryCountryDtoToJSON = exports.PhoneSummaryCountryDtoFromJSONTyped = exports.PhoneSummaryCountryDtoFromJSON = exports.PhoneSummaryCountryDtoPhoneCountryCodeEnum = void 0;
+exports.PhoneSummaryCountryDtoPhoneCountryCodeEnum = void 0;
+exports.PhoneSummaryCountryDtoFromJSON = PhoneSummaryCountryDtoFromJSON;
+exports.PhoneSummaryCountryDtoFromJSONTyped = PhoneSummaryCountryDtoFromJSONTyped;
+exports.PhoneSummaryCountryDtoToJSON = PhoneSummaryCountryDtoToJSON;
 /**
  * @export
  * @enum {string}
@@ -33,11 +36,10 @@ var PhoneSummaryCountryDtoPhoneCountryCodeEnum;
     PhoneSummaryCountryDtoPhoneCountryCodeEnum["IL"] = "IL";
     PhoneSummaryCountryDtoPhoneCountryCodeEnum["FI"] = "FI";
     PhoneSummaryCountryDtoPhoneCountryCodeEnum["SE"] = "SE";
-})(PhoneSummaryCountryDtoPhoneCountryCodeEnum = exports.PhoneSummaryCountryDtoPhoneCountryCodeEnum || (exports.PhoneSummaryCountryDtoPhoneCountryCodeEnum = {}));
+})(PhoneSummaryCountryDtoPhoneCountryCodeEnum || (exports.PhoneSummaryCountryDtoPhoneCountryCodeEnum = PhoneSummaryCountryDtoPhoneCountryCodeEnum = {}));
 function PhoneSummaryCountryDtoFromJSON(json) {
     return PhoneSummaryCountryDtoFromJSONTyped(json, false);
 }
-exports.PhoneSummaryCountryDtoFromJSON = PhoneSummaryCountryDtoFromJSON;
 function PhoneSummaryCountryDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -48,7 +50,6 @@ function PhoneSummaryCountryDtoFromJSONTyped(json, ignoreDiscriminator) {
         hasPlan: json['hasPlan'],
     };
 }
-exports.PhoneSummaryCountryDtoFromJSONTyped = PhoneSummaryCountryDtoFromJSONTyped;
 function PhoneSummaryCountryDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -62,4 +63,3 @@ function PhoneSummaryCountryDtoToJSON(value) {
         hasPlan: value.hasPlan,
     };
 }
-exports.PhoneSummaryCountryDtoToJSON = PhoneSummaryCountryDtoToJSON;

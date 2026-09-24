@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserPermissionDtoToJSON = exports.UserPermissionDtoFromJSONTyped = exports.UserPermissionDtoFromJSON = exports.UserPermissionDtoPermissionTypeEnum = void 0;
+exports.UserPermissionDtoPermissionTypeEnum = void 0;
+exports.UserPermissionDtoFromJSON = UserPermissionDtoFromJSON;
+exports.UserPermissionDtoFromJSONTyped = UserPermissionDtoFromJSONTyped;
+exports.UserPermissionDtoToJSON = UserPermissionDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -67,11 +70,10 @@ var UserPermissionDtoPermissionTypeEnum;
     UserPermissionDtoPermissionTypeEnum["MANAGE_API_KEYS"] = "MANAGE_API_KEYS";
     UserPermissionDtoPermissionTypeEnum["MANAGE_EXPORTS"] = "MANAGE_EXPORTS";
     UserPermissionDtoPermissionTypeEnum["MANAGE_NOTIFICATIONS"] = "MANAGE_NOTIFICATIONS";
-})(UserPermissionDtoPermissionTypeEnum = exports.UserPermissionDtoPermissionTypeEnum || (exports.UserPermissionDtoPermissionTypeEnum = {}));
+})(UserPermissionDtoPermissionTypeEnum || (exports.UserPermissionDtoPermissionTypeEnum = UserPermissionDtoPermissionTypeEnum = {}));
 function UserPermissionDtoFromJSON(json) {
     return UserPermissionDtoFromJSONTyped(json, false);
 }
-exports.UserPermissionDtoFromJSON = UserPermissionDtoFromJSON;
 function UserPermissionDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -88,7 +90,6 @@ function UserPermissionDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.UserPermissionDtoFromJSONTyped = UserPermissionDtoFromJSONTyped;
 function UserPermissionDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -106,4 +107,3 @@ function UserPermissionDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.UserPermissionDtoToJSON = UserPermissionDtoToJSON;

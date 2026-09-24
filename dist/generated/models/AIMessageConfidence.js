@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageConfidenceToJSON = exports.AIMessageConfidenceFromJSONTyped = exports.AIMessageConfidenceFromJSON = exports.AIMessageConfidenceMethodEnum = void 0;
+exports.AIMessageConfidenceMethodEnum = void 0;
+exports.AIMessageConfidenceFromJSON = AIMessageConfidenceFromJSON;
+exports.AIMessageConfidenceFromJSONTyped = AIMessageConfidenceFromJSONTyped;
+exports.AIMessageConfidenceToJSON = AIMessageConfidenceToJSON;
 /**
  * @export
  * @enum {string}
@@ -21,11 +24,10 @@ exports.AIMessageConfidenceToJSON = exports.AIMessageConfidenceFromJSONTyped = e
 var AIMessageConfidenceMethodEnum;
 (function (AIMessageConfidenceMethodEnum) {
     AIMessageConfidenceMethodEnum["MODEL_REPORTED"] = "MODEL_REPORTED";
-})(AIMessageConfidenceMethodEnum = exports.AIMessageConfidenceMethodEnum || (exports.AIMessageConfidenceMethodEnum = {}));
+})(AIMessageConfidenceMethodEnum || (exports.AIMessageConfidenceMethodEnum = AIMessageConfidenceMethodEnum = {}));
 function AIMessageConfidenceFromJSON(json) {
     return AIMessageConfidenceFromJSONTyped(json, false);
 }
-exports.AIMessageConfidenceFromJSON = AIMessageConfidenceFromJSON;
 function AIMessageConfidenceFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -36,7 +38,6 @@ function AIMessageConfidenceFromJSONTyped(json, ignoreDiscriminator) {
         calibrated: json['calibrated'],
     };
 }
-exports.AIMessageConfidenceFromJSONTyped = AIMessageConfidenceFromJSONTyped;
 function AIMessageConfidenceToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +51,3 @@ function AIMessageConfidenceToJSON(value) {
         calibrated: value.calibrated,
     };
 }
-exports.AIMessageConfidenceToJSON = AIMessageConfidenceToJSON;

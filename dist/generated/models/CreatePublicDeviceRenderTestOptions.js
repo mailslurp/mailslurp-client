@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePublicDeviceRenderTestOptionsToJSON = exports.CreatePublicDeviceRenderTestOptionsFromJSONTyped = exports.CreatePublicDeviceRenderTestOptionsFromJSON = exports.CreatePublicDeviceRenderTestOptionsPreviewModeEnum = void 0;
+exports.CreatePublicDeviceRenderTestOptionsPreviewModeEnum = void 0;
+exports.CreatePublicDeviceRenderTestOptionsFromJSON = CreatePublicDeviceRenderTestOptionsFromJSON;
+exports.CreatePublicDeviceRenderTestOptionsFromJSONTyped = CreatePublicDeviceRenderTestOptionsFromJSONTyped;
+exports.CreatePublicDeviceRenderTestOptionsToJSON = CreatePublicDeviceRenderTestOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var CreatePublicDeviceRenderTestOptionsPreviewModeEnum;
 (function (CreatePublicDeviceRenderTestOptionsPreviewModeEnum) {
     CreatePublicDeviceRenderTestOptionsPreviewModeEnum["DEVICE_RENDER"] = "DEVICE_RENDER";
     CreatePublicDeviceRenderTestOptionsPreviewModeEnum["LIGHT_DARK"] = "LIGHT_DARK";
-})(CreatePublicDeviceRenderTestOptionsPreviewModeEnum = exports.CreatePublicDeviceRenderTestOptionsPreviewModeEnum || (exports.CreatePublicDeviceRenderTestOptionsPreviewModeEnum = {}));
+})(CreatePublicDeviceRenderTestOptionsPreviewModeEnum || (exports.CreatePublicDeviceRenderTestOptionsPreviewModeEnum = CreatePublicDeviceRenderTestOptionsPreviewModeEnum = {}));
 function CreatePublicDeviceRenderTestOptionsFromJSON(json) {
     return CreatePublicDeviceRenderTestOptionsFromJSONTyped(json, false);
 }
-exports.CreatePublicDeviceRenderTestOptionsFromJSON = CreatePublicDeviceRenderTestOptionsFromJSON;
 function CreatePublicDeviceRenderTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +42,6 @@ function CreatePublicDeviceRenderTestOptionsFromJSONTyped(json, ignoreDiscrimina
         previewMode: json['previewMode'],
     };
 }
-exports.CreatePublicDeviceRenderTestOptionsFromJSONTyped = CreatePublicDeviceRenderTestOptionsFromJSONTyped;
 function CreatePublicDeviceRenderTestOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +55,3 @@ function CreatePublicDeviceRenderTestOptionsToJSON(value) {
         previewMode: value.previewMode,
     };
 }
-exports.CreatePublicDeviceRenderTestOptionsToJSON = CreatePublicDeviceRenderTestOptionsToJSON;

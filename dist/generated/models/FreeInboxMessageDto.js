@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FreeInboxMessageDtoToJSON = exports.FreeInboxMessageDtoFromJSONTyped = exports.FreeInboxMessageDtoFromJSON = void 0;
+exports.FreeInboxMessageDtoFromJSON = FreeInboxMessageDtoFromJSON;
+exports.FreeInboxMessageDtoFromJSONTyped = FreeInboxMessageDtoFromJSONTyped;
+exports.FreeInboxMessageDtoToJSON = FreeInboxMessageDtoToJSON;
 function FreeInboxMessageDtoFromJSON(json) {
     return FreeInboxMessageDtoFromJSONTyped(json, false);
 }
-exports.FreeInboxMessageDtoFromJSON = FreeInboxMessageDtoFromJSON;
 function FreeInboxMessageDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function FreeInboxMessageDtoFromJSONTyped(json, ignoreDiscriminator) {
         receivedAt: new Date(json['receivedAt']),
     };
 }
-exports.FreeInboxMessageDtoFromJSONTyped = FreeInboxMessageDtoFromJSONTyped;
 function FreeInboxMessageDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function FreeInboxMessageDtoToJSON(value) {
         receivedAt: value.receivedAt.toISOString(),
     };
 }
-exports.FreeInboxMessageDtoToJSON = FreeInboxMessageDtoToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentConversationCursorPageDtoToJSON = exports.AgentConversationCursorPageDtoFromJSONTyped = exports.AgentConversationCursorPageDtoFromJSON = void 0;
+exports.AgentConversationCursorPageDtoFromJSON = AgentConversationCursorPageDtoFromJSON;
+exports.AgentConversationCursorPageDtoFromJSONTyped = AgentConversationCursorPageDtoFromJSONTyped;
+exports.AgentConversationCursorPageDtoToJSON = AgentConversationCursorPageDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function AgentConversationCursorPageDtoFromJSON(json) {
     return AgentConversationCursorPageDtoFromJSONTyped(json, false);
 }
-exports.AgentConversationCursorPageDtoFromJSON = AgentConversationCursorPageDtoFromJSON;
 function AgentConversationCursorPageDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function AgentConversationCursorPageDtoFromJSONTyped(json, ignoreDiscriminator) 
         hasMore: json['hasMore'],
     };
 }
-exports.AgentConversationCursorPageDtoFromJSONTyped = AgentConversationCursorPageDtoFromJSONTyped;
 function AgentConversationCursorPageDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function AgentConversationCursorPageDtoToJSON(value) {
         hasMore: value.hasMore,
     };
 }
-exports.AgentConversationCursorPageDtoToJSON = AgentConversationCursorPageDtoToJSON;

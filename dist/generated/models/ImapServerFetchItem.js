@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerFetchItemToJSON = exports.ImapServerFetchItemFromJSONTyped = exports.ImapServerFetchItemFromJSON = void 0;
+exports.ImapServerFetchItemFromJSON = ImapServerFetchItemFromJSON;
+exports.ImapServerFetchItemFromJSONTyped = ImapServerFetchItemFromJSONTyped;
+exports.ImapServerFetchItemToJSON = ImapServerFetchItemToJSON;
 function ImapServerFetchItemFromJSON(json) {
     return ImapServerFetchItemFromJSONTyped(json, false);
 }
-exports.ImapServerFetchItemFromJSON = ImapServerFetchItemFromJSON;
 function ImapServerFetchItemFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function ImapServerFetchItemFromJSONTyped(json, ignoreDiscriminator) {
         read: json['read'],
     };
 }
-exports.ImapServerFetchItemFromJSONTyped = ImapServerFetchItemFromJSONTyped;
 function ImapServerFetchItemToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function ImapServerFetchItemToJSON(value) {
         read: value.read,
     };
 }
-exports.ImapServerFetchItemToJSON = ImapServerFetchItemToJSON;

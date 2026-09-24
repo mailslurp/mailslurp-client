@@ -28,7 +28,6 @@
         "Function",
         "Accessor",
         "Method",
-        "ObjectLiteral",
         "Parameter",
         "TypeParameter",
         "TypeLiteral",

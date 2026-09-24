@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageListUnsubscribeRecipientsToJSON = exports.PageListUnsubscribeRecipientsFromJSONTyped = exports.PageListUnsubscribeRecipientsFromJSON = void 0;
+exports.PageListUnsubscribeRecipientsFromJSON = PageListUnsubscribeRecipientsFromJSON;
+exports.PageListUnsubscribeRecipientsFromJSONTyped = PageListUnsubscribeRecipientsFromJSONTyped;
+exports.PageListUnsubscribeRecipientsToJSON = PageListUnsubscribeRecipientsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageListUnsubscribeRecipientsFromJSON(json) {
     return PageListUnsubscribeRecipientsFromJSONTyped(json, false);
 }
-exports.PageListUnsubscribeRecipientsFromJSON = PageListUnsubscribeRecipientsFromJSON;
 function PageListUnsubscribeRecipientsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageListUnsubscribeRecipientsFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageListUnsubscribeRecipientsFromJSONTyped = PageListUnsubscribeRecipientsFromJSONTyped;
 function PageListUnsubscribeRecipientsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageListUnsubscribeRecipientsToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageListUnsubscribeRecipientsToJSON = PageListUnsubscribeRecipientsToJSON;

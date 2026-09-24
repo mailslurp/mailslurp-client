@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PostmasterDomainDtoToJSON = exports.PostmasterDomainDtoFromJSONTyped = exports.PostmasterDomainDtoFromJSON = void 0;
+exports.PostmasterDomainDtoFromJSON = PostmasterDomainDtoFromJSON;
+exports.PostmasterDomainDtoFromJSONTyped = PostmasterDomainDtoFromJSONTyped;
+exports.PostmasterDomainDtoToJSON = PostmasterDomainDtoToJSON;
 var runtime_1 = require("../runtime");
 function PostmasterDomainDtoFromJSON(json) {
     return PostmasterDomainDtoFromJSONTyped(json, false);
 }
-exports.PostmasterDomainDtoFromJSON = PostmasterDomainDtoFromJSON;
 function PostmasterDomainDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PostmasterDomainDtoFromJSONTyped(json, ignoreDiscriminator) {
                 : new Date(json['lastSyncedAt']),
     };
 }
-exports.PostmasterDomainDtoFromJSONTyped = PostmasterDomainDtoFromJSONTyped;
 function PostmasterDomainDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -73,4 +73,3 @@ function PostmasterDomainDtoToJSON(value) {
                 : value.lastSyncedAt.toISOString(),
     };
 }
-exports.PostmasterDomainDtoToJSON = PostmasterDomainDtoToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentConversationHandoffDtoToJSON = exports.AgentConversationHandoffDtoFromJSONTyped = exports.AgentConversationHandoffDtoFromJSON = exports.AgentConversationHandoffDtoStatusEnum = exports.AgentConversationHandoffDtoPriorityEnum = void 0;
+exports.AgentConversationHandoffDtoStatusEnum = exports.AgentConversationHandoffDtoPriorityEnum = void 0;
+exports.AgentConversationHandoffDtoFromJSON = AgentConversationHandoffDtoFromJSON;
+exports.AgentConversationHandoffDtoFromJSONTyped = AgentConversationHandoffDtoFromJSONTyped;
+exports.AgentConversationHandoffDtoToJSON = AgentConversationHandoffDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,7 +28,7 @@ var AgentConversationHandoffDtoPriorityEnum;
     AgentConversationHandoffDtoPriorityEnum["NORMAL"] = "NORMAL";
     AgentConversationHandoffDtoPriorityEnum["HIGH"] = "HIGH";
     AgentConversationHandoffDtoPriorityEnum["URGENT"] = "URGENT";
-})(AgentConversationHandoffDtoPriorityEnum = exports.AgentConversationHandoffDtoPriorityEnum || (exports.AgentConversationHandoffDtoPriorityEnum = {}));
+})(AgentConversationHandoffDtoPriorityEnum || (exports.AgentConversationHandoffDtoPriorityEnum = AgentConversationHandoffDtoPriorityEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -37,11 +40,10 @@ var AgentConversationHandoffDtoStatusEnum;
     AgentConversationHandoffDtoStatusEnum["APPROVED"] = "APPROVED";
     AgentConversationHandoffDtoStatusEnum["REJECTED"] = "REJECTED";
     AgentConversationHandoffDtoStatusEnum["RESOLVED"] = "RESOLVED";
-})(AgentConversationHandoffDtoStatusEnum = exports.AgentConversationHandoffDtoStatusEnum || (exports.AgentConversationHandoffDtoStatusEnum = {}));
+})(AgentConversationHandoffDtoStatusEnum || (exports.AgentConversationHandoffDtoStatusEnum = AgentConversationHandoffDtoStatusEnum = {}));
 function AgentConversationHandoffDtoFromJSON(json) {
     return AgentConversationHandoffDtoFromJSONTyped(json, false);
 }
-exports.AgentConversationHandoffDtoFromJSON = AgentConversationHandoffDtoFromJSON;
 function AgentConversationHandoffDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -80,7 +82,6 @@ function AgentConversationHandoffDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['conversationVersion'],
     };
 }
-exports.AgentConversationHandoffDtoFromJSONTyped = AgentConversationHandoffDtoFromJSONTyped;
 function AgentConversationHandoffDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -112,4 +113,3 @@ function AgentConversationHandoffDtoToJSON(value) {
         conversationVersion: value.conversationVersion,
     };
 }
-exports.AgentConversationHandoffDtoToJSON = AgentConversationHandoffDtoToJSON;

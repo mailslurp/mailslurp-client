@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScimEmailToJSON = exports.ScimEmailFromJSONTyped = exports.ScimEmailFromJSON = void 0;
+exports.ScimEmailFromJSON = ScimEmailFromJSON;
+exports.ScimEmailFromJSONTyped = ScimEmailFromJSONTyped;
+exports.ScimEmailToJSON = ScimEmailToJSON;
 var runtime_1 = require("../runtime");
 function ScimEmailFromJSON(json) {
     return ScimEmailFromJSONTyped(json, false);
 }
-exports.ScimEmailFromJSON = ScimEmailFromJSON;
 function ScimEmailFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function ScimEmailFromJSONTyped(json, ignoreDiscriminator) {
         type: !(0, runtime_1.exists)(json, 'type') ? undefined : json['type'],
     };
 }
-exports.ScimEmailFromJSONTyped = ScimEmailFromJSONTyped;
 function ScimEmailToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ScimEmailToJSON(value) {
         type: value.type,
     };
 }
-exports.ScimEmailToJSON = ScimEmailToJSON;

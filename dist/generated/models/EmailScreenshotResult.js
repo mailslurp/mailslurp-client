@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailScreenshotResultToJSON = exports.EmailScreenshotResultFromJSONTyped = exports.EmailScreenshotResultFromJSON = void 0;
+exports.EmailScreenshotResultFromJSON = EmailScreenshotResultFromJSON;
+exports.EmailScreenshotResultFromJSONTyped = EmailScreenshotResultFromJSONTyped;
+exports.EmailScreenshotResultToJSON = EmailScreenshotResultToJSON;
 function EmailScreenshotResultFromJSON(json) {
     return EmailScreenshotResultFromJSONTyped(json, false);
 }
-exports.EmailScreenshotResultFromJSON = EmailScreenshotResultFromJSON;
 function EmailScreenshotResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function EmailScreenshotResultFromJSONTyped(json, ignoreDiscriminator) {
         base64EncodedImage: json['base64EncodedImage'],
     };
 }
-exports.EmailScreenshotResultFromJSONTyped = EmailScreenshotResultFromJSONTyped;
 function EmailScreenshotResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function EmailScreenshotResultToJSON(value) {
         base64EncodedImage: value.base64EncodedImage,
     };
 }
-exports.EmailScreenshotResultToJSON = EmailScreenshotResultToJSON;

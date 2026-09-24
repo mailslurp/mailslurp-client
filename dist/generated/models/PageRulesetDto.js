@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageRulesetDtoToJSON = exports.PageRulesetDtoFromJSONTyped = exports.PageRulesetDtoFromJSON = void 0;
+exports.PageRulesetDtoFromJSON = PageRulesetDtoFromJSON;
+exports.PageRulesetDtoFromJSONTyped = PageRulesetDtoFromJSONTyped;
+exports.PageRulesetDtoToJSON = PageRulesetDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageRulesetDtoFromJSON(json) {
     return PageRulesetDtoFromJSONTyped(json, false);
 }
-exports.PageRulesetDtoFromJSON = PageRulesetDtoFromJSON;
 function PageRulesetDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageRulesetDtoFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageRulesetDtoFromJSONTyped = PageRulesetDtoFromJSONTyped;
 function PageRulesetDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageRulesetDtoToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageRulesetDtoToJSON = PageRulesetDtoToJSON;

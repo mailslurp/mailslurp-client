@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StructuredOutputSchemaValidationToJSON = exports.StructuredOutputSchemaValidationFromJSONTyped = exports.StructuredOutputSchemaValidationFromJSON = void 0;
+exports.StructuredOutputSchemaValidationFromJSON = StructuredOutputSchemaValidationFromJSON;
+exports.StructuredOutputSchemaValidationFromJSONTyped = StructuredOutputSchemaValidationFromJSONTyped;
+exports.StructuredOutputSchemaValidationToJSON = StructuredOutputSchemaValidationToJSON;
 var runtime_1 = require("../runtime");
 function StructuredOutputSchemaValidationFromJSON(json) {
     return StructuredOutputSchemaValidationFromJSONTyped(json, false);
 }
-exports.StructuredOutputSchemaValidationFromJSON = StructuredOutputSchemaValidationFromJSON;
 function StructuredOutputSchemaValidationFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function StructuredOutputSchemaValidationFromJSONTyped(json, ignoreDiscriminator
             : json['exampleOutput'],
     };
 }
-exports.StructuredOutputSchemaValidationFromJSONTyped = StructuredOutputSchemaValidationFromJSONTyped;
 function StructuredOutputSchemaValidationToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function StructuredOutputSchemaValidationToJSON(value) {
         exampleOutput: value.exampleOutput,
     };
 }
-exports.StructuredOutputSchemaValidationToJSON = StructuredOutputSchemaValidationToJSON;

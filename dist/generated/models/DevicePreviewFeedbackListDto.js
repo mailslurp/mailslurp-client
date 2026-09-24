@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewFeedbackListDtoToJSON = exports.DevicePreviewFeedbackListDtoFromJSONTyped = exports.DevicePreviewFeedbackListDtoFromJSON = void 0;
+exports.DevicePreviewFeedbackListDtoFromJSON = DevicePreviewFeedbackListDtoFromJSON;
+exports.DevicePreviewFeedbackListDtoFromJSONTyped = DevicePreviewFeedbackListDtoFromJSONTyped;
+exports.DevicePreviewFeedbackListDtoToJSON = DevicePreviewFeedbackListDtoToJSON;
 var _1 = require("./");
 function DevicePreviewFeedbackListDtoFromJSON(json) {
     return DevicePreviewFeedbackListDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewFeedbackListDtoFromJSON = DevicePreviewFeedbackListDtoFromJSON;
 function DevicePreviewFeedbackListDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function DevicePreviewFeedbackListDtoFromJSONTyped(json, ignoreDiscriminator) {
         items: json['items'].map(_1.DevicePreviewFeedbackDtoFromJSON),
     };
 }
-exports.DevicePreviewFeedbackListDtoFromJSONTyped = DevicePreviewFeedbackListDtoFromJSONTyped;
 function DevicePreviewFeedbackListDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function DevicePreviewFeedbackListDtoToJSON(value) {
         items: value.items.map(_1.DevicePreviewFeedbackDtoToJSON),
     };
 }
-exports.DevicePreviewFeedbackListDtoToJSON = DevicePreviewFeedbackListDtoToJSON;

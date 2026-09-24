@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CampaignProbeInsightsDtoToJSON = exports.CampaignProbeInsightsDtoFromJSONTyped = exports.CampaignProbeInsightsDtoFromJSON = void 0;
+exports.CampaignProbeInsightsDtoFromJSON = CampaignProbeInsightsDtoFromJSON;
+exports.CampaignProbeInsightsDtoFromJSONTyped = CampaignProbeInsightsDtoFromJSONTyped;
+exports.CampaignProbeInsightsDtoToJSON = CampaignProbeInsightsDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function CampaignProbeInsightsDtoFromJSON(json) {
     return CampaignProbeInsightsDtoFromJSONTyped(json, false);
 }
-exports.CampaignProbeInsightsDtoFromJSON = CampaignProbeInsightsDtoFromJSON;
 function CampaignProbeInsightsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function CampaignProbeInsightsDtoFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.CampaignProbeRunDtoFromJSON)(json['latestRun']),
     };
 }
-exports.CampaignProbeInsightsDtoFromJSONTyped = CampaignProbeInsightsDtoFromJSONTyped;
 function CampaignProbeInsightsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -70,4 +70,3 @@ function CampaignProbeInsightsDtoToJSON(value) {
         latestRun: (0, _1.CampaignProbeRunDtoToJSON)(value.latestRun),
     };
 }
-exports.CampaignProbeInsightsDtoToJSON = CampaignProbeInsightsDtoToJSON;

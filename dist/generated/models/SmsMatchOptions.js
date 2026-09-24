@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmsMatchOptionsToJSON = exports.SmsMatchOptionsFromJSONTyped = exports.SmsMatchOptionsFromJSON = void 0;
+exports.SmsMatchOptionsFromJSON = SmsMatchOptionsFromJSON;
+exports.SmsMatchOptionsFromJSONTyped = SmsMatchOptionsFromJSONTyped;
+exports.SmsMatchOptionsToJSON = SmsMatchOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function SmsMatchOptionsFromJSON(json) {
     return SmsMatchOptionsFromJSONTyped(json, false);
 }
-exports.SmsMatchOptionsFromJSON = SmsMatchOptionsFromJSON;
 function SmsMatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function SmsMatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.AIMessageMatchOptionsFromJSON)(json['ai']),
     };
 }
-exports.SmsMatchOptionsFromJSONTyped = SmsMatchOptionsFromJSONTyped;
 function SmsMatchOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -52,4 +52,3 @@ function SmsMatchOptionsToJSON(value) {
         ai: (0, _1.AIMessageMatchOptionsToJSON)(value.ai),
     };
 }
-exports.SmsMatchOptionsToJSON = SmsMatchOptionsToJSON;

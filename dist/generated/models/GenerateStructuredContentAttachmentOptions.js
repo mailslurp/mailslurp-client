@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateStructuredContentAttachmentOptionsToJSON = exports.GenerateStructuredContentAttachmentOptionsFromJSONTyped = exports.GenerateStructuredContentAttachmentOptionsFromJSON = void 0;
+exports.GenerateStructuredContentAttachmentOptionsFromJSON = GenerateStructuredContentAttachmentOptionsFromJSON;
+exports.GenerateStructuredContentAttachmentOptionsFromJSONTyped = GenerateStructuredContentAttachmentOptionsFromJSONTyped;
+exports.GenerateStructuredContentAttachmentOptionsToJSON = GenerateStructuredContentAttachmentOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function GenerateStructuredContentAttachmentOptionsFromJSON(json) {
     return GenerateStructuredContentAttachmentOptionsFromJSONTyped(json, false);
 }
-exports.GenerateStructuredContentAttachmentOptionsFromJSON = GenerateStructuredContentAttachmentOptionsFromJSON;
 function GenerateStructuredContentAttachmentOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -36,7 +37,6 @@ function GenerateStructuredContentAttachmentOptionsFromJSONTyped(json, ignoreDis
         emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
     };
 }
-exports.GenerateStructuredContentAttachmentOptionsFromJSONTyped = GenerateStructuredContentAttachmentOptionsFromJSONTyped;
 function GenerateStructuredContentAttachmentOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -52,4 +52,3 @@ function GenerateStructuredContentAttachmentOptionsToJSON(value) {
         emailId: value.emailId,
     };
 }
-exports.GenerateStructuredContentAttachmentOptionsToJSON = GenerateStructuredContentAttachmentOptionsToJSON;

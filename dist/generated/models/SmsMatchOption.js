@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmsMatchOptionToJSON = exports.SmsMatchOptionFromJSONTyped = exports.SmsMatchOptionFromJSON = exports.SmsMatchOptionShouldEnum = exports.SmsMatchOptionFieldEnum = void 0;
+exports.SmsMatchOptionShouldEnum = exports.SmsMatchOptionFieldEnum = void 0;
+exports.SmsMatchOptionFromJSON = SmsMatchOptionFromJSON;
+exports.SmsMatchOptionFromJSONTyped = SmsMatchOptionFromJSONTyped;
+exports.SmsMatchOptionToJSON = SmsMatchOptionToJSON;
 /**
  * @export
  * @enum {string}
@@ -22,7 +25,7 @@ var SmsMatchOptionFieldEnum;
 (function (SmsMatchOptionFieldEnum) {
     SmsMatchOptionFieldEnum["BODY"] = "BODY";
     SmsMatchOptionFieldEnum["FROM"] = "FROM";
-})(SmsMatchOptionFieldEnum = exports.SmsMatchOptionFieldEnum || (exports.SmsMatchOptionFieldEnum = {}));
+})(SmsMatchOptionFieldEnum || (exports.SmsMatchOptionFieldEnum = SmsMatchOptionFieldEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -32,11 +35,10 @@ var SmsMatchOptionShouldEnum;
     SmsMatchOptionShouldEnum["MATCH"] = "MATCH";
     SmsMatchOptionShouldEnum["CONTAIN"] = "CONTAIN";
     SmsMatchOptionShouldEnum["EQUAL"] = "EQUAL";
-})(SmsMatchOptionShouldEnum = exports.SmsMatchOptionShouldEnum || (exports.SmsMatchOptionShouldEnum = {}));
+})(SmsMatchOptionShouldEnum || (exports.SmsMatchOptionShouldEnum = SmsMatchOptionShouldEnum = {}));
 function SmsMatchOptionFromJSON(json) {
     return SmsMatchOptionFromJSONTyped(json, false);
 }
-exports.SmsMatchOptionFromJSON = SmsMatchOptionFromJSON;
 function SmsMatchOptionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -47,7 +49,6 @@ function SmsMatchOptionFromJSONTyped(json, ignoreDiscriminator) {
         value: json['value'],
     };
 }
-exports.SmsMatchOptionFromJSONTyped = SmsMatchOptionFromJSONTyped;
 function SmsMatchOptionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -61,4 +62,3 @@ function SmsMatchOptionToJSON(value) {
         value: value.value,
     };
 }
-exports.SmsMatchOptionToJSON = SmsMatchOptionToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthBootstrapDtoToJSON = exports.AuthBootstrapDtoFromJSONTyped = exports.AuthBootstrapDtoFromJSON = exports.AuthBootstrapDtoEffectiveUserPermissionsEnum = void 0;
+exports.AuthBootstrapDtoEffectiveUserPermissionsEnum = void 0;
+exports.AuthBootstrapDtoFromJSON = AuthBootstrapDtoFromJSON;
+exports.AuthBootstrapDtoFromJSONTyped = AuthBootstrapDtoFromJSONTyped;
+exports.AuthBootstrapDtoToJSON = AuthBootstrapDtoToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -67,11 +70,10 @@ var AuthBootstrapDtoEffectiveUserPermissionsEnum;
     AuthBootstrapDtoEffectiveUserPermissionsEnum["MANAGE_API_KEYS"] = "MANAGE_API_KEYS";
     AuthBootstrapDtoEffectiveUserPermissionsEnum["MANAGE_EXPORTS"] = "MANAGE_EXPORTS";
     AuthBootstrapDtoEffectiveUserPermissionsEnum["MANAGE_NOTIFICATIONS"] = "MANAGE_NOTIFICATIONS";
-})(AuthBootstrapDtoEffectiveUserPermissionsEnum = exports.AuthBootstrapDtoEffectiveUserPermissionsEnum || (exports.AuthBootstrapDtoEffectiveUserPermissionsEnum = {}));
+})(AuthBootstrapDtoEffectiveUserPermissionsEnum || (exports.AuthBootstrapDtoEffectiveUserPermissionsEnum = AuthBootstrapDtoEffectiveUserPermissionsEnum = {}));
 function AuthBootstrapDtoFromJSON(json) {
     return AuthBootstrapDtoFromJSONTyped(json, false);
 }
-exports.AuthBootstrapDtoFromJSON = AuthBootstrapDtoFromJSON;
 function AuthBootstrapDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -84,7 +86,6 @@ function AuthBootstrapDtoFromJSONTyped(json, ignoreDiscriminator) {
         homeExperience: (0, _1.HomeExperienceDtoFromJSON)(json['homeExperience']),
     };
 }
-exports.AuthBootstrapDtoFromJSONTyped = AuthBootstrapDtoFromJSONTyped;
 function AuthBootstrapDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -100,4 +101,3 @@ function AuthBootstrapDtoToJSON(value) {
         homeExperience: (0, _1.HomeExperienceDtoToJSON)(value.homeExperience),
     };
 }
-exports.AuthBootstrapDtoToJSON = AuthBootstrapDtoToJSON;

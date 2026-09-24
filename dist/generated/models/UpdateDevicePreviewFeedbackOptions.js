@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateDevicePreviewFeedbackOptionsToJSON = exports.UpdateDevicePreviewFeedbackOptionsFromJSONTyped = exports.UpdateDevicePreviewFeedbackOptionsFromJSON = exports.UpdateDevicePreviewFeedbackOptionsStatusEnum = void 0;
+exports.UpdateDevicePreviewFeedbackOptionsStatusEnum = void 0;
+exports.UpdateDevicePreviewFeedbackOptionsFromJSON = UpdateDevicePreviewFeedbackOptionsFromJSON;
+exports.UpdateDevicePreviewFeedbackOptionsFromJSONTyped = UpdateDevicePreviewFeedbackOptionsFromJSONTyped;
+exports.UpdateDevicePreviewFeedbackOptionsToJSON = UpdateDevicePreviewFeedbackOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,11 +28,10 @@ var UpdateDevicePreviewFeedbackOptionsStatusEnum;
     UpdateDevicePreviewFeedbackOptionsStatusEnum["ACKNOWLEDGED"] = "ACKNOWLEDGED";
     UpdateDevicePreviewFeedbackOptionsStatusEnum["RESOLVED"] = "RESOLVED";
     UpdateDevicePreviewFeedbackOptionsStatusEnum["DISMISSED"] = "DISMISSED";
-})(UpdateDevicePreviewFeedbackOptionsStatusEnum = exports.UpdateDevicePreviewFeedbackOptionsStatusEnum || (exports.UpdateDevicePreviewFeedbackOptionsStatusEnum = {}));
+})(UpdateDevicePreviewFeedbackOptionsStatusEnum || (exports.UpdateDevicePreviewFeedbackOptionsStatusEnum = UpdateDevicePreviewFeedbackOptionsStatusEnum = {}));
 function UpdateDevicePreviewFeedbackOptionsFromJSON(json) {
     return UpdateDevicePreviewFeedbackOptionsFromJSONTyped(json, false);
 }
-exports.UpdateDevicePreviewFeedbackOptionsFromJSON = UpdateDevicePreviewFeedbackOptionsFromJSON;
 function UpdateDevicePreviewFeedbackOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -50,7 +52,6 @@ function UpdateDevicePreviewFeedbackOptionsFromJSONTyped(json, ignoreDiscriminat
         metadata: !(0, runtime_1.exists)(json, 'metadata') ? undefined : json['metadata'],
     };
 }
-exports.UpdateDevicePreviewFeedbackOptionsFromJSONTyped = UpdateDevicePreviewFeedbackOptionsFromJSONTyped;
 function UpdateDevicePreviewFeedbackOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -70,4 +71,3 @@ function UpdateDevicePreviewFeedbackOptionsToJSON(value) {
         metadata: value.metadata,
     };
 }
-exports.UpdateDevicePreviewFeedbackOptionsToJSON = UpdateDevicePreviewFeedbackOptionsToJSON;

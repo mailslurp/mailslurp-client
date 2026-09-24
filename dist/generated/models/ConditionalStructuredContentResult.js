@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConditionalStructuredContentResultToJSON = exports.ConditionalStructuredContentResultFromJSONTyped = exports.ConditionalStructuredContentResultFromJSON = void 0;
+exports.ConditionalStructuredContentResultFromJSON = ConditionalStructuredContentResultFromJSON;
+exports.ConditionalStructuredContentResultFromJSONTyped = ConditionalStructuredContentResultFromJSONTyped;
+exports.ConditionalStructuredContentResultToJSON = ConditionalStructuredContentResultToJSON;
 var runtime_1 = require("../runtime");
 function ConditionalStructuredContentResultFromJSON(json) {
     return ConditionalStructuredContentResultFromJSONTyped(json, false);
 }
-exports.ConditionalStructuredContentResultFromJSON = ConditionalStructuredContentResultFromJSON;
 function ConditionalStructuredContentResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function ConditionalStructuredContentResultFromJSONTyped(json, ignoreDiscriminat
         tokenCount: !(0, runtime_1.exists)(json, 'tokenCount') ? undefined : json['tokenCount'],
     };
 }
-exports.ConditionalStructuredContentResultFromJSONTyped = ConditionalStructuredContentResultFromJSONTyped;
 function ConditionalStructuredContentResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function ConditionalStructuredContentResultToJSON(value) {
         tokenCount: value.tokenCount,
     };
 }
-exports.ConditionalStructuredContentResultToJSON = ConditionalStructuredContentResultToJSON;

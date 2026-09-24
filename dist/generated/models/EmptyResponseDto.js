@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmptyResponseDtoToJSON = exports.EmptyResponseDtoFromJSONTyped = exports.EmptyResponseDtoFromJSON = void 0;
+exports.EmptyResponseDtoFromJSON = EmptyResponseDtoFromJSON;
+exports.EmptyResponseDtoFromJSONTyped = EmptyResponseDtoFromJSONTyped;
+exports.EmptyResponseDtoToJSON = EmptyResponseDtoToJSON;
 var runtime_1 = require("../runtime");
 function EmptyResponseDtoFromJSON(json) {
     return EmptyResponseDtoFromJSONTyped(json, false);
 }
-exports.EmptyResponseDtoFromJSON = EmptyResponseDtoFromJSON;
 function EmptyResponseDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function EmptyResponseDtoFromJSONTyped(json, ignoreDiscriminator) {
         message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
     };
 }
-exports.EmptyResponseDtoFromJSONTyped = EmptyResponseDtoFromJSONTyped;
 function EmptyResponseDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function EmptyResponseDtoToJSON(value) {
         message: value.message,
     };
 }
-exports.EmptyResponseDtoToJSON = EmptyResponseDtoToJSON;

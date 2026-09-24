@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OptionalConnectorSyncSettingsDtoToJSON = exports.OptionalConnectorSyncSettingsDtoFromJSONTyped = exports.OptionalConnectorSyncSettingsDtoFromJSON = void 0;
+exports.OptionalConnectorSyncSettingsDtoFromJSON = OptionalConnectorSyncSettingsDtoFromJSON;
+exports.OptionalConnectorSyncSettingsDtoFromJSONTyped = OptionalConnectorSyncSettingsDtoFromJSONTyped;
+exports.OptionalConnectorSyncSettingsDtoToJSON = OptionalConnectorSyncSettingsDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function OptionalConnectorSyncSettingsDtoFromJSON(json) {
     return OptionalConnectorSyncSettingsDtoFromJSONTyped(json, false);
 }
-exports.OptionalConnectorSyncSettingsDtoFromJSON = OptionalConnectorSyncSettingsDtoFromJSON;
 function OptionalConnectorSyncSettingsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function OptionalConnectorSyncSettingsDtoFromJSONTyped(json, ignoreDiscriminator
             : (0, _1.ConnectorSyncSettingsDtoFromJSON)(json['result']),
     };
 }
-exports.OptionalConnectorSyncSettingsDtoFromJSONTyped = OptionalConnectorSyncSettingsDtoFromJSONTyped;
 function OptionalConnectorSyncSettingsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -44,4 +44,3 @@ function OptionalConnectorSyncSettingsDtoToJSON(value) {
         result: (0, _1.ConnectorSyncSettingsDtoToJSON)(value.result),
     };
 }
-exports.OptionalConnectorSyncSettingsDtoToJSON = OptionalConnectorSyncSettingsDtoToJSON;

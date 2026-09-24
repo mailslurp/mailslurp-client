@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateGroupOptionsToJSON = exports.CreateGroupOptionsFromJSONTyped = exports.CreateGroupOptionsFromJSON = void 0;
+exports.CreateGroupOptionsFromJSON = CreateGroupOptionsFromJSON;
+exports.CreateGroupOptionsFromJSONTyped = CreateGroupOptionsFromJSONTyped;
+exports.CreateGroupOptionsToJSON = CreateGroupOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateGroupOptionsFromJSON(json) {
     return CreateGroupOptionsFromJSONTyped(json, false);
 }
-exports.CreateGroupOptionsFromJSON = CreateGroupOptionsFromJSON;
 function CreateGroupOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function CreateGroupOptionsFromJSONTyped(json, ignoreDiscriminator) {
         description: !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
     };
 }
-exports.CreateGroupOptionsFromJSONTyped = CreateGroupOptionsFromJSONTyped;
 function CreateGroupOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function CreateGroupOptionsToJSON(value) {
         description: value.description,
     };
 }
-exports.CreateGroupOptionsToJSON = CreateGroupOptionsToJSON;

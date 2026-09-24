@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewNativeTargetAvailabilityDtoToJSON = exports.DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped = exports.DevicePreviewNativeTargetAvailabilityDtoFromJSON = exports.DevicePreviewNativeTargetAvailabilityDtoStatusEnum = exports.DevicePreviewNativeTargetAvailabilityDtoTierEnum = void 0;
+exports.DevicePreviewNativeTargetAvailabilityDtoStatusEnum = exports.DevicePreviewNativeTargetAvailabilityDtoTierEnum = void 0;
+exports.DevicePreviewNativeTargetAvailabilityDtoFromJSON = DevicePreviewNativeTargetAvailabilityDtoFromJSON;
+exports.DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped = DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped;
+exports.DevicePreviewNativeTargetAvailabilityDtoToJSON = DevicePreviewNativeTargetAvailabilityDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var DevicePreviewNativeTargetAvailabilityDtoTierEnum;
 (function (DevicePreviewNativeTargetAvailabilityDtoTierEnum) {
     DevicePreviewNativeTargetAvailabilityDtoTierEnum["STANDARD"] = "STANDARD";
     DevicePreviewNativeTargetAvailabilityDtoTierEnum["PREMIUM"] = "PREMIUM";
-})(DevicePreviewNativeTargetAvailabilityDtoTierEnum = exports.DevicePreviewNativeTargetAvailabilityDtoTierEnum || (exports.DevicePreviewNativeTargetAvailabilityDtoTierEnum = {}));
+})(DevicePreviewNativeTargetAvailabilityDtoTierEnum || (exports.DevicePreviewNativeTargetAvailabilityDtoTierEnum = DevicePreviewNativeTargetAvailabilityDtoTierEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -36,11 +39,10 @@ var DevicePreviewNativeTargetAvailabilityDtoStatusEnum;
     DevicePreviewNativeTargetAvailabilityDtoStatusEnum["SETUP_REQUIRED"] = "SETUP_REQUIRED";
     DevicePreviewNativeTargetAvailabilityDtoStatusEnum["DISABLED"] = "DISABLED";
     DevicePreviewNativeTargetAvailabilityDtoStatusEnum["NOT_CONFIGURED"] = "NOT_CONFIGURED";
-})(DevicePreviewNativeTargetAvailabilityDtoStatusEnum = exports.DevicePreviewNativeTargetAvailabilityDtoStatusEnum || (exports.DevicePreviewNativeTargetAvailabilityDtoStatusEnum = {}));
+})(DevicePreviewNativeTargetAvailabilityDtoStatusEnum || (exports.DevicePreviewNativeTargetAvailabilityDtoStatusEnum = DevicePreviewNativeTargetAvailabilityDtoStatusEnum = {}));
 function DevicePreviewNativeTargetAvailabilityDtoFromJSON(json) {
     return DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewNativeTargetAvailabilityDtoFromJSON = DevicePreviewNativeTargetAvailabilityDtoFromJSON;
 function DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -93,7 +95,6 @@ function DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped(json, ignoreDiscr
         zeroCapacityLanes: json['zeroCapacityLanes'],
     };
 }
-exports.DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped = DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped;
 function DevicePreviewNativeTargetAvailabilityDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -139,4 +140,3 @@ function DevicePreviewNativeTargetAvailabilityDtoToJSON(value) {
         zeroCapacityLanes: value.zeroCapacityLanes,
     };
 }
-exports.DevicePreviewNativeTargetAvailabilityDtoToJSON = DevicePreviewNativeTargetAvailabilityDtoToJSON;

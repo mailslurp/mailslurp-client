@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxForwarderDtoToJSON = exports.InboxForwarderDtoFromJSONTyped = exports.InboxForwarderDtoFromJSON = exports.InboxForwarderDtoAttachmentTextExtractionMethodEnum = exports.InboxForwarderDtoShouldEnum = exports.InboxForwarderDtoFieldEnum = void 0;
+exports.InboxForwarderDtoAttachmentTextExtractionMethodEnum = exports.InboxForwarderDtoShouldEnum = exports.InboxForwarderDtoFieldEnum = void 0;
+exports.InboxForwarderDtoFromJSON = InboxForwarderDtoFromJSON;
+exports.InboxForwarderDtoFromJSONTyped = InboxForwarderDtoFromJSONTyped;
+exports.InboxForwarderDtoToJSON = InboxForwarderDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -28,7 +31,7 @@ var InboxForwarderDtoFieldEnum;
     InboxForwarderDtoFieldEnum["ATTACHMENTS"] = "ATTACHMENTS";
     InboxForwarderDtoFieldEnum["ATTACHMENT_FILENAME"] = "ATTACHMENT_FILENAME";
     InboxForwarderDtoFieldEnum["ATTACHMENT_TEXT"] = "ATTACHMENT_TEXT";
-})(InboxForwarderDtoFieldEnum = exports.InboxForwarderDtoFieldEnum || (exports.InboxForwarderDtoFieldEnum = {}));
+})(InboxForwarderDtoFieldEnum || (exports.InboxForwarderDtoFieldEnum = InboxForwarderDtoFieldEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -39,7 +42,7 @@ var InboxForwarderDtoShouldEnum;
     InboxForwarderDtoShouldEnum["MATCH"] = "MATCH";
     InboxForwarderDtoShouldEnum["CONTAIN"] = "CONTAIN";
     InboxForwarderDtoShouldEnum["EQUAL"] = "EQUAL";
-})(InboxForwarderDtoShouldEnum = exports.InboxForwarderDtoShouldEnum || (exports.InboxForwarderDtoShouldEnum = {}));
+})(InboxForwarderDtoShouldEnum || (exports.InboxForwarderDtoShouldEnum = InboxForwarderDtoShouldEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -51,11 +54,10 @@ var InboxForwarderDtoAttachmentTextExtractionMethodEnum;
     InboxForwarderDtoAttachmentTextExtractionMethodEnum["OCR"] = "OCR";
     InboxForwarderDtoAttachmentTextExtractionMethodEnum["LLM"] = "LLM";
     InboxForwarderDtoAttachmentTextExtractionMethodEnum["OCR_THEN_LLM"] = "OCR_THEN_LLM";
-})(InboxForwarderDtoAttachmentTextExtractionMethodEnum = exports.InboxForwarderDtoAttachmentTextExtractionMethodEnum || (exports.InboxForwarderDtoAttachmentTextExtractionMethodEnum = {}));
+})(InboxForwarderDtoAttachmentTextExtractionMethodEnum || (exports.InboxForwarderDtoAttachmentTextExtractionMethodEnum = InboxForwarderDtoAttachmentTextExtractionMethodEnum = {}));
 function InboxForwarderDtoFromJSON(json) {
     return InboxForwarderDtoFromJSONTyped(json, false);
 }
-exports.InboxForwarderDtoFromJSON = InboxForwarderDtoFromJSON;
 function InboxForwarderDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -77,7 +79,6 @@ function InboxForwarderDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['attachmentTextExtractionMethod'],
     };
 }
-exports.InboxForwarderDtoFromJSONTyped = InboxForwarderDtoFromJSONTyped;
 function InboxForwarderDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -98,4 +99,3 @@ function InboxForwarderDtoToJSON(value) {
         attachmentTextExtractionMethod: value.attachmentTextExtractionMethod,
     };
 }
-exports.InboxForwarderDtoToJSON = InboxForwarderDtoToJSON;

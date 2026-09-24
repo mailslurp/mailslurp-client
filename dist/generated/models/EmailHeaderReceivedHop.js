@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailHeaderReceivedHopToJSON = exports.EmailHeaderReceivedHopFromJSONTyped = exports.EmailHeaderReceivedHopFromJSON = void 0;
+exports.EmailHeaderReceivedHopFromJSON = EmailHeaderReceivedHopFromJSON;
+exports.EmailHeaderReceivedHopFromJSONTyped = EmailHeaderReceivedHopFromJSONTyped;
+exports.EmailHeaderReceivedHopToJSON = EmailHeaderReceivedHopToJSON;
 var runtime_1 = require("../runtime");
 function EmailHeaderReceivedHopFromJSON(json) {
     return EmailHeaderReceivedHopFromJSONTyped(json, false);
 }
-exports.EmailHeaderReceivedHopFromJSON = EmailHeaderReceivedHopFromJSON;
 function EmailHeaderReceivedHopFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function EmailHeaderReceivedHopFromJSONTyped(json, ignoreDiscriminator) {
         delayMs: !(0, runtime_1.exists)(json, 'delayMs') ? undefined : json['delayMs'],
     };
 }
-exports.EmailHeaderReceivedHopFromJSONTyped = EmailHeaderReceivedHopFromJSONTyped;
 function EmailHeaderReceivedHopToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function EmailHeaderReceivedHopToJSON(value) {
         delayMs: value.delayMs,
     };
 }
-exports.EmailHeaderReceivedHopToJSON = EmailHeaderReceivedHopToJSON;

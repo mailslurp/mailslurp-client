@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapUpdateFlagsOptionsToJSON = exports.ImapUpdateFlagsOptionsFromJSONTyped = exports.ImapUpdateFlagsOptionsFromJSON = void 0;
+exports.ImapUpdateFlagsOptionsFromJSON = ImapUpdateFlagsOptionsFromJSON;
+exports.ImapUpdateFlagsOptionsFromJSONTyped = ImapUpdateFlagsOptionsFromJSONTyped;
+exports.ImapUpdateFlagsOptionsToJSON = ImapUpdateFlagsOptionsToJSON;
 var runtime_1 = require("../runtime");
 function ImapUpdateFlagsOptionsFromJSON(json) {
     return ImapUpdateFlagsOptionsFromJSONTyped(json, false);
 }
-exports.ImapUpdateFlagsOptionsFromJSON = ImapUpdateFlagsOptionsFromJSON;
 function ImapUpdateFlagsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function ImapUpdateFlagsOptionsFromJSONTyped(json, ignoreDiscriminator) {
         seqSet: !(0, runtime_1.exists)(json, 'seqSet') ? undefined : json['seqSet'],
     };
 }
-exports.ImapUpdateFlagsOptionsFromJSONTyped = ImapUpdateFlagsOptionsFromJSONTyped;
 function ImapUpdateFlagsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ImapUpdateFlagsOptionsToJSON(value) {
         seqSet: value.seqSet,
     };
 }
-exports.ImapUpdateFlagsOptionsToJSON = ImapUpdateFlagsOptionsToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageTrackingPixelProjectionToJSON = exports.PageTrackingPixelProjectionFromJSONTyped = exports.PageTrackingPixelProjectionFromJSON = void 0;
+exports.PageTrackingPixelProjectionFromJSON = PageTrackingPixelProjectionFromJSON;
+exports.PageTrackingPixelProjectionFromJSONTyped = PageTrackingPixelProjectionFromJSONTyped;
+exports.PageTrackingPixelProjectionToJSON = PageTrackingPixelProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageTrackingPixelProjectionFromJSON(json) {
     return PageTrackingPixelProjectionFromJSONTyped(json, false);
 }
-exports.PageTrackingPixelProjectionFromJSON = PageTrackingPixelProjectionFromJSON;
 function PageTrackingPixelProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageTrackingPixelProjectionFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageTrackingPixelProjectionFromJSONTyped = PageTrackingPixelProjectionFromJSONTyped;
 function PageTrackingPixelProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageTrackingPixelProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageTrackingPixelProjectionToJSON = PageTrackingPixelProjectionToJSON;

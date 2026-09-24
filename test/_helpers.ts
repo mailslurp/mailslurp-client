@@ -8,12 +8,8 @@ export function integrationTest(
   fn: (mailslurp: MailSlurp) => Promise<any>
 ) {
   const apiKey = process.env.API_KEY;
-  test(name, async () => {
-    if (apiKey && apiKey.length > 0) {
-      await fn(new MailSlurp({ apiKey }));
-    } else {
-      console.warn('Skipping test with api key API KEY missing');
-    }
+  test.skipIf(!apiKey)(name, async () => {
+    await fn(new MailSlurp({ apiKey }));
   });
 }
 export function phoneTest(
@@ -23,11 +19,7 @@ export function phoneTest(
   const apiKey = process.env.PHONE_KEY;
   const testId = process.env.TEST_ID;
   const headers = testId ? { 'x-test-id': testId } : undefined;
-  test(name, async () => {
-    if (apiKey && apiKey.length > 0) {
-      await fn(new MailSlurp({ apiKey, headers }));
-    } else {
-      console.warn('Skipping test with api key PHONE KEY missing');
-    }
+  test.skipIf(!apiKey)(name, async () => {
+    await fn(new MailSlurp({ apiKey, headers }));
   });
 }

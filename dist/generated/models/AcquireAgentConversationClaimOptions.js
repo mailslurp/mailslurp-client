@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AcquireAgentConversationClaimOptionsToJSON = exports.AcquireAgentConversationClaimOptionsFromJSONTyped = exports.AcquireAgentConversationClaimOptionsFromJSON = void 0;
+exports.AcquireAgentConversationClaimOptionsFromJSON = AcquireAgentConversationClaimOptionsFromJSON;
+exports.AcquireAgentConversationClaimOptionsFromJSONTyped = AcquireAgentConversationClaimOptionsFromJSONTyped;
+exports.AcquireAgentConversationClaimOptionsToJSON = AcquireAgentConversationClaimOptionsToJSON;
 var runtime_1 = require("../runtime");
 function AcquireAgentConversationClaimOptionsFromJSON(json) {
     return AcquireAgentConversationClaimOptionsFromJSONTyped(json, false);
 }
-exports.AcquireAgentConversationClaimOptionsFromJSON = AcquireAgentConversationClaimOptionsFromJSON;
 function AcquireAgentConversationClaimOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function AcquireAgentConversationClaimOptionsFromJSONTyped(json, ignoreDiscrimin
             : json['expectedVersion'],
     };
 }
-exports.AcquireAgentConversationClaimOptionsFromJSONTyped = AcquireAgentConversationClaimOptionsFromJSONTyped;
 function AcquireAgentConversationClaimOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function AcquireAgentConversationClaimOptionsToJSON(value) {
         expectedVersion: value.expectedVersion,
     };
 }
-exports.AcquireAgentConversationClaimOptionsToJSON = AcquireAgentConversationClaimOptionsToJSON;

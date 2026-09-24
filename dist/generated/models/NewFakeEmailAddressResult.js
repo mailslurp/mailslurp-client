@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewFakeEmailAddressResultToJSON = exports.NewFakeEmailAddressResultFromJSONTyped = exports.NewFakeEmailAddressResultFromJSON = void 0;
+exports.NewFakeEmailAddressResultFromJSON = NewFakeEmailAddressResultFromJSON;
+exports.NewFakeEmailAddressResultFromJSONTyped = NewFakeEmailAddressResultFromJSONTyped;
+exports.NewFakeEmailAddressResultToJSON = NewFakeEmailAddressResultToJSON;
 function NewFakeEmailAddressResultFromJSON(json) {
     return NewFakeEmailAddressResultFromJSONTyped(json, false);
 }
-exports.NewFakeEmailAddressResultFromJSON = NewFakeEmailAddressResultFromJSON;
 function NewFakeEmailAddressResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function NewFakeEmailAddressResultFromJSONTyped(json, ignoreDiscriminator) {
         emailAddress: json['emailAddress'],
     };
 }
-exports.NewFakeEmailAddressResultFromJSONTyped = NewFakeEmailAddressResultFromJSONTyped;
 function NewFakeEmailAddressResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function NewFakeEmailAddressResultToJSON(value) {
         emailAddress: value.emailAddress,
     };
 }
-exports.NewFakeEmailAddressResultToJSON = NewFakeEmailAddressResultToJSON;

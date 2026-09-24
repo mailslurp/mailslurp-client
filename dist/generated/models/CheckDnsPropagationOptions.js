@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckDnsPropagationOptionsToJSON = exports.CheckDnsPropagationOptionsFromJSONTyped = exports.CheckDnsPropagationOptionsFromJSON = exports.CheckDnsPropagationOptionsRecordTypeEnum = void 0;
+exports.CheckDnsPropagationOptionsRecordTypeEnum = void 0;
+exports.CheckDnsPropagationOptionsFromJSON = CheckDnsPropagationOptionsFromJSON;
+exports.CheckDnsPropagationOptionsFromJSONTyped = CheckDnsPropagationOptionsFromJSONTyped;
+exports.CheckDnsPropagationOptionsToJSON = CheckDnsPropagationOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -110,11 +113,10 @@ var CheckDnsPropagationOptionsRecordTypeEnum;
     CheckDnsPropagationOptionsRecordTypeEnum["AMTRELAY"] = "AMTRELAY";
     CheckDnsPropagationOptionsRecordTypeEnum["TA"] = "TA";
     CheckDnsPropagationOptionsRecordTypeEnum["DLV"] = "DLV";
-})(CheckDnsPropagationOptionsRecordTypeEnum = exports.CheckDnsPropagationOptionsRecordTypeEnum || (exports.CheckDnsPropagationOptionsRecordTypeEnum = {}));
+})(CheckDnsPropagationOptionsRecordTypeEnum || (exports.CheckDnsPropagationOptionsRecordTypeEnum = CheckDnsPropagationOptionsRecordTypeEnum = {}));
 function CheckDnsPropagationOptionsFromJSON(json) {
     return CheckDnsPropagationOptionsFromJSONTyped(json, false);
 }
-exports.CheckDnsPropagationOptionsFromJSON = CheckDnsPropagationOptionsFromJSON;
 function CheckDnsPropagationOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -130,7 +132,6 @@ function CheckDnsPropagationOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['captchaToken'],
     };
 }
-exports.CheckDnsPropagationOptionsFromJSONTyped = CheckDnsPropagationOptionsFromJSONTyped;
 function CheckDnsPropagationOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -145,4 +146,3 @@ function CheckDnsPropagationOptionsToJSON(value) {
         captchaToken: value.captchaToken,
     };
 }
-exports.CheckDnsPropagationOptionsToJSON = CheckDnsPropagationOptionsToJSON;

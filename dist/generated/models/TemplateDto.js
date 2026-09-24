@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TemplateDtoToJSON = exports.TemplateDtoFromJSONTyped = exports.TemplateDtoFromJSON = void 0;
+exports.TemplateDtoFromJSON = TemplateDtoFromJSON;
+exports.TemplateDtoFromJSONTyped = TemplateDtoFromJSONTyped;
+exports.TemplateDtoToJSON = TemplateDtoToJSON;
 var _1 = require("./");
 function TemplateDtoFromJSON(json) {
     return TemplateDtoFromJSONTyped(json, false);
 }
-exports.TemplateDtoFromJSON = TemplateDtoFromJSON;
 function TemplateDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function TemplateDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.TemplateDtoFromJSONTyped = TemplateDtoFromJSONTyped;
 function TemplateDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function TemplateDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.TemplateDtoToJSON = TemplateDtoToJSON;

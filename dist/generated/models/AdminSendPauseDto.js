@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AdminSendPauseDtoToJSON = exports.AdminSendPauseDtoFromJSONTyped = exports.AdminSendPauseDtoFromJSON = void 0;
+exports.AdminSendPauseDtoFromJSON = AdminSendPauseDtoFromJSON;
+exports.AdminSendPauseDtoFromJSONTyped = AdminSendPauseDtoFromJSONTyped;
+exports.AdminSendPauseDtoToJSON = AdminSendPauseDtoToJSON;
 function AdminSendPauseDtoFromJSON(json) {
     return AdminSendPauseDtoFromJSONTyped(json, false);
 }
-exports.AdminSendPauseDtoFromJSON = AdminSendPauseDtoFromJSON;
 function AdminSendPauseDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function AdminSendPauseDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.AdminSendPauseDtoFromJSONTyped = AdminSendPauseDtoFromJSONTyped;
 function AdminSendPauseDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function AdminSendPauseDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.AdminSendPauseDtoToJSON = AdminSendPauseDtoToJSON;

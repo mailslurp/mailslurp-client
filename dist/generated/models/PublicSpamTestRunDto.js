@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PublicSpamTestRunDtoToJSON = exports.PublicSpamTestRunDtoFromJSONTyped = exports.PublicSpamTestRunDtoFromJSON = exports.PublicSpamTestRunDtoErrorCodeEnum = void 0;
+exports.PublicSpamTestRunDtoErrorCodeEnum = void 0;
+exports.PublicSpamTestRunDtoFromJSON = PublicSpamTestRunDtoFromJSON;
+exports.PublicSpamTestRunDtoFromJSONTyped = PublicSpamTestRunDtoFromJSONTyped;
+exports.PublicSpamTestRunDtoToJSON = PublicSpamTestRunDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -149,11 +152,10 @@ var PublicSpamTestRunDtoErrorCodeEnum;
     PublicSpamTestRunDtoErrorCodeEnum["W_429_SUBSCRIPTION_FREE_LIMIT"] = "W_429_SUBSCRIPTION_FREE_LIMIT";
     PublicSpamTestRunDtoErrorCodeEnum["W_429_PUBLIC_DEVICE_RENDER_ACCOUNT_REQUIRED"] = "W_429_PUBLIC_DEVICE_RENDER_ACCOUNT_REQUIRED";
     PublicSpamTestRunDtoErrorCodeEnum["W_429_FREE_ACCOUNT_EXPIRED"] = "W_429_FREE_ACCOUNT_EXPIRED";
-})(PublicSpamTestRunDtoErrorCodeEnum = exports.PublicSpamTestRunDtoErrorCodeEnum || (exports.PublicSpamTestRunDtoErrorCodeEnum = {}));
+})(PublicSpamTestRunDtoErrorCodeEnum || (exports.PublicSpamTestRunDtoErrorCodeEnum = PublicSpamTestRunDtoErrorCodeEnum = {}));
 function PublicSpamTestRunDtoFromJSON(json) {
     return PublicSpamTestRunDtoFromJSONTyped(json, false);
 }
-exports.PublicSpamTestRunDtoFromJSON = PublicSpamTestRunDtoFromJSON;
 function PublicSpamTestRunDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -226,7 +228,6 @@ function PublicSpamTestRunDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.PublicSpamTestRunDtoFromJSONTyped = PublicSpamTestRunDtoFromJSONTyped;
 function PublicSpamTestRunDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -292,4 +293,3 @@ function PublicSpamTestRunDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.PublicSpamTestRunDtoToJSON = PublicSpamTestRunDtoToJSON;

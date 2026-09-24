@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailWarmupReadinessDtoToJSON = exports.EmailWarmupReadinessDtoFromJSONTyped = exports.EmailWarmupReadinessDtoFromJSON = exports.EmailWarmupReadinessDtoStatusEnum = void 0;
+exports.EmailWarmupReadinessDtoStatusEnum = void 0;
+exports.EmailWarmupReadinessDtoFromJSON = EmailWarmupReadinessDtoFromJSON;
+exports.EmailWarmupReadinessDtoFromJSONTyped = EmailWarmupReadinessDtoFromJSONTyped;
+exports.EmailWarmupReadinessDtoToJSON = EmailWarmupReadinessDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -26,11 +29,10 @@ var EmailWarmupReadinessDtoStatusEnum;
     EmailWarmupReadinessDtoStatusEnum["IMPROVING"] = "IMPROVING";
     EmailWarmupReadinessDtoStatusEnum["READY"] = "READY";
     EmailWarmupReadinessDtoStatusEnum["NEEDS_ATTENTION"] = "NEEDS_ATTENTION";
-})(EmailWarmupReadinessDtoStatusEnum = exports.EmailWarmupReadinessDtoStatusEnum || (exports.EmailWarmupReadinessDtoStatusEnum = {}));
+})(EmailWarmupReadinessDtoStatusEnum || (exports.EmailWarmupReadinessDtoStatusEnum = EmailWarmupReadinessDtoStatusEnum = {}));
 function EmailWarmupReadinessDtoFromJSON(json) {
     return EmailWarmupReadinessDtoFromJSONTyped(json, false);
 }
-exports.EmailWarmupReadinessDtoFromJSON = EmailWarmupReadinessDtoFromJSON;
 function EmailWarmupReadinessDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -55,7 +57,6 @@ function EmailWarmupReadinessDtoFromJSONTyped(json, ignoreDiscriminator) {
         recommendations: json['recommendations'],
     };
 }
-exports.EmailWarmupReadinessDtoFromJSONTyped = EmailWarmupReadinessDtoFromJSONTyped;
 function EmailWarmupReadinessDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -81,4 +82,3 @@ function EmailWarmupReadinessDtoToJSON(value) {
         recommendations: value.recommendations,
     };
 }
-exports.EmailWarmupReadinessDtoToJSON = EmailWarmupReadinessDtoToJSON;

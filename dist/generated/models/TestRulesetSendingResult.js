@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestRulesetSendingResultToJSON = exports.TestRulesetSendingResultFromJSONTyped = exports.TestRulesetSendingResultFromJSON = void 0;
+exports.TestRulesetSendingResultFromJSON = TestRulesetSendingResultFromJSON;
+exports.TestRulesetSendingResultFromJSONTyped = TestRulesetSendingResultFromJSONTyped;
+exports.TestRulesetSendingResultToJSON = TestRulesetSendingResultToJSON;
 function TestRulesetSendingResultFromJSON(json) {
     return TestRulesetSendingResultFromJSONTyped(json, false);
 }
-exports.TestRulesetSendingResultFromJSON = TestRulesetSendingResultFromJSON;
 function TestRulesetSendingResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function TestRulesetSendingResultFromJSONTyped(json, ignoreDiscriminator) {
         canSend: json['canSend'],
     };
 }
-exports.TestRulesetSendingResultFromJSONTyped = TestRulesetSendingResultFromJSONTyped;
 function TestRulesetSendingResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function TestRulesetSendingResultToJSON(value) {
         canSend: value.canSend,
     };
 }
-exports.TestRulesetSendingResultToJSON = TestRulesetSendingResultToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailValidationRequestDtoToJSON = exports.EmailValidationRequestDtoFromJSONTyped = exports.EmailValidationRequestDtoFromJSON = void 0;
+exports.EmailValidationRequestDtoFromJSON = EmailValidationRequestDtoFromJSON;
+exports.EmailValidationRequestDtoFromJSONTyped = EmailValidationRequestDtoFromJSONTyped;
+exports.EmailValidationRequestDtoToJSON = EmailValidationRequestDtoToJSON;
 function EmailValidationRequestDtoFromJSON(json) {
     return EmailValidationRequestDtoFromJSONTyped(json, false);
 }
-exports.EmailValidationRequestDtoFromJSON = EmailValidationRequestDtoFromJSON;
 function EmailValidationRequestDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function EmailValidationRequestDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.EmailValidationRequestDtoFromJSONTyped = EmailValidationRequestDtoFromJSONTyped;
 function EmailValidationRequestDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function EmailValidationRequestDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.EmailValidationRequestDtoToJSON = EmailValidationRequestDtoToJSON;

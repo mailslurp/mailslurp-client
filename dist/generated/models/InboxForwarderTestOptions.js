@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxForwarderTestOptionsToJSON = exports.InboxForwarderTestOptionsFromJSONTyped = exports.InboxForwarderTestOptionsFromJSON = void 0;
+exports.InboxForwarderTestOptionsFromJSON = InboxForwarderTestOptionsFromJSON;
+exports.InboxForwarderTestOptionsFromJSONTyped = InboxForwarderTestOptionsFromJSONTyped;
+exports.InboxForwarderTestOptionsToJSON = InboxForwarderTestOptionsToJSON;
 var runtime_1 = require("../runtime");
 function InboxForwarderTestOptionsFromJSON(json) {
     return InboxForwarderTestOptionsFromJSONTyped(json, false);
 }
-exports.InboxForwarderTestOptionsFromJSON = InboxForwarderTestOptionsFromJSON;
 function InboxForwarderTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function InboxForwarderTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
         emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
     };
 }
-exports.InboxForwarderTestOptionsFromJSONTyped = InboxForwarderTestOptionsFromJSONTyped;
 function InboxForwarderTestOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function InboxForwarderTestOptionsToJSON(value) {
         emailId: value.emailId,
     };
 }
-exports.InboxForwarderTestOptionsToJSON = InboxForwarderTestOptionsToJSON;

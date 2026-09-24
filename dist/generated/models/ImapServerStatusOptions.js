@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerStatusOptionsToJSON = exports.ImapServerStatusOptionsFromJSONTyped = exports.ImapServerStatusOptionsFromJSON = exports.ImapServerStatusOptionsStatusItemsEnum = void 0;
+exports.ImapServerStatusOptionsStatusItemsEnum = void 0;
+exports.ImapServerStatusOptionsFromJSON = ImapServerStatusOptionsFromJSON;
+exports.ImapServerStatusOptionsFromJSONTyped = ImapServerStatusOptionsFromJSONTyped;
+exports.ImapServerStatusOptionsToJSON = ImapServerStatusOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -27,11 +30,10 @@ var ImapServerStatusOptionsStatusItemsEnum;
     ImapServerStatusOptionsStatusItemsEnum["UIDVALIDITY"] = "UIDVALIDITY";
     ImapServerStatusOptionsStatusItemsEnum["UNSEEN"] = "UNSEEN";
     ImapServerStatusOptionsStatusItemsEnum["APPENDLIMIT"] = "APPENDLIMIT";
-})(ImapServerStatusOptionsStatusItemsEnum = exports.ImapServerStatusOptionsStatusItemsEnum || (exports.ImapServerStatusOptionsStatusItemsEnum = {}));
+})(ImapServerStatusOptionsStatusItemsEnum || (exports.ImapServerStatusOptionsStatusItemsEnum = ImapServerStatusOptionsStatusItemsEnum = {}));
 function ImapServerStatusOptionsFromJSON(json) {
     return ImapServerStatusOptionsFromJSONTyped(json, false);
 }
-exports.ImapServerStatusOptionsFromJSON = ImapServerStatusOptionsFromJSON;
 function ImapServerStatusOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -41,7 +43,6 @@ function ImapServerStatusOptionsFromJSONTyped(json, ignoreDiscriminator) {
         statusItems: !(0, runtime_1.exists)(json, 'statusItems') ? undefined : json['statusItems'],
     };
 }
-exports.ImapServerStatusOptionsFromJSONTyped = ImapServerStatusOptionsFromJSONTyped;
 function ImapServerStatusOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -54,4 +55,3 @@ function ImapServerStatusOptionsToJSON(value) {
         statusItems: value.statusItems,
     };
 }
-exports.ImapServerStatusOptionsToJSON = ImapServerStatusOptionsToJSON;

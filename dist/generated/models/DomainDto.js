@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainDtoToJSON = exports.DomainDtoFromJSONTyped = exports.DomainDtoFromJSON = exports.DomainDtoDomainTypeEnum = void 0;
+exports.DomainDtoDomainTypeEnum = void 0;
+exports.DomainDtoFromJSON = DomainDtoFromJSON;
+exports.DomainDtoFromJSONTyped = DomainDtoFromJSONTyped;
+exports.DomainDtoToJSON = DomainDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,11 +27,10 @@ var DomainDtoDomainTypeEnum;
 (function (DomainDtoDomainTypeEnum) {
     DomainDtoDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     DomainDtoDomainTypeEnum["SMTP_DOMAIN"] = "SMTP_DOMAIN";
-})(DomainDtoDomainTypeEnum = exports.DomainDtoDomainTypeEnum || (exports.DomainDtoDomainTypeEnum = {}));
+})(DomainDtoDomainTypeEnum || (exports.DomainDtoDomainTypeEnum = DomainDtoDomainTypeEnum = {}));
 function DomainDtoFromJSON(json) {
     return DomainDtoFromJSONTyped(json, false);
 }
-exports.DomainDtoFromJSON = DomainDtoFromJSON;
 function DomainDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -57,7 +59,6 @@ function DomainDtoFromJSONTyped(json, ignoreDiscriminator) {
         domainType: json['domainType'],
     };
 }
-exports.DomainDtoFromJSONTyped = DomainDtoFromJSONTyped;
 function DomainDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -83,4 +84,3 @@ function DomainDtoToJSON(value) {
         domainType: value.domainType,
     };
 }
-exports.DomainDtoToJSON = DomainDtoToJSON;

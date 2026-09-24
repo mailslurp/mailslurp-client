@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SubscriptionDtoToJSON = exports.SubscriptionDtoFromJSONTyped = exports.SubscriptionDtoFromJSON = exports.SubscriptionDtoSubscriptionStatusEnum = exports.SubscriptionDtoSubscriptionScheduleEnum = exports.SubscriptionDtoSubscriptionTypeEnum = exports.SubscriptionDtoCurrencyEnum = void 0;
+exports.SubscriptionDtoSubscriptionStatusEnum = exports.SubscriptionDtoSubscriptionScheduleEnum = exports.SubscriptionDtoSubscriptionTypeEnum = exports.SubscriptionDtoCurrencyEnum = void 0;
+exports.SubscriptionDtoFromJSON = SubscriptionDtoFromJSON;
+exports.SubscriptionDtoFromJSONTyped = SubscriptionDtoFromJSONTyped;
+exports.SubscriptionDtoToJSON = SubscriptionDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -31,7 +34,7 @@ var SubscriptionDtoCurrencyEnum;
     SubscriptionDtoCurrencyEnum["CNY"] = "CNY";
     SubscriptionDtoCurrencyEnum["INR"] = "INR";
     SubscriptionDtoCurrencyEnum["NZD"] = "NZD";
-})(SubscriptionDtoCurrencyEnum = exports.SubscriptionDtoCurrencyEnum || (exports.SubscriptionDtoCurrencyEnum = {}));
+})(SubscriptionDtoCurrencyEnum || (exports.SubscriptionDtoCurrencyEnum = SubscriptionDtoCurrencyEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -43,7 +46,7 @@ var SubscriptionDtoSubscriptionTypeEnum;
     SubscriptionDtoSubscriptionTypeEnum["PRO"] = "PRO";
     SubscriptionDtoSubscriptionTypeEnum["TEAM"] = "TEAM";
     SubscriptionDtoSubscriptionTypeEnum["ENTERPRISE"] = "ENTERPRISE";
-})(SubscriptionDtoSubscriptionTypeEnum = exports.SubscriptionDtoSubscriptionTypeEnum || (exports.SubscriptionDtoSubscriptionTypeEnum = {}));
+})(SubscriptionDtoSubscriptionTypeEnum || (exports.SubscriptionDtoSubscriptionTypeEnum = SubscriptionDtoSubscriptionTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -52,7 +55,7 @@ var SubscriptionDtoSubscriptionScheduleEnum;
 (function (SubscriptionDtoSubscriptionScheduleEnum) {
     SubscriptionDtoSubscriptionScheduleEnum["MONTHLY"] = "MONTHLY";
     SubscriptionDtoSubscriptionScheduleEnum["YEARLY"] = "YEARLY";
-})(SubscriptionDtoSubscriptionScheduleEnum = exports.SubscriptionDtoSubscriptionScheduleEnum || (exports.SubscriptionDtoSubscriptionScheduleEnum = {}));
+})(SubscriptionDtoSubscriptionScheduleEnum || (exports.SubscriptionDtoSubscriptionScheduleEnum = SubscriptionDtoSubscriptionScheduleEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -67,11 +70,10 @@ var SubscriptionDtoSubscriptionStatusEnum;
     SubscriptionDtoSubscriptionStatusEnum["incomplete"] = "incomplete";
     SubscriptionDtoSubscriptionStatusEnum["trialing"] = "trialing";
     SubscriptionDtoSubscriptionStatusEnum["active"] = "active";
-})(SubscriptionDtoSubscriptionStatusEnum = exports.SubscriptionDtoSubscriptionStatusEnum || (exports.SubscriptionDtoSubscriptionStatusEnum = {}));
+})(SubscriptionDtoSubscriptionStatusEnum || (exports.SubscriptionDtoSubscriptionStatusEnum = SubscriptionDtoSubscriptionStatusEnum = {}));
 function SubscriptionDtoFromJSON(json) {
     return SubscriptionDtoFromJSONTyped(json, false);
 }
-exports.SubscriptionDtoFromJSON = SubscriptionDtoFromJSON;
 function SubscriptionDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -234,7 +236,6 @@ function SubscriptionDtoFromJSONTyped(json, ignoreDiscriminator) {
         costMajor: !(0, runtime_1.exists)(json, 'costMajor') ? undefined : json['costMajor'],
     };
 }
-exports.SubscriptionDtoFromJSONTyped = SubscriptionDtoFromJSONTyped;
 function SubscriptionDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -354,4 +355,3 @@ function SubscriptionDtoToJSON(value) {
         costMajor: value.costMajor,
     };
 }
-exports.SubscriptionDtoToJSON = SubscriptionDtoToJSON;

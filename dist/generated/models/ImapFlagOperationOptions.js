@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapFlagOperationOptionsToJSON = exports.ImapFlagOperationOptionsFromJSONTyped = exports.ImapFlagOperationOptionsFromJSON = exports.ImapFlagOperationOptionsFlagOperationEnum = void 0;
+exports.ImapFlagOperationOptionsFlagOperationEnum = void 0;
+exports.ImapFlagOperationOptionsFromJSON = ImapFlagOperationOptionsFromJSON;
+exports.ImapFlagOperationOptionsFromJSONTyped = ImapFlagOperationOptionsFromJSONTyped;
+exports.ImapFlagOperationOptionsToJSON = ImapFlagOperationOptionsToJSON;
 /**
  * @export
  * @enum {string}
@@ -23,11 +26,10 @@ var ImapFlagOperationOptionsFlagOperationEnum;
     ImapFlagOperationOptionsFlagOperationEnum["SET_FLAGS"] = "SET_FLAGS";
     ImapFlagOperationOptionsFlagOperationEnum["ADD_FLAGS"] = "ADD_FLAGS";
     ImapFlagOperationOptionsFlagOperationEnum["REMOVE_FLAGS"] = "REMOVE_FLAGS";
-})(ImapFlagOperationOptionsFlagOperationEnum = exports.ImapFlagOperationOptionsFlagOperationEnum || (exports.ImapFlagOperationOptionsFlagOperationEnum = {}));
+})(ImapFlagOperationOptionsFlagOperationEnum || (exports.ImapFlagOperationOptionsFlagOperationEnum = ImapFlagOperationOptionsFlagOperationEnum = {}));
 function ImapFlagOperationOptionsFromJSON(json) {
     return ImapFlagOperationOptionsFromJSONTyped(json, false);
 }
-exports.ImapFlagOperationOptionsFromJSON = ImapFlagOperationOptionsFromJSON;
 function ImapFlagOperationOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +39,6 @@ function ImapFlagOperationOptionsFromJSONTyped(json, ignoreDiscriminator) {
         flags: json['flags'],
     };
 }
-exports.ImapFlagOperationOptionsFromJSONTyped = ImapFlagOperationOptionsFromJSONTyped;
 function ImapFlagOperationOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +51,3 @@ function ImapFlagOperationOptionsToJSON(value) {
         flags: value.flags,
     };
 }
-exports.ImapFlagOperationOptionsToJSON = ImapFlagOperationOptionsToJSON;

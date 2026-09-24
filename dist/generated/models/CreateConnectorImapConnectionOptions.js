@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateConnectorImapConnectionOptionsToJSON = exports.CreateConnectorImapConnectionOptionsFromJSONTyped = exports.CreateConnectorImapConnectionOptionsFromJSON = void 0;
+exports.CreateConnectorImapConnectionOptionsFromJSON = CreateConnectorImapConnectionOptionsFromJSON;
+exports.CreateConnectorImapConnectionOptionsFromJSONTyped = CreateConnectorImapConnectionOptionsFromJSONTyped;
+exports.CreateConnectorImapConnectionOptionsToJSON = CreateConnectorImapConnectionOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateConnectorImapConnectionOptionsFromJSON(json) {
     return CreateConnectorImapConnectionOptionsFromJSONTyped(json, false);
 }
-exports.CreateConnectorImapConnectionOptionsFromJSON = CreateConnectorImapConnectionOptionsFromJSON;
 function CreateConnectorImapConnectionOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -54,7 +55,6 @@ function CreateConnectorImapConnectionOptionsFromJSONTyped(json, ignoreDiscrimin
             : json['sslProtocols'],
     };
 }
-exports.CreateConnectorImapConnectionOptionsFromJSONTyped = CreateConnectorImapConnectionOptionsFromJSONTyped;
 function CreateConnectorImapConnectionOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -81,4 +81,3 @@ function CreateConnectorImapConnectionOptionsToJSON(value) {
         sslProtocols: value.sslProtocols,
     };
 }
-exports.CreateConnectorImapConnectionOptionsToJSON = CreateConnectorImapConnectionOptionsToJSON;

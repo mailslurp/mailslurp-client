@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewSourceEmailDtoToJSON = exports.DevicePreviewSourceEmailDtoFromJSONTyped = exports.DevicePreviewSourceEmailDtoFromJSON = void 0;
+exports.DevicePreviewSourceEmailDtoFromJSON = DevicePreviewSourceEmailDtoFromJSON;
+exports.DevicePreviewSourceEmailDtoFromJSONTyped = DevicePreviewSourceEmailDtoFromJSONTyped;
+exports.DevicePreviewSourceEmailDtoToJSON = DevicePreviewSourceEmailDtoToJSON;
 var runtime_1 = require("../runtime");
 function DevicePreviewSourceEmailDtoFromJSON(json) {
     return DevicePreviewSourceEmailDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewSourceEmailDtoFromJSON = DevicePreviewSourceEmailDtoFromJSON;
 function DevicePreviewSourceEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function DevicePreviewSourceEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         text: !(0, runtime_1.exists)(json, 'text') ? undefined : json['text'],
     };
 }
-exports.DevicePreviewSourceEmailDtoFromJSONTyped = DevicePreviewSourceEmailDtoFromJSONTyped;
 function DevicePreviewSourceEmailDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function DevicePreviewSourceEmailDtoToJSON(value) {
         text: value.text,
     };
 }
-exports.DevicePreviewSourceEmailDtoToJSON = DevicePreviewSourceEmailDtoToJSON;

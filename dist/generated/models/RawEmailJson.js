@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RawEmailJsonToJSON = exports.RawEmailJsonFromJSONTyped = exports.RawEmailJsonFromJSON = void 0;
+exports.RawEmailJsonFromJSON = RawEmailJsonFromJSON;
+exports.RawEmailJsonFromJSONTyped = RawEmailJsonFromJSONTyped;
+exports.RawEmailJsonToJSON = RawEmailJsonToJSON;
 function RawEmailJsonFromJSON(json) {
     return RawEmailJsonFromJSONTyped(json, false);
 }
-exports.RawEmailJsonFromJSON = RawEmailJsonFromJSON;
 function RawEmailJsonFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function RawEmailJsonFromJSONTyped(json, ignoreDiscriminator) {
         content: json['content'],
     };
 }
-exports.RawEmailJsonFromJSONTyped = RawEmailJsonFromJSONTyped;
 function RawEmailJsonToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function RawEmailJsonToJSON(value) {
         content: value.content,
     };
 }
-exports.RawEmailJsonToJSON = RawEmailJsonToJSON;

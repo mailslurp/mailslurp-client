@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageDevicePreviewRunProjectionToJSON = exports.PageDevicePreviewRunProjectionFromJSONTyped = exports.PageDevicePreviewRunProjectionFromJSON = void 0;
+exports.PageDevicePreviewRunProjectionFromJSON = PageDevicePreviewRunProjectionFromJSON;
+exports.PageDevicePreviewRunProjectionFromJSONTyped = PageDevicePreviewRunProjectionFromJSONTyped;
+exports.PageDevicePreviewRunProjectionToJSON = PageDevicePreviewRunProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageDevicePreviewRunProjectionFromJSON(json) {
     return PageDevicePreviewRunProjectionFromJSONTyped(json, false);
 }
-exports.PageDevicePreviewRunProjectionFromJSON = PageDevicePreviewRunProjectionFromJSON;
 function PageDevicePreviewRunProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageDevicePreviewRunProjectionFromJSONTyped(json, ignoreDiscriminator) 
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageDevicePreviewRunProjectionFromJSONTyped = PageDevicePreviewRunProjectionFromJSONTyped;
 function PageDevicePreviewRunProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageDevicePreviewRunProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageDevicePreviewRunProjectionToJSON = PageDevicePreviewRunProjectionToJSON;

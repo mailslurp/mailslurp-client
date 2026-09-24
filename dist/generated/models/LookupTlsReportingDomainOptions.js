@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupTlsReportingDomainOptionsToJSON = exports.LookupTlsReportingDomainOptionsFromJSONTyped = exports.LookupTlsReportingDomainOptionsFromJSON = void 0;
+exports.LookupTlsReportingDomainOptionsFromJSON = LookupTlsReportingDomainOptionsFromJSON;
+exports.LookupTlsReportingDomainOptionsFromJSONTyped = LookupTlsReportingDomainOptionsFromJSONTyped;
+exports.LookupTlsReportingDomainOptionsToJSON = LookupTlsReportingDomainOptionsToJSON;
 function LookupTlsReportingDomainOptionsFromJSON(json) {
     return LookupTlsReportingDomainOptionsFromJSONTyped(json, false);
 }
-exports.LookupTlsReportingDomainOptionsFromJSON = LookupTlsReportingDomainOptionsFromJSON;
 function LookupTlsReportingDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function LookupTlsReportingDomainOptionsFromJSONTyped(json, ignoreDiscriminator)
         host: json['host'],
     };
 }
-exports.LookupTlsReportingDomainOptionsFromJSONTyped = LookupTlsReportingDomainOptionsFromJSONTyped;
 function LookupTlsReportingDomainOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function LookupTlsReportingDomainOptionsToJSON(value) {
         host: value.host,
     };
 }
-exports.LookupTlsReportingDomainOptionsToJSON = LookupTlsReportingDomainOptionsToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageInboxRetentionPolicyRunProjectionToJSON = exports.PageInboxRetentionPolicyRunProjectionFromJSONTyped = exports.PageInboxRetentionPolicyRunProjectionFromJSON = void 0;
+exports.PageInboxRetentionPolicyRunProjectionFromJSON = PageInboxRetentionPolicyRunProjectionFromJSON;
+exports.PageInboxRetentionPolicyRunProjectionFromJSONTyped = PageInboxRetentionPolicyRunProjectionFromJSONTyped;
+exports.PageInboxRetentionPolicyRunProjectionToJSON = PageInboxRetentionPolicyRunProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageInboxRetentionPolicyRunProjectionFromJSON(json) {
     return PageInboxRetentionPolicyRunProjectionFromJSONTyped(json, false);
 }
-exports.PageInboxRetentionPolicyRunProjectionFromJSON = PageInboxRetentionPolicyRunProjectionFromJSON;
 function PageInboxRetentionPolicyRunProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageInboxRetentionPolicyRunProjectionFromJSONTyped(json, ignoreDiscrimi
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageInboxRetentionPolicyRunProjectionFromJSONTyped = PageInboxRetentionPolicyRunProjectionFromJSONTyped;
 function PageInboxRetentionPolicyRunProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageInboxRetentionPolicyRunProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageInboxRetentionPolicyRunProjectionToJSON = PageInboxRetentionPolicyRunProjectionToJSON;

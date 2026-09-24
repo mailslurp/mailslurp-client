@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorEmailVerificationDtoToJSON = exports.DomainMonitorEmailVerificationDtoFromJSONTyped = exports.DomainMonitorEmailVerificationDtoFromJSON = exports.DomainMonitorEmailVerificationDtoStatusEnum = void 0;
+exports.DomainMonitorEmailVerificationDtoStatusEnum = void 0;
+exports.DomainMonitorEmailVerificationDtoFromJSON = DomainMonitorEmailVerificationDtoFromJSON;
+exports.DomainMonitorEmailVerificationDtoFromJSONTyped = DomainMonitorEmailVerificationDtoFromJSONTyped;
+exports.DomainMonitorEmailVerificationDtoToJSON = DomainMonitorEmailVerificationDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,11 +27,10 @@ var DomainMonitorEmailVerificationDtoStatusEnum;
 (function (DomainMonitorEmailVerificationDtoStatusEnum) {
     DomainMonitorEmailVerificationDtoStatusEnum["PENDING"] = "PENDING";
     DomainMonitorEmailVerificationDtoStatusEnum["COMPLETE"] = "COMPLETE";
-})(DomainMonitorEmailVerificationDtoStatusEnum = exports.DomainMonitorEmailVerificationDtoStatusEnum || (exports.DomainMonitorEmailVerificationDtoStatusEnum = {}));
+})(DomainMonitorEmailVerificationDtoStatusEnum || (exports.DomainMonitorEmailVerificationDtoStatusEnum = DomainMonitorEmailVerificationDtoStatusEnum = {}));
 function DomainMonitorEmailVerificationDtoFromJSON(json) {
     return DomainMonitorEmailVerificationDtoFromJSONTyped(json, false);
 }
-exports.DomainMonitorEmailVerificationDtoFromJSON = DomainMonitorEmailVerificationDtoFromJSON;
 function DomainMonitorEmailVerificationDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -46,7 +48,6 @@ function DomainMonitorEmailVerificationDtoFromJSONTyped(json, ignoreDiscriminato
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.DomainMonitorEmailVerificationDtoFromJSONTyped = DomainMonitorEmailVerificationDtoFromJSONTyped;
 function DomainMonitorEmailVerificationDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -65,4 +66,3 @@ function DomainMonitorEmailVerificationDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.DomainMonitorEmailVerificationDtoToJSON = DomainMonitorEmailVerificationDtoToJSON;

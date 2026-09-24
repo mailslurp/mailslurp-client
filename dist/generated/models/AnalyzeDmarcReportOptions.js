@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AnalyzeDmarcReportOptionsToJSON = exports.AnalyzeDmarcReportOptionsFromJSONTyped = exports.AnalyzeDmarcReportOptionsFromJSON = void 0;
+exports.AnalyzeDmarcReportOptionsFromJSON = AnalyzeDmarcReportOptionsFromJSON;
+exports.AnalyzeDmarcReportOptionsFromJSONTyped = AnalyzeDmarcReportOptionsFromJSONTyped;
+exports.AnalyzeDmarcReportOptionsToJSON = AnalyzeDmarcReportOptionsToJSON;
 var runtime_1 = require("../runtime");
 function AnalyzeDmarcReportOptionsFromJSON(json) {
     return AnalyzeDmarcReportOptionsFromJSONTyped(json, false);
 }
-exports.AnalyzeDmarcReportOptionsFromJSON = AnalyzeDmarcReportOptionsFromJSON;
 function AnalyzeDmarcReportOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function AnalyzeDmarcReportOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['captchaToken'],
     };
 }
-exports.AnalyzeDmarcReportOptionsFromJSONTyped = AnalyzeDmarcReportOptionsFromJSONTyped;
 function AnalyzeDmarcReportOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function AnalyzeDmarcReportOptionsToJSON(value) {
         captchaToken: value.captchaToken,
     };
 }
-exports.AnalyzeDmarcReportOptionsToJSON = AnalyzeDmarcReportOptionsToJSON;

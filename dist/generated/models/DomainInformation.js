@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainInformationToJSON = exports.DomainInformationFromJSONTyped = exports.DomainInformationFromJSON = exports.DomainInformationDomainTypeEnum = void 0;
+exports.DomainInformationDomainTypeEnum = void 0;
+exports.DomainInformationFromJSON = DomainInformationFromJSON;
+exports.DomainInformationFromJSONTyped = DomainInformationFromJSONTyped;
+exports.DomainInformationToJSON = DomainInformationToJSON;
 /**
  * @export
  * @enum {string}
@@ -22,11 +25,10 @@ var DomainInformationDomainTypeEnum;
 (function (DomainInformationDomainTypeEnum) {
     DomainInformationDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     DomainInformationDomainTypeEnum["SMTP_DOMAIN"] = "SMTP_DOMAIN";
-})(DomainInformationDomainTypeEnum = exports.DomainInformationDomainTypeEnum || (exports.DomainInformationDomainTypeEnum = {}));
+})(DomainInformationDomainTypeEnum || (exports.DomainInformationDomainTypeEnum = DomainInformationDomainTypeEnum = {}));
 function DomainInformationFromJSON(json) {
     return DomainInformationFromJSONTyped(json, false);
 }
-exports.DomainInformationFromJSON = DomainInformationFromJSON;
 function DomainInformationFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +39,6 @@ function DomainInformationFromJSONTyped(json, ignoreDiscriminator) {
         domainType: json['domainType'],
     };
 }
-exports.DomainInformationFromJSONTyped = DomainInformationFromJSONTyped;
 function DomainInformationToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +52,3 @@ function DomainInformationToJSON(value) {
         domainType: value.domainType,
     };
 }
-exports.DomainInformationToJSON = DomainInformationToJSON;

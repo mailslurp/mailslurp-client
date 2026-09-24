@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneNumberProjectionToJSON = exports.PhoneNumberProjectionFromJSONTyped = exports.PhoneNumberProjectionFromJSON = exports.PhoneNumberProjectionPhoneCountryEnum = void 0;
+exports.PhoneNumberProjectionPhoneCountryEnum = void 0;
+exports.PhoneNumberProjectionFromJSON = PhoneNumberProjectionFromJSON;
+exports.PhoneNumberProjectionFromJSONTyped = PhoneNumberProjectionFromJSONTyped;
+exports.PhoneNumberProjectionToJSON = PhoneNumberProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -34,11 +37,10 @@ var PhoneNumberProjectionPhoneCountryEnum;
     PhoneNumberProjectionPhoneCountryEnum["IL"] = "IL";
     PhoneNumberProjectionPhoneCountryEnum["FI"] = "FI";
     PhoneNumberProjectionPhoneCountryEnum["SE"] = "SE";
-})(PhoneNumberProjectionPhoneCountryEnum = exports.PhoneNumberProjectionPhoneCountryEnum || (exports.PhoneNumberProjectionPhoneCountryEnum = {}));
+})(PhoneNumberProjectionPhoneCountryEnum || (exports.PhoneNumberProjectionPhoneCountryEnum = PhoneNumberProjectionPhoneCountryEnum = {}));
 function PhoneNumberProjectionFromJSON(json) {
     return PhoneNumberProjectionFromJSONTyped(json, false);
 }
-exports.PhoneNumberProjectionFromJSON = PhoneNumberProjectionFromJSON;
 function PhoneNumberProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -64,7 +66,6 @@ function PhoneNumberProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.PhoneNumberProjectionFromJSONTyped = PhoneNumberProjectionFromJSONTyped;
 function PhoneNumberProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -87,4 +88,3 @@ function PhoneNumberProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.PhoneNumberProjectionToJSON = PhoneNumberProjectionToJSON;

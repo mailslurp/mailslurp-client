@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccountBounceBlockDtoToJSON = exports.AccountBounceBlockDtoFromJSONTyped = exports.AccountBounceBlockDtoFromJSON = void 0;
+exports.AccountBounceBlockDtoFromJSON = AccountBounceBlockDtoFromJSON;
+exports.AccountBounceBlockDtoFromJSONTyped = AccountBounceBlockDtoFromJSONTyped;
+exports.AccountBounceBlockDtoToJSON = AccountBounceBlockDtoToJSON;
 function AccountBounceBlockDtoFromJSON(json) {
     return AccountBounceBlockDtoFromJSONTyped(json, false);
 }
-exports.AccountBounceBlockDtoFromJSON = AccountBounceBlockDtoFromJSON;
 function AccountBounceBlockDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function AccountBounceBlockDtoFromJSONTyped(json, ignoreDiscriminator) {
         maximumAccountBounces: json['maximumAccountBounces'],
     };
 }
-exports.AccountBounceBlockDtoFromJSONTyped = AccountBounceBlockDtoFromJSONTyped;
 function AccountBounceBlockDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function AccountBounceBlockDtoToJSON(value) {
         maximumAccountBounces: value.maximumAccountBounces,
     };
 }
-exports.AccountBounceBlockDtoToJSON = AccountBounceBlockDtoToJSON;

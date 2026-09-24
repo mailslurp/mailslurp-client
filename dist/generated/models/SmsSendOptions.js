@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmsSendOptionsToJSON = exports.SmsSendOptionsFromJSONTyped = exports.SmsSendOptionsFromJSON = void 0;
+exports.SmsSendOptionsFromJSON = SmsSendOptionsFromJSON;
+exports.SmsSendOptionsFromJSONTyped = SmsSendOptionsFromJSONTyped;
+exports.SmsSendOptionsToJSON = SmsSendOptionsToJSON;
 function SmsSendOptionsFromJSON(json) {
     return SmsSendOptionsFromJSONTyped(json, false);
 }
-exports.SmsSendOptionsFromJSON = SmsSendOptionsFromJSON;
 function SmsSendOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function SmsSendOptionsFromJSONTyped(json, ignoreDiscriminator) {
         body: json['body'],
     };
 }
-exports.SmsSendOptionsFromJSONTyped = SmsSendOptionsFromJSONTyped;
 function SmsSendOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function SmsSendOptionsToJSON(value) {
         body: value.body,
     };
 }
-exports.SmsSendOptionsToJSON = SmsSendOptionsToJSON;

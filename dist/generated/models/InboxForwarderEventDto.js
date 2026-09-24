@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxForwarderEventDtoToJSON = exports.InboxForwarderEventDtoFromJSONTyped = exports.InboxForwarderEventDtoFromJSON = exports.InboxForwarderEventDtoStatusEnum = void 0;
+exports.InboxForwarderEventDtoStatusEnum = void 0;
+exports.InboxForwarderEventDtoFromJSON = InboxForwarderEventDtoFromJSON;
+exports.InboxForwarderEventDtoFromJSONTyped = InboxForwarderEventDtoFromJSONTyped;
+exports.InboxForwarderEventDtoToJSON = InboxForwarderEventDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var InboxForwarderEventDtoStatusEnum;
 (function (InboxForwarderEventDtoStatusEnum) {
     InboxForwarderEventDtoStatusEnum["SUCCESS"] = "SUCCESS";
     InboxForwarderEventDtoStatusEnum["FAILURE"] = "FAILURE";
-})(InboxForwarderEventDtoStatusEnum = exports.InboxForwarderEventDtoStatusEnum || (exports.InboxForwarderEventDtoStatusEnum = {}));
+})(InboxForwarderEventDtoStatusEnum || (exports.InboxForwarderEventDtoStatusEnum = InboxForwarderEventDtoStatusEnum = {}));
 function InboxForwarderEventDtoFromJSON(json) {
     return InboxForwarderEventDtoFromJSONTyped(json, false);
 }
-exports.InboxForwarderEventDtoFromJSON = InboxForwarderEventDtoFromJSON;
 function InboxForwarderEventDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +46,6 @@ function InboxForwarderEventDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.InboxForwarderEventDtoFromJSONTyped = InboxForwarderEventDtoFromJSONTyped;
 function InboxForwarderEventDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,4 +65,3 @@ function InboxForwarderEventDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.InboxForwarderEventDtoToJSON = InboxForwarderEventDtoToJSON;

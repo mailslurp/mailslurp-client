@@ -43,13 +43,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -60,8 +70,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -2384,7 +2394,7 @@ var GetAllAccountWebhooksSortEnum;
 (function (GetAllAccountWebhooksSortEnum) {
     GetAllAccountWebhooksSortEnum["ASC"] = "ASC";
     GetAllAccountWebhooksSortEnum["DESC"] = "DESC";
-})(GetAllAccountWebhooksSortEnum = exports.GetAllAccountWebhooksSortEnum || (exports.GetAllAccountWebhooksSortEnum = {}));
+})(GetAllAccountWebhooksSortEnum || (exports.GetAllAccountWebhooksSortEnum = GetAllAccountWebhooksSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2403,7 +2413,7 @@ var GetAllAccountWebhooksEventTypeEnum;
     GetAllAccountWebhooksEventTypeEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetAllAccountWebhooksEventTypeEnum["NEW_SMS"] = "NEW_SMS";
     GetAllAccountWebhooksEventTypeEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(GetAllAccountWebhooksEventTypeEnum = exports.GetAllAccountWebhooksEventTypeEnum || (exports.GetAllAccountWebhooksEventTypeEnum = {}));
+})(GetAllAccountWebhooksEventTypeEnum || (exports.GetAllAccountWebhooksEventTypeEnum = GetAllAccountWebhooksEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2412,7 +2422,7 @@ var GetAllAccountWebhooksHealthEnum;
 (function (GetAllAccountWebhooksHealthEnum) {
     GetAllAccountWebhooksHealthEnum["HEALTHY"] = "HEALTHY";
     GetAllAccountWebhooksHealthEnum["UNHEALTHY"] = "UNHEALTHY";
-})(GetAllAccountWebhooksHealthEnum = exports.GetAllAccountWebhooksHealthEnum || (exports.GetAllAccountWebhooksHealthEnum = {}));
+})(GetAllAccountWebhooksHealthEnum || (exports.GetAllAccountWebhooksHealthEnum = GetAllAccountWebhooksHealthEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2421,7 +2431,7 @@ var GetAllWebhookEndpointsSortEnum;
 (function (GetAllWebhookEndpointsSortEnum) {
     GetAllWebhookEndpointsSortEnum["ASC"] = "ASC";
     GetAllWebhookEndpointsSortEnum["DESC"] = "DESC";
-})(GetAllWebhookEndpointsSortEnum = exports.GetAllWebhookEndpointsSortEnum || (exports.GetAllWebhookEndpointsSortEnum = {}));
+})(GetAllWebhookEndpointsSortEnum || (exports.GetAllWebhookEndpointsSortEnum = GetAllWebhookEndpointsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2430,7 +2440,7 @@ var GetAllWebhookEndpointsHealthEnum;
 (function (GetAllWebhookEndpointsHealthEnum) {
     GetAllWebhookEndpointsHealthEnum["HEALTHY"] = "HEALTHY";
     GetAllWebhookEndpointsHealthEnum["UNHEALTHY"] = "UNHEALTHY";
-})(GetAllWebhookEndpointsHealthEnum = exports.GetAllWebhookEndpointsHealthEnum || (exports.GetAllWebhookEndpointsHealthEnum = {}));
+})(GetAllWebhookEndpointsHealthEnum || (exports.GetAllWebhookEndpointsHealthEnum = GetAllWebhookEndpointsHealthEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2449,7 +2459,7 @@ var GetAllWebhookEndpointsEventTypeEnum;
     GetAllWebhookEndpointsEventTypeEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetAllWebhookEndpointsEventTypeEnum["NEW_SMS"] = "NEW_SMS";
     GetAllWebhookEndpointsEventTypeEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(GetAllWebhookEndpointsEventTypeEnum = exports.GetAllWebhookEndpointsEventTypeEnum || (exports.GetAllWebhookEndpointsEventTypeEnum = {}));
+})(GetAllWebhookEndpointsEventTypeEnum || (exports.GetAllWebhookEndpointsEventTypeEnum = GetAllWebhookEndpointsEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2458,7 +2468,7 @@ var GetAllWebhookResultsSortEnum;
 (function (GetAllWebhookResultsSortEnum) {
     GetAllWebhookResultsSortEnum["ASC"] = "ASC";
     GetAllWebhookResultsSortEnum["DESC"] = "DESC";
-})(GetAllWebhookResultsSortEnum = exports.GetAllWebhookResultsSortEnum || (exports.GetAllWebhookResultsSortEnum = {}));
+})(GetAllWebhookResultsSortEnum || (exports.GetAllWebhookResultsSortEnum = GetAllWebhookResultsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2470,7 +2480,7 @@ var GetAllWebhookResultsResultTypeEnum;
     GetAllWebhookResultsResultTypeEnum["EXHAUSTED"] = "EXHAUSTED";
     GetAllWebhookResultsResultTypeEnum["SUCCESS"] = "SUCCESS";
     GetAllWebhookResultsResultTypeEnum["REDRIVEN"] = "REDRIVEN";
-})(GetAllWebhookResultsResultTypeEnum = exports.GetAllWebhookResultsResultTypeEnum || (exports.GetAllWebhookResultsResultTypeEnum = {}));
+})(GetAllWebhookResultsResultTypeEnum || (exports.GetAllWebhookResultsResultTypeEnum = GetAllWebhookResultsResultTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2489,7 +2499,7 @@ var GetAllWebhookResultsEventNameEnum;
     GetAllWebhookResultsEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetAllWebhookResultsEventNameEnum["NEW_SMS"] = "NEW_SMS";
     GetAllWebhookResultsEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(GetAllWebhookResultsEventNameEnum = exports.GetAllWebhookResultsEventNameEnum || (exports.GetAllWebhookResultsEventNameEnum = {}));
+})(GetAllWebhookResultsEventNameEnum || (exports.GetAllWebhookResultsEventNameEnum = GetAllWebhookResultsEventNameEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2498,7 +2508,7 @@ var GetAllWebhooksSortEnum;
 (function (GetAllWebhooksSortEnum) {
     GetAllWebhooksSortEnum["ASC"] = "ASC";
     GetAllWebhooksSortEnum["DESC"] = "DESC";
-})(GetAllWebhooksSortEnum = exports.GetAllWebhooksSortEnum || (exports.GetAllWebhooksSortEnum = {}));
+})(GetAllWebhooksSortEnum || (exports.GetAllWebhooksSortEnum = GetAllWebhooksSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2507,7 +2517,7 @@ var GetAllWebhooksHealthEnum;
 (function (GetAllWebhooksHealthEnum) {
     GetAllWebhooksHealthEnum["HEALTHY"] = "HEALTHY";
     GetAllWebhooksHealthEnum["UNHEALTHY"] = "UNHEALTHY";
-})(GetAllWebhooksHealthEnum = exports.GetAllWebhooksHealthEnum || (exports.GetAllWebhooksHealthEnum = {}));
+})(GetAllWebhooksHealthEnum || (exports.GetAllWebhooksHealthEnum = GetAllWebhooksHealthEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2526,7 +2536,7 @@ var GetAllWebhooksEventTypeEnum;
     GetAllWebhooksEventTypeEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetAllWebhooksEventTypeEnum["NEW_SMS"] = "NEW_SMS";
     GetAllWebhooksEventTypeEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(GetAllWebhooksEventTypeEnum = exports.GetAllWebhooksEventTypeEnum || (exports.GetAllWebhooksEventTypeEnum = {}));
+})(GetAllWebhooksEventTypeEnum || (exports.GetAllWebhooksEventTypeEnum = GetAllWebhooksEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2536,7 +2546,7 @@ var GetAllWebhooksEventTypeSourceEnum;
     GetAllWebhooksEventTypeSourceEnum["INBOX"] = "INBOX";
     GetAllWebhooksEventTypeSourceEnum["PHONE"] = "PHONE";
     GetAllWebhooksEventTypeSourceEnum["AI_TRANSFORMER"] = "AI_TRANSFORMER";
-})(GetAllWebhooksEventTypeSourceEnum = exports.GetAllWebhooksEventTypeSourceEnum || (exports.GetAllWebhooksEventTypeSourceEnum = {}));
+})(GetAllWebhooksEventTypeSourceEnum || (exports.GetAllWebhooksEventTypeSourceEnum = GetAllWebhooksEventTypeSourceEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2545,7 +2555,7 @@ var GetInboxWebhooksPaginatedSortEnum;
 (function (GetInboxWebhooksPaginatedSortEnum) {
     GetInboxWebhooksPaginatedSortEnum["ASC"] = "ASC";
     GetInboxWebhooksPaginatedSortEnum["DESC"] = "DESC";
-})(GetInboxWebhooksPaginatedSortEnum = exports.GetInboxWebhooksPaginatedSortEnum || (exports.GetInboxWebhooksPaginatedSortEnum = {}));
+})(GetInboxWebhooksPaginatedSortEnum || (exports.GetInboxWebhooksPaginatedSortEnum = GetInboxWebhooksPaginatedSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2554,7 +2564,7 @@ var GetInboxWebhooksPaginatedHealthEnum;
 (function (GetInboxWebhooksPaginatedHealthEnum) {
     GetInboxWebhooksPaginatedHealthEnum["HEALTHY"] = "HEALTHY";
     GetInboxWebhooksPaginatedHealthEnum["UNHEALTHY"] = "UNHEALTHY";
-})(GetInboxWebhooksPaginatedHealthEnum = exports.GetInboxWebhooksPaginatedHealthEnum || (exports.GetInboxWebhooksPaginatedHealthEnum = {}));
+})(GetInboxWebhooksPaginatedHealthEnum || (exports.GetInboxWebhooksPaginatedHealthEnum = GetInboxWebhooksPaginatedHealthEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2573,7 +2583,7 @@ var GetInboxWebhooksPaginatedEventTypeEnum;
     GetInboxWebhooksPaginatedEventTypeEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetInboxWebhooksPaginatedEventTypeEnum["NEW_SMS"] = "NEW_SMS";
     GetInboxWebhooksPaginatedEventTypeEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(GetInboxWebhooksPaginatedEventTypeEnum = exports.GetInboxWebhooksPaginatedEventTypeEnum || (exports.GetInboxWebhooksPaginatedEventTypeEnum = {}));
+})(GetInboxWebhooksPaginatedEventTypeEnum || (exports.GetInboxWebhooksPaginatedEventTypeEnum = GetInboxWebhooksPaginatedEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2592,7 +2602,7 @@ var GetJsonSchemaForWebhookEventEventEnum;
     GetJsonSchemaForWebhookEventEventEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetJsonSchemaForWebhookEventEventEnum["NEW_SMS"] = "NEW_SMS";
     GetJsonSchemaForWebhookEventEventEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(GetJsonSchemaForWebhookEventEventEnum = exports.GetJsonSchemaForWebhookEventEventEnum || (exports.GetJsonSchemaForWebhookEventEventEnum = {}));
+})(GetJsonSchemaForWebhookEventEventEnum || (exports.GetJsonSchemaForWebhookEventEventEnum = GetJsonSchemaForWebhookEventEventEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2601,7 +2611,7 @@ var GetPhoneNumberWebhooksPaginatedSortEnum;
 (function (GetPhoneNumberWebhooksPaginatedSortEnum) {
     GetPhoneNumberWebhooksPaginatedSortEnum["ASC"] = "ASC";
     GetPhoneNumberWebhooksPaginatedSortEnum["DESC"] = "DESC";
-})(GetPhoneNumberWebhooksPaginatedSortEnum = exports.GetPhoneNumberWebhooksPaginatedSortEnum || (exports.GetPhoneNumberWebhooksPaginatedSortEnum = {}));
+})(GetPhoneNumberWebhooksPaginatedSortEnum || (exports.GetPhoneNumberWebhooksPaginatedSortEnum = GetPhoneNumberWebhooksPaginatedSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2620,7 +2630,7 @@ var GetPhoneNumberWebhooksPaginatedEventTypeEnum;
     GetPhoneNumberWebhooksPaginatedEventTypeEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetPhoneNumberWebhooksPaginatedEventTypeEnum["NEW_SMS"] = "NEW_SMS";
     GetPhoneNumberWebhooksPaginatedEventTypeEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(GetPhoneNumberWebhooksPaginatedEventTypeEnum = exports.GetPhoneNumberWebhooksPaginatedEventTypeEnum || (exports.GetPhoneNumberWebhooksPaginatedEventTypeEnum = {}));
+})(GetPhoneNumberWebhooksPaginatedEventTypeEnum || (exports.GetPhoneNumberWebhooksPaginatedEventTypeEnum = GetPhoneNumberWebhooksPaginatedEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2629,7 +2639,7 @@ var GetPhoneNumberWebhooksPaginatedHealthEnum;
 (function (GetPhoneNumberWebhooksPaginatedHealthEnum) {
     GetPhoneNumberWebhooksPaginatedHealthEnum["HEALTHY"] = "HEALTHY";
     GetPhoneNumberWebhooksPaginatedHealthEnum["UNHEALTHY"] = "UNHEALTHY";
-})(GetPhoneNumberWebhooksPaginatedHealthEnum = exports.GetPhoneNumberWebhooksPaginatedHealthEnum || (exports.GetPhoneNumberWebhooksPaginatedHealthEnum = {}));
+})(GetPhoneNumberWebhooksPaginatedHealthEnum || (exports.GetPhoneNumberWebhooksPaginatedHealthEnum = GetPhoneNumberWebhooksPaginatedHealthEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2648,7 +2658,7 @@ var GetTestWebhookPayloadEventNameEnum;
     GetTestWebhookPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetTestWebhookPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
     GetTestWebhookPayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(GetTestWebhookPayloadEventNameEnum = exports.GetTestWebhookPayloadEventNameEnum || (exports.GetTestWebhookPayloadEventNameEnum = {}));
+})(GetTestWebhookPayloadEventNameEnum || (exports.GetTestWebhookPayloadEventNameEnum = GetTestWebhookPayloadEventNameEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2657,7 +2667,7 @@ var GetWebhookResultsSortEnum;
 (function (GetWebhookResultsSortEnum) {
     GetWebhookResultsSortEnum["ASC"] = "ASC";
     GetWebhookResultsSortEnum["DESC"] = "DESC";
-})(GetWebhookResultsSortEnum = exports.GetWebhookResultsSortEnum || (exports.GetWebhookResultsSortEnum = {}));
+})(GetWebhookResultsSortEnum || (exports.GetWebhookResultsSortEnum = GetWebhookResultsSortEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2669,7 +2679,7 @@ var GetWebhookResultsResultTypeEnum;
     GetWebhookResultsResultTypeEnum["EXHAUSTED"] = "EXHAUSTED";
     GetWebhookResultsResultTypeEnum["SUCCESS"] = "SUCCESS";
     GetWebhookResultsResultTypeEnum["REDRIVEN"] = "REDRIVEN";
-})(GetWebhookResultsResultTypeEnum = exports.GetWebhookResultsResultTypeEnum || (exports.GetWebhookResultsResultTypeEnum = {}));
+})(GetWebhookResultsResultTypeEnum || (exports.GetWebhookResultsResultTypeEnum = GetWebhookResultsResultTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2688,7 +2698,7 @@ var GetWebhookResultsEventNameEnum;
     GetWebhookResultsEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     GetWebhookResultsEventNameEnum["NEW_SMS"] = "NEW_SMS";
     GetWebhookResultsEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(GetWebhookResultsEventNameEnum = exports.GetWebhookResultsEventNameEnum || (exports.GetWebhookResultsEventNameEnum = {}));
+})(GetWebhookResultsEventNameEnum || (exports.GetWebhookResultsEventNameEnum = GetWebhookResultsEventNameEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -2697,4 +2707,4 @@ var GetWebhooksSortEnum;
 (function (GetWebhooksSortEnum) {
     GetWebhooksSortEnum["ASC"] = "ASC";
     GetWebhooksSortEnum["DESC"] = "DESC";
-})(GetWebhooksSortEnum = exports.GetWebhooksSortEnum || (exports.GetWebhooksSortEnum = {}));
+})(GetWebhooksSortEnum || (exports.GetWebhooksSortEnum = GetWebhooksSortEnum = {}));

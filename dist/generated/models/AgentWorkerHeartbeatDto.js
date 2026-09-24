@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentWorkerHeartbeatDtoToJSON = exports.AgentWorkerHeartbeatDtoFromJSONTyped = exports.AgentWorkerHeartbeatDtoFromJSON = exports.AgentWorkerHeartbeatDtoStatusEnum = void 0;
+exports.AgentWorkerHeartbeatDtoStatusEnum = void 0;
+exports.AgentWorkerHeartbeatDtoFromJSON = AgentWorkerHeartbeatDtoFromJSON;
+exports.AgentWorkerHeartbeatDtoFromJSONTyped = AgentWorkerHeartbeatDtoFromJSONTyped;
+exports.AgentWorkerHeartbeatDtoToJSON = AgentWorkerHeartbeatDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var AgentWorkerHeartbeatDtoStatusEnum;
 (function (AgentWorkerHeartbeatDtoStatusEnum) {
     AgentWorkerHeartbeatDtoStatusEnum["ONLINE"] = "ONLINE";
     AgentWorkerHeartbeatDtoStatusEnum["STALE"] = "STALE";
-})(AgentWorkerHeartbeatDtoStatusEnum = exports.AgentWorkerHeartbeatDtoStatusEnum || (exports.AgentWorkerHeartbeatDtoStatusEnum = {}));
+})(AgentWorkerHeartbeatDtoStatusEnum || (exports.AgentWorkerHeartbeatDtoStatusEnum = AgentWorkerHeartbeatDtoStatusEnum = {}));
 function AgentWorkerHeartbeatDtoFromJSON(json) {
     return AgentWorkerHeartbeatDtoFromJSONTyped(json, false);
 }
-exports.AgentWorkerHeartbeatDtoFromJSON = AgentWorkerHeartbeatDtoFromJSON;
 function AgentWorkerHeartbeatDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +46,6 @@ function AgentWorkerHeartbeatDtoFromJSONTyped(json, ignoreDiscriminator) {
         status: json['status'],
     };
 }
-exports.AgentWorkerHeartbeatDtoFromJSONTyped = AgentWorkerHeartbeatDtoFromJSONTyped;
 function AgentWorkerHeartbeatDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,4 +65,3 @@ function AgentWorkerHeartbeatDtoToJSON(value) {
         status: value.status,
     };
 }
-exports.AgentWorkerHeartbeatDtoToJSON = AgentWorkerHeartbeatDtoToJSON;

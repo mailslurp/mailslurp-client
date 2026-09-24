@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmsProjectionToJSON = exports.SmsProjectionFromJSONTyped = exports.SmsProjectionFromJSON = void 0;
+exports.SmsProjectionFromJSON = SmsProjectionFromJSON;
+exports.SmsProjectionFromJSONTyped = SmsProjectionFromJSONTyped;
+exports.SmsProjectionToJSON = SmsProjectionToJSON;
 function SmsProjectionFromJSON(json) {
     return SmsProjectionFromJSONTyped(json, false);
 }
-exports.SmsProjectionFromJSON = SmsProjectionFromJSON;
 function SmsProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function SmsProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.SmsProjectionFromJSONTyped = SmsProjectionFromJSONTyped;
 function SmsProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function SmsProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.SmsProjectionToJSON = SmsProjectionToJSON;

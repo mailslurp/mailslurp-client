@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateEmergencyAddressOptionsToJSON = exports.CreateEmergencyAddressOptionsFromJSONTyped = exports.CreateEmergencyAddressOptionsFromJSON = exports.CreateEmergencyAddressOptionsIsoCountryCodeEnum = void 0;
+exports.CreateEmergencyAddressOptionsIsoCountryCodeEnum = void 0;
+exports.CreateEmergencyAddressOptionsFromJSON = CreateEmergencyAddressOptionsFromJSON;
+exports.CreateEmergencyAddressOptionsFromJSONTyped = CreateEmergencyAddressOptionsFromJSONTyped;
+exports.CreateEmergencyAddressOptionsToJSON = CreateEmergencyAddressOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -34,11 +37,10 @@ var CreateEmergencyAddressOptionsIsoCountryCodeEnum;
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["IL"] = "IL";
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["FI"] = "FI";
     CreateEmergencyAddressOptionsIsoCountryCodeEnum["SE"] = "SE";
-})(CreateEmergencyAddressOptionsIsoCountryCodeEnum = exports.CreateEmergencyAddressOptionsIsoCountryCodeEnum || (exports.CreateEmergencyAddressOptionsIsoCountryCodeEnum = {}));
+})(CreateEmergencyAddressOptionsIsoCountryCodeEnum || (exports.CreateEmergencyAddressOptionsIsoCountryCodeEnum = CreateEmergencyAddressOptionsIsoCountryCodeEnum = {}));
 function CreateEmergencyAddressOptionsFromJSON(json) {
     return CreateEmergencyAddressOptionsFromJSONTyped(json, false);
 }
-exports.CreateEmergencyAddressOptionsFromJSON = CreateEmergencyAddressOptionsFromJSON;
 function CreateEmergencyAddressOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -53,7 +55,6 @@ function CreateEmergencyAddressOptionsFromJSONTyped(json, ignoreDiscriminator) {
         displayName: !(0, runtime_1.exists)(json, 'displayName') ? undefined : json['displayName'],
     };
 }
-exports.CreateEmergencyAddressOptionsFromJSONTyped = CreateEmergencyAddressOptionsFromJSONTyped;
 function CreateEmergencyAddressOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -71,4 +72,3 @@ function CreateEmergencyAddressOptionsToJSON(value) {
         displayName: value.displayName,
     };
 }
-exports.CreateEmergencyAddressOptionsToJSON = CreateEmergencyAddressOptionsToJSON;

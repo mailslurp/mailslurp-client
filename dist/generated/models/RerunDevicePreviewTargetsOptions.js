@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RerunDevicePreviewTargetsOptionsToJSON = exports.RerunDevicePreviewTargetsOptionsFromJSONTyped = exports.RerunDevicePreviewTargetsOptionsFromJSON = void 0;
+exports.RerunDevicePreviewTargetsOptionsFromJSON = RerunDevicePreviewTargetsOptionsFromJSON;
+exports.RerunDevicePreviewTargetsOptionsFromJSONTyped = RerunDevicePreviewTargetsOptionsFromJSONTyped;
+exports.RerunDevicePreviewTargetsOptionsToJSON = RerunDevicePreviewTargetsOptionsToJSON;
 function RerunDevicePreviewTargetsOptionsFromJSON(json) {
     return RerunDevicePreviewTargetsOptionsFromJSONTyped(json, false);
 }
-exports.RerunDevicePreviewTargetsOptionsFromJSON = RerunDevicePreviewTargetsOptionsFromJSON;
 function RerunDevicePreviewTargetsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function RerunDevicePreviewTargetsOptionsFromJSONTyped(json, ignoreDiscriminator
         failedOnly: json['failedOnly'],
     };
 }
-exports.RerunDevicePreviewTargetsOptionsFromJSONTyped = RerunDevicePreviewTargetsOptionsFromJSONTyped;
 function RerunDevicePreviewTargetsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function RerunDevicePreviewTargetsOptionsToJSON(value) {
         failedOnly: value.failedOnly,
     };
 }
-exports.RerunDevicePreviewTargetsOptionsToJSON = RerunDevicePreviewTargetsOptionsToJSON;

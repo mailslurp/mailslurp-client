@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExchangePostmasterCodeOptionsToJSON = exports.ExchangePostmasterCodeOptionsFromJSONTyped = exports.ExchangePostmasterCodeOptionsFromJSON = void 0;
+exports.ExchangePostmasterCodeOptionsFromJSON = ExchangePostmasterCodeOptionsFromJSON;
+exports.ExchangePostmasterCodeOptionsFromJSONTyped = ExchangePostmasterCodeOptionsFromJSONTyped;
+exports.ExchangePostmasterCodeOptionsToJSON = ExchangePostmasterCodeOptionsToJSON;
 function ExchangePostmasterCodeOptionsFromJSON(json) {
     return ExchangePostmasterCodeOptionsFromJSONTyped(json, false);
 }
-exports.ExchangePostmasterCodeOptionsFromJSON = ExchangePostmasterCodeOptionsFromJSON;
 function ExchangePostmasterCodeOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function ExchangePostmasterCodeOptionsFromJSONTyped(json, ignoreDiscriminator) {
         state: json['state'],
     };
 }
-exports.ExchangePostmasterCodeOptionsFromJSONTyped = ExchangePostmasterCodeOptionsFromJSONTyped;
 function ExchangePostmasterCodeOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ExchangePostmasterCodeOptionsToJSON(value) {
         state: value.state,
     };
 }
-exports.ExchangePostmasterCodeOptionsToJSON = ExchangePostmasterCodeOptionsToJSON;

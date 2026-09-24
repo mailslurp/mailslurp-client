@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExportTransformerResponseToJSON = exports.ExportTransformerResponseFromJSONTyped = exports.ExportTransformerResponseFromJSON = exports.ExportTransformerResponseStatusEnum = void 0;
+exports.ExportTransformerResponseStatusEnum = void 0;
+exports.ExportTransformerResponseFromJSON = ExportTransformerResponseFromJSON;
+exports.ExportTransformerResponseFromJSONTyped = ExportTransformerResponseFromJSONTyped;
+exports.ExportTransformerResponseToJSON = ExportTransformerResponseToJSON;
 /**
  * @export
  * @enum {string}
@@ -24,11 +27,10 @@ var ExportTransformerResponseStatusEnum;
     ExportTransformerResponseStatusEnum["IN_PROGRESS"] = "IN_PROGRESS";
     ExportTransformerResponseStatusEnum["ERROR"] = "ERROR";
     ExportTransformerResponseStatusEnum["SUCCESS"] = "SUCCESS";
-})(ExportTransformerResponseStatusEnum = exports.ExportTransformerResponseStatusEnum || (exports.ExportTransformerResponseStatusEnum = {}));
+})(ExportTransformerResponseStatusEnum || (exports.ExportTransformerResponseStatusEnum = ExportTransformerResponseStatusEnum = {}));
 function ExportTransformerResponseFromJSON(json) {
     return ExportTransformerResponseFromJSONTyped(json, false);
 }
-exports.ExportTransformerResponseFromJSON = ExportTransformerResponseFromJSON;
 function ExportTransformerResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +40,6 @@ function ExportTransformerResponseFromJSONTyped(json, ignoreDiscriminator) {
         status: json['status'],
     };
 }
-exports.ExportTransformerResponseFromJSONTyped = ExportTransformerResponseFromJSONTyped;
 function ExportTransformerResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +52,3 @@ function ExportTransformerResponseToJSON(value) {
         status: value.status,
     };
 }
-exports.ExportTransformerResponseToJSON = ExportTransformerResponseToJSON;

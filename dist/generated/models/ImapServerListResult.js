@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerListResultToJSON = exports.ImapServerListResultFromJSONTyped = exports.ImapServerListResultFromJSON = void 0;
+exports.ImapServerListResultFromJSON = ImapServerListResultFromJSON;
+exports.ImapServerListResultFromJSONTyped = ImapServerListResultFromJSONTyped;
+exports.ImapServerListResultToJSON = ImapServerListResultToJSON;
 var _1 = require("./");
 function ImapServerListResultFromJSON(json) {
     return ImapServerListResultFromJSONTyped(json, false);
 }
-exports.ImapServerListResultFromJSON = ImapServerListResultFromJSON;
 function ImapServerListResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function ImapServerListResultFromJSONTyped(json, ignoreDiscriminator) {
         results: json['results'].map(_1.ImapEmailProjectionFromJSON),
     };
 }
-exports.ImapServerListResultFromJSONTyped = ImapServerListResultFromJSONTyped;
 function ImapServerListResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function ImapServerListResultToJSON(value) {
         results: value.results.map(_1.ImapEmailProjectionToJSON),
     };
 }
-exports.ImapServerListResultToJSON = ImapServerListResultToJSON;

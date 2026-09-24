@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementTestRunDtoToJSON = exports.InboxPlacementTestRunDtoFromJSONTyped = exports.InboxPlacementTestRunDtoFromJSON = void 0;
+exports.InboxPlacementTestRunDtoFromJSON = InboxPlacementTestRunDtoFromJSON;
+exports.InboxPlacementTestRunDtoFromJSONTyped = InboxPlacementTestRunDtoFromJSONTyped;
+exports.InboxPlacementTestRunDtoToJSON = InboxPlacementTestRunDtoToJSON;
 var runtime_1 = require("../runtime");
 function InboxPlacementTestRunDtoFromJSON(json) {
     return InboxPlacementTestRunDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementTestRunDtoFromJSON = InboxPlacementTestRunDtoFromJSON;
 function InboxPlacementTestRunDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -91,7 +92,6 @@ function InboxPlacementTestRunDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.InboxPlacementTestRunDtoFromJSONTyped = InboxPlacementTestRunDtoFromJSONTyped;
 function InboxPlacementTestRunDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -157,4 +157,3 @@ function InboxPlacementTestRunDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.InboxPlacementTestRunDtoToJSON = InboxPlacementTestRunDtoToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckCampaignProbeResultsToJSON = exports.CheckCampaignProbeResultsFromJSONTyped = exports.CheckCampaignProbeResultsFromJSON = exports.CheckCampaignProbeResultsStatusEnum = void 0;
+exports.CheckCampaignProbeResultsStatusEnum = void 0;
+exports.CheckCampaignProbeResultsFromJSON = CheckCampaignProbeResultsFromJSON;
+exports.CheckCampaignProbeResultsFromJSONTyped = CheckCampaignProbeResultsFromJSONTyped;
+exports.CheckCampaignProbeResultsToJSON = CheckCampaignProbeResultsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var CheckCampaignProbeResultsStatusEnum;
     CheckCampaignProbeResultsStatusEnum["HEALTHY"] = "HEALTHY";
     CheckCampaignProbeResultsStatusEnum["WARNING"] = "WARNING";
     CheckCampaignProbeResultsStatusEnum["FAILED"] = "FAILED";
-})(CheckCampaignProbeResultsStatusEnum = exports.CheckCampaignProbeResultsStatusEnum || (exports.CheckCampaignProbeResultsStatusEnum = {}));
+})(CheckCampaignProbeResultsStatusEnum || (exports.CheckCampaignProbeResultsStatusEnum = CheckCampaignProbeResultsStatusEnum = {}));
 function CheckCampaignProbeResultsFromJSON(json) {
     return CheckCampaignProbeResultsFromJSONTyped(json, false);
 }
-exports.CheckCampaignProbeResultsFromJSON = CheckCampaignProbeResultsFromJSON;
 function CheckCampaignProbeResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -56,7 +58,6 @@ function CheckCampaignProbeResultsFromJSONTyped(json, ignoreDiscriminator) {
             : json['errorMessage'],
     };
 }
-exports.CheckCampaignProbeResultsFromJSONTyped = CheckCampaignProbeResultsFromJSONTyped;
 function CheckCampaignProbeResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -85,4 +86,3 @@ function CheckCampaignProbeResultsToJSON(value) {
         errorMessage: value.errorMessage,
     };
 }
-exports.CheckCampaignProbeResultsToJSON = CheckCampaignProbeResultsToJSON;

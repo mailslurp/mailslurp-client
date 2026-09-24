@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyEmailAddressOptionsToJSON = exports.VerifyEmailAddressOptionsFromJSONTyped = exports.VerifyEmailAddressOptionsFromJSON = void 0;
+exports.VerifyEmailAddressOptionsFromJSON = VerifyEmailAddressOptionsFromJSON;
+exports.VerifyEmailAddressOptionsFromJSONTyped = VerifyEmailAddressOptionsFromJSONTyped;
+exports.VerifyEmailAddressOptionsToJSON = VerifyEmailAddressOptionsToJSON;
 var runtime_1 = require("../runtime");
 function VerifyEmailAddressOptionsFromJSON(json) {
     return VerifyEmailAddressOptionsFromJSONTyped(json, false);
 }
-exports.VerifyEmailAddressOptionsFromJSON = VerifyEmailAddressOptionsFromJSON;
 function VerifyEmailAddressOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -34,7 +35,6 @@ function VerifyEmailAddressOptionsFromJSONTyped(json, ignoreDiscriminator) {
         port: !(0, runtime_1.exists)(json, 'port') ? undefined : json['port'],
     };
 }
-exports.VerifyEmailAddressOptionsFromJSONTyped = VerifyEmailAddressOptionsFromJSONTyped;
 function VerifyEmailAddressOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function VerifyEmailAddressOptionsToJSON(value) {
         port: value.port,
     };
 }
-exports.VerifyEmailAddressOptionsToJSON = VerifyEmailAddressOptionsToJSON;

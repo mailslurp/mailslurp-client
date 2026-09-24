@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainPreviewToJSON = exports.DomainPreviewFromJSONTyped = exports.DomainPreviewFromJSON = exports.DomainPreviewDomainTypeEnum = void 0;
+exports.DomainPreviewDomainTypeEnum = void 0;
+exports.DomainPreviewFromJSON = DomainPreviewFromJSON;
+exports.DomainPreviewFromJSONTyped = DomainPreviewFromJSONTyped;
+exports.DomainPreviewToJSON = DomainPreviewToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var DomainPreviewDomainTypeEnum;
 (function (DomainPreviewDomainTypeEnum) {
     DomainPreviewDomainTypeEnum["HTTP_INBOX"] = "HTTP_INBOX";
     DomainPreviewDomainTypeEnum["SMTP_DOMAIN"] = "SMTP_DOMAIN";
-})(DomainPreviewDomainTypeEnum = exports.DomainPreviewDomainTypeEnum || (exports.DomainPreviewDomainTypeEnum = {}));
+})(DomainPreviewDomainTypeEnum || (exports.DomainPreviewDomainTypeEnum = DomainPreviewDomainTypeEnum = {}));
 function DomainPreviewFromJSON(json) {
     return DomainPreviewFromJSONTyped(json, false);
 }
-exports.DomainPreviewFromJSON = DomainPreviewFromJSON;
 function DomainPreviewFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +46,6 @@ function DomainPreviewFromJSONTyped(json, ignoreDiscriminator) {
         hasMissingRecords: json['hasMissingRecords'],
     };
 }
-exports.DomainPreviewFromJSONTyped = DomainPreviewFromJSONTyped;
 function DomainPreviewToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -62,4 +63,3 @@ function DomainPreviewToJSON(value) {
         hasMissingRecords: value.hasMissingRecords,
     };
 }
-exports.DomainPreviewToJSON = DomainPreviewToJSON;

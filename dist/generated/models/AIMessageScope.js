@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageScopeToJSON = exports.AIMessageScopeFromJSONTyped = exports.AIMessageScopeFromJSON = void 0;
+exports.AIMessageScopeFromJSON = AIMessageScopeFromJSON;
+exports.AIMessageScopeFromJSONTyped = AIMessageScopeFromJSONTyped;
+exports.AIMessageScopeToJSON = AIMessageScopeToJSON;
 function AIMessageScopeFromJSON(json) {
     return AIMessageScopeFromJSONTyped(json, false);
 }
-exports.AIMessageScopeFromJSON = AIMessageScopeFromJSON;
 function AIMessageScopeFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function AIMessageScopeFromJSONTyped(json, ignoreDiscriminator) {
         phoneNumberIds: json['phoneNumberIds'],
     };
 }
-exports.AIMessageScopeFromJSONTyped = AIMessageScopeFromJSONTyped;
 function AIMessageScopeToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function AIMessageScopeToJSON(value) {
         phoneNumberIds: value.phoneNumberIds,
     };
 }
-exports.AIMessageScopeToJSON = AIMessageScopeToJSON;

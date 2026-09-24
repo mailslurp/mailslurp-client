@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateBimiRecordResultsToJSON = exports.GenerateBimiRecordResultsFromJSONTyped = exports.GenerateBimiRecordResultsFromJSON = exports.GenerateBimiRecordResultsTypeEnum = void 0;
+exports.GenerateBimiRecordResultsTypeEnum = void 0;
+exports.GenerateBimiRecordResultsFromJSON = GenerateBimiRecordResultsFromJSON;
+exports.GenerateBimiRecordResultsFromJSONTyped = GenerateBimiRecordResultsFromJSONTyped;
+exports.GenerateBimiRecordResultsToJSON = GenerateBimiRecordResultsToJSON;
 /**
  * @export
  * @enum {string}
@@ -109,11 +112,10 @@ var GenerateBimiRecordResultsTypeEnum;
     GenerateBimiRecordResultsTypeEnum["AMTRELAY"] = "AMTRELAY";
     GenerateBimiRecordResultsTypeEnum["TA"] = "TA";
     GenerateBimiRecordResultsTypeEnum["DLV"] = "DLV";
-})(GenerateBimiRecordResultsTypeEnum = exports.GenerateBimiRecordResultsTypeEnum || (exports.GenerateBimiRecordResultsTypeEnum = {}));
+})(GenerateBimiRecordResultsTypeEnum || (exports.GenerateBimiRecordResultsTypeEnum = GenerateBimiRecordResultsTypeEnum = {}));
 function GenerateBimiRecordResultsFromJSON(json) {
     return GenerateBimiRecordResultsFromJSONTyped(json, false);
 }
-exports.GenerateBimiRecordResultsFromJSON = GenerateBimiRecordResultsFromJSON;
 function GenerateBimiRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -125,7 +127,6 @@ function GenerateBimiRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
         value: json['value'],
     };
 }
-exports.GenerateBimiRecordResultsFromJSONTyped = GenerateBimiRecordResultsFromJSONTyped;
 function GenerateBimiRecordResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -140,4 +141,3 @@ function GenerateBimiRecordResultsToJSON(value) {
         value: value.value,
     };
 }
-exports.GenerateBimiRecordResultsToJSON = GenerateBimiRecordResultsToJSON;

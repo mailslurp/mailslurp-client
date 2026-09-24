@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateCampaignProbeRunOptionsToJSON = exports.CreateCampaignProbeRunOptionsFromJSONTyped = exports.CreateCampaignProbeRunOptionsFromJSON = void 0;
+exports.CreateCampaignProbeRunOptionsFromJSON = CreateCampaignProbeRunOptionsFromJSON;
+exports.CreateCampaignProbeRunOptionsFromJSONTyped = CreateCampaignProbeRunOptionsFromJSONTyped;
+exports.CreateCampaignProbeRunOptionsToJSON = CreateCampaignProbeRunOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateCampaignProbeRunOptionsFromJSON(json) {
     return CreateCampaignProbeRunOptionsFromJSONTyped(json, false);
 }
-exports.CreateCampaignProbeRunOptionsFromJSON = CreateCampaignProbeRunOptionsFromJSON;
 function CreateCampaignProbeRunOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function CreateCampaignProbeRunOptionsFromJSONTyped(json, ignoreDiscriminator) {
         textBody: !(0, runtime_1.exists)(json, 'textBody') ? undefined : json['textBody'],
     };
 }
-exports.CreateCampaignProbeRunOptionsFromJSONTyped = CreateCampaignProbeRunOptionsFromJSONTyped;
 function CreateCampaignProbeRunOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function CreateCampaignProbeRunOptionsToJSON(value) {
         textBody: value.textBody,
     };
 }
-exports.CreateCampaignProbeRunOptionsToJSON = CreateCampaignProbeRunOptionsToJSON;

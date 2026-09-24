@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DmarcReportSourceSummaryToJSON = exports.DmarcReportSourceSummaryFromJSONTyped = exports.DmarcReportSourceSummaryFromJSON = void 0;
+exports.DmarcReportSourceSummaryFromJSON = DmarcReportSourceSummaryFromJSON;
+exports.DmarcReportSourceSummaryFromJSONTyped = DmarcReportSourceSummaryFromJSONTyped;
+exports.DmarcReportSourceSummaryToJSON = DmarcReportSourceSummaryToJSON;
 var runtime_1 = require("../runtime");
 function DmarcReportSourceSummaryFromJSON(json) {
     return DmarcReportSourceSummaryFromJSONTyped(json, false);
 }
-exports.DmarcReportSourceSummaryFromJSON = DmarcReportSourceSummaryFromJSON;
 function DmarcReportSourceSummaryFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function DmarcReportSourceSummaryFromJSONTyped(json, ignoreDiscriminator) {
         headerFrom: !(0, runtime_1.exists)(json, 'headerFrom') ? undefined : json['headerFrom'],
     };
 }
-exports.DmarcReportSourceSummaryFromJSONTyped = DmarcReportSourceSummaryFromJSONTyped;
 function DmarcReportSourceSummaryToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function DmarcReportSourceSummaryToJSON(value) {
         headerFrom: value.headerFrom,
     };
 }
-exports.DmarcReportSourceSummaryToJSON = DmarcReportSourceSummaryToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SpellingIssueToJSON = exports.SpellingIssueFromJSONTyped = exports.SpellingIssueFromJSON = exports.SpellingIssueSeverityEnum = void 0;
+exports.SpellingIssueSeverityEnum = void 0;
+exports.SpellingIssueFromJSON = SpellingIssueFromJSON;
+exports.SpellingIssueFromJSONTyped = SpellingIssueFromJSONTyped;
+exports.SpellingIssueToJSON = SpellingIssueToJSON;
 /**
  * @export
  * @enum {string}
@@ -22,11 +25,10 @@ var SpellingIssueSeverityEnum;
 (function (SpellingIssueSeverityEnum) {
     SpellingIssueSeverityEnum["Warning"] = "Warning";
     SpellingIssueSeverityEnum["Error"] = "Error";
-})(SpellingIssueSeverityEnum = exports.SpellingIssueSeverityEnum || (exports.SpellingIssueSeverityEnum = {}));
+})(SpellingIssueSeverityEnum || (exports.SpellingIssueSeverityEnum = SpellingIssueSeverityEnum = {}));
 function SpellingIssueFromJSON(json) {
     return SpellingIssueFromJSONTyped(json, false);
 }
-exports.SpellingIssueFromJSON = SpellingIssueFromJSON;
 function SpellingIssueFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +40,6 @@ function SpellingIssueFromJSONTyped(json, ignoreDiscriminator) {
         message: json['message'],
     };
 }
-exports.SpellingIssueFromJSONTyped = SpellingIssueFromJSONTyped;
 function SpellingIssueToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +54,3 @@ function SpellingIssueToJSON(value) {
         message: value.message,
     };
 }
-exports.SpellingIssueToJSON = SpellingIssueToJSON;

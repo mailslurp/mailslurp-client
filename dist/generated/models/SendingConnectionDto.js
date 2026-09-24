@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendingConnectionDtoToJSON = exports.SendingConnectionDtoFromJSONTyped = exports.SendingConnectionDtoFromJSON = exports.SendingConnectionDtoStatusEnum = exports.SendingConnectionDtoApiRegionEnum = exports.SendingConnectionDtoSmtpSecurityEnum = exports.SendingConnectionDtoCapabilitiesEnum = exports.SendingConnectionDtoProviderPresetEnum = exports.SendingConnectionDtoProviderEnum = void 0;
+exports.SendingConnectionDtoStatusEnum = exports.SendingConnectionDtoApiRegionEnum = exports.SendingConnectionDtoSmtpSecurityEnum = exports.SendingConnectionDtoCapabilitiesEnum = exports.SendingConnectionDtoProviderPresetEnum = exports.SendingConnectionDtoProviderEnum = void 0;
+exports.SendingConnectionDtoFromJSON = SendingConnectionDtoFromJSON;
+exports.SendingConnectionDtoFromJSONTyped = SendingConnectionDtoFromJSONTyped;
+exports.SendingConnectionDtoToJSON = SendingConnectionDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -27,7 +30,7 @@ var SendingConnectionDtoProviderEnum;
     SendingConnectionDtoProviderEnum["RESEND"] = "RESEND";
     SendingConnectionDtoProviderEnum["MAILGUN"] = "MAILGUN";
     SendingConnectionDtoProviderEnum["POSTMARK"] = "POSTMARK";
-})(SendingConnectionDtoProviderEnum = exports.SendingConnectionDtoProviderEnum || (exports.SendingConnectionDtoProviderEnum = {}));
+})(SendingConnectionDtoProviderEnum || (exports.SendingConnectionDtoProviderEnum = SendingConnectionDtoProviderEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -61,7 +64,7 @@ var SendingConnectionDtoProviderPresetEnum;
     SendingConnectionDtoProviderPresetEnum["MAILERSEND"] = "MAILERSEND";
     SendingConnectionDtoProviderPresetEnum["MANDRILL"] = "MANDRILL";
     SendingConnectionDtoProviderPresetEnum["ELASTIC_EMAIL"] = "ELASTIC_EMAIL";
-})(SendingConnectionDtoProviderPresetEnum = exports.SendingConnectionDtoProviderPresetEnum || (exports.SendingConnectionDtoProviderPresetEnum = {}));
+})(SendingConnectionDtoProviderPresetEnum || (exports.SendingConnectionDtoProviderPresetEnum = SendingConnectionDtoProviderPresetEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -72,7 +75,7 @@ var SendingConnectionDtoCapabilitiesEnum;
     SendingConnectionDtoCapabilitiesEnum["VERIFY_CONNECTION"] = "VERIFY_CONNECTION";
     SendingConnectionDtoCapabilitiesEnum["ROTATE_CREDENTIALS"] = "ROTATE_CREDENTIALS";
     SendingConnectionDtoCapabilitiesEnum["DELIVERY_PROBE"] = "DELIVERY_PROBE";
-})(SendingConnectionDtoCapabilitiesEnum = exports.SendingConnectionDtoCapabilitiesEnum || (exports.SendingConnectionDtoCapabilitiesEnum = {}));
+})(SendingConnectionDtoCapabilitiesEnum || (exports.SendingConnectionDtoCapabilitiesEnum = SendingConnectionDtoCapabilitiesEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -81,7 +84,7 @@ var SendingConnectionDtoSmtpSecurityEnum;
 (function (SendingConnectionDtoSmtpSecurityEnum) {
     SendingConnectionDtoSmtpSecurityEnum["START_TLS"] = "START_TLS";
     SendingConnectionDtoSmtpSecurityEnum["TLS"] = "TLS";
-})(SendingConnectionDtoSmtpSecurityEnum = exports.SendingConnectionDtoSmtpSecurityEnum || (exports.SendingConnectionDtoSmtpSecurityEnum = {}));
+})(SendingConnectionDtoSmtpSecurityEnum || (exports.SendingConnectionDtoSmtpSecurityEnum = SendingConnectionDtoSmtpSecurityEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -90,7 +93,7 @@ var SendingConnectionDtoApiRegionEnum;
 (function (SendingConnectionDtoApiRegionEnum) {
     SendingConnectionDtoApiRegionEnum["US"] = "US";
     SendingConnectionDtoApiRegionEnum["EU"] = "EU";
-})(SendingConnectionDtoApiRegionEnum = exports.SendingConnectionDtoApiRegionEnum || (exports.SendingConnectionDtoApiRegionEnum = {}));
+})(SendingConnectionDtoApiRegionEnum || (exports.SendingConnectionDtoApiRegionEnum = SendingConnectionDtoApiRegionEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -101,11 +104,10 @@ var SendingConnectionDtoStatusEnum;
     SendingConnectionDtoStatusEnum["CONNECTED"] = "CONNECTED";
     SendingConnectionDtoStatusEnum["ERROR"] = "ERROR";
     SendingConnectionDtoStatusEnum["DISCONNECTED"] = "DISCONNECTED";
-})(SendingConnectionDtoStatusEnum = exports.SendingConnectionDtoStatusEnum || (exports.SendingConnectionDtoStatusEnum = {}));
+})(SendingConnectionDtoStatusEnum || (exports.SendingConnectionDtoStatusEnum = SendingConnectionDtoStatusEnum = {}));
 function SendingConnectionDtoFromJSON(json) {
     return SendingConnectionDtoFromJSONTyped(json, false);
 }
-exports.SendingConnectionDtoFromJSON = SendingConnectionDtoFromJSON;
 function SendingConnectionDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -143,7 +145,6 @@ function SendingConnectionDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.SendingConnectionDtoFromJSONTyped = SendingConnectionDtoFromJSONTyped;
 function SendingConnectionDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -176,4 +177,3 @@ function SendingConnectionDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.SendingConnectionDtoToJSON = SendingConnectionDtoToJSON;

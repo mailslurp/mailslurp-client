@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementProviderBreakdownDtoToJSON = exports.InboxPlacementProviderBreakdownDtoFromJSONTyped = exports.InboxPlacementProviderBreakdownDtoFromJSON = void 0;
+exports.InboxPlacementProviderBreakdownDtoFromJSON = InboxPlacementProviderBreakdownDtoFromJSON;
+exports.InboxPlacementProviderBreakdownDtoFromJSONTyped = InboxPlacementProviderBreakdownDtoFromJSONTyped;
+exports.InboxPlacementProviderBreakdownDtoToJSON = InboxPlacementProviderBreakdownDtoToJSON;
 function InboxPlacementProviderBreakdownDtoFromJSON(json) {
     return InboxPlacementProviderBreakdownDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementProviderBreakdownDtoFromJSON = InboxPlacementProviderBreakdownDtoFromJSON;
 function InboxPlacementProviderBreakdownDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function InboxPlacementProviderBreakdownDtoFromJSONTyped(json, ignoreDiscriminat
         notReceivedRatePercentage: json['notReceivedRatePercentage'],
     };
 }
-exports.InboxPlacementProviderBreakdownDtoFromJSONTyped = InboxPlacementProviderBreakdownDtoFromJSONTyped;
 function InboxPlacementProviderBreakdownDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -56,4 +56,3 @@ function InboxPlacementProviderBreakdownDtoToJSON(value) {
         notReceivedRatePercentage: value.notReceivedRatePercentage,
     };
 }
-exports.InboxPlacementProviderBreakdownDtoToJSON = InboxPlacementProviderBreakdownDtoToJSON;

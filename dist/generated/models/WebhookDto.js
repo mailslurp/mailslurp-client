@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookDtoToJSON = exports.WebhookDtoFromJSONTyped = exports.WebhookDtoFromJSON = exports.WebhookDtoHealthStatusEnum = exports.WebhookDtoEventNameEnum = exports.WebhookDtoMethodEnum = void 0;
+exports.WebhookDtoHealthStatusEnum = exports.WebhookDtoEventNameEnum = exports.WebhookDtoMethodEnum = void 0;
+exports.WebhookDtoFromJSON = WebhookDtoFromJSON;
+exports.WebhookDtoFromJSONTyped = WebhookDtoFromJSONTyped;
+exports.WebhookDtoToJSON = WebhookDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -30,7 +33,7 @@ var WebhookDtoMethodEnum;
     WebhookDtoMethodEnum["HEAD"] = "HEAD";
     WebhookDtoMethodEnum["OPTIONS"] = "OPTIONS";
     WebhookDtoMethodEnum["TRACE"] = "TRACE";
-})(WebhookDtoMethodEnum = exports.WebhookDtoMethodEnum || (exports.WebhookDtoMethodEnum = {}));
+})(WebhookDtoMethodEnum || (exports.WebhookDtoMethodEnum = WebhookDtoMethodEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -49,7 +52,7 @@ var WebhookDtoEventNameEnum;
     WebhookDtoEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookDtoEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookDtoEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookDtoEventNameEnum = exports.WebhookDtoEventNameEnum || (exports.WebhookDtoEventNameEnum = {}));
+})(WebhookDtoEventNameEnum || (exports.WebhookDtoEventNameEnum = WebhookDtoEventNameEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -58,11 +61,10 @@ var WebhookDtoHealthStatusEnum;
 (function (WebhookDtoHealthStatusEnum) {
     WebhookDtoHealthStatusEnum["HEALTHY"] = "HEALTHY";
     WebhookDtoHealthStatusEnum["UNHEALTHY"] = "UNHEALTHY";
-})(WebhookDtoHealthStatusEnum = exports.WebhookDtoHealthStatusEnum || (exports.WebhookDtoHealthStatusEnum = {}));
+})(WebhookDtoHealthStatusEnum || (exports.WebhookDtoHealthStatusEnum = WebhookDtoHealthStatusEnum = {}));
 function WebhookDtoFromJSON(json) {
     return WebhookDtoFromJSONTyped(json, false);
 }
-exports.WebhookDtoFromJSON = WebhookDtoFromJSON;
 function WebhookDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -101,7 +103,6 @@ function WebhookDtoFromJSONTyped(json, ignoreDiscriminator) {
         enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
     };
 }
-exports.WebhookDtoFromJSONTyped = WebhookDtoFromJSONTyped;
 function WebhookDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -131,4 +132,3 @@ function WebhookDtoToJSON(value) {
         enabled: value.enabled,
     };
 }
-exports.WebhookDtoToJSON = WebhookDtoToJSON;

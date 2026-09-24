@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HomeExperienceUpgradeContextDtoToJSON = exports.HomeExperienceUpgradeContextDtoFromJSONTyped = exports.HomeExperienceUpgradeContextDtoFromJSON = exports.HomeExperienceUpgradeContextDtoPromptStyleEnum = void 0;
+exports.HomeExperienceUpgradeContextDtoPromptStyleEnum = void 0;
+exports.HomeExperienceUpgradeContextDtoFromJSON = HomeExperienceUpgradeContextDtoFromJSON;
+exports.HomeExperienceUpgradeContextDtoFromJSONTyped = HomeExperienceUpgradeContextDtoFromJSONTyped;
+exports.HomeExperienceUpgradeContextDtoToJSON = HomeExperienceUpgradeContextDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,11 +28,10 @@ var HomeExperienceUpgradeContextDtoPromptStyleEnum;
     HomeExperienceUpgradeContextDtoPromptStyleEnum["SOFT"] = "SOFT";
     HomeExperienceUpgradeContextDtoPromptStyleEnum["CONTEXTUAL"] = "CONTEXTUAL";
     HomeExperienceUpgradeContextDtoPromptStyleEnum["URGENT"] = "URGENT";
-})(HomeExperienceUpgradeContextDtoPromptStyleEnum = exports.HomeExperienceUpgradeContextDtoPromptStyleEnum || (exports.HomeExperienceUpgradeContextDtoPromptStyleEnum = {}));
+})(HomeExperienceUpgradeContextDtoPromptStyleEnum || (exports.HomeExperienceUpgradeContextDtoPromptStyleEnum = HomeExperienceUpgradeContextDtoPromptStyleEnum = {}));
 function HomeExperienceUpgradeContextDtoFromJSON(json) {
     return HomeExperienceUpgradeContextDtoFromJSONTyped(json, false);
 }
-exports.HomeExperienceUpgradeContextDtoFromJSON = HomeExperienceUpgradeContextDtoFromJSON;
 function HomeExperienceUpgradeContextDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -42,7 +44,6 @@ function HomeExperienceUpgradeContextDtoFromJSONTyped(json, ignoreDiscriminator)
         promptStyle: !(0, runtime_1.exists)(json, 'promptStyle') ? undefined : json['promptStyle'],
     };
 }
-exports.HomeExperienceUpgradeContextDtoFromJSONTyped = HomeExperienceUpgradeContextDtoFromJSONTyped;
 function HomeExperienceUpgradeContextDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -56,4 +57,3 @@ function HomeExperienceUpgradeContextDtoToJSON(value) {
         promptStyle: value.promptStyle,
     };
 }
-exports.HomeExperienceUpgradeContextDtoToJSON = HomeExperienceUpgradeContextDtoToJSON;

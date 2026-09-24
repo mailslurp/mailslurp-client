@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FreeInboxDtoToJSON = exports.FreeInboxDtoFromJSONTyped = exports.FreeInboxDtoFromJSON = void 0;
+exports.FreeInboxDtoFromJSON = FreeInboxDtoFromJSON;
+exports.FreeInboxDtoFromJSONTyped = FreeInboxDtoFromJSONTyped;
+exports.FreeInboxDtoToJSON = FreeInboxDtoToJSON;
 var _1 = require("./");
 function FreeInboxDtoFromJSON(json) {
     return FreeInboxDtoFromJSONTyped(json, false);
 }
-exports.FreeInboxDtoFromJSON = FreeInboxDtoFromJSON;
 function FreeInboxDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function FreeInboxDtoFromJSONTyped(json, ignoreDiscriminator) {
         messages: json['messages'].map(_1.FreeInboxMessageDtoFromJSON),
     };
 }
-exports.FreeInboxDtoFromJSONTyped = FreeInboxDtoFromJSONTyped;
 function FreeInboxDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function FreeInboxDtoToJSON(value) {
         messages: value.messages.map(_1.FreeInboxMessageDtoToJSON),
     };
 }
-exports.FreeInboxDtoToJSON = FreeInboxDtoToJSON;

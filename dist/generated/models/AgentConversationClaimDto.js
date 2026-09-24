@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentConversationClaimDtoToJSON = exports.AgentConversationClaimDtoFromJSONTyped = exports.AgentConversationClaimDtoFromJSON = void 0;
+exports.AgentConversationClaimDtoFromJSON = AgentConversationClaimDtoFromJSON;
+exports.AgentConversationClaimDtoFromJSONTyped = AgentConversationClaimDtoFromJSONTyped;
+exports.AgentConversationClaimDtoToJSON = AgentConversationClaimDtoToJSON;
 var runtime_1 = require("../runtime");
 function AgentConversationClaimDtoFromJSON(json) {
     return AgentConversationClaimDtoFromJSONTyped(json, false);
 }
-exports.AgentConversationClaimDtoFromJSON = AgentConversationClaimDtoFromJSON;
 function AgentConversationClaimDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function AgentConversationClaimDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['conversationVersion'],
     };
 }
-exports.AgentConversationClaimDtoFromJSONTyped = AgentConversationClaimDtoFromJSONTyped;
 function AgentConversationClaimDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +53,3 @@ function AgentConversationClaimDtoToJSON(value) {
         conversationVersion: value.conversationVersion,
     };
 }
-exports.AgentConversationClaimDtoToJSON = AgentConversationClaimDtoToJSON;

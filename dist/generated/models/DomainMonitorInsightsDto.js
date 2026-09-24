@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DomainMonitorInsightsDtoToJSON = exports.DomainMonitorInsightsDtoFromJSONTyped = exports.DomainMonitorInsightsDtoFromJSON = void 0;
+exports.DomainMonitorInsightsDtoFromJSON = DomainMonitorInsightsDtoFromJSON;
+exports.DomainMonitorInsightsDtoFromJSONTyped = DomainMonitorInsightsDtoFromJSONTyped;
+exports.DomainMonitorInsightsDtoToJSON = DomainMonitorInsightsDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function DomainMonitorInsightsDtoFromJSON(json) {
     return DomainMonitorInsightsDtoFromJSONTyped(json, false);
 }
-exports.DomainMonitorInsightsDtoFromJSON = DomainMonitorInsightsDtoFromJSON;
 function DomainMonitorInsightsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -45,7 +46,6 @@ function DomainMonitorInsightsDtoFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.DomainMonitorRunDtoFromJSON)(json['latestRun']),
     };
 }
-exports.DomainMonitorInsightsDtoFromJSONTyped = DomainMonitorInsightsDtoFromJSONTyped;
 function DomainMonitorInsightsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -72,4 +72,3 @@ function DomainMonitorInsightsDtoToJSON(value) {
         latestRun: (0, _1.DomainMonitorRunDtoToJSON)(value.latestRun),
     };
 }
-exports.DomainMonitorInsightsDtoToJSON = DomainMonitorInsightsDtoToJSON;

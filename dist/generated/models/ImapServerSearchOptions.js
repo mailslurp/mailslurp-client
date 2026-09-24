@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImapServerSearchOptionsToJSON = exports.ImapServerSearchOptionsFromJSONTyped = exports.ImapServerSearchOptionsFromJSON = void 0;
+exports.ImapServerSearchOptionsFromJSON = ImapServerSearchOptionsFromJSON;
+exports.ImapServerSearchOptionsFromJSONTyped = ImapServerSearchOptionsFromJSONTyped;
+exports.ImapServerSearchOptionsToJSON = ImapServerSearchOptionsToJSON;
 var runtime_1 = require("../runtime");
 function ImapServerSearchOptionsFromJSON(json) {
     return ImapServerSearchOptionsFromJSONTyped(json, false);
 }
-exports.ImapServerSearchOptionsFromJSON = ImapServerSearchOptionsFromJSON;
 function ImapServerSearchOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -55,7 +56,6 @@ function ImapServerSearchOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['withoutFlags'],
     };
 }
-exports.ImapServerSearchOptionsFromJSONTyped = ImapServerSearchOptionsFromJSONTyped;
 function ImapServerSearchOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -93,4 +93,3 @@ function ImapServerSearchOptionsToJSON(value) {
         withoutFlags: value.withoutFlags,
     };
 }
-exports.ImapServerSearchOptionsToJSON = ImapServerSearchOptionsToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityFailureHotspotsDtoToJSON = exports.DeliverabilityFailureHotspotsDtoFromJSONTyped = exports.DeliverabilityFailureHotspotsDtoFromJSON = exports.DeliverabilityFailureHotspotsDtoScopeEnum = void 0;
+exports.DeliverabilityFailureHotspotsDtoScopeEnum = void 0;
+exports.DeliverabilityFailureHotspotsDtoFromJSON = DeliverabilityFailureHotspotsDtoFromJSON;
+exports.DeliverabilityFailureHotspotsDtoFromJSONTyped = DeliverabilityFailureHotspotsDtoFromJSONTyped;
+exports.DeliverabilityFailureHotspotsDtoToJSON = DeliverabilityFailureHotspotsDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,11 +27,10 @@ var DeliverabilityFailureHotspotsDtoScopeEnum;
 (function (DeliverabilityFailureHotspotsDtoScopeEnum) {
     DeliverabilityFailureHotspotsDtoScopeEnum["INBOX"] = "INBOX";
     DeliverabilityFailureHotspotsDtoScopeEnum["PHONE"] = "PHONE";
-})(DeliverabilityFailureHotspotsDtoScopeEnum = exports.DeliverabilityFailureHotspotsDtoScopeEnum || (exports.DeliverabilityFailureHotspotsDtoScopeEnum = {}));
+})(DeliverabilityFailureHotspotsDtoScopeEnum || (exports.DeliverabilityFailureHotspotsDtoScopeEnum = DeliverabilityFailureHotspotsDtoScopeEnum = {}));
 function DeliverabilityFailureHotspotsDtoFromJSON(json) {
     return DeliverabilityFailureHotspotsDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilityFailureHotspotsDtoFromJSON = DeliverabilityFailureHotspotsDtoFromJSON;
 function DeliverabilityFailureHotspotsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -41,7 +43,6 @@ function DeliverabilityFailureHotspotsDtoFromJSONTyped(json, ignoreDiscriminator
         phoneDimensionHotspots: json['phoneDimensionHotspots'].map(_1.DeliverabilityFailurePhoneDimensionHotspotDtoFromJSON),
     };
 }
-exports.DeliverabilityFailureHotspotsDtoFromJSONTyped = DeliverabilityFailureHotspotsDtoFromJSONTyped;
 function DeliverabilityFailureHotspotsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -57,4 +58,3 @@ function DeliverabilityFailureHotspotsDtoToJSON(value) {
         phoneDimensionHotspots: value.phoneDimensionHotspots.map(_1.DeliverabilityFailurePhoneDimensionHotspotDtoToJSON),
     };
 }
-exports.DeliverabilityFailureHotspotsDtoToJSON = DeliverabilityFailureHotspotsDtoToJSON;

@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageableObjectToJSON = exports.PageableObjectFromJSONTyped = exports.PageableObjectFromJSON = void 0;
+exports.PageableObjectFromJSON = PageableObjectFromJSON;
+exports.PageableObjectFromJSONTyped = PageableObjectFromJSONTyped;
+exports.PageableObjectToJSON = PageableObjectToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageableObjectFromJSON(json) {
     return PageableObjectFromJSONTyped(json, false);
 }
-exports.PageableObjectFromJSON = PageableObjectFromJSON;
 function PageableObjectFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function PageableObjectFromJSONTyped(json, ignoreDiscriminator) {
         pageSize: !(0, runtime_1.exists)(json, 'pageSize') ? undefined : json['pageSize'],
     };
 }
-exports.PageableObjectFromJSONTyped = PageableObjectFromJSONTyped;
 function PageableObjectToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function PageableObjectToJSON(value) {
         pageSize: value.pageSize,
     };
 }
-exports.PageableObjectToJSON = PageableObjectToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentPeriodDtoToJSON = exports.CurrentPeriodDtoFromJSONTyped = exports.CurrentPeriodDtoFromJSON = void 0;
+exports.CurrentPeriodDtoFromJSON = CurrentPeriodDtoFromJSON;
+exports.CurrentPeriodDtoFromJSONTyped = CurrentPeriodDtoFromJSONTyped;
+exports.CurrentPeriodDtoToJSON = CurrentPeriodDtoToJSON;
 function CurrentPeriodDtoFromJSON(json) {
     return CurrentPeriodDtoFromJSONTyped(json, false);
 }
-exports.CurrentPeriodDtoFromJSON = CurrentPeriodDtoFromJSON;
 function CurrentPeriodDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function CurrentPeriodDtoFromJSONTyped(json, ignoreDiscriminator) {
         currentPeriodEnd: new Date(json['currentPeriodEnd']),
     };
 }
-exports.CurrentPeriodDtoFromJSONTyped = CurrentPeriodDtoFromJSONTyped;
 function CurrentPeriodDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -40,4 +40,3 @@ function CurrentPeriodDtoToJSON(value) {
         currentPeriodEnd: value.currentPeriodEnd.toISOString(),
     };
 }
-exports.CurrentPeriodDtoToJSON = CurrentPeriodDtoToJSON;

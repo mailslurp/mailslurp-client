@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateTotpDeviceOptionsToJSON = exports.UpdateTotpDeviceOptionsFromJSONTyped = exports.UpdateTotpDeviceOptionsFromJSON = void 0;
+exports.UpdateTotpDeviceOptionsFromJSON = UpdateTotpDeviceOptionsFromJSON;
+exports.UpdateTotpDeviceOptionsFromJSONTyped = UpdateTotpDeviceOptionsFromJSONTyped;
+exports.UpdateTotpDeviceOptionsToJSON = UpdateTotpDeviceOptionsToJSON;
 var runtime_1 = require("../runtime");
 function UpdateTotpDeviceOptionsFromJSON(json) {
     return UpdateTotpDeviceOptionsFromJSONTyped(json, false);
 }
-exports.UpdateTotpDeviceOptionsFromJSON = UpdateTotpDeviceOptionsFromJSON;
 function UpdateTotpDeviceOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function UpdateTotpDeviceOptionsFromJSONTyped(json, ignoreDiscriminator) {
         algorithm: !(0, runtime_1.exists)(json, 'algorithm') ? undefined : json['algorithm'],
     };
 }
-exports.UpdateTotpDeviceOptionsFromJSONTyped = UpdateTotpDeviceOptionsFromJSONTyped;
 function UpdateTotpDeviceOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function UpdateTotpDeviceOptionsToJSON(value) {
         algorithm: value.algorithm,
     };
 }
-exports.UpdateTotpDeviceOptionsToJSON = UpdateTotpDeviceOptionsToJSON;

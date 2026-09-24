@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeatureSupportFlagsToJSON = exports.EmailFeatureSupportFlagsFromJSONTyped = exports.EmailFeatureSupportFlagsFromJSON = exports.EmailFeatureSupportFlagsStatusEnum = void 0;
+exports.EmailFeatureSupportFlagsStatusEnum = void 0;
+exports.EmailFeatureSupportFlagsFromJSON = EmailFeatureSupportFlagsFromJSON;
+exports.EmailFeatureSupportFlagsFromJSONTyped = EmailFeatureSupportFlagsFromJSONTyped;
+exports.EmailFeatureSupportFlagsToJSON = EmailFeatureSupportFlagsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,11 +28,10 @@ var EmailFeatureSupportFlagsStatusEnum;
     EmailFeatureSupportFlagsStatusEnum["PARTIAL"] = "PARTIAL";
     EmailFeatureSupportFlagsStatusEnum["NOT_SUPPORTED"] = "NOT_SUPPORTED";
     EmailFeatureSupportFlagsStatusEnum["UNKNOWN"] = "UNKNOWN";
-})(EmailFeatureSupportFlagsStatusEnum = exports.EmailFeatureSupportFlagsStatusEnum || (exports.EmailFeatureSupportFlagsStatusEnum = {}));
+})(EmailFeatureSupportFlagsStatusEnum || (exports.EmailFeatureSupportFlagsStatusEnum = EmailFeatureSupportFlagsStatusEnum = {}));
 function EmailFeatureSupportFlagsFromJSON(json) {
     return EmailFeatureSupportFlagsFromJSONTyped(json, false);
 }
-exports.EmailFeatureSupportFlagsFromJSON = EmailFeatureSupportFlagsFromJSON;
 function EmailFeatureSupportFlagsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +41,6 @@ function EmailFeatureSupportFlagsFromJSONTyped(json, ignoreDiscriminator) {
         notes: !(0, runtime_1.exists)(json, 'notes') ? undefined : json['notes'],
     };
 }
-exports.EmailFeatureSupportFlagsFromJSONTyped = EmailFeatureSupportFlagsFromJSONTyped;
 function EmailFeatureSupportFlagsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -52,4 +53,3 @@ function EmailFeatureSupportFlagsToJSON(value) {
         notes: value.notes,
     };
 }
-exports.EmailFeatureSupportFlagsToJSON = EmailFeatureSupportFlagsToJSON;

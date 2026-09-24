@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthV2BootstrapOptionsToJSON = exports.AuthV2BootstrapOptionsFromJSONTyped = exports.AuthV2BootstrapOptionsFromJSON = void 0;
+exports.AuthV2BootstrapOptionsFromJSON = AuthV2BootstrapOptionsFromJSON;
+exports.AuthV2BootstrapOptionsFromJSONTyped = AuthV2BootstrapOptionsFromJSONTyped;
+exports.AuthV2BootstrapOptionsToJSON = AuthV2BootstrapOptionsToJSON;
 var runtime_1 = require("../runtime");
 function AuthV2BootstrapOptionsFromJSON(json) {
     return AuthV2BootstrapOptionsFromJSONTyped(json, false);
 }
-exports.AuthV2BootstrapOptionsFromJSON = AuthV2BootstrapOptionsFromJSON;
 function AuthV2BootstrapOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function AuthV2BootstrapOptionsFromJSONTyped(json, ignoreDiscriminator) {
         returnTo: !(0, runtime_1.exists)(json, 'returnTo') ? undefined : json['returnTo'],
     };
 }
-exports.AuthV2BootstrapOptionsFromJSONTyped = AuthV2BootstrapOptionsFromJSONTyped;
 function AuthV2BootstrapOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function AuthV2BootstrapOptionsToJSON(value) {
         returnTo: value.returnTo,
     };
 }
-exports.AuthV2BootstrapOptionsToJSON = AuthV2BootstrapOptionsToJSON;

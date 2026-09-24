@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScimUserResourceToJSON = exports.ScimUserResourceFromJSONTyped = exports.ScimUserResourceFromJSON = void 0;
+exports.ScimUserResourceFromJSON = ScimUserResourceFromJSON;
+exports.ScimUserResourceFromJSONTyped = ScimUserResourceFromJSONTyped;
+exports.ScimUserResourceToJSON = ScimUserResourceToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function ScimUserResourceFromJSON(json) {
     return ScimUserResourceFromJSONTyped(json, false);
 }
-exports.ScimUserResourceFromJSON = ScimUserResourceFromJSON;
 function ScimUserResourceFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +41,6 @@ function ScimUserResourceFromJSONTyped(json, ignoreDiscriminator) {
         meta: !(0, runtime_1.exists)(json, 'meta') ? undefined : (0, _1.ScimMetaFromJSON)(json['meta']),
     };
 }
-exports.ScimUserResourceFromJSONTyped = ScimUserResourceFromJSONTyped;
 function ScimUserResourceToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,4 +64,3 @@ function ScimUserResourceToJSON(value) {
         meta: (0, _1.ScimMetaToJSON)(value.meta),
     };
 }
-exports.ScimUserResourceToJSON = ScimUserResourceToJSON;

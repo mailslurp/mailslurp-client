@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExtractAttachmentTextResultToJSON = exports.ExtractAttachmentTextResultFromJSONTyped = exports.ExtractAttachmentTextResultFromJSON = exports.ExtractAttachmentTextResultMethodUsedEnum = void 0;
+exports.ExtractAttachmentTextResultMethodUsedEnum = void 0;
+exports.ExtractAttachmentTextResultFromJSON = ExtractAttachmentTextResultFromJSON;
+exports.ExtractAttachmentTextResultFromJSONTyped = ExtractAttachmentTextResultFromJSONTyped;
+exports.ExtractAttachmentTextResultToJSON = ExtractAttachmentTextResultToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,11 +29,10 @@ var ExtractAttachmentTextResultMethodUsedEnum;
     ExtractAttachmentTextResultMethodUsedEnum["OCR"] = "OCR";
     ExtractAttachmentTextResultMethodUsedEnum["LLM"] = "LLM";
     ExtractAttachmentTextResultMethodUsedEnum["OCR_THEN_LLM"] = "OCR_THEN_LLM";
-})(ExtractAttachmentTextResultMethodUsedEnum = exports.ExtractAttachmentTextResultMethodUsedEnum || (exports.ExtractAttachmentTextResultMethodUsedEnum = {}));
+})(ExtractAttachmentTextResultMethodUsedEnum || (exports.ExtractAttachmentTextResultMethodUsedEnum = ExtractAttachmentTextResultMethodUsedEnum = {}));
 function ExtractAttachmentTextResultFromJSON(json) {
     return ExtractAttachmentTextResultFromJSONTyped(json, false);
 }
-exports.ExtractAttachmentTextResultFromJSON = ExtractAttachmentTextResultFromJSON;
 function ExtractAttachmentTextResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -43,7 +45,6 @@ function ExtractAttachmentTextResultFromJSONTyped(json, ignoreDiscriminator) {
         warnings: json['warnings'],
     };
 }
-exports.ExtractAttachmentTextResultFromJSONTyped = ExtractAttachmentTextResultFromJSONTyped;
 function ExtractAttachmentTextResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -59,4 +60,3 @@ function ExtractAttachmentTextResultToJSON(value) {
         warnings: value.warnings,
     };
 }
-exports.ExtractAttachmentTextResultToJSON = ExtractAttachmentTextResultToJSON;

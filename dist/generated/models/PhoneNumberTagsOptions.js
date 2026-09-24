@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneNumberTagsOptionsToJSON = exports.PhoneNumberTagsOptionsFromJSONTyped = exports.PhoneNumberTagsOptionsFromJSON = void 0;
+exports.PhoneNumberTagsOptionsFromJSON = PhoneNumberTagsOptionsFromJSON;
+exports.PhoneNumberTagsOptionsFromJSONTyped = PhoneNumberTagsOptionsFromJSONTyped;
+exports.PhoneNumberTagsOptionsToJSON = PhoneNumberTagsOptionsToJSON;
 function PhoneNumberTagsOptionsFromJSON(json) {
     return PhoneNumberTagsOptionsFromJSONTyped(json, false);
 }
-exports.PhoneNumberTagsOptionsFromJSON = PhoneNumberTagsOptionsFromJSON;
 function PhoneNumberTagsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function PhoneNumberTagsOptionsFromJSONTyped(json, ignoreDiscriminator) {
         tags: json['tags'],
     };
 }
-exports.PhoneNumberTagsOptionsFromJSONTyped = PhoneNumberTagsOptionsFromJSONTyped;
 function PhoneNumberTagsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function PhoneNumberTagsOptionsToJSON(value) {
         tags: value.tags,
     };
 }
-exports.PhoneNumberTagsOptionsToJSON = PhoneNumberTagsOptionsToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentCapabilitiesDtoToJSON = exports.AgentCapabilitiesDtoFromJSONTyped = exports.AgentCapabilitiesDtoFromJSON = exports.AgentCapabilitiesDtoRoleEnum = void 0;
+exports.AgentCapabilitiesDtoRoleEnum = void 0;
+exports.AgentCapabilitiesDtoFromJSON = AgentCapabilitiesDtoFromJSON;
+exports.AgentCapabilitiesDtoFromJSONTyped = AgentCapabilitiesDtoFromJSONTyped;
+exports.AgentCapabilitiesDtoToJSON = AgentCapabilitiesDtoToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -27,11 +30,10 @@ var AgentCapabilitiesDtoRoleEnum;
     AgentCapabilitiesDtoRoleEnum["INBOX_MANAGER"] = "AGENT_INBOX_MANAGER";
     AgentCapabilitiesDtoRoleEnum["SUPPORT"] = "AGENT_SUPPORT";
     AgentCapabilitiesDtoRoleEnum["TOTP_MANAGER"] = "AGENT_TOTP_MANAGER";
-})(AgentCapabilitiesDtoRoleEnum = exports.AgentCapabilitiesDtoRoleEnum || (exports.AgentCapabilitiesDtoRoleEnum = {}));
+})(AgentCapabilitiesDtoRoleEnum || (exports.AgentCapabilitiesDtoRoleEnum = AgentCapabilitiesDtoRoleEnum = {}));
 function AgentCapabilitiesDtoFromJSON(json) {
     return AgentCapabilitiesDtoFromJSONTyped(json, false);
 }
-exports.AgentCapabilitiesDtoFromJSON = AgentCapabilitiesDtoFromJSON;
 function AgentCapabilitiesDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -48,7 +50,6 @@ function AgentCapabilitiesDtoFromJSONTyped(json, ignoreDiscriminator) {
         apiVersion: json['apiVersion'],
     };
 }
-exports.AgentCapabilitiesDtoFromJSONTyped = AgentCapabilitiesDtoFromJSONTyped;
 function AgentCapabilitiesDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +69,3 @@ function AgentCapabilitiesDtoToJSON(value) {
         apiVersion: value.apiVersion,
     };
 }
-exports.AgentCapabilitiesDtoToJSON = AgentCapabilitiesDtoToJSON;

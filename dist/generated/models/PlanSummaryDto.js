@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlanSummaryDtoToJSON = exports.PlanSummaryDtoFromJSONTyped = exports.PlanSummaryDtoFromJSON = exports.PlanSummaryDtoPhoneCountryEnum = exports.PlanSummaryDtoSubscriptionScheduleEnum = void 0;
+exports.PlanSummaryDtoPhoneCountryEnum = exports.PlanSummaryDtoSubscriptionScheduleEnum = void 0;
+exports.PlanSummaryDtoFromJSON = PlanSummaryDtoFromJSON;
+exports.PlanSummaryDtoFromJSONTyped = PlanSummaryDtoFromJSONTyped;
+exports.PlanSummaryDtoToJSON = PlanSummaryDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,7 +26,7 @@ var PlanSummaryDtoSubscriptionScheduleEnum;
 (function (PlanSummaryDtoSubscriptionScheduleEnum) {
     PlanSummaryDtoSubscriptionScheduleEnum["MONTHLY"] = "MONTHLY";
     PlanSummaryDtoSubscriptionScheduleEnum["YEARLY"] = "YEARLY";
-})(PlanSummaryDtoSubscriptionScheduleEnum = exports.PlanSummaryDtoSubscriptionScheduleEnum || (exports.PlanSummaryDtoSubscriptionScheduleEnum = {}));
+})(PlanSummaryDtoSubscriptionScheduleEnum || (exports.PlanSummaryDtoSubscriptionScheduleEnum = PlanSummaryDtoSubscriptionScheduleEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -43,11 +46,10 @@ var PlanSummaryDtoPhoneCountryEnum;
     PlanSummaryDtoPhoneCountryEnum["IL"] = "IL";
     PlanSummaryDtoPhoneCountryEnum["FI"] = "FI";
     PlanSummaryDtoPhoneCountryEnum["SE"] = "SE";
-})(PlanSummaryDtoPhoneCountryEnum = exports.PlanSummaryDtoPhoneCountryEnum || (exports.PlanSummaryDtoPhoneCountryEnum = {}));
+})(PlanSummaryDtoPhoneCountryEnum || (exports.PlanSummaryDtoPhoneCountryEnum = PlanSummaryDtoPhoneCountryEnum = {}));
 function PlanSummaryDtoFromJSON(json) {
     return PlanSummaryDtoFromJSONTyped(json, false);
 }
-exports.PlanSummaryDtoFromJSON = PlanSummaryDtoFromJSON;
 function PlanSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -59,7 +61,6 @@ function PlanSummaryDtoFromJSONTyped(json, ignoreDiscriminator) {
         phoneCountry: json['phoneCountry'],
     };
 }
-exports.PlanSummaryDtoFromJSONTyped = PlanSummaryDtoFromJSONTyped;
 function PlanSummaryDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -72,4 +73,3 @@ function PlanSummaryDtoToJSON(value) {
         phoneCountry: value.phoneCountry,
     };
 }
-exports.PlanSummaryDtoToJSON = PlanSummaryDtoToJSON;

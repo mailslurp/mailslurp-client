@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDevicePreviewRunResultToJSON = exports.CreateDevicePreviewRunResultFromJSONTyped = exports.CreateDevicePreviewRunResultFromJSON = void 0;
+exports.CreateDevicePreviewRunResultFromJSON = CreateDevicePreviewRunResultFromJSON;
+exports.CreateDevicePreviewRunResultFromJSONTyped = CreateDevicePreviewRunResultFromJSONTyped;
+exports.CreateDevicePreviewRunResultToJSON = CreateDevicePreviewRunResultToJSON;
 var _1 = require("./");
 function CreateDevicePreviewRunResultFromJSON(json) {
     return CreateDevicePreviewRunResultFromJSONTyped(json, false);
 }
-exports.CreateDevicePreviewRunResultFromJSON = CreateDevicePreviewRunResultFromJSON;
 function CreateDevicePreviewRunResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function CreateDevicePreviewRunResultFromJSONTyped(json, ignoreDiscriminator) {
         created: json['created'],
     };
 }
-exports.CreateDevicePreviewRunResultFromJSONTyped = CreateDevicePreviewRunResultFromJSONTyped;
 function CreateDevicePreviewRunResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function CreateDevicePreviewRunResultToJSON(value) {
         created: value.created,
     };
 }
-exports.CreateDevicePreviewRunResultToJSON = CreateDevicePreviewRunResultToJSON;

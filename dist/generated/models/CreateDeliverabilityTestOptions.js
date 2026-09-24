@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDeliverabilityTestOptionsToJSON = exports.CreateDeliverabilityTestOptionsFromJSONTyped = exports.CreateDeliverabilityTestOptionsFromJSON = exports.CreateDeliverabilityTestOptionsScopeEnum = void 0;
+exports.CreateDeliverabilityTestOptionsScopeEnum = void 0;
+exports.CreateDeliverabilityTestOptionsFromJSON = CreateDeliverabilityTestOptionsFromJSON;
+exports.CreateDeliverabilityTestOptionsFromJSONTyped = CreateDeliverabilityTestOptionsFromJSONTyped;
+exports.CreateDeliverabilityTestOptionsToJSON = CreateDeliverabilityTestOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,11 +27,10 @@ var CreateDeliverabilityTestOptionsScopeEnum;
 (function (CreateDeliverabilityTestOptionsScopeEnum) {
     CreateDeliverabilityTestOptionsScopeEnum["INBOX"] = "INBOX";
     CreateDeliverabilityTestOptionsScopeEnum["PHONE"] = "PHONE";
-})(CreateDeliverabilityTestOptionsScopeEnum = exports.CreateDeliverabilityTestOptionsScopeEnum || (exports.CreateDeliverabilityTestOptionsScopeEnum = {}));
+})(CreateDeliverabilityTestOptionsScopeEnum || (exports.CreateDeliverabilityTestOptionsScopeEnum = CreateDeliverabilityTestOptionsScopeEnum = {}));
 function CreateDeliverabilityTestOptionsFromJSON(json) {
     return CreateDeliverabilityTestOptionsFromJSONTyped(json, false);
 }
-exports.CreateDeliverabilityTestOptionsFromJSON = CreateDeliverabilityTestOptionsFromJSON;
 function CreateDeliverabilityTestOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -52,7 +54,6 @@ function CreateDeliverabilityTestOptionsFromJSONTyped(json, ignoreDiscriminator)
         expectations: json['expectations'].map(_1.DeliverabilityExpectationFromJSON),
     };
 }
-exports.CreateDeliverabilityTestOptionsFromJSONTyped = CreateDeliverabilityTestOptionsFromJSONTyped;
 function CreateDeliverabilityTestOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -75,4 +76,3 @@ function CreateDeliverabilityTestOptionsToJSON(value) {
         expectations: value.expectations.map(_1.DeliverabilityExpectationToJSON),
     };
 }
-exports.CreateDeliverabilityTestOptionsToJSON = CreateDeliverabilityTestOptionsToJSON;

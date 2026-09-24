@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxReplierEventProjectionToJSON = exports.InboxReplierEventProjectionFromJSONTyped = exports.InboxReplierEventProjectionFromJSON = exports.InboxReplierEventProjectionStatusEnum = void 0;
+exports.InboxReplierEventProjectionStatusEnum = void 0;
+exports.InboxReplierEventProjectionFromJSON = InboxReplierEventProjectionFromJSON;
+exports.InboxReplierEventProjectionFromJSONTyped = InboxReplierEventProjectionFromJSONTyped;
+exports.InboxReplierEventProjectionToJSON = InboxReplierEventProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -23,11 +26,10 @@ var InboxReplierEventProjectionStatusEnum;
 (function (InboxReplierEventProjectionStatusEnum) {
     InboxReplierEventProjectionStatusEnum["SUCCESS"] = "SUCCESS";
     InboxReplierEventProjectionStatusEnum["FAILURE"] = "FAILURE";
-})(InboxReplierEventProjectionStatusEnum = exports.InboxReplierEventProjectionStatusEnum || (exports.InboxReplierEventProjectionStatusEnum = {}));
+})(InboxReplierEventProjectionStatusEnum || (exports.InboxReplierEventProjectionStatusEnum = InboxReplierEventProjectionStatusEnum = {}));
 function InboxReplierEventProjectionFromJSON(json) {
     return InboxReplierEventProjectionFromJSONTyped(json, false);
 }
-exports.InboxReplierEventProjectionFromJSON = InboxReplierEventProjectionFromJSON;
 function InboxReplierEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -45,7 +47,6 @@ function InboxReplierEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
     };
 }
-exports.InboxReplierEventProjectionFromJSONTyped = InboxReplierEventProjectionFromJSONTyped;
 function InboxReplierEventProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -66,4 +67,3 @@ function InboxReplierEventProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.InboxReplierEventProjectionToJSON = InboxReplierEventProjectionToJSON;

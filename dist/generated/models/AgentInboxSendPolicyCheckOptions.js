@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentInboxSendPolicyCheckOptionsToJSON = exports.AgentInboxSendPolicyCheckOptionsFromJSONTyped = exports.AgentInboxSendPolicyCheckOptionsFromJSON = void 0;
+exports.AgentInboxSendPolicyCheckOptionsFromJSON = AgentInboxSendPolicyCheckOptionsFromJSON;
+exports.AgentInboxSendPolicyCheckOptionsFromJSONTyped = AgentInboxSendPolicyCheckOptionsFromJSONTyped;
+exports.AgentInboxSendPolicyCheckOptionsToJSON = AgentInboxSendPolicyCheckOptionsToJSON;
 function AgentInboxSendPolicyCheckOptionsFromJSON(json) {
     return AgentInboxSendPolicyCheckOptionsFromJSONTyped(json, false);
 }
-exports.AgentInboxSendPolicyCheckOptionsFromJSON = AgentInboxSendPolicyCheckOptionsFromJSON;
 function AgentInboxSendPolicyCheckOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function AgentInboxSendPolicyCheckOptionsFromJSONTyped(json, ignoreDiscriminator
         recipients: json['recipients'],
     };
 }
-exports.AgentInboxSendPolicyCheckOptionsFromJSONTyped = AgentInboxSendPolicyCheckOptionsFromJSONTyped;
 function AgentInboxSendPolicyCheckOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function AgentInboxSendPolicyCheckOptionsToJSON(value) {
         recipients: value.recipients,
     };
 }
-exports.AgentInboxSendPolicyCheckOptionsToJSON = AgentInboxSendPolicyCheckOptionsToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookNewAttachmentPayloadToJSON = exports.WebhookNewAttachmentPayloadFromJSONTyped = exports.WebhookNewAttachmentPayloadFromJSON = exports.WebhookNewAttachmentPayloadEventNameEnum = void 0;
+exports.WebhookNewAttachmentPayloadEventNameEnum = void 0;
+exports.WebhookNewAttachmentPayloadFromJSON = WebhookNewAttachmentPayloadFromJSON;
+exports.WebhookNewAttachmentPayloadFromJSONTyped = WebhookNewAttachmentPayloadFromJSONTyped;
+exports.WebhookNewAttachmentPayloadToJSON = WebhookNewAttachmentPayloadToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -33,11 +36,10 @@ var WebhookNewAttachmentPayloadEventNameEnum;
     WebhookNewAttachmentPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookNewAttachmentPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookNewAttachmentPayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookNewAttachmentPayloadEventNameEnum = exports.WebhookNewAttachmentPayloadEventNameEnum || (exports.WebhookNewAttachmentPayloadEventNameEnum = {}));
+})(WebhookNewAttachmentPayloadEventNameEnum || (exports.WebhookNewAttachmentPayloadEventNameEnum = WebhookNewAttachmentPayloadEventNameEnum = {}));
 function WebhookNewAttachmentPayloadFromJSON(json) {
     return WebhookNewAttachmentPayloadFromJSONTyped(json, false);
 }
-exports.WebhookNewAttachmentPayloadFromJSON = WebhookNewAttachmentPayloadFromJSON;
 function WebhookNewAttachmentPayloadFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -53,7 +55,6 @@ function WebhookNewAttachmentPayloadFromJSONTyped(json, ignoreDiscriminator) {
         contentLength: json['contentLength'],
     };
 }
-exports.WebhookNewAttachmentPayloadFromJSONTyped = WebhookNewAttachmentPayloadFromJSONTyped;
 function WebhookNewAttachmentPayloadToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -72,4 +73,3 @@ function WebhookNewAttachmentPayloadToJSON(value) {
         contentLength: value.contentLength,
     };
 }
-exports.WebhookNewAttachmentPayloadToJSON = WebhookNewAttachmentPayloadToJSON;

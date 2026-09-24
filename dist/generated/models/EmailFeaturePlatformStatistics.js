@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailFeaturePlatformStatisticsToJSON = exports.EmailFeaturePlatformStatisticsFromJSONTyped = exports.EmailFeaturePlatformStatisticsFromJSON = exports.EmailFeaturePlatformStatisticsPlatformEnum = void 0;
+exports.EmailFeaturePlatformStatisticsPlatformEnum = void 0;
+exports.EmailFeaturePlatformStatisticsFromJSON = EmailFeaturePlatformStatisticsFromJSON;
+exports.EmailFeaturePlatformStatisticsFromJSONTyped = EmailFeaturePlatformStatisticsFromJSONTyped;
+exports.EmailFeaturePlatformStatisticsToJSON = EmailFeaturePlatformStatisticsToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -31,11 +34,10 @@ var EmailFeaturePlatformStatisticsPlatformEnum;
     EmailFeaturePlatformStatisticsPlatformEnum["webmail"] = "webmail";
     EmailFeaturePlatformStatisticsPlatformEnum["windows"] = "windows";
     EmailFeaturePlatformStatisticsPlatformEnum["windows_mail"] = "windows-mail";
-})(EmailFeaturePlatformStatisticsPlatformEnum = exports.EmailFeaturePlatformStatisticsPlatformEnum || (exports.EmailFeaturePlatformStatisticsPlatformEnum = {}));
+})(EmailFeaturePlatformStatisticsPlatformEnum || (exports.EmailFeaturePlatformStatisticsPlatformEnum = EmailFeaturePlatformStatisticsPlatformEnum = {}));
 function EmailFeaturePlatformStatisticsFromJSON(json) {
     return EmailFeaturePlatformStatisticsFromJSONTyped(json, false);
 }
-exports.EmailFeaturePlatformStatisticsFromJSON = EmailFeaturePlatformStatisticsFromJSON;
 function EmailFeaturePlatformStatisticsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -45,7 +47,6 @@ function EmailFeaturePlatformStatisticsFromJSONTyped(json, ignoreDiscriminator) 
         versions: json['versions'].map(_1.EmailFeatureVersionStatisticsFromJSON),
     };
 }
-exports.EmailFeaturePlatformStatisticsFromJSONTyped = EmailFeaturePlatformStatisticsFromJSONTyped;
 function EmailFeaturePlatformStatisticsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -58,4 +59,3 @@ function EmailFeaturePlatformStatisticsToJSON(value) {
         versions: value.versions.map(_1.EmailFeatureVersionStatisticsToJSON),
     };
 }
-exports.EmailFeaturePlatformStatisticsToJSON = EmailFeaturePlatformStatisticsToJSON;

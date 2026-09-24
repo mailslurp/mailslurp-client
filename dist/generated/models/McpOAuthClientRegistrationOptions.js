@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.McpOAuthClientRegistrationOptionsToJSON = exports.McpOAuthClientRegistrationOptionsFromJSONTyped = exports.McpOAuthClientRegistrationOptionsFromJSON = void 0;
+exports.McpOAuthClientRegistrationOptionsFromJSON = McpOAuthClientRegistrationOptionsFromJSON;
+exports.McpOAuthClientRegistrationOptionsFromJSONTyped = McpOAuthClientRegistrationOptionsFromJSONTyped;
+exports.McpOAuthClientRegistrationOptionsToJSON = McpOAuthClientRegistrationOptionsToJSON;
 function McpOAuthClientRegistrationOptionsFromJSON(json) {
     return McpOAuthClientRegistrationOptionsFromJSONTyped(json, false);
 }
-exports.McpOAuthClientRegistrationOptionsFromJSON = McpOAuthClientRegistrationOptionsFromJSON;
 function McpOAuthClientRegistrationOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function McpOAuthClientRegistrationOptionsFromJSONTyped(json, ignoreDiscriminato
         responseTypes: json['response_types'],
     };
 }
-exports.McpOAuthClientRegistrationOptionsFromJSONTyped = McpOAuthClientRegistrationOptionsFromJSONTyped;
 function McpOAuthClientRegistrationOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -46,4 +46,3 @@ function McpOAuthClientRegistrationOptionsToJSON(value) {
         response_types: value.responseTypes,
     };
 }
-exports.McpOAuthClientRegistrationOptionsToJSON = McpOAuthClientRegistrationOptionsToJSON;

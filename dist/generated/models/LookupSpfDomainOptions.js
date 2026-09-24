@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupSpfDomainOptionsToJSON = exports.LookupSpfDomainOptionsFromJSONTyped = exports.LookupSpfDomainOptionsFromJSON = void 0;
+exports.LookupSpfDomainOptionsFromJSON = LookupSpfDomainOptionsFromJSON;
+exports.LookupSpfDomainOptionsFromJSONTyped = LookupSpfDomainOptionsFromJSONTyped;
+exports.LookupSpfDomainOptionsToJSON = LookupSpfDomainOptionsToJSON;
 function LookupSpfDomainOptionsFromJSON(json) {
     return LookupSpfDomainOptionsFromJSONTyped(json, false);
 }
-exports.LookupSpfDomainOptionsFromJSON = LookupSpfDomainOptionsFromJSON;
 function LookupSpfDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function LookupSpfDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
         host: json['host'],
     };
 }
-exports.LookupSpfDomainOptionsFromJSONTyped = LookupSpfDomainOptionsFromJSONTyped;
 function LookupSpfDomainOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function LookupSpfDomainOptionsToJSON(value) {
         host: value.host,
     };
 }
-exports.LookupSpfDomainOptionsToJSON = LookupSpfDomainOptionsToJSON;

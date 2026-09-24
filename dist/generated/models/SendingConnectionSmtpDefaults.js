@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendingConnectionSmtpDefaultsToJSON = exports.SendingConnectionSmtpDefaultsFromJSONTyped = exports.SendingConnectionSmtpDefaultsFromJSON = exports.SendingConnectionSmtpDefaultsRecommendedSecurityEnum = void 0;
+exports.SendingConnectionSmtpDefaultsRecommendedSecurityEnum = void 0;
+exports.SendingConnectionSmtpDefaultsFromJSON = SendingConnectionSmtpDefaultsFromJSON;
+exports.SendingConnectionSmtpDefaultsFromJSONTyped = SendingConnectionSmtpDefaultsFromJSONTyped;
+exports.SendingConnectionSmtpDefaultsToJSON = SendingConnectionSmtpDefaultsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,11 +27,10 @@ var SendingConnectionSmtpDefaultsRecommendedSecurityEnum;
 (function (SendingConnectionSmtpDefaultsRecommendedSecurityEnum) {
     SendingConnectionSmtpDefaultsRecommendedSecurityEnum["START_TLS"] = "START_TLS";
     SendingConnectionSmtpDefaultsRecommendedSecurityEnum["TLS"] = "TLS";
-})(SendingConnectionSmtpDefaultsRecommendedSecurityEnum = exports.SendingConnectionSmtpDefaultsRecommendedSecurityEnum || (exports.SendingConnectionSmtpDefaultsRecommendedSecurityEnum = {}));
+})(SendingConnectionSmtpDefaultsRecommendedSecurityEnum || (exports.SendingConnectionSmtpDefaultsRecommendedSecurityEnum = SendingConnectionSmtpDefaultsRecommendedSecurityEnum = {}));
 function SendingConnectionSmtpDefaultsFromJSON(json) {
     return SendingConnectionSmtpDefaultsFromJSONTyped(json, false);
 }
-exports.SendingConnectionSmtpDefaultsFromJSON = SendingConnectionSmtpDefaultsFromJSON;
 function SendingConnectionSmtpDefaultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -54,7 +56,6 @@ function SendingConnectionSmtpDefaultsFromJSONTyped(json, ignoreDiscriminator) {
             : json['passwordHint'],
     };
 }
-exports.SendingConnectionSmtpDefaultsFromJSONTyped = SendingConnectionSmtpDefaultsFromJSONTyped;
 function SendingConnectionSmtpDefaultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -73,4 +74,3 @@ function SendingConnectionSmtpDefaultsToJSON(value) {
         passwordHint: value.passwordHint,
     };
 }
-exports.SendingConnectionSmtpDefaultsToJSON = SendingConnectionSmtpDefaultsToJSON;

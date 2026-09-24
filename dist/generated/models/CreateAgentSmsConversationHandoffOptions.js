@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateAgentSmsConversationHandoffOptionsToJSON = exports.CreateAgentSmsConversationHandoffOptionsFromJSONTyped = exports.CreateAgentSmsConversationHandoffOptionsFromJSON = exports.CreateAgentSmsConversationHandoffOptionsPriorityEnum = void 0;
+exports.CreateAgentSmsConversationHandoffOptionsPriorityEnum = void 0;
+exports.CreateAgentSmsConversationHandoffOptionsFromJSON = CreateAgentSmsConversationHandoffOptionsFromJSON;
+exports.CreateAgentSmsConversationHandoffOptionsFromJSONTyped = CreateAgentSmsConversationHandoffOptionsFromJSONTyped;
+exports.CreateAgentSmsConversationHandoffOptionsToJSON = CreateAgentSmsConversationHandoffOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,11 +28,10 @@ var CreateAgentSmsConversationHandoffOptionsPriorityEnum;
     CreateAgentSmsConversationHandoffOptionsPriorityEnum["NORMAL"] = "NORMAL";
     CreateAgentSmsConversationHandoffOptionsPriorityEnum["HIGH"] = "HIGH";
     CreateAgentSmsConversationHandoffOptionsPriorityEnum["URGENT"] = "URGENT";
-})(CreateAgentSmsConversationHandoffOptionsPriorityEnum = exports.CreateAgentSmsConversationHandoffOptionsPriorityEnum || (exports.CreateAgentSmsConversationHandoffOptionsPriorityEnum = {}));
+})(CreateAgentSmsConversationHandoffOptionsPriorityEnum || (exports.CreateAgentSmsConversationHandoffOptionsPriorityEnum = CreateAgentSmsConversationHandoffOptionsPriorityEnum = {}));
 function CreateAgentSmsConversationHandoffOptionsFromJSON(json) {
     return CreateAgentSmsConversationHandoffOptionsFromJSONTyped(json, false);
 }
-exports.CreateAgentSmsConversationHandoffOptionsFromJSON = CreateAgentSmsConversationHandoffOptionsFromJSON;
 function CreateAgentSmsConversationHandoffOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +46,6 @@ function CreateAgentSmsConversationHandoffOptionsFromJSONTyped(json, ignoreDiscr
             : json['expectedVersion'],
     };
 }
-exports.CreateAgentSmsConversationHandoffOptionsFromJSONTyped = CreateAgentSmsConversationHandoffOptionsFromJSONTyped;
 function CreateAgentSmsConversationHandoffOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -60,4 +61,3 @@ function CreateAgentSmsConversationHandoffOptionsToJSON(value) {
         expectedVersion: value.expectedVersion,
     };
 }
-exports.CreateAgentSmsConversationHandoffOptionsToJSON = CreateAgentSmsConversationHandoffOptionsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TotpDeviceDtoToJSON = exports.TotpDeviceDtoFromJSONTyped = exports.TotpDeviceDtoFromJSON = void 0;
+exports.TotpDeviceDtoFromJSON = TotpDeviceDtoFromJSON;
+exports.TotpDeviceDtoFromJSONTyped = TotpDeviceDtoFromJSONTyped;
+exports.TotpDeviceDtoToJSON = TotpDeviceDtoToJSON;
 var runtime_1 = require("../runtime");
 function TotpDeviceDtoFromJSON(json) {
     return TotpDeviceDtoFromJSONTyped(json, false);
 }
-exports.TotpDeviceDtoFromJSON = TotpDeviceDtoFromJSON;
 function TotpDeviceDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function TotpDeviceDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.TotpDeviceDtoFromJSONTyped = TotpDeviceDtoFromJSONTyped;
 function TotpDeviceDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function TotpDeviceDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.TotpDeviceDtoToJSON = TotpDeviceDtoToJSON;

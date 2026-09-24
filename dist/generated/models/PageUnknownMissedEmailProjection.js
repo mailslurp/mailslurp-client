@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageUnknownMissedEmailProjectionToJSON = exports.PageUnknownMissedEmailProjectionFromJSONTyped = exports.PageUnknownMissedEmailProjectionFromJSON = void 0;
+exports.PageUnknownMissedEmailProjectionFromJSON = PageUnknownMissedEmailProjectionFromJSON;
+exports.PageUnknownMissedEmailProjectionFromJSONTyped = PageUnknownMissedEmailProjectionFromJSONTyped;
+exports.PageUnknownMissedEmailProjectionToJSON = PageUnknownMissedEmailProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageUnknownMissedEmailProjectionFromJSON(json) {
     return PageUnknownMissedEmailProjectionFromJSONTyped(json, false);
 }
-exports.PageUnknownMissedEmailProjectionFromJSON = PageUnknownMissedEmailProjectionFromJSON;
 function PageUnknownMissedEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageUnknownMissedEmailProjectionFromJSONTyped(json, ignoreDiscriminator
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageUnknownMissedEmailProjectionFromJSONTyped = PageUnknownMissedEmailProjectionFromJSONTyped;
 function PageUnknownMissedEmailProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageUnknownMissedEmailProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageUnknownMissedEmailProjectionToJSON = PageUnknownMissedEmailProjectionToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateInboxForwarderOptionsToJSON = exports.CreateInboxForwarderOptionsFromJSONTyped = exports.CreateInboxForwarderOptionsFromJSON = exports.CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum = exports.CreateInboxForwarderOptionsShouldEnum = exports.CreateInboxForwarderOptionsFieldEnum = void 0;
+exports.CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum = exports.CreateInboxForwarderOptionsShouldEnum = exports.CreateInboxForwarderOptionsFieldEnum = void 0;
+exports.CreateInboxForwarderOptionsFromJSON = CreateInboxForwarderOptionsFromJSON;
+exports.CreateInboxForwarderOptionsFromJSONTyped = CreateInboxForwarderOptionsFromJSONTyped;
+exports.CreateInboxForwarderOptionsToJSON = CreateInboxForwarderOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -28,7 +31,7 @@ var CreateInboxForwarderOptionsFieldEnum;
     CreateInboxForwarderOptionsFieldEnum["ATTACHMENTS"] = "ATTACHMENTS";
     CreateInboxForwarderOptionsFieldEnum["ATTACHMENT_FILENAME"] = "ATTACHMENT_FILENAME";
     CreateInboxForwarderOptionsFieldEnum["ATTACHMENT_TEXT"] = "ATTACHMENT_TEXT";
-})(CreateInboxForwarderOptionsFieldEnum = exports.CreateInboxForwarderOptionsFieldEnum || (exports.CreateInboxForwarderOptionsFieldEnum = {}));
+})(CreateInboxForwarderOptionsFieldEnum || (exports.CreateInboxForwarderOptionsFieldEnum = CreateInboxForwarderOptionsFieldEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -39,7 +42,7 @@ var CreateInboxForwarderOptionsShouldEnum;
     CreateInboxForwarderOptionsShouldEnum["MATCH"] = "MATCH";
     CreateInboxForwarderOptionsShouldEnum["CONTAIN"] = "CONTAIN";
     CreateInboxForwarderOptionsShouldEnum["EQUAL"] = "EQUAL";
-})(CreateInboxForwarderOptionsShouldEnum = exports.CreateInboxForwarderOptionsShouldEnum || (exports.CreateInboxForwarderOptionsShouldEnum = {}));
+})(CreateInboxForwarderOptionsShouldEnum || (exports.CreateInboxForwarderOptionsShouldEnum = CreateInboxForwarderOptionsShouldEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -51,11 +54,10 @@ var CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum;
     CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum["OCR"] = "OCR";
     CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum["LLM"] = "LLM";
     CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum["OCR_THEN_LLM"] = "OCR_THEN_LLM";
-})(CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum = exports.CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum || (exports.CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum = {}));
+})(CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum || (exports.CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum = CreateInboxForwarderOptionsAttachmentTextExtractionMethodEnum = {}));
 function CreateInboxForwarderOptionsFromJSON(json) {
     return CreateInboxForwarderOptionsFromJSONTyped(json, false);
 }
-exports.CreateInboxForwarderOptionsFromJSON = CreateInboxForwarderOptionsFromJSON;
 function CreateInboxForwarderOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -73,7 +75,6 @@ function CreateInboxForwarderOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['attachmentTextExtractionMethod'],
     };
 }
-exports.CreateInboxForwarderOptionsFromJSONTyped = CreateInboxForwarderOptionsFromJSONTyped;
 function CreateInboxForwarderOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -90,4 +91,3 @@ function CreateInboxForwarderOptionsToJSON(value) {
         attachmentTextExtractionMethod: value.attachmentTextExtractionMethod,
     };
 }
-exports.CreateInboxForwarderOptionsToJSON = CreateInboxForwarderOptionsToJSON;

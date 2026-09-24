@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EntityEventItemProjectionToJSON = exports.EntityEventItemProjectionFromJSONTyped = exports.EntityEventItemProjectionFromJSON = exports.EntityEventItemProjectionEventTypeEnum = exports.EntityEventItemProjectionSeverityEnum = void 0;
+exports.EntityEventItemProjectionEventTypeEnum = exports.EntityEventItemProjectionSeverityEnum = void 0;
+exports.EntityEventItemProjectionFromJSON = EntityEventItemProjectionFromJSON;
+exports.EntityEventItemProjectionFromJSONTyped = EntityEventItemProjectionFromJSONTyped;
+exports.EntityEventItemProjectionToJSON = EntityEventItemProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,7 +28,7 @@ var EntityEventItemProjectionSeverityEnum;
     EntityEventItemProjectionSeverityEnum["SUCCESS"] = "SUCCESS";
     EntityEventItemProjectionSeverityEnum["WARNING"] = "WARNING";
     EntityEventItemProjectionSeverityEnum["DANGER"] = "DANGER";
-})(EntityEventItemProjectionSeverityEnum = exports.EntityEventItemProjectionSeverityEnum || (exports.EntityEventItemProjectionSeverityEnum = {}));
+})(EntityEventItemProjectionSeverityEnum || (exports.EntityEventItemProjectionSeverityEnum = EntityEventItemProjectionSeverityEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -37,11 +40,10 @@ var EntityEventItemProjectionEventTypeEnum;
     EntityEventItemProjectionEventTypeEnum["INBOX_REPLIER_EVENT"] = "INBOX_REPLIER_EVENT";
     EntityEventItemProjectionEventTypeEnum["INBOX_RULESET_EVENT"] = "INBOX_RULESET_EVENT";
     EntityEventItemProjectionEventTypeEnum["ALIAS_EVENT"] = "ALIAS_EVENT";
-})(EntityEventItemProjectionEventTypeEnum = exports.EntityEventItemProjectionEventTypeEnum || (exports.EntityEventItemProjectionEventTypeEnum = {}));
+})(EntityEventItemProjectionEventTypeEnum || (exports.EntityEventItemProjectionEventTypeEnum = EntityEventItemProjectionEventTypeEnum = {}));
 function EntityEventItemProjectionFromJSON(json) {
     return EntityEventItemProjectionFromJSONTyped(json, false);
 }
-exports.EntityEventItemProjectionFromJSON = EntityEventItemProjectionFromJSON;
 function EntityEventItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -54,7 +56,6 @@ function EntityEventItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.EntityEventItemProjectionFromJSONTyped = EntityEventItemProjectionFromJSONTyped;
 function EntityEventItemProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -70,4 +71,3 @@ function EntityEventItemProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.EntityEventItemProjectionToJSON = EntityEventItemProjectionToJSON;

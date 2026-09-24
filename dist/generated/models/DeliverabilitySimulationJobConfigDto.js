@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilitySimulationJobConfigDtoToJSON = exports.DeliverabilitySimulationJobConfigDtoFromJSONTyped = exports.DeliverabilitySimulationJobConfigDtoFromJSON = void 0;
+exports.DeliverabilitySimulationJobConfigDtoFromJSON = DeliverabilitySimulationJobConfigDtoFromJSON;
+exports.DeliverabilitySimulationJobConfigDtoFromJSONTyped = DeliverabilitySimulationJobConfigDtoFromJSONTyped;
+exports.DeliverabilitySimulationJobConfigDtoToJSON = DeliverabilitySimulationJobConfigDtoToJSON;
 var runtime_1 = require("../runtime");
 function DeliverabilitySimulationJobConfigDtoFromJSON(json) {
     return DeliverabilitySimulationJobConfigDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilitySimulationJobConfigDtoFromJSON = DeliverabilitySimulationJobConfigDtoFromJSON;
 function DeliverabilitySimulationJobConfigDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -47,7 +48,6 @@ function DeliverabilitySimulationJobConfigDtoFromJSONTyped(json, ignoreDiscrimin
         sendsPerTarget: json['sendsPerTarget'],
     };
 }
-exports.DeliverabilitySimulationJobConfigDtoFromJSONTyped = DeliverabilitySimulationJobConfigDtoFromJSONTyped;
 function DeliverabilitySimulationJobConfigDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -67,4 +67,3 @@ function DeliverabilitySimulationJobConfigDtoToJSON(value) {
         sendsPerTarget: value.sendsPerTarget,
     };
 }
-exports.DeliverabilitySimulationJobConfigDtoToJSON = DeliverabilitySimulationJobConfigDtoToJSON;

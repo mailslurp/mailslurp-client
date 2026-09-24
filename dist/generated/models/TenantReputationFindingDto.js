@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TenantReputationFindingDtoToJSON = exports.TenantReputationFindingDtoFromJSONTyped = exports.TenantReputationFindingDtoFromJSON = exports.TenantReputationFindingDtoAccountRegionEnum = void 0;
+exports.TenantReputationFindingDtoAccountRegionEnum = void 0;
+exports.TenantReputationFindingDtoFromJSON = TenantReputationFindingDtoFromJSON;
+exports.TenantReputationFindingDtoFromJSONTyped = TenantReputationFindingDtoFromJSONTyped;
+exports.TenantReputationFindingDtoToJSON = TenantReputationFindingDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -35,11 +38,10 @@ var TenantReputationFindingDtoAccountRegionEnum;
     TenantReputationFindingDtoAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
     TenantReputationFindingDtoAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
     TenantReputationFindingDtoAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
-})(TenantReputationFindingDtoAccountRegionEnum = exports.TenantReputationFindingDtoAccountRegionEnum || (exports.TenantReputationFindingDtoAccountRegionEnum = {}));
+})(TenantReputationFindingDtoAccountRegionEnum || (exports.TenantReputationFindingDtoAccountRegionEnum = TenantReputationFindingDtoAccountRegionEnum = {}));
 function TenantReputationFindingDtoFromJSON(json) {
     return TenantReputationFindingDtoFromJSONTyped(json, false);
 }
-exports.TenantReputationFindingDtoFromJSON = TenantReputationFindingDtoFromJSON;
 function TenantReputationFindingDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -64,7 +66,6 @@ function TenantReputationFindingDtoFromJSONTyped(json, ignoreDiscriminator) {
                 : new Date(json['lastUpdatedTimestamp']),
     };
 }
-exports.TenantReputationFindingDtoFromJSONTyped = TenantReputationFindingDtoFromJSONTyped;
 function TenantReputationFindingDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -92,4 +93,3 @@ function TenantReputationFindingDtoToJSON(value) {
                 : value.lastUpdatedTimestamp.toISOString(),
     };
 }
-exports.TenantReputationFindingDtoToJSON = TenantReputationFindingDtoToJSON;

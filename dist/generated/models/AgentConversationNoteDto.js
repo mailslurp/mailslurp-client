@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentConversationNoteDtoToJSON = exports.AgentConversationNoteDtoFromJSONTyped = exports.AgentConversationNoteDtoFromJSON = exports.AgentConversationNoteDtoActorTypeEnum = void 0;
+exports.AgentConversationNoteDtoActorTypeEnum = void 0;
+exports.AgentConversationNoteDtoFromJSON = AgentConversationNoteDtoFromJSON;
+exports.AgentConversationNoteDtoFromJSONTyped = AgentConversationNoteDtoFromJSONTyped;
+exports.AgentConversationNoteDtoToJSON = AgentConversationNoteDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var AgentConversationNoteDtoActorTypeEnum;
     AgentConversationNoteDtoActorTypeEnum["AGENT"] = "AGENT";
     AgentConversationNoteDtoActorTypeEnum["OPERATOR"] = "OPERATOR";
     AgentConversationNoteDtoActorTypeEnum["SYSTEM"] = "SYSTEM";
-})(AgentConversationNoteDtoActorTypeEnum = exports.AgentConversationNoteDtoActorTypeEnum || (exports.AgentConversationNoteDtoActorTypeEnum = {}));
+})(AgentConversationNoteDtoActorTypeEnum || (exports.AgentConversationNoteDtoActorTypeEnum = AgentConversationNoteDtoActorTypeEnum = {}));
 function AgentConversationNoteDtoFromJSON(json) {
     return AgentConversationNoteDtoFromJSONTyped(json, false);
 }
-exports.AgentConversationNoteDtoFromJSON = AgentConversationNoteDtoFromJSON;
 function AgentConversationNoteDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -54,7 +56,6 @@ function AgentConversationNoteDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['conversationVersion'],
     };
 }
-exports.AgentConversationNoteDtoFromJSONTyped = AgentConversationNoteDtoFromJSONTyped;
 function AgentConversationNoteDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -77,4 +78,3 @@ function AgentConversationNoteDtoToJSON(value) {
         conversationVersion: value.conversationVersion,
     };
 }
-exports.AgentConversationNoteDtoToJSON = AgentConversationNoteDtoToJSON;

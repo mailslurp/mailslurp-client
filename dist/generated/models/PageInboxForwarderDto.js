@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageInboxForwarderDtoToJSON = exports.PageInboxForwarderDtoFromJSONTyped = exports.PageInboxForwarderDtoFromJSON = void 0;
+exports.PageInboxForwarderDtoFromJSON = PageInboxForwarderDtoFromJSON;
+exports.PageInboxForwarderDtoFromJSONTyped = PageInboxForwarderDtoFromJSONTyped;
+exports.PageInboxForwarderDtoToJSON = PageInboxForwarderDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageInboxForwarderDtoFromJSON(json) {
     return PageInboxForwarderDtoFromJSONTyped(json, false);
 }
-exports.PageInboxForwarderDtoFromJSON = PageInboxForwarderDtoFromJSON;
 function PageInboxForwarderDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageInboxForwarderDtoFromJSONTyped(json, ignoreDiscriminator) {
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageInboxForwarderDtoFromJSONTyped = PageInboxForwarderDtoFromJSONTyped;
 function PageInboxForwarderDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageInboxForwarderDtoToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageInboxForwarderDtoToJSON = PageInboxForwarderDtoToJSON;

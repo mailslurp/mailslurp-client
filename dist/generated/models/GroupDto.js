@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GroupDtoToJSON = exports.GroupDtoFromJSONTyped = exports.GroupDtoFromJSON = void 0;
+exports.GroupDtoFromJSON = GroupDtoFromJSON;
+exports.GroupDtoFromJSONTyped = GroupDtoFromJSONTyped;
+exports.GroupDtoToJSON = GroupDtoToJSON;
 var runtime_1 = require("../runtime");
 function GroupDtoFromJSON(json) {
     return GroupDtoFromJSONTyped(json, false);
 }
-exports.GroupDtoFromJSON = GroupDtoFromJSON;
 function GroupDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function GroupDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.GroupDtoFromJSONTyped = GroupDtoFromJSONTyped;
 function GroupDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function GroupDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.GroupDtoToJSON = GroupDtoToJSON;

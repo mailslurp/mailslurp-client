@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeliverabilityEntityResultPageDtoToJSON = exports.DeliverabilityEntityResultPageDtoFromJSONTyped = exports.DeliverabilityEntityResultPageDtoFromJSON = void 0;
+exports.DeliverabilityEntityResultPageDtoFromJSON = DeliverabilityEntityResultPageDtoFromJSON;
+exports.DeliverabilityEntityResultPageDtoFromJSONTyped = DeliverabilityEntityResultPageDtoFromJSONTyped;
+exports.DeliverabilityEntityResultPageDtoToJSON = DeliverabilityEntityResultPageDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function DeliverabilityEntityResultPageDtoFromJSON(json) {
     return DeliverabilityEntityResultPageDtoFromJSONTyped(json, false);
 }
-exports.DeliverabilityEntityResultPageDtoFromJSON = DeliverabilityEntityResultPageDtoFromJSON;
 function DeliverabilityEntityResultPageDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -40,7 +41,6 @@ function DeliverabilityEntityResultPageDtoFromJSONTyped(json, ignoreDiscriminato
                 : new Date(json['nextRefreshAt']),
     };
 }
-exports.DeliverabilityEntityResultPageDtoFromJSONTyped = DeliverabilityEntityResultPageDtoFromJSONTyped;
 function DeliverabilityEntityResultPageDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -64,4 +64,3 @@ function DeliverabilityEntityResultPageDtoToJSON(value) {
                 : value.nextRefreshAt.toISOString(),
     };
 }
-exports.DeliverabilityEntityResultPageDtoToJSON = DeliverabilityEntityResultPageDtoToJSON;

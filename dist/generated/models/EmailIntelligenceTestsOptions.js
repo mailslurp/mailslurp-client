@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailIntelligenceTestsOptionsToJSON = exports.EmailIntelligenceTestsOptionsFromJSONTyped = exports.EmailIntelligenceTestsOptionsFromJSON = void 0;
+exports.EmailIntelligenceTestsOptionsFromJSON = EmailIntelligenceTestsOptionsFromJSON;
+exports.EmailIntelligenceTestsOptionsFromJSONTyped = EmailIntelligenceTestsOptionsFromJSONTyped;
+exports.EmailIntelligenceTestsOptionsToJSON = EmailIntelligenceTestsOptionsToJSON;
 var runtime_1 = require("../runtime");
 function EmailIntelligenceTestsOptionsFromJSON(json) {
     return EmailIntelligenceTestsOptionsFromJSONTyped(json, false);
 }
-exports.EmailIntelligenceTestsOptionsFromJSON = EmailIntelligenceTestsOptionsFromJSON;
 function EmailIntelligenceTestsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -39,7 +40,6 @@ function EmailIntelligenceTestsOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['checkDomainAgeHint'],
     };
 }
-exports.EmailIntelligenceTestsOptionsFromJSONTyped = EmailIntelligenceTestsOptionsFromJSONTyped;
 function EmailIntelligenceTestsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function EmailIntelligenceTestsOptionsToJSON(value) {
         checkDomainAgeHint: value.checkDomainAgeHint,
     };
 }
-exports.EmailIntelligenceTestsOptionsToJSON = EmailIntelligenceTestsOptionsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BouncedRecipientDtoToJSON = exports.BouncedRecipientDtoFromJSONTyped = exports.BouncedRecipientDtoFromJSON = void 0;
+exports.BouncedRecipientDtoFromJSON = BouncedRecipientDtoFromJSON;
+exports.BouncedRecipientDtoFromJSONTyped = BouncedRecipientDtoFromJSONTyped;
+exports.BouncedRecipientDtoToJSON = BouncedRecipientDtoToJSON;
 var runtime_1 = require("../runtime");
 function BouncedRecipientDtoFromJSON(json) {
     return BouncedRecipientDtoFromJSONTyped(json, false);
 }
-exports.BouncedRecipientDtoFromJSON = BouncedRecipientDtoFromJSON;
 function BouncedRecipientDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function BouncedRecipientDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.BouncedRecipientDtoFromJSONTyped = BouncedRecipientDtoFromJSONTyped;
 function BouncedRecipientDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -57,4 +57,3 @@ function BouncedRecipientDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.BouncedRecipientDtoToJSON = BouncedRecipientDtoToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailIntelligenceListResultToJSON = exports.EmailIntelligenceListResultFromJSONTyped = exports.EmailIntelligenceListResultFromJSON = void 0;
+exports.EmailIntelligenceListResultFromJSON = EmailIntelligenceListResultFromJSON;
+exports.EmailIntelligenceListResultFromJSONTyped = EmailIntelligenceListResultFromJSONTyped;
+exports.EmailIntelligenceListResultToJSON = EmailIntelligenceListResultToJSON;
 var _1 = require("./");
 function EmailIntelligenceListResultFromJSON(json) {
     return EmailIntelligenceListResultFromJSONTyped(json, false);
 }
-exports.EmailIntelligenceListResultFromJSON = EmailIntelligenceListResultFromJSON;
 function EmailIntelligenceListResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function EmailIntelligenceListResultFromJSONTyped(json, ignoreDiscriminator) {
         billableCount: json['billableCount'],
     };
 }
-exports.EmailIntelligenceListResultFromJSONTyped = EmailIntelligenceListResultFromJSONTyped;
 function EmailIntelligenceListResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function EmailIntelligenceListResultToJSON(value) {
         billableCount: value.billableCount,
     };
 }
-exports.EmailIntelligenceListResultToJSON = EmailIntelligenceListResultToJSON;

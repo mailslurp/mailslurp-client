@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateBimiRecordOptionsToJSON = exports.GenerateBimiRecordOptionsFromJSONTyped = exports.GenerateBimiRecordOptionsFromJSON = exports.GenerateBimiRecordOptionsVersionEnum = void 0;
+exports.GenerateBimiRecordOptionsVersionEnum = void 0;
+exports.GenerateBimiRecordOptionsFromJSON = GenerateBimiRecordOptionsFromJSON;
+exports.GenerateBimiRecordOptionsFromJSONTyped = GenerateBimiRecordOptionsFromJSONTyped;
+exports.GenerateBimiRecordOptionsToJSON = GenerateBimiRecordOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -22,11 +25,10 @@ var runtime_1 = require("../runtime");
 var GenerateBimiRecordOptionsVersionEnum;
 (function (GenerateBimiRecordOptionsVersionEnum) {
     GenerateBimiRecordOptionsVersionEnum["BIMI1"] = "BIMI1";
-})(GenerateBimiRecordOptionsVersionEnum = exports.GenerateBimiRecordOptionsVersionEnum || (exports.GenerateBimiRecordOptionsVersionEnum = {}));
+})(GenerateBimiRecordOptionsVersionEnum || (exports.GenerateBimiRecordOptionsVersionEnum = GenerateBimiRecordOptionsVersionEnum = {}));
 function GenerateBimiRecordOptionsFromJSON(json) {
     return GenerateBimiRecordOptionsFromJSONTyped(json, false);
 }
-exports.GenerateBimiRecordOptionsFromJSON = GenerateBimiRecordOptionsFromJSON;
 function GenerateBimiRecordOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +40,6 @@ function GenerateBimiRecordOptionsFromJSONTyped(json, ignoreDiscriminator) {
         vmcUrl: !(0, runtime_1.exists)(json, 'vmcUrl') ? undefined : json['vmcUrl'],
     };
 }
-exports.GenerateBimiRecordOptionsFromJSONTyped = GenerateBimiRecordOptionsFromJSONTyped;
 function GenerateBimiRecordOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -53,4 +54,3 @@ function GenerateBimiRecordOptionsToJSON(value) {
         vmcUrl: value.vmcUrl,
     };
 }
-exports.GenerateBimiRecordOptionsToJSON = GenerateBimiRecordOptionsToJSON;

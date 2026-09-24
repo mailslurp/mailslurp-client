@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateAgentSmsConversationNoteOptionsToJSON = exports.CreateAgentSmsConversationNoteOptionsFromJSONTyped = exports.CreateAgentSmsConversationNoteOptionsFromJSON = void 0;
+exports.CreateAgentSmsConversationNoteOptionsFromJSON = CreateAgentSmsConversationNoteOptionsFromJSON;
+exports.CreateAgentSmsConversationNoteOptionsFromJSONTyped = CreateAgentSmsConversationNoteOptionsFromJSONTyped;
+exports.CreateAgentSmsConversationNoteOptionsToJSON = CreateAgentSmsConversationNoteOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreateAgentSmsConversationNoteOptionsFromJSON(json) {
     return CreateAgentSmsConversationNoteOptionsFromJSONTyped(json, false);
 }
-exports.CreateAgentSmsConversationNoteOptionsFromJSON = CreateAgentSmsConversationNoteOptionsFromJSON;
 function CreateAgentSmsConversationNoteOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function CreateAgentSmsConversationNoteOptionsFromJSONTyped(json, ignoreDiscrimi
         sourceSmsId: !(0, runtime_1.exists)(json, 'sourceSmsId') ? undefined : json['sourceSmsId'],
     };
 }
-exports.CreateAgentSmsConversationNoteOptionsFromJSONTyped = CreateAgentSmsConversationNoteOptionsFromJSONTyped;
 function CreateAgentSmsConversationNoteOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function CreateAgentSmsConversationNoteOptionsToJSON(value) {
         sourceSmsId: value.sourceSmsId,
     };
 }
-exports.CreateAgentSmsConversationNoteOptionsToJSON = CreateAgentSmsConversationNoteOptionsToJSON;

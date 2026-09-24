@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneNumberLineTypeIntelligenceDtoToJSON = exports.PhoneNumberLineTypeIntelligenceDtoFromJSONTyped = exports.PhoneNumberLineTypeIntelligenceDtoFromJSON = void 0;
+exports.PhoneNumberLineTypeIntelligenceDtoFromJSON = PhoneNumberLineTypeIntelligenceDtoFromJSON;
+exports.PhoneNumberLineTypeIntelligenceDtoFromJSONTyped = PhoneNumberLineTypeIntelligenceDtoFromJSONTyped;
+exports.PhoneNumberLineTypeIntelligenceDtoToJSON = PhoneNumberLineTypeIntelligenceDtoToJSON;
 var runtime_1 = require("../runtime");
 function PhoneNumberLineTypeIntelligenceDtoFromJSON(json) {
     return PhoneNumberLineTypeIntelligenceDtoFromJSONTyped(json, false);
 }
-exports.PhoneNumberLineTypeIntelligenceDtoFromJSON = PhoneNumberLineTypeIntelligenceDtoFromJSON;
 function PhoneNumberLineTypeIntelligenceDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function PhoneNumberLineTypeIntelligenceDtoFromJSONTyped(json, ignoreDiscriminat
         errorCode: !(0, runtime_1.exists)(json, 'errorCode') ? undefined : json['errorCode'],
     };
 }
-exports.PhoneNumberLineTypeIntelligenceDtoFromJSONTyped = PhoneNumberLineTypeIntelligenceDtoFromJSONTyped;
 function PhoneNumberLineTypeIntelligenceDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function PhoneNumberLineTypeIntelligenceDtoToJSON(value) {
         errorCode: value.errorCode,
     };
 }
-exports.PhoneNumberLineTypeIntelligenceDtoToJSON = PhoneNumberLineTypeIntelligenceDtoToJSON;

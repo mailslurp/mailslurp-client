@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeferAgentWorkItemOptionsToJSON = exports.DeferAgentWorkItemOptionsFromJSONTyped = exports.DeferAgentWorkItemOptionsFromJSON = exports.DeferAgentWorkItemOptionsPriorityEnum = void 0;
+exports.DeferAgentWorkItemOptionsPriorityEnum = void 0;
+exports.DeferAgentWorkItemOptionsFromJSON = DeferAgentWorkItemOptionsFromJSON;
+exports.DeferAgentWorkItemOptionsFromJSONTyped = DeferAgentWorkItemOptionsFromJSONTyped;
+exports.DeferAgentWorkItemOptionsToJSON = DeferAgentWorkItemOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,11 +28,10 @@ var DeferAgentWorkItemOptionsPriorityEnum;
     DeferAgentWorkItemOptionsPriorityEnum["NORMAL"] = "NORMAL";
     DeferAgentWorkItemOptionsPriorityEnum["HIGH"] = "HIGH";
     DeferAgentWorkItemOptionsPriorityEnum["URGENT"] = "URGENT";
-})(DeferAgentWorkItemOptionsPriorityEnum = exports.DeferAgentWorkItemOptionsPriorityEnum || (exports.DeferAgentWorkItemOptionsPriorityEnum = {}));
+})(DeferAgentWorkItemOptionsPriorityEnum || (exports.DeferAgentWorkItemOptionsPriorityEnum = DeferAgentWorkItemOptionsPriorityEnum = {}));
 function DeferAgentWorkItemOptionsFromJSON(json) {
     return DeferAgentWorkItemOptionsFromJSONTyped(json, false);
 }
-exports.DeferAgentWorkItemOptionsFromJSON = DeferAgentWorkItemOptionsFromJSON;
 function DeferAgentWorkItemOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -48,7 +50,6 @@ function DeferAgentWorkItemOptionsFromJSONTyped(json, ignoreDiscriminator) {
         claimId: !(0, runtime_1.exists)(json, 'claimId') ? undefined : json['claimId'],
     };
 }
-exports.DeferAgentWorkItemOptionsFromJSONTyped = DeferAgentWorkItemOptionsFromJSONTyped;
 function DeferAgentWorkItemOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -66,4 +67,3 @@ function DeferAgentWorkItemOptionsToJSON(value) {
         claimId: value.claimId,
     };
 }
-exports.DeferAgentWorkItemOptionsToJSON = DeferAgentWorkItemOptionsToJSON;

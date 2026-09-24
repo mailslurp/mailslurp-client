@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewFeedbackDtoToJSON = exports.DevicePreviewFeedbackDtoFromJSONTyped = exports.DevicePreviewFeedbackDtoFromJSON = exports.DevicePreviewFeedbackDtoProviderEnum = exports.DevicePreviewFeedbackDtoStatusEnum = exports.DevicePreviewFeedbackDtoCategoryEnum = exports.DevicePreviewFeedbackDtoSourceEnum = void 0;
+exports.DevicePreviewFeedbackDtoProviderEnum = exports.DevicePreviewFeedbackDtoStatusEnum = exports.DevicePreviewFeedbackDtoCategoryEnum = exports.DevicePreviewFeedbackDtoSourceEnum = void 0;
+exports.DevicePreviewFeedbackDtoFromJSON = DevicePreviewFeedbackDtoFromJSON;
+exports.DevicePreviewFeedbackDtoFromJSONTyped = DevicePreviewFeedbackDtoFromJSONTyped;
+exports.DevicePreviewFeedbackDtoToJSON = DevicePreviewFeedbackDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,7 +28,7 @@ var DevicePreviewFeedbackDtoSourceEnum;
     DevicePreviewFeedbackDtoSourceEnum["LAB_USER"] = "LAB_USER";
     DevicePreviewFeedbackDtoSourceEnum["END_USER"] = "END_USER";
     DevicePreviewFeedbackDtoSourceEnum["SYSTEM"] = "SYSTEM";
-})(DevicePreviewFeedbackDtoSourceEnum = exports.DevicePreviewFeedbackDtoSourceEnum || (exports.DevicePreviewFeedbackDtoSourceEnum = {}));
+})(DevicePreviewFeedbackDtoSourceEnum || (exports.DevicePreviewFeedbackDtoSourceEnum = DevicePreviewFeedbackDtoSourceEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -39,7 +42,7 @@ var DevicePreviewFeedbackDtoCategoryEnum;
     DevicePreviewFeedbackDtoCategoryEnum["BUG_REPORT"] = "BUG_REPORT";
     DevicePreviewFeedbackDtoCategoryEnum["FEATURE_REQUEST"] = "FEATURE_REQUEST";
     DevicePreviewFeedbackDtoCategoryEnum["NOTE"] = "NOTE";
-})(DevicePreviewFeedbackDtoCategoryEnum = exports.DevicePreviewFeedbackDtoCategoryEnum || (exports.DevicePreviewFeedbackDtoCategoryEnum = {}));
+})(DevicePreviewFeedbackDtoCategoryEnum || (exports.DevicePreviewFeedbackDtoCategoryEnum = DevicePreviewFeedbackDtoCategoryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -50,7 +53,7 @@ var DevicePreviewFeedbackDtoStatusEnum;
     DevicePreviewFeedbackDtoStatusEnum["ACKNOWLEDGED"] = "ACKNOWLEDGED";
     DevicePreviewFeedbackDtoStatusEnum["RESOLVED"] = "RESOLVED";
     DevicePreviewFeedbackDtoStatusEnum["DISMISSED"] = "DISMISSED";
-})(DevicePreviewFeedbackDtoStatusEnum = exports.DevicePreviewFeedbackDtoStatusEnum || (exports.DevicePreviewFeedbackDtoStatusEnum = {}));
+})(DevicePreviewFeedbackDtoStatusEnum || (exports.DevicePreviewFeedbackDtoStatusEnum = DevicePreviewFeedbackDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -60,11 +63,10 @@ var DevicePreviewFeedbackDtoProviderEnum;
     DevicePreviewFeedbackDtoProviderEnum["GMAIL"] = "GMAIL";
     DevicePreviewFeedbackDtoProviderEnum["OUTLOOK"] = "OUTLOOK";
     DevicePreviewFeedbackDtoProviderEnum["YAHOO"] = "YAHOO";
-})(DevicePreviewFeedbackDtoProviderEnum = exports.DevicePreviewFeedbackDtoProviderEnum || (exports.DevicePreviewFeedbackDtoProviderEnum = {}));
+})(DevicePreviewFeedbackDtoProviderEnum || (exports.DevicePreviewFeedbackDtoProviderEnum = DevicePreviewFeedbackDtoProviderEnum = {}));
 function DevicePreviewFeedbackDtoFromJSON(json) {
     return DevicePreviewFeedbackDtoFromJSONTyped(json, false);
 }
-exports.DevicePreviewFeedbackDtoFromJSON = DevicePreviewFeedbackDtoFromJSON;
 function DevicePreviewFeedbackDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -102,7 +104,6 @@ function DevicePreviewFeedbackDtoFromJSONTyped(json, ignoreDiscriminator) {
                 : new Date(json['updatedAt']),
     };
 }
-exports.DevicePreviewFeedbackDtoFromJSONTyped = DevicePreviewFeedbackDtoFromJSONTyped;
 function DevicePreviewFeedbackDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -139,4 +140,3 @@ function DevicePreviewFeedbackDtoToJSON(value) {
                 : value.updatedAt.toISOString(),
     };
 }
-exports.DevicePreviewFeedbackDtoToJSON = DevicePreviewFeedbackDtoToJSON;

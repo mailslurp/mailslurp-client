@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDeliverabilitySimulationJobOptionsToJSON = exports.CreateDeliverabilitySimulationJobOptionsFromJSONTyped = exports.CreateDeliverabilitySimulationJobOptionsFromJSON = void 0;
+exports.CreateDeliverabilitySimulationJobOptionsFromJSON = CreateDeliverabilitySimulationJobOptionsFromJSON;
+exports.CreateDeliverabilitySimulationJobOptionsFromJSONTyped = CreateDeliverabilitySimulationJobOptionsFromJSONTyped;
+exports.CreateDeliverabilitySimulationJobOptionsToJSON = CreateDeliverabilitySimulationJobOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function CreateDeliverabilitySimulationJobOptionsFromJSON(json) {
     return CreateDeliverabilitySimulationJobOptionsFromJSONTyped(json, false);
 }
-exports.CreateDeliverabilitySimulationJobOptionsFromJSON = CreateDeliverabilitySimulationJobOptionsFromJSON;
 function CreateDeliverabilitySimulationJobOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function CreateDeliverabilitySimulationJobOptionsFromJSONTyped(json, ignoreDiscr
             : json['sendsPerTarget'],
     };
 }
-exports.CreateDeliverabilitySimulationJobOptionsFromJSONTyped = CreateDeliverabilitySimulationJobOptionsFromJSONTyped;
 function CreateDeliverabilitySimulationJobOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -62,4 +62,3 @@ function CreateDeliverabilitySimulationJobOptionsToJSON(value) {
         sendsPerTarget: value.sendsPerTarget,
     };
 }
-exports.CreateDeliverabilitySimulationJobOptionsToJSON = CreateDeliverabilitySimulationJobOptionsToJSON;

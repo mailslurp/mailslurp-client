@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneProvisioningJobItemDtoToJSON = exports.PhoneProvisioningJobItemDtoFromJSONTyped = exports.PhoneProvisioningJobItemDtoFromJSON = exports.PhoneProvisioningJobItemDtoStatusEnum = void 0;
+exports.PhoneProvisioningJobItemDtoStatusEnum = void 0;
+exports.PhoneProvisioningJobItemDtoFromJSON = PhoneProvisioningJobItemDtoFromJSON;
+exports.PhoneProvisioningJobItemDtoFromJSONTyped = PhoneProvisioningJobItemDtoFromJSONTyped;
+exports.PhoneProvisioningJobItemDtoToJSON = PhoneProvisioningJobItemDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,11 +29,10 @@ var PhoneProvisioningJobItemDtoStatusEnum;
     PhoneProvisioningJobItemDtoStatusEnum["PROVISIONED"] = "PROVISIONED";
     PhoneProvisioningJobItemDtoStatusEnum["UNAVAILABLE"] = "UNAVAILABLE";
     PhoneProvisioningJobItemDtoStatusEnum["FAILED"] = "FAILED";
-})(PhoneProvisioningJobItemDtoStatusEnum = exports.PhoneProvisioningJobItemDtoStatusEnum || (exports.PhoneProvisioningJobItemDtoStatusEnum = {}));
+})(PhoneProvisioningJobItemDtoStatusEnum || (exports.PhoneProvisioningJobItemDtoStatusEnum = PhoneProvisioningJobItemDtoStatusEnum = {}));
 function PhoneProvisioningJobItemDtoFromJSON(json) {
     return PhoneProvisioningJobItemDtoFromJSONTyped(json, false);
 }
-exports.PhoneProvisioningJobItemDtoFromJSON = PhoneProvisioningJobItemDtoFromJSON;
 function PhoneProvisioningJobItemDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -58,7 +60,6 @@ function PhoneProvisioningJobItemDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['failureMessage'],
     };
 }
-exports.PhoneProvisioningJobItemDtoFromJSONTyped = PhoneProvisioningJobItemDtoFromJSONTyped;
 function PhoneProvisioningJobItemDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -79,4 +80,3 @@ function PhoneProvisioningJobItemDtoToJSON(value) {
         failureMessage: value.failureMessage,
     };
 }
-exports.PhoneProvisioningJobItemDtoToJSON = PhoneProvisioningJobItemDtoToJSON;

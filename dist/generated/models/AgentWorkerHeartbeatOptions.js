@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentWorkerHeartbeatOptionsToJSON = exports.AgentWorkerHeartbeatOptionsFromJSONTyped = exports.AgentWorkerHeartbeatOptionsFromJSON = void 0;
+exports.AgentWorkerHeartbeatOptionsFromJSON = AgentWorkerHeartbeatOptionsFromJSON;
+exports.AgentWorkerHeartbeatOptionsFromJSONTyped = AgentWorkerHeartbeatOptionsFromJSONTyped;
+exports.AgentWorkerHeartbeatOptionsToJSON = AgentWorkerHeartbeatOptionsToJSON;
 var runtime_1 = require("../runtime");
 function AgentWorkerHeartbeatOptionsFromJSON(json) {
     return AgentWorkerHeartbeatOptionsFromJSONTyped(json, false);
 }
-exports.AgentWorkerHeartbeatOptionsFromJSON = AgentWorkerHeartbeatOptionsFromJSON;
 function AgentWorkerHeartbeatOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function AgentWorkerHeartbeatOptionsFromJSONTyped(json, ignoreDiscriminator) {
         release: !(0, runtime_1.exists)(json, 'release') ? undefined : json['release'],
     };
 }
-exports.AgentWorkerHeartbeatOptionsFromJSONTyped = AgentWorkerHeartbeatOptionsFromJSONTyped;
 function AgentWorkerHeartbeatOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function AgentWorkerHeartbeatOptionsToJSON(value) {
         release: value.release,
     };
 }
-exports.AgentWorkerHeartbeatOptionsToJSON = AgentWorkerHeartbeatOptionsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserStorageInsightsDtoToJSON = exports.UserStorageInsightsDtoFromJSONTyped = exports.UserStorageInsightsDtoFromJSON = void 0;
+exports.UserStorageInsightsDtoFromJSON = UserStorageInsightsDtoFromJSON;
+exports.UserStorageInsightsDtoFromJSONTyped = UserStorageInsightsDtoFromJSONTyped;
+exports.UserStorageInsightsDtoToJSON = UserStorageInsightsDtoToJSON;
 var _1 = require("./");
 function UserStorageInsightsDtoFromJSON(json) {
     return UserStorageInsightsDtoFromJSONTyped(json, false);
 }
-exports.UserStorageInsightsDtoFromJSON = UserStorageInsightsDtoFromJSON;
 function UserStorageInsightsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function UserStorageInsightsDtoFromJSONTyped(json, ignoreDiscriminator) {
         generatedAt: new Date(json['generatedAt']),
     };
 }
-exports.UserStorageInsightsDtoFromJSONTyped = UserStorageInsightsDtoFromJSONTyped;
 function UserStorageInsightsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function UserStorageInsightsDtoToJSON(value) {
         generatedAt: value.generatedAt.toISOString(),
     };
 }
-exports.UserStorageInsightsDtoToJSON = UserStorageInsightsDtoToJSON;

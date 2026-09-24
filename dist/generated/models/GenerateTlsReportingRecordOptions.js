@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateTlsReportingRecordOptionsToJSON = exports.GenerateTlsReportingRecordOptionsFromJSONTyped = exports.GenerateTlsReportingRecordOptionsFromJSON = exports.GenerateTlsReportingRecordOptionsVersionEnum = void 0;
+exports.GenerateTlsReportingRecordOptionsVersionEnum = void 0;
+exports.GenerateTlsReportingRecordOptionsFromJSON = GenerateTlsReportingRecordOptionsFromJSON;
+exports.GenerateTlsReportingRecordOptionsFromJSONTyped = GenerateTlsReportingRecordOptionsFromJSONTyped;
+exports.GenerateTlsReportingRecordOptionsToJSON = GenerateTlsReportingRecordOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -22,11 +25,10 @@ var runtime_1 = require("../runtime");
 var GenerateTlsReportingRecordOptionsVersionEnum;
 (function (GenerateTlsReportingRecordOptionsVersionEnum) {
     GenerateTlsReportingRecordOptionsVersionEnum["TLSRPTv1"] = "TLSRPTv1";
-})(GenerateTlsReportingRecordOptionsVersionEnum = exports.GenerateTlsReportingRecordOptionsVersionEnum || (exports.GenerateTlsReportingRecordOptionsVersionEnum = {}));
+})(GenerateTlsReportingRecordOptionsVersionEnum || (exports.GenerateTlsReportingRecordOptionsVersionEnum = GenerateTlsReportingRecordOptionsVersionEnum = {}));
 function GenerateTlsReportingRecordOptionsFromJSON(json) {
     return GenerateTlsReportingRecordOptionsFromJSONTyped(json, false);
 }
-exports.GenerateTlsReportingRecordOptionsFromJSON = GenerateTlsReportingRecordOptionsFromJSON;
 function GenerateTlsReportingRecordOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -41,7 +43,6 @@ function GenerateTlsReportingRecordOptionsFromJSONTyped(json, ignoreDiscriminato
         ttl: json['ttl'],
     };
 }
-exports.GenerateTlsReportingRecordOptionsFromJSONTyped = GenerateTlsReportingRecordOptionsFromJSONTyped;
 function GenerateTlsReportingRecordOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -57,4 +58,3 @@ function GenerateTlsReportingRecordOptionsToJSON(value) {
         ttl: value.ttl,
     };
 }
-exports.GenerateTlsReportingRecordOptionsToJSON = GenerateTlsReportingRecordOptionsToJSON;

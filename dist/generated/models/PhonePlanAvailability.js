@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhonePlanAvailabilityToJSON = exports.PhonePlanAvailabilityFromJSONTyped = exports.PhonePlanAvailabilityFromJSON = exports.PhonePlanAvailabilityDisabledPhoneCountriesEnum = void 0;
+exports.PhonePlanAvailabilityDisabledPhoneCountriesEnum = void 0;
+exports.PhonePlanAvailabilityFromJSON = PhonePlanAvailabilityFromJSON;
+exports.PhonePlanAvailabilityFromJSONTyped = PhonePlanAvailabilityFromJSONTyped;
+exports.PhonePlanAvailabilityToJSON = PhonePlanAvailabilityToJSON;
 var _1 = require("./");
 /**
  * @export
@@ -34,11 +37,10 @@ var PhonePlanAvailabilityDisabledPhoneCountriesEnum;
     PhonePlanAvailabilityDisabledPhoneCountriesEnum["IL"] = "IL";
     PhonePlanAvailabilityDisabledPhoneCountriesEnum["FI"] = "FI";
     PhonePlanAvailabilityDisabledPhoneCountriesEnum["SE"] = "SE";
-})(PhonePlanAvailabilityDisabledPhoneCountriesEnum = exports.PhonePlanAvailabilityDisabledPhoneCountriesEnum || (exports.PhonePlanAvailabilityDisabledPhoneCountriesEnum = {}));
+})(PhonePlanAvailabilityDisabledPhoneCountriesEnum || (exports.PhonePlanAvailabilityDisabledPhoneCountriesEnum = PhonePlanAvailabilityDisabledPhoneCountriesEnum = {}));
 function PhonePlanAvailabilityFromJSON(json) {
     return PhonePlanAvailabilityFromJSONTyped(json, false);
 }
-exports.PhonePlanAvailabilityFromJSON = PhonePlanAvailabilityFromJSON;
 function PhonePlanAvailabilityFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -48,7 +50,6 @@ function PhonePlanAvailabilityFromJSONTyped(json, ignoreDiscriminator) {
         disabledPhoneCountries: json['disabledPhoneCountries'],
     };
 }
-exports.PhonePlanAvailabilityFromJSONTyped = PhonePlanAvailabilityFromJSONTyped;
 function PhonePlanAvailabilityToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -61,4 +62,3 @@ function PhonePlanAvailabilityToJSON(value) {
         disabledPhoneCountries: value.disabledPhoneCountries,
     };
 }
-exports.PhonePlanAvailabilityToJSON = PhonePlanAvailabilityToJSON;

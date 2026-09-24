@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailAuditCheckToJSON = exports.EmailAuditCheckFromJSONTyped = exports.EmailAuditCheckFromJSON = exports.EmailAuditCheckStatusEnum = exports.EmailAuditCheckCategoryEnum = void 0;
+exports.EmailAuditCheckStatusEnum = exports.EmailAuditCheckCategoryEnum = void 0;
+exports.EmailAuditCheckFromJSON = EmailAuditCheckFromJSON;
+exports.EmailAuditCheckFromJSONTyped = EmailAuditCheckFromJSONTyped;
+exports.EmailAuditCheckToJSON = EmailAuditCheckToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,7 +27,7 @@ var EmailAuditCheckCategoryEnum;
     EmailAuditCheckCategoryEnum["ACCESSIBILITY"] = "ACCESSIBILITY";
     EmailAuditCheckCategoryEnum["TEMPLATE"] = "TEMPLATE";
     EmailAuditCheckCategoryEnum["COMPLIANCE"] = "COMPLIANCE";
-})(EmailAuditCheckCategoryEnum = exports.EmailAuditCheckCategoryEnum || (exports.EmailAuditCheckCategoryEnum = {}));
+})(EmailAuditCheckCategoryEnum || (exports.EmailAuditCheckCategoryEnum = EmailAuditCheckCategoryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -36,11 +39,10 @@ var EmailAuditCheckStatusEnum;
     EmailAuditCheckStatusEnum["FAIL"] = "FAIL";
     EmailAuditCheckStatusEnum["REVIEW"] = "REVIEW";
     EmailAuditCheckStatusEnum["NOT_APPLICABLE"] = "NOT_APPLICABLE";
-})(EmailAuditCheckStatusEnum = exports.EmailAuditCheckStatusEnum || (exports.EmailAuditCheckStatusEnum = {}));
+})(EmailAuditCheckStatusEnum || (exports.EmailAuditCheckStatusEnum = EmailAuditCheckStatusEnum = {}));
 function EmailAuditCheckFromJSON(json) {
     return EmailAuditCheckFromJSONTyped(json, false);
 }
-exports.EmailAuditCheckFromJSON = EmailAuditCheckFromJSON;
 function EmailAuditCheckFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -58,7 +60,6 @@ function EmailAuditCheckFromJSONTyped(json, ignoreDiscriminator) {
             : json['referenceUrl'],
     };
 }
-exports.EmailAuditCheckFromJSONTyped = EmailAuditCheckFromJSONTyped;
 function EmailAuditCheckToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -77,4 +78,3 @@ function EmailAuditCheckToJSON(value) {
         referenceUrl: value.referenceUrl,
     };
 }
-exports.EmailAuditCheckToJSON = EmailAuditCheckToJSON;

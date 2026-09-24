@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageSentEmailWithQueueProjectionToJSON = exports.PageSentEmailWithQueueProjectionFromJSONTyped = exports.PageSentEmailWithQueueProjectionFromJSON = void 0;
+exports.PageSentEmailWithQueueProjectionFromJSON = PageSentEmailWithQueueProjectionFromJSON;
+exports.PageSentEmailWithQueueProjectionFromJSONTyped = PageSentEmailWithQueueProjectionFromJSONTyped;
+exports.PageSentEmailWithQueueProjectionToJSON = PageSentEmailWithQueueProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageSentEmailWithQueueProjectionFromJSON(json) {
     return PageSentEmailWithQueueProjectionFromJSONTyped(json, false);
 }
-exports.PageSentEmailWithQueueProjectionFromJSON = PageSentEmailWithQueueProjectionFromJSON;
 function PageSentEmailWithQueueProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -44,7 +45,6 @@ function PageSentEmailWithQueueProjectionFromJSONTyped(json, ignoreDiscriminator
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageSentEmailWithQueueProjectionFromJSONTyped = PageSentEmailWithQueueProjectionFromJSONTyped;
 function PageSentEmailWithQueueProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function PageSentEmailWithQueueProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageSentEmailWithQueueProjectionToJSON = PageSentEmailWithQueueProjectionToJSON;

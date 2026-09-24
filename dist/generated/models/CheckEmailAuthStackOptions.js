@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CheckEmailAuthStackOptionsToJSON = exports.CheckEmailAuthStackOptionsFromJSONTyped = exports.CheckEmailAuthStackOptionsFromJSON = void 0;
+exports.CheckEmailAuthStackOptionsFromJSON = CheckEmailAuthStackOptionsFromJSON;
+exports.CheckEmailAuthStackOptionsFromJSONTyped = CheckEmailAuthStackOptionsFromJSONTyped;
+exports.CheckEmailAuthStackOptionsToJSON = CheckEmailAuthStackOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CheckEmailAuthStackOptionsFromJSON(json) {
     return CheckEmailAuthStackOptionsFromJSONTyped(json, false);
 }
-exports.CheckEmailAuthStackOptionsFromJSON = CheckEmailAuthStackOptionsFromJSON;
 function CheckEmailAuthStackOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -33,7 +34,6 @@ function CheckEmailAuthStackOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['captchaToken'],
     };
 }
-exports.CheckEmailAuthStackOptionsFromJSONTyped = CheckEmailAuthStackOptionsFromJSONTyped;
 function CheckEmailAuthStackOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function CheckEmailAuthStackOptionsToJSON(value) {
         captchaToken: value.captchaToken,
     };
 }
-exports.CheckEmailAuthStackOptionsToJSON = CheckEmailAuthStackOptionsToJSON;

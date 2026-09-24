@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FilterBouncedRecipientsResultToJSON = exports.FilterBouncedRecipientsResultFromJSONTyped = exports.FilterBouncedRecipientsResultFromJSON = void 0;
+exports.FilterBouncedRecipientsResultFromJSON = FilterBouncedRecipientsResultFromJSON;
+exports.FilterBouncedRecipientsResultFromJSONTyped = FilterBouncedRecipientsResultFromJSONTyped;
+exports.FilterBouncedRecipientsResultToJSON = FilterBouncedRecipientsResultToJSON;
 function FilterBouncedRecipientsResultFromJSON(json) {
     return FilterBouncedRecipientsResultFromJSONTyped(json, false);
 }
-exports.FilterBouncedRecipientsResultFromJSON = FilterBouncedRecipientsResultFromJSON;
 function FilterBouncedRecipientsResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function FilterBouncedRecipientsResultFromJSONTyped(json, ignoreDiscriminator) {
         filteredRecipients: json['filteredRecipients'],
     };
 }
-exports.FilterBouncedRecipientsResultFromJSONTyped = FilterBouncedRecipientsResultFromJSONTyped;
 function FilterBouncedRecipientsResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function FilterBouncedRecipientsResultToJSON(value) {
         filteredRecipients: value.filteredRecipients,
     };
 }
-exports.FilterBouncedRecipientsResultToJSON = FilterBouncedRecipientsResultToJSON;

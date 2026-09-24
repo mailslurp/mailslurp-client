@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxRetentionPolicyRunDtoToJSON = exports.InboxRetentionPolicyRunDtoFromJSONTyped = exports.InboxRetentionPolicyRunDtoFromJSON = exports.InboxRetentionPolicyRunDtoSourceEnum = exports.InboxRetentionPolicyRunDtoStatusEnum = void 0;
+exports.InboxRetentionPolicyRunDtoSourceEnum = exports.InboxRetentionPolicyRunDtoStatusEnum = void 0;
+exports.InboxRetentionPolicyRunDtoFromJSON = InboxRetentionPolicyRunDtoFromJSON;
+exports.InboxRetentionPolicyRunDtoFromJSONTyped = InboxRetentionPolicyRunDtoFromJSONTyped;
+exports.InboxRetentionPolicyRunDtoToJSON = InboxRetentionPolicyRunDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -25,7 +28,7 @@ var InboxRetentionPolicyRunDtoStatusEnum;
     InboxRetentionPolicyRunDtoStatusEnum["RUNNING"] = "RUNNING";
     InboxRetentionPolicyRunDtoStatusEnum["COMPLETED"] = "COMPLETED";
     InboxRetentionPolicyRunDtoStatusEnum["FAILED"] = "FAILED";
-})(InboxRetentionPolicyRunDtoStatusEnum = exports.InboxRetentionPolicyRunDtoStatusEnum || (exports.InboxRetentionPolicyRunDtoStatusEnum = {}));
+})(InboxRetentionPolicyRunDtoStatusEnum || (exports.InboxRetentionPolicyRunDtoStatusEnum = InboxRetentionPolicyRunDtoStatusEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -33,11 +36,10 @@ var InboxRetentionPolicyRunDtoStatusEnum;
 var InboxRetentionPolicyRunDtoSourceEnum;
 (function (InboxRetentionPolicyRunDtoSourceEnum) {
     InboxRetentionPolicyRunDtoSourceEnum["USER_API"] = "USER_API";
-})(InboxRetentionPolicyRunDtoSourceEnum = exports.InboxRetentionPolicyRunDtoSourceEnum || (exports.InboxRetentionPolicyRunDtoSourceEnum = {}));
+})(InboxRetentionPolicyRunDtoSourceEnum || (exports.InboxRetentionPolicyRunDtoSourceEnum = InboxRetentionPolicyRunDtoSourceEnum = {}));
 function InboxRetentionPolicyRunDtoFromJSON(json) {
     return InboxRetentionPolicyRunDtoFromJSONTyped(json, false);
 }
-exports.InboxRetentionPolicyRunDtoFromJSON = InboxRetentionPolicyRunDtoFromJSON;
 function InboxRetentionPolicyRunDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -65,7 +67,6 @@ function InboxRetentionPolicyRunDtoFromJSONTyped(json, ignoreDiscriminator) {
         updatedAt: new Date(json['updatedAt']),
     };
 }
-exports.InboxRetentionPolicyRunDtoFromJSONTyped = InboxRetentionPolicyRunDtoFromJSONTyped;
 function InboxRetentionPolicyRunDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -94,4 +95,3 @@ function InboxRetentionPolicyRunDtoToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
     };
 }
-exports.InboxRetentionPolicyRunDtoToJSON = InboxRetentionPolicyRunDtoToJSON;

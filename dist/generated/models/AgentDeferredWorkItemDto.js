@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentDeferredWorkItemDtoToJSON = exports.AgentDeferredWorkItemDtoFromJSONTyped = exports.AgentDeferredWorkItemDtoFromJSON = void 0;
+exports.AgentDeferredWorkItemDtoFromJSON = AgentDeferredWorkItemDtoFromJSON;
+exports.AgentDeferredWorkItemDtoFromJSONTyped = AgentDeferredWorkItemDtoFromJSONTyped;
+exports.AgentDeferredWorkItemDtoToJSON = AgentDeferredWorkItemDtoToJSON;
 var _1 = require("./");
 function AgentDeferredWorkItemDtoFromJSON(json) {
     return AgentDeferredWorkItemDtoFromJSONTyped(json, false);
 }
-exports.AgentDeferredWorkItemDtoFromJSON = AgentDeferredWorkItemDtoFromJSON;
 function AgentDeferredWorkItemDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -29,7 +30,6 @@ function AgentDeferredWorkItemDtoFromJSONTyped(json, ignoreDiscriminator) {
         claimReleased: json['claimReleased'],
     };
 }
-exports.AgentDeferredWorkItemDtoFromJSONTyped = AgentDeferredWorkItemDtoFromJSONTyped;
 function AgentDeferredWorkItemDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -43,4 +43,3 @@ function AgentDeferredWorkItemDtoToJSON(value) {
         claimReleased: value.claimReleased,
     };
 }
-exports.AgentDeferredWorkItemDtoToJSON = AgentDeferredWorkItemDtoToJSON;

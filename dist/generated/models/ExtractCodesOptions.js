@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExtractCodesOptionsToJSON = exports.ExtractCodesOptionsFromJSONTyped = exports.ExtractCodesOptionsFromJSON = exports.ExtractCodesOptionsMethodEnum = void 0;
+exports.ExtractCodesOptionsMethodEnum = void 0;
+exports.ExtractCodesOptionsFromJSON = ExtractCodesOptionsFromJSON;
+exports.ExtractCodesOptionsFromJSONTyped = ExtractCodesOptionsFromJSONTyped;
+exports.ExtractCodesOptionsToJSON = ExtractCodesOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,11 +29,10 @@ var ExtractCodesOptionsMethodEnum;
     ExtractCodesOptionsMethodEnum["LLM"] = "LLM";
     ExtractCodesOptionsMethodEnum["OCR"] = "OCR";
     ExtractCodesOptionsMethodEnum["OCR_THEN_LLM"] = "OCR_THEN_LLM";
-})(ExtractCodesOptionsMethodEnum = exports.ExtractCodesOptionsMethodEnum || (exports.ExtractCodesOptionsMethodEnum = {}));
+})(ExtractCodesOptionsMethodEnum || (exports.ExtractCodesOptionsMethodEnum = ExtractCodesOptionsMethodEnum = {}));
 function ExtractCodesOptionsFromJSON(json) {
     return ExtractCodesOptionsFromJSONTyped(json, false);
 }
-exports.ExtractCodesOptionsFromJSON = ExtractCodesOptionsFromJSON;
 function ExtractCodesOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -50,7 +52,6 @@ function ExtractCodesOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['customPatterns'],
     };
 }
-exports.ExtractCodesOptionsFromJSONTyped = ExtractCodesOptionsFromJSONTyped;
 function ExtractCodesOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -67,4 +68,3 @@ function ExtractCodesOptionsToJSON(value) {
         customPatterns: value.customPatterns,
     };
 }
-exports.ExtractCodesOptionsToJSON = ExtractCodesOptionsToJSON;

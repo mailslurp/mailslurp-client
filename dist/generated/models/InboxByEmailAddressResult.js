@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxByEmailAddressResultToJSON = exports.InboxByEmailAddressResultFromJSONTyped = exports.InboxByEmailAddressResultFromJSON = void 0;
+exports.InboxByEmailAddressResultFromJSON = InboxByEmailAddressResultFromJSON;
+exports.InboxByEmailAddressResultFromJSONTyped = InboxByEmailAddressResultFromJSONTyped;
+exports.InboxByEmailAddressResultToJSON = InboxByEmailAddressResultToJSON;
 var runtime_1 = require("../runtime");
 function InboxByEmailAddressResultFromJSON(json) {
     return InboxByEmailAddressResultFromJSONTyped(json, false);
 }
-exports.InboxByEmailAddressResultFromJSON = InboxByEmailAddressResultFromJSON;
 function InboxByEmailAddressResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function InboxByEmailAddressResultFromJSONTyped(json, ignoreDiscriminator) {
         _exists: json['exists'],
     };
 }
-exports.InboxByEmailAddressResultFromJSONTyped = InboxByEmailAddressResultFromJSONTyped;
 function InboxByEmailAddressResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function InboxByEmailAddressResultToJSON(value) {
         exists: value._exists,
     };
 }
-exports.InboxByEmailAddressResultToJSON = InboxByEmailAddressResultToJSON;

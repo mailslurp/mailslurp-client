@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CampaignProbeRunDueResultToJSON = exports.CampaignProbeRunDueResultFromJSONTyped = exports.CampaignProbeRunDueResultFromJSON = exports.CampaignProbeRunDueResultTriggerSourceEnum = void 0;
+exports.CampaignProbeRunDueResultTriggerSourceEnum = void 0;
+exports.CampaignProbeRunDueResultFromJSON = CampaignProbeRunDueResultFromJSON;
+exports.CampaignProbeRunDueResultFromJSONTyped = CampaignProbeRunDueResultFromJSONTyped;
+exports.CampaignProbeRunDueResultToJSON = CampaignProbeRunDueResultToJSON;
 /**
  * @export
  * @enum {string}
@@ -25,11 +28,10 @@ var CampaignProbeRunDueResultTriggerSourceEnum;
     CampaignProbeRunDueResultTriggerSourceEnum["USER_SCHEDULE"] = "USER_SCHEDULE";
     CampaignProbeRunDueResultTriggerSourceEnum["CRON"] = "CRON";
     CampaignProbeRunDueResultTriggerSourceEnum["SCHEDULER"] = "SCHEDULER";
-})(CampaignProbeRunDueResultTriggerSourceEnum = exports.CampaignProbeRunDueResultTriggerSourceEnum || (exports.CampaignProbeRunDueResultTriggerSourceEnum = {}));
+})(CampaignProbeRunDueResultTriggerSourceEnum || (exports.CampaignProbeRunDueResultTriggerSourceEnum = CampaignProbeRunDueResultTriggerSourceEnum = {}));
 function CampaignProbeRunDueResultFromJSON(json) {
     return CampaignProbeRunDueResultFromJSONTyped(json, false);
 }
-exports.CampaignProbeRunDueResultFromJSON = CampaignProbeRunDueResultFromJSON;
 function CampaignProbeRunDueResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -43,7 +45,6 @@ function CampaignProbeRunDueResultFromJSONTyped(json, ignoreDiscriminator) {
         executedAt: new Date(json['executedAt']),
     };
 }
-exports.CampaignProbeRunDueResultFromJSONTyped = CampaignProbeRunDueResultFromJSONTyped;
 function CampaignProbeRunDueResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -60,4 +61,3 @@ function CampaignProbeRunDueResultToJSON(value) {
         executedAt: value.executedAt.toISOString(),
     };
 }
-exports.CampaignProbeRunDueResultToJSON = CampaignProbeRunDueResultToJSON;

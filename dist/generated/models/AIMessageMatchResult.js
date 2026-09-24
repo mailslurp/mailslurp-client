@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIMessageMatchResultToJSON = exports.AIMessageMatchResultFromJSONTyped = exports.AIMessageMatchResultFromJSON = exports.AIMessageMatchResultStatusEnum = void 0;
+exports.AIMessageMatchResultStatusEnum = void 0;
+exports.AIMessageMatchResultFromJSON = AIMessageMatchResultFromJSON;
+exports.AIMessageMatchResultFromJSONTyped = AIMessageMatchResultFromJSONTyped;
+exports.AIMessageMatchResultToJSON = AIMessageMatchResultToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -25,11 +28,10 @@ var AIMessageMatchResultStatusEnum;
     AIMessageMatchResultStatusEnum["MATCH"] = "MATCH";
     AIMessageMatchResultStatusEnum["NO_MATCH"] = "NO_MATCH";
     AIMessageMatchResultStatusEnum["INCONCLUSIVE"] = "INCONCLUSIVE";
-})(AIMessageMatchResultStatusEnum = exports.AIMessageMatchResultStatusEnum || (exports.AIMessageMatchResultStatusEnum = {}));
+})(AIMessageMatchResultStatusEnum || (exports.AIMessageMatchResultStatusEnum = AIMessageMatchResultStatusEnum = {}));
 function AIMessageMatchResultFromJSON(json) {
     return AIMessageMatchResultFromJSONTyped(json, false);
 }
-exports.AIMessageMatchResultFromJSON = AIMessageMatchResultFromJSON;
 function AIMessageMatchResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -43,7 +45,6 @@ function AIMessageMatchResultFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.AIMessageConfidenceFromJSON)(json['confidence']),
     };
 }
-exports.AIMessageMatchResultFromJSONTyped = AIMessageMatchResultFromJSONTyped;
 function AIMessageMatchResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -58,4 +59,3 @@ function AIMessageMatchResultToJSON(value) {
         confidence: (0, _1.AIMessageConfidenceToJSON)(value.confidence),
     };
 }
-exports.AIMessageMatchResultToJSON = AIMessageMatchResultToJSON;

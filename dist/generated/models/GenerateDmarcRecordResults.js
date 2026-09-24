@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateDmarcRecordResultsToJSON = exports.GenerateDmarcRecordResultsFromJSONTyped = exports.GenerateDmarcRecordResultsFromJSON = exports.GenerateDmarcRecordResultsTypeEnum = void 0;
+exports.GenerateDmarcRecordResultsTypeEnum = void 0;
+exports.GenerateDmarcRecordResultsFromJSON = GenerateDmarcRecordResultsFromJSON;
+exports.GenerateDmarcRecordResultsFromJSONTyped = GenerateDmarcRecordResultsFromJSONTyped;
+exports.GenerateDmarcRecordResultsToJSON = GenerateDmarcRecordResultsToJSON;
 /**
  * @export
  * @enum {string}
@@ -109,11 +112,10 @@ var GenerateDmarcRecordResultsTypeEnum;
     GenerateDmarcRecordResultsTypeEnum["AMTRELAY"] = "AMTRELAY";
     GenerateDmarcRecordResultsTypeEnum["TA"] = "TA";
     GenerateDmarcRecordResultsTypeEnum["DLV"] = "DLV";
-})(GenerateDmarcRecordResultsTypeEnum = exports.GenerateDmarcRecordResultsTypeEnum || (exports.GenerateDmarcRecordResultsTypeEnum = {}));
+})(GenerateDmarcRecordResultsTypeEnum || (exports.GenerateDmarcRecordResultsTypeEnum = GenerateDmarcRecordResultsTypeEnum = {}));
 function GenerateDmarcRecordResultsFromJSON(json) {
     return GenerateDmarcRecordResultsFromJSONTyped(json, false);
 }
-exports.GenerateDmarcRecordResultsFromJSON = GenerateDmarcRecordResultsFromJSON;
 function GenerateDmarcRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -125,7 +127,6 @@ function GenerateDmarcRecordResultsFromJSONTyped(json, ignoreDiscriminator) {
         value: json['value'],
     };
 }
-exports.GenerateDmarcRecordResultsFromJSONTyped = GenerateDmarcRecordResultsFromJSONTyped;
 function GenerateDmarcRecordResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -140,4 +141,3 @@ function GenerateDmarcRecordResultsToJSON(value) {
         value: value.value,
     };
 }
-exports.GenerateDmarcRecordResultsToJSON = GenerateDmarcRecordResultsToJSON;

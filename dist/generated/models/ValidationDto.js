@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValidationDtoToJSON = exports.ValidationDtoFromJSONTyped = exports.ValidationDtoFromJSON = void 0;
+exports.ValidationDtoFromJSON = ValidationDtoFromJSON;
+exports.ValidationDtoFromJSONTyped = ValidationDtoFromJSONTyped;
+exports.ValidationDtoToJSON = ValidationDtoToJSON;
 var _1 = require("./");
 function ValidationDtoFromJSON(json) {
     return ValidationDtoFromJSONTyped(json, false);
 }
-exports.ValidationDtoFromJSON = ValidationDtoFromJSON;
 function ValidationDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function ValidationDtoFromJSONTyped(json, ignoreDiscriminator) {
         html: (0, _1.HTMLValidationResultFromJSON)(json['html']),
     };
 }
-exports.ValidationDtoFromJSONTyped = ValidationDtoFromJSONTyped;
 function ValidationDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function ValidationDtoToJSON(value) {
         html: (0, _1.HTMLValidationResultToJSON)(value.html),
     };
 }
-exports.ValidationDtoToJSON = ValidationDtoToJSON;

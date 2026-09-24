@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ForwardEmailOptionsToJSON = exports.ForwardEmailOptionsFromJSONTyped = exports.ForwardEmailOptionsFromJSON = void 0;
+exports.ForwardEmailOptionsFromJSON = ForwardEmailOptionsFromJSON;
+exports.ForwardEmailOptionsFromJSONTyped = ForwardEmailOptionsFromJSONTyped;
+exports.ForwardEmailOptionsToJSON = ForwardEmailOptionsToJSON;
 var runtime_1 = require("../runtime");
 function ForwardEmailOptionsFromJSON(json) {
     return ForwardEmailOptionsFromJSONTyped(json, false);
 }
-exports.ForwardEmailOptionsFromJSON = ForwardEmailOptionsFromJSON;
 function ForwardEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function ForwardEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['filterBouncedRecipients'],
     };
 }
-exports.ForwardEmailOptionsFromJSONTyped = ForwardEmailOptionsFromJSONTyped;
 function ForwardEmailOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function ForwardEmailOptionsToJSON(value) {
         filterBouncedRecipients: value.filterBouncedRecipients,
     };
 }
-exports.ForwardEmailOptionsToJSON = ForwardEmailOptionsToJSON;

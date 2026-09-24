@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementProviderAnalysisOptionsDtoToJSON = exports.InboxPlacementProviderAnalysisOptionsDtoFromJSONTyped = exports.InboxPlacementProviderAnalysisOptionsDtoFromJSON = void 0;
+exports.InboxPlacementProviderAnalysisOptionsDtoFromJSON = InboxPlacementProviderAnalysisOptionsDtoFromJSON;
+exports.InboxPlacementProviderAnalysisOptionsDtoFromJSONTyped = InboxPlacementProviderAnalysisOptionsDtoFromJSONTyped;
+exports.InboxPlacementProviderAnalysisOptionsDtoToJSON = InboxPlacementProviderAnalysisOptionsDtoToJSON;
 function InboxPlacementProviderAnalysisOptionsDtoFromJSON(json) {
     return InboxPlacementProviderAnalysisOptionsDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementProviderAnalysisOptionsDtoFromJSON = InboxPlacementProviderAnalysisOptionsDtoFromJSON;
 function InboxPlacementProviderAnalysisOptionsDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function InboxPlacementProviderAnalysisOptionsDtoFromJSONTyped(json, ignoreDiscr
         sanitizedPreview: json['sanitizedPreview'],
     };
 }
-exports.InboxPlacementProviderAnalysisOptionsDtoFromJSONTyped = InboxPlacementProviderAnalysisOptionsDtoFromJSONTyped;
 function InboxPlacementProviderAnalysisOptionsDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -48,4 +48,3 @@ function InboxPlacementProviderAnalysisOptionsDtoToJSON(value) {
         sanitizedPreview: value.sanitizedPreview,
     };
 }
-exports.InboxPlacementProviderAnalysisOptionsDtoToJSON = InboxPlacementProviderAnalysisOptionsDtoToJSON;

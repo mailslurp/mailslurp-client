@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AttachmentMetaDataToJSON = exports.AttachmentMetaDataFromJSONTyped = exports.AttachmentMetaDataFromJSON = void 0;
+exports.AttachmentMetaDataFromJSON = AttachmentMetaDataFromJSON;
+exports.AttachmentMetaDataFromJSONTyped = AttachmentMetaDataFromJSONTyped;
+exports.AttachmentMetaDataToJSON = AttachmentMetaDataToJSON;
 var runtime_1 = require("../runtime");
 function AttachmentMetaDataFromJSON(json) {
     return AttachmentMetaDataFromJSONTyped(json, false);
 }
-exports.AttachmentMetaDataFromJSON = AttachmentMetaDataFromJSON;
 function AttachmentMetaDataFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -31,7 +32,6 @@ function AttachmentMetaDataFromJSONTyped(json, ignoreDiscriminator) {
         contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
     };
 }
-exports.AttachmentMetaDataFromJSONTyped = AttachmentMetaDataFromJSONTyped;
 function AttachmentMetaDataToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -47,4 +47,3 @@ function AttachmentMetaDataToJSON(value) {
         contentId: value.contentId,
     };
 }
-exports.AttachmentMetaDataToJSON = AttachmentMetaDataToJSON;

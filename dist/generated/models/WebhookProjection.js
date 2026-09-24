@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookProjectionToJSON = exports.WebhookProjectionFromJSONTyped = exports.WebhookProjectionFromJSON = exports.WebhookProjectionHealthStatusEnum = exports.WebhookProjectionEventNameEnum = void 0;
+exports.WebhookProjectionHealthStatusEnum = exports.WebhookProjectionEventNameEnum = void 0;
+exports.WebhookProjectionFromJSON = WebhookProjectionFromJSON;
+exports.WebhookProjectionFromJSONTyped = WebhookProjectionFromJSONTyped;
+exports.WebhookProjectionToJSON = WebhookProjectionToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -33,7 +36,7 @@ var WebhookProjectionEventNameEnum;
     WebhookProjectionEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookProjectionEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookProjectionEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookProjectionEventNameEnum = exports.WebhookProjectionEventNameEnum || (exports.WebhookProjectionEventNameEnum = {}));
+})(WebhookProjectionEventNameEnum || (exports.WebhookProjectionEventNameEnum = WebhookProjectionEventNameEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -42,11 +45,10 @@ var WebhookProjectionHealthStatusEnum;
 (function (WebhookProjectionHealthStatusEnum) {
     WebhookProjectionHealthStatusEnum["HEALTHY"] = "HEALTHY";
     WebhookProjectionHealthStatusEnum["UNHEALTHY"] = "UNHEALTHY";
-})(WebhookProjectionHealthStatusEnum = exports.WebhookProjectionHealthStatusEnum || (exports.WebhookProjectionHealthStatusEnum = {}));
+})(WebhookProjectionHealthStatusEnum || (exports.WebhookProjectionHealthStatusEnum = WebhookProjectionHealthStatusEnum = {}));
 function WebhookProjectionFromJSON(json) {
     return WebhookProjectionFromJSONTyped(json, false);
 }
-exports.WebhookProjectionFromJSON = WebhookProjectionFromJSON;
 function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -77,7 +79,6 @@ function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
     };
 }
-exports.WebhookProjectionFromJSONTyped = WebhookProjectionFromJSONTyped;
 function WebhookProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -103,4 +104,3 @@ function WebhookProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.WebhookProjectionToJSON = WebhookProjectionToJSON;

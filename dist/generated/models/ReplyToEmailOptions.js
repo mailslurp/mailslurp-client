@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReplyToEmailOptionsToJSON = exports.ReplyToEmailOptionsFromJSONTyped = exports.ReplyToEmailOptionsFromJSON = exports.ReplyToEmailOptionsSendStrategyEnum = void 0;
+exports.ReplyToEmailOptionsSendStrategyEnum = void 0;
+exports.ReplyToEmailOptionsFromJSON = ReplyToEmailOptionsFromJSON;
+exports.ReplyToEmailOptionsFromJSONTyped = ReplyToEmailOptionsFromJSONTyped;
+exports.ReplyToEmailOptionsToJSON = ReplyToEmailOptionsToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -22,11 +25,10 @@ var runtime_1 = require("../runtime");
 var ReplyToEmailOptionsSendStrategyEnum;
 (function (ReplyToEmailOptionsSendStrategyEnum) {
     ReplyToEmailOptionsSendStrategyEnum["SINGLE_MESSAGE"] = "SINGLE_MESSAGE";
-})(ReplyToEmailOptionsSendStrategyEnum = exports.ReplyToEmailOptionsSendStrategyEnum || (exports.ReplyToEmailOptionsSendStrategyEnum = {}));
+})(ReplyToEmailOptionsSendStrategyEnum || (exports.ReplyToEmailOptionsSendStrategyEnum = ReplyToEmailOptionsSendStrategyEnum = {}));
 function ReplyToEmailOptionsFromJSON(json) {
     return ReplyToEmailOptionsFromJSONTyped(json, false);
 }
-exports.ReplyToEmailOptionsFromJSON = ReplyToEmailOptionsFromJSON;
 function ReplyToEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -54,7 +56,6 @@ function ReplyToEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
         html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
     };
 }
-exports.ReplyToEmailOptionsFromJSONTyped = ReplyToEmailOptionsFromJSONTyped;
 function ReplyToEmailOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -77,4 +78,3 @@ function ReplyToEmailOptionsToJSON(value) {
         html: value.html,
     };
 }
-exports.ReplyToEmailOptionsToJSON = ReplyToEmailOptionsToJSON;

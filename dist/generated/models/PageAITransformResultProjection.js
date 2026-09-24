@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PageAITransformResultProjectionToJSON = exports.PageAITransformResultProjectionFromJSONTyped = exports.PageAITransformResultProjectionFromJSON = void 0;
+exports.PageAITransformResultProjectionFromJSON = PageAITransformResultProjectionFromJSON;
+exports.PageAITransformResultProjectionFromJSONTyped = PageAITransformResultProjectionFromJSONTyped;
+exports.PageAITransformResultProjectionToJSON = PageAITransformResultProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function PageAITransformResultProjectionFromJSON(json) {
     return PageAITransformResultProjectionFromJSONTyped(json, false);
 }
-exports.PageAITransformResultProjectionFromJSON = PageAITransformResultProjectionFromJSON;
 function PageAITransformResultProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -45,7 +46,6 @@ function PageAITransformResultProjectionFromJSONTyped(json, ignoreDiscriminator)
         empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
     };
 }
-exports.PageAITransformResultProjectionFromJSONTyped = PageAITransformResultProjectionFromJSONTyped;
 function PageAITransformResultProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -70,4 +70,3 @@ function PageAITransformResultProjectionToJSON(value) {
         empty: value.empty,
     };
 }
-exports.PageAITransformResultProjectionToJSON = PageAITransformResultProjectionToJSON;

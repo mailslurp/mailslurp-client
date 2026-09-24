@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmtpAccessDetailsToJSON = exports.SmtpAccessDetailsFromJSONTyped = exports.SmtpAccessDetailsFromJSON = void 0;
+exports.SmtpAccessDetailsFromJSON = SmtpAccessDetailsFromJSON;
+exports.SmtpAccessDetailsFromJSONTyped = SmtpAccessDetailsFromJSONTyped;
+exports.SmtpAccessDetailsToJSON = SmtpAccessDetailsToJSON;
 var runtime_1 = require("../runtime");
 function SmtpAccessDetailsFromJSON(json) {
     return SmtpAccessDetailsFromJSONTyped(json, false);
 }
-exports.SmtpAccessDetailsFromJSON = SmtpAccessDetailsFromJSON;
 function SmtpAccessDetailsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -37,7 +38,6 @@ function SmtpAccessDetailsFromJSONTyped(json, ignoreDiscriminator) {
             : json['mailFromDomain'],
     };
 }
-exports.SmtpAccessDetailsFromJSONTyped = SmtpAccessDetailsFromJSONTyped;
 function SmtpAccessDetailsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -57,4 +57,3 @@ function SmtpAccessDetailsToJSON(value) {
         mailFromDomain: value.mailFromDomain,
     };
 }
-exports.SmtpAccessDetailsToJSON = SmtpAccessDetailsToJSON;

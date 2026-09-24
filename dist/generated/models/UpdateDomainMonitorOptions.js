@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateDomainMonitorOptionsToJSON = exports.UpdateDomainMonitorOptionsFromJSONTyped = exports.UpdateDomainMonitorOptionsFromJSON = void 0;
+exports.UpdateDomainMonitorOptionsFromJSON = UpdateDomainMonitorOptionsFromJSON;
+exports.UpdateDomainMonitorOptionsFromJSONTyped = UpdateDomainMonitorOptionsFromJSONTyped;
+exports.UpdateDomainMonitorOptionsToJSON = UpdateDomainMonitorOptionsToJSON;
 var runtime_1 = require("../runtime");
 function UpdateDomainMonitorOptionsFromJSON(json) {
     return UpdateDomainMonitorOptionsFromJSONTyped(json, false);
 }
-exports.UpdateDomainMonitorOptionsFromJSON = UpdateDomainMonitorOptionsFromJSON;
 function UpdateDomainMonitorOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -34,7 +35,6 @@ function UpdateDomainMonitorOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['schedulingEnabled'],
     };
 }
-exports.UpdateDomainMonitorOptionsFromJSONTyped = UpdateDomainMonitorOptionsFromJSONTyped;
 function UpdateDomainMonitorOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -49,4 +49,3 @@ function UpdateDomainMonitorOptionsToJSON(value) {
         schedulingEnabled: value.schedulingEnabled,
     };
 }
-exports.UpdateDomainMonitorOptionsToJSON = UpdateDomainMonitorOptionsToJSON;

@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LookupPtrResultsToJSON = exports.LookupPtrResultsFromJSONTyped = exports.LookupPtrResultsFromJSON = void 0;
+exports.LookupPtrResultsFromJSON = LookupPtrResultsFromJSON;
+exports.LookupPtrResultsFromJSONTyped = LookupPtrResultsFromJSONTyped;
+exports.LookupPtrResultsToJSON = LookupPtrResultsToJSON;
 function LookupPtrResultsFromJSON(json) {
     return LookupPtrResultsFromJSONTyped(json, false);
 }
-exports.LookupPtrResultsFromJSON = LookupPtrResultsFromJSON;
 function LookupPtrResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -32,7 +33,6 @@ function LookupPtrResultsFromJSONTyped(json, ignoreDiscriminator) {
         errors: json['errors'],
     };
 }
-exports.LookupPtrResultsFromJSONTyped = LookupPtrResultsFromJSONTyped;
 function LookupPtrResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -50,4 +50,3 @@ function LookupPtrResultsToJSON(value) {
         errors: value.errors,
     };
 }
-exports.LookupPtrResultsToJSON = LookupPtrResultsToJSON;

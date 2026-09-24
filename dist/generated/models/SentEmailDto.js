@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SentEmailDtoToJSON = exports.SentEmailDtoFromJSONTyped = exports.SentEmailDtoFromJSON = exports.SentEmailDtoTransportEnum = void 0;
+exports.SentEmailDtoTransportEnum = void 0;
+exports.SentEmailDtoFromJSON = SentEmailDtoFromJSON;
+exports.SentEmailDtoFromJSONTyped = SentEmailDtoFromJSONTyped;
+exports.SentEmailDtoToJSON = SentEmailDtoToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -24,11 +27,10 @@ var SentEmailDtoTransportEnum;
 (function (SentEmailDtoTransportEnum) {
     SentEmailDtoTransportEnum["PUBLIC_EMAIL"] = "PUBLIC_EMAIL";
     SentEmailDtoTransportEnum["SANDBOX_LOCAL"] = "SANDBOX_LOCAL";
-})(SentEmailDtoTransportEnum = exports.SentEmailDtoTransportEnum || (exports.SentEmailDtoTransportEnum = {}));
+})(SentEmailDtoTransportEnum || (exports.SentEmailDtoTransportEnum = SentEmailDtoTransportEnum = {}));
 function SentEmailDtoFromJSON(json) {
     return SentEmailDtoFromJSONTyped(json, false);
 }
-exports.SentEmailDtoFromJSON = SentEmailDtoFromJSON;
 function SentEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -78,7 +80,6 @@ function SentEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
     };
 }
-exports.SentEmailDtoFromJSONTyped = SentEmailDtoFromJSONTyped;
 function SentEmailDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -125,4 +126,3 @@ function SentEmailDtoToJSON(value) {
         html: value.html,
     };
 }
-exports.SentEmailDtoToJSON = SentEmailDtoToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementSpamScoreDtoToJSON = exports.InboxPlacementSpamScoreDtoFromJSONTyped = exports.InboxPlacementSpamScoreDtoFromJSON = exports.InboxPlacementSpamScoreDtoSpamScoreVariantEnum = exports.InboxPlacementSpamScoreDtoSegmentEnum = void 0;
+exports.InboxPlacementSpamScoreDtoSpamScoreVariantEnum = exports.InboxPlacementSpamScoreDtoSegmentEnum = void 0;
+exports.InboxPlacementSpamScoreDtoFromJSON = InboxPlacementSpamScoreDtoFromJSON;
+exports.InboxPlacementSpamScoreDtoFromJSONTyped = InboxPlacementSpamScoreDtoFromJSONTyped;
+exports.InboxPlacementSpamScoreDtoToJSON = InboxPlacementSpamScoreDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,7 +27,7 @@ var InboxPlacementSpamScoreDtoSegmentEnum;
     InboxPlacementSpamScoreDtoSegmentEnum["ALL_INBOXES"] = "ALL_INBOXES";
     InboxPlacementSpamScoreDtoSegmentEnum["PERSONAL_INBOXES"] = "PERSONAL_INBOXES";
     InboxPlacementSpamScoreDtoSegmentEnum["PROFESSIONAL_INBOXES"] = "PROFESSIONAL_INBOXES";
-})(InboxPlacementSpamScoreDtoSegmentEnum = exports.InboxPlacementSpamScoreDtoSegmentEnum || (exports.InboxPlacementSpamScoreDtoSegmentEnum = {}));
+})(InboxPlacementSpamScoreDtoSegmentEnum || (exports.InboxPlacementSpamScoreDtoSegmentEnum = InboxPlacementSpamScoreDtoSegmentEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -34,11 +37,10 @@ var InboxPlacementSpamScoreDtoSpamScoreVariantEnum;
     InboxPlacementSpamScoreDtoSpamScoreVariantEnum["Good"] = "Good";
     InboxPlacementSpamScoreDtoSpamScoreVariantEnum["Warning"] = "Warning";
     InboxPlacementSpamScoreDtoSpamScoreVariantEnum["Danger"] = "Danger";
-})(InboxPlacementSpamScoreDtoSpamScoreVariantEnum = exports.InboxPlacementSpamScoreDtoSpamScoreVariantEnum || (exports.InboxPlacementSpamScoreDtoSpamScoreVariantEnum = {}));
+})(InboxPlacementSpamScoreDtoSpamScoreVariantEnum || (exports.InboxPlacementSpamScoreDtoSpamScoreVariantEnum = InboxPlacementSpamScoreDtoSpamScoreVariantEnum = {}));
 function InboxPlacementSpamScoreDtoFromJSON(json) {
     return InboxPlacementSpamScoreDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementSpamScoreDtoFromJSON = InboxPlacementSpamScoreDtoFromJSON;
 function InboxPlacementSpamScoreDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -49,7 +51,6 @@ function InboxPlacementSpamScoreDtoFromJSONTyped(json, ignoreDiscriminator) {
         spamScoreVariant: json['spamScoreVariant'],
     };
 }
-exports.InboxPlacementSpamScoreDtoFromJSONTyped = InboxPlacementSpamScoreDtoFromJSONTyped;
 function InboxPlacementSpamScoreDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -63,4 +64,3 @@ function InboxPlacementSpamScoreDtoToJSON(value) {
         spamScoreVariant: value.spamScoreVariant,
     };
 }
-exports.InboxPlacementSpamScoreDtoToJSON = InboxPlacementSpamScoreDtoToJSON;

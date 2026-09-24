@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FilterBouncedRecipientsOptionsToJSON = exports.FilterBouncedRecipientsOptionsFromJSONTyped = exports.FilterBouncedRecipientsOptionsFromJSON = void 0;
+exports.FilterBouncedRecipientsOptionsFromJSON = FilterBouncedRecipientsOptionsFromJSON;
+exports.FilterBouncedRecipientsOptionsFromJSONTyped = FilterBouncedRecipientsOptionsFromJSONTyped;
+exports.FilterBouncedRecipientsOptionsToJSON = FilterBouncedRecipientsOptionsToJSON;
 function FilterBouncedRecipientsOptionsFromJSON(json) {
     return FilterBouncedRecipientsOptionsFromJSONTyped(json, false);
 }
-exports.FilterBouncedRecipientsOptionsFromJSON = FilterBouncedRecipientsOptionsFromJSON;
 function FilterBouncedRecipientsOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function FilterBouncedRecipientsOptionsFromJSONTyped(json, ignoreDiscriminator) 
         emailRecipients: json['emailRecipients'],
     };
 }
-exports.FilterBouncedRecipientsOptionsFromJSONTyped = FilterBouncedRecipientsOptionsFromJSONTyped;
 function FilterBouncedRecipientsOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function FilterBouncedRecipientsOptionsToJSON(value) {
         emailRecipients: value.emailRecipients,
     };
 }
-exports.FilterBouncedRecipientsOptionsToJSON = FilterBouncedRecipientsOptionsToJSON;

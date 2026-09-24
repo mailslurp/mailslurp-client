@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateDevicePreviewIngestAddressOptionsToJSON = exports.CreateDevicePreviewIngestAddressOptionsFromJSONTyped = exports.CreateDevicePreviewIngestAddressOptionsFromJSON = void 0;
+exports.CreateDevicePreviewIngestAddressOptionsFromJSON = CreateDevicePreviewIngestAddressOptionsFromJSON;
+exports.CreateDevicePreviewIngestAddressOptionsFromJSONTyped = CreateDevicePreviewIngestAddressOptionsFromJSONTyped;
+exports.CreateDevicePreviewIngestAddressOptionsToJSON = CreateDevicePreviewIngestAddressOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function CreateDevicePreviewIngestAddressOptionsFromJSON(json) {
     return CreateDevicePreviewIngestAddressOptionsFromJSONTyped(json, false);
 }
-exports.CreateDevicePreviewIngestAddressOptionsFromJSON = CreateDevicePreviewIngestAddressOptionsFromJSON;
 function CreateDevicePreviewIngestAddressOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function CreateDevicePreviewIngestAddressOptionsFromJSONTyped(json, ignoreDiscri
             : (0, _1.CreateDevicePreviewOptionsFromJSON)(json['options']),
     };
 }
-exports.CreateDevicePreviewIngestAddressOptionsFromJSONTyped = CreateDevicePreviewIngestAddressOptionsFromJSONTyped;
 function CreateDevicePreviewIngestAddressOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function CreateDevicePreviewIngestAddressOptionsToJSON(value) {
         options: (0, _1.CreateDevicePreviewOptionsToJSON)(value.options),
     };
 }
-exports.CreateDevicePreviewIngestAddressOptionsToJSON = CreateDevicePreviewIngestAddressOptionsToJSON;

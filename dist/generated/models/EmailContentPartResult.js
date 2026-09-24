@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailContentPartResultToJSON = exports.EmailContentPartResultFromJSONTyped = exports.EmailContentPartResultFromJSON = void 0;
+exports.EmailContentPartResultFromJSON = EmailContentPartResultFromJSON;
+exports.EmailContentPartResultFromJSONTyped = EmailContentPartResultFromJSONTyped;
+exports.EmailContentPartResultToJSON = EmailContentPartResultToJSON;
 var runtime_1 = require("../runtime");
 function EmailContentPartResultFromJSON(json) {
     return EmailContentPartResultFromJSONTyped(json, false);
 }
-exports.EmailContentPartResultFromJSON = EmailContentPartResultFromJSON;
 function EmailContentPartResultFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -27,7 +28,6 @@ function EmailContentPartResultFromJSONTyped(json, ignoreDiscriminator) {
         content: !(0, runtime_1.exists)(json, 'content') ? undefined : json['content'],
     };
 }
-exports.EmailContentPartResultFromJSONTyped = EmailContentPartResultFromJSONTyped;
 function EmailContentPartResultToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -39,4 +39,3 @@ function EmailContentPartResultToJSON(value) {
         content: value.content,
     };
 }
-exports.EmailContentPartResultToJSON = EmailContentPartResultToJSON;

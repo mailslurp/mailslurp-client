@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailRecipientsProjectionToJSON = exports.EmailRecipientsProjectionFromJSONTyped = exports.EmailRecipientsProjectionFromJSON = void 0;
+exports.EmailRecipientsProjectionFromJSON = EmailRecipientsProjectionFromJSON;
+exports.EmailRecipientsProjectionFromJSONTyped = EmailRecipientsProjectionFromJSONTyped;
+exports.EmailRecipientsProjectionToJSON = EmailRecipientsProjectionToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function EmailRecipientsProjectionFromJSON(json) {
     return EmailRecipientsProjectionFromJSONTyped(json, false);
 }
-exports.EmailRecipientsProjectionFromJSON = EmailRecipientsProjectionFromJSON;
 function EmailRecipientsProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -42,7 +43,6 @@ function EmailRecipientsProjectionFromJSONTyped(json, ignoreDiscriminator) {
                 : json['bcc'].map(_1.RecipientProjectionFromJSON),
     };
 }
-exports.EmailRecipientsProjectionFromJSONTyped = EmailRecipientsProjectionFromJSONTyped;
 function EmailRecipientsProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -68,4 +68,3 @@ function EmailRecipientsProjectionToJSON(value) {
                 : value.bcc.map(_1.RecipientProjectionToJSON),
     };
 }
-exports.EmailRecipientsProjectionToJSON = EmailRecipientsProjectionToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ListUnsubscribeRecipientProjectionToJSON = exports.ListUnsubscribeRecipientProjectionFromJSONTyped = exports.ListUnsubscribeRecipientProjectionFromJSON = void 0;
+exports.ListUnsubscribeRecipientProjectionFromJSON = ListUnsubscribeRecipientProjectionFromJSON;
+exports.ListUnsubscribeRecipientProjectionFromJSONTyped = ListUnsubscribeRecipientProjectionFromJSONTyped;
+exports.ListUnsubscribeRecipientProjectionToJSON = ListUnsubscribeRecipientProjectionToJSON;
 var runtime_1 = require("../runtime");
 function ListUnsubscribeRecipientProjectionFromJSON(json) {
     return ListUnsubscribeRecipientProjectionFromJSONTyped(json, false);
 }
-exports.ListUnsubscribeRecipientProjectionFromJSON = ListUnsubscribeRecipientProjectionFromJSON;
 function ListUnsubscribeRecipientProjectionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function ListUnsubscribeRecipientProjectionFromJSONTyped(json, ignoreDiscriminat
         id: json['id'],
     };
 }
-exports.ListUnsubscribeRecipientProjectionFromJSONTyped = ListUnsubscribeRecipientProjectionFromJSONTyped;
 function ListUnsubscribeRecipientProjectionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -45,4 +45,3 @@ function ListUnsubscribeRecipientProjectionToJSON(value) {
         id: value.id,
     };
 }
-exports.ListUnsubscribeRecipientProjectionToJSON = ListUnsubscribeRecipientProjectionToJSON;

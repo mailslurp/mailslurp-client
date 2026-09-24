@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MatchOptionToJSON = exports.MatchOptionFromJSONTyped = exports.MatchOptionFromJSON = exports.MatchOptionShouldEnum = exports.MatchOptionFieldEnum = void 0;
+exports.MatchOptionShouldEnum = exports.MatchOptionFieldEnum = void 0;
+exports.MatchOptionFromJSON = MatchOptionFromJSON;
+exports.MatchOptionFromJSONTyped = MatchOptionFromJSONTyped;
+exports.MatchOptionToJSON = MatchOptionToJSON;
 /**
  * @export
  * @enum {string}
@@ -26,7 +29,7 @@ var MatchOptionFieldEnum;
     MatchOptionFieldEnum["CC"] = "CC";
     MatchOptionFieldEnum["FROM"] = "FROM";
     MatchOptionFieldEnum["HEADERS"] = "HEADERS";
-})(MatchOptionFieldEnum = exports.MatchOptionFieldEnum || (exports.MatchOptionFieldEnum = {}));
+})(MatchOptionFieldEnum || (exports.MatchOptionFieldEnum = MatchOptionFieldEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -36,11 +39,10 @@ var MatchOptionShouldEnum;
     MatchOptionShouldEnum["MATCH"] = "MATCH";
     MatchOptionShouldEnum["CONTAIN"] = "CONTAIN";
     MatchOptionShouldEnum["EQUAL"] = "EQUAL";
-})(MatchOptionShouldEnum = exports.MatchOptionShouldEnum || (exports.MatchOptionShouldEnum = {}));
+})(MatchOptionShouldEnum || (exports.MatchOptionShouldEnum = MatchOptionShouldEnum = {}));
 function MatchOptionFromJSON(json) {
     return MatchOptionFromJSONTyped(json, false);
 }
-exports.MatchOptionFromJSON = MatchOptionFromJSON;
 function MatchOptionFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -51,7 +53,6 @@ function MatchOptionFromJSONTyped(json, ignoreDiscriminator) {
         value: json['value'],
     };
 }
-exports.MatchOptionFromJSONTyped = MatchOptionFromJSONTyped;
 function MatchOptionToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -65,4 +66,3 @@ function MatchOptionToJSON(value) {
         value: value.value,
     };
 }
-exports.MatchOptionToJSON = MatchOptionToJSON;

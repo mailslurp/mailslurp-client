@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.JsonNodeToJSON = exports.JsonNodeFromJSONTyped = exports.JsonNodeFromJSON = exports.JsonNodeNodeTypeEnum = void 0;
+exports.JsonNodeNodeTypeEnum = void 0;
+exports.JsonNodeFromJSON = JsonNodeFromJSON;
+exports.JsonNodeFromJSONTyped = JsonNodeFromJSONTyped;
+exports.JsonNodeToJSON = JsonNodeToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -30,11 +33,10 @@ var JsonNodeNodeTypeEnum;
     JsonNodeNodeTypeEnum["OBJECT"] = "OBJECT";
     JsonNodeNodeTypeEnum["POJO"] = "POJO";
     JsonNodeNodeTypeEnum["STRING"] = "STRING";
-})(JsonNodeNodeTypeEnum = exports.JsonNodeNodeTypeEnum || (exports.JsonNodeNodeTypeEnum = {}));
+})(JsonNodeNodeTypeEnum || (exports.JsonNodeNodeTypeEnum = JsonNodeNodeTypeEnum = {}));
 function JsonNodeFromJSON(json) {
     return JsonNodeFromJSONTyped(json, false);
 }
-exports.JsonNodeFromJSON = JsonNodeFromJSON;
 function JsonNodeFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -72,7 +74,6 @@ function JsonNodeFromJSONTyped(json, ignoreDiscriminator) {
             : json['embeddedValue'],
     };
 }
-exports.JsonNodeFromJSONTyped = JsonNodeFromJSONTyped;
 function JsonNodeToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -107,4 +108,3 @@ function JsonNodeToJSON(value) {
         embeddedValue: value.embeddedValue,
     };
 }
-exports.JsonNodeToJSON = JsonNodeToJSON;

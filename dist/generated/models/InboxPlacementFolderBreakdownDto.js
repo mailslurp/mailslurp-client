@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementFolderBreakdownDtoToJSON = exports.InboxPlacementFolderBreakdownDtoFromJSONTyped = exports.InboxPlacementFolderBreakdownDtoFromJSON = void 0;
+exports.InboxPlacementFolderBreakdownDtoFromJSON = InboxPlacementFolderBreakdownDtoFromJSON;
+exports.InboxPlacementFolderBreakdownDtoFromJSONTyped = InboxPlacementFolderBreakdownDtoFromJSONTyped;
+exports.InboxPlacementFolderBreakdownDtoToJSON = InboxPlacementFolderBreakdownDtoToJSON;
 function InboxPlacementFolderBreakdownDtoFromJSON(json) {
     return InboxPlacementFolderBreakdownDtoFromJSONTyped(json, false);
 }
-exports.InboxPlacementFolderBreakdownDtoFromJSON = InboxPlacementFolderBreakdownDtoFromJSON;
 function InboxPlacementFolderBreakdownDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function InboxPlacementFolderBreakdownDtoFromJSONTyped(json, ignoreDiscriminator
         percentage: json['percentage'],
     };
 }
-exports.InboxPlacementFolderBreakdownDtoFromJSONTyped = InboxPlacementFolderBreakdownDtoFromJSONTyped;
 function InboxPlacementFolderBreakdownDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function InboxPlacementFolderBreakdownDtoToJSON(value) {
         percentage: value.percentage,
     };
 }
-exports.InboxPlacementFolderBreakdownDtoToJSON = InboxPlacementFolderBreakdownDtoToJSON;

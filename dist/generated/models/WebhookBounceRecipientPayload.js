@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookBounceRecipientPayloadToJSON = exports.WebhookBounceRecipientPayloadFromJSONTyped = exports.WebhookBounceRecipientPayloadFromJSON = exports.WebhookBounceRecipientPayloadEventNameEnum = void 0;
+exports.WebhookBounceRecipientPayloadEventNameEnum = void 0;
+exports.WebhookBounceRecipientPayloadFromJSON = WebhookBounceRecipientPayloadFromJSON;
+exports.WebhookBounceRecipientPayloadFromJSONTyped = WebhookBounceRecipientPayloadFromJSONTyped;
+exports.WebhookBounceRecipientPayloadToJSON = WebhookBounceRecipientPayloadToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -33,11 +36,10 @@ var WebhookBounceRecipientPayloadEventNameEnum;
     WebhookBounceRecipientPayloadEventNameEnum["BOUNCE_RECIPIENT"] = "BOUNCE_RECIPIENT";
     WebhookBounceRecipientPayloadEventNameEnum["NEW_SMS"] = "NEW_SMS";
     WebhookBounceRecipientPayloadEventNameEnum["NEW_GUEST_USER"] = "NEW_GUEST_USER";
-})(WebhookBounceRecipientPayloadEventNameEnum = exports.WebhookBounceRecipientPayloadEventNameEnum || (exports.WebhookBounceRecipientPayloadEventNameEnum = {}));
+})(WebhookBounceRecipientPayloadEventNameEnum || (exports.WebhookBounceRecipientPayloadEventNameEnum = WebhookBounceRecipientPayloadEventNameEnum = {}));
 function WebhookBounceRecipientPayloadFromJSON(json) {
     return WebhookBounceRecipientPayloadFromJSONTyped(json, false);
 }
-exports.WebhookBounceRecipientPayloadFromJSON = WebhookBounceRecipientPayloadFromJSON;
 function WebhookBounceRecipientPayloadFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -50,7 +52,6 @@ function WebhookBounceRecipientPayloadFromJSONTyped(json, ignoreDiscriminator) {
         recipient: json['recipient'],
     };
 }
-exports.WebhookBounceRecipientPayloadFromJSONTyped = WebhookBounceRecipientPayloadFromJSONTyped;
 function WebhookBounceRecipientPayloadToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -66,4 +67,3 @@ function WebhookBounceRecipientPayloadToJSON(value) {
         recipient: value.recipient,
     };
 }
-exports.WebhookBounceRecipientPayloadToJSON = WebhookBounceRecipientPayloadToJSON;

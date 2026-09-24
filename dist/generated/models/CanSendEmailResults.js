@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CanSendEmailResultsToJSON = exports.CanSendEmailResultsFromJSONTyped = exports.CanSendEmailResultsFromJSON = void 0;
+exports.CanSendEmailResultsFromJSON = CanSendEmailResultsFromJSON;
+exports.CanSendEmailResultsFromJSONTyped = CanSendEmailResultsFromJSONTyped;
+exports.CanSendEmailResultsToJSON = CanSendEmailResultsToJSON;
 var runtime_1 = require("../runtime");
 function CanSendEmailResultsFromJSON(json) {
     return CanSendEmailResultsFromJSONTyped(json, false);
 }
-exports.CanSendEmailResultsFromJSON = CanSendEmailResultsFromJSON;
 function CanSendEmailResultsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -28,7 +29,6 @@ function CanSendEmailResultsFromJSONTyped(json, ignoreDiscriminator) {
         message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
     };
 }
-exports.CanSendEmailResultsFromJSONTyped = CanSendEmailResultsFromJSONTyped;
 function CanSendEmailResultsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -41,4 +41,3 @@ function CanSendEmailResultsToJSON(value) {
         message: value.message,
     };
 }
-exports.CanSendEmailResultsToJSON = CanSendEmailResultsToJSON;

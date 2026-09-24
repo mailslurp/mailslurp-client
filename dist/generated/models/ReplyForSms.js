@@ -13,13 +13,14 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReplyForSmsToJSON = exports.ReplyForSmsFromJSONTyped = exports.ReplyForSmsFromJSON = void 0;
+exports.ReplyForSmsFromJSON = ReplyForSmsFromJSON;
+exports.ReplyForSmsFromJSONTyped = ReplyForSmsFromJSONTyped;
+exports.ReplyForSmsToJSON = ReplyForSmsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 function ReplyForSmsFromJSON(json) {
     return ReplyForSmsFromJSONTyped(json, false);
 }
-exports.ReplyForSmsFromJSON = ReplyForSmsFromJSON;
 function ReplyForSmsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -30,7 +31,6 @@ function ReplyForSmsFromJSONTyped(json, ignoreDiscriminator) {
             : (0, _1.SentSmsDtoFromJSON)(json['reply']),
     };
 }
-exports.ReplyForSmsFromJSONTyped = ReplyForSmsFromJSONTyped;
 function ReplyForSmsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -42,4 +42,3 @@ function ReplyForSmsToJSON(value) {
         reply: (0, _1.SentSmsDtoToJSON)(value.reply),
     };
 }
-exports.ReplyForSmsToJSON = ReplyForSmsToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneNumberValidationDtoToJSON = exports.PhoneNumberValidationDtoFromJSONTyped = exports.PhoneNumberValidationDtoFromJSON = void 0;
+exports.PhoneNumberValidationDtoFromJSON = PhoneNumberValidationDtoFromJSON;
+exports.PhoneNumberValidationDtoFromJSONTyped = PhoneNumberValidationDtoFromJSONTyped;
+exports.PhoneNumberValidationDtoToJSON = PhoneNumberValidationDtoToJSON;
 var runtime_1 = require("../runtime");
 function PhoneNumberValidationDtoFromJSON(json) {
     return PhoneNumberValidationDtoFromJSONTyped(json, false);
 }
-exports.PhoneNumberValidationDtoFromJSON = PhoneNumberValidationDtoFromJSON;
 function PhoneNumberValidationDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -35,7 +36,6 @@ function PhoneNumberValidationDtoFromJSONTyped(json, ignoreDiscriminator) {
             : json['validationErrors'],
     };
 }
-exports.PhoneNumberValidationDtoFromJSONTyped = PhoneNumberValidationDtoFromJSONTyped;
 function PhoneNumberValidationDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -51,4 +51,3 @@ function PhoneNumberValidationDtoToJSON(value) {
         validationErrors: value.validationErrors,
     };
 }
-exports.PhoneNumberValidationDtoToJSON = PhoneNumberValidationDtoToJSON;

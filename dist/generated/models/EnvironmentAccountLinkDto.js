@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EnvironmentAccountLinkDtoToJSON = exports.EnvironmentAccountLinkDtoFromJSONTyped = exports.EnvironmentAccountLinkDtoFromJSON = exports.EnvironmentAccountLinkDtoRoleEnum = void 0;
+exports.EnvironmentAccountLinkDtoRoleEnum = void 0;
+exports.EnvironmentAccountLinkDtoFromJSON = EnvironmentAccountLinkDtoFromJSON;
+exports.EnvironmentAccountLinkDtoFromJSONTyped = EnvironmentAccountLinkDtoFromJSONTyped;
+exports.EnvironmentAccountLinkDtoToJSON = EnvironmentAccountLinkDtoToJSON;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -24,11 +27,10 @@ var EnvironmentAccountLinkDtoRoleEnum;
     EnvironmentAccountLinkDtoRoleEnum["OWNER"] = "OWNER";
     EnvironmentAccountLinkDtoRoleEnum["ADMIN"] = "ADMIN";
     EnvironmentAccountLinkDtoRoleEnum["MEMBER"] = "MEMBER";
-})(EnvironmentAccountLinkDtoRoleEnum = exports.EnvironmentAccountLinkDtoRoleEnum || (exports.EnvironmentAccountLinkDtoRoleEnum = {}));
+})(EnvironmentAccountLinkDtoRoleEnum || (exports.EnvironmentAccountLinkDtoRoleEnum = EnvironmentAccountLinkDtoRoleEnum = {}));
 function EnvironmentAccountLinkDtoFromJSON(json) {
     return EnvironmentAccountLinkDtoFromJSONTyped(json, false);
 }
-exports.EnvironmentAccountLinkDtoFromJSON = EnvironmentAccountLinkDtoFromJSON;
 function EnvironmentAccountLinkDtoFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -46,7 +48,6 @@ function EnvironmentAccountLinkDtoFromJSONTyped(json, ignoreDiscriminator) {
         createdAt: new Date(json['createdAt']),
     };
 }
-exports.EnvironmentAccountLinkDtoFromJSONTyped = EnvironmentAccountLinkDtoFromJSONTyped;
 function EnvironmentAccountLinkDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -65,4 +66,3 @@ function EnvironmentAccountLinkDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
     };
 }
-exports.EnvironmentAccountLinkDtoToJSON = EnvironmentAccountLinkDtoToJSON;

@@ -13,12 +13,13 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePhoneProvisioningJobItemOptionsToJSON = exports.CreatePhoneProvisioningJobItemOptionsFromJSONTyped = exports.CreatePhoneProvisioningJobItemOptionsFromJSON = void 0;
+exports.CreatePhoneProvisioningJobItemOptionsFromJSON = CreatePhoneProvisioningJobItemOptionsFromJSON;
+exports.CreatePhoneProvisioningJobItemOptionsFromJSONTyped = CreatePhoneProvisioningJobItemOptionsFromJSONTyped;
+exports.CreatePhoneProvisioningJobItemOptionsToJSON = CreatePhoneProvisioningJobItemOptionsToJSON;
 var runtime_1 = require("../runtime");
 function CreatePhoneProvisioningJobItemOptionsFromJSON(json) {
     return CreatePhoneProvisioningJobItemOptionsFromJSONTyped(json, false);
 }
-exports.CreatePhoneProvisioningJobItemOptionsFromJSON = CreatePhoneProvisioningJobItemOptionsFromJSON;
 function CreatePhoneProvisioningJobItemOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -38,7 +39,6 @@ function CreatePhoneProvisioningJobItemOptionsFromJSONTyped(json, ignoreDiscrimi
             : json['mobileNetworkCode'],
     };
 }
-exports.CreatePhoneProvisioningJobItemOptionsFromJSONTyped = CreatePhoneProvisioningJobItemOptionsFromJSONTyped;
 function CreatePhoneProvisioningJobItemOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -55,4 +55,3 @@ function CreatePhoneProvisioningJobItemOptionsToJSON(value) {
         mobileNetworkCode: value.mobileNetworkCode,
     };
 }
-exports.CreatePhoneProvisioningJobItemOptionsToJSON = CreatePhoneProvisioningJobItemOptionsToJSON;

@@ -13,7 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateAutomatedInboxPlacementConnectionOptionsToJSON = exports.CreateAutomatedInboxPlacementConnectionOptionsFromJSONTyped = exports.CreateAutomatedInboxPlacementConnectionOptionsFromJSON = exports.CreateAutomatedInboxPlacementConnectionOptionsProviderEnum = void 0;
+exports.CreateAutomatedInboxPlacementConnectionOptionsProviderEnum = void 0;
+exports.CreateAutomatedInboxPlacementConnectionOptionsFromJSON = CreateAutomatedInboxPlacementConnectionOptionsFromJSON;
+exports.CreateAutomatedInboxPlacementConnectionOptionsFromJSONTyped = CreateAutomatedInboxPlacementConnectionOptionsFromJSONTyped;
+exports.CreateAutomatedInboxPlacementConnectionOptionsToJSON = CreateAutomatedInboxPlacementConnectionOptionsToJSON;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
 /**
@@ -28,11 +31,10 @@ var CreateAutomatedInboxPlacementConnectionOptionsProviderEnum;
     CreateAutomatedInboxPlacementConnectionOptionsProviderEnum["RESEND"] = "RESEND";
     CreateAutomatedInboxPlacementConnectionOptionsProviderEnum["MAILGUN"] = "MAILGUN";
     CreateAutomatedInboxPlacementConnectionOptionsProviderEnum["POSTMARK"] = "POSTMARK";
-})(CreateAutomatedInboxPlacementConnectionOptionsProviderEnum = exports.CreateAutomatedInboxPlacementConnectionOptionsProviderEnum || (exports.CreateAutomatedInboxPlacementConnectionOptionsProviderEnum = {}));
+})(CreateAutomatedInboxPlacementConnectionOptionsProviderEnum || (exports.CreateAutomatedInboxPlacementConnectionOptionsProviderEnum = CreateAutomatedInboxPlacementConnectionOptionsProviderEnum = {}));
 function CreateAutomatedInboxPlacementConnectionOptionsFromJSON(json) {
     return CreateAutomatedInboxPlacementConnectionOptionsFromJSONTyped(json, false);
 }
-exports.CreateAutomatedInboxPlacementConnectionOptionsFromJSON = CreateAutomatedInboxPlacementConnectionOptionsFromJSON;
 function CreateAutomatedInboxPlacementConnectionOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -46,7 +48,6 @@ function CreateAutomatedInboxPlacementConnectionOptionsFromJSONTyped(json, ignor
             : (0, _1.AutomatedInboxPlacementSmtpOptionsFromJSON)(json['smtp']),
     };
 }
-exports.CreateAutomatedInboxPlacementConnectionOptionsFromJSONTyped = CreateAutomatedInboxPlacementConnectionOptionsFromJSONTyped;
 function CreateAutomatedInboxPlacementConnectionOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -61,4 +62,3 @@ function CreateAutomatedInboxPlacementConnectionOptionsToJSON(value) {
         smtp: (0, _1.AutomatedInboxPlacementSmtpOptionsToJSON)(value.smtp),
     };
 }
-exports.CreateAutomatedInboxPlacementConnectionOptionsToJSON = CreateAutomatedInboxPlacementConnectionOptionsToJSON;

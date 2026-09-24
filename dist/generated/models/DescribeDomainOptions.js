@@ -13,11 +13,12 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescribeDomainOptionsToJSON = exports.DescribeDomainOptionsFromJSONTyped = exports.DescribeDomainOptionsFromJSON = void 0;
+exports.DescribeDomainOptionsFromJSON = DescribeDomainOptionsFromJSON;
+exports.DescribeDomainOptionsFromJSONTyped = DescribeDomainOptionsFromJSONTyped;
+exports.DescribeDomainOptionsToJSON = DescribeDomainOptionsToJSON;
 function DescribeDomainOptionsFromJSON(json) {
     return DescribeDomainOptionsFromJSONTyped(json, false);
 }
-exports.DescribeDomainOptionsFromJSON = DescribeDomainOptionsFromJSON;
 function DescribeDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if (json === undefined || json === null) {
         return json;
@@ -26,7 +27,6 @@ function DescribeDomainOptionsFromJSONTyped(json, ignoreDiscriminator) {
         domain: json['domain'],
     };
 }
-exports.DescribeDomainOptionsFromJSONTyped = DescribeDomainOptionsFromJSONTyped;
 function DescribeDomainOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
@@ -38,4 +38,3 @@ function DescribeDomainOptionsToJSON(value) {
         domain: value.domain,
     };
 }
-exports.DescribeDomainOptionsToJSON = DescribeDomainOptionsToJSON;
