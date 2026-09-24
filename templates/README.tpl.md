@@ -55,11 +55,22 @@ npm install --save mailslurp-client
 Here is how to use MailSlurp in your project.
 
 ### Import MailSlurp library
+
+For CommonJS, use the named export with `require`:
+
 ```javascript
-const MailSlurp = require("mailslurp-client").default;
-// or
-import { MailSlurp } from "mailslurp-client";
+const { MailSlurp } = require('mailslurp-client');
 ```
+
+For native Node.js ESM or TypeScript, use the named import:
+
+```typescript
+import { MailSlurp } from 'mailslurp-client';
+```
+
+These named-export forms are portable across CommonJS, native Node.js ESM,
+and TypeScript toolchains. Avoid relying on a default import because its
+behavior differs between transpilers and native Node.js ESM.
 
 ### Instantiate a MailSlurp client
 

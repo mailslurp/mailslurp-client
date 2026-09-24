@@ -89,7 +89,7 @@ __exportStar(require("./generated"), exports);
  * when creating a new instance.
  *
  * ```javascript
- * const MailSlurp = require('mailslurp-client').default;
+ * const { MailSlurp } = require('mailslurp-client');
  * const mailslurp = new MailSlurp({
  *  apiKey: 'xxxx'
  * })
@@ -124,7 +124,7 @@ var MailSlurp = /** @class */ (function () {
      * Contains top level convenience functions. Access the full API controllers as properties on the instance.
      *
      * ```javascript
-     * const MailSlurp = require('mailslurp-client').default
+     * const { MailSlurp } = require('mailslurp-client')
      * const mailslurp = new MailSlurp({ apiKey })
      * ```
      * @param opts
@@ -139,6 +139,7 @@ var MailSlurp = /** @class */ (function () {
         var clientConfiguration = new generated_1.Configuration({
             apiKey: opts.apiKey,
             basePath: opts.basePath || 'https://javascript.api.mailslurp.com',
+            fetchApi: opts.fetchApi,
             headers: opts.headers || undefined,
         });
         var args = [clientConfiguration, clientConfiguration.basePath, _fetch];

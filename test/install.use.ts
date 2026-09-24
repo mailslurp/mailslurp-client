@@ -2,9 +2,10 @@ import { ApiResponse, Configuration, InboxDto, MailSlurp } from '../dist';
 
 test('quick start', async () => {
   //<gen>quick_start
-  // import mailslurp-client
-  const MailSlurp = require('mailslurp-client').default;
-  // OR import { MailSlurp } from "mailslurp-client"
+  // CommonJS
+  const { MailSlurp } = require('mailslurp-client');
+  // Native Node.js ESM and TypeScript:
+  // import { MailSlurp } from 'mailslurp-client';
 
   // create a client
   const apiKey = process.env.API_KEY ?? 'your-api-key';

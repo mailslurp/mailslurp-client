@@ -1,7 +1,7 @@
 {
   "name": "mailslurp-client",
   "description": "Official client for MailSlurp Email and SMS API. Create email addresses and phone numbers in Javascript without a mail server. Send and receive real emails in applications or tests.",
-  "version": "17.4.0",
+  "version": "17.5.0",
   "license": "MIT",
   "author": "mailslurp.com",
   "homepage": "https://www.mailslurp.com",
@@ -26,6 +26,8 @@
     "build": "tsc --outDir dist/",
     "prepublishOnly": "npm run build",
     "integration": "jest",
+    "test:package": "npm run build && node test/package-interop.js",
+    "test:runtime": "node test/runtime-smoke.js",
     "validate": "npx check-md",
     "docs": "typedoc --plugin typedoc-plugin-markdown --options ./typedoc.json ./src/index.ts",
     "docs:html": "typedoc --plugin typedoc-plugin-mdn-links --options ./typedoc.html.json ./src/index.ts",

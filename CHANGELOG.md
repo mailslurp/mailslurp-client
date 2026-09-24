@@ -1,4 +1,10 @@
 # Changelog
+## [17.5.0]
+- Forward the documented `fetchApi` override to every generated controller.
+- Guard `URLSearchParams` access so JSON requests continue to work on legacy Node.js runtimes.
+- Verify the packed package with both CommonJS `require` and native ESM named imports.
+- Document portable named imports for CommonJS, native ESM, and TypeScript consumers.
+
 ## [15.12.0]
 - Add account info endpoints
 

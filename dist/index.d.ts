@@ -26,7 +26,7 @@ export type Config = {
  * when creating a new instance.
  *
  * ```javascript
- * const MailSlurp = require('mailslurp-client').default;
+ * const { MailSlurp } = require('mailslurp-client');
  * const mailslurp = new MailSlurp({
  *  apiKey: 'xxxx'
  * })
@@ -101,7 +101,7 @@ export declare class MailSlurp {
      * Contains top level convenience functions. Access the full API controllers as properties on the instance.
      *
      * ```javascript
-     * const MailSlurp = require('mailslurp-client').default
+     * const { MailSlurp } = require('mailslurp-client')
      * const mailslurp = new MailSlurp({ apiKey })
      * ```
      * @param opts

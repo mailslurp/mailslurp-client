@@ -93,7 +93,7 @@ export type Config = {
  * when creating a new instance.
  *
  * ```javascript
- * const MailSlurp = require('mailslurp-client').default;
+ * const { MailSlurp } = require('mailslurp-client');
  * const mailslurp = new MailSlurp({
  *  apiKey: 'xxxx'
  * })
@@ -172,7 +172,7 @@ export class MailSlurp {
    * Contains top level convenience functions. Access the full API controllers as properties on the instance.
    *
    * ```javascript
-   * const MailSlurp = require('mailslurp-client').default
+   * const { MailSlurp } = require('mailslurp-client')
    * const mailslurp = new MailSlurp({ apiKey })
    * ```
    * @param opts
@@ -187,6 +187,7 @@ export class MailSlurp {
     const clientConfiguration = new Configuration({
       apiKey: opts.apiKey,
       basePath: opts.basePath || 'https://javascript.api.mailslurp.com',
+      fetchApi: opts.fetchApi,
       headers: opts.headers || undefined,
     });
     const args = [clientConfiguration, clientConfiguration.basePath, _fetch];

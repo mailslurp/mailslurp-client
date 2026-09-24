@@ -74,7 +74,8 @@ export class BaseAPI {
     }
     const body =
       (typeof FormData !== 'undefined' && context.body instanceof FormData) ||
-      context.body instanceof URLSearchParams ||
+      (typeof URLSearchParams !== 'undefined' &&
+        context.body instanceof URLSearchParams) ||
       isBlob(context.body)
         ? context.body
         : JSON.stringify(context.body);
