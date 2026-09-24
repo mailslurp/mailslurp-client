@@ -9,6 +9,7 @@
 ### Enumeration Members
 
 - [FAILED](DevicePreviewEmailSubmissionDtoStatusEnum.md#failed)
+- [INSPECTION\_READY](DevicePreviewEmailSubmissionDtoStatusEnum.md#inspection_ready)
 - [PROCESSING](DevicePreviewEmailSubmissionDtoStatusEnum.md#processing)
 - [RECEIVED](DevicePreviewEmailSubmissionDtoStatusEnum.md#received)
 - [RUN\_CREATED](DevicePreviewEmailSubmissionDtoStatusEnum.md#run_created)
@@ -18,6 +19,12 @@
 ### FAILED
 
 • **FAILED** = ``"FAILED"``
+
+___
+
+### INSPECTION\_READY
+
+• **INSPECTION\_READY** = ``"INSPECTION_READY"``
 
 ___
 

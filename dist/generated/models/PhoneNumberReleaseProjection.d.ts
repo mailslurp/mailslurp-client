@@ -20,25 +20,19 @@ export interface PhoneNumberReleaseProjection {
      * @type {string}
      * @memberof PhoneNumberReleaseProjection
      */
-    name?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneNumberReleaseProjection
-     */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneNumberReleaseProjection
-     */
     userId: string;
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof PhoneNumberReleaseProjection
      */
-    createdAt: Date;
+    subscriptionSchedule?: PhoneNumberReleaseProjectionSubscriptionScheduleEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberReleaseProjection
+     */
+    planCurrency?: PhoneNumberReleaseProjectionPlanCurrencyEnum;
     /**
      *
      * @type {string}
@@ -53,35 +47,22 @@ export interface PhoneNumberReleaseProjection {
     phoneNumber?: string | null;
     /**
      *
-     * @type {string}
+     * @type {Date}
      * @memberof PhoneNumberReleaseProjection
      */
-    subscriptionSchedule?: PhoneNumberReleaseProjectionSubscriptionScheduleEnum;
+    createdAt: Date;
     /**
      *
      * @type {string}
      * @memberof PhoneNumberReleaseProjection
      */
-    planCurrency?: PhoneNumberReleaseProjectionPlanCurrencyEnum;
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum PhoneNumberReleaseProjectionPhoneCountryEnum {
-    US = "US",
-    GB = "GB",
-    AU = "AU",
-    CA = "CA",
-    EE = "EE",
-    HK = "HK",
-    PL = "PL",
-    CH = "CH",
-    PT = "PT",
-    NL = "NL",
-    IL = "IL",
-    FI = "FI",
-    SE = "SE"
+    name?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberReleaseProjection
+     */
+    id: string;
 }
 /**
  * @export
@@ -106,6 +87,25 @@ export declare enum PhoneNumberReleaseProjectionPlanCurrencyEnum {
     CNY = "CNY",
     INR = "INR",
     NZD = "NZD"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum PhoneNumberReleaseProjectionPhoneCountryEnum {
+    US = "US",
+    GB = "GB",
+    AU = "AU",
+    CA = "CA",
+    EE = "EE",
+    HK = "HK",
+    PL = "PL",
+    CH = "CH",
+    PT = "PT",
+    NL = "NL",
+    IL = "IL",
+    FI = "FI",
+    SE = "SE"
 }
 export declare function PhoneNumberReleaseProjectionFromJSON(json: any): PhoneNumberReleaseProjection;
 export declare function PhoneNumberReleaseProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): PhoneNumberReleaseProjection;

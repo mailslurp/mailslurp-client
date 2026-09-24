@@ -20,18 +20,6 @@ export interface TrackingPixelProjection {
      * @type {string}
      * @memberof TrackingPixelProjection
      */
-    name?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof TrackingPixelProjection
-     */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof TrackingPixelProjection
-     */
     userId: string;
     /**
      *
@@ -39,12 +27,6 @@ export interface TrackingPixelProjection {
      * @memberof TrackingPixelProjection
      */
     inboxId?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof TrackingPixelProjection
-     */
-    sentEmailId?: string | null;
     /**
      *
      * @type {Date}
@@ -59,6 +41,12 @@ export interface TrackingPixelProjection {
     recipient?: string | null;
     /**
      *
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
+    sentEmailId?: string | null;
+    /**
+     *
      * @type {boolean}
      * @memberof TrackingPixelProjection
      */
@@ -69,6 +57,18 @@ export interface TrackingPixelProjection {
      * @memberof TrackingPixelProjection
      */
     seenAt?: Date | null;
+    /**
+     *
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
+    name?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof TrackingPixelProjection
+     */
+    id: string;
 }
 export declare function TrackingPixelProjectionFromJSON(json: any): TrackingPixelProjection;
 export declare function TrackingPixelProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrackingPixelProjection;

@@ -26,6 +26,9 @@ import {
   PageInboxReplierEvents,
   PageInboxReplierEventsFromJSON,
   PageInboxReplierEventsToJSON,
+  UpdateInboxReplierActiveOptions,
+  UpdateInboxReplierActiveOptionsFromJSON,
+  UpdateInboxReplierActiveOptionsToJSON,
   UpdateInboxReplierOptions,
   UpdateInboxReplierOptionsFromJSON,
   UpdateInboxReplierOptionsToJSON,
@@ -76,6 +79,11 @@ export interface GetInboxRepliersRequest {
 export interface UpdateInboxReplierRequest {
   id: string;
   updateInboxReplierOptions: UpdateInboxReplierOptions;
+}
+
+export interface UpdateInboxReplierActiveRequest {
+  id: string;
+  updateInboxReplierActiveOptions: UpdateInboxReplierActiveOptions;
 }
 
 /**
@@ -572,6 +580,77 @@ export class InboxReplierControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<InboxReplierDto> {
     const response = await this.updateInboxReplierRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Enable or disable an inbox replier without changing its other settings
+   * Update an inbox replier\'s active state
+   */
+  async updateInboxReplierActiveRaw(
+    requestParameters: UpdateInboxReplierActiveRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxReplierDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling updateInboxReplierActive.'
+      );
+    }
+
+    if (
+      requestParameters.updateInboxReplierActiveOptions === null ||
+      requestParameters.updateInboxReplierActiveOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'updateInboxReplierActiveOptions',
+        'Required parameter requestParameters.updateInboxReplierActiveOptions was null or undefined when calling updateInboxReplierActive.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/repliers/{id}/active`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+        body: UpdateInboxReplierActiveOptionsToJSON(
+          requestParameters.updateInboxReplierActiveOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxReplierDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Enable or disable an inbox replier without changing its other settings
+   * Update an inbox replier\'s active state
+   */
+  async updateInboxReplierActive(
+    requestParameters: UpdateInboxReplierActiveRequest,
+    initOverrides?: RequestInit
+  ): Promise<InboxReplierDto> {
+    const response = await this.updateInboxReplierActiveRaw(
       requestParameters,
       initOverrides
     );

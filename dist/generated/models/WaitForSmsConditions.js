@@ -70,6 +70,9 @@ function WaitForSmsConditionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['before'] === null
                 ? null
                 : new Date(json['before']),
+        ai: !(0, runtime_1.exists)(json, 'ai')
+            ? undefined
+            : (0, _1.AIMessageMatchOptionsFromJSON)(json['ai']),
     };
 }
 exports.WaitForSmsConditionsFromJSONTyped = WaitForSmsConditionsFromJSONTyped;
@@ -104,6 +107,7 @@ function WaitForSmsConditionsToJSON(value) {
             : value.before === null
                 ? null
                 : value.before.toISOString(),
+        ai: (0, _1.AIMessageMatchOptionsToJSON)(value.ai),
     };
 }
 exports.WaitForSmsConditionsToJSON = WaitForSmsConditionsToJSON;

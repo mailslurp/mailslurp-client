@@ -51,6 +51,9 @@ function CheckEmailAuthStackResultsFromJSONTyped(json, ignoreDiscriminator) {
         insights: json['insights'],
         warnings: json['warnings'],
         errors: json['errors'],
+        scoreVersion: json['scoreVersion'],
+        scoreScope: json['scoreScope'],
+        advisoryChecks: json['advisoryChecks'],
     };
 }
 exports.CheckEmailAuthStackResultsFromJSONTyped = CheckEmailAuthStackResultsFromJSONTyped;
@@ -78,6 +81,9 @@ function CheckEmailAuthStackResultsToJSON(value) {
         insights: value.insights,
         warnings: value.warnings,
         errors: value.errors,
+        scoreVersion: value.scoreVersion,
+        scoreScope: value.scoreScope,
+        advisoryChecks: value.advisoryChecks,
     };
 }
 exports.CheckEmailAuthStackResultsToJSON = CheckEmailAuthStackResultsToJSON;

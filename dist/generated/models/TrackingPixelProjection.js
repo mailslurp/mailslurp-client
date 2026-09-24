@@ -24,19 +24,19 @@ function TrackingPixelProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
         userId: json['userId'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        sentEmailId: !(0, runtime_1.exists)(json, 'sentEmailId') ? undefined : json['sentEmailId'],
         createdAt: new Date(json['createdAt']),
         recipient: !(0, runtime_1.exists)(json, 'recipient') ? undefined : json['recipient'],
+        sentEmailId: !(0, runtime_1.exists)(json, 'sentEmailId') ? undefined : json['sentEmailId'],
         seen: json['seen'],
         seenAt: !(0, runtime_1.exists)(json, 'seenAt')
             ? undefined
             : json['seenAt'] === null
                 ? null
                 : new Date(json['seenAt']),
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
     };
 }
 exports.TrackingPixelProjectionFromJSONTyped = TrackingPixelProjectionFromJSONTyped;
@@ -48,19 +48,19 @@ function TrackingPixelProjectionToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        id: value.id,
         userId: value.userId,
         inboxId: value.inboxId,
-        sentEmailId: value.sentEmailId,
         createdAt: value.createdAt.toISOString(),
         recipient: value.recipient,
+        sentEmailId: value.sentEmailId,
         seen: value.seen,
         seenAt: value.seenAt === undefined
             ? undefined
             : value.seenAt === null
                 ? null
                 : value.seenAt.toISOString(),
+        name: value.name,
+        id: value.id,
     };
 }
 exports.TrackingPixelProjectionToJSON = TrackingPixelProjectionToJSON;

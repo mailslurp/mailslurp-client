@@ -14,6 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
+  AIMessageMatchOptions,
+  AIMessageMatchOptionsFromJSON,
+  AIMessageMatchOptionsFromJSONTyped,
+  AIMessageMatchOptionsToJSON,
   ConditionOption,
   ConditionOptionFromJSON,
   ConditionOptionFromJSONTyped,
@@ -42,6 +46,12 @@ export interface MatchOptions {
    * @memberof MatchOptions
    */
   conditions?: Array<ConditionOption> | null;
+  /**
+   *
+   * @type {AIMessageMatchOptions}
+   * @memberof MatchOptions
+   */
+  ai?: AIMessageMatchOptions | null;
 }
 
 export function MatchOptionsFromJSON(json: any): MatchOptions {
@@ -66,6 +76,9 @@ export function MatchOptionsFromJSONTyped(
       : json['conditions'] === null
       ? null
       : (json['conditions'] as Array<any>).map(ConditionOptionFromJSON),
+    ai: !exists(json, 'ai')
+      ? undefined
+      : AIMessageMatchOptionsFromJSON(json['ai']),
   };
 }
 
@@ -89,5 +102,6 @@ export function MatchOptionsToJSON(value?: MatchOptions | null): any {
         : value.conditions === null
         ? null
         : (value.conditions as Array<any>).map(ConditionOptionToJSON),
+    ai: AIMessageMatchOptionsToJSON(value.ai),
   };
 }

@@ -14,6 +14,7 @@ DevicePreviewEmailSubmissionDto
 
 - [completedAt](DevicePreviewEmailSubmissionDto.md#completedat)
 - [createdAt](DevicePreviewEmailSubmissionDto.md#createdat)
+- [failureCode](DevicePreviewEmailSubmissionDto.md#failurecode)
 - [failureStage](DevicePreviewEmailSubmissionDto.md#failurestage)
 - [id](DevicePreviewEmailSubmissionDto.md#id)
 - [ingestDomainId](DevicePreviewEmailSubmissionDto.md#ingestdomainid)
@@ -50,6 +51,16 @@ ___
 ### createdAt
 
 • **createdAt**: `Date`
+
+**`Memberof`**
+
+DevicePreviewEmailSubmissionDto
+
+___
+
+### failureCode
+
+• `Optional` **failureCode**: [`DevicePreviewEmailSubmissionDtoFailureCodeEnum`](../enums/DevicePreviewEmailSubmissionDtoFailureCodeEnum.md)
 
 **`Memberof`**
 

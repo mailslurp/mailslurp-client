@@ -105,6 +105,12 @@ export interface InboxReplierDto {
    */
   ignoreReplyTo: boolean;
   /**
+   * Whether the inbox replier is active
+   * @type {boolean}
+   * @memberof InboxReplierDto
+   */
+  active: boolean;
+  /**
    *
    * @type {Date}
    * @memberof InboxReplierDto
@@ -122,6 +128,18 @@ export interface InboxReplierDto {
    * @memberof InboxReplierDto
    */
   matchOptions?: InboxAutomationMatchOptions | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierDto
+   */
+  body?: string | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof InboxReplierDto
+   */
+  attachments?: Array<string> | null;
 }
 
 /**
@@ -174,11 +192,14 @@ export function InboxReplierDtoFromJSONTyped(
       ? undefined
       : json['templateVariables'],
     ignoreReplyTo: json['ignoreReplyTo'],
+    active: json['active'],
     createdAt: new Date(json['createdAt']),
     should: !exists(json, 'should') ? undefined : json['should'],
     matchOptions: !exists(json, 'matchOptions')
       ? undefined
       : InboxAutomationMatchOptionsFromJSON(json['matchOptions']),
+    body: !exists(json, 'body') ? undefined : json['body'],
+    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
   };
 }
 
@@ -203,8 +224,11 @@ export function InboxReplierDtoToJSON(value?: InboxReplierDto | null): any {
     templateId: value.templateId,
     templateVariables: value.templateVariables,
     ignoreReplyTo: value.ignoreReplyTo,
+    active: value.active,
     createdAt: value.createdAt.toISOString(),
     should: value.should,
     matchOptions: InboxAutomationMatchOptionsToJSON(value.matchOptions),
+    body: value.body,
+    attachments: value.attachments,
   };
 }

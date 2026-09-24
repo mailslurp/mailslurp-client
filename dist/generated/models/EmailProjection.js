@@ -25,18 +25,16 @@ function EmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        id: json['id'],
         threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
         from: json['from'],
-        sender: !(0, runtime_1.exists)(json, 'sender')
-            ? undefined
-            : (0, _1.SenderFromJSON)(json['sender']),
+        inboxId: json['inboxId'],
         recipients: !(0, runtime_1.exists)(json, 'recipients')
             ? undefined
             : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        inboxId: json['inboxId'],
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
+        read: json['read'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
+        sizeBytes: !(0, runtime_1.exists)(json, 'sizeBytes') ? undefined : json['sizeBytes'],
         textExcerpt: !(0, runtime_1.exists)(json, 'textExcerpt') ? undefined : json['textExcerpt'],
         bodyExcerpt: !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
         to: json['to'],
@@ -45,17 +43,19 @@ function EmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         messageId: !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
         inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
-        sizeBytes: !(0, runtime_1.exists)(json, 'sizeBytes') ? undefined : json['sizeBytes'],
+        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
+        sender: !(0, runtime_1.exists)(json, 'sender')
+            ? undefined
+            : (0, _1.SenderFromJSON)(json['sender']),
         domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
-        read: json['read'],
         bodyPartContentTypes: !(0, runtime_1.exists)(json, 'bodyPartContentTypes')
             ? undefined
             : json['bodyPartContentTypes'],
-        favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
+        bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
         plusAddress: !(0, runtime_1.exists)(json, 'plusAddress') ? undefined : json['plusAddress'],
         imapUid: !(0, runtime_1.exists)(json, 'imapUid') ? undefined : json['imapUid'],
-        bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
         teamAccess: json['teamAccess'],
+        id: json['id'],
     };
 }
 exports.EmailProjectionFromJSONTyped = EmailProjectionFromJSONTyped;
@@ -67,14 +67,14 @@ function EmailProjectionToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
         threadId: value.threadId,
         from: value.from,
-        sender: (0, _1.SenderToJSON)(value.sender),
-        recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
-        subject: value.subject,
         inboxId: value.inboxId,
+        recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
         attachments: value.attachments,
+        read: value.read,
+        subject: value.subject,
+        sizeBytes: value.sizeBytes,
         textExcerpt: value.textExcerpt,
         bodyExcerpt: value.bodyExcerpt,
         to: value.to,
@@ -83,15 +83,15 @@ function EmailProjectionToJSON(value) {
         bcc: value.bcc,
         messageId: value.messageId,
         inReplyTo: value.inReplyTo,
-        sizeBytes: value.sizeBytes,
-        domainId: value.domainId,
-        read: value.read,
-        bodyPartContentTypes: value.bodyPartContentTypes,
         favourite: value.favourite,
+        sender: (0, _1.SenderToJSON)(value.sender),
+        domainId: value.domainId,
+        bodyPartContentTypes: value.bodyPartContentTypes,
+        bodyMD5Hash: value.bodyMD5Hash,
         plusAddress: value.plusAddress,
         imapUid: value.imapUid,
-        bodyMD5Hash: value.bodyMD5Hash,
         teamAccess: value.teamAccess,
+        id: value.id,
     };
 }
 exports.EmailProjectionToJSON = EmailProjectionToJSON;

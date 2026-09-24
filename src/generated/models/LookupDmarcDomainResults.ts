@@ -60,6 +60,30 @@ export interface LookupDmarcDomainResults {
    * @memberof LookupDmarcDomainResults
    */
   warnings: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof LookupDmarcDomainResults
+   */
+  queriedDomain: string;
+  /**
+   *
+   * @type {string}
+   * @memberof LookupDmarcDomainResults
+   */
+  organizationalDomain?: string | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof LookupDmarcDomainResults
+   */
+  inheritedFromOrganizationalDomain: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof LookupDmarcDomainResults
+   */
+  effectivePolicy?: string | null;
 }
 
 export function LookupDmarcDomainResultsFromJSON(
@@ -81,6 +105,15 @@ export function LookupDmarcDomainResultsFromJSONTyped(
     records: (json['records'] as Array<any>).map(DNSLookupResultFromJSON),
     errors: json['errors'],
     warnings: json['warnings'],
+    queriedDomain: json['queriedDomain'],
+    organizationalDomain: !exists(json, 'organizationalDomain')
+      ? undefined
+      : json['organizationalDomain'],
+    inheritedFromOrganizationalDomain:
+      json['inheritedFromOrganizationalDomain'],
+    effectivePolicy: !exists(json, 'effectivePolicy')
+      ? undefined
+      : json['effectivePolicy'],
   };
 }
 
@@ -99,5 +132,9 @@ export function LookupDmarcDomainResultsToJSON(
     records: (value.records as Array<any>).map(DNSLookupResultToJSON),
     errors: value.errors,
     warnings: value.warnings,
+    queriedDomain: value.queriedDomain,
+    organizationalDomain: value.organizationalDomain,
+    inheritedFromOrganizationalDomain: value.inheritedFromOrganizationalDomain,
+    effectivePolicy: value.effectivePolicy,
   };
 }

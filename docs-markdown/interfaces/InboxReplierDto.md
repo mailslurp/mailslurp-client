@@ -14,6 +14,9 @@ InboxReplierDto
 
 ### Properties
 
+- [active](InboxReplierDto.md#active)
+- [attachments](InboxReplierDto.md#attachments)
+- [body](InboxReplierDto.md#body)
 - [charset](InboxReplierDto.md#charset)
 - [createdAt](InboxReplierDto.md#createdat)
 - [field](InboxReplierDto.md#field)
@@ -32,6 +35,38 @@ InboxReplierDto
 - [templateVariables](InboxReplierDto.md#templatevariables)
 
 ## Properties
+
+### active
+
+• **active**: `boolean`
+
+Whether the inbox replier is active
+
+**`Memberof`**
+
+InboxReplierDto
+
+___
+
+### attachments
+
+• `Optional` **attachments**: `string`[]
+
+**`Memberof`**
+
+InboxReplierDto
+
+___
+
+### body
+
+• `Optional` **body**: `string`
+
+**`Memberof`**
+
+InboxReplierDto
+
+___
 
 ### charset
 

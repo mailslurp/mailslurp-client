@@ -48,6 +48,18 @@ export interface PublicDeviceRenderTestDto {
    * @type {string}
    * @memberof PublicDeviceRenderTestDto
    */
+  target: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PublicDeviceRenderTestDto
+   */
+  previewMode: PublicDeviceRenderTestDtoPreviewModeEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof PublicDeviceRenderTestDto
+   */
   sourceFrom?: string | null;
   /**
    *
@@ -113,6 +125,14 @@ export enum PublicDeviceRenderTestDtoStatusEnum {
   FAILED = 'FAILED',
   EXPIRED = 'EXPIRED',
 }
+/**
+ * @export
+ * @enum {string}
+ */
+export enum PublicDeviceRenderTestDtoPreviewModeEnum {
+  DEVICE_RENDER = 'DEVICE_RENDER',
+  LIGHT_DARK = 'LIGHT_DARK',
+}
 
 export function PublicDeviceRenderTestDtoFromJSON(
   json: any
@@ -132,6 +152,8 @@ export function PublicDeviceRenderTestDtoFromJSONTyped(
     emailAddress: json['emailAddress'],
     status: json['status'],
     expiresAt: new Date(json['expiresAt']),
+    target: json['target'],
+    previewMode: json['previewMode'],
     sourceFrom: !exists(json, 'sourceFrom') ? undefined : json['sourceFrom'],
     sourceSubject: !exists(json, 'sourceSubject')
       ? undefined
@@ -164,6 +186,8 @@ export function PublicDeviceRenderTestDtoToJSON(
     emailAddress: value.emailAddress,
     status: value.status,
     expiresAt: value.expiresAt.toISOString(),
+    target: value.target,
+    previewMode: value.previewMode,
     sourceFrom: value.sourceFrom,
     sourceSubject: value.sourceSubject,
     senderDomain: value.senderDomain,

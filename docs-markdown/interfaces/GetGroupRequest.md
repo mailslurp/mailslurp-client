@@ -7,9 +7,16 @@
 ### Properties
 
 - [groupId](GetGroupRequest.md#groupid)
+- [slug](GetGroupRequest.md#slug)
 
 ## Properties
 
 ### groupId
 
 • **groupId**: `string`
+
+___
+
+### slug
+
+• **slug**: `string`

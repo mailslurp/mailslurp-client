@@ -13,6 +13,7 @@
 - [CATCH\_ALL](GetAllInboxesOffsetPaginatedInboxFunctionEnum.md#catch_all)
 - [CONNECTOR](GetAllInboxesOffsetPaginatedInboxFunctionEnum.md#connector)
 - [GUEST](GetAllInboxesOffsetPaginatedInboxFunctionEnum.md#guest)
+- [GUIDED\_TOUR](GetAllInboxesOffsetPaginatedInboxFunctionEnum.md#guided_tour)
 - [OAUTH\_CONNECTION\_GMAIL](GetAllInboxesOffsetPaginatedInboxFunctionEnum.md#oauth_connection_gmail)
 - [THREAD](GetAllInboxesOffsetPaginatedInboxFunctionEnum.md#thread)
 
@@ -45,6 +46,12 @@ ___
 ### GUEST
 
 • **GUEST** = ``"GUEST"``
+
+___
+
+### GUIDED\_TOUR
+
+• **GUIDED\_TOUR** = ``"GUIDED_TOUR"``
 
 ___
 

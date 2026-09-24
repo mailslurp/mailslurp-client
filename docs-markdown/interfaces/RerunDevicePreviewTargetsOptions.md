@@ -21,7 +21,7 @@ RerunDevicePreviewTargetsOptions
 
 • **failedOnly**: `boolean`
 
-When true, only selected targets in failed terminal states are rerun. Defaults to true.
+When true, only selected targets in failed terminal states are rerun. Set false to rerun any selected target; a target that already completed successfully uses its credit cost again. Defaults to true.
 
 **`Memberof`**
 

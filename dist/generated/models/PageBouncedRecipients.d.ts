@@ -51,12 +51,6 @@ export interface PageBouncedRecipients {
      * @type {number}
      * @memberof PageBouncedRecipients
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageBouncedRecipients
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageBouncedRecipients {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageBouncedRecipients
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageBouncedRecipients
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageBouncedRecipients
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

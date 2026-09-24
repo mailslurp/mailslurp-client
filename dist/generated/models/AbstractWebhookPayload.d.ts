@@ -20,12 +20,6 @@ export interface AbstractWebhookPayload {
      * @type {string}
      * @memberof AbstractWebhookPayload
      */
-    webhookName?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof AbstractWebhookPayload
-     */
     eventName: AbstractWebhookPayloadEventNameEnum;
     /**
      *
@@ -39,6 +33,12 @@ export interface AbstractWebhookPayload {
      * @memberof AbstractWebhookPayload
      */
     webhookId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AbstractWebhookPayload
+     */
+    webhookName?: string | null;
 }
 /**
  * @export

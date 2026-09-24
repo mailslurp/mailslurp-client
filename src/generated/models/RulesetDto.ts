@@ -62,6 +62,12 @@ export interface RulesetDto {
    */
   handler: RulesetDtoHandlerEnum;
   /**
+   * Whether the ruleset is active
+   * @type {boolean}
+   * @memberof RulesetDto
+   */
+  active: boolean;
+  /**
    *
    * @type {Date}
    * @memberof RulesetDto
@@ -117,6 +123,7 @@ export function RulesetDtoFromJSONTyped(
     action: json['action'],
     target: json['target'],
     handler: json['handler'],
+    active: json['active'],
     createdAt: new Date(json['createdAt']),
   };
 }
@@ -136,6 +143,7 @@ export function RulesetDtoToJSON(value?: RulesetDto | null): any {
     action: value.action,
     target: value.target,
     handler: value.handler,
+    active: value.active,
     createdAt: value.createdAt.toISOString(),
   };
 }

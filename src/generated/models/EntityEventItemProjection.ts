@@ -24,13 +24,13 @@ export interface EntityEventItemProjection {
    * @type {string}
    * @memberof EntityEventItemProjection
    */
-  id: string;
+  severity: EntityEventItemProjectionSeverityEnum;
   /**
    *
    * @type {string}
    * @memberof EntityEventItemProjection
    */
-  severity: EntityEventItemProjectionSeverityEnum;
+  eventType: EntityEventItemProjectionEventTypeEnum;
   /**
    *
    * @type {string}
@@ -48,7 +48,7 @@ export interface EntityEventItemProjection {
    * @type {string}
    * @memberof EntityEventItemProjection
    */
-  eventType: EntityEventItemProjectionEventTypeEnum;
+  id: string;
 }
 
 /**
@@ -87,11 +87,11 @@ export function EntityEventItemProjectionFromJSONTyped(
     return json;
   }
   return {
-    id: json['id'],
     severity: json['severity'],
+    eventType: json['eventType'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     phoneId: !exists(json, 'phoneId') ? undefined : json['phoneId'],
-    eventType: json['eventType'],
+    id: json['id'],
   };
 }
 
@@ -105,10 +105,10 @@ export function EntityEventItemProjectionToJSON(
     return null;
   }
   return {
-    id: value.id,
     severity: value.severity,
+    eventType: value.eventType,
     inboxId: value.inboxId,
     phoneId: value.phoneId,
-    eventType: value.eventType,
+    id: value.id,
   };
 }

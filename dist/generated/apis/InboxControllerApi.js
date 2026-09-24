@@ -3094,10 +3094,6 @@ var InboxControllerApi = /** @class */ (function (_super) {
                             requestParameters.inboxId === undefined) {
                             throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling importEmailIntoInboxBytes.');
                         }
-                        if (requestParameters.body === null ||
-                            requestParameters.body === undefined) {
-                            throw new runtime.RequiredError('body', 'Required parameter requestParameters.body was null or undefined when calling importEmailIntoInboxBytes.');
-                        }
                         queryParameters = {};
                         if (requestParameters.externalId !== undefined) {
                             queryParameters['externalId'] = requestParameters.externalId;
@@ -3110,7 +3106,6 @@ var InboxControllerApi = /** @class */ (function (_super) {
                                 requestParameters.overrideMessageId;
                         }
                         headerParameters = {};
-                        headerParameters['Content-Type'] = 'application/octet-stream';
                         if (this.configuration && this.configuration.apiKey) {
                             headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
                         }
@@ -3119,7 +3114,6 @@ var InboxControllerApi = /** @class */ (function (_super) {
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
-                                body: requestParameters.body,
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();
@@ -3713,6 +3707,142 @@ var InboxControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Internal SMTP-server endpoint for sending an SMTP envelope whose RFC822 body has already been written to S3.
+     * Send SMTP envelope from an S3 body reference
+     */
+    InboxControllerApi.prototype.sendSmtpEnvelopeFromS3Raw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendSmtpEnvelopeFromS3.');
+                        }
+                        if (requestParameters.key === null || requestParameters.key === undefined) {
+                            throw new runtime.RequiredError('key', 'Required parameter requestParameters.key was null or undefined when calling sendSmtpEnvelopeFromS3.');
+                        }
+                        if (requestParameters.sendSMTPEnvelopeFromS3Options === null ||
+                            requestParameters.sendSMTPEnvelopeFromS3Options === undefined) {
+                            throw new runtime.RequiredError('sendSMTPEnvelopeFromS3Options', 'Required parameter requestParameters.sendSMTPEnvelopeFromS3Options was null or undefined when calling sendSmtpEnvelopeFromS3.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.key !== undefined) {
+                            queryParameters['key'] = requestParameters.key;
+                        }
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/{inboxId}/smtp-envelope/s3".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.SendSMTPEnvelopeFromS3OptionsToJSON)(requestParameters.sendSMTPEnvelopeFromS3Options),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Internal SMTP-server endpoint for sending an SMTP envelope whose RFC822 body has already been written to S3.
+     * Send SMTP envelope from an S3 body reference
+     */
+    InboxControllerApi.prototype.sendSmtpEnvelopeFromS3 = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.sendSmtpEnvelopeFromS3Raw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Internal SMTP-server endpoint for sending an SMTP envelope while streaming the RFC822 body in the request.
+     * Send SMTP envelope from a streamed body
+     */
+    InboxControllerApi.prototype.sendSmtpEnvelopeStreamRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.inboxId === null ||
+                            requestParameters.inboxId === undefined) {
+                            throw new runtime.RequiredError('inboxId', 'Required parameter requestParameters.inboxId was null or undefined when calling sendSmtpEnvelopeStream.');
+                        }
+                        if (requestParameters.key === null || requestParameters.key === undefined) {
+                            throw new runtime.RequiredError('key', 'Required parameter requestParameters.key was null or undefined when calling sendSmtpEnvelopeStream.');
+                        }
+                        if (requestParameters.mailFrom === null ||
+                            requestParameters.mailFrom === undefined) {
+                            throw new runtime.RequiredError('mailFrom', 'Required parameter requestParameters.mailFrom was null or undefined when calling sendSmtpEnvelopeStream.');
+                        }
+                        if (requestParameters.rcptTo === null ||
+                            requestParameters.rcptTo === undefined) {
+                            throw new runtime.RequiredError('rcptTo', 'Required parameter requestParameters.rcptTo was null or undefined when calling sendSmtpEnvelopeStream.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.key !== undefined) {
+                            queryParameters['key'] = requestParameters.key;
+                        }
+                        if (requestParameters.mailFrom !== undefined) {
+                            queryParameters['mailFrom'] = requestParameters.mailFrom;
+                        }
+                        if (requestParameters.rcptTo) {
+                            queryParameters['rcptTo'] = requestParameters.rcptTo;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inboxes/{inboxId}/smtp-envelope/stream".replace("{".concat('inboxId', "}"), encodeURIComponent(String(requestParameters.inboxId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Internal SMTP-server endpoint for sending an SMTP envelope while streaming the RFC822 body in the request.
+     * Send SMTP envelope from a streamed body
+     */
+    InboxControllerApi.prototype.sendSmtpEnvelopeStream = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.sendSmtpEnvelopeStreamRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Send an inbox a test email to test email receiving is working
      * Send a test email to inbox
      */
@@ -4088,6 +4218,7 @@ var GetAllInboxesInboxFunctionEnum;
     GetAllInboxesInboxFunctionEnum["CATCH_ALL"] = "CATCH_ALL";
     GetAllInboxesInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
     GetAllInboxesInboxFunctionEnum["ACCOUNT"] = "ACCOUNT";
+    GetAllInboxesInboxFunctionEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
     GetAllInboxesInboxFunctionEnum["GUEST"] = "GUEST";
     GetAllInboxesInboxFunctionEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(GetAllInboxesInboxFunctionEnum = exports.GetAllInboxesInboxFunctionEnum || (exports.GetAllInboxesInboxFunctionEnum = {}));
@@ -4120,6 +4251,7 @@ var GetAllInboxesOffsetPaginatedInboxFunctionEnum;
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["CATCH_ALL"] = "CATCH_ALL";
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["ACCOUNT"] = "ACCOUNT";
+    GetAllInboxesOffsetPaginatedInboxFunctionEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["GUEST"] = "GUEST";
     GetAllInboxesOffsetPaginatedInboxFunctionEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(GetAllInboxesOffsetPaginatedInboxFunctionEnum = exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum || (exports.GetAllInboxesOffsetPaginatedInboxFunctionEnum = {}));

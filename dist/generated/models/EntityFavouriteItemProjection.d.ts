@@ -20,18 +20,6 @@ export interface EntityFavouriteItemProjection {
      * @type {string}
      * @memberof EntityFavouriteItemProjection
      */
-    name: string;
-    /**
-     *
-     * @type {string}
-     * @memberof EntityFavouriteItemProjection
-     */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof EntityFavouriteItemProjection
-     */
     description?: string | null;
     /**
      *
@@ -45,6 +33,18 @@ export interface EntityFavouriteItemProjection {
      * @memberof EntityFavouriteItemProjection
      */
     entityType: EntityFavouriteItemProjectionEntityTypeEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof EntityFavouriteItemProjection
+     */
+    name: string;
+    /**
+     *
+     * @type {string}
+     * @memberof EntityFavouriteItemProjection
+     */
+    id: string;
 }
 /**
  * @export

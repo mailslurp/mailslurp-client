@@ -20,6 +20,8 @@
 
 ### Methods
 
+- [assertAIMessage](AIControllerApi.md#assertaimessage)
+- [assertAIMessageRaw](AIControllerApi.md#assertaimessageraw)
 - [createTransformer](AIControllerApi.md#createtransformer)
 - [createTransformerMappings](AIControllerApi.md#createtransformermappings)
 - [createTransformerMappingsRaw](AIControllerApi.md#createtransformermappingsraw)
@@ -34,12 +36,16 @@
 - [deleteTransformersRaw](AIControllerApi.md#deletetransformersraw)
 - [exportTransformerResults](AIControllerApi.md#exporttransformerresults)
 - [exportTransformerResultsRaw](AIControllerApi.md#exporttransformerresultsraw)
+- [extractAIMessage](AIControllerApi.md#extractaimessage)
+- [extractAIMessageRaw](AIControllerApi.md#extractaimessageraw)
 - [generateStructuredContentFromAttachment](AIControllerApi.md#generatestructuredcontentfromattachment)
 - [generateStructuredContentFromAttachmentRaw](AIControllerApi.md#generatestructuredcontentfromattachmentraw)
 - [generateStructuredContentFromEmail](AIControllerApi.md#generatestructuredcontentfromemail)
 - [generateStructuredContentFromEmailRaw](AIControllerApi.md#generatestructuredcontentfromemailraw)
 - [generateStructuredContentFromSms](AIControllerApi.md#generatestructuredcontentfromsms)
 - [generateStructuredContentFromSmsRaw](AIControllerApi.md#generatestructuredcontentfromsmsraw)
+- [getAIMessageModels](AIControllerApi.md#getaimessagemodels)
+- [getAIMessageModelsRaw](AIControllerApi.md#getaimessagemodelsraw)
 - [getExportTransformerResultsJob](AIControllerApi.md#getexporttransformerresultsjob)
 - [getExportTransformerResultsJobRaw](AIControllerApi.md#getexporttransformerresultsjobraw)
 - [getTransformer](AIControllerApi.md#gettransformer)
@@ -63,6 +69,10 @@
 - [testTransformerMappingMatchRaw](AIControllerApi.md#testtransformermappingmatchraw)
 - [validateStructuredOutputSchema](AIControllerApi.md#validatestructuredoutputschema)
 - [validateStructuredOutputSchemaRaw](AIControllerApi.md#validatestructuredoutputschemaraw)
+- [waitForAIMessage](AIControllerApi.md#waitforaimessage)
+- [waitForAIMessageRaw](AIControllerApi.md#waitforaimessageraw)
+- [waitForAIMessages](AIControllerApi.md#waitforaimessages)
+- [waitForAIMessagesRaw](AIControllerApi.md#waitforaimessagesraw)
 - [withMiddleware](AIControllerApi.md#withmiddleware)
 - [withPostMiddleware](AIControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](AIControllerApi.md#withpremiddleware)
@@ -94,6 +104,46 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### assertAIMessage
+
+▸ **assertAIMessage**(`requestParameters`, `initOverrides?`): `Promise`<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>
+
+Check named natural-language assertions against an existing email or SMS. Returns PASS, FAIL, INCONCLUSIVE or a distinct operational status. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+Check named natural-language assertions against an existing email or SMS
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AssertAIMessageRequest`](../interfaces/AssertAIMessageRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>
+
+___
+
+### assertAIMessageRaw
+
+▸ **assertAIMessageRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>\>
+
+Check named natural-language assertions against an existing email or SMS. Returns PASS, FAIL, INCONCLUSIVE or a distinct operational status. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+Check named natural-language assertions against an existing email or SMS
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`AssertAIMessageRequest`](../interfaces/AssertAIMessageRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>\>
+
+___
 
 ### createTransformer
 
@@ -371,6 +421,46 @@ Export transformer results
 
 ___
 
+### extractAIMessage
+
+▸ **extractAIMessage**(`requestParameters`, `initOverrides?`): `Promise`<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>
+
+Extract schema-validated data from an existing email or SMS with verified source evidence. Missing or ambiguous data is not invented. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+Extract schema-validated data from an existing email or SMS with verified source evidence
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ExtractAIMessageRequest`](../interfaces/ExtractAIMessageRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>
+
+___
+
+### extractAIMessageRaw
+
+▸ **extractAIMessageRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>\>
+
+Extract schema-validated data from an existing email or SMS with verified source evidence. Missing or ambiguous data is not invented. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+Extract schema-validated data from an existing email or SMS with verified source evidence
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ExtractAIMessageRequest`](../interfaces/ExtractAIMessageRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>\>
+
+___
+
 ### generateStructuredContentFromAttachment
 
 ▸ **generateStructuredContentFromAttachment**(`requestParameters`, `initOverrides?`): `Promise`<[`StructuredContentResultDto`](../interfaces/StructuredContentResultDto.md)\>
@@ -488,6 +578,44 @@ Generate structured content for a TXT message
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`StructuredContentResultDto`](../interfaces/StructuredContentResultDto.md)\>\>
+
+___
+
+### getAIMessageModels
+
+▸ **getAIMessageModels**(`initOverrides?`): `Promise`<[`AIMessageModelDto`](../interfaces/AIMessageModelDto.md)[]\>
+
+Discover enum model selectors, resolved provider models, evaluator versions and token multipliers. Pinned models never silently fall back.
+List supported message-testing AI models
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AIMessageModelDto`](../interfaces/AIMessageModelDto.md)[]\>
+
+___
+
+### getAIMessageModelsRaw
+
+▸ **getAIMessageModelsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessageModelDto`](../interfaces/AIMessageModelDto.md)[]\>\>
+
+Discover enum model selectors, resolved provider models, evaluator versions and token multipliers. Pinned models never silently fall back.
+List supported message-testing AI models
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessageModelDto`](../interfaces/AIMessageModelDto.md)[]\>\>
 
 ___
 
@@ -949,6 +1077,86 @@ Validate structured content schema
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`StructuredOutputSchemaValidation`](../interfaces/StructuredOutputSchemaValidation.md)\>\>
+
+___
+
+### waitForAIMessage
+
+▸ **waitForAIMessage**(`requestParameters`, `initOverrides?`): `Promise`<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>
+
+Find a message across explicit inboxes or phones, then assert and extract from that same message. Checks never select a replacement message after failure. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+Find a message across explicit inboxes or phones, then assert and extract from that same message
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForAIMessageRequest`](../interfaces/WaitForAIMessageRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>
+
+___
+
+### waitForAIMessageRaw
+
+▸ **waitForAIMessageRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>\>
+
+Find a message across explicit inboxes or phones, then assert and extract from that same message. Checks never select a replacement message after failure. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+Find a message across explicit inboxes or phones, then assert and extract from that same message
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForAIMessageRequest`](../interfaces/WaitForAIMessageRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>\>
+
+___
+
+### waitForAIMessages
+
+▸ **waitForAIMessages**(`requestParameters`, `initOverrides?`): `Promise`<[`AIMessagesResult`](../interfaces/AIMessagesResult.md)\>
+
+Wait for all named email and SMS expectations under one shared deadline and AI token budget. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+Wait for all named email and SMS expectations under one shared deadline and AI token budget
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForAIMessagesRequest`](../interfaces/WaitForAIMessagesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AIMessagesResult`](../interfaces/AIMessagesResult.md)\>
+
+___
+
+### waitForAIMessagesRaw
+
+▸ **waitForAIMessagesRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessagesResult`](../interfaces/AIMessagesResult.md)\>\>
+
+Wait for all named email and SMS expectations under one shared deadline and AI token budget. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+Wait for all named email and SMS expectations under one shared deadline and AI token budget
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForAIMessagesRequest`](../interfaces/WaitForAIMessagesRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessagesResult`](../interfaces/AIMessagesResult.md)\>\>
 
 ___
 

@@ -15,6 +15,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateDevicePreviewOptionsToJSON = exports.CreateDevicePreviewOptionsFromJSONTyped = exports.CreateDevicePreviewOptionsFromJSON = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 function CreateDevicePreviewOptionsFromJSON(json) {
     return CreateDevicePreviewOptionsFromJSONTyped(json, false);
 }
@@ -24,9 +25,11 @@ function CreateDevicePreviewOptionsFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        nativeTargets: !(0, runtime_1.exists)(json, 'nativeTargets')
+        targets: !(0, runtime_1.exists)(json, 'targets') ? undefined : json['targets'],
+        allTargets: !(0, runtime_1.exists)(json, 'allTargets') ? undefined : json['allTargets'],
+        qa: !(0, runtime_1.exists)(json, 'qa')
             ? undefined
-            : json['nativeTargets'],
+            : (0, _1.CreateDevicePreviewQaOptionsFromJSON)(json['qa']),
     };
 }
 exports.CreateDevicePreviewOptionsFromJSONTyped = CreateDevicePreviewOptionsFromJSONTyped;
@@ -38,7 +41,9 @@ function CreateDevicePreviewOptionsToJSON(value) {
         return null;
     }
     return {
-        nativeTargets: value.nativeTargets,
+        targets: value.targets,
+        allTargets: value.allTargets,
+        qa: (0, _1.CreateDevicePreviewQaOptionsToJSON)(value.qa),
     };
 }
 exports.CreateDevicePreviewOptionsToJSON = CreateDevicePreviewOptionsToJSON;

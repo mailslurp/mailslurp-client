@@ -17,10 +17,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 /* eslint-disable */
 __exportStar(require("./AIControllerApi"), exports);
+__exportStar(require("./AgentControllerApi"), exports);
 __exportStar(require("./AliasControllerApi"), exports);
 __exportStar(require("./ApiAuditLogControllerApi"), exports);
+__exportStar(require("./ApiAutomatedInboxPlacementControllerApi"), exports);
+__exportStar(require("./ApiEmailWarmupControllerApi"), exports);
+__exportStar(require("./ApiFreeInboxControllerApi"), exports);
 __exportStar(require("./ApiInboxPlacementTestControllerApi"), exports);
+__exportStar(require("./ApiMcpControllerApi"), exports);
+__exportStar(require("./ApiMcpOAuthControllerApi"), exports);
+__exportStar(require("./ApiSendingConnectionControllerApi"), exports);
 __exportStar(require("./AttachmentControllerApi"), exports);
+__exportStar(require("./AuthV2Api"), exports);
 __exportStar(require("./BounceControllerApi"), exports);
 __exportStar(require("./BulkActionsControllerApi"), exports);
 __exportStar(require("./CampaignProbeControllerApi"), exports);
@@ -51,6 +59,7 @@ __exportStar(require("./MissedEmailControllerApi"), exports);
 __exportStar(require("./MissedSmsControllerApi"), exports);
 __exportStar(require("./PhoneControllerApi"), exports);
 __exportStar(require("./RulesetControllerApi"), exports);
+__exportStar(require("./SCIMApi"), exports);
 __exportStar(require("./SentEmailsControllerApi"), exports);
 __exportStar(require("./SmsControllerApi"), exports);
 __exportStar(require("./SpamEmailControllerApi"), exports);

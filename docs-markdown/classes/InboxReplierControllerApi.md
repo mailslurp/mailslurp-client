@@ -36,6 +36,8 @@
 - [getInboxRepliersRaw](InboxReplierControllerApi.md#getinboxrepliersraw)
 - [request](InboxReplierControllerApi.md#request)
 - [updateInboxReplier](InboxReplierControllerApi.md#updateinboxreplier)
+- [updateInboxReplierActive](InboxReplierControllerApi.md#updateinboxreplieractive)
+- [updateInboxReplierActiveRaw](InboxReplierControllerApi.md#updateinboxreplieractiveraw)
 - [updateInboxReplierRaw](InboxReplierControllerApi.md#updateinboxreplierraw)
 - [withMiddleware](InboxReplierControllerApi.md#withmiddleware)
 - [withPostMiddleware](InboxReplierControllerApi.md#withpostmiddleware)
@@ -387,6 +389,46 @@ Update an inbox replier
 #### Returns
 
 `Promise`<[`InboxReplierDto`](../interfaces/InboxReplierDto.md)\>
+
+___
+
+### updateInboxReplierActive
+
+▸ **updateInboxReplierActive**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxReplierDto`](../interfaces/InboxReplierDto.md)\>
+
+Enable or disable an inbox replier without changing its other settings
+Update an inbox replier\'s active state
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateInboxReplierActiveRequest`](../interfaces/UpdateInboxReplierActiveRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxReplierDto`](../interfaces/InboxReplierDto.md)\>
+
+___
+
+### updateInboxReplierActiveRaw
+
+▸ **updateInboxReplierActiveRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxReplierDto`](../interfaces/InboxReplierDto.md)\>\>
+
+Enable or disable an inbox replier without changing its other settings
+Update an inbox replier\'s active state
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateInboxReplierActiveRequest`](../interfaces/UpdateInboxReplierActiveRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxReplierDto`](../interfaces/InboxReplierDto.md)\>\>
 
 ___
 

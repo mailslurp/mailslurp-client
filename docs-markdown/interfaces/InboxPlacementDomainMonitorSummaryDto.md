@@ -18,6 +18,7 @@ InboxPlacementDomainMonitorSummaryDto
 - [blacklistChecked](InboxPlacementDomainMonitorSummaryDto.md#blacklistchecked)
 - [blacklistListed](InboxPlacementDomainMonitorSummaryDto.md#blacklistlisted)
 - [blacklistOk](InboxPlacementDomainMonitorSummaryDto.md#blacklistok)
+- [blacklistStatus](InboxPlacementDomainMonitorSummaryDto.md#blackliststatus)
 - [checkedAt](InboxPlacementDomainMonitorSummaryDto.md#checkedat)
 - [dkimOk](InboxPlacementDomainMonitorSummaryDto.md#dkimok)
 - [dmarcEnforced](InboxPlacementDomainMonitorSummaryDto.md#dmarcenforced)
@@ -30,9 +31,12 @@ InboxPlacementDomainMonitorSummaryDto
 - [monitorId](InboxPlacementDomainMonitorSummaryDto.md#monitorid)
 - [mtaStsOk](InboxPlacementDomainMonitorSummaryDto.md#mtastsok)
 - [mxOk](InboxPlacementDomainMonitorSummaryDto.md#mxok)
+- [observedSendingIp](InboxPlacementDomainMonitorSummaryDto.md#observedsendingip)
 - [passingChecks](InboxPlacementDomainMonitorSummaryDto.md#passingchecks)
 - [providerManaged](InboxPlacementDomainMonitorSummaryDto.md#providermanaged)
 - [runId](InboxPlacementDomainMonitorSummaryDto.md#runid)
+- [scoreScope](InboxPlacementDomainMonitorSummaryDto.md#scorescope)
+- [scoreVersion](InboxPlacementDomainMonitorSummaryDto.md#scoreversion)
 - [source](InboxPlacementDomainMonitorSummaryDto.md#source)
 - [spfOk](InboxPlacementDomainMonitorSummaryDto.md#spfok)
 - [state](InboxPlacementDomainMonitorSummaryDto.md#state)
@@ -75,6 +79,16 @@ ___
 ### blacklistOk
 
 • **blacklistOk**: `boolean`
+
+**`Memberof`**
+
+InboxPlacementDomainMonitorSummaryDto
+
+___
+
+### blacklistStatus
+
+• **blacklistStatus**: [`InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum`](../enums/InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum.md)
 
 **`Memberof`**
 
@@ -202,6 +216,16 @@ InboxPlacementDomainMonitorSummaryDto
 
 ___
 
+### observedSendingIp
+
+• `Optional` **observedSendingIp**: `string`
+
+**`Memberof`**
+
+InboxPlacementDomainMonitorSummaryDto
+
+___
+
 ### passingChecks
 
 • `Optional` **passingChecks**: `number`
@@ -225,6 +249,26 @@ ___
 ### runId
 
 • `Optional` **runId**: `string`
+
+**`Memberof`**
+
+InboxPlacementDomainMonitorSummaryDto
+
+___
+
+### scoreScope
+
+• **scoreScope**: `string`
+
+**`Memberof`**
+
+InboxPlacementDomainMonitorSummaryDto
+
+___
+
+### scoreVersion
+
+• **scoreVersion**: `string`
 
 **`Memberof`**
 

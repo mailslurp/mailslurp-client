@@ -24,16 +24,16 @@ export interface PageableObject {
     offset?: number;
     /**
      *
-     * @type {boolean}
-     * @memberof PageableObject
-     */
-    unpaged?: boolean;
-    /**
-     *
      * @type {SortObject}
      * @memberof PageableObject
      */
     sort?: SortObject;
+    /**
+     *
+     * @type {boolean}
+     * @memberof PageableObject
+     */
+    unpaged?: boolean;
     /**
      *
      * @type {boolean}

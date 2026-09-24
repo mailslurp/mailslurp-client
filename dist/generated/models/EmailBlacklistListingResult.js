@@ -13,7 +13,19 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailBlacklistListingResultToJSON = exports.EmailBlacklistListingResultFromJSONTyped = exports.EmailBlacklistListingResultFromJSON = void 0;
+exports.EmailBlacklistListingResultToJSON = exports.EmailBlacklistListingResultFromJSONTyped = exports.EmailBlacklistListingResultFromJSON = exports.EmailBlacklistListingResultStatusEnum = void 0;
+var runtime_1 = require("../runtime");
+/**
+ * @export
+ * @enum {string}
+ */
+var EmailBlacklistListingResultStatusEnum;
+(function (EmailBlacklistListingResultStatusEnum) {
+    EmailBlacklistListingResultStatusEnum["LISTED"] = "LISTED";
+    EmailBlacklistListingResultStatusEnum["NOT_LISTED"] = "NOT_LISTED";
+    EmailBlacklistListingResultStatusEnum["ERROR"] = "ERROR";
+    EmailBlacklistListingResultStatusEnum["NOT_CHECKED"] = "NOT_CHECKED";
+})(EmailBlacklistListingResultStatusEnum = exports.EmailBlacklistListingResultStatusEnum || (exports.EmailBlacklistListingResultStatusEnum = {}));
 function EmailBlacklistListingResultFromJSON(json) {
     return EmailBlacklistListingResultFromJSONTyped(json, false);
 }
@@ -27,6 +39,11 @@ function EmailBlacklistListingResultFromJSONTyped(json, ignoreDiscriminator) {
         listed: json['listed'],
         responseCodes: json['responseCodes'],
         responseMessages: json['responseMessages'],
+        status: json['status'],
+        errorMessage: !(0, runtime_1.exists)(json, 'errorMessage')
+            ? undefined
+            : json['errorMessage'],
+        provider: json['provider'],
     };
 }
 exports.EmailBlacklistListingResultFromJSONTyped = EmailBlacklistListingResultFromJSONTyped;
@@ -42,6 +59,9 @@ function EmailBlacklistListingResultToJSON(value) {
         listed: value.listed,
         responseCodes: value.responseCodes,
         responseMessages: value.responseMessages,
+        status: value.status,
+        errorMessage: value.errorMessage,
+        provider: value.provider,
     };
 }
 exports.EmailBlacklistListingResultToJSON = EmailBlacklistListingResultToJSON;

@@ -24,25 +24,19 @@ export interface PhoneNumberReleaseProjection {
    * @type {string}
    * @memberof PhoneNumberReleaseProjection
    */
-  name?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberReleaseProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberReleaseProjection
-   */
   userId: string;
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof PhoneNumberReleaseProjection
    */
-  createdAt: Date;
+  subscriptionSchedule?: PhoneNumberReleaseProjectionSubscriptionScheduleEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberReleaseProjection
+   */
+  planCurrency?: PhoneNumberReleaseProjectionPlanCurrencyEnum;
   /**
    *
    * @type {string}
@@ -57,37 +51,24 @@ export interface PhoneNumberReleaseProjection {
   phoneNumber?: string | null;
   /**
    *
-   * @type {string}
+   * @type {Date}
    * @memberof PhoneNumberReleaseProjection
    */
-  subscriptionSchedule?: PhoneNumberReleaseProjectionSubscriptionScheduleEnum;
+  createdAt: Date;
   /**
    *
    * @type {string}
    * @memberof PhoneNumberReleaseProjection
    */
-  planCurrency?: PhoneNumberReleaseProjectionPlanCurrencyEnum;
+  name?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberReleaseProjection
+   */
+  id: string;
 }
 
-/**
- * @export
- * @enum {string}
- */
-export enum PhoneNumberReleaseProjectionPhoneCountryEnum {
-  US = 'US',
-  GB = 'GB',
-  AU = 'AU',
-  CA = 'CA',
-  EE = 'EE',
-  HK = 'HK',
-  PL = 'PL',
-  CH = 'CH',
-  PT = 'PT',
-  NL = 'NL',
-  IL = 'IL',
-  FI = 'FI',
-  SE = 'SE',
-}
 /**
  * @export
  * @enum {string}
@@ -112,6 +93,25 @@ export enum PhoneNumberReleaseProjectionPlanCurrencyEnum {
   INR = 'INR',
   NZD = 'NZD',
 }
+/**
+ * @export
+ * @enum {string}
+ */
+export enum PhoneNumberReleaseProjectionPhoneCountryEnum {
+  US = 'US',
+  GB = 'GB',
+  AU = 'AU',
+  CA = 'CA',
+  EE = 'EE',
+  HK = 'HK',
+  PL = 'PL',
+  CH = 'CH',
+  PT = 'PT',
+  NL = 'NL',
+  IL = 'IL',
+  FI = 'FI',
+  SE = 'SE',
+}
 
 export function PhoneNumberReleaseProjectionFromJSON(
   json: any
@@ -127,18 +127,18 @@ export function PhoneNumberReleaseProjectionFromJSONTyped(
     return json;
   }
   return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
     userId: json['userId'],
-    createdAt: new Date(json['createdAt']),
-    phoneCountry: json['phoneCountry'],
-    phoneNumber: !exists(json, 'phoneNumber') ? undefined : json['phoneNumber'],
     subscriptionSchedule: !exists(json, 'subscriptionSchedule')
       ? undefined
       : json['subscriptionSchedule'],
     planCurrency: !exists(json, 'planCurrency')
       ? undefined
       : json['planCurrency'],
+    phoneCountry: json['phoneCountry'],
+    phoneNumber: !exists(json, 'phoneNumber') ? undefined : json['phoneNumber'],
+    createdAt: new Date(json['createdAt']),
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
   };
 }
 
@@ -152,13 +152,13 @@ export function PhoneNumberReleaseProjectionToJSON(
     return null;
   }
   return {
-    name: value.name,
-    id: value.id,
     userId: value.userId,
-    createdAt: value.createdAt.toISOString(),
-    phoneCountry: value.phoneCountry,
-    phoneNumber: value.phoneNumber,
     subscriptionSchedule: value.subscriptionSchedule,
     planCurrency: value.planCurrency,
+    phoneCountry: value.phoneCountry,
+    phoneNumber: value.phoneNumber,
+    createdAt: value.createdAt.toISOString(),
+    name: value.name,
+    id: value.id,
   };
 }

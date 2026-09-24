@@ -11,7 +11,7 @@
  */
 import { SendEmailBodyPart } from './';
 /**
- * Options for the email to be sent
+ * Updated options for the email draft
  * @export
  * @interface SendEmailOptions
  */
@@ -170,6 +170,12 @@ export interface SendEmailOptions {
      * @memberof SendEmailOptions
      */
     bodyParts?: Array<SendEmailBodyPart> | null;
+    /**
+     * Optional inbox ID to send from. If omitted, source inbox selection is controlled by the endpoint path or query parameters.
+     * @type {string}
+     * @memberof SendEmailOptions
+     */
+    inboxId?: string | null;
 }
 /**
  * @export

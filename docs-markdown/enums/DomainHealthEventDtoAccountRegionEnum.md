@@ -14,6 +14,7 @@
 - [EU\_WEST\_1\_ACCOUNT\_SES\_2](DomainHealthEventDtoAccountRegionEnum.md#eu_west_1_account_ses_2)
 - [EU\_WEST\_1\_ACCOUNT\_STAGING](DomainHealthEventDtoAccountRegionEnum.md#eu_west_1_account_staging)
 - [US\_EAST\_1](DomainHealthEventDtoAccountRegionEnum.md#us_east_1)
+- [US\_EAST\_1\_ACCOUNT\_SES\_1](DomainHealthEventDtoAccountRegionEnum.md#us_east_1_account_ses_1)
 - [US\_EAST\_1\_ACCOUNT\_STAGING](DomainHealthEventDtoAccountRegionEnum.md#us_east_1_account_staging)
 - [US\_WEST\_2](DomainHealthEventDtoAccountRegionEnum.md#us_west_2)
 - [US\_WEST\_2\_ACCOUNT\_BYTEWISE](DomainHealthEventDtoAccountRegionEnum.md#us_west_2_account_bytewise)
@@ -57,6 +58,12 @@ ___
 ### US\_EAST\_1
 
 • **US\_EAST\_1** = ``"US_EAST_1"``
+
+___
+
+### US\_EAST\_1\_ACCOUNT\_SES\_1
+
+• **US\_EAST\_1\_ACCOUNT\_SES\_1** = ``"US_EAST_1_ACCOUNT_SES_1"``
 
 ___
 

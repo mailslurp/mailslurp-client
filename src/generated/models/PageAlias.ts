@@ -69,12 +69,6 @@ export interface PageAlias {
    * @type {number}
    * @memberof PageAlias
    */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageAlias
-   */
   number?: number;
   /**
    *
@@ -84,16 +78,22 @@ export interface PageAlias {
   first?: boolean;
   /**
    *
+   * @type {SortObject}
+   * @memberof PageAlias
+   */
+  sort?: SortObject;
+  /**
+   *
    * @type {number}
    * @memberof PageAlias
    */
   numberOfElements?: number;
   /**
    *
-   * @type {SortObject}
+   * @type {number}
    * @memberof PageAlias
    */
-  sort?: SortObject;
+  size?: number;
   /**
    *
    * @type {boolean}
@@ -123,13 +123,13 @@ export function PageAliasFromJSONTyped(
     totalPages: json['totalPages'],
     totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
-    size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     first: !exists(json, 'first') ? undefined : json['first'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+    size: !exists(json, 'size') ? undefined : json['size'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -150,11 +150,11 @@ export function PageAliasToJSON(value?: PageAlias | null): any {
     totalPages: value.totalPages,
     totalElements: value.totalElements,
     last: value.last,
-    size: value.size,
     number: value.number,
     first: value.first,
-    numberOfElements: value.numberOfElements,
     sort: SortObjectToJSON(value.sort),
+    numberOfElements: value.numberOfElements,
+    size: value.size,
     empty: value.empty,
   };
 }

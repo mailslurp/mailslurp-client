@@ -6,19 +6,12 @@
 
 ### Properties
 
-- [body](ImportEmailIntoInboxBytesRequest.md#body)
 - [externalId](ImportEmailIntoInboxBytesRequest.md#externalid)
 - [inboxId](ImportEmailIntoInboxBytesRequest.md#inboxid)
 - [overrideMessageId](ImportEmailIntoInboxBytesRequest.md#overridemessageid)
 - [runPipeline](ImportEmailIntoInboxBytesRequest.md#runpipeline)
 
 ## Properties
-
-### body
-
-• **body**: `string`
-
-___
 
 ### externalId
 

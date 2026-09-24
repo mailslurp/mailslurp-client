@@ -111,7 +111,7 @@ ___
 
 • `Optional` **shareUrl**: `string`
 
-Public webapp URL. Only returned when the raw token is available.
+Public share URL with social preview metadata. Only returned when the raw token is available.
 
 **`Memberof`**
 

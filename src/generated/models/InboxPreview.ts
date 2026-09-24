@@ -109,6 +109,12 @@ export interface InboxPreview {
    * @memberof InboxPreview
    */
   accountRegion?: InboxPreviewAccountRegionEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxPreview
+   */
+  mergedIntoInboxId?: string | null;
 }
 
 /**
@@ -129,6 +135,7 @@ export enum InboxPreviewFunctionsAsEnum {
   CATCH_ALL = 'CATCH_ALL',
   CONNECTOR = 'CONNECTOR',
   ACCOUNT = 'ACCOUNT',
+  GUIDED_TOUR = 'GUIDED_TOUR',
   GUEST = 'GUEST',
   OAUTH_CONNECTION_GMAIL = 'OAUTH_CONNECTION_GMAIL',
 }
@@ -141,6 +148,7 @@ export enum InboxPreviewAccountRegionEnum {
   US_EAST_1_ACCOUNT_STAGING = 'US_EAST_1_ACCOUNT_STAGING',
   EU_WEST_1_ACCOUNT_STAGING = 'EU_WEST_1_ACCOUNT_STAGING',
   US_WEST_2_ACCOUNT_SES_1 = 'US_WEST_2_ACCOUNT_SES_1',
+  US_EAST_1_ACCOUNT_SES_1 = 'US_EAST_1_ACCOUNT_SES_1',
   EU_WEST_1_ACCOUNT_SES_1 = 'EU_WEST_1_ACCOUNT_SES_1',
   US_WEST_2_ACCOUNT_SES_2 = 'US_WEST_2_ACCOUNT_SES_2',
   EU_WEST_1_ACCOUNT_SES_2 = 'EU_WEST_1_ACCOUNT_SES_2',
@@ -185,6 +193,9 @@ export function InboxPreviewFromJSONTyped(
     accountRegion: !exists(json, 'accountRegion')
       ? undefined
       : json['accountRegion'],
+    mergedIntoInboxId: !exists(json, 'mergedIntoInboxId')
+      ? undefined
+      : json['mergedIntoInboxId'],
   };
 }
 
@@ -216,5 +227,6 @@ export function InboxPreviewToJSON(value?: InboxPreview | null): any {
     userId: value.userId,
     description: value.description,
     accountRegion: value.accountRegion,
+    mergedIntoInboxId: value.mergedIntoInboxId,
   };
 }

@@ -22,6 +22,7 @@ DomainMonitorRunDto
 - [dmarcOk](DomainMonitorRunDto.md#dmarcok)
 - [domain](DomainMonitorRunDto.md#domain)
 - [errorMessage](DomainMonitorRunDto.md#errormessage)
+- [evidence](DomainMonitorRunDto.md#evidence)
 - [failingChecks](DomainMonitorRunDto.md#failingchecks)
 - [healthScore](DomainMonitorRunDto.md#healthscore)
 - [id](DomainMonitorRunDto.md#id)
@@ -133,6 +134,16 @@ ___
 ### errorMessage
 
 • `Optional` **errorMessage**: `string`
+
+**`Memberof`**
+
+DomainMonitorRunDto
+
+___
+
+### evidence
+
+• `Optional` **evidence**: [`DomainMonitorRunEvidenceDto`](DomainMonitorRunEvidenceDto.md)
 
 **`Memberof`**
 

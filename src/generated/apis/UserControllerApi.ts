@@ -17,9 +17,15 @@ import {
   CreateInboxRetentionPolicyForAccountOptions,
   CreateInboxRetentionPolicyForAccountOptionsFromJSON,
   CreateInboxRetentionPolicyForAccountOptionsToJSON,
+  CreateInboxRetentionPolicyOptions,
+  CreateInboxRetentionPolicyOptionsFromJSON,
+  CreateInboxRetentionPolicyOptionsToJSON,
   EmptyResponseDto,
   EmptyResponseDtoFromJSON,
   EmptyResponseDtoToJSON,
+  InboxRetentionPoliciesDto,
+  InboxRetentionPoliciesDtoFromJSON,
+  InboxRetentionPoliciesDtoToJSON,
   InboxRetentionPolicyDto,
   InboxRetentionPolicyDtoFromJSON,
   InboxRetentionPolicyDtoToJSON,
@@ -44,13 +50,27 @@ import {
   PageInboxRetentionPolicyRunProjection,
   PageInboxRetentionPolicyRunProjectionFromJSON,
   PageInboxRetentionPolicyRunProjectionToJSON,
+  UpdateInboxRetentionPolicyOptions,
+  UpdateInboxRetentionPolicyOptionsFromJSON,
+  UpdateInboxRetentionPolicyOptionsToJSON,
   UserInfoDto,
   UserInfoDtoFromJSON,
   UserInfoDtoToJSON,
+  UserStorageInsightsDto,
+  UserStorageInsightsDtoFromJSON,
+  UserStorageInsightsDtoToJSON,
 } from '../models';
+
+export interface CreateInboxRetentionPolicyRequest {
+  createInboxRetentionPolicyOptions: CreateInboxRetentionPolicyOptions;
+}
 
 export interface CreateOrUpdateInboxRetentionPolicyForAccountRequest {
   createInboxRetentionPolicyForAccountOptions: CreateInboxRetentionPolicyForAccountOptions;
+}
+
+export interface DeleteInboxRetentionPolicyRequest {
+  policyId: string;
 }
 
 export interface GetEntityAutomationsRequest {
@@ -87,6 +107,10 @@ export interface GetEntityFavoritesRequest {
   filter?: GetEntityFavoritesFilterEnum;
 }
 
+export interface GetInboxRetentionPolicyRequest {
+  policyId: string;
+}
+
 export interface GetInboxRetentionPolicyRunRequest {
   runId: string;
 }
@@ -102,10 +126,78 @@ export interface GetJsonPropertyAsStringRequest {
   jsonNode: JsonNode;
 }
 
+export interface GetUserStorageInsightsRequest {
+  limit?: number;
+}
+
+export interface UpdateInboxRetentionPolicyRequest {
+  policyId: string;
+  updateInboxRetentionPolicyOptions: UpdateInboxRetentionPolicyOptions;
+}
+
 /**
  *
  */
 export class UserControllerApi extends runtime.BaseAPI {
+  /**
+   * Create an inbox retention policy for your account
+   */
+  async createInboxRetentionPolicyRaw(
+    requestParameters: CreateInboxRetentionPolicyRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxRetentionPolicyDto>> {
+    if (
+      requestParameters.createInboxRetentionPolicyOptions === null ||
+      requestParameters.createInboxRetentionPolicyOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'createInboxRetentionPolicyOptions',
+        'Required parameter requestParameters.createInboxRetentionPolicyOptions was null or undefined when calling createInboxRetentionPolicy.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/inbox-retention-policies`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: CreateInboxRetentionPolicyOptionsToJSON(
+          requestParameters.createInboxRetentionPolicyOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxRetentionPolicyDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create an inbox retention policy for your account
+   */
+  async createInboxRetentionPolicy(
+    requestParameters: CreateInboxRetentionPolicyRequest,
+    initOverrides?: RequestInit
+  ): Promise<InboxRetentionPolicyDto> {
+    const response = await this.createInboxRetentionPolicyRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    * Start an asynchronous inbox retention policy run for your account
    */
@@ -199,6 +291,63 @@ export class UserControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<InboxRetentionPolicyDto> {
     const response = await this.createOrUpdateInboxRetentionPolicyForAccountRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Delete an inbox retention policy for your account
+   */
+  async deleteInboxRetentionPolicyRaw(
+    requestParameters: DeleteInboxRetentionPolicyRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmptyResponseDto>> {
+    if (
+      requestParameters.policyId === null ||
+      requestParameters.policyId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'policyId',
+        'Required parameter requestParameters.policyId was null or undefined when calling deleteInboxRetentionPolicy.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/inbox-retention-policies/{policyId}`.replace(
+          `{${'policyId'}}`,
+          encodeURIComponent(String(requestParameters.policyId))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmptyResponseDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Delete an inbox retention policy for your account
+   */
+  async deleteInboxRetentionPolicy(
+    requestParameters: DeleteInboxRetentionPolicyRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmptyResponseDto> {
+    const response = await this.deleteInboxRetentionPolicyRaw(
       requestParameters,
       initOverrides
     );
@@ -479,6 +628,63 @@ export class UserControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get an inbox retention policy for your account
+   */
+  async getInboxRetentionPolicyRaw(
+    requestParameters: GetInboxRetentionPolicyRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxRetentionPolicyDto>> {
+    if (
+      requestParameters.policyId === null ||
+      requestParameters.policyId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'policyId',
+        'Required parameter requestParameters.policyId was null or undefined when calling getInboxRetentionPolicy.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/inbox-retention-policies/{policyId}`.replace(
+          `{${'policyId'}}`,
+          encodeURIComponent(String(requestParameters.policyId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxRetentionPolicyDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get an inbox retention policy for your account
+   */
+  async getInboxRetentionPolicy(
+    requestParameters: GetInboxRetentionPolicyRequest,
+    initOverrides?: RequestInit
+  ): Promise<InboxRetentionPolicyDto> {
+    const response = await this.getInboxRetentionPolicyRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Get inbox retention policy for your global account
    */
   async getInboxRetentionPolicyForAccountRaw(
@@ -735,6 +941,165 @@ export class UserControllerApi extends runtime.BaseAPI {
    */
   async getUserInfo(initOverrides?: RequestInit): Promise<UserInfoDto> {
     const response = await this.getUserInfoRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Get retained storage usage insights for your account
+   */
+  async getUserStorageInsightsRaw(
+    requestParameters: GetUserStorageInsightsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<UserStorageInsightsDto>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.limit !== undefined) {
+      queryParameters['limit'] = requestParameters.limit;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/storage/insights`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      UserStorageInsightsDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get retained storage usage insights for your account
+   */
+  async getUserStorageInsights(
+    requestParameters: GetUserStorageInsightsRequest,
+    initOverrides?: RequestInit
+  ): Promise<UserStorageInsightsDto> {
+    const response = await this.getUserStorageInsightsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List inbox retention policies for your account
+   */
+  async listInboxRetentionPoliciesRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxRetentionPoliciesDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/inbox-retention-policies`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxRetentionPoliciesDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List inbox retention policies for your account
+   */
+  async listInboxRetentionPolicies(
+    initOverrides?: RequestInit
+  ): Promise<InboxRetentionPoliciesDto> {
+    const response = await this.listInboxRetentionPoliciesRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Update an inbox retention policy for your account
+   */
+  async updateInboxRetentionPolicyRaw(
+    requestParameters: UpdateInboxRetentionPolicyRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<InboxRetentionPolicyDto>> {
+    if (
+      requestParameters.policyId === null ||
+      requestParameters.policyId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'policyId',
+        'Required parameter requestParameters.policyId was null or undefined when calling updateInboxRetentionPolicy.'
+      );
+    }
+
+    if (
+      requestParameters.updateInboxRetentionPolicyOptions === null ||
+      requestParameters.updateInboxRetentionPolicyOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'updateInboxRetentionPolicyOptions',
+        'Required parameter requestParameters.updateInboxRetentionPolicyOptions was null or undefined when calling updateInboxRetentionPolicy.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/user/inbox-retention-policies/{policyId}`.replace(
+          `{${'policyId'}}`,
+          encodeURIComponent(String(requestParameters.policyId))
+        ),
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+        body: UpdateInboxRetentionPolicyOptionsToJSON(
+          requestParameters.updateInboxRetentionPolicyOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      InboxRetentionPolicyDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Update an inbox retention policy for your account
+   */
+  async updateInboxRetentionPolicy(
+    requestParameters: UpdateInboxRetentionPolicyRequest,
+    initOverrides?: RequestInit
+  ): Promise<InboxRetentionPolicyDto> {
+    const response = await this.updateInboxRetentionPolicyRaw(
+      requestParameters,
+      initOverrides
+    );
     return await response.value();
   }
 }

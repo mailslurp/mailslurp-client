@@ -13,6 +13,7 @@ CreatePhoneNumberOptions
 ### Properties
 
 - [description](CreatePhoneNumberOptions.md#description)
+- [environmentAccountId](CreatePhoneNumberOptions.md#environmentaccountid)
 - [name](CreatePhoneNumberOptions.md#name)
 - [phoneCountry](CreatePhoneNumberOptions.md#phonecountry)
 - [phoneLineFilter](CreatePhoneNumberOptions.md#phonelinefilter)
@@ -27,6 +28,16 @@ CreatePhoneNumberOptions
 ### description
 
 • `Optional` **description**: `string`
+
+**`Memberof`**
+
+CreatePhoneNumberOptions
+
+___
+
+### environmentAccountId
+
+• `Optional` **environmentAccountId**: `string`
 
 **`Memberof`**
 

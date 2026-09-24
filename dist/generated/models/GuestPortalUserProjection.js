@@ -24,8 +24,6 @@ function GuestPortalUserProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
         username: json['username'],
         userId: json['userId'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
@@ -35,6 +33,8 @@ function GuestPortalUserProjectionFromJSONTyped(json, ignoreDiscriminator) {
             ? undefined
             : json['emailAddress'],
         portalId: json['portalId'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
     };
 }
 exports.GuestPortalUserProjectionFromJSONTyped = GuestPortalUserProjectionFromJSONTyped;
@@ -46,8 +46,6 @@ function GuestPortalUserProjectionToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        id: value.id,
         username: value.username,
         userId: value.userId,
         inboxId: value.inboxId,
@@ -55,6 +53,8 @@ function GuestPortalUserProjectionToJSON(value) {
         updatedAt: value.updatedAt.toISOString(),
         emailAddress: value.emailAddress,
         portalId: value.portalId,
+        name: value.name,
+        id: value.id,
     };
 }
 exports.GuestPortalUserProjectionToJSON = GuestPortalUserProjectionToJSON;

@@ -17,35 +17,11 @@ import { EmailRecipientsProjection, SenderProjection } from './';
  */
 export interface EmailThreadProjection {
     /**
-     * ID of email thread
-     * @type {string}
-     * @memberof EmailThreadProjection
-     */
-    id: string;
-    /**
      * From sender
      * @type {string}
      * @memberof EmailThreadProjection
      */
     from?: string | null;
-    /**
-     *
-     * @type {SenderProjection}
-     * @memberof EmailThreadProjection
-     */
-    sender?: SenderProjection | null;
-    /**
-     *
-     * @type {EmailRecipientsProjection}
-     * @memberof EmailThreadProjection
-     */
-    recipients?: EmailRecipientsProjection | null;
-    /**
-     * Thread topic subject
-     * @type {string}
-     * @memberof EmailThreadProjection
-     */
-    subject?: string | null;
     /**
      * User ID
      * @type {string}
@@ -58,6 +34,18 @@ export interface EmailThreadProjection {
      * @memberof EmailThreadProjection
      */
     inboxId?: string | null;
+    /**
+     *
+     * @type {EmailRecipientsProjection}
+     * @memberof EmailThreadProjection
+     */
+    recipients?: EmailRecipientsProjection | null;
+    /**
+     * Thread topic subject
+     * @type {string}
+     * @memberof EmailThreadProjection
+     */
+    subject?: string | null;
     /**
      * To recipients
      * @type {Array<string>}
@@ -93,6 +81,24 @@ export interface EmailThreadProjection {
      * @type {SenderProjection}
      * @memberof EmailThreadProjection
      */
+    sender?: SenderProjection | null;
+    /**
+     * Last email created time
+     * @type {Date}
+     * @memberof EmailThreadProjection
+     */
+    lastCreatedAt?: Date | null;
+    /**
+     * Has attachments
+     * @type {boolean}
+     * @memberof EmailThreadProjection
+     */
+    hasAttachments: boolean;
+    /**
+     *
+     * @type {SenderProjection}
+     * @memberof EmailThreadProjection
+     */
     lastSender?: SenderProjection | null;
     /**
      * Last sender
@@ -100,12 +106,6 @@ export interface EmailThreadProjection {
      * @memberof EmailThreadProjection
      */
     lastFrom?: string | null;
-    /**
-     * Has attachments
-     * @type {boolean}
-     * @memberof EmailThreadProjection
-     */
-    hasAttachments: boolean;
     /**
      * Has unread
      * @type {boolean}
@@ -131,11 +131,11 @@ export interface EmailThreadProjection {
      */
     lastTextExcerpt?: string | null;
     /**
-     * Last email created time
-     * @type {Date}
+     * ID of email thread
+     * @type {string}
      * @memberof EmailThreadProjection
      */
-    lastCreatedAt?: Date | null;
+    id: string;
 }
 export declare function EmailThreadProjectionFromJSON(json: any): EmailThreadProjection;
 export declare function EmailThreadProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailThreadProjection;

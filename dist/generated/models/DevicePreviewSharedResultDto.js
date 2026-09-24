@@ -28,6 +28,7 @@ function DevicePreviewSharedResultDtoFromJSONTyped(json, ignoreDiscriminator) {
         run: (0, _1.DevicePreviewSharedRunDtoFromJSON)(json['run']),
         targets: json['targets'].map(_1.DevicePreviewSharedTargetDtoFromJSON),
         screenshots: json['screenshots'].map(_1.DevicePreviewSharedScreenshotDtoFromJSON),
+        comments: json['comments'].map(_1.DevicePreviewSharedCommentDtoFromJSON),
     };
 }
 exports.DevicePreviewSharedResultDtoFromJSONTyped = DevicePreviewSharedResultDtoFromJSONTyped;
@@ -43,6 +44,7 @@ function DevicePreviewSharedResultDtoToJSON(value) {
         run: (0, _1.DevicePreviewSharedRunDtoToJSON)(value.run),
         targets: value.targets.map(_1.DevicePreviewSharedTargetDtoToJSON),
         screenshots: value.screenshots.map(_1.DevicePreviewSharedScreenshotDtoToJSON),
+        comments: value.comments.map(_1.DevicePreviewSharedCommentDtoToJSON),
     };
 }
 exports.DevicePreviewSharedResultDtoToJSON = DevicePreviewSharedResultDtoToJSON;

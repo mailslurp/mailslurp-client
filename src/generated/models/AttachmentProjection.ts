@@ -20,23 +20,17 @@ import { exists, mapValues } from '../runtime';
  */
 export interface AttachmentProjection {
   /**
-   *
-   * @type {string}
-   * @memberof AttachmentProjection
-   */
-  name?: string | null;
-  /**
-   * ID
-   * @type {string}
-   * @memberof AttachmentProjection
-   */
-  id: string;
-  /**
    * Content length of attachment in bytes
    * @type {number}
    * @memberof AttachmentProjection
    */
   contentLength?: number | null;
+  /**
+   * Content type of attachment.
+   * @type {string}
+   * @memberof AttachmentProjection
+   */
+  contentType?: string | null;
   /**
    *
    * @type {string}
@@ -50,17 +44,17 @@ export interface AttachmentProjection {
    */
   inboxId?: string | null;
   /**
-   *
-   * @type {Date}
-   * @memberof AttachmentProjection
-   */
-  createdAt: Date;
-  /**
    * Content ID of attachment.
    * @type {string}
    * @memberof AttachmentProjection
    */
   contentId?: string | null;
+  /**
+   *
+   * @type {Date}
+   * @memberof AttachmentProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {Date}
@@ -74,11 +68,17 @@ export interface AttachmentProjection {
    */
   attachmentId: string;
   /**
-   * Content type of attachment.
+   *
    * @type {string}
    * @memberof AttachmentProjection
    */
-  contentType?: string | null;
+  name?: string | null;
+  /**
+   * ID
+   * @type {string}
+   * @memberof AttachmentProjection
+   */
+  id: string;
 }
 
 export function AttachmentProjectionFromJSON(json: any): AttachmentProjection {
@@ -93,18 +93,18 @@ export function AttachmentProjectionFromJSONTyped(
     return json;
   }
   return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
     contentLength: !exists(json, 'contentLength')
       ? undefined
       : json['contentLength'],
+    contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
     userId: json['userId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
-    createdAt: new Date(json['createdAt']),
     contentId: !exists(json, 'contentId') ? undefined : json['contentId'],
+    createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
     attachmentId: json['attachmentId'],
-    contentType: !exists(json, 'contentType') ? undefined : json['contentType'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
   };
 }
 
@@ -118,15 +118,15 @@ export function AttachmentProjectionToJSON(
     return null;
   }
   return {
-    name: value.name,
-    id: value.id,
     contentLength: value.contentLength,
+    contentType: value.contentType,
     userId: value.userId,
     inboxId: value.inboxId,
-    createdAt: value.createdAt.toISOString(),
     contentId: value.contentId,
+    createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
     attachmentId: value.attachmentId,
-    contentType: value.contentType,
+    name: value.name,
+    id: value.id,
   };
 }

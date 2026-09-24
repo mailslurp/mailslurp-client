@@ -51,12 +51,6 @@ export interface PageSmsMessageMedia {
      * @type {number}
      * @memberof PageSmsMessageMedia
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageSmsMessageMedia
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageSmsMessageMedia {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageSmsMessageMedia
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageSmsMessageMedia
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageSmsMessageMedia
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

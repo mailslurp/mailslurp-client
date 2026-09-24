@@ -13,9 +13,18 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SentEmailDtoToJSON = exports.SentEmailDtoFromJSONTyped = exports.SentEmailDtoFromJSON = void 0;
+exports.SentEmailDtoToJSON = exports.SentEmailDtoFromJSONTyped = exports.SentEmailDtoFromJSON = exports.SentEmailDtoTransportEnum = void 0;
 var runtime_1 = require("../runtime");
 var _1 = require("./");
+/**
+ * @export
+ * @enum {string}
+ */
+var SentEmailDtoTransportEnum;
+(function (SentEmailDtoTransportEnum) {
+    SentEmailDtoTransportEnum["PUBLIC_EMAIL"] = "PUBLIC_EMAIL";
+    SentEmailDtoTransportEnum["SANDBOX_LOCAL"] = "SANDBOX_LOCAL";
+})(SentEmailDtoTransportEnum = exports.SentEmailDtoTransportEnum || (exports.SentEmailDtoTransportEnum = {}));
 function SentEmailDtoFromJSON(json) {
     return SentEmailDtoFromJSONTyped(json, false);
 }
@@ -65,6 +74,7 @@ function SentEmailDtoFromJSONTyped(json, ignoreDiscriminator) {
         inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
         favourite: !(0, runtime_1.exists)(json, 'favourite') ? undefined : json['favourite'],
         sizeBytes: !(0, runtime_1.exists)(json, 'sizeBytes') ? undefined : json['sizeBytes'],
+        transport: json['transport'],
         html: !(0, runtime_1.exists)(json, 'html') ? undefined : json['html'],
     };
 }
@@ -111,6 +121,7 @@ function SentEmailDtoToJSON(value) {
         inReplyTo: value.inReplyTo,
         favourite: value.favourite,
         sizeBytes: value.sizeBytes,
+        transport: value.transport,
         html: value.html,
     };
 }

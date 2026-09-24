@@ -34,16 +34,16 @@ export interface PageableObject {
   offset?: number;
   /**
    *
-   * @type {boolean}
-   * @memberof PageableObject
-   */
-  unpaged?: boolean;
-  /**
-   *
    * @type {SortObject}
    * @memberof PageableObject
    */
   sort?: SortObject;
+  /**
+   *
+   * @type {boolean}
+   * @memberof PageableObject
+   */
+  unpaged?: boolean;
   /**
    *
    * @type {boolean}
@@ -77,8 +77,8 @@ export function PageableObjectFromJSONTyped(
   }
   return {
     offset: !exists(json, 'offset') ? undefined : json['offset'],
-    unpaged: !exists(json, 'unpaged') ? undefined : json['unpaged'],
     sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+    unpaged: !exists(json, 'unpaged') ? undefined : json['unpaged'],
     paged: !exists(json, 'paged') ? undefined : json['paged'],
     pageNumber: !exists(json, 'pageNumber') ? undefined : json['pageNumber'],
     pageSize: !exists(json, 'pageSize') ? undefined : json['pageSize'],
@@ -94,8 +94,8 @@ export function PageableObjectToJSON(value?: PageableObject | null): any {
   }
   return {
     offset: value.offset,
-    unpaged: value.unpaged,
     sort: SortObjectToJSON(value.sort),
+    unpaged: value.unpaged,
     paged: value.paged,
     pageNumber: value.pageNumber,
     pageSize: value.pageSize,

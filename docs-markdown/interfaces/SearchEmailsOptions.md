@@ -75,7 +75,7 @@ ___
 
 • `Optional` **searchFilter**: `string`
 
-Optional search filter. Searches email recipients, sender, subject, email address and ID. Does not search email body
+Optional search filter. Matches email ID, inbox ID, sender address, subject, receiving inbox email address, receiving plus-address full address, or plus-address suffix. Pasted email address tokens are normalized before matching.
 
 **`Memberof`**
 

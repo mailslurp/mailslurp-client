@@ -17,10 +17,13 @@ DevicePreviewSharedRunDto
 - [runId](DevicePreviewSharedRunDto.md#runid)
 - [screenshotCount](DevicePreviewSharedRunDto.md#screenshotcount)
 - [sourceAlias](DevicePreviewSharedRunDto.md#sourcealias)
+- [sourceFrom](DevicePreviewSharedRunDto.md#sourcefrom)
 - [sourceProfileDisplayName](DevicePreviewSharedRunDto.md#sourceprofiledisplayname)
 - [sourceProfileLocalPart](DevicePreviewSharedRunDto.md#sourceprofilelocalpart)
+- [sourceRecipientEmailAddress](DevicePreviewSharedRunDto.md#sourcerecipientemailaddress)
 - [sourceRecipientLocalPart](DevicePreviewSharedRunDto.md#sourcerecipientlocalpart)
 - [sourceSubject](DevicePreviewSharedRunDto.md#sourcesubject)
+- [sourceTo](DevicePreviewSharedRunDto.md#sourceto)
 - [sourceType](DevicePreviewSharedRunDto.md#sourcetype)
 - [status](DevicePreviewSharedRunDto.md#status)
 - [targetCount](DevicePreviewSharedRunDto.md#targetcount)
@@ -78,6 +81,16 @@ DevicePreviewSharedRunDto
 
 ___
 
+### sourceFrom
+
+• `Optional` **sourceFrom**: `string`
+
+**`Memberof`**
+
+DevicePreviewSharedRunDto
+
+___
+
 ### sourceProfileDisplayName
 
 • `Optional` **sourceProfileDisplayName**: `string`
@@ -98,6 +111,16 @@ DevicePreviewSharedRunDto
 
 ___
 
+### sourceRecipientEmailAddress
+
+• `Optional` **sourceRecipientEmailAddress**: `string`
+
+**`Memberof`**
+
+DevicePreviewSharedRunDto
+
+___
+
 ### sourceRecipientLocalPart
 
 • `Optional` **sourceRecipientLocalPart**: `string`
@@ -111,6 +134,16 @@ ___
 ### sourceSubject
 
 • `Optional` **sourceSubject**: `string`
+
+**`Memberof`**
+
+DevicePreviewSharedRunDto
+
+___
+
+### sourceTo
+
+• `Optional` **sourceTo**: `string`[]
 
 **`Memberof`**
 

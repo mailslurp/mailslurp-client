@@ -105,6 +105,12 @@ export interface InboxPreview {
      * @memberof InboxPreview
      */
     accountRegion?: InboxPreviewAccountRegionEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxPreview
+     */
+    mergedIntoInboxId?: string | null;
 }
 /**
  * @export
@@ -124,6 +130,7 @@ export declare enum InboxPreviewFunctionsAsEnum {
     CATCH_ALL = "CATCH_ALL",
     CONNECTOR = "CONNECTOR",
     ACCOUNT = "ACCOUNT",
+    GUIDED_TOUR = "GUIDED_TOUR",
     GUEST = "GUEST",
     OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
 }
@@ -136,6 +143,7 @@ export declare enum InboxPreviewAccountRegionEnum {
     US_EAST_1_ACCOUNT_STAGING = "US_EAST_1_ACCOUNT_STAGING",
     EU_WEST_1_ACCOUNT_STAGING = "EU_WEST_1_ACCOUNT_STAGING",
     US_WEST_2_ACCOUNT_SES_1 = "US_WEST_2_ACCOUNT_SES_1",
+    US_EAST_1_ACCOUNT_SES_1 = "US_EAST_1_ACCOUNT_SES_1",
     EU_WEST_1_ACCOUNT_SES_1 = "EU_WEST_1_ACCOUNT_SES_1",
     US_WEST_2_ACCOUNT_SES_2 = "US_WEST_2_ACCOUNT_SES_2",
     EU_WEST_1_ACCOUNT_SES_2 = "EU_WEST_1_ACCOUNT_SES_2",

@@ -35,6 +35,7 @@ var InboxDtoFunctionsAsEnum;
     InboxDtoFunctionsAsEnum["CATCH_ALL"] = "CATCH_ALL";
     InboxDtoFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
     InboxDtoFunctionsAsEnum["ACCOUNT"] = "ACCOUNT";
+    InboxDtoFunctionsAsEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
     InboxDtoFunctionsAsEnum["GUEST"] = "GUEST";
     InboxDtoFunctionsAsEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(InboxDtoFunctionsAsEnum = exports.InboxDtoFunctionsAsEnum || (exports.InboxDtoFunctionsAsEnum = {}));
@@ -48,6 +49,7 @@ var InboxDtoAccountRegionEnum;
     InboxDtoAccountRegionEnum["US_EAST_1_ACCOUNT_STAGING"] = "US_EAST_1_ACCOUNT_STAGING";
     InboxDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_STAGING"] = "EU_WEST_1_ACCOUNT_STAGING";
     InboxDtoAccountRegionEnum["US_WEST_2_ACCOUNT_SES_1"] = "US_WEST_2_ACCOUNT_SES_1";
+    InboxDtoAccountRegionEnum["US_EAST_1_ACCOUNT_SES_1"] = "US_EAST_1_ACCOUNT_SES_1";
     InboxDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_1"] = "EU_WEST_1_ACCOUNT_SES_1";
     InboxDtoAccountRegionEnum["US_WEST_2_ACCOUNT_SES_2"] = "US_WEST_2_ACCOUNT_SES_2";
     InboxDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_2"] = "EU_WEST_1_ACCOUNT_SES_2";
@@ -90,6 +92,9 @@ function InboxDtoFromJSONTyped(json, ignoreDiscriminator) {
         accountRegion: !(0, runtime_1.exists)(json, 'accountRegion')
             ? undefined
             : json['accountRegion'],
+        mergedIntoInboxId: !(0, runtime_1.exists)(json, 'mergedIntoInboxId')
+            ? undefined
+            : json['mergedIntoInboxId'],
     };
 }
 exports.InboxDtoFromJSONTyped = InboxDtoFromJSONTyped;
@@ -122,6 +127,7 @@ function InboxDtoToJSON(value) {
         localPart: value.localPart,
         domain: value.domain,
         accountRegion: value.accountRegion,
+        mergedIntoInboxId: value.mergedIntoInboxId,
     };
 }
 exports.InboxDtoToJSON = InboxDtoToJSON;

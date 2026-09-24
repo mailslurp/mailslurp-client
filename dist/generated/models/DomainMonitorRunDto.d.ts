@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { DomainMonitorRunEvidenceDto } from './';
 /**
  *
  * @export
@@ -141,6 +142,12 @@ export interface DomainMonitorRunDto {
      * @memberof DomainMonitorRunDto
      */
     blacklistListed: boolean;
+    /**
+     *
+     * @type {DomainMonitorRunEvidenceDto}
+     * @memberof DomainMonitorRunDto
+     */
+    evidence?: DomainMonitorRunEvidenceDto | null;
     /**
      *
      * @type {Array<string>}

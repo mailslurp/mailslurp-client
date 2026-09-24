@@ -10,29 +10,35 @@
  * Do not edit the class manually.
  */
 /**
- * Check a domain, IP address, or specific MX host against configured DNS blacklists
+ * Check a domain, outbound IP address, or specific MX host against configured DNS blacklists
  * @export
  * @interface CheckEmailBlacklistOptions
  */
 export interface CheckEmailBlacklistOptions {
     /**
-     * Domain to expand into A and MX host IPv4 addresses
+     * Domain to check against configured domain blocklists. Domain A and MX addresses are not treated as outbound sending IPs unless includeDomainInfrastructure is explicitly enabled.
      * @type {string}
      * @memberof CheckEmailBlacklistOptions
      */
     domain?: string | null;
     /**
-     * Specific IPv4 address to check directly
+     * Specific observed or configured outbound IPv4 address to check directly
      * @type {string}
      * @memberof CheckEmailBlacklistOptions
      */
     ipAddress?: string | null;
     /**
-     * Specific MX host to resolve and check directly
+     * Specific MX host to resolve and check as inbound infrastructure. MX results do not prove outbound sender reputation.
      * @type {string}
      * @memberof CheckEmailBlacklistOptions
      */
     mxHost?: string | null;
+    /**
+     * Explicitly include the domain A address and discovered MX addresses as infrastructure diagnostics. Defaults to false because these addresses are normally not outbound sending IPs.
+     * @type {boolean}
+     * @memberof CheckEmailBlacklistOptions
+     */
+    includeDomainInfrastructure?: boolean | null;
     /**
      *
      * @type {string}

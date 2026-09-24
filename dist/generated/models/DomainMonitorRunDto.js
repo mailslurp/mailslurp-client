@@ -15,6 +15,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DomainMonitorRunDtoToJSON = exports.DomainMonitorRunDtoFromJSONTyped = exports.DomainMonitorRunDtoFromJSON = exports.DomainMonitorRunDtoTriggerSourceEnum = exports.DomainMonitorRunDtoStatusEnum = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 /**
  * @export
  * @enum {string}
@@ -67,6 +68,9 @@ function DomainMonitorRunDtoFromJSONTyped(json, ignoreDiscriminator) {
         blacklistChecked: json['blacklistChecked'],
         blacklistOk: json['blacklistOk'],
         blacklistListed: json['blacklistListed'],
+        evidence: !(0, runtime_1.exists)(json, 'evidence')
+            ? undefined
+            : (0, _1.DomainMonitorRunEvidenceDtoFromJSON)(json['evidence']),
         insights: json['insights'],
         errorMessage: !(0, runtime_1.exists)(json, 'errorMessage')
             ? undefined
@@ -105,6 +109,7 @@ function DomainMonitorRunDtoToJSON(value) {
         blacklistChecked: value.blacklistChecked,
         blacklistOk: value.blacklistOk,
         blacklistListed: value.blacklistListed,
+        evidence: (0, _1.DomainMonitorRunEvidenceDtoToJSON)(value.evidence),
         insights: value.insights,
         errorMessage: value.errorMessage,
         createdAt: value.createdAt.toISOString(),

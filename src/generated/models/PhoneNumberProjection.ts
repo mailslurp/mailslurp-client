@@ -21,18 +21,6 @@ import { exists, mapValues } from '../runtime';
 export interface PhoneNumberProjection {
   /**
    *
-   * @type {string}
-   * @memberof PhoneNumberProjection
-   */
-  name?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof PhoneNumberProjection
-   */
-  id: string;
-  /**
-   *
    * @type {Array<string>}
    * @memberof PhoneNumberProjection
    */
@@ -45,16 +33,22 @@ export interface PhoneNumberProjection {
   userId: string;
   /**
    *
-   * @type {Date}
+   * @type {string}
    * @memberof PhoneNumberProjection
    */
-  createdAt: Date;
+  phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
   /**
    *
    * @type {string}
    * @memberof PhoneNumberProjection
    */
-  phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
+  phoneNumber: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof PhoneNumberProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -90,7 +84,13 @@ export interface PhoneNumberProjection {
    * @type {string}
    * @memberof PhoneNumberProjection
    */
-  phoneNumber: string;
+  name?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof PhoneNumberProjection
+   */
+  id: string;
 }
 
 /**
@@ -127,12 +127,11 @@ export function PhoneNumberProjectionFromJSONTyped(
     return json;
   }
   return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
     tags: !exists(json, 'tags') ? undefined : json['tags'],
     userId: json['userId'],
-    createdAt: new Date(json['createdAt']),
     phoneCountry: json['phoneCountry'],
+    phoneNumber: json['phoneNumber'],
+    createdAt: new Date(json['createdAt']),
     providerLabel: !exists(json, 'providerLabel')
       ? undefined
       : json['providerLabel'],
@@ -144,7 +143,8 @@ export function PhoneNumberProjectionFromJSONTyped(
     mobileNetworkCode: !exists(json, 'mobileNetworkCode')
       ? undefined
       : json['mobileNetworkCode'],
-    phoneNumber: json['phoneNumber'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
   };
 }
 
@@ -158,17 +158,17 @@ export function PhoneNumberProjectionToJSON(
     return null;
   }
   return {
-    name: value.name,
-    id: value.id,
     tags: value.tags,
     userId: value.userId,
-    createdAt: value.createdAt.toISOString(),
     phoneCountry: value.phoneCountry,
+    phoneNumber: value.phoneNumber,
+    createdAt: value.createdAt.toISOString(),
     providerLabel: value.providerLabel,
     lineType: value.lineType,
     carrierName: value.carrierName,
     mobileCountryCode: value.mobileCountryCode,
     mobileNetworkCode: value.mobileNetworkCode,
-    phoneNumber: value.phoneNumber,
+    name: value.name,
+    id: value.id,
   };
 }

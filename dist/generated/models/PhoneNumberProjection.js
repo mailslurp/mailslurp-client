@@ -44,12 +44,11 @@ function PhoneNumberProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
         tags: !(0, runtime_1.exists)(json, 'tags') ? undefined : json['tags'],
         userId: json['userId'],
-        createdAt: new Date(json['createdAt']),
         phoneCountry: json['phoneCountry'],
+        phoneNumber: json['phoneNumber'],
+        createdAt: new Date(json['createdAt']),
         providerLabel: !(0, runtime_1.exists)(json, 'providerLabel')
             ? undefined
             : json['providerLabel'],
@@ -61,7 +60,8 @@ function PhoneNumberProjectionFromJSONTyped(json, ignoreDiscriminator) {
         mobileNetworkCode: !(0, runtime_1.exists)(json, 'mobileNetworkCode')
             ? undefined
             : json['mobileNetworkCode'],
-        phoneNumber: json['phoneNumber'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
     };
 }
 exports.PhoneNumberProjectionFromJSONTyped = PhoneNumberProjectionFromJSONTyped;
@@ -73,18 +73,18 @@ function PhoneNumberProjectionToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        id: value.id,
         tags: value.tags,
         userId: value.userId,
-        createdAt: value.createdAt.toISOString(),
         phoneCountry: value.phoneCountry,
+        phoneNumber: value.phoneNumber,
+        createdAt: value.createdAt.toISOString(),
         providerLabel: value.providerLabel,
         lineType: value.lineType,
         carrierName: value.carrierName,
         mobileCountryCode: value.mobileCountryCode,
         mobileNetworkCode: value.mobileNetworkCode,
-        phoneNumber: value.phoneNumber,
+        name: value.name,
+        id: value.id,
     };
 }
 exports.PhoneNumberProjectionToJSON = PhoneNumberProjectionToJSON;

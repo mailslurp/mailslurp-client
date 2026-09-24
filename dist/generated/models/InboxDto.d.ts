@@ -117,6 +117,12 @@ export interface InboxDto {
      * @memberof InboxDto
      */
     accountRegion?: InboxDtoAccountRegionEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxDto
+     */
+    mergedIntoInboxId?: string | null;
 }
 /**
  * @export
@@ -136,6 +142,7 @@ export declare enum InboxDtoFunctionsAsEnum {
     CATCH_ALL = "CATCH_ALL",
     CONNECTOR = "CONNECTOR",
     ACCOUNT = "ACCOUNT",
+    GUIDED_TOUR = "GUIDED_TOUR",
     GUEST = "GUEST",
     OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
 }
@@ -148,6 +155,7 @@ export declare enum InboxDtoAccountRegionEnum {
     US_EAST_1_ACCOUNT_STAGING = "US_EAST_1_ACCOUNT_STAGING",
     EU_WEST_1_ACCOUNT_STAGING = "EU_WEST_1_ACCOUNT_STAGING",
     US_WEST_2_ACCOUNT_SES_1 = "US_WEST_2_ACCOUNT_SES_1",
+    US_EAST_1_ACCOUNT_SES_1 = "US_EAST_1_ACCOUNT_SES_1",
     EU_WEST_1_ACCOUNT_SES_1 = "EU_WEST_1_ACCOUNT_SES_1",
     US_WEST_2_ACCOUNT_SES_2 = "US_WEST_2_ACCOUNT_SES_2",
     EU_WEST_1_ACCOUNT_SES_2 = "EU_WEST_1_ACCOUNT_SES_2",

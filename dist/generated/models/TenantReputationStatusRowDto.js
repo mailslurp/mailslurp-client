@@ -25,6 +25,7 @@ var TenantReputationStatusRowDtoAccountRegionEnum;
     TenantReputationStatusRowDtoAccountRegionEnum["US_EAST_1_ACCOUNT_STAGING"] = "US_EAST_1_ACCOUNT_STAGING";
     TenantReputationStatusRowDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_STAGING"] = "EU_WEST_1_ACCOUNT_STAGING";
     TenantReputationStatusRowDtoAccountRegionEnum["US_WEST_2_ACCOUNT_SES_1"] = "US_WEST_2_ACCOUNT_SES_1";
+    TenantReputationStatusRowDtoAccountRegionEnum["US_EAST_1_ACCOUNT_SES_1"] = "US_EAST_1_ACCOUNT_SES_1";
     TenantReputationStatusRowDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_1"] = "EU_WEST_1_ACCOUNT_SES_1";
     TenantReputationStatusRowDtoAccountRegionEnum["US_WEST_2_ACCOUNT_SES_2"] = "US_WEST_2_ACCOUNT_SES_2";
     TenantReputationStatusRowDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_2"] = "EU_WEST_1_ACCOUNT_SES_2";

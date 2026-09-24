@@ -13,8 +13,17 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ConnectorEventProjectionToJSON = exports.ConnectorEventProjectionFromJSONTyped = exports.ConnectorEventProjectionFromJSON = exports.ConnectorEventProjectionEventTypeEnum = exports.ConnectorEventProjectionStatusEnum = void 0;
+exports.ConnectorEventProjectionToJSON = exports.ConnectorEventProjectionFromJSONTyped = exports.ConnectorEventProjectionFromJSON = exports.ConnectorEventProjectionStatusEnum = exports.ConnectorEventProjectionEventTypeEnum = void 0;
 var runtime_1 = require("../runtime");
+/**
+ * @export
+ * @enum {string}
+ */
+var ConnectorEventProjectionEventTypeEnum;
+(function (ConnectorEventProjectionEventTypeEnum) {
+    ConnectorEventProjectionEventTypeEnum["SEND"] = "SEND";
+    ConnectorEventProjectionEventTypeEnum["SYNC"] = "SYNC";
+})(ConnectorEventProjectionEventTypeEnum = exports.ConnectorEventProjectionEventTypeEnum || (exports.ConnectorEventProjectionEventTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -27,15 +36,6 @@ var ConnectorEventProjectionStatusEnum;
     ConnectorEventProjectionStatusEnum["CONNECTION_ERROR"] = "CONNECTION_ERROR";
     ConnectorEventProjectionStatusEnum["NOT_FOUND"] = "NOT_FOUND";
 })(ConnectorEventProjectionStatusEnum = exports.ConnectorEventProjectionStatusEnum || (exports.ConnectorEventProjectionStatusEnum = {}));
-/**
- * @export
- * @enum {string}
- */
-var ConnectorEventProjectionEventTypeEnum;
-(function (ConnectorEventProjectionEventTypeEnum) {
-    ConnectorEventProjectionEventTypeEnum["SEND"] = "SEND";
-    ConnectorEventProjectionEventTypeEnum["SYNC"] = "SYNC";
-})(ConnectorEventProjectionEventTypeEnum = exports.ConnectorEventProjectionEventTypeEnum || (exports.ConnectorEventProjectionEventTypeEnum = {}));
 function ConnectorEventProjectionFromJSON(json) {
     return ConnectorEventProjectionFromJSONTyped(json, false);
 }
@@ -45,14 +45,14 @@ function ConnectorEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        eventType: json['eventType'],
+        status: json['status'],
+        createdAt: new Date(json['createdAt']),
+        seen: !(0, runtime_1.exists)(json, 'seen') ? undefined : json['seen'],
+        connectorId: json['connectorId'],
         message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
         id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
         size: json['size'],
-        status: json['status'],
-        createdAt: new Date(json['createdAt']),
-        connectorId: json['connectorId'],
-        seen: !(0, runtime_1.exists)(json, 'seen') ? undefined : json['seen'],
-        eventType: json['eventType'],
     };
 }
 exports.ConnectorEventProjectionFromJSONTyped = ConnectorEventProjectionFromJSONTyped;
@@ -64,14 +64,14 @@ function ConnectorEventProjectionToJSON(value) {
         return null;
     }
     return {
+        eventType: value.eventType,
+        status: value.status,
+        createdAt: value.createdAt.toISOString(),
+        seen: value.seen,
+        connectorId: value.connectorId,
         message: value.message,
         id: value.id,
         size: value.size,
-        status: value.status,
-        createdAt: value.createdAt.toISOString(),
-        connectorId: value.connectorId,
-        seen: value.seen,
-        eventType: value.eventType,
     };
 }
 exports.ConnectorEventProjectionToJSON = ConnectorEventProjectionToJSON;

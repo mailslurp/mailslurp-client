@@ -14,6 +14,7 @@ WaitForConditions
 
 ### Properties
 
+- [ai](WaitForConditions.md#ai)
 - [before](WaitForConditions.md#before)
 - [count](WaitForConditions.md#count)
 - [countType](WaitForConditions.md#counttype)
@@ -26,6 +27,16 @@ WaitForConditions
 - [unreadOnly](WaitForConditions.md#unreadonly)
 
 ## Properties
+
+### ai
+
+• `Optional` **ai**: [`AIMessageMatchOptions`](AIMessageMatchOptions.md)
+
+**`Memberof`**
+
+WaitForConditions
+
+___
 
 ### before
 

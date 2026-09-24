@@ -51,12 +51,6 @@ export interface PageDevicePreviewRunProjection {
      * @type {number}
      * @memberof PageDevicePreviewRunProjection
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageDevicePreviewRunProjection
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageDevicePreviewRunProjection {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageDevicePreviewRunProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageDevicePreviewRunProjection
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageDevicePreviewRunProjection
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

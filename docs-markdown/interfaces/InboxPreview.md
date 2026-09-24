@@ -24,6 +24,7 @@ InboxPreview
 - [functionsAs](InboxPreview.md#functionsas)
 - [id](InboxPreview.md#id)
 - [inboxType](InboxPreview.md#inboxtype)
+- [mergedIntoInboxId](InboxPreview.md#mergedintoinboxid)
 - [name](InboxPreview.md#name)
 - [tags](InboxPreview.md#tags)
 - [teamAccess](InboxPreview.md#teamaccess)
@@ -145,6 +146,16 @@ ___
 • `Optional` **inboxType**: [`InboxPreviewInboxTypeEnum`](../enums/InboxPreviewInboxTypeEnum.md)
 
 Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes are more suited for public facing inbound messages (but cannot send).
+
+**`Memberof`**
+
+InboxPreview
+
+___
+
+### mergedIntoInboxId
+
+• `Optional` **mergedIntoInboxId**: `string`
 
 **`Memberof`**
 

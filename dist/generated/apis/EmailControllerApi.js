@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetOrganizationEmailsPaginatedSortEnum = exports.GetEmailsPaginatedSortEnum = exports.GetEmailsOffsetPaginatedSortEnum = exports.GetEmailThreadsSortEnum = exports.GetEmailThreadItemsSortEnum = exports.EmailControllerApi = void 0;
+exports.GetOrganizationEmailsPaginatedSortEnum = exports.GetEmailsPaginatedSortEnum = exports.GetEmailsOffsetPaginatedSortEnum = exports.GetEmailThreadsSortEnum = exports.GetEmailThreadItemsSortEnum = exports.GetEmailPreviewHTMLLinkBehaviorEnum = exports.GetEmailDraftsSortEnum = exports.EmailControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -480,6 +480,63 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Create a saved email draft using the same SendEmailOptions shape used for sending. Provide an inboxId query parameter or sendOptions.inboxId to choose the inbox the draft will send from. Draft creation does not send email and does not create a new inbox.
+     * Create an email draft
+     */
+    EmailControllerApi.prototype.createEmailDraftRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.sendEmailOptions === null ||
+                            requestParameters.sendEmailOptions === undefined) {
+                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling createEmailDraft.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/drafts",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.SendEmailOptionsToJSON)(requestParameters.sendEmailOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailDraftDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Create a saved email draft using the same SendEmailOptions shape used for sending. Provide an inboxId query parameter or sendOptions.inboxId to choose the inbox the draft will send from. Draft creation does not send email and does not create a new inbox.
+     * Create an email draft
+     */
+    EmailControllerApi.prototype.createEmailDraft = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createEmailDraftRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
      * Delete all emails in all inboxes.
      */
@@ -570,6 +627,54 @@ var EmailControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.deleteEmailRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**
+     * Delete a saved email draft without sending it.
+     * Delete an email draft
+     */
+    EmailControllerApi.prototype.deleteEmailDraftRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.draftId === null ||
+                            requestParameters.draftId === undefined) {
+                            throw new runtime.RequiredError('draftId', 'Required parameter requestParameters.draftId was null or undefined when calling deleteEmailDraft.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/drafts/{draftId}".replace("{".concat('draftId', "}"), encodeURIComponent(String(requestParameters.draftId))),
+                                method: 'DELETE',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Delete a saved email draft without sending it.
+     * Delete an email draft
+     */
+    EmailControllerApi.prototype.deleteEmailDraft = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.deleteEmailDraftRaw(requestParameters, initOverrides)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/];
@@ -1306,6 +1411,118 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Get a saved email draft including the full SendEmailOptions payload.
+     * Get an email draft
+     */
+    EmailControllerApi.prototype.getEmailDraftRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.draftId === null ||
+                            requestParameters.draftId === undefined) {
+                            throw new runtime.RequiredError('draftId', 'Required parameter requestParameters.draftId was null or undefined when calling getEmailDraft.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/drafts/{draftId}".replace("{".concat('draftId', "}"), encodeURIComponent(String(requestParameters.draftId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailDraftDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get a saved email draft including the full SendEmailOptions payload.
+     * Get an email draft
+     */
+    EmailControllerApi.prototype.getEmailDraft = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailDraftRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * List saved email drafts for the authenticated user, optionally filtered by inbox.
+     * List email drafts
+     */
+    EmailControllerApi.prototype.getEmailDraftsRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        if (requestParameters.inboxId !== undefined) {
+                            queryParameters['inboxId'] = requestParameters.inboxId;
+                        }
+                        if (requestParameters.page !== undefined) {
+                            queryParameters['page'] = requestParameters.page;
+                        }
+                        if (requestParameters.size !== undefined) {
+                            queryParameters['size'] = requestParameters.size;
+                        }
+                        if (requestParameters.sort !== undefined) {
+                            queryParameters['sort'] = requestParameters.sort;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/drafts",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.PageEmailDraftProjectionFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * List saved email drafts for the authenticated user, optionally filtered by inbox.
+     * List email drafts
+     */
+    EmailControllerApi.prototype.getEmailDrafts = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailDraftsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Returns hydrated HTML body directly with `text/html` content type. Supports temporary access/browser usage and optional CID replacement for inline asset rendering.
      * Get hydrated email HTML for browser rendering
      */
@@ -1519,6 +1736,64 @@ var EmailControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getEmailLinksRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Returns a server-normalized preview document with active content removed and restrictive browser metadata. This representation can normalize malformed email layout and is deprecated for fidelity-sensitive rendering. Fetch the original HTML source and apply link hardening inside an opaque-origin browser sandbox instead.
+     * Get deprecated server-normalized email preview HTML
+     */
+    EmailControllerApi.prototype.getEmailPreviewHTMLRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.emailId === null ||
+                            requestParameters.emailId === undefined) {
+                            throw new runtime.RequiredError('emailId', 'Required parameter requestParameters.emailId was null or undefined when calling getEmailPreviewHTML.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.replaceCidImages !== undefined) {
+                            queryParameters['replaceCidImages'] = requestParameters.replaceCidImages;
+                        }
+                        if (requestParameters.linkBehavior !== undefined) {
+                            queryParameters['linkBehavior'] = requestParameters.linkBehavior;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/{emailId}/preview".replace("{".concat('emailId', "}"), encodeURIComponent(String(requestParameters.emailId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailPreviewHtmlDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns a server-normalized preview document with active content removed and restrictive browser metadata. This representation can normalize malformed email layout and is deprecated for fidelity-sensitive rendering. Fetch the original HTML source and apply link hardening inside an opaque-origin browser sandbox instead.
+     * Get deprecated server-normalized email preview HTML
+     */
+    EmailControllerApi.prototype.getEmailPreviewHTML = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getEmailPreviewHTMLRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -2761,7 +3036,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Searches emails by sender/recipient/address/subject/id fields and returns paginated matches. Does not perform full-text body search.
+     * Searches emails by email ID, inbox ID, sender address, subject, receiving inbox address, or receiving plus-address.
      * Get all emails by search criteria. Return in paginated form.
      */
     EmailControllerApi.prototype.searchEmailsRaw = function (requestParameters, initOverrides) {
@@ -2806,7 +3081,7 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Searches emails by sender/recipient/address/subject/id fields and returns paginated matches. Does not perform full-text body search.
+     * Searches emails by email ID, inbox ID, sender address, subject, receiving inbox address, or receiving plus-address.
      * Get all emails by search criteria. Return in paginated form.
      */
     EmailControllerApi.prototype.searchEmails = function (requestParameters, initOverrides) {
@@ -2815,6 +3090,58 @@ var EmailControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.searchEmailsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Send a saved draft using the existing inbox send pipeline. The draft is deleted only after the send succeeds.
+     * Send an email draft
+     */
+    EmailControllerApi.prototype.sendEmailDraftRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.draftId === null ||
+                            requestParameters.draftId === undefined) {
+                            throw new runtime.RequiredError('draftId', 'Required parameter requestParameters.draftId was null or undefined when calling sendEmailDraft.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/drafts/{draftId}/send".replace("{".concat('draftId', "}"), encodeURIComponent(String(requestParameters.draftId))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.SentEmailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Send a saved draft using the existing inbox send pipeline. The draft is deleted only after the send succeeds.
+     * Send an email draft
+     */
+    EmailControllerApi.prototype.sendEmailDraft = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.sendEmailDraftRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -2938,6 +3265,64 @@ var EmailControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Replace the SendEmailOptions stored for a draft. The draft remains attached to its original inbox; create a new draft to use a different inbox.
+     * Update an email draft
+     */
+    EmailControllerApi.prototype.updateEmailDraftRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.draftId === null ||
+                            requestParameters.draftId === undefined) {
+                            throw new runtime.RequiredError('draftId', 'Required parameter requestParameters.draftId was null or undefined when calling updateEmailDraft.');
+                        }
+                        if (requestParameters.sendEmailOptions === null ||
+                            requestParameters.sendEmailOptions === undefined) {
+                            throw new runtime.RequiredError('sendEmailOptions', 'Required parameter requestParameters.sendEmailOptions was null or undefined when calling updateEmailDraft.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/drafts/{draftId}".replace("{".concat('draftId', "}"), encodeURIComponent(String(requestParameters.draftId))),
+                                method: 'PATCH',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.SendEmailOptionsToJSON)(requestParameters.sendEmailOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.EmailDraftDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Replace the SendEmailOptions stored for a draft. The draft remains attached to its original inbox; create a new draft to use a different inbox.
+     * Update an email draft
+     */
+    EmailControllerApi.prototype.updateEmailDraft = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.updateEmailDraftRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Runs HTML validation on the email body when HTML is present. Non-HTML emails are treated as valid for this check.
      * Validate email HTML contents
      */
@@ -2992,6 +3377,25 @@ var EmailControllerApi = /** @class */ (function (_super) {
     return EmailControllerApi;
 }(runtime.BaseAPI));
 exports.EmailControllerApi = EmailControllerApi;
+/**
+ * @export
+ * @enum {string}
+ */
+var GetEmailDraftsSortEnum;
+(function (GetEmailDraftsSortEnum) {
+    GetEmailDraftsSortEnum["ASC"] = "ASC";
+    GetEmailDraftsSortEnum["DESC"] = "DESC";
+})(GetEmailDraftsSortEnum = exports.GetEmailDraftsSortEnum || (exports.GetEmailDraftsSortEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var GetEmailPreviewHTMLLinkBehaviorEnum;
+(function (GetEmailPreviewHTMLLinkBehaviorEnum) {
+    GetEmailPreviewHTMLLinkBehaviorEnum["PRESERVE"] = "PRESERVE";
+    GetEmailPreviewHTMLLinkBehaviorEnum["NEW_TAB"] = "NEW_TAB";
+    GetEmailPreviewHTMLLinkBehaviorEnum["DISABLED"] = "DISABLED";
+})(GetEmailPreviewHTMLLinkBehaviorEnum = exports.GetEmailPreviewHTMLLinkBehaviorEnum || (exports.GetEmailPreviewHTMLLinkBehaviorEnum = {}));
 /**
  * @export
  * @enum {string}

@@ -51,12 +51,6 @@ export interface PageEntityAutomationItems {
      * @type {number}
      * @memberof PageEntityAutomationItems
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageEntityAutomationItems
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageEntityAutomationItems {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageEntityAutomationItems
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageEntityAutomationItems
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageEntityAutomationItems
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

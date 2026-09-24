@@ -62,6 +62,7 @@ function RulesetDtoFromJSONTyped(json, ignoreDiscriminator) {
         action: json['action'],
         target: json['target'],
         handler: json['handler'],
+        active: json['active'],
         createdAt: new Date(json['createdAt']),
     };
 }
@@ -81,6 +82,7 @@ function RulesetDtoToJSON(value) {
         action: value.action,
         target: value.target,
         handler: value.handler,
+        active: value.active,
         createdAt: value.createdAt.toISOString(),
     };
 }

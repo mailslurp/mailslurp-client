@@ -57,12 +57,6 @@ export interface PageAITransformResultProjection {
      * @type {number}
      * @memberof PageAITransformResultProjection
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageAITransformResultProjection
-     */
     number?: number;
     /**
      *
@@ -72,16 +66,22 @@ export interface PageAITransformResultProjection {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageAITransformResultProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageAITransformResultProjection
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageAITransformResultProjection
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

@@ -51,12 +51,6 @@ export interface PageMissedSmsProjection {
      * @type {number}
      * @memberof PageMissedSmsProjection
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageMissedSmsProjection
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageMissedSmsProjection {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageMissedSmsProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageMissedSmsProjection
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageMissedSmsProjection
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

@@ -25,6 +25,7 @@ var DevicePreviewSharedRunDtoSourceTypeEnum;
     DevicePreviewSharedRunDtoSourceTypeEnum["RAW_UPLOAD"] = "RAW_UPLOAD";
     DevicePreviewSharedRunDtoSourceTypeEnum["DEVICE_PREVIEW_INGEST"] = "DEVICE_PREVIEW_INGEST";
     DevicePreviewSharedRunDtoSourceTypeEnum["PUBLIC_FREE_TEST"] = "PUBLIC_FREE_TEST";
+    DevicePreviewSharedRunDtoSourceTypeEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
 })(DevicePreviewSharedRunDtoSourceTypeEnum = exports.DevicePreviewSharedRunDtoSourceTypeEnum || (exports.DevicePreviewSharedRunDtoSourceTypeEnum = {}));
 /**
  * @export
@@ -54,6 +55,11 @@ function DevicePreviewSharedRunDtoFromJSONTyped(json, ignoreDiscriminator) {
         sourceSubject: !(0, runtime_1.exists)(json, 'sourceSubject')
             ? undefined
             : json['sourceSubject'],
+        sourceFrom: !(0, runtime_1.exists)(json, 'sourceFrom') ? undefined : json['sourceFrom'],
+        sourceTo: !(0, runtime_1.exists)(json, 'sourceTo') ? undefined : json['sourceTo'],
+        sourceRecipientEmailAddress: !(0, runtime_1.exists)(json, 'sourceRecipientEmailAddress')
+            ? undefined
+            : json['sourceRecipientEmailAddress'],
         sourceRecipientLocalPart: !(0, runtime_1.exists)(json, 'sourceRecipientLocalPart')
             ? undefined
             : json['sourceRecipientLocalPart'],
@@ -86,6 +92,9 @@ function DevicePreviewSharedRunDtoToJSON(value) {
         sourceType: value.sourceType,
         sourceAlias: value.sourceAlias,
         sourceSubject: value.sourceSubject,
+        sourceFrom: value.sourceFrom,
+        sourceTo: value.sourceTo,
+        sourceRecipientEmailAddress: value.sourceRecipientEmailAddress,
         sourceRecipientLocalPart: value.sourceRecipientLocalPart,
         sourceProfileLocalPart: value.sourceProfileLocalPart,
         sourceProfileDisplayName: value.sourceProfileDisplayName,

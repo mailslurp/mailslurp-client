@@ -35,6 +35,9 @@ function MatchOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['conditions'] === null
                 ? null
                 : json['conditions'].map(_1.ConditionOptionFromJSON),
+        ai: !(0, runtime_1.exists)(json, 'ai')
+            ? undefined
+            : (0, _1.AIMessageMatchOptionsFromJSON)(json['ai']),
     };
 }
 exports.MatchOptionsFromJSONTyped = MatchOptionsFromJSONTyped;
@@ -56,6 +59,7 @@ function MatchOptionsToJSON(value) {
             : value.conditions === null
                 ? null
                 : value.conditions.map(_1.ConditionOptionToJSON),
+        ai: (0, _1.AIMessageMatchOptionsToJSON)(value.ai),
     };
 }
 exports.MatchOptionsToJSON = MatchOptionsToJSON;

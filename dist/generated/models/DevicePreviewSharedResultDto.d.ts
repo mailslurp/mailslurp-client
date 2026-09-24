@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { DevicePreviewShareLinkDto, DevicePreviewSharedRunDto, DevicePreviewSharedScreenshotDto, DevicePreviewSharedTargetDto } from './';
+import { DevicePreviewShareLinkDto, DevicePreviewSharedCommentDto, DevicePreviewSharedRunDto, DevicePreviewSharedScreenshotDto, DevicePreviewSharedTargetDto } from './';
 /**
  *
  * @export
@@ -40,6 +40,12 @@ export interface DevicePreviewSharedResultDto {
      * @memberof DevicePreviewSharedResultDto
      */
     screenshots: Array<DevicePreviewSharedScreenshotDto>;
+    /**
+     *
+     * @type {Array<DevicePreviewSharedCommentDto>}
+     * @memberof DevicePreviewSharedResultDto
+     */
+    comments: Array<DevicePreviewSharedCommentDto>;
 }
 export declare function DevicePreviewSharedResultDtoFromJSON(json: any): DevicePreviewSharedResultDto;
 export declare function DevicePreviewSharedResultDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): DevicePreviewSharedResultDto;

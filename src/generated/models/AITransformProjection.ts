@@ -28,28 +28,10 @@ import {
 export interface AITransformProjection {
   /**
    *
-   * @type {string}
-   * @memberof AITransformProjection
-   */
-  name?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof AITransformProjection
-   */
-  id: string;
-  /**
-   *
    * @type {Date}
    * @memberof AITransformProjection
    */
   createdAt: Date;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof AITransformProjection
-   */
-  conditions?: Array<string> | null;
   /**
    *
    * @type {Array<string>}
@@ -62,6 +44,24 @@ export interface AITransformProjection {
    * @memberof AITransformProjection
    */
   outputSchema?: StructuredOutputSchema | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof AITransformProjection
+   */
+  conditions?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformProjection
+   */
+  name?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof AITransformProjection
+   */
+  id: string;
 }
 
 export function AITransformProjectionFromJSON(
@@ -78,16 +78,16 @@ export function AITransformProjectionFromJSONTyped(
     return json;
   }
   return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
     createdAt: new Date(json['createdAt']),
-    conditions: !exists(json, 'conditions') ? undefined : json['conditions'],
     instructions: !exists(json, 'instructions')
       ? undefined
       : json['instructions'],
     outputSchema: !exists(json, 'outputSchema')
       ? undefined
       : StructuredOutputSchemaFromJSON(json['outputSchema']),
+    conditions: !exists(json, 'conditions') ? undefined : json['conditions'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
   };
 }
 
@@ -101,11 +101,11 @@ export function AITransformProjectionToJSON(
     return null;
   }
   return {
-    name: value.name,
-    id: value.id,
     createdAt: value.createdAt.toISOString(),
-    conditions: value.conditions,
     instructions: value.instructions,
     outputSchema: StructuredOutputSchemaToJSON(value.outputSchema),
+    conditions: value.conditions,
+    name: value.name,
+    id: value.id,
   };
 }

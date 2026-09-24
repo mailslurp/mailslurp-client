@@ -51,12 +51,6 @@ export interface PageRulesetDto {
      * @type {number}
      * @memberof PageRulesetDto
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageRulesetDto
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageRulesetDto {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageRulesetDto
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageRulesetDto
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageRulesetDto
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

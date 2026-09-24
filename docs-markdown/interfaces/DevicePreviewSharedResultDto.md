@@ -12,12 +12,23 @@ DevicePreviewSharedResultDto
 
 ### Properties
 
+- [comments](DevicePreviewSharedResultDto.md#comments)
 - [run](DevicePreviewSharedResultDto.md#run)
 - [screenshots](DevicePreviewSharedResultDto.md#screenshots)
 - [share](DevicePreviewSharedResultDto.md#share)
 - [targets](DevicePreviewSharedResultDto.md#targets)
 
 ## Properties
+
+### comments
+
+• **comments**: [`DevicePreviewSharedCommentDto`](DevicePreviewSharedCommentDto.md)[]
+
+**`Memberof`**
+
+DevicePreviewSharedResultDto
+
+___
 
 ### run
 

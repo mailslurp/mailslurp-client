@@ -20,18 +20,6 @@ export interface GuestPortalUserProjection {
      * @type {string}
      * @memberof GuestPortalUserProjection
      */
-    name?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof GuestPortalUserProjection
-     */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof GuestPortalUserProjection
-     */
     username: string;
     /**
      *
@@ -69,6 +57,18 @@ export interface GuestPortalUserProjection {
      * @memberof GuestPortalUserProjection
      */
     portalId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof GuestPortalUserProjection
+     */
+    name?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof GuestPortalUserProjection
+     */
+    id: string;
 }
 export declare function GuestPortalUserProjectionFromJSON(json: any): GuestPortalUserProjection;
 export declare function GuestPortalUserProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): GuestPortalUserProjection;

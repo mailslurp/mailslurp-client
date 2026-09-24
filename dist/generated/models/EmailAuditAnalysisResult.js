@@ -35,6 +35,11 @@ function EmailAuditAnalysisResultFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        contentReview: !(0, runtime_1.exists)(json, 'contentReview')
+            ? undefined
+            : json['contentReview'] === null
+                ? null
+                : json['contentReview'].map(_1.EmailAuditCheckFromJSON),
         status: json['status'],
         healthScore: json['healthScore'],
         totalChecks: json['totalChecks'],
@@ -69,6 +74,15 @@ function EmailAuditAnalysisResultFromJSONTyped(json, ignoreDiscriminator) {
         errorMessage: !(0, runtime_1.exists)(json, 'errorMessage')
             ? undefined
             : json['errorMessage'],
+        spamVerdict: !(0, runtime_1.exists)(json, 'spamVerdict') ? undefined : json['spamVerdict'],
+        virusVerdict: !(0, runtime_1.exists)(json, 'virusVerdict')
+            ? undefined
+            : json['virusVerdict'],
+        spfVerdict: !(0, runtime_1.exists)(json, 'spfVerdict') ? undefined : json['spfVerdict'],
+        dkimVerdict: !(0, runtime_1.exists)(json, 'dkimVerdict') ? undefined : json['dkimVerdict'],
+        dmarcVerdict: !(0, runtime_1.exists)(json, 'dmarcVerdict')
+            ? undefined
+            : json['dmarcVerdict'],
     };
 }
 exports.EmailAuditAnalysisResultFromJSONTyped = EmailAuditAnalysisResultFromJSONTyped;
@@ -80,6 +94,11 @@ function EmailAuditAnalysisResultToJSON(value) {
         return null;
     }
     return {
+        contentReview: value.contentReview === undefined
+            ? undefined
+            : value.contentReview === null
+                ? null
+                : value.contentReview.map(_1.EmailAuditCheckToJSON),
         status: value.status,
         healthScore: value.healthScore,
         totalChecks: value.totalChecks,
@@ -108,6 +127,11 @@ function EmailAuditAnalysisResultToJSON(value) {
         externalCheckSkippedCount: value.externalCheckSkippedCount,
         insights: value.insights,
         errorMessage: value.errorMessage,
+        spamVerdict: value.spamVerdict,
+        virusVerdict: value.virusVerdict,
+        spfVerdict: value.spfVerdict,
+        dkimVerdict: value.dkimVerdict,
+        dmarcVerdict: value.dmarcVerdict,
     };
 }
 exports.EmailAuditAnalysisResultToJSON = EmailAuditAnalysisResultToJSON;

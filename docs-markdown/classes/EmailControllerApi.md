@@ -34,9 +34,13 @@
 - [checkEmailClientSupportRaw](EmailControllerApi.md#checkemailclientsupportraw)
 - [createEmailAuditForEmail](EmailControllerApi.md#createemailauditforemail)
 - [createEmailAuditForEmailRaw](EmailControllerApi.md#createemailauditforemailraw)
+- [createEmailDraft](EmailControllerApi.md#createemaildraft)
+- [createEmailDraftRaw](EmailControllerApi.md#createemaildraftraw)
 - [deleteAllEmails](EmailControllerApi.md#deleteallemails)
 - [deleteAllEmailsRaw](EmailControllerApi.md#deleteallemailsraw)
 - [deleteEmail](EmailControllerApi.md#deleteemail)
+- [deleteEmailDraft](EmailControllerApi.md#deleteemaildraft)
+- [deleteEmailDraftRaw](EmailControllerApi.md#deleteemaildraftraw)
 - [deleteEmailRaw](EmailControllerApi.md#deleteemailraw)
 - [downloadAttachment](EmailControllerApi.md#downloadattachment)
 - [downloadAttachmentBase64](EmailControllerApi.md#downloadattachmentbase64)
@@ -63,6 +67,10 @@
 - [getEmailContentPartRaw](EmailControllerApi.md#getemailcontentpartraw)
 - [getEmailCount](EmailControllerApi.md#getemailcount)
 - [getEmailCountRaw](EmailControllerApi.md#getemailcountraw)
+- [getEmailDraft](EmailControllerApi.md#getemaildraft)
+- [getEmailDraftRaw](EmailControllerApi.md#getemaildraftraw)
+- [getEmailDrafts](EmailControllerApi.md#getemaildrafts)
+- [getEmailDraftsRaw](EmailControllerApi.md#getemaildraftsraw)
 - [getEmailHTML](EmailControllerApi.md#getemailhtml)
 - [getEmailHTMLJson](EmailControllerApi.md#getemailhtmljson)
 - [getEmailHTMLJsonRaw](EmailControllerApi.md#getemailhtmljsonraw)
@@ -71,6 +79,8 @@
 - [getEmailHTMLRaw](EmailControllerApi.md#getemailhtmlraw)
 - [getEmailLinks](EmailControllerApi.md#getemaillinks)
 - [getEmailLinksRaw](EmailControllerApi.md#getemaillinksraw)
+- [getEmailPreviewHTML](EmailControllerApi.md#getemailpreviewhtml)
+- [getEmailPreviewHTMLRaw](EmailControllerApi.md#getemailpreviewhtmlraw)
 - [getEmailPreviewURLs](EmailControllerApi.md#getemailpreviewurls)
 - [getEmailPreviewURLsRaw](EmailControllerApi.md#getemailpreviewurlsraw)
 - [getEmailRaw](EmailControllerApi.md#getemailraw)
@@ -117,10 +127,14 @@
 - [request](EmailControllerApi.md#request)
 - [searchEmails](EmailControllerApi.md#searchemails)
 - [searchEmailsRaw](EmailControllerApi.md#searchemailsraw)
+- [sendEmailDraft](EmailControllerApi.md#sendemaildraft)
+- [sendEmailDraftRaw](EmailControllerApi.md#sendemaildraftraw)
 - [sendEmailSourceOptional](EmailControllerApi.md#sendemailsourceoptional)
 - [sendEmailSourceOptionalRaw](EmailControllerApi.md#sendemailsourceoptionalraw)
 - [setEmailFavourited](EmailControllerApi.md#setemailfavourited)
 - [setEmailFavouritedRaw](EmailControllerApi.md#setemailfavouritedraw)
+- [updateEmailDraft](EmailControllerApi.md#updateemaildraft)
+- [updateEmailDraftRaw](EmailControllerApi.md#updateemaildraftraw)
 - [validateEmail](EmailControllerApi.md#validateemail)
 - [validateEmailRaw](EmailControllerApi.md#validateemailraw)
 - [withMiddleware](EmailControllerApi.md#withmiddleware)
@@ -435,6 +449,46 @@ Persist aggregate email audit for a stored email
 
 ___
 
+### createEmailDraft
+
+▸ **createEmailDraft**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailDraftDto`](../interfaces/EmailDraftDto.md)\>
+
+Create a saved email draft using the same SendEmailOptions shape used for sending. Provide an inboxId query parameter or sendOptions.inboxId to choose the inbox the draft will send from. Draft creation does not send email and does not create a new inbox.
+Create an email draft
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateEmailDraftRequest`](../interfaces/CreateEmailDraftRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailDraftDto`](../interfaces/EmailDraftDto.md)\>
+
+___
+
+### createEmailDraftRaw
+
+▸ **createEmailDraftRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailDraftDto`](../interfaces/EmailDraftDto.md)\>\>
+
+Create a saved email draft using the same SendEmailOptions shape used for sending. Provide an inboxId query parameter or sendOptions.inboxId to choose the inbox the draft will send from. Draft creation does not send email and does not create a new inbox.
+Create an email draft
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateEmailDraftRequest`](../interfaces/CreateEmailDraftRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailDraftDto`](../interfaces/EmailDraftDto.md)\>\>
+
+___
+
 ### deleteAllEmails
 
 ▸ **deleteAllEmails**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
@@ -492,6 +546,46 @@ Delete an email
 #### Returns
 
 `Promise`<`void`\>
+
+___
+
+### deleteEmailDraft
+
+▸ **deleteEmailDraft**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Delete a saved email draft without sending it.
+Delete an email draft
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteEmailDraftRequest`](../interfaces/DeleteEmailDraftRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### deleteEmailDraftRaw
+
+▸ **deleteEmailDraftRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Delete a saved email draft without sending it.
+Delete an email draft
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteEmailDraftRequest`](../interfaces/DeleteEmailDraftRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
@@ -1015,6 +1109,86 @@ Get email count
 
 ___
 
+### getEmailDraft
+
+▸ **getEmailDraft**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailDraftDto`](../interfaces/EmailDraftDto.md)\>
+
+Get a saved email draft including the full SendEmailOptions payload.
+Get an email draft
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailDraftRequest`](../interfaces/GetEmailDraftRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailDraftDto`](../interfaces/EmailDraftDto.md)\>
+
+___
+
+### getEmailDraftRaw
+
+▸ **getEmailDraftRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailDraftDto`](../interfaces/EmailDraftDto.md)\>\>
+
+Get a saved email draft including the full SendEmailOptions payload.
+Get an email draft
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailDraftRequest`](../interfaces/GetEmailDraftRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailDraftDto`](../interfaces/EmailDraftDto.md)\>\>
+
+___
+
+### getEmailDrafts
+
+▸ **getEmailDrafts**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailDraftProjection`](../interfaces/PageEmailDraftProjection.md)\>
+
+List saved email drafts for the authenticated user, optionally filtered by inbox.
+List email drafts
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailDraftsRequest`](../interfaces/GetEmailDraftsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PageEmailDraftProjection`](../interfaces/PageEmailDraftProjection.md)\>
+
+___
+
+### getEmailDraftsRaw
+
+▸ **getEmailDraftsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailDraftProjection`](../interfaces/PageEmailDraftProjection.md)\>\>
+
+List saved email drafts for the authenticated user, optionally filtered by inbox.
+List email drafts
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailDraftsRequest`](../interfaces/GetEmailDraftsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailDraftProjection`](../interfaces/PageEmailDraftProjection.md)\>\>
+
+___
+
 ### getEmailHTML
 
 ▸ **getEmailHTML**(`requestParameters`, `initOverrides?`): `Promise`<`string`\>
@@ -1172,6 +1346,46 @@ Extract links from an email HTML body
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailLinksResult`](../interfaces/EmailLinksResult.md)\>\>
+
+___
+
+### getEmailPreviewHTML
+
+▸ **getEmailPreviewHTML**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailPreviewHtmlDto`](../interfaces/EmailPreviewHtmlDto.md)\>
+
+Returns a server-normalized preview document with active content removed and restrictive browser metadata. This representation can normalize malformed email layout and is deprecated for fidelity-sensitive rendering. Fetch the original HTML source and apply link hardening inside an opaque-origin browser sandbox instead.
+Get deprecated server-normalized email preview HTML
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailPreviewHTMLRequest`](../interfaces/GetEmailPreviewHTMLRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailPreviewHtmlDto`](../interfaces/EmailPreviewHtmlDto.md)\>
+
+___
+
+### getEmailPreviewHTMLRaw
+
+▸ **getEmailPreviewHTMLRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreviewHtmlDto`](../interfaces/EmailPreviewHtmlDto.md)\>\>
+
+Returns a server-normalized preview document with active content removed and restrictive browser metadata. This representation can normalize malformed email layout and is deprecated for fidelity-sensitive rendering. Fetch the original HTML source and apply link hardening inside an opaque-origin browser sandbox instead.
+Get deprecated server-normalized email preview HTML
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetEmailPreviewHTMLRequest`](../interfaces/GetEmailPreviewHTMLRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailPreviewHtmlDto`](../interfaces/EmailPreviewHtmlDto.md)\>\>
 
 ___
 
@@ -2060,7 +2274,7 @@ ___
 
 ▸ **searchEmails**(`requestParameters`, `initOverrides?`): `Promise`<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>
 
-Searches emails by sender/recipient/address/subject/id fields and returns paginated matches. Does not perform full-text body search.
+Searches emails by email ID, inbox ID, sender address, subject, receiving inbox address, or receiving plus-address.
 Get all emails by search criteria. Return in paginated form.
 
 #### Parameters
@@ -2080,7 +2294,7 @@ ___
 
 ▸ **searchEmailsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
 
-Searches emails by sender/recipient/address/subject/id fields and returns paginated matches. Does not perform full-text body search.
+Searches emails by email ID, inbox ID, sender address, subject, receiving inbox address, or receiving plus-address.
 Get all emails by search criteria. Return in paginated form.
 
 #### Parameters
@@ -2093,6 +2307,46 @@ Get all emails by search criteria. Return in paginated form.
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PageEmailProjection`](../interfaces/PageEmailProjection.md)\>\>
+
+___
+
+### sendEmailDraft
+
+▸ **sendEmailDraft**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+Send a saved draft using the existing inbox send pipeline. The draft is deleted only after the send succeeds.
+Send an email draft
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendEmailDraftRequest`](../interfaces/SendEmailDraftRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+___
+
+### sendEmailDraftRaw
+
+▸ **sendEmailDraftRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
+
+Send a saved draft using the existing inbox send pipeline. The draft is deleted only after the send succeeds.
+Send an email draft
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendEmailDraftRequest`](../interfaces/SendEmailDraftRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
 
 ___
 
@@ -2173,6 +2427,46 @@ Set email favourited state
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+___
+
+### updateEmailDraft
+
+▸ **updateEmailDraft**(`requestParameters`, `initOverrides?`): `Promise`<[`EmailDraftDto`](../interfaces/EmailDraftDto.md)\>
+
+Replace the SendEmailOptions stored for a draft. The draft remains attached to its original inbox; create a new draft to use a different inbox.
+Update an email draft
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateEmailDraftRequest`](../interfaces/UpdateEmailDraftRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmailDraftDto`](../interfaces/EmailDraftDto.md)\>
+
+___
+
+### updateEmailDraftRaw
+
+▸ **updateEmailDraftRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailDraftDto`](../interfaces/EmailDraftDto.md)\>\>
+
+Replace the SendEmailOptions stored for a draft. The draft remains attached to its original inbox; create a new draft to use a different inbox.
+Update an email draft
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateEmailDraftRequest`](../interfaces/UpdateEmailDraftRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmailDraftDto`](../interfaces/EmailDraftDto.md)\>\>
 
 ___
 

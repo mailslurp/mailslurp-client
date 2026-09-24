@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EmailBlacklistIpResult } from './';
+import { EmailBlacklistDomainResult, EmailBlacklistIpResult } from './';
 /**
  * Public blacklist lookup results for a domain or IP address
  * @export
@@ -76,6 +76,30 @@ export interface CheckEmailBlacklistResults {
      * @memberof CheckEmailBlacklistResults
      */
     errors: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof CheckEmailBlacklistResults
+     */
+    checkStatus: CheckEmailBlacklistResultsCheckStatusEnum;
+    /**
+     *
+     * @type {Array<EmailBlacklistDomainResult>}
+     * @memberof CheckEmailBlacklistResults
+     */
+    checkedDomains: Array<EmailBlacklistDomainResult>;
+    /**
+     *
+     * @type {Date}
+     * @memberof CheckEmailBlacklistResults
+     */
+    checkedAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof CheckEmailBlacklistResults
+     */
+    evidenceVersion: string;
 }
 /**
  * @export
@@ -86,6 +110,16 @@ export declare enum CheckEmailBlacklistResultsStatusEnum {
     DEGRADED = "DEGRADED",
     CRITICAL = "CRITICAL",
     FAILED = "FAILED"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum CheckEmailBlacklistResultsCheckStatusEnum {
+    LISTED = "LISTED",
+    NOT_LISTED = "NOT_LISTED",
+    ERROR = "ERROR",
+    NOT_CHECKED = "NOT_CHECKED"
 }
 export declare function CheckEmailBlacklistResultsFromJSON(json: any): CheckEmailBlacklistResults;
 export declare function CheckEmailBlacklistResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CheckEmailBlacklistResults;

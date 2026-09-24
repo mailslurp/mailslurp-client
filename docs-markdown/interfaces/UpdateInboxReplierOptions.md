@@ -14,6 +14,7 @@ UpdateInboxReplierOptions
 
 ### Properties
 
+- [attachments](UpdateInboxReplierOptions.md#attachments)
 - [body](UpdateInboxReplierOptions.md#body)
 - [charset](UpdateInboxReplierOptions.md#charset)
 - [field](UpdateInboxReplierOptions.md#field)
@@ -31,6 +32,18 @@ UpdateInboxReplierOptions
 - [templateVariables](UpdateInboxReplierOptions.md#templatevariables)
 
 ## Properties
+
+### attachments
+
+• `Optional` **attachments**: `string`[]
+
+Optional attachment IDs to include with every automated reply
+
+**`Memberof`**
+
+UpdateInboxReplierOptions
+
+___
 
 ### body
 
@@ -96,7 +109,7 @@ ___
 
 • **inboxId**: `string`
 
-Inbox ID to attach replier to
+Inbox ID to attach replier to. Set null for a global replier.
 
 **`Memberof`**
 

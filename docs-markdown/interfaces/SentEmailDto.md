@@ -47,6 +47,7 @@ SentEmailDto
 - [to](SentEmailDto.md#to)
 - [toContacts](SentEmailDto.md#tocontacts)
 - [toGroup](SentEmailDto.md#togroup)
+- [transport](SentEmailDto.md#transport)
 - [userId](SentEmailDto.md#userid)
 - [virtualSend](SentEmailDto.md#virtualsend)
 
@@ -413,6 +414,16 @@ ___
 ### toGroup
 
 • `Optional` **toGroup**: `string`
+
+**`Memberof`**
+
+SentEmailDto
+
+___
+
+### transport
+
+• **transport**: [`SentEmailDtoTransportEnum`](../enums/SentEmailDtoTransportEnum.md)
 
 **`Memberof`**
 

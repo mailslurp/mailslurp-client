@@ -13,8 +13,17 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreatePublicDeviceRenderTestOptionsToJSON = exports.CreatePublicDeviceRenderTestOptionsFromJSONTyped = exports.CreatePublicDeviceRenderTestOptionsFromJSON = void 0;
+exports.CreatePublicDeviceRenderTestOptionsToJSON = exports.CreatePublicDeviceRenderTestOptionsFromJSONTyped = exports.CreatePublicDeviceRenderTestOptionsFromJSON = exports.CreatePublicDeviceRenderTestOptionsPreviewModeEnum = void 0;
 var runtime_1 = require("../runtime");
+/**
+ * @export
+ * @enum {string}
+ */
+var CreatePublicDeviceRenderTestOptionsPreviewModeEnum;
+(function (CreatePublicDeviceRenderTestOptionsPreviewModeEnum) {
+    CreatePublicDeviceRenderTestOptionsPreviewModeEnum["DEVICE_RENDER"] = "DEVICE_RENDER";
+    CreatePublicDeviceRenderTestOptionsPreviewModeEnum["LIGHT_DARK"] = "LIGHT_DARK";
+})(CreatePublicDeviceRenderTestOptionsPreviewModeEnum = exports.CreatePublicDeviceRenderTestOptionsPreviewModeEnum || (exports.CreatePublicDeviceRenderTestOptionsPreviewModeEnum = {}));
 function CreatePublicDeviceRenderTestOptionsFromJSON(json) {
     return CreatePublicDeviceRenderTestOptionsFromJSONTyped(json, false);
 }
@@ -27,6 +36,8 @@ function CreatePublicDeviceRenderTestOptionsFromJSONTyped(json, ignoreDiscrimina
         captchaToken: !(0, runtime_1.exists)(json, 'captchaToken')
             ? undefined
             : json['captchaToken'],
+        target: !(0, runtime_1.exists)(json, 'target') ? undefined : json['target'],
+        previewMode: json['previewMode'],
     };
 }
 exports.CreatePublicDeviceRenderTestOptionsFromJSONTyped = CreatePublicDeviceRenderTestOptionsFromJSONTyped;
@@ -39,6 +50,8 @@ function CreatePublicDeviceRenderTestOptionsToJSON(value) {
     }
     return {
         captchaToken: value.captchaToken,
+        target: value.target,
+        previewMode: value.previewMode,
     };
 }
 exports.CreatePublicDeviceRenderTestOptionsToJSON = CreatePublicDeviceRenderTestOptionsToJSON;

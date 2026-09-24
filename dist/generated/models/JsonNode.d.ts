@@ -20,13 +20,7 @@ export interface JsonNode {
      * @type {boolean}
      * @memberof JsonNode
      */
-    empty?: boolean;
-    /**
-     *
-     * @type {boolean}
-     * @memberof JsonNode
-     */
-    array?: boolean;
+    string?: boolean;
     /**
      *
      * @type {boolean}
@@ -50,7 +44,13 @@ export interface JsonNode {
      * @type {boolean}
      * @memberof JsonNode
      */
-    valueNode?: boolean;
+    container?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof JsonNode
+     */
+    textual?: boolean;
     /**
      *
      * @type {boolean}
@@ -68,19 +68,19 @@ export interface JsonNode {
      * @type {boolean}
      * @memberof JsonNode
      */
-    string?: boolean;
+    pojo?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof JsonNode
+     */
+    number?: boolean;
     /**
      *
      * @type {boolean}
      * @memberof JsonNode
      */
     integralNumber?: boolean;
-    /**
-     *
-     * @type {boolean}
-     * @memberof JsonNode
-     */
-    pojo?: boolean;
     /**
      *
      * @type {boolean}
@@ -128,12 +128,6 @@ export interface JsonNode {
      * @type {boolean}
      * @memberof JsonNode
      */
-    textual?: boolean;
-    /**
-     *
-     * @type {boolean}
-     * @memberof JsonNode
-     */
     _boolean?: boolean;
     /**
      *
@@ -146,13 +140,19 @@ export interface JsonNode {
      * @type {boolean}
      * @memberof JsonNode
      */
-    container?: boolean;
+    valueNode?: boolean;
     /**
      *
      * @type {boolean}
      * @memberof JsonNode
      */
-    number?: boolean;
+    empty?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof JsonNode
+     */
+    array?: boolean;
     /**
      *
      * @type {boolean}

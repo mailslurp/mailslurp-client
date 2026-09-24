@@ -69,12 +69,6 @@ export interface PageGuestPortalUsers {
    * @type {number}
    * @memberof PageGuestPortalUsers
    */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageGuestPortalUsers
-   */
   number?: number;
   /**
    *
@@ -84,16 +78,22 @@ export interface PageGuestPortalUsers {
   first?: boolean;
   /**
    *
+   * @type {SortObject}
+   * @memberof PageGuestPortalUsers
+   */
+  sort?: SortObject;
+  /**
+   *
    * @type {number}
    * @memberof PageGuestPortalUsers
    */
   numberOfElements?: number;
   /**
    *
-   * @type {SortObject}
+   * @type {number}
    * @memberof PageGuestPortalUsers
    */
-  sort?: SortObject;
+  size?: number;
   /**
    *
    * @type {boolean}
@@ -123,13 +123,13 @@ export function PageGuestPortalUsersFromJSONTyped(
     totalPages: json['totalPages'],
     totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
-    size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     first: !exists(json, 'first') ? undefined : json['first'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+    size: !exists(json, 'size') ? undefined : json['size'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -152,11 +152,11 @@ export function PageGuestPortalUsersToJSON(
     totalPages: value.totalPages,
     totalElements: value.totalElements,
     last: value.last,
-    size: value.size,
     number: value.number,
     first: value.first,
-    numberOfElements: value.numberOfElements,
     sort: SortObjectToJSON(value.sort),
+    numberOfElements: value.numberOfElements,
+    size: value.size,
     empty: value.empty,
   };
 }

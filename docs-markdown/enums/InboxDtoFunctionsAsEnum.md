@@ -13,6 +13,7 @@
 - [CATCH\_ALL](InboxDtoFunctionsAsEnum.md#catch_all)
 - [CONNECTOR](InboxDtoFunctionsAsEnum.md#connector)
 - [GUEST](InboxDtoFunctionsAsEnum.md#guest)
+- [GUIDED\_TOUR](InboxDtoFunctionsAsEnum.md#guided_tour)
 - [OAUTH\_CONNECTION\_GMAIL](InboxDtoFunctionsAsEnum.md#oauth_connection_gmail)
 - [THREAD](InboxDtoFunctionsAsEnum.md#thread)
 
@@ -45,6 +46,12 @@ ___
 ### GUEST
 
 • **GUEST** = ``"GUEST"``
+
+___
+
+### GUIDED\_TOUR
+
+• **GUIDED\_TOUR** = ``"GUIDED_TOUR"``
 
 ___
 

@@ -18,6 +18,7 @@ PublicDeviceRenderTestDto
 - [failureMessage](PublicDeviceRenderTestDto.md#failuremessage)
 - [freeLimitReached](PublicDeviceRenderTestDto.md#freelimitreached)
 - [id](PublicDeviceRenderTestDto.md#id)
+- [previewMode](PublicDeviceRenderTestDto.md#previewmode)
 - [redirectUrl](PublicDeviceRenderTestDto.md#redirecturl)
 - [runId](PublicDeviceRenderTestDto.md#runid)
 - [senderDomain](PublicDeviceRenderTestDto.md#senderdomain)
@@ -25,6 +26,7 @@ PublicDeviceRenderTestDto
 - [sourceFrom](PublicDeviceRenderTestDto.md#sourcefrom)
 - [sourceSubject](PublicDeviceRenderTestDto.md#sourcesubject)
 - [status](PublicDeviceRenderTestDto.md#status)
+- [target](PublicDeviceRenderTestDto.md#target)
 
 ## Properties
 
@@ -81,6 +83,16 @@ ___
 ### id
 
 • **id**: `string`
+
+**`Memberof`**
+
+PublicDeviceRenderTestDto
+
+___
+
+### previewMode
+
+• **previewMode**: [`PublicDeviceRenderTestDtoPreviewModeEnum`](../enums/PublicDeviceRenderTestDtoPreviewModeEnum.md)
 
 **`Memberof`**
 
@@ -151,6 +163,16 @@ ___
 ### status
 
 • **status**: [`PublicDeviceRenderTestDtoStatusEnum`](../enums/PublicDeviceRenderTestDtoStatusEnum.md)
+
+**`Memberof`**
+
+PublicDeviceRenderTestDto
+
+___
+
+### target
+
+• **target**: `string`
 
 **`Memberof`**
 

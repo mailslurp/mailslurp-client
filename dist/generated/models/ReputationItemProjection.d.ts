@@ -20,7 +20,7 @@ export interface ReputationItemProjection {
      * @type {string}
      * @memberof ReputationItemProjection
      */
-    id: string;
+    reputationType: ReputationItemProjectionReputationTypeEnum;
     /**
      *
      * @type {string}
@@ -50,7 +50,15 @@ export interface ReputationItemProjection {
      * @type {string}
      * @memberof ReputationItemProjection
      */
-    reputationType: ReputationItemProjectionReputationTypeEnum;
+    id: string;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum ReputationItemProjectionReputationTypeEnum {
+    COMPLAINT = "COMPLAINT",
+    BOUNCE = "BOUNCE"
 }
 /**
  * @export
@@ -60,14 +68,6 @@ export declare enum ReputationItemProjectionSeverityEnum {
     INFO = "INFO",
     WARNING = "WARNING",
     DANGER = "DANGER"
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum ReputationItemProjectionReputationTypeEnum {
-    COMPLAINT = "COMPLAINT",
-    BOUNCE = "BOUNCE"
 }
 export declare function ReputationItemProjectionFromJSON(json: any): ReputationItemProjection;
 export declare function ReputationItemProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReputationItemProjection;

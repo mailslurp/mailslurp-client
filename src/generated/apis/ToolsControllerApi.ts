@@ -161,15 +161,24 @@ import {
   NewFakeEmailAddressResult,
   NewFakeEmailAddressResultFromJSON,
   NewFakeEmailAddressResultToJSON,
+  PublicDeviceRenderTargetListDto,
+  PublicDeviceRenderTargetListDtoFromJSON,
+  PublicDeviceRenderTargetListDtoToJSON,
   PublicDeviceRenderTestDto,
   PublicDeviceRenderTestDtoFromJSON,
   PublicDeviceRenderTestDtoToJSON,
+  PublicEmailPreviewContentDto,
+  PublicEmailPreviewContentDtoFromJSON,
+  PublicEmailPreviewContentDtoToJSON,
   PublicSpamTestResultsDto,
   PublicSpamTestResultsDtoFromJSON,
   PublicSpamTestResultsDtoToJSON,
   PublicSpamTestRunDto,
   PublicSpamTestRunDtoFromJSON,
   PublicSpamTestRunDtoToJSON,
+  SubmitPublicDeviceRenderHtmlOptions,
+  SubmitPublicDeviceRenderHtmlOptionsFromJSON,
+  SubmitPublicDeviceRenderHtmlOptionsToJSON,
   SubmitPublicSpamTestOptions,
   SubmitPublicSpamTestOptionsFromJSON,
   SubmitPublicSpamTestOptionsToJSON,
@@ -270,6 +279,10 @@ export interface GetPublicDeviceRenderTestRequest {
   id: string;
 }
 
+export interface GetPublicEmailPreviewContentRequest {
+  id: string;
+}
+
 export interface GetPublicSpamTestRequest {
   id: string;
 }
@@ -308,6 +321,19 @@ export interface LookupSpfDomainRequest {
 
 export interface LookupTlsReportingDomainRequest {
   lookupTlsReportingDomainOptions: LookupTlsReportingDomainOptions;
+}
+
+export interface SubmitPublicDeviceRenderEmlRequest {
+  id: string;
+}
+
+export interface SubmitPublicDeviceRenderHtmlRequest {
+  id: string;
+  submitPublicDeviceRenderHtmlOptions: SubmitPublicDeviceRenderHtmlOptions;
+}
+
+export interface SubmitPublicDeviceRenderTestRequest {
+  id: string;
 }
 
 export interface SubmitPublicSpamTestRequest {
@@ -1597,6 +1623,47 @@ export class ToolsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Returns the currently healthy target choices exposed by the free email render tool.
+   * List available public email render targets
+   */
+  async getPublicDeviceRenderTargetsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PublicDeviceRenderTargetListDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/device-render-test/targets`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PublicDeviceRenderTargetListDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns the currently healthy target choices exposed by the free email render tool.
+   * List available public email render targets
+   */
+  async getPublicDeviceRenderTargets(
+    initOverrides?: RequestInit
+  ): Promise<PublicDeviceRenderTargetListDto> {
+    const response = await this.getPublicDeviceRenderTargetsRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
    * Returns status for a free email render test and the public share redirect when the render run is ready.
    * Get a public email render test
    */
@@ -1646,6 +1713,60 @@ export class ToolsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PublicDeviceRenderTestDto> {
     const response = await this.getPublicDeviceRenderTestRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get light and dark public email preview content
+   */
+  async getPublicEmailPreviewContentRaw(
+    requestParameters: GetPublicEmailPreviewContentRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PublicEmailPreviewContentDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling getPublicEmailPreviewContent.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/device-render-test/{id}/content`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PublicEmailPreviewContentDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get light and dark public email preview content
+   */
+  async getPublicEmailPreviewContent(
+    requestParameters: GetPublicEmailPreviewContentRequest,
+    initOverrides?: RequestInit
+  ): Promise<PublicEmailPreviewContentDto> {
+    const response = await this.getPublicEmailPreviewContentRaw(
       requestParameters,
       initOverrides
     );
@@ -2225,6 +2346,185 @@ export class ToolsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<LookupTlsReportingDomainResults> {
     const response = await this.lookupTlsReportingDomainRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Submit an EML file to a public email render test
+   */
+  async submitPublicDeviceRenderEmlRaw(
+    requestParameters: SubmitPublicDeviceRenderEmlRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PublicDeviceRenderTestDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling submitPublicDeviceRenderEml.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/device-render-test/{id}/eml`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PublicDeviceRenderTestDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Submit an EML file to a public email render test
+   */
+  async submitPublicDeviceRenderEml(
+    requestParameters: SubmitPublicDeviceRenderEmlRequest,
+    initOverrides?: RequestInit
+  ): Promise<PublicDeviceRenderTestDto> {
+    const response = await this.submitPublicDeviceRenderEmlRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Submit HTML to a public email render test
+   */
+  async submitPublicDeviceRenderHtmlRaw(
+    requestParameters: SubmitPublicDeviceRenderHtmlRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PublicDeviceRenderTestDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling submitPublicDeviceRenderHtml.'
+      );
+    }
+
+    if (
+      requestParameters.submitPublicDeviceRenderHtmlOptions === null ||
+      requestParameters.submitPublicDeviceRenderHtmlOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'submitPublicDeviceRenderHtmlOptions',
+        'Required parameter requestParameters.submitPublicDeviceRenderHtmlOptions was null or undefined when calling submitPublicDeviceRenderHtml.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/device-render-test/{id}/html`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SubmitPublicDeviceRenderHtmlOptionsToJSON(
+          requestParameters.submitPublicDeviceRenderHtmlOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PublicDeviceRenderTestDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Submit HTML to a public email render test
+   */
+  async submitPublicDeviceRenderHtml(
+    requestParameters: SubmitPublicDeviceRenderHtmlRequest,
+    initOverrides?: RequestInit
+  ): Promise<PublicDeviceRenderTestDto> {
+    const response = await this.submitPublicDeviceRenderHtmlRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Records that the caller sent an email to the generated address so submission and delivery failures can be distinguished from setup abandonment.
+   * Mark a public email render test as submitted
+   */
+  async submitPublicDeviceRenderTestRaw(
+    requestParameters: SubmitPublicDeviceRenderTestRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PublicDeviceRenderTestDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling submitPublicDeviceRenderTest.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/tools/device-render-test/{id}/submit`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PublicDeviceRenderTestDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Records that the caller sent an email to the generated address so submission and delivery failures can be distinguished from setup abandonment.
+   * Mark a public email render test as submitted
+   */
+  async submitPublicDeviceRenderTest(
+    requestParameters: SubmitPublicDeviceRenderTestRequest,
+    initOverrides?: RequestInit
+  ): Promise<PublicDeviceRenderTestDto> {
+    const response = await this.submitPublicDeviceRenderTestRaw(
       requestParameters,
       initOverrides
     );

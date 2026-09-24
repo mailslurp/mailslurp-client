@@ -146,6 +146,24 @@ export interface CheckEmailAuthStackResults {
    * @memberof CheckEmailAuthStackResults
    */
   errors: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof CheckEmailAuthStackResults
+   */
+  scoreVersion: string;
+  /**
+   *
+   * @type {string}
+   * @memberof CheckEmailAuthStackResults
+   */
+  scoreScope: string;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof CheckEmailAuthStackResults
+   */
+  advisoryChecks: Array<string>;
 }
 
 /**
@@ -189,6 +207,9 @@ export function CheckEmailAuthStackResultsFromJSONTyped(
     insights: json['insights'],
     warnings: json['warnings'],
     errors: json['errors'],
+    scoreVersion: json['scoreVersion'],
+    scoreScope: json['scoreScope'],
+    advisoryChecks: json['advisoryChecks'],
   };
 }
 
@@ -218,5 +239,8 @@ export function CheckEmailAuthStackResultsToJSON(
     insights: value.insights,
     warnings: value.warnings,
     errors: value.errors,
+    scoreVersion: value.scoreVersion,
+    scoreScope: value.scoreScope,
+    advisoryChecks: value.advisoryChecks,
   };
 }

@@ -14,10 +14,21 @@ MatchOptions
 
 ### Properties
 
+- [ai](MatchOptions.md#ai)
 - [conditions](MatchOptions.md#conditions)
 - [matches](MatchOptions.md#matches)
 
 ## Properties
+
+### ai
+
+• `Optional` **ai**: [`AIMessageMatchOptions`](AIMessageMatchOptions.md)
+
+**`Memberof`**
+
+MatchOptions
+
+___
 
 ### conditions
 

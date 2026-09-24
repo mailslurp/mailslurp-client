@@ -22,8 +22,11 @@ EmailAuditAnalysisResult
 - [compatibilityNotSupportedCount](EmailAuditAnalysisResult.md#compatibilitynotsupportedcount)
 - [compatibilityUnknownCount](EmailAuditAnalysisResult.md#compatibilityunknowncount)
 - [compatibilityWarningCount](EmailAuditAnalysisResult.md#compatibilitywarningcount)
+- [contentReview](EmailAuditAnalysisResult.md#contentreview)
 - [detectedImages](EmailAuditAnalysisResult.md#detectedimages)
 - [detectedLinks](EmailAuditAnalysisResult.md#detectedlinks)
+- [dkimVerdict](EmailAuditAnalysisResult.md#dkimverdict)
+- [dmarcVerdict](EmailAuditAnalysisResult.md#dmarcverdict)
 - [errorMessage](EmailAuditAnalysisResult.md#errormessage)
 - [externalCheckSkippedCount](EmailAuditAnalysisResult.md#externalcheckskippedcount)
 - [failingChecks](EmailAuditAnalysisResult.md#failingchecks)
@@ -38,10 +41,13 @@ EmailAuditAnalysisResult
 - [linkIssueCount](EmailAuditAnalysisResult.md#linkissuecount)
 - [passingChecks](EmailAuditAnalysisResult.md#passingchecks)
 - [reputationFailureCount](EmailAuditAnalysisResult.md#reputationfailurecount)
+- [spamVerdict](EmailAuditAnalysisResult.md#spamverdict)
 - [spellingIssueCount](EmailAuditAnalysisResult.md#spellingissuecount)
 - [spellingIssues](EmailAuditAnalysisResult.md#spellingissues)
+- [spfVerdict](EmailAuditAnalysisResult.md#spfverdict)
 - [status](EmailAuditAnalysisResult.md#status)
 - [totalChecks](EmailAuditAnalysisResult.md#totalchecks)
+- [virusVerdict](EmailAuditAnalysisResult.md#virusverdict)
 
 ## Properties
 
@@ -125,6 +131,18 @@ EmailAuditAnalysisResult
 
 ___
 
+### contentReview
+
+• `Optional` **contentReview**: [`EmailAuditCheck`](EmailAuditCheck.md)[]
+
+Versioned static accessibility, unresolved template, and compliance review checks. Null on historical audits that did not run these checks.
+
+**`Memberof`**
+
+EmailAuditAnalysisResult
+
+___
+
 ### detectedImages
 
 • **detectedImages**: `number`
@@ -138,6 +156,30 @@ ___
 ### detectedLinks
 
 • **detectedLinks**: `number`
+
+**`Memberof`**
+
+EmailAuditAnalysisResult
+
+___
+
+### dkimVerdict
+
+• `Optional` **dkimVerdict**: `string`
+
+DKIM verdict supplied by the source mail receiver
+
+**`Memberof`**
+
+EmailAuditAnalysisResult
+
+___
+
+### dmarcVerdict
+
+• `Optional` **dmarcVerdict**: `string`
+
+DMARC verdict supplied by the source mail receiver
 
 **`Memberof`**
 
@@ -285,6 +327,18 @@ EmailAuditAnalysisResult
 
 ___
 
+### spamVerdict
+
+• `Optional` **spamVerdict**: `string`
+
+Spam verdict supplied by the source mail receiver
+
+**`Memberof`**
+
+EmailAuditAnalysisResult
+
+___
+
 ### spellingIssueCount
 
 • **spellingIssueCount**: `number`
@@ -298,6 +352,18 @@ ___
 ### spellingIssues
 
 • **spellingIssues**: [`EmailAuditSpellingIssue`](EmailAuditSpellingIssue.md)[]
+
+**`Memberof`**
+
+EmailAuditAnalysisResult
+
+___
+
+### spfVerdict
+
+• `Optional` **spfVerdict**: `string`
+
+SPF verdict supplied by the source mail receiver
 
 **`Memberof`**
 
@@ -320,6 +386,18 @@ ___
 ### totalChecks
 
 • **totalChecks**: `number`
+
+**`Memberof`**
+
+EmailAuditAnalysisResult
+
+___
+
+### virusVerdict
+
+• `Optional` **virusVerdict**: `string`
+
+Virus verdict supplied by the source mail receiver
 
 **`Memberof`**
 

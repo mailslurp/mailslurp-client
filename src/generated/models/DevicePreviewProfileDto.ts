@@ -48,7 +48,13 @@ export interface DevicePreviewProfileDto {
    * @type {Array<string>}
    * @memberof DevicePreviewProfileDto
    */
-  nativeTargets?: Array<string> | null;
+  targets?: Array<string> | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof DevicePreviewProfileDto
+   */
+  allTargets?: boolean | null;
   /**
    *
    * @type {boolean}
@@ -87,9 +93,8 @@ export function DevicePreviewProfileDtoFromJSONTyped(
     userId: json['userId'],
     localPart: json['localPart'],
     displayName: !exists(json, 'displayName') ? undefined : json['displayName'],
-    nativeTargets: !exists(json, 'nativeTargets')
-      ? undefined
-      : json['nativeTargets'],
+    targets: !exists(json, 'targets') ? undefined : json['targets'],
+    allTargets: !exists(json, 'allTargets') ? undefined : json['allTargets'],
     enabled: json['enabled'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
@@ -110,7 +115,8 @@ export function DevicePreviewProfileDtoToJSON(
     userId: value.userId,
     localPart: value.localPart,
     displayName: value.displayName,
-    nativeTargets: value.nativeTargets,
+    targets: value.targets,
+    allTargets: value.allTargets,
     enabled: value.enabled,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),

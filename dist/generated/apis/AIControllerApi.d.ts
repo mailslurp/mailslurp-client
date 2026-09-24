@@ -10,7 +10,11 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AITransformCreateOptions, AITransformDto, AITransformMappingDto, AITransformMappingMatchResult, AITransformResultDto, ConditionalStructuredContentResult, CreateAITransformerMappingOptions, ExportTransformerOptions, ExportTransformerResponse, ExportTransformerResultJobDto, GenerateStructuredContentAttachmentOptions, GenerateStructuredContentEmailOptions, GenerateStructuredContentSmsOptions, InvokeTransformerOptions, PageAITransformMappingProjection, PageAITransformProjection, PageAITransformResultProjection, PageTableData, StructuredContentResultDto, StructuredOutputSchema, StructuredOutputSchemaValidation } from '../models';
+import { AIMessageModelDto, AIMessageResult, AIMessagesResult, AITransformCreateOptions, AITransformDto, AITransformMappingDto, AITransformMappingMatchResult, AITransformResultDto, AssertAIMessageOptions, ConditionalStructuredContentResult, CreateAITransformerMappingOptions, ExportTransformerOptions, ExportTransformerResponse, ExportTransformerResultJobDto, ExtractAIMessageOptions, GenerateStructuredContentAttachmentOptions, GenerateStructuredContentEmailOptions, GenerateStructuredContentSmsOptions, InvokeTransformerOptions, PageAITransformMappingProjection, PageAITransformProjection, PageAITransformResultProjection, PageTableData, StructuredContentResultDto, StructuredOutputSchema, StructuredOutputSchemaValidation, WaitForAIMessageOptions, WaitForAIMessagesOptions } from '../models';
+export interface AssertAIMessageRequest {
+    assertAIMessageOptions: AssertAIMessageOptions;
+    idempotencyKey?: string;
+}
 export interface CreateTransformerRequest {
     aITransformCreateOptions: AITransformCreateOptions;
 }
@@ -25,6 +29,10 @@ export interface DeleteTransformerMappingRequest {
 }
 export interface ExportTransformerResultsRequest {
     exportTransformerOptions: ExportTransformerOptions;
+}
+export interface ExtractAIMessageRequest {
+    extractAIMessageOptions: ExtractAIMessageOptions;
+    idempotencyKey?: string;
 }
 export interface GenerateStructuredContentFromAttachmentRequest {
     generateStructuredContentAttachmentOptions: GenerateStructuredContentAttachmentOptions;
@@ -99,10 +107,28 @@ export interface TestTransformerMappingMatchRequest {
 export interface ValidateStructuredOutputSchemaRequest {
     structuredOutputSchema: StructuredOutputSchema | null;
 }
+export interface WaitForAIMessageRequest {
+    waitForAIMessageOptions: WaitForAIMessageOptions;
+    idempotencyKey?: string;
+}
+export interface WaitForAIMessagesRequest {
+    waitForAIMessagesOptions: WaitForAIMessagesOptions;
+    idempotencyKey?: string;
+}
 /**
  *
  */
 export declare class AIControllerApi extends runtime.BaseAPI {
+    /**
+     * Check named natural-language assertions against an existing email or SMS. Returns PASS, FAIL, INCONCLUSIVE or a distinct operational status. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Check named natural-language assertions against an existing email or SMS
+     */
+    assertAIMessageRaw(requestParameters: AssertAIMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AIMessageResult>>;
+    /**
+     * Check named natural-language assertions against an existing email or SMS. Returns PASS, FAIL, INCONCLUSIVE or a distinct operational status. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Check named natural-language assertions against an existing email or SMS
+     */
+    assertAIMessage(requestParameters: AssertAIMessageRequest, initOverrides?: RequestInit): Promise<AIMessageResult>;
     /**
      * Save an AI transform instructions and schema for use with webhooks and automations
      * Create a transformer for reuse in automations
@@ -174,6 +200,16 @@ export declare class AIControllerApi extends runtime.BaseAPI {
      */
     exportTransformerResults(requestParameters: ExportTransformerResultsRequest, initOverrides?: RequestInit): Promise<ExportTransformerResponse>;
     /**
+     * Extract schema-validated data from an existing email or SMS with verified source evidence. Missing or ambiguous data is not invented. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Extract schema-validated data from an existing email or SMS with verified source evidence
+     */
+    extractAIMessageRaw(requestParameters: ExtractAIMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AIMessageResult>>;
+    /**
+     * Extract schema-validated data from an existing email or SMS with verified source evidence. Missing or ambiguous data is not invented. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Extract schema-validated data from an existing email or SMS with verified source evidence
+     */
+    extractAIMessage(requestParameters: ExtractAIMessageRequest, initOverrides?: RequestInit): Promise<AIMessageResult>;
+    /**
      * Use output schemas to extract data from an attachment using AI
      * Generate structured content for an attachment
      */
@@ -203,6 +239,16 @@ export declare class AIControllerApi extends runtime.BaseAPI {
      * Generate structured content for a TXT message
      */
     generateStructuredContentFromSms(requestParameters: GenerateStructuredContentFromSmsRequest, initOverrides?: RequestInit): Promise<StructuredContentResultDto>;
+    /**
+     * Discover enum model selectors, resolved provider models, evaluator versions and token multipliers. Pinned models never silently fall back.
+     * List supported message-testing AI models
+     */
+    getAIMessageModelsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<Array<AIMessageModelDto>>>;
+    /**
+     * Discover enum model selectors, resolved provider models, evaluator versions and token multipliers. Pinned models never silently fall back.
+     * List supported message-testing AI models
+     */
+    getAIMessageModels(initOverrides?: RequestInit): Promise<Array<AIMessageModelDto>>;
     /**
      * Get the job status for an export
      * Get export transformer results job
@@ -313,6 +359,26 @@ export declare class AIControllerApi extends runtime.BaseAPI {
      * Validate structured content schema
      */
     validateStructuredOutputSchema(requestParameters: ValidateStructuredOutputSchemaRequest, initOverrides?: RequestInit): Promise<StructuredOutputSchemaValidation>;
+    /**
+     * Find a message across explicit inboxes or phones, then assert and extract from that same message. Checks never select a replacement message after failure. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Find a message across explicit inboxes or phones, then assert and extract from that same message
+     */
+    waitForAIMessageRaw(requestParameters: WaitForAIMessageRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AIMessageResult>>;
+    /**
+     * Find a message across explicit inboxes or phones, then assert and extract from that same message. Checks never select a replacement message after failure. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Find a message across explicit inboxes or phones, then assert and extract from that same message
+     */
+    waitForAIMessage(requestParameters: WaitForAIMessageRequest, initOverrides?: RequestInit): Promise<AIMessageResult>;
+    /**
+     * Wait for all named email and SMS expectations under one shared deadline and AI token budget. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Wait for all named email and SMS expectations under one shared deadline and AI token budget
+     */
+    waitForAIMessagesRaw(requestParameters: WaitForAIMessagesRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AIMessagesResult>>;
+    /**
+     * Wait for all named email and SMS expectations under one shared deadline and AI token budget. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Wait for all named email and SMS expectations under one shared deadline and AI token budget
+     */
+    waitForAIMessages(requestParameters: WaitForAIMessagesRequest, initOverrides?: RequestInit): Promise<AIMessagesResult>;
 }
 /**
  * @export

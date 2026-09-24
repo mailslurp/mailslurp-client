@@ -40,7 +40,7 @@ export interface DevicePreviewShareLinkDto {
      */
     token?: string | null;
     /**
-     * Public webapp URL. Only returned when the raw token is available.
+     * Public share URL with social preview metadata. Only returned when the raw token is available.
      * @type {string}
      * @memberof DevicePreviewShareLinkDto
      */

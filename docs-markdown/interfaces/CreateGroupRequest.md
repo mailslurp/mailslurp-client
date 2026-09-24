@@ -6,10 +6,17 @@
 
 ### Properties
 
-- [createGroupOptions](CreateGroupRequest.md#creategroupoptions)
+- [scimGroupResource](CreateGroupRequest.md#scimgroupresource)
+- [slug](CreateGroupRequest.md#slug)
 
 ## Properties
 
-### createGroupOptions
+### scimGroupResource
 
-• **createGroupOptions**: [`CreateGroupOptions`](CreateGroupOptions.md)
+• **scimGroupResource**: [`ScimGroupResource`](ScimGroupResource.md)
+
+___
+
+### slug
+
+• **slug**: `string`

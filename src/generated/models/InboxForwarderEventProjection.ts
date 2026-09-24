@@ -24,18 +24,6 @@ export interface InboxForwarderEventProjection {
    * @type {string}
    * @memberof InboxForwarderEventProjection
    */
-  message?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
-  id?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
   status?: InboxForwarderEventProjectionStatusEnum;
   /**
    *
@@ -43,12 +31,6 @@ export interface InboxForwarderEventProjection {
    * @memberof InboxForwarderEventProjection
    */
   userId?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxForwarderEventProjection
-   */
-  emailId?: string | null;
   /**
    *
    * @type {string}
@@ -66,6 +48,12 @@ export interface InboxForwarderEventProjection {
    * @type {string}
    * @memberof InboxForwarderEventProjection
    */
+  emailId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxForwarderEventProjection
+   */
   sentId?: string | null;
   /**
    *
@@ -73,6 +61,18 @@ export interface InboxForwarderEventProjection {
    * @memberof InboxForwarderEventProjection
    */
   forwarderId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxForwarderEventProjection
+   */
+  message?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxForwarderEventProjection
+   */
+  id?: string | null;
 }
 
 /**
@@ -98,15 +98,15 @@ export function InboxForwarderEventProjectionFromJSONTyped(
     return json;
   }
   return {
-    message: !exists(json, 'message') ? undefined : json['message'],
-    id: !exists(json, 'id') ? undefined : json['id'],
     status: !exists(json, 'status') ? undefined : json['status'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
-    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
     createdAt: new Date(json['createdAt']),
+    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
     forwarderId: !exists(json, 'forwarderId') ? undefined : json['forwarderId'],
+    message: !exists(json, 'message') ? undefined : json['message'],
+    id: !exists(json, 'id') ? undefined : json['id'],
   };
 }
 
@@ -120,14 +120,14 @@ export function InboxForwarderEventProjectionToJSON(
     return null;
   }
   return {
-    message: value.message,
-    id: value.id,
     status: value.status,
     userId: value.userId,
-    emailId: value.emailId,
     inboxId: value.inboxId,
     createdAt: value.createdAt.toISOString(),
+    emailId: value.emailId,
     sentId: value.sentId,
     forwarderId: value.forwarderId,
+    message: value.message,
+    id: value.id,
   };
 }

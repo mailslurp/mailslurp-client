@@ -12,7 +12,11 @@ LookupDmarcDomainResults
 
 ### Properties
 
+- [effectivePolicy](LookupDmarcDomainResults.md#effectivepolicy)
 - [errors](LookupDmarcDomainResults.md#errors)
+- [inheritedFromOrganizationalDomain](LookupDmarcDomainResults.md#inheritedfromorganizationaldomain)
+- [organizationalDomain](LookupDmarcDomainResults.md#organizationaldomain)
+- [queriedDomain](LookupDmarcDomainResults.md#querieddomain)
 - [query](LookupDmarcDomainResults.md#query)
 - [records](LookupDmarcDomainResults.md#records)
 - [valid](LookupDmarcDomainResults.md#valid)
@@ -20,9 +24,49 @@ LookupDmarcDomainResults
 
 ## Properties
 
+### effectivePolicy
+
+• `Optional` **effectivePolicy**: `string`
+
+**`Memberof`**
+
+LookupDmarcDomainResults
+
+___
+
 ### errors
 
 • **errors**: `string`[]
+
+**`Memberof`**
+
+LookupDmarcDomainResults
+
+___
+
+### inheritedFromOrganizationalDomain
+
+• **inheritedFromOrganizationalDomain**: `boolean`
+
+**`Memberof`**
+
+LookupDmarcDomainResults
+
+___
+
+### organizationalDomain
+
+• `Optional` **organizationalDomain**: `string`
+
+**`Memberof`**
+
+LookupDmarcDomainResults
+
+___
+
+### queriedDomain
+
+• **queriedDomain**: `string`
 
 **`Memberof`**
 

@@ -41,6 +41,8 @@
 - [testRulesetReceivingRaw](RulesetControllerApi.md#testrulesetreceivingraw)
 - [testRulesetSending](RulesetControllerApi.md#testrulesetsending)
 - [testRulesetSendingRaw](RulesetControllerApi.md#testrulesetsendingraw)
+- [updateRuleset](RulesetControllerApi.md#updateruleset)
+- [updateRulesetRaw](RulesetControllerApi.md#updaterulesetraw)
 - [withMiddleware](RulesetControllerApi.md#withmiddleware)
 - [withPostMiddleware](RulesetControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](RulesetControllerApi.md#withpremiddleware)
@@ -491,6 +493,46 @@ Test sending with rulesets
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`TestRulesetSendingResult`](../interfaces/TestRulesetSendingResult.md)\>\>
+
+___
+
+### updateRuleset
+
+▸ **updateRuleset**(`requestParameters`, `initOverrides?`): `Promise`<[`RulesetDto`](../interfaces/RulesetDto.md)\>
+
+Update a ruleset\'s active state
+Update a ruleset
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateRulesetRequest`](../interfaces/UpdateRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`RulesetDto`](../interfaces/RulesetDto.md)\>
+
+___
+
+### updateRulesetRaw
+
+▸ **updateRulesetRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`RulesetDto`](../interfaces/RulesetDto.md)\>\>
+
+Update a ruleset\'s active state
+Update a ruleset
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateRulesetRequest`](../interfaces/UpdateRulesetRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`RulesetDto`](../interfaces/RulesetDto.md)\>\>
 
 ___
 

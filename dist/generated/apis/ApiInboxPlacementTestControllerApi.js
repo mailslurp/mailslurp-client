@@ -87,7 +87,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetInboxPlacementAnalyticsSeriesGroupByEnum = exports.GetInboxPlacementAnalyticsSeriesBucketEnum = exports.ApiInboxPlacementTestControllerApi = void 0;
+exports.GetInboxPlacementAnalyticsSeriesGroupByEnum = exports.GetInboxPlacementAnalyticsSeriesBucketEnum = exports.ExportInboxPlacementSeedListProviderEnum = exports.ApiInboxPlacementTestControllerApi = void 0;
 var runtime = __importStar(require("../runtime"));
 var models_1 = require("../models");
 /**
@@ -98,6 +98,57 @@ var ApiInboxPlacementTestControllerApi = /** @class */ (function (_super) {
     function ApiInboxPlacementTestControllerApi() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    /**
+     * Reconcile any messages that arrived after seed reservation, commit allowance, and move a prepared dashboard test into its active lifecycle. This operation is idempotent.
+     * Confirm an inbox placement test email has been sent
+     */
+    ApiInboxPlacementTestControllerApi.prototype.confirmInboxPlacementTestSentRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling confirmInboxPlacementTestSent.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inbox-placement-tests/{id}/confirm-sent".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxPlacementTestRunDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Reconcile any messages that arrived after seed reservation, commit allowance, and move a prepared dashboard test into its active lifecycle. This operation is idempotent.
+     * Confirm an inbox placement test email has been sent
+     */
+    ApiInboxPlacementTestControllerApi.prototype.confirmInboxPlacementTestSent = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.confirmInboxPlacementTestSentRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
     /**
      * Create a new direct-send inbox placement test
      */
@@ -146,6 +197,56 @@ var ApiInboxPlacementTestControllerApi = /** @class */ (function (_super) {
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
                     case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Export the current run\'s seed addresses with headers recognized by the selected email platform. Downloading a prepared seed list does not confirm the send or consume allowance.
+     * Download inbox placement seed addresses as an email-platform CSV
+     */
+    ApiInboxPlacementTestControllerApi.prototype.exportInboxPlacementSeedListRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.id === null || requestParameters.id === undefined) {
+                            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling exportInboxPlacementSeedList.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.provider !== undefined) {
+                            queryParameters['provider'] = requestParameters.provider;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inbox-placement-tests/{id}/seed-list.csv".replace("{".concat('id', "}"), encodeURIComponent(String(requestParameters.id))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.VoidApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Export the current run\'s seed addresses with headers recognized by the selected email platform. Downloading a prepared seed list does not confirm the send or consume allowance.
+     * Download inbox placement seed addresses as an email-platform CSV
+     */
+    ApiInboxPlacementTestControllerApi.prototype.exportInboxPlacementSeedList = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.exportInboxPlacementSeedListRaw(requestParameters, initOverrides)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
                 }
             });
         });
@@ -628,9 +729,83 @@ var ApiInboxPlacementTestControllerApi = /** @class */ (function (_super) {
             });
         });
     };
+    /**
+     * Reserve seed addresses for the dashboard create flow. The run remains staged and allowance is not committed until send confirmation. Reuses a recent active preparation when possible.
+     * Prepare a direct-send inbox placement test without consuming allowance
+     */
+    ApiInboxPlacementTestControllerApi.prototype.prepareInboxPlacementTestRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.createInboxPlacementTestOptions === null ||
+                            requestParameters.createInboxPlacementTestOptions === undefined) {
+                            throw new runtime.RequiredError('createInboxPlacementTestOptions', 'Required parameter requestParameters.createInboxPlacementTestOptions was null or undefined when calling prepareInboxPlacementTest.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/inbox-placement-tests/prepare",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.CreateInboxPlacementTestOptionsToJSON)(requestParameters.createInboxPlacementTestOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.InboxPlacementTestRunDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Reserve seed addresses for the dashboard create flow. The run remains staged and allowance is not committed until send confirmation. Reuses a recent active preparation when possible.
+     * Prepare a direct-send inbox placement test without consuming allowance
+     */
+    ApiInboxPlacementTestControllerApi.prototype.prepareInboxPlacementTest = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.prepareInboxPlacementTestRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
     return ApiInboxPlacementTestControllerApi;
 }(runtime.BaseAPI));
 exports.ApiInboxPlacementTestControllerApi = ApiInboxPlacementTestControllerApi;
+/**
+ * @export
+ * @enum {string}
+ */
+var ExportInboxPlacementSeedListProviderEnum;
+(function (ExportInboxPlacementSeedListProviderEnum) {
+    ExportInboxPlacementSeedListProviderEnum["GENERIC"] = "GENERIC";
+    ExportInboxPlacementSeedListProviderEnum["MAILCHIMP"] = "MAILCHIMP";
+    ExportInboxPlacementSeedListProviderEnum["KLAVIYO"] = "KLAVIYO";
+    ExportInboxPlacementSeedListProviderEnum["SALESFORCE"] = "SALESFORCE";
+    ExportInboxPlacementSeedListProviderEnum["HUBSPOT"] = "HUBSPOT";
+    ExportInboxPlacementSeedListProviderEnum["BRAZE"] = "BRAZE";
+    ExportInboxPlacementSeedListProviderEnum["BREVO"] = "BREVO";
+    ExportInboxPlacementSeedListProviderEnum["MAILERLITE"] = "MAILERLITE";
+    ExportInboxPlacementSeedListProviderEnum["MAILJET"] = "MAILJET";
+    ExportInboxPlacementSeedListProviderEnum["OMNISEND"] = "OMNISEND";
+    ExportInboxPlacementSeedListProviderEnum["GETRESPONSE"] = "GETRESPONSE";
+    ExportInboxPlacementSeedListProviderEnum["CONSTANT_CONTACT"] = "CONSTANT_CONTACT";
+    ExportInboxPlacementSeedListProviderEnum["KIT"] = "KIT";
+})(ExportInboxPlacementSeedListProviderEnum = exports.ExportInboxPlacementSeedListProviderEnum || (exports.ExportInboxPlacementSeedListProviderEnum = {}));
 /**
  * @export
  * @enum {string}

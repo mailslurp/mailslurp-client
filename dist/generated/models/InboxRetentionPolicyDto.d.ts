@@ -26,13 +26,61 @@ export interface InboxRetentionPolicyDto {
      * @type {string}
      * @memberof InboxRetentionPolicyDto
      */
+    name?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxRetentionPolicyDto
+     */
+    scope: InboxRetentionPolicyDtoScopeEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxRetentionPolicyDto
+     */
     inboxId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxRetentionPolicyDto
+     */
+    domainId?: string | null;
     /**
      *
      * @type {number}
      * @memberof InboxRetentionPolicyDto
      */
     retentionDays: number;
+    /**
+     *
+     * @type {boolean}
+     * @memberof InboxRetentionPolicyDto
+     */
+    enabled: boolean;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof InboxRetentionPolicyDto
+     */
+    excludedInboxIds: Array<string>;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof InboxRetentionPolicyDto
+     */
+    excludedDomainIds: Array<string>;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof InboxRetentionPolicyDto
+     */
+    excludedInboxEmailAddressPatterns: Array<string>;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof InboxRetentionPolicyDto
+     */
+    excludedDomainNamePatterns: Array<string>;
     /**
      *
      * @type {Date}
@@ -45,6 +93,15 @@ export interface InboxRetentionPolicyDto {
      * @memberof InboxRetentionPolicyDto
      */
     updatedAt: Date;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum InboxRetentionPolicyDtoScopeEnum {
+    ACCOUNT = "ACCOUNT",
+    INBOX = "INBOX",
+    DOMAIN = "DOMAIN"
 }
 export declare function InboxRetentionPolicyDtoFromJSON(json: any): InboxRetentionPolicyDto;
 export declare function InboxRetentionPolicyDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxRetentionPolicyDto;

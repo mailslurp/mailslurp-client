@@ -35,6 +35,7 @@ var OrganizationInboxProjectionFunctionsAsEnum;
     OrganizationInboxProjectionFunctionsAsEnum["CATCH_ALL"] = "CATCH_ALL";
     OrganizationInboxProjectionFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
     OrganizationInboxProjectionFunctionsAsEnum["ACCOUNT"] = "ACCOUNT";
+    OrganizationInboxProjectionFunctionsAsEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
     OrganizationInboxProjectionFunctionsAsEnum["GUEST"] = "GUEST";
     OrganizationInboxProjectionFunctionsAsEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(OrganizationInboxProjectionFunctionsAsEnum = exports.OrganizationInboxProjectionFunctionsAsEnum || (exports.OrganizationInboxProjectionFunctionsAsEnum = {}));
@@ -48,6 +49,7 @@ var OrganizationInboxProjectionAccountRegionEnum;
     OrganizationInboxProjectionAccountRegionEnum["US_EAST_1_ACCOUNT_STAGING"] = "US_EAST_1_ACCOUNT_STAGING";
     OrganizationInboxProjectionAccountRegionEnum["EU_WEST_1_ACCOUNT_STAGING"] = "EU_WEST_1_ACCOUNT_STAGING";
     OrganizationInboxProjectionAccountRegionEnum["US_WEST_2_ACCOUNT_SES_1"] = "US_WEST_2_ACCOUNT_SES_1";
+    OrganizationInboxProjectionAccountRegionEnum["US_EAST_1_ACCOUNT_SES_1"] = "US_EAST_1_ACCOUNT_SES_1";
     OrganizationInboxProjectionAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_1"] = "EU_WEST_1_ACCOUNT_SES_1";
     OrganizationInboxProjectionAccountRegionEnum["US_WEST_2_ACCOUNT_SES_2"] = "US_WEST_2_ACCOUNT_SES_2";
     OrganizationInboxProjectionAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_2"] = "EU_WEST_1_ACCOUNT_SES_2";
@@ -89,6 +91,9 @@ function OrganizationInboxProjectionFromJSONTyped(json, ignoreDiscriminator) {
         accountRegion: !(0, runtime_1.exists)(json, 'accountRegion')
             ? undefined
             : json['accountRegion'],
+        mergedIntoInboxId: !(0, runtime_1.exists)(json, 'mergedIntoInboxId')
+            ? undefined
+            : json['mergedIntoInboxId'],
     };
 }
 exports.OrganizationInboxProjectionFromJSONTyped = OrganizationInboxProjectionFromJSONTyped;
@@ -120,6 +125,7 @@ function OrganizationInboxProjectionToJSON(value) {
                 ? null
                 : value.expiresAt.toISOString(),
         accountRegion: value.accountRegion,
+        mergedIntoInboxId: value.mergedIntoInboxId,
     };
 }
 exports.OrganizationInboxProjectionToJSON = OrganizationInboxProjectionToJSON;

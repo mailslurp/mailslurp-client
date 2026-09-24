@@ -13,8 +13,17 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DevicePreviewNativeTargetAvailabilityDtoToJSON = exports.DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped = exports.DevicePreviewNativeTargetAvailabilityDtoFromJSON = exports.DevicePreviewNativeTargetAvailabilityDtoStatusEnum = void 0;
+exports.DevicePreviewNativeTargetAvailabilityDtoToJSON = exports.DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped = exports.DevicePreviewNativeTargetAvailabilityDtoFromJSON = exports.DevicePreviewNativeTargetAvailabilityDtoStatusEnum = exports.DevicePreviewNativeTargetAvailabilityDtoTierEnum = void 0;
 var runtime_1 = require("../runtime");
+/**
+ * @export
+ * @enum {string}
+ */
+var DevicePreviewNativeTargetAvailabilityDtoTierEnum;
+(function (DevicePreviewNativeTargetAvailabilityDtoTierEnum) {
+    DevicePreviewNativeTargetAvailabilityDtoTierEnum["STANDARD"] = "STANDARD";
+    DevicePreviewNativeTargetAvailabilityDtoTierEnum["PREMIUM"] = "PREMIUM";
+})(DevicePreviewNativeTargetAvailabilityDtoTierEnum = exports.DevicePreviewNativeTargetAvailabilityDtoTierEnum || (exports.DevicePreviewNativeTargetAvailabilityDtoTierEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -48,6 +57,7 @@ function DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped(json, ignoreDiscr
         appearance: json['appearance'],
         visible: json['visible'],
         creditCost: json['creditCost'],
+        tier: json['tier'],
         enabled: json['enabled'],
         requestQueueConfigured: json['requestQueueConfigured'],
         status: json['status'],
@@ -59,6 +69,28 @@ function DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped(json, ignoreDiscr
         timeoutSeconds: json['timeoutSeconds'],
         availableSlots: json['availableSlots'],
         publicPollingWorkers: json['publicPollingWorkers'],
+        minimumWorkerReleaseVersion: !(0, runtime_1.exists)(json, 'minimumWorkerReleaseVersion')
+            ? undefined
+            : json['minimumWorkerReleaseVersion'],
+        desiredWorkerReleaseVersion: !(0, runtime_1.exists)(json, 'desiredWorkerReleaseVersion')
+            ? undefined
+            : json['desiredWorkerReleaseVersion'],
+        desiredReleaseWorkers: !(0, runtime_1.exists)(json, 'desiredReleaseWorkers')
+            ? undefined
+            : json['desiredReleaseWorkers'],
+        desiredReleasePublicPollingWorkers: !(0, runtime_1.exists)(json, 'desiredReleasePublicPollingWorkers')
+            ? undefined
+            : json['desiredReleasePublicPollingWorkers'],
+        releaseVersions: json['releaseVersions'],
+        desiredLanes: json['desiredLanes'],
+        matchedLiveLanes: json['matchedLiveLanes'],
+        identityMismatchLanes: json['identityMismatchLanes'],
+        servingLanes: json['servingLanes'],
+        spareLanes: json['spareLanes'],
+        busyLanes: json['busyLanes'],
+        degradedLanes: json['degradedLanes'],
+        quarantinedLanes: json['quarantinedLanes'],
+        zeroCapacityLanes: json['zeroCapacityLanes'],
     };
 }
 exports.DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped = DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped;
@@ -81,6 +113,7 @@ function DevicePreviewNativeTargetAvailabilityDtoToJSON(value) {
         appearance: value.appearance,
         visible: value.visible,
         creditCost: value.creditCost,
+        tier: value.tier,
         enabled: value.enabled,
         requestQueueConfigured: value.requestQueueConfigured,
         status: value.status,
@@ -90,6 +123,20 @@ function DevicePreviewNativeTargetAvailabilityDtoToJSON(value) {
         timeoutSeconds: value.timeoutSeconds,
         availableSlots: value.availableSlots,
         publicPollingWorkers: value.publicPollingWorkers,
+        minimumWorkerReleaseVersion: value.minimumWorkerReleaseVersion,
+        desiredWorkerReleaseVersion: value.desiredWorkerReleaseVersion,
+        desiredReleaseWorkers: value.desiredReleaseWorkers,
+        desiredReleasePublicPollingWorkers: value.desiredReleasePublicPollingWorkers,
+        releaseVersions: value.releaseVersions,
+        desiredLanes: value.desiredLanes,
+        matchedLiveLanes: value.matchedLiveLanes,
+        identityMismatchLanes: value.identityMismatchLanes,
+        servingLanes: value.servingLanes,
+        spareLanes: value.spareLanes,
+        busyLanes: value.busyLanes,
+        degradedLanes: value.degradedLanes,
+        quarantinedLanes: value.quarantinedLanes,
+        zeroCapacityLanes: value.zeroCapacityLanes,
     };
 }
 exports.DevicePreviewNativeTargetAvailabilityDtoToJSON = DevicePreviewNativeTargetAvailabilityDtoToJSON;

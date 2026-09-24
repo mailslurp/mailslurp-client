@@ -44,6 +44,9 @@ import {
   TestRulesetSendingResult,
   TestRulesetSendingResultFromJSON,
   TestRulesetSendingResultToJSON,
+  UpdateRulesetOptions,
+  UpdateRulesetOptionsFromJSON,
+  UpdateRulesetOptionsToJSON,
 } from '../models';
 
 export interface CreateNewRulesetRequest {
@@ -96,6 +99,11 @@ export interface TestRulesetReceivingRequest {
 
 export interface TestRulesetSendingRequest {
   testInboxRulesetSendingOptions: TestInboxRulesetSendingOptions;
+}
+
+export interface UpdateRulesetRequest {
+  id: string;
+  updateRulesetOptions: UpdateRulesetOptions;
 }
 
 /**
@@ -721,6 +729,77 @@ export class RulesetControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<TestRulesetSendingResult> {
     const response = await this.testRulesetSendingRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Update a ruleset\'s active state
+   * Update a ruleset
+   */
+  async updateRulesetRaw(
+    requestParameters: UpdateRulesetRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<RulesetDto>> {
+    if (requestParameters.id === null || requestParameters.id === undefined) {
+      throw new runtime.RequiredError(
+        'id',
+        'Required parameter requestParameters.id was null or undefined when calling updateRuleset.'
+      );
+    }
+
+    if (
+      requestParameters.updateRulesetOptions === null ||
+      requestParameters.updateRulesetOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'updateRulesetOptions',
+        'Required parameter requestParameters.updateRulesetOptions was null or undefined when calling updateRuleset.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/rulesets/{id}`.replace(
+          `{${'id'}}`,
+          encodeURIComponent(String(requestParameters.id))
+        ),
+        method: 'PUT',
+        headers: headerParameters,
+        query: queryParameters,
+        body: UpdateRulesetOptionsToJSON(
+          requestParameters.updateRulesetOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      RulesetDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Update a ruleset\'s active state
+   * Update a ruleset
+   */
+  async updateRuleset(
+    requestParameters: UpdateRulesetRequest,
+    initOverrides?: RequestInit
+  ): Promise<RulesetDto> {
+    const response = await this.updateRulesetRaw(
       requestParameters,
       initOverrides
     );

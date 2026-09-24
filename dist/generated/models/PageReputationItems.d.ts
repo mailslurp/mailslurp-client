@@ -51,12 +51,6 @@ export interface PageReputationItems {
      * @type {number}
      * @memberof PageReputationItems
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageReputationItems
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageReputationItems {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageReputationItems
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageReputationItems
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageReputationItems
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

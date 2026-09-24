@@ -52,29 +52,29 @@ function WebhookProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
+        eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
         url: json['url'],
-        username: !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
         password: !(0, runtime_1.exists)(json, 'password') ? undefined : json['password'],
-        enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
+        username: !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
         userId: json['userId'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        eventName: !(0, runtime_1.exists)(json, 'eventName') ? undefined : json['eventName'],
+        enabled: !(0, runtime_1.exists)(json, 'enabled') ? undefined : json['enabled'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
         aiTransformerId: !(0, runtime_1.exists)(json, 'aiTransformerId')
             ? undefined
             : json['aiTransformerId'],
-        aiTransformId: !(0, runtime_1.exists)(json, 'aiTransformId')
-            ? undefined
-            : json['aiTransformId'],
         phoneNumberId: !(0, runtime_1.exists)(json, 'phoneNumberId')
             ? undefined
             : json['phoneNumberId'],
+        aiTransformId: !(0, runtime_1.exists)(json, 'aiTransformId')
+            ? undefined
+            : json['aiTransformId'],
         healthStatus: !(0, runtime_1.exists)(json, 'healthStatus')
             ? undefined
             : json['healthStatus'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
     };
 }
 exports.WebhookProjectionFromJSONTyped = WebhookProjectionFromJSONTyped;
@@ -86,21 +86,21 @@ function WebhookProjectionToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        id: value.id,
+        eventName: value.eventName,
         url: value.url,
-        username: value.username,
         password: value.password,
-        enabled: value.enabled,
+        username: value.username,
         userId: value.userId,
         inboxId: value.inboxId,
-        eventName: value.eventName,
+        enabled: value.enabled,
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
         aiTransformerId: value.aiTransformerId,
-        aiTransformId: value.aiTransformId,
         phoneNumberId: value.phoneNumberId,
+        aiTransformId: value.aiTransformId,
         healthStatus: value.healthStatus,
+        name: value.name,
+        id: value.id,
     };
 }
 exports.WebhookProjectionToJSON = WebhookProjectionToJSON;

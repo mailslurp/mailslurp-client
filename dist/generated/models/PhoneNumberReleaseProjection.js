@@ -13,28 +13,8 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PhoneNumberReleaseProjectionToJSON = exports.PhoneNumberReleaseProjectionFromJSONTyped = exports.PhoneNumberReleaseProjectionFromJSON = exports.PhoneNumberReleaseProjectionPlanCurrencyEnum = exports.PhoneNumberReleaseProjectionSubscriptionScheduleEnum = exports.PhoneNumberReleaseProjectionPhoneCountryEnum = void 0;
+exports.PhoneNumberReleaseProjectionToJSON = exports.PhoneNumberReleaseProjectionFromJSONTyped = exports.PhoneNumberReleaseProjectionFromJSON = exports.PhoneNumberReleaseProjectionPhoneCountryEnum = exports.PhoneNumberReleaseProjectionPlanCurrencyEnum = exports.PhoneNumberReleaseProjectionSubscriptionScheduleEnum = void 0;
 var runtime_1 = require("../runtime");
-/**
- * @export
- * @enum {string}
- */
-var PhoneNumberReleaseProjectionPhoneCountryEnum;
-(function (PhoneNumberReleaseProjectionPhoneCountryEnum) {
-    PhoneNumberReleaseProjectionPhoneCountryEnum["US"] = "US";
-    PhoneNumberReleaseProjectionPhoneCountryEnum["GB"] = "GB";
-    PhoneNumberReleaseProjectionPhoneCountryEnum["AU"] = "AU";
-    PhoneNumberReleaseProjectionPhoneCountryEnum["CA"] = "CA";
-    PhoneNumberReleaseProjectionPhoneCountryEnum["EE"] = "EE";
-    PhoneNumberReleaseProjectionPhoneCountryEnum["HK"] = "HK";
-    PhoneNumberReleaseProjectionPhoneCountryEnum["PL"] = "PL";
-    PhoneNumberReleaseProjectionPhoneCountryEnum["CH"] = "CH";
-    PhoneNumberReleaseProjectionPhoneCountryEnum["PT"] = "PT";
-    PhoneNumberReleaseProjectionPhoneCountryEnum["NL"] = "NL";
-    PhoneNumberReleaseProjectionPhoneCountryEnum["IL"] = "IL";
-    PhoneNumberReleaseProjectionPhoneCountryEnum["FI"] = "FI";
-    PhoneNumberReleaseProjectionPhoneCountryEnum["SE"] = "SE";
-})(PhoneNumberReleaseProjectionPhoneCountryEnum = exports.PhoneNumberReleaseProjectionPhoneCountryEnum || (exports.PhoneNumberReleaseProjectionPhoneCountryEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -61,6 +41,26 @@ var PhoneNumberReleaseProjectionPlanCurrencyEnum;
     PhoneNumberReleaseProjectionPlanCurrencyEnum["INR"] = "INR";
     PhoneNumberReleaseProjectionPlanCurrencyEnum["NZD"] = "NZD";
 })(PhoneNumberReleaseProjectionPlanCurrencyEnum = exports.PhoneNumberReleaseProjectionPlanCurrencyEnum || (exports.PhoneNumberReleaseProjectionPlanCurrencyEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var PhoneNumberReleaseProjectionPhoneCountryEnum;
+(function (PhoneNumberReleaseProjectionPhoneCountryEnum) {
+    PhoneNumberReleaseProjectionPhoneCountryEnum["US"] = "US";
+    PhoneNumberReleaseProjectionPhoneCountryEnum["GB"] = "GB";
+    PhoneNumberReleaseProjectionPhoneCountryEnum["AU"] = "AU";
+    PhoneNumberReleaseProjectionPhoneCountryEnum["CA"] = "CA";
+    PhoneNumberReleaseProjectionPhoneCountryEnum["EE"] = "EE";
+    PhoneNumberReleaseProjectionPhoneCountryEnum["HK"] = "HK";
+    PhoneNumberReleaseProjectionPhoneCountryEnum["PL"] = "PL";
+    PhoneNumberReleaseProjectionPhoneCountryEnum["CH"] = "CH";
+    PhoneNumberReleaseProjectionPhoneCountryEnum["PT"] = "PT";
+    PhoneNumberReleaseProjectionPhoneCountryEnum["NL"] = "NL";
+    PhoneNumberReleaseProjectionPhoneCountryEnum["IL"] = "IL";
+    PhoneNumberReleaseProjectionPhoneCountryEnum["FI"] = "FI";
+    PhoneNumberReleaseProjectionPhoneCountryEnum["SE"] = "SE";
+})(PhoneNumberReleaseProjectionPhoneCountryEnum = exports.PhoneNumberReleaseProjectionPhoneCountryEnum || (exports.PhoneNumberReleaseProjectionPhoneCountryEnum = {}));
 function PhoneNumberReleaseProjectionFromJSON(json) {
     return PhoneNumberReleaseProjectionFromJSONTyped(json, false);
 }
@@ -70,18 +70,18 @@ function PhoneNumberReleaseProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
         userId: json['userId'],
-        createdAt: new Date(json['createdAt']),
-        phoneCountry: json['phoneCountry'],
-        phoneNumber: !(0, runtime_1.exists)(json, 'phoneNumber') ? undefined : json['phoneNumber'],
         subscriptionSchedule: !(0, runtime_1.exists)(json, 'subscriptionSchedule')
             ? undefined
             : json['subscriptionSchedule'],
         planCurrency: !(0, runtime_1.exists)(json, 'planCurrency')
             ? undefined
             : json['planCurrency'],
+        phoneCountry: json['phoneCountry'],
+        phoneNumber: !(0, runtime_1.exists)(json, 'phoneNumber') ? undefined : json['phoneNumber'],
+        createdAt: new Date(json['createdAt']),
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
     };
 }
 exports.PhoneNumberReleaseProjectionFromJSONTyped = PhoneNumberReleaseProjectionFromJSONTyped;
@@ -93,14 +93,14 @@ function PhoneNumberReleaseProjectionToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        id: value.id,
         userId: value.userId,
-        createdAt: value.createdAt.toISOString(),
-        phoneCountry: value.phoneCountry,
-        phoneNumber: value.phoneNumber,
         subscriptionSchedule: value.subscriptionSchedule,
         planCurrency: value.planCurrency,
+        phoneCountry: value.phoneCountry,
+        phoneNumber: value.phoneNumber,
+        createdAt: value.createdAt.toISOString(),
+        name: value.name,
+        id: value.id,
     };
 }
 exports.PhoneNumberReleaseProjectionToJSON = PhoneNumberReleaseProjectionToJSON;

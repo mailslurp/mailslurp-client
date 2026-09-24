@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { InboxPlacementAnalysisBundleDto, InboxPlacementDeliverabilitySummaryDto, InboxPlacementRemoteTestSummaryDto, InboxPlacementTargetResultDto } from './';
+import { InboxPlacementAnalysisBundleDto, InboxPlacementDeliverabilitySummaryDto, InboxPlacementProviderAnalysisDto, InboxPlacementRemoteTestSummaryDto, InboxPlacementTargetResultDto } from './';
 /**
  *
  * @export
@@ -50,6 +50,12 @@ export interface InboxPlacementRemoteResultsDto {
      * @memberof InboxPlacementRemoteResultsDto
      */
     analysis?: InboxPlacementAnalysisBundleDto | null;
+    /**
+     *
+     * @type {InboxPlacementProviderAnalysisDto}
+     * @memberof InboxPlacementRemoteResultsDto
+     */
+    providerAnalysis?: InboxPlacementProviderAnalysisDto | null;
     /**
      *
      * @type {Array<InboxPlacementTargetResultDto>}

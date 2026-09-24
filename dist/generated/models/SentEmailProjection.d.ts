@@ -36,24 +36,6 @@ export interface SentEmailProjection {
     from?: string | null;
     /**
      *
-     * @type {Sender}
-     * @memberof SentEmailProjection
-     */
-    sender?: Sender | null;
-    /**
-     *
-     * @type {EmailRecipients}
-     * @memberof SentEmailProjection
-     */
-    recipients?: EmailRecipients | null;
-    /**
-     *
-     * @type {string}
-     * @memberof SentEmailProjection
-     */
-    subject?: string | null;
-    /**
-     *
      * @type {string}
      * @memberof SentEmailProjection
      */
@@ -66,10 +48,22 @@ export interface SentEmailProjection {
     inboxId: string;
     /**
      *
+     * @type {EmailRecipients}
+     * @memberof SentEmailProjection
+     */
+    recipients?: EmailRecipients | null;
+    /**
+     *
      * @type {Array<string>}
      * @memberof SentEmailProjection
      */
     attachments?: Array<string> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentEmailProjection
+     */
+    subject?: string | null;
     /**
      *
      * @type {string}
@@ -120,16 +114,22 @@ export interface SentEmailProjection {
     inReplyTo?: string | null;
     /**
      *
-     * @type {boolean}
+     * @type {Sender}
      * @memberof SentEmailProjection
      */
-    virtualSend: boolean;
+    sender?: Sender | null;
     /**
      *
      * @type {string}
      * @memberof SentEmailProjection
      */
     bodyMD5Hash?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof SentEmailProjection
+     */
+    virtualSend: boolean;
 }
 export declare function SentEmailProjectionFromJSON(json: any): SentEmailProjection;
 export declare function SentEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentEmailProjection;

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AttachmentMetaData, CanSendEmailResults, CheckEmailBodyFeatureSupportResults, CheckEmailBodyResults, CheckEmailClientSupportOptions, CheckEmailClientSupportResults, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailAuditAnalysisResult, EmailAuditDto, EmailContentMatchResult, EmailContentPartResult, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewUrls, EmailScreenshotResult, EmailSignatureParseResult, EmailTextLinesResult, EmailThreadDto, EmailThreadItemsDto, ExtractCodesOptions, ExtractCodesResult, ForwardEmailOptions, GetEmailScreenshotOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailProjection, PageEmailThreadProjection, RawEmailJson, ReplyToEmailOptions, SearchEmailsOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
+import { AttachmentMetaData, CanSendEmailResults, CheckEmailBodyFeatureSupportResults, CheckEmailBodyResults, CheckEmailClientSupportOptions, CheckEmailClientSupportResults, ContentMatchOptions, CountDto, DownloadAttachmentDto, Email, EmailAuditAnalysisResult, EmailAuditDto, EmailContentMatchResult, EmailContentPartResult, EmailDraftDto, EmailHtmlDto, EmailLinksResult, EmailPreview, EmailPreviewHtmlDto, EmailPreviewUrls, EmailScreenshotResult, EmailSignatureParseResult, EmailTextLinesResult, EmailThreadDto, EmailThreadItemsDto, ExtractCodesOptions, ExtractCodesResult, ForwardEmailOptions, GetEmailScreenshotOptions, GravatarUrl, ImapFlagOperationOptions, PageEmailDraftProjection, PageEmailProjection, PageEmailThreadProjection, RawEmailJson, ReplyToEmailOptions, SearchEmailsOptions, SendEmailOptions, SentEmailDto, UnreadCount, ValidationDto } from '../models';
 export interface ApplyImapFlagOperationRequest {
     emailId: string;
     imapFlagOperationOptions: ImapFlagOperationOptions;
@@ -34,12 +34,19 @@ export interface CheckEmailClientSupportRequest {
 export interface CreateEmailAuditForEmailRequest {
     emailId: string;
 }
+export interface CreateEmailDraftRequest {
+    sendEmailOptions: SendEmailOptions;
+    inboxId?: string;
+}
 export interface DeleteAllEmailsRequest {
     createdAtSince?: Date;
     createdAtBefore?: Date;
 }
 export interface DeleteEmailRequest {
     emailId: string;
+}
+export interface DeleteEmailDraftRequest {
+    draftId: string;
 }
 export interface DownloadAttachmentRequest {
     emailId: string;
@@ -93,6 +100,15 @@ export interface GetEmailContentPartContentRequest {
 export interface GetEmailCountRequest {
     inboxId?: string;
 }
+export interface GetEmailDraftRequest {
+    draftId: string;
+}
+export interface GetEmailDraftsRequest {
+    inboxId?: string;
+    page?: number;
+    size?: number;
+    sort?: GetEmailDraftsSortEnum;
+}
 export interface GetEmailHTMLRequest {
     emailId: string;
     replaceCidImages?: boolean;
@@ -108,6 +124,11 @@ export interface GetEmailHTMLQueryRequest {
 export interface GetEmailLinksRequest {
     emailId: string;
     selector?: string;
+}
+export interface GetEmailPreviewHTMLRequest {
+    emailId: string;
+    replaceCidImages?: boolean;
+    linkBehavior?: GetEmailPreviewHTMLLinkBehaviorEnum;
 }
 export interface GetEmailPreviewURLsRequest {
     emailId: string;
@@ -226,6 +247,9 @@ export interface SearchEmailsRequest {
     favourited?: boolean;
     plusAddressId?: string;
 }
+export interface SendEmailDraftRequest {
+    draftId: string;
+}
 export interface SendEmailSourceOptionalRequest {
     sendEmailOptions: SendEmailOptions;
     inboxId?: string;
@@ -235,6 +259,10 @@ export interface SendEmailSourceOptionalRequest {
 export interface SetEmailFavouritedRequest {
     emailId: string;
     favourited: boolean;
+}
+export interface UpdateEmailDraftRequest {
+    draftId: string;
+    sendEmailOptions: SendEmailOptions;
 }
 export interface ValidateEmailRequest {
     emailId: string;
@@ -314,6 +342,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      */
     createEmailAuditForEmail(requestParameters: CreateEmailAuditForEmailRequest, initOverrides?: RequestInit): Promise<EmailAuditDto>;
     /**
+     * Create a saved email draft using the same SendEmailOptions shape used for sending. Provide an inboxId query parameter or sendOptions.inboxId to choose the inbox the draft will send from. Draft creation does not send email and does not create a new inbox.
+     * Create an email draft
+     */
+    createEmailDraftRaw(requestParameters: CreateEmailDraftRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailDraftDto>>;
+    /**
+     * Create a saved email draft using the same SendEmailOptions shape used for sending. Provide an inboxId query parameter or sendOptions.inboxId to choose the inbox the draft will send from. Draft creation does not send email and does not create a new inbox.
+     * Create an email draft
+     */
+    createEmailDraft(requestParameters: CreateEmailDraftRequest, initOverrides?: RequestInit): Promise<EmailDraftDto>;
+    /**
      * Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
      * Delete all emails in all inboxes.
      */
@@ -333,6 +371,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Delete an email
      */
     deleteEmail(requestParameters: DeleteEmailRequest, initOverrides?: RequestInit): Promise<void>;
+    /**
+     * Delete a saved email draft without sending it.
+     * Delete an email draft
+     */
+    deleteEmailDraftRaw(requestParameters: DeleteEmailDraftRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Delete a saved email draft without sending it.
+     * Delete an email draft
+     */
+    deleteEmailDraft(requestParameters: DeleteEmailDraftRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Returns attachment bytes by attachment ID. Use attachment IDs from email payloads or attachment listing endpoints.
      * Get email attachment bytes. Returned as `octet-stream` with content type header. If you have trouble with byte responses try the `downloadAttachmentBase64` response endpoints and convert the base 64 encoded content to a file or string.
@@ -464,6 +512,26 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      */
     getEmailCount(requestParameters: GetEmailCountRequest, initOverrides?: RequestInit): Promise<CountDto>;
     /**
+     * Get a saved email draft including the full SendEmailOptions payload.
+     * Get an email draft
+     */
+    getEmailDraftRaw(requestParameters: GetEmailDraftRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailDraftDto>>;
+    /**
+     * Get a saved email draft including the full SendEmailOptions payload.
+     * Get an email draft
+     */
+    getEmailDraft(requestParameters: GetEmailDraftRequest, initOverrides?: RequestInit): Promise<EmailDraftDto>;
+    /**
+     * List saved email drafts for the authenticated user, optionally filtered by inbox.
+     * List email drafts
+     */
+    getEmailDraftsRaw(requestParameters: GetEmailDraftsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailDraftProjection>>;
+    /**
+     * List saved email drafts for the authenticated user, optionally filtered by inbox.
+     * List email drafts
+     */
+    getEmailDrafts(requestParameters: GetEmailDraftsRequest, initOverrides?: RequestInit): Promise<PageEmailDraftProjection>;
+    /**
      * Returns hydrated HTML body directly with `text/html` content type. Supports temporary access/browser usage and optional CID replacement for inline asset rendering.
      * Get hydrated email HTML for browser rendering
      */
@@ -503,6 +571,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Extract links from an email HTML body
      */
     getEmailLinks(requestParameters: GetEmailLinksRequest, initOverrides?: RequestInit): Promise<EmailLinksResult>;
+    /**
+     * Returns a server-normalized preview document with active content removed and restrictive browser metadata. This representation can normalize malformed email layout and is deprecated for fidelity-sensitive rendering. Fetch the original HTML source and apply link hardening inside an opaque-origin browser sandbox instead.
+     * Get deprecated server-normalized email preview HTML
+     */
+    getEmailPreviewHTMLRaw(requestParameters: GetEmailPreviewHTMLRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailPreviewHtmlDto>>;
+    /**
+     * Returns a server-normalized preview document with active content removed and restrictive browser metadata. This representation can normalize malformed email layout and is deprecated for fidelity-sensitive rendering. Fetch the original HTML source and apply link hardening inside an opaque-origin browser sandbox instead.
+     * Get deprecated server-normalized email preview HTML
+     */
+    getEmailPreviewHTML(requestParameters: GetEmailPreviewHTMLRequest, initOverrides?: RequestInit): Promise<EmailPreviewHtmlDto>;
     /**
      * Returns precomputed URLs for preview and raw message access for the specified email.
      * Get email URLs for viewing in browser or downloading
@@ -714,15 +792,25 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      */
     replyToEmail(requestParameters: ReplyToEmailRequest, initOverrides?: RequestInit): Promise<SentEmailDto>;
     /**
-     * Searches emails by sender/recipient/address/subject/id fields and returns paginated matches. Does not perform full-text body search.
+     * Searches emails by email ID, inbox ID, sender address, subject, receiving inbox address, or receiving plus-address.
      * Get all emails by search criteria. Return in paginated form.
      */
     searchEmailsRaw(requestParameters: SearchEmailsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PageEmailProjection>>;
     /**
-     * Searches emails by sender/recipient/address/subject/id fields and returns paginated matches. Does not perform full-text body search.
+     * Searches emails by email ID, inbox ID, sender address, subject, receiving inbox address, or receiving plus-address.
      * Get all emails by search criteria. Return in paginated form.
      */
     searchEmails(requestParameters: SearchEmailsRequest, initOverrides?: RequestInit): Promise<PageEmailProjection>;
+    /**
+     * Send a saved draft using the existing inbox send pipeline. The draft is deleted only after the send succeeds.
+     * Send an email draft
+     */
+    sendEmailDraftRaw(requestParameters: SendEmailDraftRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentEmailDto>>;
+    /**
+     * Send a saved draft using the existing inbox send pipeline. The draft is deleted only after the send succeeds.
+     * Send an email draft
+     */
+    sendEmailDraft(requestParameters: SendEmailDraftRequest, initOverrides?: RequestInit): Promise<SentEmailDto>;
     /**
      * Sends an email from an existing inbox, or creates a temporary inbox when `inboxId` is not provided. Supports `useDomainPool` and `virtualSend` inbox creation behavior for convenience sends.
      * Send email
@@ -744,6 +832,16 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      */
     setEmailFavourited(requestParameters: SetEmailFavouritedRequest, initOverrides?: RequestInit): Promise<void>;
     /**
+     * Replace the SendEmailOptions stored for a draft. The draft remains attached to its original inbox; create a new draft to use a different inbox.
+     * Update an email draft
+     */
+    updateEmailDraftRaw(requestParameters: UpdateEmailDraftRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmailDraftDto>>;
+    /**
+     * Replace the SendEmailOptions stored for a draft. The draft remains attached to its original inbox; create a new draft to use a different inbox.
+     * Update an email draft
+     */
+    updateEmailDraft(requestParameters: UpdateEmailDraftRequest, initOverrides?: RequestInit): Promise<EmailDraftDto>;
+    /**
      * Runs HTML validation on the email body when HTML is present. Non-HTML emails are treated as valid for this check.
      * Validate email HTML contents
      */
@@ -753,6 +851,23 @@ export declare class EmailControllerApi extends runtime.BaseAPI {
      * Validate email HTML contents
      */
     validateEmail(requestParameters: ValidateEmailRequest, initOverrides?: RequestInit): Promise<ValidationDto>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetEmailDraftsSortEnum {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum GetEmailPreviewHTMLLinkBehaviorEnum {
+    PRESERVE = "PRESERVE",
+    NEW_TAB = "NEW_TAB",
+    DISABLED = "DISABLED"
 }
 /**
  * @export

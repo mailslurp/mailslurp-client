@@ -14,6 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
+  DevicePreviewQaBundleDto,
+  DevicePreviewQaBundleDtoFromJSON,
+  DevicePreviewQaBundleDtoFromJSONTyped,
+  DevicePreviewQaBundleDtoToJSON,
   DevicePreviewRunThumbnailDto,
   DevicePreviewRunThumbnailDtoFromJSON,
   DevicePreviewRunThumbnailDtoFromJSONTyped,
@@ -236,6 +240,12 @@ export interface DevicePreviewRunDto {
    * @memberof DevicePreviewRunDto
    */
   thumbnail?: DevicePreviewRunThumbnailDto | null;
+  /**
+   *
+   * @type {DevicePreviewQaBundleDto}
+   * @memberof DevicePreviewRunDto
+   */
+  qaBundle?: DevicePreviewQaBundleDto | null;
 }
 
 /**
@@ -247,6 +257,7 @@ export enum DevicePreviewRunDtoSourceTypeEnum {
   RAW_UPLOAD = 'RAW_UPLOAD',
   DEVICE_PREVIEW_INGEST = 'DEVICE_PREVIEW_INGEST',
   PUBLIC_FREE_TEST = 'PUBLIC_FREE_TEST',
+  GUIDED_TOUR = 'GUIDED_TOUR',
 }
 /**
  * @export
@@ -352,6 +363,9 @@ export function DevicePreviewRunDtoFromJSONTyped(
     thumbnail: !exists(json, 'thumbnail')
       ? undefined
       : DevicePreviewRunThumbnailDtoFromJSON(json['thumbnail']),
+    qaBundle: !exists(json, 'qaBundle')
+      ? undefined
+      : DevicePreviewQaBundleDtoFromJSON(json['qaBundle']),
   };
 }
 
@@ -400,5 +414,6 @@ export function DevicePreviewRunDtoToJSON(
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
     thumbnail: DevicePreviewRunThumbnailDtoToJSON(value.thumbnail),
+    qaBundle: DevicePreviewQaBundleDtoToJSON(value.qaBundle),
   };
 }

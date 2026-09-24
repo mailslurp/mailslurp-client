@@ -97,6 +97,12 @@ export interface InboxReplierDto {
      */
     ignoreReplyTo: boolean;
     /**
+     * Whether the inbox replier is active
+     * @type {boolean}
+     * @memberof InboxReplierDto
+     */
+    active: boolean;
+    /**
      *
      * @type {Date}
      * @memberof InboxReplierDto
@@ -114,6 +120,18 @@ export interface InboxReplierDto {
      * @memberof InboxReplierDto
      */
     matchOptions?: InboxAutomationMatchOptions | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierDto
+     */
+    body?: string | null;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof InboxReplierDto
+     */
+    attachments?: Array<string> | null;
 }
 /**
  * @export

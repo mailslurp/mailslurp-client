@@ -51,12 +51,6 @@ export interface PageOptInIdentityProjection {
      * @type {number}
      * @memberof PageOptInIdentityProjection
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageOptInIdentityProjection
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageOptInIdentityProjection {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageOptInIdentityProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageOptInIdentityProjection
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageOptInIdentityProjection
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

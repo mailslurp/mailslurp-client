@@ -34,12 +34,12 @@ function EntityAutomationItemProjectionFromJSONTyped(json, ignoreDiscriminator) 
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
+        automationType: json['automationType'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         action: !(0, runtime_1.exists)(json, 'action') ? undefined : json['action'],
         phoneId: !(0, runtime_1.exists)(json, 'phoneId') ? undefined : json['phoneId'],
-        automationType: json['automationType'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
     };
 }
 exports.EntityAutomationItemProjectionFromJSONTyped = EntityAutomationItemProjectionFromJSONTyped;
@@ -51,12 +51,12 @@ function EntityAutomationItemProjectionToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        id: value.id,
+        automationType: value.automationType,
         inboxId: value.inboxId,
         action: value.action,
         phoneId: value.phoneId,
-        automationType: value.automationType,
+        name: value.name,
+        id: value.id,
     };
 }
 exports.EntityAutomationItemProjectionToJSON = EntityAutomationItemProjectionToJSON;

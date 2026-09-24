@@ -28,9 +28,8 @@ function DevicePreviewProfileDtoFromJSONTyped(json, ignoreDiscriminator) {
         userId: json['userId'],
         localPart: json['localPart'],
         displayName: !(0, runtime_1.exists)(json, 'displayName') ? undefined : json['displayName'],
-        nativeTargets: !(0, runtime_1.exists)(json, 'nativeTargets')
-            ? undefined
-            : json['nativeTargets'],
+        targets: !(0, runtime_1.exists)(json, 'targets') ? undefined : json['targets'],
+        allTargets: !(0, runtime_1.exists)(json, 'allTargets') ? undefined : json['allTargets'],
         enabled: json['enabled'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
@@ -49,7 +48,8 @@ function DevicePreviewProfileDtoToJSON(value) {
         userId: value.userId,
         localPart: value.localPart,
         displayName: value.displayName,
-        nativeTargets: value.nativeTargets,
+        targets: value.targets,
+        allTargets: value.allTargets,
         enabled: value.enabled,
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),

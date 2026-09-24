@@ -24,19 +24,13 @@ export interface TotpDeviceProjection {
    * @type {string}
    * @memberof TotpDeviceProjection
    */
-  name?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof TotpDeviceProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof TotpDeviceProjection
-   */
   algorithm?: string | null;
+  /**
+   *
+   * @type {number}
+   * @memberof TotpDeviceProjection
+   */
+  digits?: number | null;
   /**
    *
    * @type {number}
@@ -60,13 +54,13 @@ export interface TotpDeviceProjection {
    * @type {Date}
    * @memberof TotpDeviceProjection
    */
-  expiresAt?: Date | null;
+  updatedAt: Date;
   /**
    *
    * @type {Date}
    * @memberof TotpDeviceProjection
    */
-  updatedAt: Date;
+  expiresAt?: Date | null;
   /**
    *
    * @type {string}
@@ -75,10 +69,16 @@ export interface TotpDeviceProjection {
   issuer?: string | null;
   /**
    *
-   * @type {number}
+   * @type {string}
    * @memberof TotpDeviceProjection
    */
-  digits?: number | null;
+  name?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof TotpDeviceProjection
+   */
+  id: string;
 }
 
 export function TotpDeviceProjectionFromJSON(json: any): TotpDeviceProjection {
@@ -93,20 +93,20 @@ export function TotpDeviceProjectionFromJSONTyped(
     return json;
   }
   return {
-    name: !exists(json, 'name') ? undefined : json['name'],
-    id: json['id'],
     algorithm: !exists(json, 'algorithm') ? undefined : json['algorithm'],
+    digits: !exists(json, 'digits') ? undefined : json['digits'],
     period: !exists(json, 'period') ? undefined : json['period'],
     username: !exists(json, 'username') ? undefined : json['username'],
     createdAt: new Date(json['createdAt']),
+    updatedAt: new Date(json['updatedAt']),
     expiresAt: !exists(json, 'expiresAt')
       ? undefined
       : json['expiresAt'] === null
       ? null
       : new Date(json['expiresAt']),
-    updatedAt: new Date(json['updatedAt']),
     issuer: !exists(json, 'issuer') ? undefined : json['issuer'],
-    digits: !exists(json, 'digits') ? undefined : json['digits'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    id: json['id'],
   };
 }
 
@@ -120,20 +120,20 @@ export function TotpDeviceProjectionToJSON(
     return null;
   }
   return {
-    name: value.name,
-    id: value.id,
     algorithm: value.algorithm,
+    digits: value.digits,
     period: value.period,
     username: value.username,
     createdAt: value.createdAt.toISOString(),
+    updatedAt: value.updatedAt.toISOString(),
     expiresAt:
       value.expiresAt === undefined
         ? undefined
         : value.expiresAt === null
         ? null
         : value.expiresAt.toISOString(),
-    updatedAt: value.updatedAt.toISOString(),
     issuer: value.issuer,
-    digits: value.digits,
+    name: value.name,
+    id: value.id,
   };
 }

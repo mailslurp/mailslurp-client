@@ -112,6 +112,24 @@ export interface CheckEmailAuthStackResults {
      * @memberof CheckEmailAuthStackResults
      */
     errors: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof CheckEmailAuthStackResults
+     */
+    scoreVersion: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CheckEmailAuthStackResults
+     */
+    scoreScope: string;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof CheckEmailAuthStackResults
+     */
+    advisoryChecks: Array<string>;
 }
 /**
  * @export

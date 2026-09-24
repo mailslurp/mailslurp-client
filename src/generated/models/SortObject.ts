@@ -24,12 +24,6 @@ export interface SortObject {
    * @type {boolean}
    * @memberof SortObject
    */
-  empty?: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof SortObject
-   */
   sorted?: boolean;
   /**
    *
@@ -37,6 +31,12 @@ export interface SortObject {
    * @memberof SortObject
    */
   unsorted?: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof SortObject
+   */
+  empty?: boolean;
 }
 
 export function SortObjectFromJSON(json: any): SortObject {
@@ -51,9 +51,9 @@ export function SortObjectFromJSONTyped(
     return json;
   }
   return {
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
     sorted: !exists(json, 'sorted') ? undefined : json['sorted'],
     unsorted: !exists(json, 'unsorted') ? undefined : json['unsorted'],
+    empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
 
@@ -65,8 +65,8 @@ export function SortObjectToJSON(value?: SortObject | null): any {
     return null;
   }
   return {
-    empty: value.empty,
     sorted: value.sorted,
     unsorted: value.unsorted,
+    empty: value.empty,
   };
 }

@@ -24,6 +24,7 @@ OrganizationInboxProjection
 - [functionsAs](OrganizationInboxProjection.md#functionsas)
 - [id](OrganizationInboxProjection.md#id)
 - [inboxType](OrganizationInboxProjection.md#inboxtype)
+- [mergedIntoInboxId](OrganizationInboxProjection.md#mergedintoinboxid)
 - [name](OrganizationInboxProjection.md#name)
 - [readOnly](OrganizationInboxProjection.md#readonly)
 - [tags](OrganizationInboxProjection.md#tags)
@@ -146,6 +147,16 @@ ___
 • `Optional` **inboxType**: [`OrganizationInboxProjectionInboxTypeEnum`](../enums/OrganizationInboxProjectionInboxTypeEnum.md)
 
 Type of inbox. HTTP inboxes are faster and better for most cases. SMTP inboxes are more suited for public facing inbound messages (but cannot send).
+
+**`Memberof`**
+
+OrganizationInboxProjection
+
+___
+
+### mergedIntoInboxId
+
+• `Optional` **mergedIntoInboxId**: `string`
 
 **`Memberof`**
 

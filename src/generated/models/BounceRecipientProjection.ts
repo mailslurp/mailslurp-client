@@ -24,19 +24,7 @@ export interface BounceRecipientProjection {
    * @type {string}
    * @memberof BounceRecipientProjection
    */
-  id?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceRecipientProjection
-   */
   status?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof BounceRecipientProjection
-   */
-  sentEmailId?: string | null;
   /**
    *
    * @type {Date}
@@ -61,6 +49,18 @@ export interface BounceRecipientProjection {
    * @memberof BounceRecipientProjection
    */
   bounceType?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof BounceRecipientProjection
+   */
+  sentEmailId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof BounceRecipientProjection
+   */
+  id?: string | null;
 }
 
 export function BounceRecipientProjectionFromJSON(
@@ -77,13 +77,13 @@ export function BounceRecipientProjectionFromJSONTyped(
     return json;
   }
   return {
-    id: !exists(json, 'id') ? undefined : json['id'],
     status: !exists(json, 'status') ? undefined : json['status'],
-    sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
     createdAt: new Date(json['createdAt']),
     action: !exists(json, 'action') ? undefined : json['action'],
     recipient: json['recipient'],
     bounceType: !exists(json, 'bounceType') ? undefined : json['bounceType'],
+    sentEmailId: !exists(json, 'sentEmailId') ? undefined : json['sentEmailId'],
+    id: !exists(json, 'id') ? undefined : json['id'],
   };
 }
 
@@ -97,12 +97,12 @@ export function BounceRecipientProjectionToJSON(
     return null;
   }
   return {
-    id: value.id,
     status: value.status,
-    sentEmailId: value.sentEmailId,
     createdAt: value.createdAt.toISOString(),
     action: value.action,
     recipient: value.recipient,
     bounceType: value.bounceType,
+    sentEmailId: value.sentEmailId,
+    id: value.id,
   };
 }

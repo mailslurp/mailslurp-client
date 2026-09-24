@@ -142,7 +142,11 @@
 - [sendEmailWithQueue](InboxControllerApi.md#sendemailwithqueue)
 - [sendEmailWithQueueRaw](InboxControllerApi.md#sendemailwithqueueraw)
 - [sendSmtpEnvelope](InboxControllerApi.md#sendsmtpenvelope)
+- [sendSmtpEnvelopeFromS3](InboxControllerApi.md#sendsmtpenvelopefroms3)
+- [sendSmtpEnvelopeFromS3Raw](InboxControllerApi.md#sendsmtpenvelopefroms3raw)
 - [sendSmtpEnvelopeRaw](InboxControllerApi.md#sendsmtpenveloperaw)
+- [sendSmtpEnvelopeStream](InboxControllerApi.md#sendsmtpenvelopestream)
+- [sendSmtpEnvelopeStreamRaw](InboxControllerApi.md#sendsmtpenvelopestreamraw)
 - [sendTestEmail](InboxControllerApi.md#sendtestemail)
 - [sendTestEmailRaw](InboxControllerApi.md#sendtestemailraw)
 - [sendWithSchedule](InboxControllerApi.md#sendwithschedule)
@@ -2598,6 +2602,46 @@ Send email using an SMTP mail envelope and message body and return sent confirma
 
 ___
 
+### sendSmtpEnvelopeFromS3
+
+▸ **sendSmtpEnvelopeFromS3**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+Internal SMTP-server endpoint for sending an SMTP envelope whose RFC822 body has already been written to S3.
+Send SMTP envelope from an S3 body reference
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendSmtpEnvelopeFromS3Request`](../interfaces/SendSmtpEnvelopeFromS3Request.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+___
+
+### sendSmtpEnvelopeFromS3Raw
+
+▸ **sendSmtpEnvelopeFromS3Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
+
+Internal SMTP-server endpoint for sending an SMTP envelope whose RFC822 body has already been written to S3.
+Send SMTP envelope from an S3 body reference
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendSmtpEnvelopeFromS3Request`](../interfaces/SendSmtpEnvelopeFromS3Request.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
+
+___
+
 ### sendSmtpEnvelopeRaw
 
 ▸ **sendSmtpEnvelopeRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
@@ -2610,6 +2654,46 @@ Send email using an SMTP mail envelope and message body and return sent confirma
 | Name | Type |
 | :------ | :------ |
 | `requestParameters` | [`SendSmtpEnvelopeRequest`](../interfaces/SendSmtpEnvelopeRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
+
+___
+
+### sendSmtpEnvelopeStream
+
+▸ **sendSmtpEnvelopeStream**(`requestParameters`, `initOverrides?`): `Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+Internal SMTP-server endpoint for sending an SMTP envelope while streaming the RFC822 body in the request.
+Send SMTP envelope from a streamed body
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendSmtpEnvelopeStreamRequest`](../interfaces/SendSmtpEnvelopeStreamRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>
+
+___
+
+### sendSmtpEnvelopeStreamRaw
+
+▸ **sendSmtpEnvelopeStreamRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`SentEmailDto`](../interfaces/SentEmailDto.md)\>\>
+
+Internal SMTP-server endpoint for sending an SMTP envelope while streaming the RFC822 body in the request.
+Send SMTP envelope from a streamed body
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SendSmtpEnvelopeStreamRequest`](../interfaces/SendSmtpEnvelopeStreamRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

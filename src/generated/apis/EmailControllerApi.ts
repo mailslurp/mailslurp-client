@@ -56,6 +56,9 @@ import {
   EmailContentPartResult,
   EmailContentPartResultFromJSON,
   EmailContentPartResultToJSON,
+  EmailDraftDto,
+  EmailDraftDtoFromJSON,
+  EmailDraftDtoToJSON,
   EmailHtmlDto,
   EmailHtmlDtoFromJSON,
   EmailHtmlDtoToJSON,
@@ -65,6 +68,9 @@ import {
   EmailPreview,
   EmailPreviewFromJSON,
   EmailPreviewToJSON,
+  EmailPreviewHtmlDto,
+  EmailPreviewHtmlDtoFromJSON,
+  EmailPreviewHtmlDtoToJSON,
   EmailPreviewUrls,
   EmailPreviewUrlsFromJSON,
   EmailPreviewUrlsToJSON,
@@ -101,6 +107,9 @@ import {
   ImapFlagOperationOptions,
   ImapFlagOperationOptionsFromJSON,
   ImapFlagOperationOptionsToJSON,
+  PageEmailDraftProjection,
+  PageEmailDraftProjectionFromJSON,
+  PageEmailDraftProjectionToJSON,
   PageEmailProjection,
   PageEmailProjectionFromJSON,
   PageEmailProjectionToJSON,
@@ -160,6 +169,11 @@ export interface CreateEmailAuditForEmailRequest {
   emailId: string;
 }
 
+export interface CreateEmailDraftRequest {
+  sendEmailOptions: SendEmailOptions;
+  inboxId?: string;
+}
+
 export interface DeleteAllEmailsRequest {
   createdAtSince?: Date;
   createdAtBefore?: Date;
@@ -167,6 +181,10 @@ export interface DeleteAllEmailsRequest {
 
 export interface DeleteEmailRequest {
   emailId: string;
+}
+
+export interface DeleteEmailDraftRequest {
+  draftId: string;
 }
 
 export interface DownloadAttachmentRequest {
@@ -234,6 +252,17 @@ export interface GetEmailCountRequest {
   inboxId?: string;
 }
 
+export interface GetEmailDraftRequest {
+  draftId: string;
+}
+
+export interface GetEmailDraftsRequest {
+  inboxId?: string;
+  page?: number;
+  size?: number;
+  sort?: GetEmailDraftsSortEnum;
+}
+
 export interface GetEmailHTMLRequest {
   emailId: string;
   replaceCidImages?: boolean;
@@ -252,6 +281,12 @@ export interface GetEmailHTMLQueryRequest {
 export interface GetEmailLinksRequest {
   emailId: string;
   selector?: string;
+}
+
+export interface GetEmailPreviewHTMLRequest {
+  emailId: string;
+  replaceCidImages?: boolean;
+  linkBehavior?: GetEmailPreviewHTMLLinkBehaviorEnum;
 }
 
 export interface GetEmailPreviewURLsRequest {
@@ -393,6 +428,10 @@ export interface SearchEmailsRequest {
   plusAddressId?: string;
 }
 
+export interface SendEmailDraftRequest {
+  draftId: string;
+}
+
 export interface SendEmailSourceOptionalRequest {
   sendEmailOptions: SendEmailOptions;
   inboxId?: string;
@@ -403,6 +442,11 @@ export interface SendEmailSourceOptionalRequest {
 export interface SetEmailFavouritedRequest {
   emailId: string;
   favourited: boolean;
+}
+
+export interface UpdateEmailDraftRequest {
+  draftId: string;
+  sendEmailOptions: SendEmailOptions;
 }
 
 export interface ValidateEmailRequest {
@@ -855,6 +899,69 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Create a saved email draft using the same SendEmailOptions shape used for sending. Provide an inboxId query parameter or sendOptions.inboxId to choose the inbox the draft will send from. Draft creation does not send email and does not create a new inbox.
+   * Create an email draft
+   */
+  async createEmailDraftRaw(
+    requestParameters: CreateEmailDraftRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailDraftDto>> {
+    if (
+      requestParameters.sendEmailOptions === null ||
+      requestParameters.sendEmailOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'sendEmailOptions',
+        'Required parameter requestParameters.sendEmailOptions was null or undefined when calling createEmailDraft.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/drafts`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SendEmailOptionsToJSON(requestParameters.sendEmailOptions),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailDraftDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Create a saved email draft using the same SendEmailOptions shape used for sending. Provide an inboxId query parameter or sendOptions.inboxId to choose the inbox the draft will send from. Draft creation does not send email and does not create a new inbox.
+   * Create an email draft
+   */
+  async createEmailDraft(
+    requestParameters: CreateEmailDraftRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailDraftDto> {
+    const response = await this.createEmailDraftRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Deletes all emails for the authenticated account context. This operation is destructive and cannot be undone.
    * Delete all emails in all inboxes.
    */
@@ -957,6 +1064,59 @@ export class EmailControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<void> {
     await this.deleteEmailRaw(requestParameters, initOverrides);
+  }
+
+  /**
+   * Delete a saved email draft without sending it.
+   * Delete an email draft
+   */
+  async deleteEmailDraftRaw(
+    requestParameters: DeleteEmailDraftRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<void>> {
+    if (
+      requestParameters.draftId === null ||
+      requestParameters.draftId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'draftId',
+        'Required parameter requestParameters.draftId was null or undefined when calling deleteEmailDraft.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/drafts/{draftId}`.replace(
+          `{${'draftId'}}`,
+          encodeURIComponent(String(requestParameters.draftId))
+        ),
+        method: 'DELETE',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.VoidApiResponse(response);
+  }
+
+  /**
+   * Delete a saved email draft without sending it.
+   * Delete an email draft
+   */
+  async deleteEmailDraft(
+    requestParameters: DeleteEmailDraftRequest,
+    initOverrides?: RequestInit
+  ): Promise<void> {
+    await this.deleteEmailDraftRaw(requestParameters, initOverrides);
   }
 
   /**
@@ -1829,6 +1989,127 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Get a saved email draft including the full SendEmailOptions payload.
+   * Get an email draft
+   */
+  async getEmailDraftRaw(
+    requestParameters: GetEmailDraftRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailDraftDto>> {
+    if (
+      requestParameters.draftId === null ||
+      requestParameters.draftId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'draftId',
+        'Required parameter requestParameters.draftId was null or undefined when calling getEmailDraft.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/drafts/{draftId}`.replace(
+          `{${'draftId'}}`,
+          encodeURIComponent(String(requestParameters.draftId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailDraftDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get a saved email draft including the full SendEmailOptions payload.
+   * Get an email draft
+   */
+  async getEmailDraft(
+    requestParameters: GetEmailDraftRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailDraftDto> {
+    const response = await this.getEmailDraftRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * List saved email drafts for the authenticated user, optionally filtered by inbox.
+   * List email drafts
+   */
+  async getEmailDraftsRaw(
+    requestParameters: GetEmailDraftsRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<PageEmailDraftProjection>> {
+    const queryParameters: any = {};
+
+    if (requestParameters.inboxId !== undefined) {
+      queryParameters['inboxId'] = requestParameters.inboxId;
+    }
+
+    if (requestParameters.page !== undefined) {
+      queryParameters['page'] = requestParameters.page;
+    }
+
+    if (requestParameters.size !== undefined) {
+      queryParameters['size'] = requestParameters.size;
+    }
+
+    if (requestParameters.sort !== undefined) {
+      queryParameters['sort'] = requestParameters.sort;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/drafts`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      PageEmailDraftProjectionFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * List saved email drafts for the authenticated user, optionally filtered by inbox.
+   * List email drafts
+   */
+  async getEmailDrafts(
+    requestParameters: GetEmailDraftsRequest,
+    initOverrides?: RequestInit
+  ): Promise<PageEmailDraftProjection> {
+    const response = await this.getEmailDraftsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Returns hydrated HTML body directly with `text/html` content type. Supports temporary access/browser usage and optional CID replacement for inline asset rendering.
    * Get hydrated email HTML for browser rendering
    */
@@ -2082,6 +2363,73 @@ export class EmailControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<EmailLinksResult> {
     const response = await this.getEmailLinksRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Returns a server-normalized preview document with active content removed and restrictive browser metadata. This representation can normalize malformed email layout and is deprecated for fidelity-sensitive rendering. Fetch the original HTML source and apply link hardening inside an opaque-origin browser sandbox instead.
+   * Get deprecated server-normalized email preview HTML
+   */
+  async getEmailPreviewHTMLRaw(
+    requestParameters: GetEmailPreviewHTMLRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailPreviewHtmlDto>> {
+    if (
+      requestParameters.emailId === null ||
+      requestParameters.emailId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'emailId',
+        'Required parameter requestParameters.emailId was null or undefined when calling getEmailPreviewHTML.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.replaceCidImages !== undefined) {
+      queryParameters['replaceCidImages'] = requestParameters.replaceCidImages;
+    }
+
+    if (requestParameters.linkBehavior !== undefined) {
+      queryParameters['linkBehavior'] = requestParameters.linkBehavior;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/{emailId}/preview`.replace(
+          `{${'emailId'}}`,
+          encodeURIComponent(String(requestParameters.emailId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailPreviewHtmlDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns a server-normalized preview document with active content removed and restrictive browser metadata. This representation can normalize malformed email layout and is deprecated for fidelity-sensitive rendering. Fetch the original HTML source and apply link hardening inside an opaque-origin browser sandbox instead.
+   * Get deprecated server-normalized email preview HTML
+   */
+  async getEmailPreviewHTML(
+    requestParameters: GetEmailPreviewHTMLRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailPreviewHtmlDto> {
+    const response = await this.getEmailPreviewHTMLRaw(
       requestParameters,
       initOverrides
     );
@@ -3478,7 +3826,7 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Searches emails by sender/recipient/address/subject/id fields and returns paginated matches. Does not perform full-text body search.
+   * Searches emails by email ID, inbox ID, sender address, subject, receiving inbox address, or receiving plus-address.
    * Get all emails by search criteria. Return in paginated form.
    */
   async searchEmailsRaw(
@@ -3534,7 +3882,7 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Searches emails by sender/recipient/address/subject/id fields and returns paginated matches. Does not perform full-text body search.
+   * Searches emails by email ID, inbox ID, sender address, subject, receiving inbox address, or receiving plus-address.
    * Get all emails by search criteria. Return in paginated form.
    */
   async searchEmails(
@@ -3542,6 +3890,65 @@ export class EmailControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<PageEmailProjection> {
     const response = await this.searchEmailsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Send a saved draft using the existing inbox send pipeline. The draft is deleted only after the send succeeds.
+   * Send an email draft
+   */
+  async sendEmailDraftRaw(
+    requestParameters: SendEmailDraftRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SentEmailDto>> {
+    if (
+      requestParameters.draftId === null ||
+      requestParameters.draftId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'draftId',
+        'Required parameter requestParameters.draftId was null or undefined when calling sendEmailDraft.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/drafts/{draftId}/send`.replace(
+          `{${'draftId'}}`,
+          encodeURIComponent(String(requestParameters.draftId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SentEmailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Send a saved draft using the existing inbox send pipeline. The draft is deleted only after the send succeeds.
+   * Send an email draft
+   */
+  async sendEmailDraft(
+    requestParameters: SendEmailDraftRequest,
+    initOverrides?: RequestInit
+  ): Promise<SentEmailDto> {
+    const response = await this.sendEmailDraftRaw(
       requestParameters,
       initOverrides
     );
@@ -3681,6 +4088,78 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Replace the SendEmailOptions stored for a draft. The draft remains attached to its original inbox; create a new draft to use a different inbox.
+   * Update an email draft
+   */
+  async updateEmailDraftRaw(
+    requestParameters: UpdateEmailDraftRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<EmailDraftDto>> {
+    if (
+      requestParameters.draftId === null ||
+      requestParameters.draftId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'draftId',
+        'Required parameter requestParameters.draftId was null or undefined when calling updateEmailDraft.'
+      );
+    }
+
+    if (
+      requestParameters.sendEmailOptions === null ||
+      requestParameters.sendEmailOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'sendEmailOptions',
+        'Required parameter requestParameters.sendEmailOptions was null or undefined when calling updateEmailDraft.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/drafts/{draftId}`.replace(
+          `{${'draftId'}}`,
+          encodeURIComponent(String(requestParameters.draftId))
+        ),
+        method: 'PATCH',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SendEmailOptionsToJSON(requestParameters.sendEmailOptions),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      EmailDraftDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Replace the SendEmailOptions stored for a draft. The draft remains attached to its original inbox; create a new draft to use a different inbox.
+   * Update an email draft
+   */
+  async updateEmailDraft(
+    requestParameters: UpdateEmailDraftRequest,
+    initOverrides?: RequestInit
+  ): Promise<EmailDraftDto> {
+    const response = await this.updateEmailDraftRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Runs HTML validation on the email body when HTML is present. Non-HTML emails are treated as valid for this check.
    * Validate email HTML contents
    */
@@ -3740,6 +4219,23 @@ export class EmailControllerApi extends runtime.BaseAPI {
   }
 }
 
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetEmailDraftsSortEnum {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum GetEmailPreviewHTMLLinkBehaviorEnum {
+  PRESERVE = 'PRESERVE',
+  NEW_TAB = 'NEW_TAB',
+  DISABLED = 'DISABLED',
+}
 /**
  * @export
  * @enum {string}

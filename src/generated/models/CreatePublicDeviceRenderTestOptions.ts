@@ -25,6 +25,27 @@ export interface CreatePublicDeviceRenderTestOptions {
    * @memberof CreatePublicDeviceRenderTestOptions
    */
   captchaToken?: string | null;
+  /**
+   * One exact device preview target key. Omit only for backwards compatibility; the service still chooses one target.
+   * @type {string}
+   * @memberof CreatePublicDeviceRenderTestOptions
+   */
+  target?: string | null;
+  /**
+   * Public preview workflow to create.
+   * @type {string}
+   * @memberof CreatePublicDeviceRenderTestOptions
+   */
+  previewMode: CreatePublicDeviceRenderTestOptionsPreviewModeEnum;
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum CreatePublicDeviceRenderTestOptionsPreviewModeEnum {
+  DEVICE_RENDER = 'DEVICE_RENDER',
+  LIGHT_DARK = 'LIGHT_DARK',
 }
 
 export function CreatePublicDeviceRenderTestOptionsFromJSON(
@@ -44,6 +65,8 @@ export function CreatePublicDeviceRenderTestOptionsFromJSONTyped(
     captchaToken: !exists(json, 'captchaToken')
       ? undefined
       : json['captchaToken'],
+    target: !exists(json, 'target') ? undefined : json['target'],
+    previewMode: json['previewMode'],
   };
 }
 
@@ -58,5 +81,7 @@ export function CreatePublicDeviceRenderTestOptionsToJSON(
   }
   return {
     captchaToken: value.captchaToken,
+    target: value.target,
+    previewMode: value.previewMode,
   };
 }

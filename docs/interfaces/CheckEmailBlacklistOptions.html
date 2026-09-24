@@ -16,7 +16,7 @@
 <li><a href="CheckEmailBlacklistOptions.html">CheckEmailBlacklistOptions</a></li></ul>
 <h1>Interface CheckEmailBlacklistOptions</h1></div>
 <section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography"><p>Check a domain, IP address, or specific MX host against configured DNS blacklists</p>
+<div class="tsd-comment tsd-typography"><p>Check a domain, outbound IP address, or specific MX host against configured DNS blacklists</p>
 
 <h3>Export</h3>
 <h3>Interface</h3><p>CheckEmailBlacklistOptions</p>
@@ -34,6 +34,7 @@
 <h3 class="tsd-index-heading">Properties</h3>
 <div class="tsd-index-list"><a href="CheckEmailBlacklistOptions.html#captchaToken" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF984D" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-1024-path"></rect><path d="M9.354 16V7.24H12.174C12.99 7.24 13.638 7.476 14.118 7.948C14.606 8.412 14.85 9.036 14.85 9.82C14.85 10.604 14.606 11.232 14.118 11.704C13.638 12.168 12.99 12.4 12.174 12.4H10.434V16H9.354ZM10.434 11.428H12.174C12.646 11.428 13.022 11.284 13.302 10.996C13.59 10.7 13.734 10.308 13.734 9.82C13.734 9.324 13.59 8.932 13.302 8.644C13.022 8.356 12.646 8.212 12.174 8.212H10.434V11.428Z" fill="var(--color-text)" id="icon-1024-text"></path></svg><span>captcha<wbr/>Token?</span></a>
 <a href="CheckEmailBlacklistOptions.html#domain" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>domain?</span></a>
+<a href="CheckEmailBlacklistOptions.html#includeDomainInfrastructure" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>include<wbr/>Domain<wbr/>Infrastructure?</span></a>
 <a href="CheckEmailBlacklistOptions.html#ipAddress" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>ip<wbr/>Address?</span></a>
 <a href="CheckEmailBlacklistOptions.html#mxHost" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>mx<wbr/>Host?</span></a>
 </div></section></div></details></section></section>
@@ -48,21 +49,28 @@
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="domain" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>domain</span><a href="#domain" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">domain<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>Domain to expand into A and MX host IPv4 addresses</p>
+<div class="tsd-comment tsd-typography"><p>Domain to check against configured domain blocklists. Domain A and MX addresses are not treated as outbound sending IPs unless includeDomainInfrastructure is explicitly enabled.</p>
+
+<h3>Memberof</h3><p>CheckEmailBlacklistOptions</p>
+</div></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="includeDomainInfrastructure" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>include<wbr/>Domain<wbr/>Infrastructure</span><a href="#includeDomainInfrastructure" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">include<wbr/>Domain<wbr/>Infrastructure<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
+<div class="tsd-comment tsd-typography"><p>Explicitly include the domain A address and discovered MX addresses as infrastructure diagnostics. Defaults to false because these addresses are normally not outbound sending IPs.</p>
 
 <h3>Memberof</h3><p>CheckEmailBlacklistOptions</p>
 </div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="ipAddress" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>ip<wbr/>Address</span><a href="#ipAddress" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">ip<wbr/>Address<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>Specific IPv4 address to check directly</p>
+<div class="tsd-comment tsd-typography"><p>Specific observed or configured outbound IPv4 address to check directly</p>
 
 <h3>Memberof</h3><p>CheckEmailBlacklistOptions</p>
 </div></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="mxHost" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>mx<wbr/>Host</span><a href="#mxHost" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">mx<wbr/>Host<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>Specific MX host to resolve and check directly</p>
+<div class="tsd-comment tsd-typography"><p>Specific MX host to resolve and check as inbound infrastructure. MX results do not prove outbound sender reputation.</p>
 
 <h3>Memberof</h3><p>CheckEmailBlacklistOptions</p>
 </div></section></section></div>
@@ -93,6 +101,7 @@
 <ul>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="CheckEmailBlacklistOptions.html#captchaToken" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>captcha<wbr/>Token?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="CheckEmailBlacklistOptions.html#domain" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>domain?</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="CheckEmailBlacklistOptions.html#includeDomainInfrastructure" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>include<wbr/>Domain<wbr/>Infrastructure?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="CheckEmailBlacklistOptions.html#ipAddress" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>ip<wbr/>Address?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="CheckEmailBlacklistOptions.html#mxHost" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>mx<wbr/>Host?</a></li></ul></li></ul></nav></div></div>
 <div class="overlay"></div><script src="../assets/main.js"></script></body></html>

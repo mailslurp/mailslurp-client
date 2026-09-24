@@ -51,12 +51,6 @@ export interface PageEmailThreadProjection {
      * @type {number}
      * @memberof PageEmailThreadProjection
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageEmailThreadProjection
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageEmailThreadProjection {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageEmailThreadProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageEmailThreadProjection
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageEmailThreadProjection
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

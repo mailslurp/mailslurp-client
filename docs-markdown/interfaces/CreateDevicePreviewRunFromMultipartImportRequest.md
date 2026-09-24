@@ -6,12 +6,19 @@
 
 ### Properties
 
+- [allTargets](CreateDevicePreviewRunFromMultipartImportRequest.md#alltargets)
 - [externalId](CreateDevicePreviewRunFromMultipartImportRequest.md#externalid)
 - [file](CreateDevicePreviewRunFromMultipartImportRequest.md#file)
-- [nativeTargets](CreateDevicePreviewRunFromMultipartImportRequest.md#nativetargets)
 - [sourceAlias](CreateDevicePreviewRunFromMultipartImportRequest.md#sourcealias)
+- [targets](CreateDevicePreviewRunFromMultipartImportRequest.md#targets)
 
 ## Properties
+
+### allTargets
+
+• `Optional` **allTargets**: `boolean`
+
+___
 
 ### externalId
 
@@ -25,12 +32,12 @@ ___
 
 ___
 
-### nativeTargets
-
-• `Optional` **nativeTargets**: `string`[]
-
-___
-
 ### sourceAlias
 
 • `Optional` **sourceAlias**: `string`
+
+___
+
+### targets
+
+• `Optional` **targets**: `string`[]

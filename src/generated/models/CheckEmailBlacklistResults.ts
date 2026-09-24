@@ -14,6 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
+  EmailBlacklistDomainResult,
+  EmailBlacklistDomainResultFromJSON,
+  EmailBlacklistDomainResultFromJSONTyped,
+  EmailBlacklistDomainResultToJSON,
   EmailBlacklistIpResult,
   EmailBlacklistIpResultFromJSON,
   EmailBlacklistIpResultFromJSONTyped,
@@ -86,6 +90,30 @@ export interface CheckEmailBlacklistResults {
    * @memberof CheckEmailBlacklistResults
    */
   errors: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof CheckEmailBlacklistResults
+   */
+  checkStatus: CheckEmailBlacklistResultsCheckStatusEnum;
+  /**
+   *
+   * @type {Array<EmailBlacklistDomainResult>}
+   * @memberof CheckEmailBlacklistResults
+   */
+  checkedDomains: Array<EmailBlacklistDomainResult>;
+  /**
+   *
+   * @type {Date}
+   * @memberof CheckEmailBlacklistResults
+   */
+  checkedAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof CheckEmailBlacklistResults
+   */
+  evidenceVersion: string;
 }
 
 /**
@@ -97,6 +125,16 @@ export enum CheckEmailBlacklistResultsStatusEnum {
   DEGRADED = 'DEGRADED',
   CRITICAL = 'CRITICAL',
   FAILED = 'FAILED',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum CheckEmailBlacklistResultsCheckStatusEnum {
+  LISTED = 'LISTED',
+  NOT_LISTED = 'NOT_LISTED',
+  ERROR = 'ERROR',
+  NOT_CHECKED = 'NOT_CHECKED',
 }
 
 export function CheckEmailBlacklistResultsFromJSON(
@@ -129,6 +167,12 @@ export function CheckEmailBlacklistResultsFromJSONTyped(
     totalListings: json['totalListings'],
     warnings: json['warnings'],
     errors: json['errors'],
+    checkStatus: json['checkStatus'],
+    checkedDomains: (json['checkedDomains'] as Array<any>).map(
+      EmailBlacklistDomainResultFromJSON
+    ),
+    checkedAt: new Date(json['checkedAt']),
+    evidenceVersion: json['evidenceVersion'],
   };
 }
 
@@ -154,5 +198,11 @@ export function CheckEmailBlacklistResultsToJSON(
     totalListings: value.totalListings,
     warnings: value.warnings,
     errors: value.errors,
+    checkStatus: value.checkStatus,
+    checkedDomains: (value.checkedDomains as Array<any>).map(
+      EmailBlacklistDomainResultToJSON
+    ),
+    checkedAt: value.checkedAt.toISOString(),
+    evidenceVersion: value.evidenceVersion,
   };
 }

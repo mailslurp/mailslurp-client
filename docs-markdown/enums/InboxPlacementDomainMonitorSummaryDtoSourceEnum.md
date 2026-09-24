@@ -9,6 +9,7 @@
 ### Enumeration Members
 
 - [NONE](InboxPlacementDomainMonitorSummaryDtoSourceEnum.md#none)
+- [OBSERVED\_MESSAGE](InboxPlacementDomainMonitorSummaryDtoSourceEnum.md#observed_message)
 - [PERSISTENT\_MONITOR](InboxPlacementDomainMonitorSummaryDtoSourceEnum.md#persistent_monitor)
 - [QUICK\_CHECK](InboxPlacementDomainMonitorSummaryDtoSourceEnum.md#quick_check)
 
@@ -17,6 +18,12 @@
 ### NONE
 
 • **NONE** = ``"NONE"``
+
+___
+
+### OBSERVED\_MESSAGE
+
+• **OBSERVED\_MESSAGE** = ``"OBSERVED_MESSAGE"``
 
 ___
 

@@ -24,18 +24,6 @@ export interface EntityFavouriteItemProjection {
    * @type {string}
    * @memberof EntityFavouriteItemProjection
    */
-  name: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EntityFavouriteItemProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EntityFavouriteItemProjection
-   */
   description?: string | null;
   /**
    *
@@ -49,6 +37,18 @@ export interface EntityFavouriteItemProjection {
    * @memberof EntityFavouriteItemProjection
    */
   entityType: EntityFavouriteItemProjectionEntityTypeEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityFavouriteItemProjection
+   */
+  name: string;
+  /**
+   *
+   * @type {string}
+   * @memberof EntityFavouriteItemProjection
+   */
+  id: string;
 }
 
 /**
@@ -77,11 +77,11 @@ export function EntityFavouriteItemProjectionFromJSONTyped(
     return json;
   }
   return {
-    name: json['name'],
-    id: json['id'],
     description: !exists(json, 'description') ? undefined : json['description'],
     createdAt: new Date(json['createdAt']),
     entityType: json['entityType'],
+    name: json['name'],
+    id: json['id'],
   };
 }
 
@@ -95,10 +95,10 @@ export function EntityFavouriteItemProjectionToJSON(
     return null;
   }
   return {
-    name: value.name,
-    id: value.id,
     description: value.description,
     createdAt: value.createdAt.toISOString(),
     entityType: value.entityType,
+    name: value.name,
+    id: value.id,
   };
 }

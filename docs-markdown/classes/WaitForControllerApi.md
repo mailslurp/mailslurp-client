@@ -32,6 +32,10 @@
 - [waitForMatchingEmailsRaw](WaitForControllerApi.md#waitformatchingemailsraw)
 - [waitForMatchingFirstEmail](WaitForControllerApi.md#waitformatchingfirstemail)
 - [waitForMatchingFirstEmailRaw](WaitForControllerApi.md#waitformatchingfirstemailraw)
+- [waitForMessageAI](WaitForControllerApi.md#waitformessageai)
+- [waitForMessageAIRaw](WaitForControllerApi.md#waitformessageairaw)
+- [waitForMessagesAI](WaitForControllerApi.md#waitformessagesai)
+- [waitForMessagesAIRaw](WaitForControllerApi.md#waitformessagesairaw)
 - [waitForNthEmail](WaitForControllerApi.md#waitfornthemail)
 - [waitForNthEmailRaw](WaitForControllerApi.md#waitfornthemailraw)
 - [waitForRaw](WaitForControllerApi.md#waitforraw)
@@ -307,6 +311,86 @@ Wait for or return the first email that matches provided MatchOptions array
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`Email`](../interfaces/Email.md)\>\>
+
+___
+
+### waitForMessageAI
+
+▸ **waitForMessageAI**(`requestParameters`, `initOverrides?`): `Promise`<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>
+
+Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+Wait for AI-matched email or SMS
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForMessageAIRequest`](../interfaces/WaitForMessageAIRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>
+
+___
+
+### waitForMessageAIRaw
+
+▸ **waitForMessageAIRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>\>
+
+Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+Wait for AI-matched email or SMS
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForMessageAIRequest`](../interfaces/WaitForMessageAIRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessageResult`](../interfaces/AIMessageResult.md)\>\>
+
+___
+
+### waitForMessagesAI
+
+▸ **waitForMessagesAI**(`requestParameters`, `initOverrides?`): `Promise`<[`AIMessagesResult`](../interfaces/AIMessagesResult.md)\>
+
+Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+Wait for AI-matched email or SMS
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForMessagesAIRequest`](../interfaces/WaitForMessagesAIRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`AIMessagesResult`](../interfaces/AIMessagesResult.md)\>
+
+___
+
+### waitForMessagesAIRaw
+
+▸ **waitForMessagesAIRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessagesResult`](../interfaces/AIMessagesResult.md)\>\>
+
+Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+Wait for AI-matched email or SMS
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`WaitForMessagesAIRequest`](../interfaces/WaitForMessagesAIRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`AIMessagesResult`](../interfaces/AIMessagesResult.md)\>\>
 
 ___
 

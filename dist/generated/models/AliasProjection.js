@@ -24,14 +24,14 @@ function AliasProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
         userId: json['userId'],
         inboxId: json['inboxId'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
         emailAddress: json['emailAddress'],
         useThreads: !(0, runtime_1.exists)(json, 'useThreads') ? undefined : json['useThreads'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
     };
 }
 exports.AliasProjectionFromJSONTyped = AliasProjectionFromJSONTyped;
@@ -43,14 +43,14 @@ function AliasProjectionToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        id: value.id,
         userId: value.userId,
         inboxId: value.inboxId,
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
         emailAddress: value.emailAddress,
         useThreads: value.useThreads,
+        name: value.name,
+        id: value.id,
     };
 }
 exports.AliasProjectionToJSON = AliasProjectionToJSON;

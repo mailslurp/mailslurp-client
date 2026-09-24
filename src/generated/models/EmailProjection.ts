@@ -35,12 +35,6 @@ export interface EmailProjection {
    * @type {string}
    * @memberof EmailProjection
    */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof EmailProjection
-   */
   threadId?: string | null;
   /**
    *
@@ -50,10 +44,10 @@ export interface EmailProjection {
   from: string | null;
   /**
    *
-   * @type {Sender}
+   * @type {string}
    * @memberof EmailProjection
    */
-  sender?: Sender | null;
+  inboxId: string;
   /**
    *
    * @type {EmailRecipients}
@@ -62,22 +56,28 @@ export interface EmailProjection {
   recipients?: EmailRecipients | null;
   /**
    *
+   * @type {Array<string>}
+   * @memberof EmailProjection
+   */
+  attachments?: Array<string> | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof EmailProjection
+   */
+  read: boolean;
+  /**
+   *
    * @type {string}
    * @memberof EmailProjection
    */
   subject?: string | null;
   /**
    *
-   * @type {string}
+   * @type {number}
    * @memberof EmailProjection
    */
-  inboxId: string;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof EmailProjection
-   */
-  attachments?: Array<string> | null;
+  sizeBytes?: number | null;
   /**
    *
    * @type {string}
@@ -128,10 +128,16 @@ export interface EmailProjection {
   inReplyTo?: string | null;
   /**
    *
-   * @type {number}
+   * @type {boolean}
    * @memberof EmailProjection
    */
-  sizeBytes?: number | null;
+  favourite?: boolean | null;
+  /**
+   *
+   * @type {Sender}
+   * @memberof EmailProjection
+   */
+  sender?: Sender | null;
   /**
    *
    * @type {string}
@@ -140,22 +146,16 @@ export interface EmailProjection {
   domainId?: string | null;
   /**
    *
-   * @type {boolean}
-   * @memberof EmailProjection
-   */
-  read: boolean;
-  /**
-   *
    * @type {Array<string>}
    * @memberof EmailProjection
    */
   bodyPartContentTypes?: Array<string> | null;
   /**
    *
-   * @type {boolean}
+   * @type {string}
    * @memberof EmailProjection
    */
-  favourite?: boolean | null;
+  bodyMD5Hash?: string | null;
   /**
    *
    * @type {string}
@@ -170,16 +170,16 @@ export interface EmailProjection {
   imapUid?: number | null;
   /**
    *
-   * @type {string}
-   * @memberof EmailProjection
-   */
-  bodyMD5Hash?: string | null;
-  /**
-   *
    * @type {boolean}
    * @memberof EmailProjection
    */
   teamAccess: boolean;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailProjection
+   */
+  id: string;
 }
 
 export function EmailProjectionFromJSON(json: any): EmailProjection {
@@ -194,18 +194,16 @@ export function EmailProjectionFromJSONTyped(
     return json;
   }
   return {
-    id: json['id'],
     threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
     from: json['from'],
-    sender: !exists(json, 'sender')
-      ? undefined
-      : SenderFromJSON(json['sender']),
+    inboxId: json['inboxId'],
     recipients: !exists(json, 'recipients')
       ? undefined
       : EmailRecipientsFromJSON(json['recipients']),
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    inboxId: json['inboxId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
+    read: json['read'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
+    sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
     textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
     to: json['to'],
@@ -214,17 +212,19 @@ export function EmailProjectionFromJSONTyped(
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
     inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
-    sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
+    favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
+    sender: !exists(json, 'sender')
+      ? undefined
+      : SenderFromJSON(json['sender']),
     domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
-    read: json['read'],
     bodyPartContentTypes: !exists(json, 'bodyPartContentTypes')
       ? undefined
       : json['bodyPartContentTypes'],
-    favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
+    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     plusAddress: !exists(json, 'plusAddress') ? undefined : json['plusAddress'],
     imapUid: !exists(json, 'imapUid') ? undefined : json['imapUid'],
-    bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
     teamAccess: json['teamAccess'],
+    id: json['id'],
   };
 }
 
@@ -236,14 +236,14 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     return null;
   }
   return {
-    id: value.id,
     threadId: value.threadId,
     from: value.from,
-    sender: SenderToJSON(value.sender),
-    recipients: EmailRecipientsToJSON(value.recipients),
-    subject: value.subject,
     inboxId: value.inboxId,
+    recipients: EmailRecipientsToJSON(value.recipients),
     attachments: value.attachments,
+    read: value.read,
+    subject: value.subject,
+    sizeBytes: value.sizeBytes,
     textExcerpt: value.textExcerpt,
     bodyExcerpt: value.bodyExcerpt,
     to: value.to,
@@ -252,14 +252,14 @@ export function EmailProjectionToJSON(value?: EmailProjection | null): any {
     bcc: value.bcc,
     messageId: value.messageId,
     inReplyTo: value.inReplyTo,
-    sizeBytes: value.sizeBytes,
-    domainId: value.domainId,
-    read: value.read,
-    bodyPartContentTypes: value.bodyPartContentTypes,
     favourite: value.favourite,
+    sender: SenderToJSON(value.sender),
+    domainId: value.domainId,
+    bodyPartContentTypes: value.bodyPartContentTypes,
+    bodyMD5Hash: value.bodyMD5Hash,
     plusAddress: value.plusAddress,
     imapUid: value.imapUid,
-    bodyMD5Hash: value.bodyMD5Hash,
     teamAccess: value.teamAccess,
+    id: value.id,
   };
 }

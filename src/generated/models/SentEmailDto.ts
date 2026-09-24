@@ -236,10 +236,25 @@ export interface SentEmailDto {
   sizeBytes?: number | null;
   /**
    *
+   * @type {string}
+   * @memberof SentEmailDto
+   */
+  transport: SentEmailDtoTransportEnum;
+  /**
+   *
    * @type {boolean}
    * @memberof SentEmailDto
    */
   html?: boolean;
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum SentEmailDtoTransportEnum {
+  PUBLIC_EMAIL = 'PUBLIC_EMAIL',
+  SANDBOX_LOCAL = 'SANDBOX_LOCAL',
 }
 
 export function SentEmailDtoFromJSON(json: any): SentEmailDto {
@@ -294,6 +309,7 @@ export function SentEmailDtoFromJSONTyped(
     inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
     favourite: !exists(json, 'favourite') ? undefined : json['favourite'],
     sizeBytes: !exists(json, 'sizeBytes') ? undefined : json['sizeBytes'],
+    transport: json['transport'],
     html: !exists(json, 'html') ? undefined : json['html'],
   };
 }
@@ -340,6 +356,7 @@ export function SentEmailDtoToJSON(value?: SentEmailDto | null): any {
     inReplyTo: value.inReplyTo,
     favourite: value.favourite,
     sizeBytes: value.sizeBytes,
+    transport: value.transport,
     html: value.html,
   };
 }

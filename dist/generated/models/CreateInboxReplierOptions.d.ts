@@ -108,6 +108,12 @@ export interface CreateInboxReplierOptions {
      * @memberof CreateInboxReplierOptions
      */
     matchOptions?: InboxAutomationMatchOptions | null;
+    /**
+     * Optional attachment IDs to include with every automated reply
+     * @type {Array<string>}
+     * @memberof CreateInboxReplierOptions
+     */
+    attachments?: Array<string> | null;
 }
 /**
  * @export

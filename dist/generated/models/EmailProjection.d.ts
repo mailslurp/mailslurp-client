@@ -21,12 +21,6 @@ export interface EmailProjection {
      * @type {string}
      * @memberof EmailProjection
      */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof EmailProjection
-     */
     threadId?: string | null;
     /**
      *
@@ -36,10 +30,10 @@ export interface EmailProjection {
     from: string | null;
     /**
      *
-     * @type {Sender}
+     * @type {string}
      * @memberof EmailProjection
      */
-    sender?: Sender | null;
+    inboxId: string;
     /**
      *
      * @type {EmailRecipients}
@@ -48,22 +42,28 @@ export interface EmailProjection {
     recipients?: EmailRecipients | null;
     /**
      *
+     * @type {Array<string>}
+     * @memberof EmailProjection
+     */
+    attachments?: Array<string> | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof EmailProjection
+     */
+    read: boolean;
+    /**
+     *
      * @type {string}
      * @memberof EmailProjection
      */
     subject?: string | null;
     /**
      *
-     * @type {string}
+     * @type {number}
      * @memberof EmailProjection
      */
-    inboxId: string;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof EmailProjection
-     */
-    attachments?: Array<string> | null;
+    sizeBytes?: number | null;
     /**
      *
      * @type {string}
@@ -114,10 +114,16 @@ export interface EmailProjection {
     inReplyTo?: string | null;
     /**
      *
-     * @type {number}
+     * @type {boolean}
      * @memberof EmailProjection
      */
-    sizeBytes?: number | null;
+    favourite?: boolean | null;
+    /**
+     *
+     * @type {Sender}
+     * @memberof EmailProjection
+     */
+    sender?: Sender | null;
     /**
      *
      * @type {string}
@@ -126,22 +132,16 @@ export interface EmailProjection {
     domainId?: string | null;
     /**
      *
-     * @type {boolean}
-     * @memberof EmailProjection
-     */
-    read: boolean;
-    /**
-     *
      * @type {Array<string>}
      * @memberof EmailProjection
      */
     bodyPartContentTypes?: Array<string> | null;
     /**
      *
-     * @type {boolean}
+     * @type {string}
      * @memberof EmailProjection
      */
-    favourite?: boolean | null;
+    bodyMD5Hash?: string | null;
     /**
      *
      * @type {string}
@@ -156,16 +156,16 @@ export interface EmailProjection {
     imapUid?: number | null;
     /**
      *
-     * @type {string}
-     * @memberof EmailProjection
-     */
-    bodyMD5Hash?: string | null;
-    /**
-     *
      * @type {boolean}
      * @memberof EmailProjection
      */
     teamAccess: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailProjection
+     */
+    id: string;
 }
 export declare function EmailProjectionFromJSON(json: any): EmailProjection;
 export declare function EmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailProjection;

@@ -42,11 +42,11 @@ export interface AddContactsToGroupRequest {
   updateGroupContacts: UpdateGroupContacts;
 }
 
-export interface CreateGroupRequest {
+export interface CreateGroup1Request {
   createGroupOptions: CreateGroupOptions;
 }
 
-export interface DeleteGroupRequest {
+export interface DeleteGroup1Request {
   groupId: string;
 }
 
@@ -58,7 +58,7 @@ export interface GetAllGroupsRequest {
   before?: Date;
 }
 
-export interface GetGroupRequest {
+export interface GetGroup1Request {
   groupId: string;
 }
 
@@ -157,8 +157,8 @@ export class GroupControllerApi extends runtime.BaseAPI {
   /**
    * Create a group
    */
-  async createGroupRaw(
-    requestParameters: CreateGroupRequest,
+  async createGroup1Raw(
+    requestParameters: CreateGroup1Request,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<GroupDto>> {
     if (
@@ -167,7 +167,7 @@ export class GroupControllerApi extends runtime.BaseAPI {
     ) {
       throw new runtime.RequiredError(
         'createGroupOptions',
-        'Required parameter requestParameters.createGroupOptions was null or undefined when calling createGroup.'
+        'Required parameter requestParameters.createGroupOptions was null or undefined when calling createGroup1.'
       );
     }
 
@@ -200,11 +200,11 @@ export class GroupControllerApi extends runtime.BaseAPI {
   /**
    * Create a group
    */
-  async createGroup(
-    requestParameters: CreateGroupRequest,
+  async createGroup1(
+    requestParameters: CreateGroup1Request,
     initOverrides?: RequestInit
   ): Promise<GroupDto> {
-    const response = await this.createGroupRaw(
+    const response = await this.createGroup1Raw(
       requestParameters,
       initOverrides
     );
@@ -214,8 +214,8 @@ export class GroupControllerApi extends runtime.BaseAPI {
   /**
    * Delete group
    */
-  async deleteGroupRaw(
-    requestParameters: DeleteGroupRequest,
+  async deleteGroup1Raw(
+    requestParameters: DeleteGroup1Request,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<void>> {
     if (
@@ -224,7 +224,7 @@ export class GroupControllerApi extends runtime.BaseAPI {
     ) {
       throw new runtime.RequiredError(
         'groupId',
-        'Required parameter requestParameters.groupId was null or undefined when calling deleteGroup.'
+        'Required parameter requestParameters.groupId was null or undefined when calling deleteGroup1.'
       );
     }
 
@@ -255,11 +255,11 @@ export class GroupControllerApi extends runtime.BaseAPI {
   /**
    * Delete group
    */
-  async deleteGroup(
-    requestParameters: DeleteGroupRequest,
+  async deleteGroup1(
+    requestParameters: DeleteGroup1Request,
     initOverrides?: RequestInit
   ): Promise<void> {
-    await this.deleteGroupRaw(requestParameters, initOverrides);
+    await this.deleteGroup1Raw(requestParameters, initOverrides);
   }
 
   /**
@@ -331,8 +331,8 @@ export class GroupControllerApi extends runtime.BaseAPI {
   /**
    * Get group
    */
-  async getGroupRaw(
-    requestParameters: GetGroupRequest,
+  async getGroup1Raw(
+    requestParameters: GetGroup1Request,
     initOverrides?: RequestInit
   ): Promise<runtime.ApiResponse<GroupDto>> {
     if (
@@ -341,7 +341,7 @@ export class GroupControllerApi extends runtime.BaseAPI {
     ) {
       throw new runtime.RequiredError(
         'groupId',
-        'Required parameter requestParameters.groupId was null or undefined when calling getGroup.'
+        'Required parameter requestParameters.groupId was null or undefined when calling getGroup1.'
       );
     }
 
@@ -374,11 +374,11 @@ export class GroupControllerApi extends runtime.BaseAPI {
   /**
    * Get group
    */
-  async getGroup(
-    requestParameters: GetGroupRequest,
+  async getGroup1(
+    requestParameters: GetGroup1Request,
     initOverrides?: RequestInit
   ): Promise<GroupDto> {
-    const response = await this.getGroupRaw(requestParameters, initOverrides);
+    const response = await this.getGroup1Raw(requestParameters, initOverrides);
     return await response.value();
   }
 

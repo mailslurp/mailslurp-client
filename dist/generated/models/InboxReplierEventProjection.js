@@ -33,16 +33,16 @@ function InboxReplierEventProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
-        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        recipients: !(0, runtime_1.exists)(json, 'recipients') ? undefined : json['recipients'],
         status: !(0, runtime_1.exists)(json, 'status') ? undefined : json['status'],
         userId: !(0, runtime_1.exists)(json, 'userId') ? undefined : json['userId'],
-        emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        recipients: !(0, runtime_1.exists)(json, 'recipients') ? undefined : json['recipients'],
         createdAt: new Date(json['createdAt']),
+        emailId: !(0, runtime_1.exists)(json, 'emailId') ? undefined : json['emailId'],
         sentId: !(0, runtime_1.exists)(json, 'sentId') ? undefined : json['sentId'],
         replierId: !(0, runtime_1.exists)(json, 'replierId') ? undefined : json['replierId'],
+        message: !(0, runtime_1.exists)(json, 'message') ? undefined : json['message'],
+        id: !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
     };
 }
 exports.InboxReplierEventProjectionFromJSONTyped = InboxReplierEventProjectionFromJSONTyped;
@@ -54,16 +54,16 @@ function InboxReplierEventProjectionToJSON(value) {
         return null;
     }
     return {
-        message: value.message,
-        id: value.id,
-        recipients: value.recipients,
         status: value.status,
         userId: value.userId,
-        emailId: value.emailId,
         inboxId: value.inboxId,
+        recipients: value.recipients,
         createdAt: value.createdAt.toISOString(),
+        emailId: value.emailId,
         sentId: value.sentId,
         replierId: value.replierId,
+        message: value.message,
+        id: value.id,
     };
 }
 exports.InboxReplierEventProjectionToJSON = InboxReplierEventProjectionToJSON;

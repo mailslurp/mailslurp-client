@@ -24,24 +24,6 @@ export interface InboxReplierEventProjection {
    * @type {string}
    * @memberof InboxReplierEventProjection
    */
-  message?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
-  id?: string | null;
-  /**
-   *
-   * @type {Array<string>}
-   * @memberof InboxReplierEventProjection
-   */
-  recipients?: Array<string> | null;
-  /**
-   *
-   * @type {string}
-   * @memberof InboxReplierEventProjection
-   */
   status?: InboxReplierEventProjectionStatusEnum;
   /**
    *
@@ -54,19 +36,25 @@ export interface InboxReplierEventProjection {
    * @type {string}
    * @memberof InboxReplierEventProjection
    */
-  emailId?: string | null;
+  inboxId?: string | null;
   /**
    *
-   * @type {string}
+   * @type {Array<string>}
    * @memberof InboxReplierEventProjection
    */
-  inboxId?: string | null;
+  recipients?: Array<string> | null;
   /**
    *
    * @type {Date}
    * @memberof InboxReplierEventProjection
    */
   createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  emailId?: string | null;
   /**
    *
    * @type {string}
@@ -79,6 +67,18 @@ export interface InboxReplierEventProjection {
    * @memberof InboxReplierEventProjection
    */
   replierId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  message?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxReplierEventProjection
+   */
+  id?: string | null;
 }
 
 /**
@@ -104,16 +104,16 @@ export function InboxReplierEventProjectionFromJSONTyped(
     return json;
   }
   return {
-    message: !exists(json, 'message') ? undefined : json['message'],
-    id: !exists(json, 'id') ? undefined : json['id'],
-    recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
     status: !exists(json, 'status') ? undefined : json['status'],
     userId: !exists(json, 'userId') ? undefined : json['userId'],
-    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    recipients: !exists(json, 'recipients') ? undefined : json['recipients'],
     createdAt: new Date(json['createdAt']),
+    emailId: !exists(json, 'emailId') ? undefined : json['emailId'],
     sentId: !exists(json, 'sentId') ? undefined : json['sentId'],
     replierId: !exists(json, 'replierId') ? undefined : json['replierId'],
+    message: !exists(json, 'message') ? undefined : json['message'],
+    id: !exists(json, 'id') ? undefined : json['id'],
   };
 }
 
@@ -127,15 +127,15 @@ export function InboxReplierEventProjectionToJSON(
     return null;
   }
   return {
-    message: value.message,
-    id: value.id,
-    recipients: value.recipients,
     status: value.status,
     userId: value.userId,
-    emailId: value.emailId,
     inboxId: value.inboxId,
+    recipients: value.recipients,
     createdAt: value.createdAt.toISOString(),
+    emailId: value.emailId,
     sentId: value.sentId,
     replierId: value.replierId,
+    message: value.message,
+    id: value.id,
   };
 }

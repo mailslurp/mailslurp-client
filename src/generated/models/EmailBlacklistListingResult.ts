@@ -43,6 +43,35 @@ export interface EmailBlacklistListingResult {
    * @memberof EmailBlacklistListingResult
    */
   responseMessages: Array<string>;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailBlacklistListingResult
+   */
+  status: EmailBlacklistListingResultStatusEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailBlacklistListingResult
+   */
+  errorMessage?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof EmailBlacklistListingResult
+   */
+  provider: string;
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum EmailBlacklistListingResultStatusEnum {
+  LISTED = 'LISTED',
+  NOT_LISTED = 'NOT_LISTED',
+  ERROR = 'ERROR',
+  NOT_CHECKED = 'NOT_CHECKED',
 }
 
 export function EmailBlacklistListingResultFromJSON(
@@ -63,6 +92,11 @@ export function EmailBlacklistListingResultFromJSONTyped(
     listed: json['listed'],
     responseCodes: json['responseCodes'],
     responseMessages: json['responseMessages'],
+    status: json['status'],
+    errorMessage: !exists(json, 'errorMessage')
+      ? undefined
+      : json['errorMessage'],
+    provider: json['provider'],
   };
 }
 
@@ -80,5 +114,8 @@ export function EmailBlacklistListingResultToJSON(
     listed: value.listed,
     responseCodes: value.responseCodes,
     responseMessages: value.responseMessages,
+    status: value.status,
+    errorMessage: value.errorMessage,
+    provider: value.provider,
   };
 }

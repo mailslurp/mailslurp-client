@@ -51,12 +51,6 @@ export interface PageAITransformMappingProjection {
      * @type {number}
      * @memberof PageAITransformMappingProjection
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageAITransformMappingProjection
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageAITransformMappingProjection {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageAITransformMappingProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageAITransformMappingProjection
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageAITransformMappingProjection
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

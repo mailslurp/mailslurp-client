@@ -51,12 +51,6 @@ export interface PageConnectorEvents {
      * @type {number}
      * @memberof PageConnectorEvents
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageConnectorEvents
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageConnectorEvents {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageConnectorEvents
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageConnectorEvents
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageConnectorEvents
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

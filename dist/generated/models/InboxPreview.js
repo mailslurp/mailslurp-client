@@ -35,6 +35,7 @@ var InboxPreviewFunctionsAsEnum;
     InboxPreviewFunctionsAsEnum["CATCH_ALL"] = "CATCH_ALL";
     InboxPreviewFunctionsAsEnum["CONNECTOR"] = "CONNECTOR";
     InboxPreviewFunctionsAsEnum["ACCOUNT"] = "ACCOUNT";
+    InboxPreviewFunctionsAsEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
     InboxPreviewFunctionsAsEnum["GUEST"] = "GUEST";
     InboxPreviewFunctionsAsEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(InboxPreviewFunctionsAsEnum = exports.InboxPreviewFunctionsAsEnum || (exports.InboxPreviewFunctionsAsEnum = {}));
@@ -48,6 +49,7 @@ var InboxPreviewAccountRegionEnum;
     InboxPreviewAccountRegionEnum["US_EAST_1_ACCOUNT_STAGING"] = "US_EAST_1_ACCOUNT_STAGING";
     InboxPreviewAccountRegionEnum["EU_WEST_1_ACCOUNT_STAGING"] = "EU_WEST_1_ACCOUNT_STAGING";
     InboxPreviewAccountRegionEnum["US_WEST_2_ACCOUNT_SES_1"] = "US_WEST_2_ACCOUNT_SES_1";
+    InboxPreviewAccountRegionEnum["US_EAST_1_ACCOUNT_SES_1"] = "US_EAST_1_ACCOUNT_SES_1";
     InboxPreviewAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_1"] = "EU_WEST_1_ACCOUNT_SES_1";
     InboxPreviewAccountRegionEnum["US_WEST_2_ACCOUNT_SES_2"] = "US_WEST_2_ACCOUNT_SES_2";
     InboxPreviewAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_2"] = "EU_WEST_1_ACCOUNT_SES_2";
@@ -88,6 +90,9 @@ function InboxPreviewFromJSONTyped(json, ignoreDiscriminator) {
         accountRegion: !(0, runtime_1.exists)(json, 'accountRegion')
             ? undefined
             : json['accountRegion'],
+        mergedIntoInboxId: !(0, runtime_1.exists)(json, 'mergedIntoInboxId')
+            ? undefined
+            : json['mergedIntoInboxId'],
     };
 }
 exports.InboxPreviewFromJSONTyped = InboxPreviewFromJSONTyped;
@@ -118,6 +123,7 @@ function InboxPreviewToJSON(value) {
         userId: value.userId,
         description: value.description,
         accountRegion: value.accountRegion,
+        mergedIntoInboxId: value.mergedIntoInboxId,
     };
 }
 exports.InboxPreviewToJSON = InboxPreviewToJSON;

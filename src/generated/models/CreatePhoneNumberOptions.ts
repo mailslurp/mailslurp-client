@@ -73,6 +73,12 @@ export interface CreatePhoneNumberOptions {
    * @memberof CreatePhoneNumberOptions
    */
   phoneLineFilter?: CreatePhoneNumberOptionsPhoneLineFilterEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof CreatePhoneNumberOptions
+   */
+  environmentAccountId?: string | null;
 }
 
 /**
@@ -160,6 +166,9 @@ export function CreatePhoneNumberOptionsFromJSONTyped(
     phoneLineFilter: !exists(json, 'phoneLineFilter')
       ? undefined
       : json['phoneLineFilter'],
+    environmentAccountId: !exists(json, 'environmentAccountId')
+      ? undefined
+      : json['environmentAccountId'],
   };
 }
 
@@ -182,5 +191,6 @@ export function CreatePhoneNumberOptionsToJSON(
     phoneNumberVariant: value.phoneNumberVariant,
     phoneProvider: value.phoneProvider,
     phoneLineFilter: value.phoneLineFilter,
+    environmentAccountId: value.environmentAccountId,
   };
 }

@@ -21,7 +21,7 @@ import {
 } from './';
 
 /**
- * Options for the email to be sent
+ * Updated options for the email draft
  * @export
  * @interface SendEmailOptions
  */
@@ -176,6 +176,12 @@ export interface SendEmailOptions {
    * @memberof SendEmailOptions
    */
   bodyParts?: Array<SendEmailBodyPart> | null;
+  /**
+   * Optional inbox ID to send from. If omitted, source inbox selection is controlled by the endpoint path or query parameters.
+   * @type {string}
+   * @memberof SendEmailOptions
+   */
+  inboxId?: string | null;
 }
 
 /**
@@ -252,6 +258,7 @@ export function SendEmailOptionsFromJSONTyped(
       : json['bodyParts'] === null
       ? null
       : (json['bodyParts'] as Array<any>).map(SendEmailBodyPartFromJSON),
+    inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
   };
 }
 
@@ -293,5 +300,6 @@ export function SendEmailOptionsToJSON(value?: SendEmailOptions | null): any {
         : value.bodyParts === null
         ? null
         : (value.bodyParts as Array<any>).map(SendEmailBodyPartToJSON),
+    inboxId: value.inboxId,
   };
 }

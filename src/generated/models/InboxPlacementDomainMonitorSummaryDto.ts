@@ -141,6 +141,30 @@ export interface InboxPlacementDomainMonitorSummaryDto {
   blacklistListed: boolean;
   /**
    *
+   * @type {string}
+   * @memberof InboxPlacementDomainMonitorSummaryDto
+   */
+  blacklistStatus: InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxPlacementDomainMonitorSummaryDto
+   */
+  observedSendingIp?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxPlacementDomainMonitorSummaryDto
+   */
+  scoreVersion: string;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxPlacementDomainMonitorSummaryDto
+   */
+  scoreScope: string;
+  /**
+   *
    * @type {Array<string>}
    * @memberof InboxPlacementDomainMonitorSummaryDto
    */
@@ -188,6 +212,7 @@ export enum InboxPlacementDomainMonitorSummaryDtoStateEnum {
 export enum InboxPlacementDomainMonitorSummaryDtoSourceEnum {
   NONE = 'NONE',
   QUICK_CHECK = 'QUICK_CHECK',
+  OBSERVED_MESSAGE = 'OBSERVED_MESSAGE',
   PERSISTENT_MONITOR = 'PERSISTENT_MONITOR',
 }
 /**
@@ -199,6 +224,16 @@ export enum InboxPlacementDomainMonitorSummaryDtoStatusEnum {
   DEGRADED = 'DEGRADED',
   CRITICAL = 'CRITICAL',
   FAILED = 'FAILED',
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export enum InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum {
+  LISTED = 'LISTED',
+  NOT_LISTED = 'NOT_LISTED',
+  ERROR = 'ERROR',
+  NOT_CHECKED = 'NOT_CHECKED',
 }
 
 export function InboxPlacementDomainMonitorSummaryDtoFromJSON(
@@ -243,6 +278,12 @@ export function InboxPlacementDomainMonitorSummaryDtoFromJSONTyped(
     blacklistChecked: json['blacklistChecked'],
     blacklistOk: json['blacklistOk'],
     blacklistListed: json['blacklistListed'],
+    blacklistStatus: json['blacklistStatus'],
+    observedSendingIp: !exists(json, 'observedSendingIp')
+      ? undefined
+      : json['observedSendingIp'],
+    scoreVersion: json['scoreVersion'],
+    scoreScope: json['scoreScope'],
     insights: json['insights'],
     errorMessage: !exists(json, 'errorMessage')
       ? undefined
@@ -287,6 +328,10 @@ export function InboxPlacementDomainMonitorSummaryDtoToJSON(
     blacklistChecked: value.blacklistChecked,
     blacklistOk: value.blacklistOk,
     blacklistListed: value.blacklistListed,
+    blacklistStatus: value.blacklistStatus,
+    observedSendingIp: value.observedSendingIp,
+    scoreVersion: value.scoreVersion,
+    scoreScope: value.scoreScope,
     insights: value.insights,
     errorMessage: value.errorMessage,
     monitorId: value.monitorId,

@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  DomainMonitorRunEvidenceDto,
+  DomainMonitorRunEvidenceDtoFromJSON,
+  DomainMonitorRunEvidenceDtoFromJSONTyped,
+  DomainMonitorRunEvidenceDtoToJSON,
+} from './';
+
 /**
  *
  * @export
@@ -147,6 +154,12 @@ export interface DomainMonitorRunDto {
   blacklistListed: boolean;
   /**
    *
+   * @type {DomainMonitorRunEvidenceDto}
+   * @memberof DomainMonitorRunDto
+   */
+  evidence?: DomainMonitorRunEvidenceDto | null;
+  /**
+   *
    * @type {Array<string>}
    * @memberof DomainMonitorRunDto
    */
@@ -225,6 +238,9 @@ export function DomainMonitorRunDtoFromJSONTyped(
     blacklistChecked: json['blacklistChecked'],
     blacklistOk: json['blacklistOk'],
     blacklistListed: json['blacklistListed'],
+    evidence: !exists(json, 'evidence')
+      ? undefined
+      : DomainMonitorRunEvidenceDtoFromJSON(json['evidence']),
     insights: json['insights'],
     errorMessage: !exists(json, 'errorMessage')
       ? undefined
@@ -265,6 +281,7 @@ export function DomainMonitorRunDtoToJSON(
     blacklistChecked: value.blacklistChecked,
     blacklistOk: value.blacklistOk,
     blacklistListed: value.blacklistListed,
+    evidence: DomainMonitorRunEvidenceDtoToJSON(value.evidence),
     insights: value.insights,
     errorMessage: value.errorMessage,
     createdAt: value.createdAt.toISOString(),

@@ -51,12 +51,6 @@ export interface PageEntityEventItems {
      * @type {number}
      * @memberof PageEntityEventItems
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageEntityEventItems
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageEntityEventItems {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageEntityEventItems
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageEntityEventItems
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageEntityEventItems
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

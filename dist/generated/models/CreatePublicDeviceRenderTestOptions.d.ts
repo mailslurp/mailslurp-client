@@ -21,6 +21,26 @@ export interface CreatePublicDeviceRenderTestOptions {
      * @memberof CreatePublicDeviceRenderTestOptions
      */
     captchaToken?: string | null;
+    /**
+     * One exact device preview target key. Omit only for backwards compatibility; the service still chooses one target.
+     * @type {string}
+     * @memberof CreatePublicDeviceRenderTestOptions
+     */
+    target?: string | null;
+    /**
+     * Public preview workflow to create.
+     * @type {string}
+     * @memberof CreatePublicDeviceRenderTestOptions
+     */
+    previewMode: CreatePublicDeviceRenderTestOptionsPreviewModeEnum;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum CreatePublicDeviceRenderTestOptionsPreviewModeEnum {
+    DEVICE_RENDER = "DEVICE_RENDER",
+    LIGHT_DARK = "LIGHT_DARK"
 }
 export declare function CreatePublicDeviceRenderTestOptionsFromJSON(json: any): CreatePublicDeviceRenderTestOptions;
 export declare function CreatePublicDeviceRenderTestOptionsFromJSONTyped(json: any, ignoreDiscriminator: boolean): CreatePublicDeviceRenderTestOptions;

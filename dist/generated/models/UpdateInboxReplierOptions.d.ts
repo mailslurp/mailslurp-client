@@ -17,11 +17,11 @@ import { InboxAutomationMatchOptions } from './';
  */
 export interface UpdateInboxReplierOptions {
     /**
-     * Inbox ID to attach replier to
+     * Inbox ID to attach replier to. Set null for a global replier.
      * @type {string}
      * @memberof UpdateInboxReplierOptions
      */
-    inboxId: string;
+    inboxId: string | null;
     /**
      * Name for replier
      * @type {string}
@@ -108,6 +108,12 @@ export interface UpdateInboxReplierOptions {
      * @memberof UpdateInboxReplierOptions
      */
     matchOptions?: InboxAutomationMatchOptions | null;
+    /**
+     * Optional attachment IDs to include with every automated reply
+     * @type {Array<string>}
+     * @memberof UpdateInboxReplierOptions
+     */
+    attachments?: Array<string> | null;
 }
 /**
  * @export

@@ -20,7 +20,13 @@ export interface PhoneMessageThreadItemProjection {
      * @type {string}
      * @memberof PhoneMessageThreadItemProjection
      */
-    id: string;
+    fromPhoneNumber: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneMessageThreadItemProjection
+     */
+    toPhoneNumber: string;
     /**
      *
      * @type {string}
@@ -50,13 +56,7 @@ export interface PhoneMessageThreadItemProjection {
      * @type {string}
      * @memberof PhoneMessageThreadItemProjection
      */
-    fromPhoneNumber: string;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneMessageThreadItemProjection
-     */
-    toPhoneNumber: string;
+    id: string;
 }
 /**
  * @export

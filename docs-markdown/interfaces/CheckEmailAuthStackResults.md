@@ -14,6 +14,7 @@ CheckEmailAuthStackResults
 
 ### Properties
 
+- [advisoryChecks](CheckEmailAuthStackResults.md#advisorychecks)
 - [bimi](CheckEmailAuthStackResults.md#bimi)
 - [dkim](CheckEmailAuthStackResults.md#dkim)
 - [dmarc](CheckEmailAuthStackResults.md#dmarc)
@@ -25,6 +26,8 @@ CheckEmailAuthStackResults
 - [mtaSts](CheckEmailAuthStackResults.md#mtasts)
 - [mx](CheckEmailAuthStackResults.md#mx)
 - [passingChecks](CheckEmailAuthStackResults.md#passingchecks)
+- [scoreScope](CheckEmailAuthStackResults.md#scorescope)
+- [scoreVersion](CheckEmailAuthStackResults.md#scoreversion)
 - [spf](CheckEmailAuthStackResults.md#spf)
 - [status](CheckEmailAuthStackResults.md#status)
 - [tlsReporting](CheckEmailAuthStackResults.md#tlsreporting)
@@ -32,6 +35,16 @@ CheckEmailAuthStackResults
 - [warnings](CheckEmailAuthStackResults.md#warnings)
 
 ## Properties
+
+### advisoryChecks
+
+• **advisoryChecks**: `string`[]
+
+**`Memberof`**
+
+CheckEmailAuthStackResults
+
+___
 
 ### bimi
 
@@ -136,6 +149,26 @@ ___
 ### passingChecks
 
 • **passingChecks**: `number`
+
+**`Memberof`**
+
+CheckEmailAuthStackResults
+
+___
+
+### scoreScope
+
+• **scoreScope**: `string`
+
+**`Memberof`**
+
+CheckEmailAuthStackResults
+
+___
+
+### scoreVersion
+
+• **scoreVersion**: `string`
 
 **`Memberof`**
 

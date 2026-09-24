@@ -20,19 +20,13 @@ export interface TotpDeviceProjection {
      * @type {string}
      * @memberof TotpDeviceProjection
      */
-    name?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof TotpDeviceProjection
-     */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof TotpDeviceProjection
-     */
     algorithm?: string | null;
+    /**
+     *
+     * @type {number}
+     * @memberof TotpDeviceProjection
+     */
+    digits?: number | null;
     /**
      *
      * @type {number}
@@ -56,13 +50,13 @@ export interface TotpDeviceProjection {
      * @type {Date}
      * @memberof TotpDeviceProjection
      */
-    expiresAt?: Date | null;
+    updatedAt: Date;
     /**
      *
      * @type {Date}
      * @memberof TotpDeviceProjection
      */
-    updatedAt: Date;
+    expiresAt?: Date | null;
     /**
      *
      * @type {string}
@@ -71,10 +65,16 @@ export interface TotpDeviceProjection {
     issuer?: string | null;
     /**
      *
-     * @type {number}
+     * @type {string}
      * @memberof TotpDeviceProjection
      */
-    digits?: number | null;
+    name?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof TotpDeviceProjection
+     */
+    id: string;
 }
 export declare function TotpDeviceProjectionFromJSON(json: any): TotpDeviceProjection;
 export declare function TotpDeviceProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): TotpDeviceProjection;

@@ -51,12 +51,6 @@ export interface PageScheduledJobs {
      * @type {number}
      * @memberof PageScheduledJobs
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageScheduledJobs
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageScheduledJobs {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageScheduledJobs
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageScheduledJobs
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageScheduledJobs
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

@@ -27,6 +27,9 @@ function CheckEmailBlacklistOptionsFromJSONTyped(json, ignoreDiscriminator) {
         domain: !(0, runtime_1.exists)(json, 'domain') ? undefined : json['domain'],
         ipAddress: !(0, runtime_1.exists)(json, 'ipAddress') ? undefined : json['ipAddress'],
         mxHost: !(0, runtime_1.exists)(json, 'mxHost') ? undefined : json['mxHost'],
+        includeDomainInfrastructure: !(0, runtime_1.exists)(json, 'includeDomainInfrastructure')
+            ? undefined
+            : json['includeDomainInfrastructure'],
         captchaToken: !(0, runtime_1.exists)(json, 'captchaToken')
             ? undefined
             : json['captchaToken'],
@@ -44,6 +47,7 @@ function CheckEmailBlacklistOptionsToJSON(value) {
         domain: value.domain,
         ipAddress: value.ipAddress,
         mxHost: value.mxHost,
+        includeDomainInfrastructure: value.includeDomainInfrastructure,
         captchaToken: value.captchaToken,
     };
 }

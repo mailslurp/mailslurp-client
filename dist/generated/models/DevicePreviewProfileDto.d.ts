@@ -44,7 +44,13 @@ export interface DevicePreviewProfileDto {
      * @type {Array<string>}
      * @memberof DevicePreviewProfileDto
      */
-    nativeTargets?: Array<string> | null;
+    targets?: Array<string> | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DevicePreviewProfileDto
+     */
+    allTargets?: boolean | null;
     /**
      *
      * @type {boolean}

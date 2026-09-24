@@ -13,6 +13,7 @@
 - [CATCH\_ALL](SearchInboxesOptionsInboxFunctionEnum.md#catch_all)
 - [CONNECTOR](SearchInboxesOptionsInboxFunctionEnum.md#connector)
 - [GUEST](SearchInboxesOptionsInboxFunctionEnum.md#guest)
+- [GUIDED\_TOUR](SearchInboxesOptionsInboxFunctionEnum.md#guided_tour)
 - [OAUTH\_CONNECTION\_GMAIL](SearchInboxesOptionsInboxFunctionEnum.md#oauth_connection_gmail)
 - [THREAD](SearchInboxesOptionsInboxFunctionEnum.md#thread)
 
@@ -45,6 +46,12 @@ ___
 ### GUEST
 
 • **GUEST** = ``"GUEST"``
+
+___
+
+### GUIDED\_TOUR
+
+• **GUIDED\_TOUR** = ``"GUIDED_TOUR"``
 
 ___
 

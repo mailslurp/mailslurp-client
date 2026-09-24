@@ -99,6 +99,9 @@ function CreatePhoneNumberOptionsFromJSONTyped(json, ignoreDiscriminator) {
         phoneLineFilter: !(0, runtime_1.exists)(json, 'phoneLineFilter')
             ? undefined
             : json['phoneLineFilter'],
+        environmentAccountId: !(0, runtime_1.exists)(json, 'environmentAccountId')
+            ? undefined
+            : json['environmentAccountId'],
     };
 }
 exports.CreatePhoneNumberOptionsFromJSONTyped = CreatePhoneNumberOptionsFromJSONTyped;
@@ -119,6 +122,7 @@ function CreatePhoneNumberOptionsToJSON(value) {
         phoneNumberVariant: value.phoneNumberVariant,
         phoneProvider: value.phoneProvider,
         phoneLineFilter: value.phoneLineFilter,
+        environmentAccountId: value.environmentAccountId,
     };
 }
 exports.CreatePhoneNumberOptionsToJSON = CreatePhoneNumberOptionsToJSON;

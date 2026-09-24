@@ -24,12 +24,6 @@ export interface ContactProjection {
    * @type {string}
    * @memberof ContactProjection
    */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof ContactProjection
-   */
   groupId?: string | null;
   /**
    *
@@ -51,6 +45,12 @@ export interface ContactProjection {
   emailAddresses?: Array<string> | null;
   /**
    *
+   * @type {boolean}
+   * @memberof ContactProjection
+   */
+  optOut?: boolean | null;
+  /**
+   *
    * @type {string}
    * @memberof ContactProjection
    */
@@ -69,10 +69,10 @@ export interface ContactProjection {
   company?: string | null;
   /**
    *
-   * @type {boolean}
+   * @type {string}
    * @memberof ContactProjection
    */
-  optOut?: boolean | null;
+  id: string;
 }
 
 export function ContactProjectionFromJSON(json: any): ContactProjection {
@@ -87,7 +87,6 @@ export function ContactProjectionFromJSONTyped(
     return json;
   }
   return {
-    id: json['id'],
     groupId: !exists(json, 'groupId') ? undefined : json['groupId'],
     createdAt: new Date(json['createdAt']),
     emailAddress: !exists(json, 'emailAddress')
@@ -96,10 +95,11 @@ export function ContactProjectionFromJSONTyped(
     emailAddresses: !exists(json, 'emailAddresses')
       ? undefined
       : json['emailAddresses'],
+    optOut: !exists(json, 'optOut') ? undefined : json['optOut'],
     firstName: !exists(json, 'firstName') ? undefined : json['firstName'],
     lastName: !exists(json, 'lastName') ? undefined : json['lastName'],
     company: !exists(json, 'company') ? undefined : json['company'],
-    optOut: !exists(json, 'optOut') ? undefined : json['optOut'],
+    id: json['id'],
   };
 }
 
@@ -111,14 +111,14 @@ export function ContactProjectionToJSON(value?: ContactProjection | null): any {
     return null;
   }
   return {
-    id: value.id,
     groupId: value.groupId,
     createdAt: value.createdAt.toISOString(),
     emailAddress: value.emailAddress,
     emailAddresses: value.emailAddresses,
+    optOut: value.optOut,
     firstName: value.firstName,
     lastName: value.lastName,
     company: value.company,
-    optOut: value.optOut,
+    id: value.id,
   };
 }

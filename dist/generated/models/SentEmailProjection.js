@@ -28,16 +28,13 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         id: json['id'],
         threadId: !(0, runtime_1.exists)(json, 'threadId') ? undefined : json['threadId'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        sender: !(0, runtime_1.exists)(json, 'sender')
-            ? undefined
-            : (0, _1.SenderFromJSON)(json['sender']),
+        userId: json['userId'],
+        inboxId: json['inboxId'],
         recipients: !(0, runtime_1.exists)(json, 'recipients')
             ? undefined
             : (0, _1.EmailRecipientsFromJSON)(json['recipients']),
-        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        userId: json['userId'],
-        inboxId: json['inboxId'],
         attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
+        subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
         textExcerpt: !(0, runtime_1.exists)(json, 'textExcerpt') ? undefined : json['textExcerpt'],
         bodyExcerpt: !(0, runtime_1.exists)(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
         to: !(0, runtime_1.exists)(json, 'to') ? undefined : json['to'],
@@ -46,8 +43,11 @@ function SentEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         messageId: !(0, runtime_1.exists)(json, 'messageId') ? undefined : json['messageId'],
         inReplyTo: !(0, runtime_1.exists)(json, 'inReplyTo') ? undefined : json['inReplyTo'],
-        virtualSend: json['virtualSend'],
+        sender: !(0, runtime_1.exists)(json, 'sender')
+            ? undefined
+            : (0, _1.SenderFromJSON)(json['sender']),
         bodyMD5Hash: !(0, runtime_1.exists)(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+        virtualSend: json['virtualSend'],
     };
 }
 exports.SentEmailProjectionFromJSONTyped = SentEmailProjectionFromJSONTyped;
@@ -62,12 +62,11 @@ function SentEmailProjectionToJSON(value) {
         id: value.id,
         threadId: value.threadId,
         from: value.from,
-        sender: (0, _1.SenderToJSON)(value.sender),
-        recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
-        subject: value.subject,
         userId: value.userId,
         inboxId: value.inboxId,
+        recipients: (0, _1.EmailRecipientsToJSON)(value.recipients),
         attachments: value.attachments,
+        subject: value.subject,
         textExcerpt: value.textExcerpt,
         bodyExcerpt: value.bodyExcerpt,
         to: value.to,
@@ -76,8 +75,9 @@ function SentEmailProjectionToJSON(value) {
         bcc: value.bcc,
         messageId: value.messageId,
         inReplyTo: value.inReplyTo,
-        virtualSend: value.virtualSend,
+        sender: (0, _1.SenderToJSON)(value.sender),
         bodyMD5Hash: value.bodyMD5Hash,
+        virtualSend: value.virtualSend,
     };
 }
 exports.SentEmailProjectionToJSON = SentEmailProjectionToJSON;

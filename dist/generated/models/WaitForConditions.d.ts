@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { MatchOption } from './';
+import { AIMessageMatchOptions, MatchOption } from './';
 /**
  * Conditions to apply to emails that you are waiting for
  * @export
@@ -76,6 +76,12 @@ export interface WaitForConditions {
      * @memberof WaitForConditions
      */
     before?: Date | null;
+    /**
+     *
+     * @type {AIMessageMatchOptions}
+     * @memberof WaitForConditions
+     */
+    ai?: AIMessageMatchOptions | null;
 }
 /**
  * @export

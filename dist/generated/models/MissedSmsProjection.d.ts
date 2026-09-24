@@ -20,13 +20,13 @@ export interface MissedSmsProjection {
      * @type {string}
      * @memberof MissedSmsProjection
      */
-    id: string;
+    userId: string;
     /**
      *
      * @type {string}
      * @memberof MissedSmsProjection
      */
-    userId: string;
+    phoneNumber: string;
     /**
      *
      * @type {Date}
@@ -38,7 +38,7 @@ export interface MissedSmsProjection {
      * @type {string}
      * @memberof MissedSmsProjection
      */
-    phoneNumber: string;
+    fromNumber: string;
     /**
      *
      * @type {string}
@@ -50,7 +50,7 @@ export interface MissedSmsProjection {
      * @type {string}
      * @memberof MissedSmsProjection
      */
-    fromNumber: string;
+    id: string;
 }
 export declare function MissedSmsProjectionFromJSON(json: any): MissedSmsProjection;
 export declare function MissedSmsProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): MissedSmsProjection;

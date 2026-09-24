@@ -20,13 +20,7 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
-    name?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
-    id: string;
+    eventName?: WebhookProjectionEventNameEnum;
     /**
      *
      * @type {string}
@@ -38,19 +32,13 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
-    username?: string | null;
+    password?: string | null;
     /**
      *
      * @type {string}
      * @memberof WebhookProjection
      */
-    password?: string | null;
-    /**
-     *
-     * @type {boolean}
-     * @memberof WebhookProjection
-     */
-    enabled?: boolean | null;
+    username?: string | null;
     /**
      *
      * @type {string}
@@ -65,10 +53,10 @@ export interface WebhookProjection {
     inboxId?: string | null;
     /**
      *
-     * @type {string}
+     * @type {boolean}
      * @memberof WebhookProjection
      */
-    eventName?: WebhookProjectionEventNameEnum;
+    enabled?: boolean | null;
     /**
      *
      * @type {Date}
@@ -92,19 +80,31 @@ export interface WebhookProjection {
      * @type {string}
      * @memberof WebhookProjection
      */
-    aiTransformId?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof WebhookProjection
-     */
     phoneNumberId?: string | null;
     /**
      *
      * @type {string}
      * @memberof WebhookProjection
      */
+    aiTransformId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
     healthStatus?: WebhookProjectionHealthStatusEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    name?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookProjection
+     */
+    id: string;
 }
 /**
  * @export

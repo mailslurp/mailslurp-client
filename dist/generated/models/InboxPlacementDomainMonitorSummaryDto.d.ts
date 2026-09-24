@@ -137,6 +137,30 @@ export interface InboxPlacementDomainMonitorSummaryDto {
     blacklistListed: boolean;
     /**
      *
+     * @type {string}
+     * @memberof InboxPlacementDomainMonitorSummaryDto
+     */
+    blacklistStatus: InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxPlacementDomainMonitorSummaryDto
+     */
+    observedSendingIp?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxPlacementDomainMonitorSummaryDto
+     */
+    scoreVersion: string;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxPlacementDomainMonitorSummaryDto
+     */
+    scoreScope: string;
+    /**
+     *
      * @type {Array<string>}
      * @memberof InboxPlacementDomainMonitorSummaryDto
      */
@@ -183,6 +207,7 @@ export declare enum InboxPlacementDomainMonitorSummaryDtoStateEnum {
 export declare enum InboxPlacementDomainMonitorSummaryDtoSourceEnum {
     NONE = "NONE",
     QUICK_CHECK = "QUICK_CHECK",
+    OBSERVED_MESSAGE = "OBSERVED_MESSAGE",
     PERSISTENT_MONITOR = "PERSISTENT_MONITOR"
 }
 /**
@@ -194,6 +219,16 @@ export declare enum InboxPlacementDomainMonitorSummaryDtoStatusEnum {
     DEGRADED = "DEGRADED",
     CRITICAL = "CRITICAL",
     FAILED = "FAILED"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum {
+    LISTED = "LISTED",
+    NOT_LISTED = "NOT_LISTED",
+    ERROR = "ERROR",
+    NOT_CHECKED = "NOT_CHECKED"
 }
 export declare function InboxPlacementDomainMonitorSummaryDtoFromJSON(json: any): InboxPlacementDomainMonitorSummaryDto;
 export declare function InboxPlacementDomainMonitorSummaryDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): InboxPlacementDomainMonitorSummaryDto;

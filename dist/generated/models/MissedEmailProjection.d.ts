@@ -20,19 +20,7 @@ export interface MissedEmailProjection {
      * @type {string}
      * @memberof MissedEmailProjection
      */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof MissedEmailProjection
-     */
     from?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof MissedEmailProjection
-     */
-    subject?: string | null;
     /**
      *
      * @type {string}
@@ -41,10 +29,22 @@ export interface MissedEmailProjection {
     userId?: string | null;
     /**
      *
+     * @type {string}
+     * @memberof MissedEmailProjection
+     */
+    subject?: string | null;
+    /**
+     *
      * @type {Date}
      * @memberof MissedEmailProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof MissedEmailProjection
+     */
+    id: string;
 }
 export declare function MissedEmailProjectionFromJSON(json: any): MissedEmailProjection;
 export declare function MissedEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): MissedEmailProjection;

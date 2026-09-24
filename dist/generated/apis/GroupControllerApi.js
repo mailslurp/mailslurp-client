@@ -157,7 +157,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
     /**
      * Create a group
      */
-    GroupControllerApi.prototype.createGroupRaw = function (requestParameters, initOverrides) {
+    GroupControllerApi.prototype.createGroup1Raw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
@@ -165,7 +165,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
                     case 0:
                         if (requestParameters.createGroupOptions === null ||
                             requestParameters.createGroupOptions === undefined) {
-                            throw new runtime.RequiredError('createGroupOptions', 'Required parameter requestParameters.createGroupOptions was null or undefined when calling createGroup.');
+                            throw new runtime.RequiredError('createGroupOptions', 'Required parameter requestParameters.createGroupOptions was null or undefined when calling createGroup1.');
                         }
                         queryParameters = {};
                         headerParameters = {};
@@ -192,12 +192,12 @@ var GroupControllerApi = /** @class */ (function (_super) {
     /**
      * Create a group
      */
-    GroupControllerApi.prototype.createGroup = function (requestParameters, initOverrides) {
+    GroupControllerApi.prototype.createGroup1 = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.createGroupRaw(requestParameters, initOverrides)];
+                    case 0: return [4 /*yield*/, this.createGroup1Raw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -209,7 +209,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
     /**
      * Delete group
      */
-    GroupControllerApi.prototype.deleteGroupRaw = function (requestParameters, initOverrides) {
+    GroupControllerApi.prototype.deleteGroup1Raw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
@@ -217,7 +217,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
                     case 0:
                         if (requestParameters.groupId === null ||
                             requestParameters.groupId === undefined) {
-                            throw new runtime.RequiredError('groupId', 'Required parameter requestParameters.groupId was null or undefined when calling deleteGroup.');
+                            throw new runtime.RequiredError('groupId', 'Required parameter requestParameters.groupId was null or undefined when calling deleteGroup1.');
                         }
                         queryParameters = {};
                         headerParameters = {};
@@ -240,11 +240,11 @@ var GroupControllerApi = /** @class */ (function (_super) {
     /**
      * Delete group
      */
-    GroupControllerApi.prototype.deleteGroup = function (requestParameters, initOverrides) {
+    GroupControllerApi.prototype.deleteGroup1 = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.deleteGroupRaw(requestParameters, initOverrides)];
+                    case 0: return [4 /*yield*/, this.deleteGroup1Raw(requestParameters, initOverrides)];
                     case 1:
                         _a.sent();
                         return [2 /*return*/];
@@ -316,7 +316,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
     /**
      * Get group
      */
-    GroupControllerApi.prototype.getGroupRaw = function (requestParameters, initOverrides) {
+    GroupControllerApi.prototype.getGroup1Raw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var queryParameters, headerParameters, response;
             return __generator(this, function (_a) {
@@ -324,7 +324,7 @@ var GroupControllerApi = /** @class */ (function (_super) {
                     case 0:
                         if (requestParameters.groupId === null ||
                             requestParameters.groupId === undefined) {
-                            throw new runtime.RequiredError('groupId', 'Required parameter requestParameters.groupId was null or undefined when calling getGroup.');
+                            throw new runtime.RequiredError('groupId', 'Required parameter requestParameters.groupId was null or undefined when calling getGroup1.');
                         }
                         queryParameters = {};
                         headerParameters = {};
@@ -349,12 +349,12 @@ var GroupControllerApi = /** @class */ (function (_super) {
     /**
      * Get group
      */
-    GroupControllerApi.prototype.getGroup = function (requestParameters, initOverrides) {
+    GroupControllerApi.prototype.getGroup1 = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getGroupRaw(requestParameters, initOverrides)];
+                    case 0: return [4 /*yield*/, this.getGroup1Raw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

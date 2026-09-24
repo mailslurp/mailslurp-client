@@ -26,6 +26,7 @@ InboxDto
 - [id](InboxDto.md#id)
 - [inboxType](InboxDto.md#inboxtype)
 - [localPart](InboxDto.md#localpart)
+- [mergedIntoInboxId](InboxDto.md#mergedintoinboxid)
 - [name](InboxDto.md#name)
 - [readOnly](InboxDto.md#readonly)
 - [tags](InboxDto.md#tags)
@@ -171,6 +172,16 @@ ___
 • `Optional` **localPart**: `string`
 
 Local part of email addresses before the @ symbol
+
+**`Memberof`**
+
+InboxDto
+
+___
+
+### mergedIntoInboxId
+
+• `Optional` **mergedIntoInboxId**: `string`
 
 **`Memberof`**
 

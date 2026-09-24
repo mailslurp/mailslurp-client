@@ -24,12 +24,6 @@ export interface UnknownMissedEmailProjection {
    * @type {string}
    * @memberof UnknownMissedEmailProjection
    */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof UnknownMissedEmailProjection
-   */
   from?: string | null;
   /**
    *
@@ -49,6 +43,12 @@ export interface UnknownMissedEmailProjection {
    * @memberof UnknownMissedEmailProjection
    */
   createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof UnknownMissedEmailProjection
+   */
+  id: string;
 }
 
 export function UnknownMissedEmailProjectionFromJSON(
@@ -65,11 +65,11 @@ export function UnknownMissedEmailProjectionFromJSONTyped(
     return json;
   }
   return {
-    id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
     subject: !exists(json, 'subject') ? undefined : json['subject'],
     to: !exists(json, 'to') ? undefined : json['to'],
     createdAt: new Date(json['createdAt']),
+    id: json['id'],
   };
 }
 
@@ -83,10 +83,10 @@ export function UnknownMissedEmailProjectionToJSON(
     return null;
   }
   return {
-    id: value.id,
     from: value.from,
     subject: value.subject,
     to: value.to,
     createdAt: value.createdAt.toISOString(),
+    id: value.id,
   };
 }

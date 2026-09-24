@@ -24,18 +24,18 @@ function AttachmentProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
         contentLength: !(0, runtime_1.exists)(json, 'contentLength')
             ? undefined
             : json['contentLength'],
+        contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
         userId: json['userId'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
-        createdAt: new Date(json['createdAt']),
         contentId: !(0, runtime_1.exists)(json, 'contentId') ? undefined : json['contentId'],
+        createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
         attachmentId: json['attachmentId'],
-        contentType: !(0, runtime_1.exists)(json, 'contentType') ? undefined : json['contentType'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
     };
 }
 exports.AttachmentProjectionFromJSONTyped = AttachmentProjectionFromJSONTyped;
@@ -47,16 +47,16 @@ function AttachmentProjectionToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        id: value.id,
         contentLength: value.contentLength,
+        contentType: value.contentType,
         userId: value.userId,
         inboxId: value.inboxId,
-        createdAt: value.createdAt.toISOString(),
         contentId: value.contentId,
+        createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
         attachmentId: value.attachmentId,
-        contentType: value.contentType,
+        name: value.name,
+        id: value.id,
     };
 }
 exports.AttachmentProjectionToJSON = AttachmentProjectionToJSON;

@@ -6,11 +6,18 @@
 
 ### Properties
 
+- [allTargets](CreateDevicePreviewRunFromRawImportRequest.md#alltargets)
 - [externalId](CreateDevicePreviewRunFromRawImportRequest.md#externalid)
-- [nativeTargets](CreateDevicePreviewRunFromRawImportRequest.md#nativetargets)
 - [sourceAlias](CreateDevicePreviewRunFromRawImportRequest.md#sourcealias)
+- [targets](CreateDevicePreviewRunFromRawImportRequest.md#targets)
 
 ## Properties
+
+### allTargets
+
+• `Optional` **allTargets**: `boolean`
+
+___
 
 ### externalId
 
@@ -18,12 +25,12 @@
 
 ___
 
-### nativeTargets
-
-• `Optional` **nativeTargets**: `string`[]
-
-___
-
 ### sourceAlias
 
 • `Optional` **sourceAlias**: `string`
+
+___
+
+### targets
+
+• `Optional` **targets**: `string`[]

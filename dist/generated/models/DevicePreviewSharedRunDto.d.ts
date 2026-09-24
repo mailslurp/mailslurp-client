@@ -44,6 +44,24 @@ export interface DevicePreviewSharedRunDto {
      * @type {string}
      * @memberof DevicePreviewSharedRunDto
      */
+    sourceFrom?: string | null;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof DevicePreviewSharedRunDto
+     */
+    sourceTo?: Array<string> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewSharedRunDto
+     */
+    sourceRecipientEmailAddress?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewSharedRunDto
+     */
     sourceRecipientLocalPart?: string | null;
     /**
      *
@@ -102,7 +120,8 @@ export declare enum DevicePreviewSharedRunDtoSourceTypeEnum {
     STORED_EMAIL = "STORED_EMAIL",
     RAW_UPLOAD = "RAW_UPLOAD",
     DEVICE_PREVIEW_INGEST = "DEVICE_PREVIEW_INGEST",
-    PUBLIC_FREE_TEST = "PUBLIC_FREE_TEST"
+    PUBLIC_FREE_TEST = "PUBLIC_FREE_TEST",
+    GUIDED_TOUR = "GUIDED_TOUR"
 }
 /**
  * @export

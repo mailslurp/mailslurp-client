@@ -17,18 +17,6 @@
 export interface PhoneNumberProjection {
     /**
      *
-     * @type {string}
-     * @memberof PhoneNumberProjection
-     */
-    name?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof PhoneNumberProjection
-     */
-    id: string;
-    /**
-     *
      * @type {Array<string>}
      * @memberof PhoneNumberProjection
      */
@@ -41,16 +29,22 @@ export interface PhoneNumberProjection {
     userId: string;
     /**
      *
-     * @type {Date}
+     * @type {string}
      * @memberof PhoneNumberProjection
      */
-    createdAt: Date;
+    phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
     /**
      *
      * @type {string}
      * @memberof PhoneNumberProjection
      */
-    phoneCountry: PhoneNumberProjectionPhoneCountryEnum;
+    phoneNumber: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof PhoneNumberProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}
@@ -86,7 +80,13 @@ export interface PhoneNumberProjection {
      * @type {string}
      * @memberof PhoneNumberProjection
      */
-    phoneNumber: string;
+    name?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof PhoneNumberProjection
+     */
+    id: string;
 }
 /**
  * @export

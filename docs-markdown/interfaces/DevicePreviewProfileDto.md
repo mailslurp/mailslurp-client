@@ -12,16 +12,27 @@ DevicePreviewProfileDto
 
 ### Properties
 
+- [allTargets](DevicePreviewProfileDto.md#alltargets)
 - [createdAt](DevicePreviewProfileDto.md#createdat)
 - [displayName](DevicePreviewProfileDto.md#displayname)
 - [enabled](DevicePreviewProfileDto.md#enabled)
 - [id](DevicePreviewProfileDto.md#id)
 - [localPart](DevicePreviewProfileDto.md#localpart)
-- [nativeTargets](DevicePreviewProfileDto.md#nativetargets)
+- [targets](DevicePreviewProfileDto.md#targets)
 - [updatedAt](DevicePreviewProfileDto.md#updatedat)
 - [userId](DevicePreviewProfileDto.md#userid)
 
 ## Properties
+
+### allTargets
+
+• `Optional` **allTargets**: `boolean`
+
+**`Memberof`**
+
+DevicePreviewProfileDto
+
+___
 
 ### createdAt
 
@@ -73,9 +84,9 @@ DevicePreviewProfileDto
 
 ___
 
-### nativeTargets
+### targets
 
-• `Optional` **nativeTargets**: `string`[]
+• `Optional` **targets**: `string`[]
 
 **`Memberof`**
 

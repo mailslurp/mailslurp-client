@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountDto, CreateInboxDto, CreateRulesetOptions, Email, EmailAvailableResult, EmailPreview, FlushExpiredInboxesResult, ImapAccessDetails, ImapSmtpAccessDetails, ImapSmtpAccessServers, ImportEmailOptions, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxTags, PageOrganizationInboxProjection, PagePlusAddressProjection, PageRulesetDto, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, PlusAddressDto, RulesetDto, ScheduledJobDto, SearchInboxesOptions, SendEmailOptions, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, SmtpAccessDetails, UpdateImapAccessOptions, UpdateInboxOptions, UpdateSmtpAccessOptions } from '../models';
+import { CountDto, CreateInboxDto, CreateRulesetOptions, Email, EmailAvailableResult, EmailPreview, FlushExpiredInboxesResult, ImapAccessDetails, ImapSmtpAccessDetails, ImapSmtpAccessServers, ImportEmailOptions, InboxByEmailAddressResult, InboxByNameResult, InboxDto, InboxExistsDto, InboxIdsResult, PageDeliveryStatus, PageEmailPreview, PageInboxProjection, PageInboxTags, PageOrganizationInboxProjection, PagePlusAddressProjection, PageRulesetDto, PageScheduledJobs, PageSentEmailProjection, PageTrackingPixelProjection, PlusAddressDto, RulesetDto, ScheduledJobDto, SearchInboxesOptions, SendEmailOptions, SendSMTPEnvelopeFromS3Options, SendSMTPEnvelopeOptions, SentEmailDto, SetInboxFavouritedOptions, SmtpAccessDetails, UpdateImapAccessOptions, UpdateInboxOptions, UpdateSmtpAccessOptions } from '../models';
 export interface CancelScheduledJobRequest {
     jobId: string;
 }
@@ -273,7 +273,6 @@ export interface ImportEmailIntoInboxRequest {
 }
 export interface ImportEmailIntoInboxBytesRequest {
     inboxId: string;
-    body: string;
     externalId?: string;
     runPipeline?: boolean;
     overrideMessageId?: boolean;
@@ -325,6 +324,17 @@ export interface SendEmailWithQueueRequest {
 export interface SendSmtpEnvelopeRequest {
     inboxId: string;
     sendSMTPEnvelopeOptions: SendSMTPEnvelopeOptions;
+}
+export interface SendSmtpEnvelopeFromS3Request {
+    inboxId: string;
+    key: string;
+    sendSMTPEnvelopeFromS3Options: SendSMTPEnvelopeFromS3Options;
+}
+export interface SendSmtpEnvelopeStreamRequest {
+    inboxId: string;
+    key: string;
+    mailFrom: string;
+    rcptTo: Array<string>;
 }
 export interface SendTestEmailRequest {
     inboxId: string;
@@ -947,6 +957,26 @@ export declare class InboxControllerApi extends runtime.BaseAPI {
      */
     sendSmtpEnvelope(requestParameters: SendSmtpEnvelopeRequest, initOverrides?: RequestInit): Promise<SentEmailDto>;
     /**
+     * Internal SMTP-server endpoint for sending an SMTP envelope whose RFC822 body has already been written to S3.
+     * Send SMTP envelope from an S3 body reference
+     */
+    sendSmtpEnvelopeFromS3Raw(requestParameters: SendSmtpEnvelopeFromS3Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentEmailDto>>;
+    /**
+     * Internal SMTP-server endpoint for sending an SMTP envelope whose RFC822 body has already been written to S3.
+     * Send SMTP envelope from an S3 body reference
+     */
+    sendSmtpEnvelopeFromS3(requestParameters: SendSmtpEnvelopeFromS3Request, initOverrides?: RequestInit): Promise<SentEmailDto>;
+    /**
+     * Internal SMTP-server endpoint for sending an SMTP envelope while streaming the RFC822 body in the request.
+     * Send SMTP envelope from a streamed body
+     */
+    sendSmtpEnvelopeStreamRaw(requestParameters: SendSmtpEnvelopeStreamRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<SentEmailDto>>;
+    /**
+     * Internal SMTP-server endpoint for sending an SMTP envelope while streaming the RFC822 body in the request.
+     * Send SMTP envelope from a streamed body
+     */
+    sendSmtpEnvelopeStream(requestParameters: SendSmtpEnvelopeStreamRequest, initOverrides?: RequestInit): Promise<SentEmailDto>;
+    /**
      * Send an inbox a test email to test email receiving is working
      * Send a test email to inbox
      */
@@ -1037,6 +1067,7 @@ export declare enum GetAllInboxesInboxFunctionEnum {
     CATCH_ALL = "CATCH_ALL",
     CONNECTOR = "CONNECTOR",
     ACCOUNT = "ACCOUNT",
+    GUIDED_TOUR = "GUIDED_TOUR",
     GUEST = "GUEST",
     OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
 }
@@ -1066,6 +1097,7 @@ export declare enum GetAllInboxesOffsetPaginatedInboxFunctionEnum {
     CATCH_ALL = "CATCH_ALL",
     CONNECTOR = "CONNECTOR",
     ACCOUNT = "ACCOUNT",
+    GUIDED_TOUR = "GUIDED_TOUR",
     GUEST = "GUEST",
     OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
 }

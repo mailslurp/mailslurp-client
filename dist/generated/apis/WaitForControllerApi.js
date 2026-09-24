@@ -521,6 +521,122 @@ var WaitForControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+     * Wait for AI-matched email or SMS
+     */
+    WaitForControllerApi.prototype.waitForMessageAIRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.waitForAIMessageOptions === null ||
+                            requestParameters.waitForAIMessageOptions === undefined) {
+                            throw new runtime.RequiredError('waitForAIMessageOptions', 'Required parameter requestParameters.waitForAIMessageOptions was null or undefined when calling waitForMessageAI.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (requestParameters.idempotencyKey !== undefined &&
+                            requestParameters.idempotencyKey !== null) {
+                            headerParameters['Idempotency-Key'] = String(requestParameters.idempotencyKey);
+                        }
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/waitForAIMessage",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.WaitForAIMessageOptionsToJSON)(requestParameters.waitForAIMessageOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AIMessageResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+     * Wait for AI-matched email or SMS
+     */
+    WaitForControllerApi.prototype.waitForMessageAI = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.waitForMessageAIRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+     * Wait for AI-matched email or SMS
+     */
+    WaitForControllerApi.prototype.waitForMessagesAIRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.waitForAIMessagesOptions === null ||
+                            requestParameters.waitForAIMessagesOptions === undefined) {
+                            throw new runtime.RequiredError('waitForAIMessagesOptions', 'Required parameter requestParameters.waitForAIMessagesOptions was null or undefined when calling waitForMessagesAI.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (requestParameters.idempotencyKey !== undefined &&
+                            requestParameters.idempotencyKey !== null) {
+                            headerParameters['Idempotency-Key'] = String(requestParameters.idempotencyKey);
+                        }
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/waitForAIMessages",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.WaitForAIMessagesOptionsToJSON)(requestParameters.waitForAIMessagesOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AIMessagesResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+     * Wait for AI-matched email or SMS
+     */
+    WaitForControllerApi.prototype.waitForMessagesAI = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.waitForMessagesAIRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
      * Wait for or fetch the email with a given index in the inbox specified. If index doesn\'t exist waits for it to exist or timeout to occur.
      */

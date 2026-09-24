@@ -48,6 +48,24 @@ export interface DevicePreviewSharedRunDto {
    * @type {string}
    * @memberof DevicePreviewSharedRunDto
    */
+  sourceFrom?: string | null;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof DevicePreviewSharedRunDto
+   */
+  sourceTo?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewSharedRunDto
+   */
+  sourceRecipientEmailAddress?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewSharedRunDto
+   */
   sourceRecipientLocalPart?: string | null;
   /**
    *
@@ -108,6 +126,7 @@ export enum DevicePreviewSharedRunDtoSourceTypeEnum {
   RAW_UPLOAD = 'RAW_UPLOAD',
   DEVICE_PREVIEW_INGEST = 'DEVICE_PREVIEW_INGEST',
   PUBLIC_FREE_TEST = 'PUBLIC_FREE_TEST',
+  GUIDED_TOUR = 'GUIDED_TOUR',
 }
 /**
  * @export
@@ -142,6 +161,11 @@ export function DevicePreviewSharedRunDtoFromJSONTyped(
     sourceSubject: !exists(json, 'sourceSubject')
       ? undefined
       : json['sourceSubject'],
+    sourceFrom: !exists(json, 'sourceFrom') ? undefined : json['sourceFrom'],
+    sourceTo: !exists(json, 'sourceTo') ? undefined : json['sourceTo'],
+    sourceRecipientEmailAddress: !exists(json, 'sourceRecipientEmailAddress')
+      ? undefined
+      : json['sourceRecipientEmailAddress'],
     sourceRecipientLocalPart: !exists(json, 'sourceRecipientLocalPart')
       ? undefined
       : json['sourceRecipientLocalPart'],
@@ -176,6 +200,9 @@ export function DevicePreviewSharedRunDtoToJSON(
     sourceType: value.sourceType,
     sourceAlias: value.sourceAlias,
     sourceSubject: value.sourceSubject,
+    sourceFrom: value.sourceFrom,
+    sourceTo: value.sourceTo,
+    sourceRecipientEmailAddress: value.sourceRecipientEmailAddress,
     sourceRecipientLocalPart: value.sourceRecipientLocalPart,
     sourceProfileLocalPart: value.sourceProfileLocalPart,
     sourceProfileDisplayName: value.sourceProfileDisplayName,

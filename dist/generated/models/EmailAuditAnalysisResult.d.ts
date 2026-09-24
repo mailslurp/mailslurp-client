@@ -9,13 +9,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { EmailAuditSpellingIssue, EmailAuditUrlIssue, EmailFeatureSupportResult, HTMLValidationResult } from './';
+import { EmailAuditCheck, EmailAuditSpellingIssue, EmailAuditUrlIssue, EmailFeatureSupportResult, HTMLValidationResult } from './';
 /**
  * Combined email audit analysis across validation, client support, links, and images
  * @export
  * @interface EmailAuditAnalysisResult
  */
 export interface EmailAuditAnalysisResult {
+    /**
+     * Versioned static accessibility, unresolved template, and compliance review checks. Null on historical audits that did not run these checks.
+     * @type {Array<EmailAuditCheck>}
+     * @memberof EmailAuditAnalysisResult
+     */
+    contentReview?: Array<EmailAuditCheck> | null;
     /**
      * Health status for a one-shot email audit
      * @type {string}
@@ -184,6 +190,36 @@ export interface EmailAuditAnalysisResult {
      * @memberof EmailAuditAnalysisResult
      */
     errorMessage?: string | null;
+    /**
+     * Spam verdict supplied by the source mail receiver
+     * @type {string}
+     * @memberof EmailAuditAnalysisResult
+     */
+    spamVerdict?: string | null;
+    /**
+     * Virus verdict supplied by the source mail receiver
+     * @type {string}
+     * @memberof EmailAuditAnalysisResult
+     */
+    virusVerdict?: string | null;
+    /**
+     * SPF verdict supplied by the source mail receiver
+     * @type {string}
+     * @memberof EmailAuditAnalysisResult
+     */
+    spfVerdict?: string | null;
+    /**
+     * DKIM verdict supplied by the source mail receiver
+     * @type {string}
+     * @memberof EmailAuditAnalysisResult
+     */
+    dkimVerdict?: string | null;
+    /**
+     * DMARC verdict supplied by the source mail receiver
+     * @type {string}
+     * @memberof EmailAuditAnalysisResult
+     */
+    dmarcVerdict?: string | null;
 }
 /**
  * @export

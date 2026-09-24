@@ -77,6 +77,9 @@ import {
   DevicePreviewNativeTargetAvailabilityListDto,
   DevicePreviewNativeTargetAvailabilityListDtoFromJSON,
   DevicePreviewNativeTargetAvailabilityListDtoToJSON,
+  DevicePreviewNativeTargetListDto,
+  DevicePreviewNativeTargetListDtoFromJSON,
+  DevicePreviewNativeTargetListDtoToJSON,
   DevicePreviewProfileDto,
   DevicePreviewProfileDtoFromJSON,
   DevicePreviewProfileDtoToJSON,
@@ -98,6 +101,9 @@ import {
   DevicePreviewSharedResultDto,
   DevicePreviewSharedResultDtoFromJSON,
   DevicePreviewSharedResultDtoToJSON,
+  DevicePreviewSourceEmailDto,
+  DevicePreviewSourceEmailDtoFromJSON,
+  DevicePreviewSourceEmailDtoToJSON,
   PageDevicePreviewRunProjection,
   PageDevicePreviewRunProjectionFromJSON,
   PageDevicePreviewRunProjectionToJSON,
@@ -140,6 +146,21 @@ export interface CreateDevicePreviewRunRequest {
   createDevicePreviewOptions?: CreateDevicePreviewOptions;
 }
 
+export interface CreateDevicePreviewRunFromFileRequest {
+  file: Blob;
+  subject?: string;
+  from?: string;
+  to?: string;
+  sourceAlias?: string;
+  externalId?: string;
+  providers?: Array<string>;
+  allTargets?: boolean;
+  targets?: Array<string>;
+  emailAudit?: boolean;
+  domainMonitor?: boolean;
+  senderDomain?: string;
+}
+
 export interface CreateDevicePreviewRunFromHtmlImportRequest {
   createDevicePreviewHtmlImportOptions: CreateDevicePreviewHtmlImportOptions;
 }
@@ -152,13 +173,15 @@ export interface CreateDevicePreviewRunFromMultipartImportRequest {
   file: Blob;
   sourceAlias?: string;
   externalId?: string;
-  nativeTargets?: Array<string>;
+  allTargets?: boolean;
+  targets?: Array<string>;
 }
 
 export interface CreateDevicePreviewRunFromRawImportRequest {
   sourceAlias?: string;
   externalId?: string;
-  nativeTargets?: Array<string>;
+  allTargets?: boolean;
+  targets?: Array<string>;
 }
 
 export interface CreateDevicePreviewShareLinkRequest {
@@ -178,6 +201,14 @@ export interface DeleteDevicePreviewShareLinkRequest {
   shareLinkId: string;
 }
 
+export interface DownloadDevicePreviewEmailSubmissionSourceEmailRequest {
+  submissionId: string;
+}
+
+export interface DownloadDevicePreviewRunSourceEmailRequest {
+  runId: string;
+}
+
 export interface EnsureDevicePreviewRunRequest {
   emailId: string;
   createDevicePreviewOptions?: CreateDevicePreviewOptions;
@@ -190,6 +221,10 @@ export interface GetDevicePreviewEmailRunsRequest {
   localPart?: string;
   limit?: number;
   hydrateThumbnail?: boolean;
+}
+
+export interface GetDevicePreviewEmailSubmissionSourceEmailRequest {
+  submissionId: string;
 }
 
 export interface GetDevicePreviewEmailSubmissionsRequest {
@@ -239,6 +274,10 @@ export interface GetDevicePreviewRunResultsRequest {
 export interface GetDevicePreviewRunScreenshotRequest {
   runId: string;
   screenshotId: string;
+}
+
+export interface GetDevicePreviewRunSourceEmailRequest {
+  runId: string;
 }
 
 export interface GetDevicePreviewRunsRequest {
@@ -622,6 +661,127 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Uploads an HTML or RFC822 EML file, or a ZIP archive containing exactly one HTML or EML file. ZIP uploads are bounded by entry count, expanded size, and compression ratio.
+   * Create a device preview run from an HTML, EML, or ZIP file
+   */
+  async createDevicePreviewRunFromFileRaw(
+    requestParameters: CreateDevicePreviewRunFromFileRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<CreateDevicePreviewRunResult>> {
+    if (
+      requestParameters.file === null ||
+      requestParameters.file === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'file',
+        'Required parameter requestParameters.file was null or undefined when calling createDevicePreviewRunFromFile.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.subject !== undefined) {
+      queryParameters['subject'] = requestParameters.subject;
+    }
+
+    if (requestParameters.from !== undefined) {
+      queryParameters['from'] = requestParameters.from;
+    }
+
+    if (requestParameters.to !== undefined) {
+      queryParameters['to'] = requestParameters.to;
+    }
+
+    if (requestParameters.sourceAlias !== undefined) {
+      queryParameters['sourceAlias'] = requestParameters.sourceAlias;
+    }
+
+    if (requestParameters.externalId !== undefined) {
+      queryParameters['externalId'] = requestParameters.externalId;
+    }
+
+    if (requestParameters.providers) {
+      queryParameters['providers'] = requestParameters.providers;
+    }
+
+    if (requestParameters.allTargets !== undefined) {
+      queryParameters['allTargets'] = requestParameters.allTargets;
+    }
+
+    if (requestParameters.targets) {
+      queryParameters['targets'] = requestParameters.targets;
+    }
+
+    if (requestParameters.emailAudit !== undefined) {
+      queryParameters['emailAudit'] = requestParameters.emailAudit;
+    }
+
+    if (requestParameters.domainMonitor !== undefined) {
+      queryParameters['domainMonitor'] = requestParameters.domainMonitor;
+    }
+
+    if (requestParameters.senderDomain !== undefined) {
+      queryParameters['senderDomain'] = requestParameters.senderDomain;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const consumes: runtime.Consume[] = [
+      { contentType: 'multipart/form-data' },
+    ];
+    // @ts-ignore: canConsumeForm may be unused
+    const canConsumeForm = runtime.canConsumeForm(consumes);
+
+    let formParams: { append(param: string, value: any): any };
+    let useForm = false;
+    // use FormData to transmit files using content-type "multipart/form-data"
+    useForm = canConsumeForm;
+    if (useForm) {
+      formParams = new FormData();
+    } else {
+      formParams = new URLSearchParams();
+    }
+
+    if (requestParameters.file !== undefined) {
+      formParams.append('file', requestParameters.file as any);
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/import/file`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: formParams,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      CreateDevicePreviewRunResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Uploads an HTML or RFC822 EML file, or a ZIP archive containing exactly one HTML or EML file. ZIP uploads are bounded by entry count, expanded size, and compression ratio.
+   * Create a device preview run from an HTML, EML, or ZIP file
+   */
+  async createDevicePreviewRunFromFile(
+    requestParameters: CreateDevicePreviewRunFromFileRequest,
+    initOverrides?: RequestInit
+  ): Promise<CreateDevicePreviewRunResult> {
+    const response = await this.createDevicePreviewRunFromFileRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Create a device preview run from HTML
    */
   async createDevicePreviewRunFromHtmlImportRaw(
@@ -766,8 +926,12 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
       queryParameters['externalId'] = requestParameters.externalId;
     }
 
-    if (requestParameters.nativeTargets) {
-      queryParameters['nativeTargets'] = requestParameters.nativeTargets;
+    if (requestParameters.allTargets !== undefined) {
+      queryParameters['allTargets'] = requestParameters.allTargets;
+    }
+
+    if (requestParameters.targets) {
+      queryParameters['targets'] = requestParameters.targets;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -843,8 +1007,12 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
       queryParameters['externalId'] = requestParameters.externalId;
     }
 
-    if (requestParameters.nativeTargets) {
-      queryParameters['nativeTargets'] = requestParameters.nativeTargets;
+    if (requestParameters.allTargets !== undefined) {
+      queryParameters['allTargets'] = requestParameters.allTargets;
+    }
+
+    if (requestParameters.targets) {
+      queryParameters['targets'] = requestParameters.targets;
     }
 
     const headerParameters: runtime.HTTPHeaders = {};
@@ -1116,6 +1284,117 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Download the original RFC822 email for a device preview submission
+   */
+  async downloadDevicePreviewEmailSubmissionSourceEmailRaw(
+    requestParameters: DownloadDevicePreviewEmailSubmissionSourceEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Blob>> {
+    if (
+      requestParameters.submissionId === null ||
+      requestParameters.submissionId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'submissionId',
+        'Required parameter requestParameters.submissionId was null or undefined when calling downloadDevicePreviewEmailSubmissionSourceEmail.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/email-submissions/{submissionId}/source-email/raw`.replace(
+          `{${'submissionId'}}`,
+          encodeURIComponent(String(requestParameters.submissionId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.BlobApiResponse(response);
+  }
+
+  /**
+   * Download the original RFC822 email for a device preview submission
+   */
+  async downloadDevicePreviewEmailSubmissionSourceEmail(
+    requestParameters: DownloadDevicePreviewEmailSubmissionSourceEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<Blob> {
+    const response =
+      await this.downloadDevicePreviewEmailSubmissionSourceEmailRaw(
+        requestParameters,
+        initOverrides
+      );
+    return await response.value();
+  }
+
+  /**
+   * Download the original RFC822 email for a device preview run
+   */
+  async downloadDevicePreviewRunSourceEmailRaw(
+    requestParameters: DownloadDevicePreviewRunSourceEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Blob>> {
+    if (
+      requestParameters.runId === null ||
+      requestParameters.runId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'runId',
+        'Required parameter requestParameters.runId was null or undefined when calling downloadDevicePreviewRunSourceEmail.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/{runId}/source-email/raw`.replace(
+          `{${'runId'}}`,
+          encodeURIComponent(String(requestParameters.runId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.BlobApiResponse(response);
+  }
+
+  /**
+   * Download the original RFC822 email for a device preview run
+   */
+  async downloadDevicePreviewRunSourceEmail(
+    requestParameters: DownloadDevicePreviewRunSourceEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<Blob> {
+    const response = await this.downloadDevicePreviewRunSourceEmailRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Return active run for email or create one when none exists
    */
   async ensureDevicePreviewRunRaw(
@@ -1290,6 +1569,63 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<Array<DevicePreviewRunDto>> {
     const response = await this.getDevicePreviewEmailRunsRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get the original email content for a device preview submission
+   */
+  async getDevicePreviewEmailSubmissionSourceEmailRaw(
+    requestParameters: GetDevicePreviewEmailSubmissionSourceEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewSourceEmailDto>> {
+    if (
+      requestParameters.submissionId === null ||
+      requestParameters.submissionId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'submissionId',
+        'Required parameter requestParameters.submissionId was null or undefined when calling getDevicePreviewEmailSubmissionSourceEmail.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/email-submissions/{submissionId}/source-email`.replace(
+          `{${'submissionId'}}`,
+          encodeURIComponent(String(requestParameters.submissionId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewSourceEmailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get the original email content for a device preview submission
+   */
+  async getDevicePreviewEmailSubmissionSourceEmail(
+    requestParameters: GetDevicePreviewEmailSubmissionSourceEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewSourceEmailDto> {
+    const response = await this.getDevicePreviewEmailSubmissionSourceEmailRaw(
       requestParameters,
       initOverrides
     );
@@ -1561,6 +1897,7 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Returns live native device preview target availability for authenticated API clients, including worker health, queue, timeout, and status fields. Use `/device-preview-targets` when you need the stable catalog without transient availability data.
    * Get native device preview target availability
    */
   async getDevicePreviewNativeTargetAvailabilityRaw(
@@ -1592,6 +1929,7 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Returns live native device preview target availability for authenticated API clients, including worker health, queue, timeout, and status fields. Use `/device-preview-targets` when you need the stable catalog without transient availability data.
    * Get native device preview target availability
    */
   async getDevicePreviewNativeTargetAvailability(
@@ -1949,6 +2287,63 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<string> {
     const response = await this.getDevicePreviewRunScreenshotRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Get the original email content for a device preview run
+   */
+  async getDevicePreviewRunSourceEmailRaw(
+    requestParameters: GetDevicePreviewRunSourceEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewSourceEmailDto>> {
+    if (
+      requestParameters.runId === null ||
+      requestParameters.runId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'runId',
+        'Required parameter requestParameters.runId was null or undefined when calling getDevicePreviewRunSourceEmail.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/emails/device-previews/{runId}/source-email`.replace(
+          `{${'runId'}}`,
+          encodeURIComponent(String(requestParameters.runId))
+        ),
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewSourceEmailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Get the original email content for a device preview run
+   */
+  async getDevicePreviewRunSourceEmail(
+    requestParameters: GetDevicePreviewRunSourceEmailRequest,
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewSourceEmailDto> {
+    const response = await this.getDevicePreviewRunSourceEmailRaw(
       requestParameters,
       initOverrides
     );
@@ -2391,7 +2786,49 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Rerun selected failed device preview targets in the same run
+   * Returns visible native device preview target metadata without worker availability, queue, or health fields.
+   * List device preview targets
+   */
+  async getDevicePreviewTargetsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<DevicePreviewNativeTargetListDto>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/device-preview-targets`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      DevicePreviewNativeTargetListDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Returns visible native device preview target metadata without worker availability, queue, or health fields.
+   * List device preview targets
+   */
+  async getDevicePreviewTargets(
+    initOverrides?: RequestInit
+  ): Promise<DevicePreviewNativeTargetListDto> {
+    const response = await this.getDevicePreviewTargetsRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   * Set failedOnly=false to rerun a successful target. Successful targets consume their configured credit cost again.
+   * Rerun selected device preview targets in the same run
    */
   async rerunDevicePreviewTargetsRaw(
     requestParameters: RerunDevicePreviewTargetsRequest,
@@ -2449,7 +2886,8 @@ export class DevicePreviewsControllerApi extends runtime.BaseAPI {
   }
 
   /**
-   * Rerun selected failed device preview targets in the same run
+   * Set failedOnly=false to rerun a successful target. Successful targets consume their configured credit cost again.
+   * Rerun selected device preview targets in the same run
    */
   async rerunDevicePreviewTargets(
     requestParameters: RerunDevicePreviewTargetsRequest,

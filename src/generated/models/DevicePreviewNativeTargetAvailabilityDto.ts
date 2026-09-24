@@ -87,6 +87,12 @@ export interface DevicePreviewNativeTargetAvailabilityDto {
   creditCost: number;
   /**
    *
+   * @type {string}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  tier: DevicePreviewNativeTargetAvailabilityDtoTierEnum;
+  /**
+   *
    * @type {boolean}
    * @memberof DevicePreviewNativeTargetAvailabilityDto
    */
@@ -139,8 +145,100 @@ export interface DevicePreviewNativeTargetAvailabilityDto {
    * @memberof DevicePreviewNativeTargetAvailabilityDto
    */
   publicPollingWorkers: number;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  minimumWorkerReleaseVersion?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  desiredWorkerReleaseVersion?: string | null;
+  /**
+   *
+   * @type {number}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  desiredReleaseWorkers?: number | null;
+  /**
+   *
+   * @type {number}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  desiredReleasePublicPollingWorkers?: number | null;
+  /**
+   *
+   * @type {{ [key: string]: number; }}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  releaseVersions: { [key: string]: number };
+  /**
+   *
+   * @type {number}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  desiredLanes: number;
+  /**
+   *
+   * @type {number}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  matchedLiveLanes: number;
+  /**
+   *
+   * @type {number}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  identityMismatchLanes: number;
+  /**
+   *
+   * @type {number}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  servingLanes: number;
+  /**
+   *
+   * @type {number}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  spareLanes: number;
+  /**
+   *
+   * @type {number}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  busyLanes: number;
+  /**
+   *
+   * @type {number}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  degradedLanes: number;
+  /**
+   *
+   * @type {number}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  quarantinedLanes: number;
+  /**
+   *
+   * @type {number}
+   * @memberof DevicePreviewNativeTargetAvailabilityDto
+   */
+  zeroCapacityLanes: number;
 }
 
+/**
+ * @export
+ * @enum {string}
+ */
+export enum DevicePreviewNativeTargetAvailabilityDtoTierEnum {
+  STANDARD = 'STANDARD',
+  PREMIUM = 'PREMIUM',
+}
 /**
  * @export
  * @enum {string}
@@ -179,6 +277,7 @@ export function DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped(
     appearance: json['appearance'],
     visible: json['visible'],
     creditCost: json['creditCost'],
+    tier: json['tier'],
     enabled: json['enabled'],
     requestQueueConfigured: json['requestQueueConfigured'],
     status: json['status'],
@@ -190,6 +289,31 @@ export function DevicePreviewNativeTargetAvailabilityDtoFromJSONTyped(
     timeoutSeconds: json['timeoutSeconds'],
     availableSlots: json['availableSlots'],
     publicPollingWorkers: json['publicPollingWorkers'],
+    minimumWorkerReleaseVersion: !exists(json, 'minimumWorkerReleaseVersion')
+      ? undefined
+      : json['minimumWorkerReleaseVersion'],
+    desiredWorkerReleaseVersion: !exists(json, 'desiredWorkerReleaseVersion')
+      ? undefined
+      : json['desiredWorkerReleaseVersion'],
+    desiredReleaseWorkers: !exists(json, 'desiredReleaseWorkers')
+      ? undefined
+      : json['desiredReleaseWorkers'],
+    desiredReleasePublicPollingWorkers: !exists(
+      json,
+      'desiredReleasePublicPollingWorkers'
+    )
+      ? undefined
+      : json['desiredReleasePublicPollingWorkers'],
+    releaseVersions: json['releaseVersions'],
+    desiredLanes: json['desiredLanes'],
+    matchedLiveLanes: json['matchedLiveLanes'],
+    identityMismatchLanes: json['identityMismatchLanes'],
+    servingLanes: json['servingLanes'],
+    spareLanes: json['spareLanes'],
+    busyLanes: json['busyLanes'],
+    degradedLanes: json['degradedLanes'],
+    quarantinedLanes: json['quarantinedLanes'],
+    zeroCapacityLanes: json['zeroCapacityLanes'],
   };
 }
 
@@ -214,6 +338,7 @@ export function DevicePreviewNativeTargetAvailabilityDtoToJSON(
     appearance: value.appearance,
     visible: value.visible,
     creditCost: value.creditCost,
+    tier: value.tier,
     enabled: value.enabled,
     requestQueueConfigured: value.requestQueueConfigured,
     status: value.status,
@@ -223,5 +348,20 @@ export function DevicePreviewNativeTargetAvailabilityDtoToJSON(
     timeoutSeconds: value.timeoutSeconds,
     availableSlots: value.availableSlots,
     publicPollingWorkers: value.publicPollingWorkers,
+    minimumWorkerReleaseVersion: value.minimumWorkerReleaseVersion,
+    desiredWorkerReleaseVersion: value.desiredWorkerReleaseVersion,
+    desiredReleaseWorkers: value.desiredReleaseWorkers,
+    desiredReleasePublicPollingWorkers:
+      value.desiredReleasePublicPollingWorkers,
+    releaseVersions: value.releaseVersions,
+    desiredLanes: value.desiredLanes,
+    matchedLiveLanes: value.matchedLiveLanes,
+    identityMismatchLanes: value.identityMismatchLanes,
+    servingLanes: value.servingLanes,
+    spareLanes: value.spareLanes,
+    busyLanes: value.busyLanes,
+    degradedLanes: value.degradedLanes,
+    quarantinedLanes: value.quarantinedLanes,
+    zeroCapacityLanes: value.zeroCapacityLanes,
   };
 }

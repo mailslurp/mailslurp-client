@@ -116,6 +116,12 @@ export interface CreateInboxReplierOptions {
    * @memberof CreateInboxReplierOptions
    */
   matchOptions?: InboxAutomationMatchOptions | null;
+  /**
+   * Optional attachment IDs to include with every automated reply
+   * @type {Array<string>}
+   * @memberof CreateInboxReplierOptions
+   */
+  attachments?: Array<string> | null;
 }
 
 /**
@@ -176,6 +182,7 @@ export function CreateInboxReplierOptionsFromJSONTyped(
     matchOptions: !exists(json, 'matchOptions')
       ? undefined
       : InboxAutomationMatchOptionsFromJSON(json['matchOptions']),
+    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
   };
 }
 
@@ -204,5 +211,6 @@ export function CreateInboxReplierOptionsToJSON(
     templateVariables: value.templateVariables,
     should: value.should,
     matchOptions: InboxAutomationMatchOptionsToJSON(value.matchOptions),
+    attachments: value.attachments,
   };
 }

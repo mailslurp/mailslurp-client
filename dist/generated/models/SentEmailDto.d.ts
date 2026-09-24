@@ -226,10 +226,24 @@ export interface SentEmailDto {
     sizeBytes?: number | null;
     /**
      *
+     * @type {string}
+     * @memberof SentEmailDto
+     */
+    transport: SentEmailDtoTransportEnum;
+    /**
+     *
      * @type {boolean}
      * @memberof SentEmailDto
      */
     html?: boolean;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum SentEmailDtoTransportEnum {
+    PUBLIC_EMAIL = "PUBLIC_EMAIL",
+    SANDBOX_LOCAL = "SANDBOX_LOCAL"
 }
 export declare function SentEmailDtoFromJSON(json: any): SentEmailDto;
 export declare function SentEmailDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentEmailDto;

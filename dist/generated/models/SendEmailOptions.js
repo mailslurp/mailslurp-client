@@ -88,6 +88,7 @@ function SendEmailOptionsFromJSONTyped(json, ignoreDiscriminator) {
             : json['bodyParts'] === null
                 ? null
                 : json['bodyParts'].map(_1.SendEmailBodyPartFromJSON),
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
     };
 }
 exports.SendEmailOptionsFromJSONTyped = SendEmailOptionsFromJSONTyped;
@@ -128,6 +129,7 @@ function SendEmailOptionsToJSON(value) {
             : value.bodyParts === null
                 ? null
                 : value.bodyParts.map(_1.SendEmailBodyPartToJSON),
+        inboxId: value.inboxId,
     };
 }
 exports.SendEmailOptionsToJSON = SendEmailOptionsToJSON;

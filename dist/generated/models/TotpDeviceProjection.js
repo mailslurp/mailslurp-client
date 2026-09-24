@@ -24,20 +24,20 @@ function TotpDeviceProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        id: json['id'],
         algorithm: !(0, runtime_1.exists)(json, 'algorithm') ? undefined : json['algorithm'],
+        digits: !(0, runtime_1.exists)(json, 'digits') ? undefined : json['digits'],
         period: !(0, runtime_1.exists)(json, 'period') ? undefined : json['period'],
         username: !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
         createdAt: new Date(json['createdAt']),
+        updatedAt: new Date(json['updatedAt']),
         expiresAt: !(0, runtime_1.exists)(json, 'expiresAt')
             ? undefined
             : json['expiresAt'] === null
                 ? null
                 : new Date(json['expiresAt']),
-        updatedAt: new Date(json['updatedAt']),
         issuer: !(0, runtime_1.exists)(json, 'issuer') ? undefined : json['issuer'],
-        digits: !(0, runtime_1.exists)(json, 'digits') ? undefined : json['digits'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        id: json['id'],
     };
 }
 exports.TotpDeviceProjectionFromJSONTyped = TotpDeviceProjectionFromJSONTyped;
@@ -49,20 +49,20 @@ function TotpDeviceProjectionToJSON(value) {
         return null;
     }
     return {
-        name: value.name,
-        id: value.id,
         algorithm: value.algorithm,
+        digits: value.digits,
         period: value.period,
         username: value.username,
         createdAt: value.createdAt.toISOString(),
+        updatedAt: value.updatedAt.toISOString(),
         expiresAt: value.expiresAt === undefined
             ? undefined
             : value.expiresAt === null
                 ? null
                 : value.expiresAt.toISOString(),
-        updatedAt: value.updatedAt.toISOString(),
         issuer: value.issuer,
-        digits: value.digits,
+        name: value.name,
+        id: value.id,
     };
 }
 exports.TotpDeviceProjectionToJSON = TotpDeviceProjectionToJSON;

@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -13,8 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserDtoToJSON = exports.UserDtoFromJSONTyped = exports.UserDtoFromJSON = exports.UserDtoVerifiedEnum = exports.UserDtoUserTypeEnum = void 0;
+exports.UserDtoToJSON = exports.UserDtoFromJSONTyped = exports.UserDtoFromJSON = exports.UserDtoAccountRegionEnum = exports.UserDtoVerifiedPhoneEnum = exports.UserDtoVerifiedEnum = exports.UserDtoUserTypeEnum = void 0;
 var runtime_1 = require("../runtime");
+var _1 = require("./");
 /**
  * @export
  * @enum {string}
@@ -24,6 +25,7 @@ var UserDtoUserTypeEnum;
     UserDtoUserTypeEnum["SOLO"] = "SOLO";
     UserDtoUserTypeEnum["CHILD_SOLO"] = "CHILD_SOLO";
     UserDtoUserTypeEnum["CHILD_TEAM"] = "CHILD_TEAM";
+    UserDtoUserTypeEnum["CHILD_ADMIN"] = "CHILD_ADMIN";
 })(UserDtoUserTypeEnum = exports.UserDtoUserTypeEnum || (exports.UserDtoUserTypeEnum = {}));
 /**
  * @export
@@ -34,6 +36,36 @@ var UserDtoVerifiedEnum;
     UserDtoVerifiedEnum["VERIFIED"] = "VERIFIED";
     UserDtoVerifiedEnum["PENDING"] = "PENDING";
 })(UserDtoVerifiedEnum = exports.UserDtoVerifiedEnum || (exports.UserDtoVerifiedEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var UserDtoVerifiedPhoneEnum;
+(function (UserDtoVerifiedPhoneEnum) {
+    UserDtoVerifiedPhoneEnum["VERIFIED"] = "VERIFIED";
+    UserDtoVerifiedPhoneEnum["PENDING"] = "PENDING";
+})(UserDtoVerifiedPhoneEnum = exports.UserDtoVerifiedPhoneEnum || (exports.UserDtoVerifiedPhoneEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var UserDtoAccountRegionEnum;
+(function (UserDtoAccountRegionEnum) {
+    UserDtoAccountRegionEnum["US_WEST_2_ACCOUNT_STAGING"] = "US_WEST_2_ACCOUNT_STAGING";
+    UserDtoAccountRegionEnum["US_EAST_1_ACCOUNT_STAGING"] = "US_EAST_1_ACCOUNT_STAGING";
+    UserDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_STAGING"] = "EU_WEST_1_ACCOUNT_STAGING";
+    UserDtoAccountRegionEnum["US_WEST_2_ACCOUNT_SES_1"] = "US_WEST_2_ACCOUNT_SES_1";
+    UserDtoAccountRegionEnum["US_EAST_1_ACCOUNT_SES_1"] = "US_EAST_1_ACCOUNT_SES_1";
+    UserDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_1"] = "EU_WEST_1_ACCOUNT_SES_1";
+    UserDtoAccountRegionEnum["US_WEST_2_ACCOUNT_SES_2"] = "US_WEST_2_ACCOUNT_SES_2";
+    UserDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_SES_2"] = "EU_WEST_1_ACCOUNT_SES_2";
+    UserDtoAccountRegionEnum["US_WEST_2_ACCOUNT_SES_3"] = "US_WEST_2_ACCOUNT_SES_3";
+    UserDtoAccountRegionEnum["US_WEST_2_ACCOUNT_BYTEWISE"] = "US_WEST_2_ACCOUNT_BYTEWISE";
+    UserDtoAccountRegionEnum["EU_WEST_1_ACCOUNT_BYTEWISE"] = "EU_WEST_1_ACCOUNT_BYTEWISE";
+    UserDtoAccountRegionEnum["US_WEST_2"] = "US_WEST_2";
+    UserDtoAccountRegionEnum["EU_WEST_1"] = "EU_WEST_1";
+    UserDtoAccountRegionEnum["US_EAST_1"] = "US_EAST_1";
+})(UserDtoAccountRegionEnum = exports.UserDtoAccountRegionEnum || (exports.UserDtoAccountRegionEnum = {}));
 function UserDtoFromJSON(json) {
     return UserDtoFromJSONTyped(json, false);
 }
@@ -47,7 +79,11 @@ function UserDtoFromJSONTyped(json, ignoreDiscriminator) {
         apiKey: json['apiKey'],
         emailAddress: json['emailAddress'],
         emailAddressMd5: json['emailAddressMd5'],
-        created: !(0, runtime_1.exists)(json, 'created') ? undefined : new Date(json['created']),
+        created: !(0, runtime_1.exists)(json, 'created')
+            ? undefined
+            : json['created'] === null
+                ? null
+                : new Date(json['created']),
         userType: !(0, runtime_1.exists)(json, 'userType') ? undefined : json['userType'],
         organization: !(0, runtime_1.exists)(json, 'organization')
             ? undefined
@@ -55,6 +91,9 @@ function UserDtoFromJSONTyped(json, ignoreDiscriminator) {
         verified: !(0, runtime_1.exists)(json, 'verified') ? undefined : json['verified'],
         hasPassword: json['hasPassword'],
         isFrozen: json['isFrozen'],
+        frozenMessage: !(0, runtime_1.exists)(json, 'frozenMessage')
+            ? undefined
+            : json['frozenMessage'],
         addNewContacts: !(0, runtime_1.exists)(json, 'addNewContacts')
             ? undefined
             : json['addNewContacts'],
@@ -75,6 +114,30 @@ function UserDtoFromJSONTyped(json, ignoreDiscriminator) {
         smtpPassword: !(0, runtime_1.exists)(json, 'smtpPassword')
             ? undefined
             : json['smtpPassword'],
+        chargePending: !(0, runtime_1.exists)(json, 'chargePending')
+            ? undefined
+            : json['chargePending'],
+        enableSms: !(0, runtime_1.exists)(json, 'enableSms') ? undefined : json['enableSms'],
+        vendorEmailAddress: !(0, runtime_1.exists)(json, 'vendorEmailAddress')
+            ? undefined
+            : json['vendorEmailAddress'],
+        unsubscribed: !(0, runtime_1.exists)(json, 'unsubscribed')
+            ? undefined
+            : json['unsubscribed'],
+        apiAccessToken: !(0, runtime_1.exists)(json, 'apiAccessToken')
+            ? undefined
+            : (0, _1.TemporaryAccessKeyDtoFromJSON)(json['apiAccessToken']),
+        phoneNumber: !(0, runtime_1.exists)(json, 'phoneNumber') ? undefined : json['phoneNumber'],
+        verifiedPhone: !(0, runtime_1.exists)(json, 'verifiedPhone')
+            ? undefined
+            : json['verifiedPhone'],
+        accountRegion: !(0, runtime_1.exists)(json, 'accountRegion')
+            ? undefined
+            : json['accountRegion'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        accessLinkSendResult: !(0, runtime_1.exists)(json, 'accessLinkSendResult')
+            ? undefined
+            : (0, _1.AccessLinkSendResultDtoFromJSON)(json['accessLinkSendResult']),
     };
 }
 exports.UserDtoFromJSONTyped = UserDtoFromJSONTyped;
@@ -90,12 +153,17 @@ function UserDtoToJSON(value) {
         apiKey: value.apiKey,
         emailAddress: value.emailAddress,
         emailAddressMd5: value.emailAddressMd5,
-        created: value.created === undefined ? undefined : value.created.toISOString(),
+        created: value.created === undefined
+            ? undefined
+            : value.created === null
+                ? null
+                : value.created.toISOString(),
         userType: value.userType,
         organization: value.organization,
         verified: value.verified,
         hasPassword: value.hasPassword,
         isFrozen: value.isFrozen,
+        frozenMessage: value.frozenMessage,
         addNewContacts: value.addNewContacts,
         ssoProvider: value.ssoProvider,
         customerId: value.customerId,
@@ -104,6 +172,16 @@ function UserDtoToJSON(value) {
         imapPassword: value.imapPassword,
         smtpUsername: value.smtpUsername,
         smtpPassword: value.smtpPassword,
+        chargePending: value.chargePending,
+        enableSms: value.enableSms,
+        vendorEmailAddress: value.vendorEmailAddress,
+        unsubscribed: value.unsubscribed,
+        apiAccessToken: (0, _1.TemporaryAccessKeyDtoToJSON)(value.apiAccessToken),
+        phoneNumber: value.phoneNumber,
+        verifiedPhone: value.verifiedPhone,
+        accountRegion: value.accountRegion,
+        name: value.name,
+        accessLinkSendResult: (0, _1.AccessLinkSendResultDtoToJSON)(value.accessLinkSendResult),
     };
 }
 exports.UserDtoToJSON = UserDtoToJSON;

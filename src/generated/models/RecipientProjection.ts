@@ -24,12 +24,6 @@ export interface RecipientProjection {
    * @type {string}
    * @memberof RecipientProjection
    */
-  name?: string | null;
-  /**
-   *
-   * @type {string}
-   * @memberof RecipientProjection
-   */
   emailAddress: string;
   /**
    *
@@ -37,6 +31,12 @@ export interface RecipientProjection {
    * @memberof RecipientProjection
    */
   rawValue: string;
+  /**
+   *
+   * @type {string}
+   * @memberof RecipientProjection
+   */
+  name?: string | null;
 }
 
 export function RecipientProjectionFromJSON(json: any): RecipientProjection {
@@ -51,9 +51,9 @@ export function RecipientProjectionFromJSONTyped(
     return json;
   }
   return {
-    name: !exists(json, 'name') ? undefined : json['name'],
     emailAddress: json['emailAddress'],
     rawValue: json['rawValue'],
+    name: !exists(json, 'name') ? undefined : json['name'],
   };
 }
 
@@ -67,8 +67,8 @@ export function RecipientProjectionToJSON(
     return null;
   }
   return {
-    name: value.name,
     emailAddress: value.emailAddress,
     rawValue: value.rawValue,
+    name: value.name,
   };
 }

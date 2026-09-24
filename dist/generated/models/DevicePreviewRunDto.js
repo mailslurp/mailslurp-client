@@ -26,6 +26,7 @@ var DevicePreviewRunDtoSourceTypeEnum;
     DevicePreviewRunDtoSourceTypeEnum["RAW_UPLOAD"] = "RAW_UPLOAD";
     DevicePreviewRunDtoSourceTypeEnum["DEVICE_PREVIEW_INGEST"] = "DEVICE_PREVIEW_INGEST";
     DevicePreviewRunDtoSourceTypeEnum["PUBLIC_FREE_TEST"] = "PUBLIC_FREE_TEST";
+    DevicePreviewRunDtoSourceTypeEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
 })(DevicePreviewRunDtoSourceTypeEnum = exports.DevicePreviewRunDtoSourceTypeEnum || (exports.DevicePreviewRunDtoSourceTypeEnum = {}));
 /**
  * @export
@@ -128,6 +129,9 @@ function DevicePreviewRunDtoFromJSONTyped(json, ignoreDiscriminator) {
         thumbnail: !(0, runtime_1.exists)(json, 'thumbnail')
             ? undefined
             : (0, _1.DevicePreviewRunThumbnailDtoFromJSON)(json['thumbnail']),
+        qaBundle: !(0, runtime_1.exists)(json, 'qaBundle')
+            ? undefined
+            : (0, _1.DevicePreviewQaBundleDtoFromJSON)(json['qaBundle']),
     };
 }
 exports.DevicePreviewRunDtoFromJSONTyped = DevicePreviewRunDtoFromJSONTyped;
@@ -174,6 +178,7 @@ function DevicePreviewRunDtoToJSON(value) {
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
         thumbnail: (0, _1.DevicePreviewRunThumbnailDtoToJSON)(value.thumbnail),
+        qaBundle: (0, _1.DevicePreviewQaBundleDtoToJSON)(value.qaBundle),
     };
 }
 exports.DevicePreviewRunDtoToJSON = DevicePreviewRunDtoToJSON;

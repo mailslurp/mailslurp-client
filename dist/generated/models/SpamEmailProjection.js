@@ -24,7 +24,6 @@ function SpamEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        id: json['id'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
         userId: json['userId'],
         inboxId: json['inboxId'],
@@ -33,6 +32,7 @@ function SpamEmailProjectionFromJSONTyped(json, ignoreDiscriminator) {
         subjectSnippet: !(0, runtime_1.exists)(json, 'subjectSnippet')
             ? undefined
             : json['subjectSnippet'],
+        id: json['id'],
     };
 }
 exports.SpamEmailProjectionFromJSONTyped = SpamEmailProjectionFromJSONTyped;
@@ -44,13 +44,13 @@ function SpamEmailProjectionToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
         from: value.from,
         userId: value.userId,
         inboxId: value.inboxId,
         to: value.to,
         createdAt: value.createdAt.toISOString(),
         subjectSnippet: value.subjectSnippet,
+        id: value.id,
     };
 }
 exports.SpamEmailProjectionToJSON = SpamEmailProjectionToJSON;

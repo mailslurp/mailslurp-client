@@ -14,10 +14,14 @@ CheckEmailBlacklistResults
 
 ### Properties
 
+- [checkStatus](CheckEmailBlacklistResults.md#checkstatus)
+- [checkedAt](CheckEmailBlacklistResults.md#checkedat)
+- [checkedDomains](CheckEmailBlacklistResults.md#checkeddomains)
 - [checkedIpAddresses](CheckEmailBlacklistResults.md#checkedipaddresses)
 - [checkedZoneCount](CheckEmailBlacklistResults.md#checkedzonecount)
 - [domain](CheckEmailBlacklistResults.md#domain)
 - [errors](CheckEmailBlacklistResults.md#errors)
+- [evidenceVersion](CheckEmailBlacklistResults.md#evidenceversion)
 - [listed](CheckEmailBlacklistResults.md#listed)
 - [requestedIpAddress](CheckEmailBlacklistResults.md#requestedipaddress)
 - [requestedMxHost](CheckEmailBlacklistResults.md#requestedmxhost)
@@ -26,6 +30,36 @@ CheckEmailBlacklistResults
 - [warnings](CheckEmailBlacklistResults.md#warnings)
 
 ## Properties
+
+### checkStatus
+
+• **checkStatus**: [`CheckEmailBlacklistResultsCheckStatusEnum`](../enums/CheckEmailBlacklistResultsCheckStatusEnum.md)
+
+**`Memberof`**
+
+CheckEmailBlacklistResults
+
+___
+
+### checkedAt
+
+• **checkedAt**: `Date`
+
+**`Memberof`**
+
+CheckEmailBlacklistResults
+
+___
+
+### checkedDomains
+
+• **checkedDomains**: [`EmailBlacklistDomainResult`](EmailBlacklistDomainResult.md)[]
+
+**`Memberof`**
+
+CheckEmailBlacklistResults
+
+___
 
 ### checkedIpAddresses
 
@@ -60,6 +94,16 @@ ___
 ### errors
 
 • **errors**: `string`[]
+
+**`Memberof`**
+
+CheckEmailBlacklistResults
+
+___
+
+### evidenceVersion
+
+• **evidenceVersion**: `string`
 
 **`Memberof`**
 

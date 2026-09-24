@@ -24,12 +24,6 @@ export interface SentSmsProjection {
    * @type {string}
    * @memberof SentSmsProjection
    */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SentSmsProjection
-   */
   body: string;
   /**
    *
@@ -39,16 +33,16 @@ export interface SentSmsProjection {
   userId: string;
   /**
    *
-   * @type {Date}
-   * @memberof SentSmsProjection
-   */
-  createdAt: Date;
-  /**
-   *
    * @type {string}
    * @memberof SentSmsProjection
    */
   phoneNumber: string;
+  /**
+   *
+   * @type {Date}
+   * @memberof SentSmsProjection
+   */
+  createdAt: Date;
   /**
    *
    * @type {string}
@@ -67,6 +61,12 @@ export interface SentSmsProjection {
    * @memberof SentSmsProjection
    */
   replyToId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentSmsProjection
+   */
+  id: string;
 }
 
 export function SentSmsProjectionFromJSON(json: any): SentSmsProjection {
@@ -81,14 +81,14 @@ export function SentSmsProjectionFromJSONTyped(
     return json;
   }
   return {
-    id: json['id'],
     body: json['body'],
     userId: json['userId'],
-    createdAt: new Date(json['createdAt']),
     phoneNumber: json['phoneNumber'],
+    createdAt: new Date(json['createdAt']),
     fromNumber: json['fromNumber'],
     toNumber: json['toNumber'],
     replyToId: !exists(json, 'replyToId') ? undefined : json['replyToId'],
+    id: json['id'],
   };
 }
 
@@ -100,13 +100,13 @@ export function SentSmsProjectionToJSON(value?: SentSmsProjection | null): any {
     return null;
   }
   return {
-    id: value.id,
     body: value.body,
     userId: value.userId,
-    createdAt: value.createdAt.toISOString(),
     phoneNumber: value.phoneNumber,
+    createdAt: value.createdAt.toISOString(),
     fromNumber: value.fromNumber,
     toNumber: value.toNumber,
     replyToId: value.replyToId,
+    id: value.id,
   };
 }

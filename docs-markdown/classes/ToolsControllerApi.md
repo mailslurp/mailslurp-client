@@ -64,8 +64,12 @@
 - [getFakeEmailRawRaw](ToolsControllerApi.md#getfakeemailrawraw)
 - [getFakeEmailsForAddress](ToolsControllerApi.md#getfakeemailsforaddress)
 - [getFakeEmailsForAddressRaw](ToolsControllerApi.md#getfakeemailsforaddressraw)
+- [getPublicDeviceRenderTargets](ToolsControllerApi.md#getpublicdevicerendertargets)
+- [getPublicDeviceRenderTargetsRaw](ToolsControllerApi.md#getpublicdevicerendertargetsraw)
 - [getPublicDeviceRenderTest](ToolsControllerApi.md#getpublicdevicerendertest)
 - [getPublicDeviceRenderTestRaw](ToolsControllerApi.md#getpublicdevicerendertestraw)
+- [getPublicEmailPreviewContent](ToolsControllerApi.md#getpublicemailpreviewcontent)
+- [getPublicEmailPreviewContentRaw](ToolsControllerApi.md#getpublicemailpreviewcontentraw)
 - [getPublicSpamTest](ToolsControllerApi.md#getpublicspamtest)
 - [getPublicSpamTestRaw](ToolsControllerApi.md#getpublicspamtestraw)
 - [getPublicSpamTestResults](ToolsControllerApi.md#getpublicspamtestresults)
@@ -87,6 +91,12 @@
 - [lookupTlsReportingDomain](ToolsControllerApi.md#lookuptlsreportingdomain)
 - [lookupTlsReportingDomainRaw](ToolsControllerApi.md#lookuptlsreportingdomainraw)
 - [request](ToolsControllerApi.md#request)
+- [submitPublicDeviceRenderEml](ToolsControllerApi.md#submitpublicdevicerendereml)
+- [submitPublicDeviceRenderEmlRaw](ToolsControllerApi.md#submitpublicdevicerenderemlraw)
+- [submitPublicDeviceRenderHtml](ToolsControllerApi.md#submitpublicdevicerenderhtml)
+- [submitPublicDeviceRenderHtmlRaw](ToolsControllerApi.md#submitpublicdevicerenderhtmlraw)
+- [submitPublicDeviceRenderTest](ToolsControllerApi.md#submitpublicdevicerendertest)
+- [submitPublicDeviceRenderTestRaw](ToolsControllerApi.md#submitpublicdevicerendertestraw)
 - [submitPublicSpamTest](ToolsControllerApi.md#submitpublicspamtest)
 - [submitPublicSpamTestRaw](ToolsControllerApi.md#submitpublicspamtestraw)
 - [testSmtpServer](ToolsControllerApi.md#testsmtpserver)
@@ -965,6 +975,44 @@ Get fake emails for an address
 
 ___
 
+### getPublicDeviceRenderTargets
+
+▸ **getPublicDeviceRenderTargets**(`initOverrides?`): `Promise`<[`PublicDeviceRenderTargetListDto`](../interfaces/PublicDeviceRenderTargetListDto.md)\>
+
+Returns the currently healthy target choices exposed by the free email render tool.
+List available public email render targets
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PublicDeviceRenderTargetListDto`](../interfaces/PublicDeviceRenderTargetListDto.md)\>
+
+___
+
+### getPublicDeviceRenderTargetsRaw
+
+▸ **getPublicDeviceRenderTargetsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicDeviceRenderTargetListDto`](../interfaces/PublicDeviceRenderTargetListDto.md)\>\>
+
+Returns the currently healthy target choices exposed by the free email render tool.
+List available public email render targets
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicDeviceRenderTargetListDto`](../interfaces/PublicDeviceRenderTargetListDto.md)\>\>
+
+___
+
 ### getPublicDeviceRenderTest
 
 ▸ **getPublicDeviceRenderTest**(`requestParameters`, `initOverrides?`): `Promise`<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>
@@ -1002,6 +1050,44 @@ Get a public email render test
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>\>
+
+___
+
+### getPublicEmailPreviewContent
+
+▸ **getPublicEmailPreviewContent**(`requestParameters`, `initOverrides?`): `Promise`<[`PublicEmailPreviewContentDto`](../interfaces/PublicEmailPreviewContentDto.md)\>
+
+Get light and dark public email preview content
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPublicEmailPreviewContentRequest`](../interfaces/GetPublicEmailPreviewContentRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PublicEmailPreviewContentDto`](../interfaces/PublicEmailPreviewContentDto.md)\>
+
+___
+
+### getPublicEmailPreviewContentRaw
+
+▸ **getPublicEmailPreviewContentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicEmailPreviewContentDto`](../interfaces/PublicEmailPreviewContentDto.md)\>\>
+
+Get light and dark public email preview content
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetPublicEmailPreviewContentRequest`](../interfaces/GetPublicEmailPreviewContentRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicEmailPreviewContentDto`](../interfaces/PublicEmailPreviewContentDto.md)\>\>
 
 ___
 
@@ -1407,6 +1493,122 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### submitPublicDeviceRenderEml
+
+▸ **submitPublicDeviceRenderEml**(`requestParameters`, `initOverrides?`): `Promise`<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>
+
+Submit an EML file to a public email render test
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SubmitPublicDeviceRenderEmlRequest`](../interfaces/SubmitPublicDeviceRenderEmlRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>
+
+___
+
+### submitPublicDeviceRenderEmlRaw
+
+▸ **submitPublicDeviceRenderEmlRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>\>
+
+Submit an EML file to a public email render test
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SubmitPublicDeviceRenderEmlRequest`](../interfaces/SubmitPublicDeviceRenderEmlRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>\>
+
+___
+
+### submitPublicDeviceRenderHtml
+
+▸ **submitPublicDeviceRenderHtml**(`requestParameters`, `initOverrides?`): `Promise`<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>
+
+Submit HTML to a public email render test
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SubmitPublicDeviceRenderHtmlRequest`](../interfaces/SubmitPublicDeviceRenderHtmlRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>
+
+___
+
+### submitPublicDeviceRenderHtmlRaw
+
+▸ **submitPublicDeviceRenderHtmlRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>\>
+
+Submit HTML to a public email render test
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SubmitPublicDeviceRenderHtmlRequest`](../interfaces/SubmitPublicDeviceRenderHtmlRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>\>
+
+___
+
+### submitPublicDeviceRenderTest
+
+▸ **submitPublicDeviceRenderTest**(`requestParameters`, `initOverrides?`): `Promise`<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>
+
+Records that the caller sent an email to the generated address so submission and delivery failures can be distinguished from setup abandonment.
+Mark a public email render test as submitted
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SubmitPublicDeviceRenderTestRequest`](../interfaces/SubmitPublicDeviceRenderTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>
+
+___
+
+### submitPublicDeviceRenderTestRaw
+
+▸ **submitPublicDeviceRenderTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>\>
+
+Records that the caller sent an email to the generated address so submission and delivery failures can be distinguished from setup abandonment.
+Mark a public email render test as submitted
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`SubmitPublicDeviceRenderTestRequest`](../interfaces/SubmitPublicDeviceRenderTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`PublicDeviceRenderTestDto`](../interfaces/PublicDeviceRenderTestDto.md)\>\>
 
 ___
 

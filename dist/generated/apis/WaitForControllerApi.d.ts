@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { Email, EmailPreview, MatchOptions, SmsDto, SmsPreview, WaitForConditions, WaitForSingleSmsOptions, WaitForSmsConditions } from '../models';
+import { AIMessageResult, AIMessagesResult, Email, EmailPreview, MatchOptions, SmsDto, SmsPreview, WaitForAIMessageOptions, WaitForAIMessagesOptions, WaitForConditions, WaitForSingleSmsOptions, WaitForSmsConditions } from '../models';
 export interface WaitForRequest {
     waitForConditions: WaitForConditions;
 }
@@ -56,6 +56,14 @@ export interface WaitForMatchingFirstEmailRequest {
     before?: Date;
     sort?: WaitForMatchingFirstEmailSortEnum;
     delay?: number;
+}
+export interface WaitForMessageAIRequest {
+    waitForAIMessageOptions: WaitForAIMessageOptions;
+    idempotencyKey?: string;
+}
+export interface WaitForMessagesAIRequest {
+    waitForAIMessagesOptions: WaitForAIMessagesOptions;
+    idempotencyKey?: string;
 }
 export interface WaitForNthEmailRequest {
     inboxId?: string;
@@ -134,6 +142,26 @@ export declare class WaitForControllerApi extends runtime.BaseAPI {
      * Wait for or return the first email that matches provided MatchOptions array
      */
     waitForMatchingFirstEmail(requestParameters: WaitForMatchingFirstEmailRequest, initOverrides?: RequestInit): Promise<Email>;
+    /**
+     * Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+     * Wait for AI-matched email or SMS
+     */
+    waitForMessageAIRaw(requestParameters: WaitForMessageAIRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AIMessageResult>>;
+    /**
+     * Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+     * Wait for AI-matched email or SMS
+     */
+    waitForMessageAI(requestParameters: WaitForMessageAIRequest, initOverrides?: RequestInit): Promise<AIMessageResult>;
+    /**
+     * Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+     * Wait for AI-matched email or SMS
+     */
+    waitForMessagesAIRaw(requestParameters: WaitForMessagesAIRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<AIMessagesResult>>;
+    /**
+     * Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+     * Wait for AI-matched email or SMS
+     */
+    waitForMessagesAI(requestParameters: WaitForMessagesAIRequest, initOverrides?: RequestInit): Promise<AIMessagesResult>;
     /**
      * If nth email is already present in inbox then return it. If not hold the connection open until timeout expires or the nth email is received and returned.
      * Wait for or fetch the email with a given index in the inbox specified. If index doesn\'t exist waits for it to exist or timeout to occur.

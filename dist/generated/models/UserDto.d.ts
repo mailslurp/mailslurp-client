@@ -1,6 +1,6 @@
 /**
  * MailSlurp API
- * MailSlurp is an API for sending and receiving emails from dynamically allocated email addresses. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://www.mailslurp.com/docs/) - [Examples](https://github.com/mailslurp/examples) repository
+ * MailSlurp is an API for sending and receiving emails and SMS from dynamically allocated email addresses and phone numbers. It\'s designed for developers and QA teams to test applications, process inbound emails, send templated notifications, attachments, and more.  ## Resources  - [Homepage](https://www.mailslurp.com) - Get an [API KEY](https://app.mailslurp.com/sign-up/) - Generated [SDK Clients](https://docs.mailslurp.com/) - [Examples](https://github.com/mailslurp/examples) repository
  *
  * The version of the OpenAPI document: 6.5.2
  * Contact: contact@mailslurp.dev
@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { AccessLinkSendResultDto, TemporaryAccessKeyDto } from './';
 /**
  * Representation a user's account
  * @export
@@ -22,7 +23,7 @@ export interface UserDto {
      */
     id: string;
     /**
-     *
+     * Deprecate api key use entity instead
      * @type {string}
      * @memberof UserDto
      */
@@ -44,7 +45,7 @@ export interface UserDto {
      * @type {Date}
      * @memberof UserDto
      */
-    created?: Date;
+    created?: Date | null;
     /**
      *
      * @type {string}
@@ -56,7 +57,7 @@ export interface UserDto {
      * @type {string}
      * @memberof UserDto
      */
-    organization?: string;
+    organization?: string | null;
     /**
      * Has user accepted an organization invite
      * @type {string}
@@ -77,52 +78,118 @@ export interface UserDto {
     isFrozen: boolean;
     /**
      *
-     * @type {boolean}
-     * @memberof UserDto
-     */
-    addNewContacts?: boolean;
-    /**
-     *
      * @type {string}
      * @memberof UserDto
      */
-    ssoProvider?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof UserDto
-     */
-    customerId?: string;
+    frozenMessage?: string | null;
     /**
      *
      * @type {boolean}
      * @memberof UserDto
      */
-    hasOnboarded?: boolean;
+    addNewContacts?: boolean | null;
     /**
      *
      * @type {string}
      * @memberof UserDto
      */
-    imapUsername?: string;
+    ssoProvider?: string | null;
     /**
      *
      * @type {string}
      * @memberof UserDto
      */
-    imapPassword?: string;
+    customerId?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof UserDto
+     */
+    hasOnboarded?: boolean | null;
     /**
      *
      * @type {string}
      * @memberof UserDto
      */
-    smtpUsername?: string;
+    imapUsername?: string | null;
     /**
      *
      * @type {string}
      * @memberof UserDto
      */
-    smtpPassword?: string;
+    imapPassword?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof UserDto
+     */
+    smtpUsername?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof UserDto
+     */
+    smtpPassword?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof UserDto
+     */
+    chargePending?: boolean | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof UserDto
+     */
+    enableSms?: boolean | null;
+    /**
+     *
+     * @type {string}
+     * @memberof UserDto
+     */
+    vendorEmailAddress?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof UserDto
+     */
+    unsubscribed?: boolean | null;
+    /**
+     *
+     * @type {TemporaryAccessKeyDto}
+     * @memberof UserDto
+     */
+    apiAccessToken?: TemporaryAccessKeyDto | null;
+    /**
+     *
+     * @type {string}
+     * @memberof UserDto
+     */
+    phoneNumber?: string | null;
+    /**
+     * Has user accepted an organization invite
+     * @type {string}
+     * @memberof UserDto
+     */
+    verifiedPhone?: UserDtoVerifiedPhoneEnum;
+    /**
+     * Default account region
+     * @type {string}
+     * @memberof UserDto
+     */
+    accountRegion?: UserDtoAccountRegionEnum;
+    /**
+     * User display name
+     * @type {string}
+     * @memberof UserDto
+     */
+    name?: string | null;
+    /**
+     *
+     * @type {AccessLinkSendResultDto}
+     * @memberof UserDto
+     */
+    accessLinkSendResult?: AccessLinkSendResultDto | null;
 }
 /**
  * @export
@@ -131,7 +198,8 @@ export interface UserDto {
 export declare enum UserDtoUserTypeEnum {
     SOLO = "SOLO",
     CHILD_SOLO = "CHILD_SOLO",
-    CHILD_TEAM = "CHILD_TEAM"
+    CHILD_TEAM = "CHILD_TEAM",
+    CHILD_ADMIN = "CHILD_ADMIN"
 }
 /**
  * @export
@@ -140,6 +208,34 @@ export declare enum UserDtoUserTypeEnum {
 export declare enum UserDtoVerifiedEnum {
     VERIFIED = "VERIFIED",
     PENDING = "PENDING"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum UserDtoVerifiedPhoneEnum {
+    VERIFIED = "VERIFIED",
+    PENDING = "PENDING"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum UserDtoAccountRegionEnum {
+    US_WEST_2_ACCOUNT_STAGING = "US_WEST_2_ACCOUNT_STAGING",
+    US_EAST_1_ACCOUNT_STAGING = "US_EAST_1_ACCOUNT_STAGING",
+    EU_WEST_1_ACCOUNT_STAGING = "EU_WEST_1_ACCOUNT_STAGING",
+    US_WEST_2_ACCOUNT_SES_1 = "US_WEST_2_ACCOUNT_SES_1",
+    US_EAST_1_ACCOUNT_SES_1 = "US_EAST_1_ACCOUNT_SES_1",
+    EU_WEST_1_ACCOUNT_SES_1 = "EU_WEST_1_ACCOUNT_SES_1",
+    US_WEST_2_ACCOUNT_SES_2 = "US_WEST_2_ACCOUNT_SES_2",
+    EU_WEST_1_ACCOUNT_SES_2 = "EU_WEST_1_ACCOUNT_SES_2",
+    US_WEST_2_ACCOUNT_SES_3 = "US_WEST_2_ACCOUNT_SES_3",
+    US_WEST_2_ACCOUNT_BYTEWISE = "US_WEST_2_ACCOUNT_BYTEWISE",
+    EU_WEST_1_ACCOUNT_BYTEWISE = "EU_WEST_1_ACCOUNT_BYTEWISE",
+    US_WEST_2 = "US_WEST_2",
+    EU_WEST_1 = "EU_WEST_1",
+    US_EAST_1 = "US_EAST_1"
 }
 export declare function UserDtoFromJSON(json: any): UserDto;
 export declare function UserDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): UserDto;

@@ -17,22 +17,16 @@
 export interface ImapEmailProjection {
     /**
      *
-     * @type {string}
+     * @type {boolean}
      * @memberof ImapEmailProjection
      */
-    id: string;
+    read?: boolean | null;
     /**
      *
      * @type {Date}
      * @memberof ImapEmailProjection
      */
     createdAt: Date;
-    /**
-     *
-     * @type {boolean}
-     * @memberof ImapEmailProjection
-     */
-    read?: boolean | null;
     /**
      *
      * @type {number}
@@ -45,6 +39,12 @@ export interface ImapEmailProjection {
      * @memberof ImapEmailProjection
      */
     seqNum: number;
+    /**
+     *
+     * @type {string}
+     * @memberof ImapEmailProjection
+     */
+    id: string;
 }
 export declare function ImapEmailProjectionFromJSON(json: any): ImapEmailProjection;
 export declare function ImapEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImapEmailProjection;

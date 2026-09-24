@@ -51,12 +51,6 @@ export interface PageSpamEmailProjection {
      * @type {number}
      * @memberof PageSpamEmailProjection
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageSpamEmailProjection
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageSpamEmailProjection {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageSpamEmailProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageSpamEmailProjection
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageSpamEmailProjection
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

@@ -24,12 +24,6 @@ export interface SpamEmailProjection {
    * @type {string}
    * @memberof SpamEmailProjection
    */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof SpamEmailProjection
-   */
   from?: string | null;
   /**
    *
@@ -61,6 +55,12 @@ export interface SpamEmailProjection {
    * @memberof SpamEmailProjection
    */
   subjectSnippet?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SpamEmailProjection
+   */
+  id: string;
 }
 
 export function SpamEmailProjectionFromJSON(json: any): SpamEmailProjection {
@@ -75,7 +75,6 @@ export function SpamEmailProjectionFromJSONTyped(
     return json;
   }
   return {
-    id: json['id'],
     from: !exists(json, 'from') ? undefined : json['from'],
     userId: json['userId'],
     inboxId: json['inboxId'],
@@ -84,6 +83,7 @@ export function SpamEmailProjectionFromJSONTyped(
     subjectSnippet: !exists(json, 'subjectSnippet')
       ? undefined
       : json['subjectSnippet'],
+    id: json['id'],
   };
 }
 
@@ -97,12 +97,12 @@ export function SpamEmailProjectionToJSON(
     return null;
   }
   return {
-    id: value.id,
     from: value.from,
     userId: value.userId,
     inboxId: value.inboxId,
     to: value.to,
     createdAt: value.createdAt.toISOString(),
     subjectSnippet: value.subjectSnippet,
+    id: value.id,
   };
 }

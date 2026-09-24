@@ -44,6 +44,18 @@ export interface PublicDeviceRenderTestDto {
      * @type {string}
      * @memberof PublicDeviceRenderTestDto
      */
+    target: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PublicDeviceRenderTestDto
+     */
+    previewMode: PublicDeviceRenderTestDtoPreviewModeEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof PublicDeviceRenderTestDto
+     */
     sourceFrom?: string | null;
     /**
      *
@@ -107,6 +119,14 @@ export declare enum PublicDeviceRenderTestDtoStatusEnum {
     REJECTED = "REJECTED",
     FAILED = "FAILED",
     EXPIRED = "EXPIRED"
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum PublicDeviceRenderTestDtoPreviewModeEnum {
+    DEVICE_RENDER = "DEVICE_RENDER",
+    LIGHT_DARK = "LIGHT_DARK"
 }
 export declare function PublicDeviceRenderTestDtoFromJSON(json: any): PublicDeviceRenderTestDto;
 export declare function PublicDeviceRenderTestDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): PublicDeviceRenderTestDto;

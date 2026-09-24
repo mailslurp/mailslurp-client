@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxPlacementDomainMonitorSummaryDtoToJSON = exports.InboxPlacementDomainMonitorSummaryDtoFromJSONTyped = exports.InboxPlacementDomainMonitorSummaryDtoFromJSON = exports.InboxPlacementDomainMonitorSummaryDtoStatusEnum = exports.InboxPlacementDomainMonitorSummaryDtoSourceEnum = exports.InboxPlacementDomainMonitorSummaryDtoStateEnum = void 0;
+exports.InboxPlacementDomainMonitorSummaryDtoToJSON = exports.InboxPlacementDomainMonitorSummaryDtoFromJSONTyped = exports.InboxPlacementDomainMonitorSummaryDtoFromJSON = exports.InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum = exports.InboxPlacementDomainMonitorSummaryDtoStatusEnum = exports.InboxPlacementDomainMonitorSummaryDtoSourceEnum = exports.InboxPlacementDomainMonitorSummaryDtoStateEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -34,6 +34,7 @@ var InboxPlacementDomainMonitorSummaryDtoSourceEnum;
 (function (InboxPlacementDomainMonitorSummaryDtoSourceEnum) {
     InboxPlacementDomainMonitorSummaryDtoSourceEnum["NONE"] = "NONE";
     InboxPlacementDomainMonitorSummaryDtoSourceEnum["QUICK_CHECK"] = "QUICK_CHECK";
+    InboxPlacementDomainMonitorSummaryDtoSourceEnum["OBSERVED_MESSAGE"] = "OBSERVED_MESSAGE";
     InboxPlacementDomainMonitorSummaryDtoSourceEnum["PERSISTENT_MONITOR"] = "PERSISTENT_MONITOR";
 })(InboxPlacementDomainMonitorSummaryDtoSourceEnum = exports.InboxPlacementDomainMonitorSummaryDtoSourceEnum || (exports.InboxPlacementDomainMonitorSummaryDtoSourceEnum = {}));
 /**
@@ -47,6 +48,17 @@ var InboxPlacementDomainMonitorSummaryDtoStatusEnum;
     InboxPlacementDomainMonitorSummaryDtoStatusEnum["CRITICAL"] = "CRITICAL";
     InboxPlacementDomainMonitorSummaryDtoStatusEnum["FAILED"] = "FAILED";
 })(InboxPlacementDomainMonitorSummaryDtoStatusEnum = exports.InboxPlacementDomainMonitorSummaryDtoStatusEnum || (exports.InboxPlacementDomainMonitorSummaryDtoStatusEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum;
+(function (InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum) {
+    InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum["LISTED"] = "LISTED";
+    InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum["NOT_LISTED"] = "NOT_LISTED";
+    InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum["ERROR"] = "ERROR";
+    InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum["NOT_CHECKED"] = "NOT_CHECKED";
+})(InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum = exports.InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum || (exports.InboxPlacementDomainMonitorSummaryDtoBlacklistStatusEnum = {}));
 function InboxPlacementDomainMonitorSummaryDtoFromJSON(json) {
     return InboxPlacementDomainMonitorSummaryDtoFromJSONTyped(json, false);
 }
@@ -84,6 +96,12 @@ function InboxPlacementDomainMonitorSummaryDtoFromJSONTyped(json, ignoreDiscrimi
         blacklistChecked: json['blacklistChecked'],
         blacklistOk: json['blacklistOk'],
         blacklistListed: json['blacklistListed'],
+        blacklistStatus: json['blacklistStatus'],
+        observedSendingIp: !(0, runtime_1.exists)(json, 'observedSendingIp')
+            ? undefined
+            : json['observedSendingIp'],
+        scoreVersion: json['scoreVersion'],
+        scoreScope: json['scoreScope'],
         insights: json['insights'],
         errorMessage: !(0, runtime_1.exists)(json, 'errorMessage')
             ? undefined
@@ -126,6 +144,10 @@ function InboxPlacementDomainMonitorSummaryDtoToJSON(value) {
         blacklistChecked: value.blacklistChecked,
         blacklistOk: value.blacklistOk,
         blacklistListed: value.blacklistListed,
+        blacklistStatus: value.blacklistStatus,
+        observedSendingIp: value.observedSendingIp,
+        scoreVersion: value.scoreVersion,
+        scoreScope: value.scoreScope,
         insights: value.insights,
         errorMessage: value.errorMessage,
         monitorId: value.monitorId,

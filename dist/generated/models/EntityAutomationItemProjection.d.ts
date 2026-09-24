@@ -20,13 +20,7 @@ export interface EntityAutomationItemProjection {
      * @type {string}
      * @memberof EntityAutomationItemProjection
      */
-    name?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof EntityAutomationItemProjection
-     */
-    id: string;
+    automationType: EntityAutomationItemProjectionAutomationTypeEnum;
     /**
      *
      * @type {string}
@@ -50,7 +44,13 @@ export interface EntityAutomationItemProjection {
      * @type {string}
      * @memberof EntityAutomationItemProjection
      */
-    automationType: EntityAutomationItemProjectionAutomationTypeEnum;
+    name?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EntityAutomationItemProjection
+     */
+    id: string;
 }
 /**
  * @export

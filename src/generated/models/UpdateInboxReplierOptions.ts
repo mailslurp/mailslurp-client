@@ -27,11 +27,11 @@ import {
  */
 export interface UpdateInboxReplierOptions {
   /**
-   * Inbox ID to attach replier to
+   * Inbox ID to attach replier to. Set null for a global replier.
    * @type {string}
    * @memberof UpdateInboxReplierOptions
    */
-  inboxId: string;
+  inboxId: string | null;
   /**
    * Name for replier
    * @type {string}
@@ -116,6 +116,12 @@ export interface UpdateInboxReplierOptions {
    * @memberof UpdateInboxReplierOptions
    */
   matchOptions?: InboxAutomationMatchOptions | null;
+  /**
+   * Optional attachment IDs to include with every automated reply
+   * @type {Array<string>}
+   * @memberof UpdateInboxReplierOptions
+   */
+  attachments?: Array<string> | null;
 }
 
 /**
@@ -176,6 +182,7 @@ export function UpdateInboxReplierOptionsFromJSONTyped(
     matchOptions: !exists(json, 'matchOptions')
       ? undefined
       : InboxAutomationMatchOptionsFromJSON(json['matchOptions']),
+    attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
   };
 }
 
@@ -204,5 +211,6 @@ export function UpdateInboxReplierOptionsToJSON(
     templateVariables: value.templateVariables,
     should: value.should,
     matchOptions: InboxAutomationMatchOptionsToJSON(value.matchOptions),
+    attachments: value.attachments,
   };
 }

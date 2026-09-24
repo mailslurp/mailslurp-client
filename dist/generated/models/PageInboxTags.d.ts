@@ -51,12 +51,6 @@ export interface PageInboxTags {
      * @type {number}
      * @memberof PageInboxTags
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageInboxTags
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageInboxTags {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageInboxTags
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageInboxTags
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageInboxTags
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

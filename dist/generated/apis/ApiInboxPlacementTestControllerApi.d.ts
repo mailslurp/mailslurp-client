@@ -11,8 +11,15 @@
  */
 import * as runtime from '../runtime';
 import { CreateInboxPlacementTestOptions, InboxPlacementAnalysisBundleDto, InboxPlacementAnalyticsBreakdownDto, InboxPlacementAnalyticsSeriesDto, InboxPlacementPublicShareDto, InboxPlacementTestResultsDto, InboxPlacementTestRunDto } from '../models';
+export interface ConfirmInboxPlacementTestSentRequest {
+    id: string;
+}
 export interface CreateInboxPlacementTestRequest {
     createInboxPlacementTestOptions: CreateInboxPlacementTestOptions;
+}
+export interface ExportInboxPlacementSeedListRequest {
+    id: string;
+    provider?: ExportInboxPlacementSeedListProviderEnum;
 }
 export interface ExportInboxPlacementTestResultsRequest {
     id: string;
@@ -52,10 +59,23 @@ export interface GetInboxPlacementTestResultsRequest {
 export interface GetInboxPlacementTestsRequest {
     limit?: number;
 }
+export interface PrepareInboxPlacementTestRequest {
+    createInboxPlacementTestOptions: CreateInboxPlacementTestOptions;
+}
 /**
  *
  */
 export declare class ApiInboxPlacementTestControllerApi extends runtime.BaseAPI {
+    /**
+     * Reconcile any messages that arrived after seed reservation, commit allowance, and move a prepared dashboard test into its active lifecycle. This operation is idempotent.
+     * Confirm an inbox placement test email has been sent
+     */
+    confirmInboxPlacementTestSentRaw(requestParameters: ConfirmInboxPlacementTestSentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxPlacementTestRunDto>>;
+    /**
+     * Reconcile any messages that arrived after seed reservation, commit allowance, and move a prepared dashboard test into its active lifecycle. This operation is idempotent.
+     * Confirm an inbox placement test email has been sent
+     */
+    confirmInboxPlacementTestSent(requestParameters: ConfirmInboxPlacementTestSentRequest, initOverrides?: RequestInit): Promise<InboxPlacementTestRunDto>;
     /**
      * Create a new direct-send inbox placement test
      */
@@ -64,6 +84,16 @@ export declare class ApiInboxPlacementTestControllerApi extends runtime.BaseAPI 
      * Create a new direct-send inbox placement test
      */
     createInboxPlacementTest(requestParameters: CreateInboxPlacementTestRequest, initOverrides?: RequestInit): Promise<InboxPlacementTestRunDto>;
+    /**
+     * Export the current run\'s seed addresses with headers recognized by the selected email platform. Downloading a prepared seed list does not confirm the send or consume allowance.
+     * Download inbox placement seed addresses as an email-platform CSV
+     */
+    exportInboxPlacementSeedListRaw(requestParameters: ExportInboxPlacementSeedListRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    /**
+     * Export the current run\'s seed addresses with headers recognized by the selected email platform. Downloading a prepared seed list does not confirm the send or consume allowance.
+     * Download inbox placement seed addresses as an email-platform CSV
+     */
+    exportInboxPlacementSeedList(requestParameters: ExportInboxPlacementSeedListRequest, initOverrides?: RequestInit): Promise<void>;
     /**
      * Export one row per placement target, including run-level delivery totals, 0-10 placement scores, and target placement outcome fields.
      * Export inbox placement test results as CSV
@@ -142,6 +172,35 @@ export declare class ApiInboxPlacementTestControllerApi extends runtime.BaseAPI 
      * List inbox placement test runs
      */
     getInboxPlacementTests(requestParameters: GetInboxPlacementTestsRequest, initOverrides?: RequestInit): Promise<Array<InboxPlacementTestRunDto>>;
+    /**
+     * Reserve seed addresses for the dashboard create flow. The run remains staged and allowance is not committed until send confirmation. Reuses a recent active preparation when possible.
+     * Prepare a direct-send inbox placement test without consuming allowance
+     */
+    prepareInboxPlacementTestRaw(requestParameters: PrepareInboxPlacementTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxPlacementTestRunDto>>;
+    /**
+     * Reserve seed addresses for the dashboard create flow. The run remains staged and allowance is not committed until send confirmation. Reuses a recent active preparation when possible.
+     * Prepare a direct-send inbox placement test without consuming allowance
+     */
+    prepareInboxPlacementTest(requestParameters: PrepareInboxPlacementTestRequest, initOverrides?: RequestInit): Promise<InboxPlacementTestRunDto>;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum ExportInboxPlacementSeedListProviderEnum {
+    GENERIC = "GENERIC",
+    MAILCHIMP = "MAILCHIMP",
+    KLAVIYO = "KLAVIYO",
+    SALESFORCE = "SALESFORCE",
+    HUBSPOT = "HUBSPOT",
+    BRAZE = "BRAZE",
+    BREVO = "BREVO",
+    MAILERLITE = "MAILERLITE",
+    MAILJET = "MAILJET",
+    OMNISEND = "OMNISEND",
+    GETRESPONSE = "GETRESPONSE",
+    CONSTANT_CONTACT = "CONSTANT_CONTACT",
+    KIT = "KIT"
 }
 /**
  * @export

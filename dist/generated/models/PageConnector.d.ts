@@ -51,12 +51,6 @@ export interface PageConnector {
      * @type {number}
      * @memberof PageConnector
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageConnector
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageConnector {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageConnector
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageConnector
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageConnector
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

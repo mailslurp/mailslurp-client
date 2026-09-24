@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { AnalyzeDmarcReportOptions, AnalyzeDmarcReportResults, AnalyzeEmailHeadersOptions, AnalyzeEmailHeadersResults, CheckCampaignProbeOptions, CheckCampaignProbeResults, CheckDnsPropagationOptions, CheckDnsPropagationResults, CheckDomainMonitorOptions, CheckDomainMonitorResults, CheckEmailAuditOptions, CheckEmailAuthStackOptions, CheckEmailAuthStackResults, CheckEmailBlacklistOptions, CheckEmailBlacklistResults, CheckEmailFeaturesClientSupportOptions, CheckEmailFeaturesClientSupportResults, CreatePublicDeviceRenderTestOptions, CreatePublicSpamTestOptions, EmailAuditAnalysisResult, FakeEmailPreview, FakeEmailResult, GenerateBimiRecordOptions, GenerateBimiRecordResults, GenerateDmarcRecordOptions, GenerateDmarcRecordResults, GenerateMtaStsRecordOptions, GenerateMtaStsRecordResults, GenerateSpfRecordOptions, GenerateSpfRecordResults, GenerateTlsReportingRecordOptions, GenerateTlsReportingRecordResults, LookupBimiDomainOptions, LookupBimiDomainResults, LookupDkimDomainOptions, LookupDkimDomainResults, LookupDmarcDomainOptions, LookupDmarcDomainResults, LookupMtaStsDomainOptions, LookupMtaStsDomainResults, LookupMxRecordsOptions, LookupMxRecordsResults, LookupPtrOptions, LookupPtrResults, LookupSpfDomainOptions, LookupSpfDomainResults, LookupTlsReportingDomainOptions, LookupTlsReportingDomainResults, NewFakeEmailAddressResult, PublicDeviceRenderTestDto, PublicSpamTestResultsDto, PublicSpamTestRunDto, SubmitPublicSpamTestOptions, TestSmtpServerOptions, TestSmtpServerResults } from '../models';
+import { AnalyzeDmarcReportOptions, AnalyzeDmarcReportResults, AnalyzeEmailHeadersOptions, AnalyzeEmailHeadersResults, CheckCampaignProbeOptions, CheckCampaignProbeResults, CheckDnsPropagationOptions, CheckDnsPropagationResults, CheckDomainMonitorOptions, CheckDomainMonitorResults, CheckEmailAuditOptions, CheckEmailAuthStackOptions, CheckEmailAuthStackResults, CheckEmailBlacklistOptions, CheckEmailBlacklistResults, CheckEmailFeaturesClientSupportOptions, CheckEmailFeaturesClientSupportResults, CreatePublicDeviceRenderTestOptions, CreatePublicSpamTestOptions, EmailAuditAnalysisResult, FakeEmailPreview, FakeEmailResult, GenerateBimiRecordOptions, GenerateBimiRecordResults, GenerateDmarcRecordOptions, GenerateDmarcRecordResults, GenerateMtaStsRecordOptions, GenerateMtaStsRecordResults, GenerateSpfRecordOptions, GenerateSpfRecordResults, GenerateTlsReportingRecordOptions, GenerateTlsReportingRecordResults, LookupBimiDomainOptions, LookupBimiDomainResults, LookupDkimDomainOptions, LookupDkimDomainResults, LookupDmarcDomainOptions, LookupDmarcDomainResults, LookupMtaStsDomainOptions, LookupMtaStsDomainResults, LookupMxRecordsOptions, LookupMxRecordsResults, LookupPtrOptions, LookupPtrResults, LookupSpfDomainOptions, LookupSpfDomainResults, LookupTlsReportingDomainOptions, LookupTlsReportingDomainResults, NewFakeEmailAddressResult, PublicDeviceRenderTargetListDto, PublicDeviceRenderTestDto, PublicEmailPreviewContentDto, PublicSpamTestResultsDto, PublicSpamTestRunDto, SubmitPublicDeviceRenderHtmlOptions, SubmitPublicSpamTestOptions, TestSmtpServerOptions, TestSmtpServerResults } from '../models';
 export interface AnalyzeDmarcReportRequest {
     analyzeDmarcReportOptions: AnalyzeDmarcReportOptions;
 }
@@ -78,6 +78,9 @@ export interface GetFakeEmailsForAddressRequest {
 export interface GetPublicDeviceRenderTestRequest {
     id: string;
 }
+export interface GetPublicEmailPreviewContentRequest {
+    id: string;
+}
 export interface GetPublicSpamTestRequest {
     id: string;
 }
@@ -107,6 +110,16 @@ export interface LookupSpfDomainRequest {
 }
 export interface LookupTlsReportingDomainRequest {
     lookupTlsReportingDomainOptions: LookupTlsReportingDomainOptions;
+}
+export interface SubmitPublicDeviceRenderEmlRequest {
+    id: string;
+}
+export interface SubmitPublicDeviceRenderHtmlRequest {
+    id: string;
+    submitPublicDeviceRenderHtmlOptions: SubmitPublicDeviceRenderHtmlOptions;
+}
+export interface SubmitPublicDeviceRenderTestRequest {
+    id: string;
 }
 export interface SubmitPublicSpamTestRequest {
     id: string;
@@ -306,6 +319,16 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      */
     getFakeEmailsForAddress(requestParameters: GetFakeEmailsForAddressRequest, initOverrides?: RequestInit): Promise<Array<FakeEmailPreview>>;
     /**
+     * Returns the currently healthy target choices exposed by the free email render tool.
+     * List available public email render targets
+     */
+    getPublicDeviceRenderTargetsRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<PublicDeviceRenderTargetListDto>>;
+    /**
+     * Returns the currently healthy target choices exposed by the free email render tool.
+     * List available public email render targets
+     */
+    getPublicDeviceRenderTargets(initOverrides?: RequestInit): Promise<PublicDeviceRenderTargetListDto>;
+    /**
      * Returns status for a free email render test and the public share redirect when the render run is ready.
      * Get a public email render test
      */
@@ -315,6 +338,14 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      * Get a public email render test
      */
     getPublicDeviceRenderTest(requestParameters: GetPublicDeviceRenderTestRequest, initOverrides?: RequestInit): Promise<PublicDeviceRenderTestDto>;
+    /**
+     * Get light and dark public email preview content
+     */
+    getPublicEmailPreviewContentRaw(requestParameters: GetPublicEmailPreviewContentRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PublicEmailPreviewContentDto>>;
+    /**
+     * Get light and dark public email preview content
+     */
+    getPublicEmailPreviewContent(requestParameters: GetPublicEmailPreviewContentRequest, initOverrides?: RequestInit): Promise<PublicEmailPreviewContentDto>;
     /**
      * Returns public spam test run status, token, seed addresses, and free-limit state.
      * Get a public spam test run
@@ -399,6 +430,32 @@ export declare class ToolsControllerApi extends runtime.BaseAPI {
      * Lookup a TLS reporting domain policy
      */
     lookupTlsReportingDomain(requestParameters: LookupTlsReportingDomainRequest, initOverrides?: RequestInit): Promise<LookupTlsReportingDomainResults>;
+    /**
+     * Submit an EML file to a public email render test
+     */
+    submitPublicDeviceRenderEmlRaw(requestParameters: SubmitPublicDeviceRenderEmlRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PublicDeviceRenderTestDto>>;
+    /**
+     * Submit an EML file to a public email render test
+     */
+    submitPublicDeviceRenderEml(requestParameters: SubmitPublicDeviceRenderEmlRequest, initOverrides?: RequestInit): Promise<PublicDeviceRenderTestDto>;
+    /**
+     * Submit HTML to a public email render test
+     */
+    submitPublicDeviceRenderHtmlRaw(requestParameters: SubmitPublicDeviceRenderHtmlRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PublicDeviceRenderTestDto>>;
+    /**
+     * Submit HTML to a public email render test
+     */
+    submitPublicDeviceRenderHtml(requestParameters: SubmitPublicDeviceRenderHtmlRequest, initOverrides?: RequestInit): Promise<PublicDeviceRenderTestDto>;
+    /**
+     * Records that the caller sent an email to the generated address so submission and delivery failures can be distinguished from setup abandonment.
+     * Mark a public email render test as submitted
+     */
+    submitPublicDeviceRenderTestRaw(requestParameters: SubmitPublicDeviceRenderTestRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<PublicDeviceRenderTestDto>>;
+    /**
+     * Records that the caller sent an email to the generated address so submission and delivery failures can be distinguished from setup abandonment.
+     * Mark a public email render test as submitted
+     */
+    submitPublicDeviceRenderTest(requestParameters: SubmitPublicDeviceRenderTestRequest, initOverrides?: RequestInit): Promise<PublicDeviceRenderTestDto>;
     /**
      * Marks a previously created public spam test as submitted after the caller has sent the test email to the seed addresses.
      * Mark a public spam test as submitted

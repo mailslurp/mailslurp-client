@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PublicDeviceRenderTestDtoToJSON = exports.PublicDeviceRenderTestDtoFromJSONTyped = exports.PublicDeviceRenderTestDtoFromJSON = exports.PublicDeviceRenderTestDtoStatusEnum = void 0;
+exports.PublicDeviceRenderTestDtoToJSON = exports.PublicDeviceRenderTestDtoFromJSONTyped = exports.PublicDeviceRenderTestDtoFromJSON = exports.PublicDeviceRenderTestDtoPreviewModeEnum = exports.PublicDeviceRenderTestDtoStatusEnum = void 0;
 var runtime_1 = require("../runtime");
 /**
  * @export
@@ -30,6 +30,15 @@ var PublicDeviceRenderTestDtoStatusEnum;
     PublicDeviceRenderTestDtoStatusEnum["FAILED"] = "FAILED";
     PublicDeviceRenderTestDtoStatusEnum["EXPIRED"] = "EXPIRED";
 })(PublicDeviceRenderTestDtoStatusEnum = exports.PublicDeviceRenderTestDtoStatusEnum || (exports.PublicDeviceRenderTestDtoStatusEnum = {}));
+/**
+ * @export
+ * @enum {string}
+ */
+var PublicDeviceRenderTestDtoPreviewModeEnum;
+(function (PublicDeviceRenderTestDtoPreviewModeEnum) {
+    PublicDeviceRenderTestDtoPreviewModeEnum["DEVICE_RENDER"] = "DEVICE_RENDER";
+    PublicDeviceRenderTestDtoPreviewModeEnum["LIGHT_DARK"] = "LIGHT_DARK";
+})(PublicDeviceRenderTestDtoPreviewModeEnum = exports.PublicDeviceRenderTestDtoPreviewModeEnum || (exports.PublicDeviceRenderTestDtoPreviewModeEnum = {}));
 function PublicDeviceRenderTestDtoFromJSON(json) {
     return PublicDeviceRenderTestDtoFromJSONTyped(json, false);
 }
@@ -43,6 +52,8 @@ function PublicDeviceRenderTestDtoFromJSONTyped(json, ignoreDiscriminator) {
         emailAddress: json['emailAddress'],
         status: json['status'],
         expiresAt: new Date(json['expiresAt']),
+        target: json['target'],
+        previewMode: json['previewMode'],
         sourceFrom: !(0, runtime_1.exists)(json, 'sourceFrom') ? undefined : json['sourceFrom'],
         sourceSubject: !(0, runtime_1.exists)(json, 'sourceSubject')
             ? undefined
@@ -73,6 +84,8 @@ function PublicDeviceRenderTestDtoToJSON(value) {
         emailAddress: value.emailAddress,
         status: value.status,
         expiresAt: value.expiresAt.toISOString(),
+        target: value.target,
+        previewMode: value.previewMode,
         sourceFrom: value.sourceFrom,
         sourceSubject: value.sourceSubject,
         senderDomain: value.senderDomain,

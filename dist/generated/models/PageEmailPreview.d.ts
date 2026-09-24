@@ -51,12 +51,6 @@ export interface PageEmailPreview {
      * @type {number}
      * @memberof PageEmailPreview
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageEmailPreview
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageEmailPreview {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageEmailPreview
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageEmailPreview
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageEmailPreview
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

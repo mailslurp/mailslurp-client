@@ -51,12 +51,6 @@ export interface PageTotpDeviceProjection {
      * @type {number}
      * @memberof PageTotpDeviceProjection
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageTotpDeviceProjection
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageTotpDeviceProjection {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageTotpDeviceProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageTotpDeviceProjection
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageTotpDeviceProjection
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

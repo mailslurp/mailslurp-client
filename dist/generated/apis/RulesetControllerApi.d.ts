@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateRulesetOptions, InboxRulesetTestResult, PageRulesetDto, RulesetDto, RulesetTestOptions, TestInboxRulesetSendingOptions, TestNewInboxRulesetOptions, TestRulesetReceivingOptions, TestRulesetReceivingResult, TestRulesetSendingResult } from '../models';
+import { CreateRulesetOptions, InboxRulesetTestResult, PageRulesetDto, RulesetDto, RulesetTestOptions, TestInboxRulesetSendingOptions, TestNewInboxRulesetOptions, TestRulesetReceivingOptions, TestRulesetReceivingResult, TestRulesetSendingResult, UpdateRulesetOptions } from '../models';
 export interface CreateNewRulesetRequest {
     createRulesetOptions: CreateRulesetOptions;
     inboxId?: string;
@@ -52,6 +52,10 @@ export interface TestRulesetReceivingRequest {
 }
 export interface TestRulesetSendingRequest {
     testInboxRulesetSendingOptions: TestInboxRulesetSendingOptions;
+}
+export interface UpdateRulesetRequest {
+    id: string;
+    updateRulesetOptions: UpdateRulesetOptions;
 }
 /**
  *
@@ -157,6 +161,16 @@ export declare class RulesetControllerApi extends runtime.BaseAPI {
      * Test sending with rulesets
      */
     testRulesetSending(requestParameters: TestRulesetSendingRequest, initOverrides?: RequestInit): Promise<TestRulesetSendingResult>;
+    /**
+     * Update a ruleset\'s active state
+     * Update a ruleset
+     */
+    updateRulesetRaw(requestParameters: UpdateRulesetRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<RulesetDto>>;
+    /**
+     * Update a ruleset\'s active state
+     * Update a ruleset
+     */
+    updateRuleset(requestParameters: UpdateRulesetRequest, initOverrides?: RequestInit): Promise<RulesetDto>;
 }
 /**
  * @export

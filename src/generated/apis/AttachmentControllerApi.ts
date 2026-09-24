@@ -29,9 +29,9 @@ import {
   ExtractAttachmentTextResult,
   ExtractAttachmentTextResultFromJSON,
   ExtractAttachmentTextResultToJSON,
-  InlineObject3,
-  InlineObject3FromJSON,
-  InlineObject3ToJSON,
+  InlineObject6,
+  InlineObject6FromJSON,
+  InlineObject6ToJSON,
   PageAttachmentEntity,
   PageAttachmentEntityFromJSON,
   PageAttachmentEntityToJSON,
@@ -99,7 +99,7 @@ export interface UploadMultipartFormRequest {
   xFilename?: string;
   xFilenameRaw?: string;
   xFilesize?: number;
-  inlineObject3?: InlineObject3;
+  inlineObject6?: InlineObject6;
 }
 
 /**
@@ -760,7 +760,7 @@ export class AttachmentControllerApi extends runtime.BaseAPI {
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
-        body: InlineObject3ToJSON(requestParameters.inlineObject3),
+        body: InlineObject6ToJSON(requestParameters.inlineObject6),
       },
       initOverrides
     );

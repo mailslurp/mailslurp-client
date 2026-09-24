@@ -64,11 +64,14 @@ function InboxReplierDtoFromJSONTyped(json, ignoreDiscriminator) {
             ? undefined
             : json['templateVariables'],
         ignoreReplyTo: json['ignoreReplyTo'],
+        active: json['active'],
         createdAt: new Date(json['createdAt']),
         should: !(0, runtime_1.exists)(json, 'should') ? undefined : json['should'],
         matchOptions: !(0, runtime_1.exists)(json, 'matchOptions')
             ? undefined
             : (0, _1.InboxAutomationMatchOptionsFromJSON)(json['matchOptions']),
+        body: !(0, runtime_1.exists)(json, 'body') ? undefined : json['body'],
+        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
     };
 }
 exports.InboxReplierDtoFromJSONTyped = InboxReplierDtoFromJSONTyped;
@@ -93,9 +96,12 @@ function InboxReplierDtoToJSON(value) {
         templateId: value.templateId,
         templateVariables: value.templateVariables,
         ignoreReplyTo: value.ignoreReplyTo,
+        active: value.active,
         createdAt: value.createdAt.toISOString(),
         should: value.should,
         matchOptions: (0, _1.InboxAutomationMatchOptionsToJSON)(value.matchOptions),
+        body: value.body,
+        attachments: value.attachments,
     };
 }
 exports.InboxReplierDtoToJSON = InboxReplierDtoToJSON;

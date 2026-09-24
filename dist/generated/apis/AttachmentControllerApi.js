@@ -682,7 +682,7 @@ var AttachmentControllerApi = /** @class */ (function (_super) {
                                 method: 'POST',
                                 headers: headerParameters,
                                 query: queryParameters,
-                                body: (0, models_1.InlineObject3ToJSON)(requestParameters.inlineObject3),
+                                body: (0, models_1.InlineObject6ToJSON)(requestParameters.inlineObject6),
                             }, initOverrides)];
                     case 1:
                         response = _a.sent();

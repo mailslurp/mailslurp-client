@@ -51,12 +51,6 @@ export interface PageAttachmentEntity {
      * @type {number}
      * @memberof PageAttachmentEntity
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageAttachmentEntity
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageAttachmentEntity {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageAttachmentEntity
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageAttachmentEntity
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageAttachmentEntity
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

@@ -22,14 +22,14 @@
 
 - [addContactsToGroup](GroupControllerApi.md#addcontactstogroup)
 - [addContactsToGroupRaw](GroupControllerApi.md#addcontactstogroupraw)
-- [createGroup](GroupControllerApi.md#creategroup)
-- [createGroupRaw](GroupControllerApi.md#creategroupraw)
-- [deleteGroup](GroupControllerApi.md#deletegroup)
-- [deleteGroupRaw](GroupControllerApi.md#deletegroupraw)
+- [createGroup1](GroupControllerApi.md#creategroup1)
+- [createGroup1Raw](GroupControllerApi.md#creategroup1raw)
+- [deleteGroup1](GroupControllerApi.md#deletegroup1)
+- [deleteGroup1Raw](GroupControllerApi.md#deletegroup1raw)
 - [getAllGroups](GroupControllerApi.md#getallgroups)
 - [getAllGroupsRaw](GroupControllerApi.md#getallgroupsraw)
-- [getGroup](GroupControllerApi.md#getgroup)
-- [getGroupRaw](GroupControllerApi.md#getgroupraw)
+- [getGroup1](GroupControllerApi.md#getgroup1)
+- [getGroup1Raw](GroupControllerApi.md#getgroup1raw)
 - [getGroupWithContacts](GroupControllerApi.md#getgroupwithcontacts)
 - [getGroupWithContactsPaginated](GroupControllerApi.md#getgroupwithcontactspaginated)
 - [getGroupWithContactsPaginatedRaw](GroupControllerApi.md#getgroupwithcontactspaginatedraw)
@@ -109,9 +109,9 @@ Add contacts to a group
 
 ___
 
-### createGroup
+### createGroup1
 
-▸ **createGroup**(`requestParameters`, `initOverrides?`): `Promise`<[`GroupDto`](../interfaces/GroupDto.md)\>
+▸ **createGroup1**(`requestParameters`, `initOverrides?`): `Promise`<[`GroupDto`](../interfaces/GroupDto.md)\>
 
 Create a group
 
@@ -119,7 +119,7 @@ Create a group
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`CreateGroupRequest`](../interfaces/CreateGroupRequest.md) |
+| `requestParameters` | [`CreateGroup1Request`](../interfaces/CreateGroup1Request.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -128,9 +128,9 @@ Create a group
 
 ___
 
-### createGroupRaw
+### createGroup1Raw
 
-▸ **createGroupRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GroupDto`](../interfaces/GroupDto.md)\>\>
+▸ **createGroup1Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GroupDto`](../interfaces/GroupDto.md)\>\>
 
 Create a group
 
@@ -138,7 +138,7 @@ Create a group
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`CreateGroupRequest`](../interfaces/CreateGroupRequest.md) |
+| `requestParameters` | [`CreateGroup1Request`](../interfaces/CreateGroup1Request.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -147,9 +147,9 @@ Create a group
 
 ___
 
-### deleteGroup
+### deleteGroup1
 
-▸ **deleteGroup**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+▸ **deleteGroup1**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
 
 Delete group
 
@@ -157,7 +157,7 @@ Delete group
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`DeleteGroupRequest`](../interfaces/DeleteGroupRequest.md) |
+| `requestParameters` | [`DeleteGroup1Request`](../interfaces/DeleteGroup1Request.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -166,9 +166,9 @@ Delete group
 
 ___
 
-### deleteGroupRaw
+### deleteGroup1Raw
 
-▸ **deleteGroupRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+▸ **deleteGroup1Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 Delete group
 
@@ -176,7 +176,7 @@ Delete group
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`DeleteGroupRequest`](../interfaces/DeleteGroupRequest.md) |
+| `requestParameters` | [`DeleteGroup1Request`](../interfaces/DeleteGroup1Request.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -223,9 +223,9 @@ Get all Contact Groups in paginated format
 
 ___
 
-### getGroup
+### getGroup1
 
-▸ **getGroup**(`requestParameters`, `initOverrides?`): `Promise`<[`GroupDto`](../interfaces/GroupDto.md)\>
+▸ **getGroup1**(`requestParameters`, `initOverrides?`): `Promise`<[`GroupDto`](../interfaces/GroupDto.md)\>
 
 Get group
 
@@ -233,7 +233,7 @@ Get group
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetGroupRequest`](../interfaces/GetGroupRequest.md) |
+| `requestParameters` | [`GetGroup1Request`](../interfaces/GetGroup1Request.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -242,9 +242,9 @@ Get group
 
 ___
 
-### getGroupRaw
+### getGroup1Raw
 
-▸ **getGroupRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GroupDto`](../interfaces/GroupDto.md)\>\>
+▸ **getGroup1Raw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`GroupDto`](../interfaces/GroupDto.md)\>\>
 
 Get group
 
@@ -252,7 +252,7 @@ Get group
 
 | Name | Type |
 | :------ | :------ |
-| `requestParameters` | [`GetGroupRequest`](../interfaces/GetGroupRequest.md) |
+| `requestParameters` | [`GetGroup1Request`](../interfaces/GetGroup1Request.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns

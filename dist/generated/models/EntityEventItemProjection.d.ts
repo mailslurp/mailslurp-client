@@ -20,13 +20,13 @@ export interface EntityEventItemProjection {
      * @type {string}
      * @memberof EntityEventItemProjection
      */
-    id: string;
+    severity: EntityEventItemProjectionSeverityEnum;
     /**
      *
      * @type {string}
      * @memberof EntityEventItemProjection
      */
-    severity: EntityEventItemProjectionSeverityEnum;
+    eventType: EntityEventItemProjectionEventTypeEnum;
     /**
      *
      * @type {string}
@@ -44,7 +44,7 @@ export interface EntityEventItemProjection {
      * @type {string}
      * @memberof EntityEventItemProjection
      */
-    eventType: EntityEventItemProjectionEventTypeEnum;
+    id: string;
 }
 /**
  * @export

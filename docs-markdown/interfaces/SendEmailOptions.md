@@ -2,7 +2,7 @@
 
 # Interface: SendEmailOptions
 
-Options for the email to be sent
+Updated options for the email draft
 
 **`Export`**
 
@@ -27,6 +27,7 @@ SendEmailOptions
 - [fromName](SendEmailOptions.md#fromname)
 - [html](SendEmailOptions.md#html)
 - [ignoreEmptyRecipients](SendEmailOptions.md#ignoreemptyrecipients)
+- [inboxId](SendEmailOptions.md#inboxid)
 - [isHTML](SendEmailOptions.md#ishtml)
 - [isXAmpHtml](SendEmailOptions.md#isxamphtml)
 - [replyTo](SendEmailOptions.md#replyto)
@@ -195,6 +196,18 @@ ___
 • `Optional` **ignoreEmptyRecipients**: `boolean`
 
 Ignore empty recipients after validation removes all recipients as invalid and fail silently
+
+**`Memberof`**
+
+SendEmailOptions
+
+___
+
+### inboxId
+
+• `Optional` **inboxId**: `string`
+
+Optional inbox ID to send from. If omitted, source inbox selection is controlled by the endpoint path or query parameters.
 
 **`Memberof`**
 

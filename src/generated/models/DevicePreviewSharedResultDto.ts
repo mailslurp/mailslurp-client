@@ -18,6 +18,10 @@ import {
   DevicePreviewShareLinkDtoFromJSON,
   DevicePreviewShareLinkDtoFromJSONTyped,
   DevicePreviewShareLinkDtoToJSON,
+  DevicePreviewSharedCommentDto,
+  DevicePreviewSharedCommentDtoFromJSON,
+  DevicePreviewSharedCommentDtoFromJSONTyped,
+  DevicePreviewSharedCommentDtoToJSON,
   DevicePreviewSharedRunDto,
   DevicePreviewSharedRunDtoFromJSON,
   DevicePreviewSharedRunDtoFromJSONTyped,
@@ -62,6 +66,12 @@ export interface DevicePreviewSharedResultDto {
    * @memberof DevicePreviewSharedResultDto
    */
   screenshots: Array<DevicePreviewSharedScreenshotDto>;
+  /**
+   *
+   * @type {Array<DevicePreviewSharedCommentDto>}
+   * @memberof DevicePreviewSharedResultDto
+   */
+  comments: Array<DevicePreviewSharedCommentDto>;
 }
 
 export function DevicePreviewSharedResultDtoFromJSON(
@@ -86,6 +96,9 @@ export function DevicePreviewSharedResultDtoFromJSONTyped(
     screenshots: (json['screenshots'] as Array<any>).map(
       DevicePreviewSharedScreenshotDtoFromJSON
     ),
+    comments: (json['comments'] as Array<any>).map(
+      DevicePreviewSharedCommentDtoFromJSON
+    ),
   };
 }
 
@@ -106,6 +119,9 @@ export function DevicePreviewSharedResultDtoToJSON(
     ),
     screenshots: (value.screenshots as Array<any>).map(
       DevicePreviewSharedScreenshotDtoToJSON
+    ),
+    comments: (value.comments as Array<any>).map(
+      DevicePreviewSharedCommentDtoToJSON
     ),
   };
 }

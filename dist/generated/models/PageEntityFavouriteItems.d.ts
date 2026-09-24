@@ -51,12 +51,6 @@ export interface PageEntityFavouriteItems {
      * @type {number}
      * @memberof PageEntityFavouriteItems
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageEntityFavouriteItems
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageEntityFavouriteItems {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageEntityFavouriteItems
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageEntityFavouriteItems
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageEntityFavouriteItems
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

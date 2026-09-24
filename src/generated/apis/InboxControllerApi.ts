@@ -107,6 +107,9 @@ import {
   SendEmailOptions,
   SendEmailOptionsFromJSON,
   SendEmailOptionsToJSON,
+  SendSMTPEnvelopeFromS3Options,
+  SendSMTPEnvelopeFromS3OptionsFromJSON,
+  SendSMTPEnvelopeFromS3OptionsToJSON,
   SendSMTPEnvelopeOptions,
   SendSMTPEnvelopeOptionsFromJSON,
   SendSMTPEnvelopeOptionsToJSON,
@@ -438,7 +441,6 @@ export interface ImportEmailIntoInboxRequest {
 
 export interface ImportEmailIntoInboxBytesRequest {
   inboxId: string;
-  body: string;
   externalId?: string;
   runPipeline?: boolean;
   overrideMessageId?: boolean;
@@ -499,6 +501,19 @@ export interface SendEmailWithQueueRequest {
 export interface SendSmtpEnvelopeRequest {
   inboxId: string;
   sendSMTPEnvelopeOptions: SendSMTPEnvelopeOptions;
+}
+
+export interface SendSmtpEnvelopeFromS3Request {
+  inboxId: string;
+  key: string;
+  sendSMTPEnvelopeFromS3Options: SendSMTPEnvelopeFromS3Options;
+}
+
+export interface SendSmtpEnvelopeStreamRequest {
+  inboxId: string;
+  key: string;
+  mailFrom: string;
+  rcptTo: Array<string>;
 }
 
 export interface SendTestEmailRequest {
@@ -3851,16 +3866,6 @@ export class InboxControllerApi extends runtime.BaseAPI {
       );
     }
 
-    if (
-      requestParameters.body === null ||
-      requestParameters.body === undefined
-    ) {
-      throw new runtime.RequiredError(
-        'body',
-        'Required parameter requestParameters.body was null or undefined when calling importEmailIntoInboxBytes.'
-      );
-    }
-
     const queryParameters: any = {};
 
     if (requestParameters.externalId !== undefined) {
@@ -3878,8 +3883,6 @@ export class InboxControllerApi extends runtime.BaseAPI {
 
     const headerParameters: runtime.HTTPHeaders = {};
 
-    headerParameters['Content-Type'] = 'application/octet-stream';
-
     if (this.configuration && this.configuration.apiKey) {
       headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
     }
@@ -3893,7 +3896,6 @@ export class InboxControllerApi extends runtime.BaseAPI {
         method: 'POST',
         headers: headerParameters,
         query: queryParameters,
-        body: requestParameters.body as any,
       },
       initOverrides
     );
@@ -4606,6 +4608,189 @@ export class InboxControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Internal SMTP-server endpoint for sending an SMTP envelope whose RFC822 body has already been written to S3.
+   * Send SMTP envelope from an S3 body reference
+   */
+  async sendSmtpEnvelopeFromS3Raw(
+    requestParameters: SendSmtpEnvelopeFromS3Request,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SentEmailDto>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling sendSmtpEnvelopeFromS3.'
+      );
+    }
+
+    if (requestParameters.key === null || requestParameters.key === undefined) {
+      throw new runtime.RequiredError(
+        'key',
+        'Required parameter requestParameters.key was null or undefined when calling sendSmtpEnvelopeFromS3.'
+      );
+    }
+
+    if (
+      requestParameters.sendSMTPEnvelopeFromS3Options === null ||
+      requestParameters.sendSMTPEnvelopeFromS3Options === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'sendSMTPEnvelopeFromS3Options',
+        'Required parameter requestParameters.sendSMTPEnvelopeFromS3Options was null or undefined when calling sendSmtpEnvelopeFromS3.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.key !== undefined) {
+      queryParameters['key'] = requestParameters.key;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/smtp-envelope/s3`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: SendSMTPEnvelopeFromS3OptionsToJSON(
+          requestParameters.sendSMTPEnvelopeFromS3Options
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SentEmailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Internal SMTP-server endpoint for sending an SMTP envelope whose RFC822 body has already been written to S3.
+   * Send SMTP envelope from an S3 body reference
+   */
+  async sendSmtpEnvelopeFromS3(
+    requestParameters: SendSmtpEnvelopeFromS3Request,
+    initOverrides?: RequestInit
+  ): Promise<SentEmailDto> {
+    const response = await this.sendSmtpEnvelopeFromS3Raw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Internal SMTP-server endpoint for sending an SMTP envelope while streaming the RFC822 body in the request.
+   * Send SMTP envelope from a streamed body
+   */
+  async sendSmtpEnvelopeStreamRaw(
+    requestParameters: SendSmtpEnvelopeStreamRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<SentEmailDto>> {
+    if (
+      requestParameters.inboxId === null ||
+      requestParameters.inboxId === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'inboxId',
+        'Required parameter requestParameters.inboxId was null or undefined when calling sendSmtpEnvelopeStream.'
+      );
+    }
+
+    if (requestParameters.key === null || requestParameters.key === undefined) {
+      throw new runtime.RequiredError(
+        'key',
+        'Required parameter requestParameters.key was null or undefined when calling sendSmtpEnvelopeStream.'
+      );
+    }
+
+    if (
+      requestParameters.mailFrom === null ||
+      requestParameters.mailFrom === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'mailFrom',
+        'Required parameter requestParameters.mailFrom was null or undefined when calling sendSmtpEnvelopeStream.'
+      );
+    }
+
+    if (
+      requestParameters.rcptTo === null ||
+      requestParameters.rcptTo === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'rcptTo',
+        'Required parameter requestParameters.rcptTo was null or undefined when calling sendSmtpEnvelopeStream.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    if (requestParameters.key !== undefined) {
+      queryParameters['key'] = requestParameters.key;
+    }
+
+    if (requestParameters.mailFrom !== undefined) {
+      queryParameters['mailFrom'] = requestParameters.mailFrom;
+    }
+
+    if (requestParameters.rcptTo) {
+      queryParameters['rcptTo'] = requestParameters.rcptTo;
+    }
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/inboxes/{inboxId}/smtp-envelope/stream`.replace(
+          `{${'inboxId'}}`,
+          encodeURIComponent(String(requestParameters.inboxId))
+        ),
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SentEmailDtoFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Internal SMTP-server endpoint for sending an SMTP envelope while streaming the RFC822 body in the request.
+   * Send SMTP envelope from a streamed body
+   */
+  async sendSmtpEnvelopeStream(
+    requestParameters: SendSmtpEnvelopeStreamRequest,
+    initOverrides?: RequestInit
+  ): Promise<SentEmailDto> {
+    const response = await this.sendSmtpEnvelopeStreamRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Send an inbox a test email to test email receiving is working
    * Send a test email to inbox
    */
@@ -5041,6 +5226,7 @@ export enum GetAllInboxesInboxFunctionEnum {
   CATCH_ALL = 'CATCH_ALL',
   CONNECTOR = 'CONNECTOR',
   ACCOUNT = 'ACCOUNT',
+  GUIDED_TOUR = 'GUIDED_TOUR',
   GUEST = 'GUEST',
   OAUTH_CONNECTION_GMAIL = 'OAUTH_CONNECTION_GMAIL',
 }
@@ -5070,6 +5256,7 @@ export enum GetAllInboxesOffsetPaginatedInboxFunctionEnum {
   CATCH_ALL = 'CATCH_ALL',
   CONNECTOR = 'CONNECTOR',
   ACCOUNT = 'ACCOUNT',
+  GUIDED_TOUR = 'GUIDED_TOUR',
   GUEST = 'GUEST',
   OAUTH_CONNECTION_GMAIL = 'OAUTH_CONNECTION_GMAIL',
 }

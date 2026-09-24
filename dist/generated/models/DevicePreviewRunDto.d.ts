@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { DevicePreviewRunThumbnailDto } from './';
+import { DevicePreviewQaBundleDto, DevicePreviewRunThumbnailDto } from './';
 /**
  *
  * @export
@@ -228,6 +228,12 @@ export interface DevicePreviewRunDto {
      * @memberof DevicePreviewRunDto
      */
     thumbnail?: DevicePreviewRunThumbnailDto | null;
+    /**
+     *
+     * @type {DevicePreviewQaBundleDto}
+     * @memberof DevicePreviewRunDto
+     */
+    qaBundle?: DevicePreviewQaBundleDto | null;
 }
 /**
  * @export
@@ -237,7 +243,8 @@ export declare enum DevicePreviewRunDtoSourceTypeEnum {
     STORED_EMAIL = "STORED_EMAIL",
     RAW_UPLOAD = "RAW_UPLOAD",
     DEVICE_PREVIEW_INGEST = "DEVICE_PREVIEW_INGEST",
-    PUBLIC_FREE_TEST = "PUBLIC_FREE_TEST"
+    PUBLIC_FREE_TEST = "PUBLIC_FREE_TEST",
+    GUIDED_TOUR = "GUIDED_TOUR"
 }
 /**
  * @export

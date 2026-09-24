@@ -22,6 +22,10 @@ import {
   InboxPlacementDeliverabilitySummaryDtoFromJSON,
   InboxPlacementDeliverabilitySummaryDtoFromJSONTyped,
   InboxPlacementDeliverabilitySummaryDtoToJSON,
+  InboxPlacementProviderAnalysisDto,
+  InboxPlacementProviderAnalysisDtoFromJSON,
+  InboxPlacementProviderAnalysisDtoFromJSONTyped,
+  InboxPlacementProviderAnalysisDtoToJSON,
   InboxPlacementRemoteTestSummaryDto,
   InboxPlacementRemoteTestSummaryDtoFromJSON,
   InboxPlacementRemoteTestSummaryDtoFromJSONTyped,
@@ -70,6 +74,12 @@ export interface InboxPlacementRemoteResultsDto {
   analysis?: InboxPlacementAnalysisBundleDto | null;
   /**
    *
+   * @type {InboxPlacementProviderAnalysisDto}
+   * @memberof InboxPlacementRemoteResultsDto
+   */
+  providerAnalysis?: InboxPlacementProviderAnalysisDto | null;
+  /**
+   *
    * @type {Array<InboxPlacementTargetResultDto>}
    * @memberof InboxPlacementRemoteResultsDto
    */
@@ -111,6 +121,9 @@ export function InboxPlacementRemoteResultsDtoFromJSONTyped(
     analysis: !exists(json, 'analysis')
       ? undefined
       : InboxPlacementAnalysisBundleDtoFromJSON(json['analysis']),
+    providerAnalysis: !exists(json, 'providerAnalysis')
+      ? undefined
+      : InboxPlacementProviderAnalysisDtoFromJSON(json['providerAnalysis']),
     targets: (json['targets'] as Array<any>).map(
       InboxPlacementTargetResultDtoFromJSON
     ),
@@ -136,6 +149,9 @@ export function InboxPlacementRemoteResultsDtoToJSON(
     setupAnalysis: value.setupAnalysis,
     contentAnalysis: value.contentAnalysis,
     analysis: InboxPlacementAnalysisBundleDtoToJSON(value.analysis),
+    providerAnalysis: InboxPlacementProviderAnalysisDtoToJSON(
+      value.providerAnalysis
+    ),
     targets: (value.targets as Array<any>).map(
       InboxPlacementTargetResultDtoToJSON
     ),

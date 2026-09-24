@@ -24,13 +24,7 @@ export interface JsonNode {
    * @type {boolean}
    * @memberof JsonNode
    */
-  empty?: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof JsonNode
-   */
-  array?: boolean;
+  string?: boolean;
   /**
    *
    * @type {boolean}
@@ -54,7 +48,13 @@ export interface JsonNode {
    * @type {boolean}
    * @memberof JsonNode
    */
-  valueNode?: boolean;
+  container?: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof JsonNode
+   */
+  textual?: boolean;
   /**
    *
    * @type {boolean}
@@ -72,19 +72,19 @@ export interface JsonNode {
    * @type {boolean}
    * @memberof JsonNode
    */
-  string?: boolean;
+  pojo?: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof JsonNode
+   */
+  number?: boolean;
   /**
    *
    * @type {boolean}
    * @memberof JsonNode
    */
   integralNumber?: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof JsonNode
-   */
-  pojo?: boolean;
   /**
    *
    * @type {boolean}
@@ -132,12 +132,6 @@ export interface JsonNode {
    * @type {boolean}
    * @memberof JsonNode
    */
-  textual?: boolean;
-  /**
-   *
-   * @type {boolean}
-   * @memberof JsonNode
-   */
   _boolean?: boolean;
   /**
    *
@@ -150,13 +144,19 @@ export interface JsonNode {
    * @type {boolean}
    * @memberof JsonNode
    */
-  container?: boolean;
+  valueNode?: boolean;
   /**
    *
    * @type {boolean}
    * @memberof JsonNode
    */
-  number?: boolean;
+  empty?: boolean;
+  /**
+   *
+   * @type {boolean}
+   * @memberof JsonNode
+   */
+  array?: boolean;
   /**
    *
    * @type {boolean}
@@ -193,19 +193,19 @@ export function JsonNodeFromJSONTyped(
     return json;
   }
   return {
-    empty: !exists(json, 'empty') ? undefined : json['empty'],
-    array: !exists(json, 'array') ? undefined : json['array'],
+    string: !exists(json, 'string') ? undefined : json['string'],
     _null: !exists(json, 'null') ? undefined : json['null'],
     object: !exists(json, 'object') ? undefined : json['object'],
     _float: !exists(json, 'float') ? undefined : json['float'],
-    valueNode: !exists(json, 'valueNode') ? undefined : json['valueNode'],
+    container: !exists(json, 'container') ? undefined : json['container'],
+    textual: !exists(json, 'textual') ? undefined : json['textual'],
     missingNode: !exists(json, 'missingNode') ? undefined : json['missingNode'],
     nodeType: !exists(json, 'nodeType') ? undefined : json['nodeType'],
-    string: !exists(json, 'string') ? undefined : json['string'],
+    pojo: !exists(json, 'pojo') ? undefined : json['pojo'],
+    number: !exists(json, 'number') ? undefined : json['number'],
     integralNumber: !exists(json, 'integralNumber')
       ? undefined
       : json['integralNumber'],
-    pojo: !exists(json, 'pojo') ? undefined : json['pojo'],
     floatingPointNumber: !exists(json, 'floatingPointNumber')
       ? undefined
       : json['floatingPointNumber'],
@@ -215,11 +215,11 @@ export function JsonNodeFromJSONTyped(
     _double: !exists(json, 'double') ? undefined : json['double'],
     bigDecimal: !exists(json, 'bigDecimal') ? undefined : json['bigDecimal'],
     bigInteger: !exists(json, 'bigInteger') ? undefined : json['bigInteger'],
-    textual: !exists(json, 'textual') ? undefined : json['textual'],
     _boolean: !exists(json, 'boolean') ? undefined : json['boolean'],
     binary: !exists(json, 'binary') ? undefined : json['binary'],
-    container: !exists(json, 'container') ? undefined : json['container'],
-    number: !exists(json, 'number') ? undefined : json['number'],
+    valueNode: !exists(json, 'valueNode') ? undefined : json['valueNode'],
+    empty: !exists(json, 'empty') ? undefined : json['empty'],
+    array: !exists(json, 'array') ? undefined : json['array'],
     embeddedValue: !exists(json, 'embeddedValue')
       ? undefined
       : json['embeddedValue'],
@@ -234,17 +234,17 @@ export function JsonNodeToJSON(value?: JsonNode | null): any {
     return null;
   }
   return {
-    empty: value.empty,
-    array: value.array,
+    string: value.string,
     null: value._null,
     object: value.object,
     float: value._float,
-    valueNode: value.valueNode,
+    container: value.container,
+    textual: value.textual,
     missingNode: value.missingNode,
     nodeType: value.nodeType,
-    string: value.string,
-    integralNumber: value.integralNumber,
     pojo: value.pojo,
+    number: value.number,
+    integralNumber: value.integralNumber,
     floatingPointNumber: value.floatingPointNumber,
     short: value._short,
     int: value._int,
@@ -252,11 +252,11 @@ export function JsonNodeToJSON(value?: JsonNode | null): any {
     double: value._double,
     bigDecimal: value.bigDecimal,
     bigInteger: value.bigInteger,
-    textual: value.textual,
     boolean: value._boolean,
     binary: value.binary,
-    container: value.container,
-    number: value.number,
+    valueNode: value.valueNode,
+    empty: value.empty,
+    array: value.array,
     embeddedValue: value.embeddedValue,
   };
 }

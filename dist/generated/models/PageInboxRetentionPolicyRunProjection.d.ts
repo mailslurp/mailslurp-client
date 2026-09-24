@@ -51,12 +51,6 @@ export interface PageInboxRetentionPolicyRunProjection {
      * @type {number}
      * @memberof PageInboxRetentionPolicyRunProjection
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageInboxRetentionPolicyRunProjection
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageInboxRetentionPolicyRunProjection {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageInboxRetentionPolicyRunProjection
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageInboxRetentionPolicyRunProjection
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageInboxRetentionPolicyRunProjection
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

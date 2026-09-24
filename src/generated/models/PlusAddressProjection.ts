@@ -24,12 +24,6 @@ export interface PlusAddressProjection {
    * @type {string}
    * @memberof PlusAddressProjection
    */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof PlusAddressProjection
-   */
   userId: string;
   /**
    *
@@ -61,6 +55,12 @@ export interface PlusAddressProjection {
    * @memberof PlusAddressProjection
    */
   fullAddress: string;
+  /**
+   *
+   * @type {string}
+   * @memberof PlusAddressProjection
+   */
+  id: string;
 }
 
 export function PlusAddressProjectionFromJSON(
@@ -77,13 +77,13 @@ export function PlusAddressProjectionFromJSONTyped(
     return json;
   }
   return {
-    id: json['id'],
     userId: json['userId'],
     inboxId: json['inboxId'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
     plusAddress: json['plusAddress'],
     fullAddress: json['fullAddress'],
+    id: json['id'],
   };
 }
 
@@ -97,12 +97,12 @@ export function PlusAddressProjectionToJSON(
     return null;
   }
   return {
-    id: value.id,
     userId: value.userId,
     inboxId: value.inboxId,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
     plusAddress: value.plusAddress,
     fullAddress: value.fullAddress,
+    id: value.id,
   };
 }

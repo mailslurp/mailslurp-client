@@ -108,6 +108,7 @@ export declare enum SearchInboxesOptionsInboxFunctionEnum {
     CATCH_ALL = "CATCH_ALL",
     CONNECTOR = "CONNECTOR",
     ACCOUNT = "ACCOUNT",
+    GUIDED_TOUR = "GUIDED_TOUR",
     GUEST = "GUEST",
     OAUTH_CONNECTION_GMAIL = "OAUTH_CONNECTION_GMAIL"
 }

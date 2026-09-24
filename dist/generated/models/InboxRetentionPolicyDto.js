@@ -13,8 +13,18 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InboxRetentionPolicyDtoToJSON = exports.InboxRetentionPolicyDtoFromJSONTyped = exports.InboxRetentionPolicyDtoFromJSON = void 0;
+exports.InboxRetentionPolicyDtoToJSON = exports.InboxRetentionPolicyDtoFromJSONTyped = exports.InboxRetentionPolicyDtoFromJSON = exports.InboxRetentionPolicyDtoScopeEnum = void 0;
 var runtime_1 = require("../runtime");
+/**
+ * @export
+ * @enum {string}
+ */
+var InboxRetentionPolicyDtoScopeEnum;
+(function (InboxRetentionPolicyDtoScopeEnum) {
+    InboxRetentionPolicyDtoScopeEnum["ACCOUNT"] = "ACCOUNT";
+    InboxRetentionPolicyDtoScopeEnum["INBOX"] = "INBOX";
+    InboxRetentionPolicyDtoScopeEnum["DOMAIN"] = "DOMAIN";
+})(InboxRetentionPolicyDtoScopeEnum = exports.InboxRetentionPolicyDtoScopeEnum || (exports.InboxRetentionPolicyDtoScopeEnum = {}));
 function InboxRetentionPolicyDtoFromJSON(json) {
     return InboxRetentionPolicyDtoFromJSONTyped(json, false);
 }
@@ -25,8 +35,16 @@ function InboxRetentionPolicyDtoFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         id: json['id'],
+        name: !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        scope: json['scope'],
         inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
+        domainId: !(0, runtime_1.exists)(json, 'domainId') ? undefined : json['domainId'],
         retentionDays: json['retentionDays'],
+        enabled: json['enabled'],
+        excludedInboxIds: json['excludedInboxIds'],
+        excludedDomainIds: json['excludedDomainIds'],
+        excludedInboxEmailAddressPatterns: json['excludedInboxEmailAddressPatterns'],
+        excludedDomainNamePatterns: json['excludedDomainNamePatterns'],
         createdAt: new Date(json['createdAt']),
         updatedAt: new Date(json['updatedAt']),
     };
@@ -41,8 +59,16 @@ function InboxRetentionPolicyDtoToJSON(value) {
     }
     return {
         id: value.id,
+        name: value.name,
+        scope: value.scope,
         inboxId: value.inboxId,
+        domainId: value.domainId,
         retentionDays: value.retentionDays,
+        enabled: value.enabled,
+        excludedInboxIds: value.excludedInboxIds,
+        excludedDomainIds: value.excludedDomainIds,
+        excludedInboxEmailAddressPatterns: value.excludedInboxEmailAddressPatterns,
+        excludedDomainNamePatterns: value.excludedDomainNamePatterns,
         createdAt: value.createdAt.toISOString(),
         updatedAt: value.updatedAt.toISOString(),
     };

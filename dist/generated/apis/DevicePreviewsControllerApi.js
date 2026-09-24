@@ -355,6 +355,108 @@ var DevicePreviewsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Uploads an HTML or RFC822 EML file, or a ZIP archive containing exactly one HTML or EML file. ZIP uploads are bounded by entry count, expanded size, and compression ratio.
+     * Create a device preview run from an HTML, EML, or ZIP file
+     */
+    DevicePreviewsControllerApi.prototype.createDevicePreviewRunFromFileRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, consumes, canConsumeForm, formParams, useForm, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.file === null ||
+                            requestParameters.file === undefined) {
+                            throw new runtime.RequiredError('file', 'Required parameter requestParameters.file was null or undefined when calling createDevicePreviewRunFromFile.');
+                        }
+                        queryParameters = {};
+                        if (requestParameters.subject !== undefined) {
+                            queryParameters['subject'] = requestParameters.subject;
+                        }
+                        if (requestParameters.from !== undefined) {
+                            queryParameters['from'] = requestParameters.from;
+                        }
+                        if (requestParameters.to !== undefined) {
+                            queryParameters['to'] = requestParameters.to;
+                        }
+                        if (requestParameters.sourceAlias !== undefined) {
+                            queryParameters['sourceAlias'] = requestParameters.sourceAlias;
+                        }
+                        if (requestParameters.externalId !== undefined) {
+                            queryParameters['externalId'] = requestParameters.externalId;
+                        }
+                        if (requestParameters.providers) {
+                            queryParameters['providers'] = requestParameters.providers;
+                        }
+                        if (requestParameters.allTargets !== undefined) {
+                            queryParameters['allTargets'] = requestParameters.allTargets;
+                        }
+                        if (requestParameters.targets) {
+                            queryParameters['targets'] = requestParameters.targets;
+                        }
+                        if (requestParameters.emailAudit !== undefined) {
+                            queryParameters['emailAudit'] = requestParameters.emailAudit;
+                        }
+                        if (requestParameters.domainMonitor !== undefined) {
+                            queryParameters['domainMonitor'] = requestParameters.domainMonitor;
+                        }
+                        if (requestParameters.senderDomain !== undefined) {
+                            queryParameters['senderDomain'] = requestParameters.senderDomain;
+                        }
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        consumes = [
+                            { contentType: 'multipart/form-data' },
+                        ];
+                        canConsumeForm = runtime.canConsumeForm(consumes);
+                        useForm = false;
+                        // use FormData to transmit files using content-type "multipart/form-data"
+                        useForm = canConsumeForm;
+                        if (useForm) {
+                            formParams = new FormData();
+                        }
+                        else {
+                            formParams = new URLSearchParams();
+                        }
+                        if (requestParameters.file !== undefined) {
+                            formParams.append('file', requestParameters.file);
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/device-previews/import/file",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: formParams,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.CreateDevicePreviewRunResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Uploads an HTML or RFC822 EML file, or a ZIP archive containing exactly one HTML or EML file. ZIP uploads are bounded by entry count, expanded size, and compression ratio.
+     * Create a device preview run from an HTML, EML, or ZIP file
+     */
+    DevicePreviewsControllerApi.prototype.createDevicePreviewRunFromFile = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.createDevicePreviewRunFromFileRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Create a device preview run from HTML
      */
     DevicePreviewsControllerApi.prototype.createDevicePreviewRunFromHtmlImportRaw = function (requestParameters, initOverrides) {
@@ -478,8 +580,11 @@ var DevicePreviewsControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.externalId !== undefined) {
                             queryParameters['externalId'] = requestParameters.externalId;
                         }
-                        if (requestParameters.nativeTargets) {
-                            queryParameters['nativeTargets'] = requestParameters.nativeTargets;
+                        if (requestParameters.allTargets !== undefined) {
+                            queryParameters['allTargets'] = requestParameters.allTargets;
+                        }
+                        if (requestParameters.targets) {
+                            queryParameters['targets'] = requestParameters.targets;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -550,8 +655,11 @@ var DevicePreviewsControllerApi = /** @class */ (function (_super) {
                         if (requestParameters.externalId !== undefined) {
                             queryParameters['externalId'] = requestParameters.externalId;
                         }
-                        if (requestParameters.nativeTargets) {
-                            queryParameters['nativeTargets'] = requestParameters.nativeTargets;
+                        if (requestParameters.allTargets !== undefined) {
+                            queryParameters['allTargets'] = requestParameters.allTargets;
+                        }
+                        if (requestParameters.targets) {
+                            queryParameters['targets'] = requestParameters.targets;
                         }
                         headerParameters = {};
                         if (this.configuration && this.configuration.apiKey) {
@@ -792,6 +900,102 @@ var DevicePreviewsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Download the original RFC822 email for a device preview submission
+     */
+    DevicePreviewsControllerApi.prototype.downloadDevicePreviewEmailSubmissionSourceEmailRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.submissionId === null ||
+                            requestParameters.submissionId === undefined) {
+                            throw new runtime.RequiredError('submissionId', 'Required parameter requestParameters.submissionId was null or undefined when calling downloadDevicePreviewEmailSubmissionSourceEmail.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/device-previews/email-submissions/{submissionId}/source-email/raw".replace("{".concat('submissionId', "}"), encodeURIComponent(String(requestParameters.submissionId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.BlobApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Download the original RFC822 email for a device preview submission
+     */
+    DevicePreviewsControllerApi.prototype.downloadDevicePreviewEmailSubmissionSourceEmail = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.downloadDevicePreviewEmailSubmissionSourceEmailRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Download the original RFC822 email for a device preview run
+     */
+    DevicePreviewsControllerApi.prototype.downloadDevicePreviewRunSourceEmailRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.runId === null ||
+                            requestParameters.runId === undefined) {
+                            throw new runtime.RequiredError('runId', 'Required parameter requestParameters.runId was null or undefined when calling downloadDevicePreviewRunSourceEmail.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/device-previews/{runId}/source-email/raw".replace("{".concat('runId', "}"), encodeURIComponent(String(requestParameters.runId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.BlobApiResponse(response)];
+                }
+            });
+        });
+    };
+    /**
+     * Download the original RFC822 email for a device preview run
+     */
+    DevicePreviewsControllerApi.prototype.downloadDevicePreviewRunSourceEmail = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.downloadDevicePreviewRunSourceEmailRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Return active run for email or create one when none exists
      */
     DevicePreviewsControllerApi.prototype.ensureDevicePreviewRunRaw = function (requestParameters, initOverrides) {
@@ -949,6 +1153,56 @@ var DevicePreviewsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getDevicePreviewEmailRunsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get the original email content for a device preview submission
+     */
+    DevicePreviewsControllerApi.prototype.getDevicePreviewEmailSubmissionSourceEmailRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.submissionId === null ||
+                            requestParameters.submissionId === undefined) {
+                            throw new runtime.RequiredError('submissionId', 'Required parameter requestParameters.submissionId was null or undefined when calling getDevicePreviewEmailSubmissionSourceEmail.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/device-previews/email-submissions/{submissionId}/source-email".replace("{".concat('submissionId', "}"), encodeURIComponent(String(requestParameters.submissionId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DevicePreviewSourceEmailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get the original email content for a device preview submission
+     */
+    DevicePreviewsControllerApi.prototype.getDevicePreviewEmailSubmissionSourceEmail = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getDevicePreviewEmailSubmissionSourceEmailRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1193,6 +1447,7 @@ var DevicePreviewsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Returns live native device preview target availability for authenticated API clients, including worker health, queue, timeout, and status fields. Use `/device-preview-targets` when you need the stable catalog without transient availability data.
      * Get native device preview target availability
      */
     DevicePreviewsControllerApi.prototype.getDevicePreviewNativeTargetAvailabilityRaw = function (initOverrides) {
@@ -1222,6 +1477,7 @@ var DevicePreviewsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Returns live native device preview target availability for authenticated API clients, including worker health, queue, timeout, and status fields. Use `/device-preview-targets` when you need the stable catalog without transient availability data.
      * Get native device preview target availability
      */
     DevicePreviewsControllerApi.prototype.getDevicePreviewNativeTargetAvailability = function (initOverrides) {
@@ -1536,6 +1792,56 @@ var DevicePreviewsControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.getDevicePreviewRunScreenshotRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Get the original email content for a device preview run
+     */
+    DevicePreviewsControllerApi.prototype.getDevicePreviewRunSourceEmailRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.runId === null ||
+                            requestParameters.runId === undefined) {
+                            throw new runtime.RequiredError('runId', 'Required parameter requestParameters.runId was null or undefined when calling getDevicePreviewRunSourceEmail.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/emails/device-previews/{runId}/source-email".replace("{".concat('runId', "}"), encodeURIComponent(String(requestParameters.runId))),
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DevicePreviewSourceEmailDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Get the original email content for a device preview run
+     */
+    DevicePreviewsControllerApi.prototype.getDevicePreviewRunSourceEmail = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getDevicePreviewRunSourceEmailRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1927,7 +2233,56 @@ var DevicePreviewsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Rerun selected failed device preview targets in the same run
+     * Returns visible native device preview target metadata without worker availability, queue, or health fields.
+     * List device preview targets
+     */
+    DevicePreviewsControllerApi.prototype.getDevicePreviewTargetsRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/device-preview-targets",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.DevicePreviewNativeTargetListDtoFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Returns visible native device preview target metadata without worker availability, queue, or health fields.
+     * List device preview targets
+     */
+    DevicePreviewsControllerApi.prototype.getDevicePreviewTargets = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getDevicePreviewTargetsRaw(initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Set failedOnly=false to rerun a successful target. Successful targets consume their configured credit cost again.
+     * Rerun selected device preview targets in the same run
      */
     DevicePreviewsControllerApi.prototype.rerunDevicePreviewTargetsRaw = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {
@@ -1966,7 +2321,8 @@ var DevicePreviewsControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
-     * Rerun selected failed device preview targets in the same run
+     * Set failedOnly=false to rerun a successful target. Successful targets consume their configured credit cost again.
+     * Rerun selected device preview targets in the same run
      */
     DevicePreviewsControllerApi.prototype.rerunDevicePreviewTargets = function (requestParameters, initOverrides) {
         return __awaiter(this, void 0, void 0, function () {

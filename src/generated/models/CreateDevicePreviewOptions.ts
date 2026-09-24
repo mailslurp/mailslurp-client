@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import {
+  CreateDevicePreviewQaOptions,
+  CreateDevicePreviewQaOptionsFromJSON,
+  CreateDevicePreviewQaOptionsFromJSONTyped,
+  CreateDevicePreviewQaOptionsToJSON,
+} from './';
+
 /**
  *
  * @export
@@ -20,11 +27,23 @@ import { exists, mapValues } from '../runtime';
  */
 export interface CreateDevicePreviewOptions {
   /**
-   * Optional native mail-client target keys to request for rendering. Null leaves native target selection to ESP configuration. Values are forwarded to ESP so newly deployed ESP targets can be used before this API's enum list is updated.
+   * Optional device preview target keys to request for rendering. Null leaves target selection to service configuration. Values are forwarded to ESP so newly deployed targets can be used before this API's enum list is updated.
    * @type {Array<string>}
    * @memberof CreateDevicePreviewOptions
    */
-  nativeTargets?: Array<string> | null;
+  targets?: Array<string> | null;
+  /**
+   * When true, ask the renderer to include every currently configured target. Cannot be combined with targets.
+   * @type {boolean}
+   * @memberof CreateDevicePreviewOptions
+   */
+  allTargets?: boolean | null;
+  /**
+   *
+   * @type {CreateDevicePreviewQaOptions}
+   * @memberof CreateDevicePreviewOptions
+   */
+  qa?: CreateDevicePreviewQaOptions | null;
 }
 
 export function CreateDevicePreviewOptionsFromJSON(
@@ -41,9 +60,11 @@ export function CreateDevicePreviewOptionsFromJSONTyped(
     return json;
   }
   return {
-    nativeTargets: !exists(json, 'nativeTargets')
+    targets: !exists(json, 'targets') ? undefined : json['targets'],
+    allTargets: !exists(json, 'allTargets') ? undefined : json['allTargets'],
+    qa: !exists(json, 'qa')
       ? undefined
-      : json['nativeTargets'],
+      : CreateDevicePreviewQaOptionsFromJSON(json['qa']),
   };
 }
 
@@ -57,6 +78,8 @@ export function CreateDevicePreviewOptionsToJSON(
     return null;
   }
   return {
-    nativeTargets: value.nativeTargets,
+    targets: value.targets,
+    allTargets: value.allTargets,
+    qa: CreateDevicePreviewQaOptionsToJSON(value.qa),
   };
 }

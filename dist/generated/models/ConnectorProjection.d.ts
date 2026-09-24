@@ -17,18 +17,6 @@
 export interface ConnectorProjection {
     /**
      *
-     * @type {string}
-     * @memberof ConnectorProjection
-     */
-    name?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorProjection
-     */
-    id: string;
-    /**
-     *
      * @type {boolean}
      * @memberof ConnectorProjection
      */
@@ -57,6 +45,18 @@ export interface ConnectorProjection {
      * @memberof ConnectorProjection
      */
     emailAddress?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorProjection
+     */
+    name?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorProjection
+     */
+    id: string;
 }
 export declare function ConnectorProjectionFromJSON(json: any): ConnectorProjection;
 export declare function ConnectorProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorProjection;

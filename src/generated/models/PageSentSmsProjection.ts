@@ -69,12 +69,6 @@ export interface PageSentSmsProjection {
    * @type {number}
    * @memberof PageSentSmsProjection
    */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageSentSmsProjection
-   */
   number?: number;
   /**
    *
@@ -84,16 +78,22 @@ export interface PageSentSmsProjection {
   first?: boolean;
   /**
    *
+   * @type {SortObject}
+   * @memberof PageSentSmsProjection
+   */
+  sort?: SortObject;
+  /**
+   *
    * @type {number}
    * @memberof PageSentSmsProjection
    */
   numberOfElements?: number;
   /**
    *
-   * @type {SortObject}
+   * @type {number}
    * @memberof PageSentSmsProjection
    */
-  sort?: SortObject;
+  size?: number;
   /**
    *
    * @type {boolean}
@@ -125,13 +125,13 @@ export function PageSentSmsProjectionFromJSONTyped(
     totalPages: json['totalPages'],
     totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
-    size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     first: !exists(json, 'first') ? undefined : json['first'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+    size: !exists(json, 'size') ? undefined : json['size'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -154,11 +154,11 @@ export function PageSentSmsProjectionToJSON(
     totalPages: value.totalPages,
     totalElements: value.totalElements,
     last: value.last,
-    size: value.size,
     number: value.number,
     first: value.first,
-    numberOfElements: value.numberOfElements,
     sort: SortObjectToJSON(value.sort),
+    numberOfElements: value.numberOfElements,
+    size: value.size,
     empty: value.empty,
   };
 }

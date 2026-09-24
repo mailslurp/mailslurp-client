@@ -69,12 +69,6 @@ export interface PageTotpDeviceProjection {
    * @type {number}
    * @memberof PageTotpDeviceProjection
    */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageTotpDeviceProjection
-   */
   number?: number;
   /**
    *
@@ -84,16 +78,22 @@ export interface PageTotpDeviceProjection {
   first?: boolean;
   /**
    *
+   * @type {SortObject}
+   * @memberof PageTotpDeviceProjection
+   */
+  sort?: SortObject;
+  /**
+   *
    * @type {number}
    * @memberof PageTotpDeviceProjection
    */
   numberOfElements?: number;
   /**
    *
-   * @type {SortObject}
+   * @type {number}
    * @memberof PageTotpDeviceProjection
    */
-  sort?: SortObject;
+  size?: number;
   /**
    *
    * @type {boolean}
@@ -125,13 +125,13 @@ export function PageTotpDeviceProjectionFromJSONTyped(
     totalPages: json['totalPages'],
     totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
-    size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     first: !exists(json, 'first') ? undefined : json['first'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+    size: !exists(json, 'size') ? undefined : json['size'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -154,11 +154,11 @@ export function PageTotpDeviceProjectionToJSON(
     totalPages: value.totalPages,
     totalElements: value.totalElements,
     last: value.last,
-    size: value.size,
     number: value.number,
     first: value.first,
-    numberOfElements: value.numberOfElements,
     sort: SortObjectToJSON(value.sort),
+    numberOfElements: value.numberOfElements,
+    size: value.size,
     empty: value.empty,
   };
 }

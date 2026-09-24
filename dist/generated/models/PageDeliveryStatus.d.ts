@@ -51,12 +51,6 @@ export interface PageDeliveryStatus {
      * @type {number}
      * @memberof PageDeliveryStatus
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageDeliveryStatus
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageDeliveryStatus {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageDeliveryStatus
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageDeliveryStatus
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageDeliveryStatus
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

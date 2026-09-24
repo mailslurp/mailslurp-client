@@ -25,27 +25,31 @@ function EmailThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        id: json['id'],
         from: !(0, runtime_1.exists)(json, 'from') ? undefined : json['from'],
-        sender: !(0, runtime_1.exists)(json, 'sender')
-            ? undefined
-            : (0, _1.SenderProjectionFromJSON)(json['sender']),
+        userId: json['userId'],
+        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         recipients: !(0, runtime_1.exists)(json, 'recipients')
             ? undefined
             : (0, _1.EmailRecipientsProjectionFromJSON)(json['recipients']),
         subject: !(0, runtime_1.exists)(json, 'subject') ? undefined : json['subject'],
-        userId: json['userId'],
-        inboxId: !(0, runtime_1.exists)(json, 'inboxId') ? undefined : json['inboxId'],
         to: json['to'],
         createdAt: new Date(json['createdAt']),
         cc: !(0, runtime_1.exists)(json, 'cc') ? undefined : json['cc'],
         bcc: !(0, runtime_1.exists)(json, 'bcc') ? undefined : json['bcc'],
         updatedAt: new Date(json['updatedAt']),
+        sender: !(0, runtime_1.exists)(json, 'sender')
+            ? undefined
+            : (0, _1.SenderProjectionFromJSON)(json['sender']),
+        lastCreatedAt: !(0, runtime_1.exists)(json, 'lastCreatedAt')
+            ? undefined
+            : json['lastCreatedAt'] === null
+                ? null
+                : new Date(json['lastCreatedAt']),
+        hasAttachments: json['hasAttachments'],
         lastSender: !(0, runtime_1.exists)(json, 'lastSender')
             ? undefined
             : (0, _1.SenderProjectionFromJSON)(json['lastSender']),
         lastFrom: !(0, runtime_1.exists)(json, 'lastFrom') ? undefined : json['lastFrom'],
-        hasAttachments: json['hasAttachments'],
         unread: json['unread'],
         messageCount: json['messageCount'],
         lastBodyExcerpt: !(0, runtime_1.exists)(json, 'lastBodyExcerpt')
@@ -54,11 +58,7 @@ function EmailThreadProjectionFromJSONTyped(json, ignoreDiscriminator) {
         lastTextExcerpt: !(0, runtime_1.exists)(json, 'lastTextExcerpt')
             ? undefined
             : json['lastTextExcerpt'],
-        lastCreatedAt: !(0, runtime_1.exists)(json, 'lastCreatedAt')
-            ? undefined
-            : json['lastCreatedAt'] === null
-                ? null
-                : new Date(json['lastCreatedAt']),
+        id: json['id'],
     };
 }
 exports.EmailThreadProjectionFromJSONTyped = EmailThreadProjectionFromJSONTyped;
@@ -70,30 +70,30 @@ function EmailThreadProjectionToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
         from: value.from,
-        sender: (0, _1.SenderProjectionToJSON)(value.sender),
-        recipients: (0, _1.EmailRecipientsProjectionToJSON)(value.recipients),
-        subject: value.subject,
         userId: value.userId,
         inboxId: value.inboxId,
+        recipients: (0, _1.EmailRecipientsProjectionToJSON)(value.recipients),
+        subject: value.subject,
         to: value.to,
         createdAt: value.createdAt.toISOString(),
         cc: value.cc,
         bcc: value.bcc,
         updatedAt: value.updatedAt.toISOString(),
-        lastSender: (0, _1.SenderProjectionToJSON)(value.lastSender),
-        lastFrom: value.lastFrom,
-        hasAttachments: value.hasAttachments,
-        unread: value.unread,
-        messageCount: value.messageCount,
-        lastBodyExcerpt: value.lastBodyExcerpt,
-        lastTextExcerpt: value.lastTextExcerpt,
+        sender: (0, _1.SenderProjectionToJSON)(value.sender),
         lastCreatedAt: value.lastCreatedAt === undefined
             ? undefined
             : value.lastCreatedAt === null
                 ? null
                 : value.lastCreatedAt.toISOString(),
+        hasAttachments: value.hasAttachments,
+        lastSender: (0, _1.SenderProjectionToJSON)(value.lastSender),
+        lastFrom: value.lastFrom,
+        unread: value.unread,
+        messageCount: value.messageCount,
+        lastBodyExcerpt: value.lastBodyExcerpt,
+        lastTextExcerpt: value.lastTextExcerpt,
+        id: value.id,
     };
 }
 exports.EmailThreadProjectionToJSON = EmailThreadProjectionToJSON;

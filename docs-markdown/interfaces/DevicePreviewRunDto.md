@@ -18,6 +18,7 @@ DevicePreviewRunDto
 - [latestError](DevicePreviewRunDto.md#latesterror)
 - [primaryScreenshotId](DevicePreviewRunDto.md#primaryscreenshotid)
 - [providerMessageIds](DevicePreviewRunDto.md#providermessageids)
+- [qaBundle](DevicePreviewRunDto.md#qabundle)
 - [requestedProviders](DevicePreviewRunDto.md#requestedproviders)
 - [runId](DevicePreviewRunDto.md#runid)
 - [screenshotCount](DevicePreviewRunDto.md#screenshotcount)
@@ -113,6 +114,16 @@ DevicePreviewRunDto
 #### Index signature
 
 ▪ [key: `string`]: `string`
+
+___
+
+### qaBundle
+
+• `Optional` **qaBundle**: [`DevicePreviewQaBundleDto`](DevicePreviewQaBundleDto.md)
+
+**`Memberof`**
+
+DevicePreviewRunDto
 
 ___
 

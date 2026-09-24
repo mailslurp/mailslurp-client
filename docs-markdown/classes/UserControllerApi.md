@@ -20,20 +20,26 @@
 
 ### Methods
 
+- [createInboxRetentionPolicy](UserControllerApi.md#createinboxretentionpolicy)
+- [createInboxRetentionPolicyRaw](UserControllerApi.md#createinboxretentionpolicyraw)
 - [createInboxRetentionPolicyRun](UserControllerApi.md#createinboxretentionpolicyrun)
 - [createInboxRetentionPolicyRunRaw](UserControllerApi.md#createinboxretentionpolicyrunraw)
 - [createOrUpdateInboxRetentionPolicyForAccount](UserControllerApi.md#createorupdateinboxretentionpolicyforaccount)
 - [createOrUpdateInboxRetentionPolicyForAccountRaw](UserControllerApi.md#createorupdateinboxretentionpolicyforaccountraw)
+- [deleteInboxRetentionPolicy](UserControllerApi.md#deleteinboxretentionpolicy)
 - [deleteInboxRetentionPolicyForAccount](UserControllerApi.md#deleteinboxretentionpolicyforaccount)
 - [deleteInboxRetentionPolicyForAccountRaw](UserControllerApi.md#deleteinboxretentionpolicyforaccountraw)
+- [deleteInboxRetentionPolicyRaw](UserControllerApi.md#deleteinboxretentionpolicyraw)
 - [getEntityAutomations](UserControllerApi.md#getentityautomations)
 - [getEntityAutomationsRaw](UserControllerApi.md#getentityautomationsraw)
 - [getEntityEvents](UserControllerApi.md#getentityevents)
 - [getEntityEventsRaw](UserControllerApi.md#getentityeventsraw)
 - [getEntityFavorites](UserControllerApi.md#getentityfavorites)
 - [getEntityFavoritesRaw](UserControllerApi.md#getentityfavoritesraw)
+- [getInboxRetentionPolicy](UserControllerApi.md#getinboxretentionpolicy)
 - [getInboxRetentionPolicyForAccount](UserControllerApi.md#getinboxretentionpolicyforaccount)
 - [getInboxRetentionPolicyForAccountRaw](UserControllerApi.md#getinboxretentionpolicyforaccountraw)
+- [getInboxRetentionPolicyRaw](UserControllerApi.md#getinboxretentionpolicyraw)
 - [getInboxRetentionPolicyRun](UserControllerApi.md#getinboxretentionpolicyrun)
 - [getInboxRetentionPolicyRunRaw](UserControllerApi.md#getinboxretentionpolicyrunraw)
 - [getInboxRetentionPolicyRuns](UserControllerApi.md#getinboxretentionpolicyruns)
@@ -42,7 +48,13 @@
 - [getJsonPropertyAsStringRaw](UserControllerApi.md#getjsonpropertyasstringraw)
 - [getUserInfo](UserControllerApi.md#getuserinfo)
 - [getUserInfoRaw](UserControllerApi.md#getuserinforaw)
+- [getUserStorageInsights](UserControllerApi.md#getuserstorageinsights)
+- [getUserStorageInsightsRaw](UserControllerApi.md#getuserstorageinsightsraw)
+- [listInboxRetentionPolicies](UserControllerApi.md#listinboxretentionpolicies)
+- [listInboxRetentionPoliciesRaw](UserControllerApi.md#listinboxretentionpoliciesraw)
 - [request](UserControllerApi.md#request)
+- [updateInboxRetentionPolicy](UserControllerApi.md#updateinboxretentionpolicy)
+- [updateInboxRetentionPolicyRaw](UserControllerApi.md#updateinboxretentionpolicyraw)
 - [withMiddleware](UserControllerApi.md#withmiddleware)
 - [withPostMiddleware](UserControllerApi.md#withpostmiddleware)
 - [withPreMiddleware](UserControllerApi.md#withpremiddleware)
@@ -74,6 +86,44 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### createInboxRetentionPolicy
+
+▸ **createInboxRetentionPolicy**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRetentionPolicyDto`](../interfaces/InboxRetentionPolicyDto.md)\>
+
+Create an inbox retention policy for your account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateInboxRetentionPolicyRequest`](../interfaces/CreateInboxRetentionPolicyRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxRetentionPolicyDto`](../interfaces/InboxRetentionPolicyDto.md)\>
+
+___
+
+### createInboxRetentionPolicyRaw
+
+▸ **createInboxRetentionPolicyRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRetentionPolicyDto`](../interfaces/InboxRetentionPolicyDto.md)\>\>
+
+Create an inbox retention policy for your account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateInboxRetentionPolicyRequest`](../interfaces/CreateInboxRetentionPolicyRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRetentionPolicyDto`](../interfaces/InboxRetentionPolicyDto.md)\>\>
+
+___
 
 ### createInboxRetentionPolicyRun
 
@@ -149,6 +199,25 @@ Create inbox retention policy for your global account
 
 ___
 
+### deleteInboxRetentionPolicy
+
+▸ **deleteInboxRetentionPolicy**(`requestParameters`, `initOverrides?`): `Promise`<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>
+
+Delete an inbox retention policy for your account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteInboxRetentionPolicyRequest`](../interfaces/DeleteInboxRetentionPolicyRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>
+
+___
+
 ### deleteInboxRetentionPolicyForAccount
 
 ▸ **deleteInboxRetentionPolicyForAccount**(`initOverrides?`): `Promise`<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>
@@ -177,6 +246,25 @@ Delete inbox retention policy for your global account
 
 | Name | Type |
 | :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>\>
+
+___
+
+### deleteInboxRetentionPolicyRaw
+
+▸ **deleteInboxRetentionPolicyRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`EmptyResponseDto`](../interfaces/EmptyResponseDto.md)\>\>
+
+Delete an inbox retention policy for your account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DeleteInboxRetentionPolicyRequest`](../interfaces/DeleteInboxRetentionPolicyRequest.md) |
 | `initOverrides?` | `RequestInit` |
 
 #### Returns
@@ -287,6 +375,25 @@ ___
 
 ___
 
+### getInboxRetentionPolicy
+
+▸ **getInboxRetentionPolicy**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRetentionPolicyDto`](../interfaces/InboxRetentionPolicyDto.md)\>
+
+Get an inbox retention policy for your account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxRetentionPolicyRequest`](../interfaces/GetInboxRetentionPolicyRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxRetentionPolicyDto`](../interfaces/InboxRetentionPolicyDto.md)\>
+
+___
+
 ### getInboxRetentionPolicyForAccount
 
 ▸ **getInboxRetentionPolicyForAccount**(`initOverrides?`): `Promise`<[`InboxRetentionPolicyOptionalDto`](../interfaces/InboxRetentionPolicyOptionalDto.md)\>
@@ -320,6 +427,25 @@ Get inbox retention policy for your global account
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRetentionPolicyOptionalDto`](../interfaces/InboxRetentionPolicyOptionalDto.md)\>\>
+
+___
+
+### getInboxRetentionPolicyRaw
+
+▸ **getInboxRetentionPolicyRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRetentionPolicyDto`](../interfaces/InboxRetentionPolicyDto.md)\>\>
+
+Get an inbox retention policy for your account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetInboxRetentionPolicyRequest`](../interfaces/GetInboxRetentionPolicyRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRetentionPolicyDto`](../interfaces/InboxRetentionPolicyDto.md)\>\>
 
 ___
 
@@ -473,6 +599,80 @@ Get account information for your user
 
 ___
 
+### getUserStorageInsights
+
+▸ **getUserStorageInsights**(`requestParameters`, `initOverrides?`): `Promise`<[`UserStorageInsightsDto`](../interfaces/UserStorageInsightsDto.md)\>
+
+Get retained storage usage insights for your account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetUserStorageInsightsRequest`](../interfaces/GetUserStorageInsightsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`UserStorageInsightsDto`](../interfaces/UserStorageInsightsDto.md)\>
+
+___
+
+### getUserStorageInsightsRaw
+
+▸ **getUserStorageInsightsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UserStorageInsightsDto`](../interfaces/UserStorageInsightsDto.md)\>\>
+
+Get retained storage usage insights for your account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetUserStorageInsightsRequest`](../interfaces/GetUserStorageInsightsRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`UserStorageInsightsDto`](../interfaces/UserStorageInsightsDto.md)\>\>
+
+___
+
+### listInboxRetentionPolicies
+
+▸ **listInboxRetentionPolicies**(`initOverrides?`): `Promise`<[`InboxRetentionPoliciesDto`](../interfaces/InboxRetentionPoliciesDto.md)\>
+
+List inbox retention policies for your account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxRetentionPoliciesDto`](../interfaces/InboxRetentionPoliciesDto.md)\>
+
+___
+
+### listInboxRetentionPoliciesRaw
+
+▸ **listInboxRetentionPoliciesRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRetentionPoliciesDto`](../interfaces/InboxRetentionPoliciesDto.md)\>\>
+
+List inbox retention policies for your account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRetentionPoliciesDto`](../interfaces/InboxRetentionPoliciesDto.md)\>\>
+
+___
+
 ### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
@@ -491,6 +691,44 @@ ___
 #### Inherited from
 
 [BaseAPI](BaseAPI.md).[request](BaseAPI.md#request)
+
+___
+
+### updateInboxRetentionPolicy
+
+▸ **updateInboxRetentionPolicy**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxRetentionPolicyDto`](../interfaces/InboxRetentionPolicyDto.md)\>
+
+Update an inbox retention policy for your account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateInboxRetentionPolicyRequest`](../interfaces/UpdateInboxRetentionPolicyRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxRetentionPolicyDto`](../interfaces/InboxRetentionPolicyDto.md)\>
+
+___
+
+### updateInboxRetentionPolicyRaw
+
+▸ **updateInboxRetentionPolicyRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRetentionPolicyDto`](../interfaces/InboxRetentionPolicyDto.md)\>\>
+
+Update an inbox retention policy for your account
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`UpdateInboxRetentionPolicyRequest`](../interfaces/UpdateInboxRetentionPolicyRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxRetentionPolicyDto`](../interfaces/InboxRetentionPolicyDto.md)\>\>
 
 ___
 

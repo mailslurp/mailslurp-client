@@ -20,12 +20,6 @@ export interface SortObject {
      * @type {boolean}
      * @memberof SortObject
      */
-    empty?: boolean;
-    /**
-     *
-     * @type {boolean}
-     * @memberof SortObject
-     */
     sorted?: boolean;
     /**
      *
@@ -33,6 +27,12 @@ export interface SortObject {
      * @memberof SortObject
      */
     unsorted?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof SortObject
+     */
+    empty?: boolean;
 }
 export declare function SortObjectFromJSON(json: any): SortObject;
 export declare function SortObjectFromJSONTyped(json: any, ignoreDiscriminator: boolean): SortObject;

@@ -14,6 +14,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LookupDmarcDomainResultsToJSON = exports.LookupDmarcDomainResultsFromJSONTyped = exports.LookupDmarcDomainResultsFromJSON = void 0;
+var runtime_1 = require("../runtime");
 var _1 = require("./");
 function LookupDmarcDomainResultsFromJSON(json) {
     return LookupDmarcDomainResultsFromJSONTyped(json, false);
@@ -29,6 +30,14 @@ function LookupDmarcDomainResultsFromJSONTyped(json, ignoreDiscriminator) {
         records: json['records'].map(_1.DNSLookupResultFromJSON),
         errors: json['errors'],
         warnings: json['warnings'],
+        queriedDomain: json['queriedDomain'],
+        organizationalDomain: !(0, runtime_1.exists)(json, 'organizationalDomain')
+            ? undefined
+            : json['organizationalDomain'],
+        inheritedFromOrganizationalDomain: json['inheritedFromOrganizationalDomain'],
+        effectivePolicy: !(0, runtime_1.exists)(json, 'effectivePolicy')
+            ? undefined
+            : json['effectivePolicy'],
     };
 }
 exports.LookupDmarcDomainResultsFromJSONTyped = LookupDmarcDomainResultsFromJSONTyped;
@@ -45,6 +54,10 @@ function LookupDmarcDomainResultsToJSON(value) {
         records: value.records.map(_1.DNSLookupResultToJSON),
         errors: value.errors,
         warnings: value.warnings,
+        queriedDomain: value.queriedDomain,
+        organizationalDomain: value.organizationalDomain,
+        inheritedFromOrganizationalDomain: value.inheritedFromOrganizationalDomain,
+        effectivePolicy: value.effectivePolicy,
     };
 }
 exports.LookupDmarcDomainResultsToJSON = LookupDmarcDomainResultsToJSON;

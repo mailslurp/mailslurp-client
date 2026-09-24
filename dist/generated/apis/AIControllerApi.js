@@ -99,6 +99,64 @@ var AIControllerApi = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
+     * Check named natural-language assertions against an existing email or SMS. Returns PASS, FAIL, INCONCLUSIVE or a distinct operational status. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Check named natural-language assertions against an existing email or SMS
+     */
+    AIControllerApi.prototype.assertAIMessageRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.assertAIMessageOptions === null ||
+                            requestParameters.assertAIMessageOptions === undefined) {
+                            throw new runtime.RequiredError('assertAIMessageOptions', 'Required parameter requestParameters.assertAIMessageOptions was null or undefined when calling assertAIMessage.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (requestParameters.idempotencyKey !== undefined &&
+                            requestParameters.idempotencyKey !== null) {
+                            headerParameters['Idempotency-Key'] = String(requestParameters.idempotencyKey);
+                        }
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/messages/assert",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.AssertAIMessageOptionsToJSON)(requestParameters.assertAIMessageOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AIMessageResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Check named natural-language assertions against an existing email or SMS. Returns PASS, FAIL, INCONCLUSIVE or a distinct operational status. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Check named natural-language assertions against an existing email or SMS
+     */
+    AIControllerApi.prototype.assertAIMessage = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.assertAIMessageRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Save an AI transform instructions and schema for use with webhooks and automations
      * Create a transformer for reuse in automations
      */
@@ -443,6 +501,64 @@ var AIControllerApi = /** @class */ (function (_super) {
         });
     };
     /**
+     * Extract schema-validated data from an existing email or SMS with verified source evidence. Missing or ambiguous data is not invented. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Extract schema-validated data from an existing email or SMS with verified source evidence
+     */
+    AIControllerApi.prototype.extractAIMessageRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.extractAIMessageOptions === null ||
+                            requestParameters.extractAIMessageOptions === undefined) {
+                            throw new runtime.RequiredError('extractAIMessageOptions', 'Required parameter requestParameters.extractAIMessageOptions was null or undefined when calling extractAIMessage.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (requestParameters.idempotencyKey !== undefined &&
+                            requestParameters.idempotencyKey !== null) {
+                            headerParameters['Idempotency-Key'] = String(requestParameters.idempotencyKey);
+                        }
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/messages/extract",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.ExtractAIMessageOptionsToJSON)(requestParameters.extractAIMessageOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AIMessageResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Extract schema-validated data from an existing email or SMS with verified source evidence. Missing or ambiguous data is not invented. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Extract schema-validated data from an existing email or SMS with verified source evidence
+     */
+    AIControllerApi.prototype.extractAIMessage = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.extractAIMessageRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
      * Use output schemas to extract data from an attachment using AI
      * Generate structured content for an attachment
      */
@@ -596,6 +712,54 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.generateStructuredContentFromSmsRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Discover enum model selectors, resolved provider models, evaluator versions and token multipliers. Pinned models never silently fall back.
+     * List supported message-testing AI models
+     */
+    AIControllerApi.prototype.getAIMessageModelsRaw = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        queryParameters = {};
+                        headerParameters = {};
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/models",
+                                method: 'GET',
+                                headers: headerParameters,
+                                query: queryParameters,
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return jsonValue.map(models_1.AIMessageModelDtoFromJSON);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Discover enum model selectors, resolved provider models, evaluator versions and token multipliers. Pinned models never silently fall back.
+     * List supported message-testing AI models
+     */
+    AIControllerApi.prototype.getAIMessageModels = function (initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAIMessageModelsRaw(initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];
@@ -1267,6 +1431,122 @@ var AIControllerApi = /** @class */ (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.validateStructuredOutputSchemaRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Find a message across explicit inboxes or phones, then assert and extract from that same message. Checks never select a replacement message after failure. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Find a message across explicit inboxes or phones, then assert and extract from that same message
+     */
+    AIControllerApi.prototype.waitForAIMessageRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.waitForAIMessageOptions === null ||
+                            requestParameters.waitForAIMessageOptions === undefined) {
+                            throw new runtime.RequiredError('waitForAIMessageOptions', 'Required parameter requestParameters.waitForAIMessageOptions was null or undefined when calling waitForAIMessage.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (requestParameters.idempotencyKey !== undefined &&
+                            requestParameters.idempotencyKey !== null) {
+                            headerParameters['Idempotency-Key'] = String(requestParameters.idempotencyKey);
+                        }
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/messages/wait",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.WaitForAIMessageOptionsToJSON)(requestParameters.waitForAIMessageOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AIMessageResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Find a message across explicit inboxes or phones, then assert and extract from that same message. Checks never select a replacement message after failure. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Find a message across explicit inboxes or phones, then assert and extract from that same message
+     */
+    AIControllerApi.prototype.waitForAIMessage = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.waitForAIMessageRaw(requestParameters, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.value()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    /**
+     * Wait for all named email and SMS expectations under one shared deadline and AI token budget. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Wait for all named email and SMS expectations under one shared deadline and AI token budget
+     */
+    AIControllerApi.prototype.waitForAIMessagesRaw = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var queryParameters, headerParameters, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (requestParameters.waitForAIMessagesOptions === null ||
+                            requestParameters.waitForAIMessagesOptions === undefined) {
+                            throw new runtime.RequiredError('waitForAIMessagesOptions', 'Required parameter requestParameters.waitForAIMessagesOptions was null or undefined when calling waitForAIMessages.');
+                        }
+                        queryParameters = {};
+                        headerParameters = {};
+                        headerParameters['Content-Type'] = 'application/json';
+                        if (requestParameters.idempotencyKey !== undefined &&
+                            requestParameters.idempotencyKey !== null) {
+                            headerParameters['Idempotency-Key'] = String(requestParameters.idempotencyKey);
+                        }
+                        if (this.configuration && this.configuration.apiKey) {
+                            headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+                        }
+                        return [4 /*yield*/, this.request({
+                                path: "/ai/messages/wait-all",
+                                method: 'POST',
+                                headers: headerParameters,
+                                query: queryParameters,
+                                body: (0, models_1.WaitForAIMessagesOptionsToJSON)(requestParameters.waitForAIMessagesOptions),
+                            }, initOverrides)];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, new runtime.JSONApiResponse(response, function (jsonValue) {
+                                return (0, models_1.AIMessagesResultFromJSON)(jsonValue);
+                            })];
+                }
+            });
+        });
+    };
+    /**
+     * Wait for all named email and SMS expectations under one shared deadline and AI token budget. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+     * Wait for all named email and SMS expectations under one shared deadline and AI token budget
+     */
+    AIControllerApi.prototype.waitForAIMessages = function (requestParameters, initOverrides) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.waitForAIMessagesRaw(requestParameters, initOverrides)];
                     case 1:
                         response = _a.sent();
                         return [4 /*yield*/, response.value()];

@@ -13,8 +13,17 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReputationItemProjectionToJSON = exports.ReputationItemProjectionFromJSONTyped = exports.ReputationItemProjectionFromJSON = exports.ReputationItemProjectionReputationTypeEnum = exports.ReputationItemProjectionSeverityEnum = void 0;
+exports.ReputationItemProjectionToJSON = exports.ReputationItemProjectionFromJSONTyped = exports.ReputationItemProjectionFromJSON = exports.ReputationItemProjectionSeverityEnum = exports.ReputationItemProjectionReputationTypeEnum = void 0;
 var runtime_1 = require("../runtime");
+/**
+ * @export
+ * @enum {string}
+ */
+var ReputationItemProjectionReputationTypeEnum;
+(function (ReputationItemProjectionReputationTypeEnum) {
+    ReputationItemProjectionReputationTypeEnum["COMPLAINT"] = "COMPLAINT";
+    ReputationItemProjectionReputationTypeEnum["BOUNCE"] = "BOUNCE";
+})(ReputationItemProjectionReputationTypeEnum = exports.ReputationItemProjectionReputationTypeEnum || (exports.ReputationItemProjectionReputationTypeEnum = {}));
 /**
  * @export
  * @enum {string}
@@ -25,15 +34,6 @@ var ReputationItemProjectionSeverityEnum;
     ReputationItemProjectionSeverityEnum["WARNING"] = "WARNING";
     ReputationItemProjectionSeverityEnum["DANGER"] = "DANGER";
 })(ReputationItemProjectionSeverityEnum = exports.ReputationItemProjectionSeverityEnum || (exports.ReputationItemProjectionSeverityEnum = {}));
-/**
- * @export
- * @enum {string}
- */
-var ReputationItemProjectionReputationTypeEnum;
-(function (ReputationItemProjectionReputationTypeEnum) {
-    ReputationItemProjectionReputationTypeEnum["COMPLAINT"] = "COMPLAINT";
-    ReputationItemProjectionReputationTypeEnum["BOUNCE"] = "BOUNCE";
-})(ReputationItemProjectionReputationTypeEnum = exports.ReputationItemProjectionReputationTypeEnum || (exports.ReputationItemProjectionReputationTypeEnum = {}));
 function ReputationItemProjectionFromJSON(json) {
     return ReputationItemProjectionFromJSONTyped(json, false);
 }
@@ -43,12 +43,12 @@ function ReputationItemProjectionFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        id: json['id'],
+        reputationType: json['reputationType'],
         severity: json['severity'],
         source: !(0, runtime_1.exists)(json, 'source') ? undefined : json['source'],
         createdAt: new Date(json['createdAt']),
         recipient: !(0, runtime_1.exists)(json, 'recipient') ? undefined : json['recipient'],
-        reputationType: json['reputationType'],
+        id: json['id'],
     };
 }
 exports.ReputationItemProjectionFromJSONTyped = ReputationItemProjectionFromJSONTyped;
@@ -60,12 +60,12 @@ function ReputationItemProjectionToJSON(value) {
         return null;
     }
     return {
-        id: value.id,
+        reputationType: value.reputationType,
         severity: value.severity,
         source: value.source,
         createdAt: value.createdAt.toISOString(),
         recipient: value.recipient,
-        reputationType: value.reputationType,
+        id: value.id,
     };
 }
 exports.ReputationItemProjectionToJSON = ReputationItemProjectionToJSON;

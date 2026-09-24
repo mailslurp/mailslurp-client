@@ -29,6 +29,8 @@
 - [createDevicePreviewProfile](DevicePreviewsControllerApi.md#createdevicepreviewprofile)
 - [createDevicePreviewProfileRaw](DevicePreviewsControllerApi.md#createdevicepreviewprofileraw)
 - [createDevicePreviewRun](DevicePreviewsControllerApi.md#createdevicepreviewrun)
+- [createDevicePreviewRunFromFile](DevicePreviewsControllerApi.md#createdevicepreviewrunfromfile)
+- [createDevicePreviewRunFromFileRaw](DevicePreviewsControllerApi.md#createdevicepreviewrunfromfileraw)
 - [createDevicePreviewRunFromHtmlImport](DevicePreviewsControllerApi.md#createdevicepreviewrunfromhtmlimport)
 - [createDevicePreviewRunFromHtmlImportRaw](DevicePreviewsControllerApi.md#createdevicepreviewrunfromhtmlimportraw)
 - [createDevicePreviewRunFromImport](DevicePreviewsControllerApi.md#createdevicepreviewrunfromimport)
@@ -46,12 +48,18 @@
 - [deleteDevicePreviewRunRaw](DevicePreviewsControllerApi.md#deletedevicepreviewrunraw)
 - [deleteDevicePreviewShareLink](DevicePreviewsControllerApi.md#deletedevicepreviewsharelink)
 - [deleteDevicePreviewShareLinkRaw](DevicePreviewsControllerApi.md#deletedevicepreviewsharelinkraw)
+- [downloadDevicePreviewEmailSubmissionSourceEmail](DevicePreviewsControllerApi.md#downloaddevicepreviewemailsubmissionsourceemail)
+- [downloadDevicePreviewEmailSubmissionSourceEmailRaw](DevicePreviewsControllerApi.md#downloaddevicepreviewemailsubmissionsourceemailraw)
+- [downloadDevicePreviewRunSourceEmail](DevicePreviewsControllerApi.md#downloaddevicepreviewrunsourceemail)
+- [downloadDevicePreviewRunSourceEmailRaw](DevicePreviewsControllerApi.md#downloaddevicepreviewrunsourceemailraw)
 - [ensureDevicePreviewRun](DevicePreviewsControllerApi.md#ensuredevicepreviewrun)
 - [ensureDevicePreviewRunRaw](DevicePreviewsControllerApi.md#ensuredevicepreviewrunraw)
 - [getDevicePreviewEmailDomainOrCreate](DevicePreviewsControllerApi.md#getdevicepreviewemaildomainorcreate)
 - [getDevicePreviewEmailDomainOrCreateRaw](DevicePreviewsControllerApi.md#getdevicepreviewemaildomainorcreateraw)
 - [getDevicePreviewEmailRuns](DevicePreviewsControllerApi.md#getdevicepreviewemailruns)
 - [getDevicePreviewEmailRunsRaw](DevicePreviewsControllerApi.md#getdevicepreviewemailrunsraw)
+- [getDevicePreviewEmailSubmissionSourceEmail](DevicePreviewsControllerApi.md#getdevicepreviewemailsubmissionsourceemail)
+- [getDevicePreviewEmailSubmissionSourceEmailRaw](DevicePreviewsControllerApi.md#getdevicepreviewemailsubmissionsourceemailraw)
 - [getDevicePreviewEmailSubmissions](DevicePreviewsControllerApi.md#getdevicepreviewemailsubmissions)
 - [getDevicePreviewEmailSubmissionsRaw](DevicePreviewsControllerApi.md#getdevicepreviewemailsubmissionsraw)
 - [getDevicePreviewFeedback](DevicePreviewsControllerApi.md#getdevicepreviewfeedback)
@@ -74,6 +82,8 @@
 - [getDevicePreviewRunResultsRaw](DevicePreviewsControllerApi.md#getdevicepreviewrunresultsraw)
 - [getDevicePreviewRunScreenshot](DevicePreviewsControllerApi.md#getdevicepreviewrunscreenshot)
 - [getDevicePreviewRunScreenshotRaw](DevicePreviewsControllerApi.md#getdevicepreviewrunscreenshotraw)
+- [getDevicePreviewRunSourceEmail](DevicePreviewsControllerApi.md#getdevicepreviewrunsourceemail)
+- [getDevicePreviewRunSourceEmailRaw](DevicePreviewsControllerApi.md#getdevicepreviewrunsourceemailraw)
 - [getDevicePreviewRuns](DevicePreviewsControllerApi.md#getdevicepreviewruns)
 - [getDevicePreviewRunsForAccount](DevicePreviewsControllerApi.md#getdevicepreviewrunsforaccount)
 - [getDevicePreviewRunsForAccountOffsetPaginated](DevicePreviewsControllerApi.md#getdevicepreviewrunsforaccountoffsetpaginated)
@@ -88,6 +98,8 @@
 - [getDevicePreviewSharedResultRaw](DevicePreviewsControllerApi.md#getdevicepreviewsharedresultraw)
 - [getDevicePreviewSharedResultScreenshot](DevicePreviewsControllerApi.md#getdevicepreviewsharedresultscreenshot)
 - [getDevicePreviewSharedResultScreenshotRaw](DevicePreviewsControllerApi.md#getdevicepreviewsharedresultscreenshotraw)
+- [getDevicePreviewTargets](DevicePreviewsControllerApi.md#getdevicepreviewtargets)
+- [getDevicePreviewTargetsRaw](DevicePreviewsControllerApi.md#getdevicepreviewtargetsraw)
 - [request](DevicePreviewsControllerApi.md#request)
 - [rerunDevicePreviewTargets](DevicePreviewsControllerApi.md#rerundevicepreviewtargets)
 - [rerunDevicePreviewTargetsRaw](DevicePreviewsControllerApi.md#rerundevicepreviewtargetsraw)
@@ -303,6 +315,46 @@ Create a new device preview run for an email
 #### Returns
 
 `Promise`<[`CreateDevicePreviewRunResult`](../interfaces/CreateDevicePreviewRunResult.md)\>
+
+___
+
+### createDevicePreviewRunFromFile
+
+▸ **createDevicePreviewRunFromFile**(`requestParameters`, `initOverrides?`): `Promise`<[`CreateDevicePreviewRunResult`](../interfaces/CreateDevicePreviewRunResult.md)\>
+
+Uploads an HTML or RFC822 EML file, or a ZIP archive containing exactly one HTML or EML file. ZIP uploads are bounded by entry count, expanded size, and compression ratio.
+Create a device preview run from an HTML, EML, or ZIP file
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateDevicePreviewRunFromFileRequest`](../interfaces/CreateDevicePreviewRunFromFileRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`CreateDevicePreviewRunResult`](../interfaces/CreateDevicePreviewRunResult.md)\>
+
+___
+
+### createDevicePreviewRunFromFileRaw
+
+▸ **createDevicePreviewRunFromFileRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CreateDevicePreviewRunResult`](../interfaces/CreateDevicePreviewRunResult.md)\>\>
+
+Uploads an HTML or RFC822 EML file, or a ZIP archive containing exactly one HTML or EML file. ZIP uploads are bounded by entry count, expanded size, and compression ratio.
+Create a device preview run from an HTML, EML, or ZIP file
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`CreateDevicePreviewRunFromFileRequest`](../interfaces/CreateDevicePreviewRunFromFileRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`CreateDevicePreviewRunResult`](../interfaces/CreateDevicePreviewRunResult.md)\>\>
 
 ___
 
@@ -629,6 +681,82 @@ Revoke a device preview share link
 
 ___
 
+### downloadDevicePreviewEmailSubmissionSourceEmail
+
+▸ **downloadDevicePreviewEmailSubmissionSourceEmail**(`requestParameters`, `initOverrides?`): `Promise`<`Blob`\>
+
+Download the original RFC822 email for a device preview submission
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadDevicePreviewEmailSubmissionSourceEmailRequest`](../interfaces/DownloadDevicePreviewEmailSubmissionSourceEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Blob`\>
+
+___
+
+### downloadDevicePreviewEmailSubmissionSourceEmailRaw
+
+▸ **downloadDevicePreviewEmailSubmissionSourceEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`Blob`\>\>
+
+Download the original RFC822 email for a device preview submission
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadDevicePreviewEmailSubmissionSourceEmailRequest`](../interfaces/DownloadDevicePreviewEmailSubmissionSourceEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`Blob`\>\>
+
+___
+
+### downloadDevicePreviewRunSourceEmail
+
+▸ **downloadDevicePreviewRunSourceEmail**(`requestParameters`, `initOverrides?`): `Promise`<`Blob`\>
+
+Download the original RFC822 email for a device preview run
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadDevicePreviewRunSourceEmailRequest`](../interfaces/DownloadDevicePreviewRunSourceEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`Blob`\>
+
+___
+
+### downloadDevicePreviewRunSourceEmailRaw
+
+▸ **downloadDevicePreviewRunSourceEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`Blob`\>\>
+
+Download the original RFC822 email for a device preview run
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`DownloadDevicePreviewRunSourceEmailRequest`](../interfaces/DownloadDevicePreviewRunSourceEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`Blob`\>\>
+
+___
+
 ### ensureDevicePreviewRun
 
 ▸ **ensureDevicePreviewRun**(`requestParameters`, `initOverrides?`): `Promise`<[`CreateDevicePreviewRunResult`](../interfaces/CreateDevicePreviewRunResult.md)\>
@@ -738,6 +866,44 @@ List device preview runs created from account email domains
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DevicePreviewRunDto`](../interfaces/DevicePreviewRunDto.md)[]\>\>
+
+___
+
+### getDevicePreviewEmailSubmissionSourceEmail
+
+▸ **getDevicePreviewEmailSubmissionSourceEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`DevicePreviewSourceEmailDto`](../interfaces/DevicePreviewSourceEmailDto.md)\>
+
+Get the original email content for a device preview submission
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDevicePreviewEmailSubmissionSourceEmailRequest`](../interfaces/GetDevicePreviewEmailSubmissionSourceEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DevicePreviewSourceEmailDto`](../interfaces/DevicePreviewSourceEmailDto.md)\>
+
+___
+
+### getDevicePreviewEmailSubmissionSourceEmailRaw
+
+▸ **getDevicePreviewEmailSubmissionSourceEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DevicePreviewSourceEmailDto`](../interfaces/DevicePreviewSourceEmailDto.md)\>\>
+
+Get the original email content for a device preview submission
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDevicePreviewEmailSubmissionSourceEmailRequest`](../interfaces/GetDevicePreviewEmailSubmissionSourceEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DevicePreviewSourceEmailDto`](../interfaces/DevicePreviewSourceEmailDto.md)\>\>
 
 ___
 
@@ -897,6 +1063,7 @@ ___
 
 ▸ **getDevicePreviewNativeTargetAvailability**(`initOverrides?`): `Promise`<[`DevicePreviewNativeTargetAvailabilityListDto`](../interfaces/DevicePreviewNativeTargetAvailabilityListDto.md)\>
 
+Returns live native device preview target availability for authenticated API clients, including worker health, queue, timeout, and status fields. Use `/device-preview-targets` when you need the stable catalog without transient availability data.
 Get native device preview target availability
 
 #### Parameters
@@ -915,6 +1082,7 @@ ___
 
 ▸ **getDevicePreviewNativeTargetAvailabilityRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DevicePreviewNativeTargetAvailabilityListDto`](../interfaces/DevicePreviewNativeTargetAvailabilityListDto.md)\>\>
 
+Returns live native device preview target availability for authenticated API clients, including worker health, queue, timeout, and status fields. Use `/device-preview-targets` when you need the stable catalog without transient availability data.
 Get native device preview target availability
 
 #### Parameters
@@ -1152,6 +1320,44 @@ Get a device preview screenshot image
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`string`\>\>
+
+___
+
+### getDevicePreviewRunSourceEmail
+
+▸ **getDevicePreviewRunSourceEmail**(`requestParameters`, `initOverrides?`): `Promise`<[`DevicePreviewSourceEmailDto`](../interfaces/DevicePreviewSourceEmailDto.md)\>
+
+Get the original email content for a device preview run
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDevicePreviewRunSourceEmailRequest`](../interfaces/GetDevicePreviewRunSourceEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DevicePreviewSourceEmailDto`](../interfaces/DevicePreviewSourceEmailDto.md)\>
+
+___
+
+### getDevicePreviewRunSourceEmailRaw
+
+▸ **getDevicePreviewRunSourceEmailRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DevicePreviewSourceEmailDto`](../interfaces/DevicePreviewSourceEmailDto.md)\>\>
+
+Get the original email content for a device preview run
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`GetDevicePreviewRunSourceEmailRequest`](../interfaces/GetDevicePreviewRunSourceEmailRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DevicePreviewSourceEmailDto`](../interfaces/DevicePreviewSourceEmailDto.md)\>\>
 
 ___
 
@@ -1421,6 +1627,44 @@ Get a public shared device preview screenshot image
 
 ___
 
+### getDevicePreviewTargets
+
+▸ **getDevicePreviewTargets**(`initOverrides?`): `Promise`<[`DevicePreviewNativeTargetListDto`](../interfaces/DevicePreviewNativeTargetListDto.md)\>
+
+Returns visible native device preview target metadata without worker availability, queue, or health fields.
+List device preview targets
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`DevicePreviewNativeTargetListDto`](../interfaces/DevicePreviewNativeTargetListDto.md)\>
+
+___
+
+### getDevicePreviewTargetsRaw
+
+▸ **getDevicePreviewTargetsRaw**(`initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DevicePreviewNativeTargetListDto`](../interfaces/DevicePreviewNativeTargetListDto.md)\>\>
+
+Returns visible native device preview target metadata without worker availability, queue, or health fields.
+List device preview targets
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`DevicePreviewNativeTargetListDto`](../interfaces/DevicePreviewNativeTargetListDto.md)\>\>
+
+___
+
 ### request
 
 ▸ `Protected` **request**(`context`, `initOverrides?`): `Promise`<`Response`\>
@@ -1446,7 +1690,8 @@ ___
 
 ▸ **rerunDevicePreviewTargets**(`requestParameters`, `initOverrides?`): `Promise`<[`RerunDevicePreviewTargetsResult`](../interfaces/RerunDevicePreviewTargetsResult.md)\>
 
-Rerun selected failed device preview targets in the same run
+Set failedOnly=false to rerun a successful target. Successful targets consume their configured credit cost again.
+Rerun selected device preview targets in the same run
 
 #### Parameters
 
@@ -1465,7 +1710,8 @@ ___
 
 ▸ **rerunDevicePreviewTargetsRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`RerunDevicePreviewTargetsResult`](../interfaces/RerunDevicePreviewTargetsResult.md)\>\>
 
-Rerun selected failed device preview targets in the same run
+Set failedOnly=false to rerun a successful target. Successful targets consume their configured credit cost again.
+Rerun selected device preview targets in the same run
 
 #### Parameters
 

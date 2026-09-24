@@ -14,6 +14,15 @@
 
 import * as runtime from '../runtime';
 import {
+  AIMessageModelDto,
+  AIMessageModelDtoFromJSON,
+  AIMessageModelDtoToJSON,
+  AIMessageResult,
+  AIMessageResultFromJSON,
+  AIMessageResultToJSON,
+  AIMessagesResult,
+  AIMessagesResultFromJSON,
+  AIMessagesResultToJSON,
   AITransformCreateOptions,
   AITransformCreateOptionsFromJSON,
   AITransformCreateOptionsToJSON,
@@ -29,6 +38,9 @@ import {
   AITransformResultDto,
   AITransformResultDtoFromJSON,
   AITransformResultDtoToJSON,
+  AssertAIMessageOptions,
+  AssertAIMessageOptionsFromJSON,
+  AssertAIMessageOptionsToJSON,
   ConditionalStructuredContentResult,
   ConditionalStructuredContentResultFromJSON,
   ConditionalStructuredContentResultToJSON,
@@ -44,6 +56,9 @@ import {
   ExportTransformerResultJobDto,
   ExportTransformerResultJobDtoFromJSON,
   ExportTransformerResultJobDtoToJSON,
+  ExtractAIMessageOptions,
+  ExtractAIMessageOptionsFromJSON,
+  ExtractAIMessageOptionsToJSON,
   GenerateStructuredContentAttachmentOptions,
   GenerateStructuredContentAttachmentOptionsFromJSON,
   GenerateStructuredContentAttachmentOptionsToJSON,
@@ -77,7 +92,18 @@ import {
   StructuredOutputSchemaValidation,
   StructuredOutputSchemaValidationFromJSON,
   StructuredOutputSchemaValidationToJSON,
+  WaitForAIMessageOptions,
+  WaitForAIMessageOptionsFromJSON,
+  WaitForAIMessageOptionsToJSON,
+  WaitForAIMessagesOptions,
+  WaitForAIMessagesOptionsFromJSON,
+  WaitForAIMessagesOptionsToJSON,
 } from '../models';
+
+export interface AssertAIMessageRequest {
+  assertAIMessageOptions: AssertAIMessageOptions;
+  idempotencyKey?: string;
+}
 
 export interface CreateTransformerRequest {
   aITransformCreateOptions: AITransformCreateOptions;
@@ -97,6 +123,11 @@ export interface DeleteTransformerMappingRequest {
 
 export interface ExportTransformerResultsRequest {
   exportTransformerOptions: ExportTransformerOptions;
+}
+
+export interface ExtractAIMessageRequest {
+  extractAIMessageOptions: ExtractAIMessageOptions;
+  idempotencyKey?: string;
 }
 
 export interface GenerateStructuredContentFromAttachmentRequest {
@@ -186,10 +217,90 @@ export interface ValidateStructuredOutputSchemaRequest {
   structuredOutputSchema: StructuredOutputSchema | null;
 }
 
+export interface WaitForAIMessageRequest {
+  waitForAIMessageOptions: WaitForAIMessageOptions;
+  idempotencyKey?: string;
+}
+
+export interface WaitForAIMessagesRequest {
+  waitForAIMessagesOptions: WaitForAIMessagesOptions;
+  idempotencyKey?: string;
+}
+
 /**
  *
  */
 export class AIControllerApi extends runtime.BaseAPI {
+  /**
+   * Check named natural-language assertions against an existing email or SMS. Returns PASS, FAIL, INCONCLUSIVE or a distinct operational status. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+   * Check named natural-language assertions against an existing email or SMS
+   */
+  async assertAIMessageRaw(
+    requestParameters: AssertAIMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AIMessageResult>> {
+    if (
+      requestParameters.assertAIMessageOptions === null ||
+      requestParameters.assertAIMessageOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'assertAIMessageOptions',
+        'Required parameter requestParameters.assertAIMessageOptions was null or undefined when calling assertAIMessage.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (
+      requestParameters.idempotencyKey !== undefined &&
+      requestParameters.idempotencyKey !== null
+    ) {
+      headerParameters['Idempotency-Key'] = String(
+        requestParameters.idempotencyKey
+      );
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/messages/assert`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: AssertAIMessageOptionsToJSON(
+          requestParameters.assertAIMessageOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AIMessageResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Check named natural-language assertions against an existing email or SMS. Returns PASS, FAIL, INCONCLUSIVE or a distinct operational status. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+   * Check named natural-language assertions against an existing email or SMS
+   */
+  async assertAIMessage(
+    requestParameters: AssertAIMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<AIMessageResult> {
+    const response = await this.assertAIMessageRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
   /**
    * Save an AI transform instructions and schema for use with webhooks and automations
    * Create a transformer for reuse in automations
@@ -548,6 +659,76 @@ export class AIControllerApi extends runtime.BaseAPI {
   }
 
   /**
+   * Extract schema-validated data from an existing email or SMS with verified source evidence. Missing or ambiguous data is not invented. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+   * Extract schema-validated data from an existing email or SMS with verified source evidence
+   */
+  async extractAIMessageRaw(
+    requestParameters: ExtractAIMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AIMessageResult>> {
+    if (
+      requestParameters.extractAIMessageOptions === null ||
+      requestParameters.extractAIMessageOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'extractAIMessageOptions',
+        'Required parameter requestParameters.extractAIMessageOptions was null or undefined when calling extractAIMessage.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (
+      requestParameters.idempotencyKey !== undefined &&
+      requestParameters.idempotencyKey !== null
+    ) {
+      headerParameters['Idempotency-Key'] = String(
+        requestParameters.idempotencyKey
+      );
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/messages/extract`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: ExtractAIMessageOptionsToJSON(
+          requestParameters.extractAIMessageOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AIMessageResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Extract schema-validated data from an existing email or SMS with verified source evidence. Missing or ambiguous data is not invented. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+   * Extract schema-validated data from an existing email or SMS with verified source evidence
+   */
+  async extractAIMessage(
+    requestParameters: ExtractAIMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<AIMessageResult> {
+    const response = await this.extractAIMessageRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
    * Use output schemas to extract data from an attachment using AI
    * Generate structured content for an attachment
    */
@@ -727,6 +908,47 @@ export class AIControllerApi extends runtime.BaseAPI {
       requestParameters,
       initOverrides
     );
+    return await response.value();
+  }
+
+  /**
+   * Discover enum model selectors, resolved provider models, evaluator versions and token multipliers. Pinned models never silently fall back.
+   * List supported message-testing AI models
+   */
+  async getAIMessageModelsRaw(
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<Array<AIMessageModelDto>>> {
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/models`,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      jsonValue.map(AIMessageModelDtoFromJSON)
+    );
+  }
+
+  /**
+   * Discover enum model selectors, resolved provider models, evaluator versions and token multipliers. Pinned models never silently fall back.
+   * List supported message-testing AI models
+   */
+  async getAIMessageModels(
+    initOverrides?: RequestInit
+  ): Promise<Array<AIMessageModelDto>> {
+    const response = await this.getAIMessageModelsRaw(initOverrides);
     return await response.value();
   }
 
@@ -1473,6 +1695,146 @@ export class AIControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<StructuredOutputSchemaValidation> {
     const response = await this.validateStructuredOutputSchemaRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Find a message across explicit inboxes or phones, then assert and extract from that same message. Checks never select a replacement message after failure. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+   * Find a message across explicit inboxes or phones, then assert and extract from that same message
+   */
+  async waitForAIMessageRaw(
+    requestParameters: WaitForAIMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AIMessageResult>> {
+    if (
+      requestParameters.waitForAIMessageOptions === null ||
+      requestParameters.waitForAIMessageOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'waitForAIMessageOptions',
+        'Required parameter requestParameters.waitForAIMessageOptions was null or undefined when calling waitForAIMessage.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (
+      requestParameters.idempotencyKey !== undefined &&
+      requestParameters.idempotencyKey !== null
+    ) {
+      headerParameters['Idempotency-Key'] = String(
+        requestParameters.idempotencyKey
+      );
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/messages/wait`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: WaitForAIMessageOptionsToJSON(
+          requestParameters.waitForAIMessageOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AIMessageResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Find a message across explicit inboxes or phones, then assert and extract from that same message. Checks never select a replacement message after failure. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+   * Find a message across explicit inboxes or phones, then assert and extract from that same message
+   */
+  async waitForAIMessage(
+    requestParameters: WaitForAIMessageRequest,
+    initOverrides?: RequestInit
+  ): Promise<AIMessageResult> {
+    const response = await this.waitForAIMessageRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Wait for all named email and SMS expectations under one shared deadline and AI token budget. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+   * Wait for all named email and SMS expectations under one shared deadline and AI token budget
+   */
+  async waitForAIMessagesRaw(
+    requestParameters: WaitForAIMessagesRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AIMessagesResult>> {
+    if (
+      requestParameters.waitForAIMessagesOptions === null ||
+      requestParameters.waitForAIMessagesOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'waitForAIMessagesOptions',
+        'Required parameter requestParameters.waitForAIMessagesOptions was null or undefined when calling waitForAIMessages.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (
+      requestParameters.idempotencyKey !== undefined &&
+      requestParameters.idempotencyKey !== null
+    ) {
+      headerParameters['Idempotency-Key'] = String(
+        requestParameters.idempotencyKey
+      );
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/ai/messages/wait-all`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: WaitForAIMessagesOptionsToJSON(
+          requestParameters.waitForAIMessagesOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AIMessagesResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Wait for all named email and SMS expectations under one shared deadline and AI token budget. Idempotency-Key enables 15-minute retry deduplication; reuse it only for an identical logical request.
+   * Wait for all named email and SMS expectations under one shared deadline and AI token budget
+   */
+  async waitForAIMessages(
+    requestParameters: WaitForAIMessagesRequest,
+    initOverrides?: RequestInit
+  ): Promise<AIMessagesResult> {
+    const response = await this.waitForAIMessagesRaw(
       requestParameters,
       initOverrides
     );

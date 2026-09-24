@@ -20,19 +20,7 @@ export interface ConnectorEventProjection {
      * @type {string}
      * @memberof ConnectorEventProjection
      */
-    message?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof ConnectorEventProjection
-     */
-    id?: string | null;
-    /**
-     *
-     * @type {number}
-     * @memberof ConnectorEventProjection
-     */
-    size: number;
+    eventType: ConnectorEventProjectionEventTypeEnum;
     /**
      *
      * @type {string}
@@ -47,12 +35,6 @@ export interface ConnectorEventProjection {
     createdAt: Date;
     /**
      *
-     * @type {string}
-     * @memberof ConnectorEventProjection
-     */
-    connectorId: string;
-    /**
-     *
      * @type {boolean}
      * @memberof ConnectorEventProjection
      */
@@ -62,7 +44,33 @@ export interface ConnectorEventProjection {
      * @type {string}
      * @memberof ConnectorEventProjection
      */
-    eventType: ConnectorEventProjectionEventTypeEnum;
+    connectorId: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorEventProjection
+     */
+    message?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ConnectorEventProjection
+     */
+    id?: string | null;
+    /**
+     *
+     * @type {number}
+     * @memberof ConnectorEventProjection
+     */
+    size: number;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum ConnectorEventProjectionEventTypeEnum {
+    SEND = "SEND",
+    SYNC = "SYNC"
 }
 /**
  * @export
@@ -74,14 +82,6 @@ export declare enum ConnectorEventProjectionStatusEnum {
     SUBSCRIPTION_ERROR = "SUBSCRIPTION_ERROR",
     CONNECTION_ERROR = "CONNECTION_ERROR",
     NOT_FOUND = "NOT_FOUND"
-}
-/**
- * @export
- * @enum {string}
- */
-export declare enum ConnectorEventProjectionEventTypeEnum {
-    SEND = "SEND",
-    SYNC = "SYNC"
 }
 export declare function ConnectorEventProjectionFromJSON(json: any): ConnectorEventProjection;
 export declare function ConnectorEventProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): ConnectorEventProjection;

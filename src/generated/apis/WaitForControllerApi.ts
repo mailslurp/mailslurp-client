@@ -14,6 +14,12 @@
 
 import * as runtime from '../runtime';
 import {
+  AIMessageResult,
+  AIMessageResultFromJSON,
+  AIMessageResultToJSON,
+  AIMessagesResult,
+  AIMessagesResultFromJSON,
+  AIMessagesResultToJSON,
   Email,
   EmailFromJSON,
   EmailToJSON,
@@ -29,6 +35,12 @@ import {
   SmsPreview,
   SmsPreviewFromJSON,
   SmsPreviewToJSON,
+  WaitForAIMessageOptions,
+  WaitForAIMessageOptionsFromJSON,
+  WaitForAIMessageOptionsToJSON,
+  WaitForAIMessagesOptions,
+  WaitForAIMessagesOptionsFromJSON,
+  WaitForAIMessagesOptionsToJSON,
   WaitForConditions,
   WaitForConditionsFromJSON,
   WaitForConditionsToJSON,
@@ -90,6 +102,16 @@ export interface WaitForMatchingFirstEmailRequest {
   before?: Date;
   sort?: WaitForMatchingFirstEmailSortEnum;
   delay?: number;
+}
+
+export interface WaitForMessageAIRequest {
+  waitForAIMessageOptions: WaitForAIMessageOptions;
+  idempotencyKey?: string;
+}
+
+export interface WaitForMessagesAIRequest {
+  waitForAIMessagesOptions: WaitForAIMessagesOptions;
+  idempotencyKey?: string;
 }
 
 export interface WaitForNthEmailRequest {
@@ -610,6 +632,146 @@ export class WaitForControllerApi extends runtime.BaseAPI {
     initOverrides?: RequestInit
   ): Promise<Email> {
     const response = await this.waitForMatchingFirstEmailRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+   * Wait for AI-matched email or SMS
+   */
+  async waitForMessageAIRaw(
+    requestParameters: WaitForMessageAIRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AIMessageResult>> {
+    if (
+      requestParameters.waitForAIMessageOptions === null ||
+      requestParameters.waitForAIMessageOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'waitForAIMessageOptions',
+        'Required parameter requestParameters.waitForAIMessageOptions was null or undefined when calling waitForMessageAI.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (
+      requestParameters.idempotencyKey !== undefined &&
+      requestParameters.idempotencyKey !== null
+    ) {
+      headerParameters['Idempotency-Key'] = String(
+        requestParameters.idempotencyKey
+      );
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/waitForAIMessage`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: WaitForAIMessageOptionsToJSON(
+          requestParameters.waitForAIMessageOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AIMessageResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+   * Wait for AI-matched email or SMS
+   */
+  async waitForMessageAI(
+    requestParameters: WaitForMessageAIRequest,
+    initOverrides?: RequestInit
+  ): Promise<AIMessageResult> {
+    const response = await this.waitForMessageAIRaw(
+      requestParameters,
+      initOverrides
+    );
+    return await response.value();
+  }
+
+  /**
+   * Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+   * Wait for AI-matched email or SMS
+   */
+  async waitForMessagesAIRaw(
+    requestParameters: WaitForMessagesAIRequest,
+    initOverrides?: RequestInit
+  ): Promise<runtime.ApiResponse<AIMessagesResult>> {
+    if (
+      requestParameters.waitForAIMessagesOptions === null ||
+      requestParameters.waitForAIMessagesOptions === undefined
+    ) {
+      throw new runtime.RequiredError(
+        'waitForAIMessagesOptions',
+        'Required parameter requestParameters.waitForAIMessagesOptions was null or undefined when calling waitForMessagesAI.'
+      );
+    }
+
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters['Content-Type'] = 'application/json';
+
+    if (
+      requestParameters.idempotencyKey !== undefined &&
+      requestParameters.idempotencyKey !== null
+    ) {
+      headerParameters['Idempotency-Key'] = String(
+        requestParameters.idempotencyKey
+      );
+    }
+
+    if (this.configuration && this.configuration.apiKey) {
+      headerParameters['x-api-key'] = this.configuration.apiKey('x-api-key'); // API_KEY authentication
+    }
+
+    const response = await this.request(
+      {
+        path: `/waitForAIMessages`,
+        method: 'POST',
+        headers: headerParameters,
+        query: queryParameters,
+        body: WaitForAIMessagesOptionsToJSON(
+          requestParameters.waitForAIMessagesOptions
+        ),
+      },
+      initOverrides
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      AIMessagesResultFromJSON(jsonValue)
+    );
+  }
+
+  /**
+   * Wait-controller alias of the AI message wait. Shares the same contract, billing, deadline, source authorization and Idempotency-Key namespace.
+   * Wait for AI-matched email or SMS
+   */
+  async waitForMessagesAI(
+    requestParameters: WaitForMessagesAIRequest,
+    initOverrides?: RequestInit
+  ): Promise<AIMessagesResult> {
+    const response = await this.waitForMessagesAIRaw(
       requestParameters,
       initOverrides
     );

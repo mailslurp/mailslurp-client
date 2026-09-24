@@ -15,6 +15,7 @@ RulesetDto
 ### Properties
 
 - [action](RulesetDto.md#action)
+- [active](RulesetDto.md#active)
 - [createdAt](RulesetDto.md#createdat)
 - [handler](RulesetDto.md#handler)
 - [id](RulesetDto.md#id)
@@ -28,6 +29,18 @@ RulesetDto
 ### action
 
 • **action**: [`RulesetDtoActionEnum`](../enums/RulesetDtoActionEnum.md)
+
+**`Memberof`**
+
+RulesetDto
+
+___
+
+### active
+
+• **active**: `boolean`
+
+Whether the ruleset is active
 
 **`Memberof`**
 

@@ -20,18 +20,6 @@ export interface BounceProjection {
      * @type {string}
      * @memberof BounceProjection
      */
-    id?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof BounceProjection
-     */
-    sender: string;
-    /**
-     *
-     * @type {string}
-     * @memberof BounceProjection
-     */
     subject?: string | null;
     /**
      *
@@ -44,6 +32,12 @@ export interface BounceProjection {
      * @type {string}
      * @memberof BounceProjection
      */
+    sender: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BounceProjection
+     */
     bounceType?: string | null;
     /**
      *
@@ -51,6 +45,12 @@ export interface BounceProjection {
      * @memberof BounceProjection
      */
     bounceMta?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof BounceProjection
+     */
+    id?: string | null;
 }
 export declare function BounceProjectionFromJSON(json: any): BounceProjection;
 export declare function BounceProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): BounceProjection;

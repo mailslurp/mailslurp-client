@@ -20,12 +20,6 @@ export interface SpamEmailProjection {
      * @type {string}
      * @memberof SpamEmailProjection
      */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof SpamEmailProjection
-     */
     from?: string | null;
     /**
      *
@@ -57,6 +51,12 @@ export interface SpamEmailProjection {
      * @memberof SpamEmailProjection
      */
     subjectSnippet?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SpamEmailProjection
+     */
+    id: string;
 }
 export declare function SpamEmailProjectionFromJSON(json: any): SpamEmailProjection;
 export declare function SpamEmailProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SpamEmailProjection;

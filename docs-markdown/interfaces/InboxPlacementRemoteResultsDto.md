@@ -15,6 +15,7 @@ InboxPlacementRemoteResultsDto
 - [analysis](InboxPlacementRemoteResultsDto.md#analysis)
 - [contentAnalysis](InboxPlacementRemoteResultsDto.md#contentanalysis)
 - [deliverability](InboxPlacementRemoteResultsDto.md#deliverability)
+- [providerAnalysis](InboxPlacementRemoteResultsDto.md#provideranalysis)
 - [scores](InboxPlacementRemoteResultsDto.md#scores)
 - [setupAnalysis](InboxPlacementRemoteResultsDto.md#setupanalysis)
 - [share](InboxPlacementRemoteResultsDto.md#share)
@@ -50,6 +51,16 @@ ___
 ### deliverability
 
 • **deliverability**: [`InboxPlacementDeliverabilitySummaryDto`](InboxPlacementDeliverabilitySummaryDto.md)
+
+**`Memberof`**
+
+InboxPlacementRemoteResultsDto
+
+___
+
+### providerAnalysis
+
+• `Optional` **providerAnalysis**: [`InboxPlacementProviderAnalysisDto`](InboxPlacementProviderAnalysisDto.md)
 
 **`Memberof`**
 

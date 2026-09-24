@@ -24,7 +24,7 @@ export interface ReputationItemProjection {
    * @type {string}
    * @memberof ReputationItemProjection
    */
-  id: string;
+  reputationType: ReputationItemProjectionReputationTypeEnum;
   /**
    *
    * @type {string}
@@ -54,9 +54,17 @@ export interface ReputationItemProjection {
    * @type {string}
    * @memberof ReputationItemProjection
    */
-  reputationType: ReputationItemProjectionReputationTypeEnum;
+  id: string;
 }
 
+/**
+ * @export
+ * @enum {string}
+ */
+export enum ReputationItemProjectionReputationTypeEnum {
+  COMPLAINT = 'COMPLAINT',
+  BOUNCE = 'BOUNCE',
+}
 /**
  * @export
  * @enum {string}
@@ -65,14 +73,6 @@ export enum ReputationItemProjectionSeverityEnum {
   INFO = 'INFO',
   WARNING = 'WARNING',
   DANGER = 'DANGER',
-}
-/**
- * @export
- * @enum {string}
- */
-export enum ReputationItemProjectionReputationTypeEnum {
-  COMPLAINT = 'COMPLAINT',
-  BOUNCE = 'BOUNCE',
 }
 
 export function ReputationItemProjectionFromJSON(
@@ -89,12 +89,12 @@ export function ReputationItemProjectionFromJSONTyped(
     return json;
   }
   return {
-    id: json['id'],
+    reputationType: json['reputationType'],
     severity: json['severity'],
     source: !exists(json, 'source') ? undefined : json['source'],
     createdAt: new Date(json['createdAt']),
     recipient: !exists(json, 'recipient') ? undefined : json['recipient'],
-    reputationType: json['reputationType'],
+    id: json['id'],
   };
 }
 
@@ -108,11 +108,11 @@ export function ReputationItemProjectionToJSON(
     return null;
   }
   return {
-    id: value.id,
+    reputationType: value.reputationType,
     severity: value.severity,
     source: value.source,
     createdAt: value.createdAt.toISOString(),
     recipient: value.recipient,
-    reputationType: value.reputationType,
+    id: value.id,
   };
 }

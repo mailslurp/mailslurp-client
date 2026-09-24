@@ -70,6 +70,7 @@ function CreateInboxReplierOptionsFromJSONTyped(json, ignoreDiscriminator) {
         matchOptions: !(0, runtime_1.exists)(json, 'matchOptions')
             ? undefined
             : (0, _1.InboxAutomationMatchOptionsFromJSON)(json['matchOptions']),
+        attachments: !(0, runtime_1.exists)(json, 'attachments') ? undefined : json['attachments'],
     };
 }
 exports.CreateInboxReplierOptionsFromJSONTyped = CreateInboxReplierOptionsFromJSONTyped;
@@ -96,6 +97,7 @@ function CreateInboxReplierOptionsToJSON(value) {
         templateVariables: value.templateVariables,
         should: value.should,
         matchOptions: (0, _1.InboxAutomationMatchOptionsToJSON)(value.matchOptions),
+        attachments: value.attachments,
     };
 }
 exports.CreateInboxReplierOptionsToJSON = CreateInboxReplierOptionsToJSON;

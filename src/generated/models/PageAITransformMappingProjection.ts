@@ -69,12 +69,6 @@ export interface PageAITransformMappingProjection {
    * @type {number}
    * @memberof PageAITransformMappingProjection
    */
-  size?: number;
-  /**
-   *
-   * @type {number}
-   * @memberof PageAITransformMappingProjection
-   */
   number?: number;
   /**
    *
@@ -84,16 +78,22 @@ export interface PageAITransformMappingProjection {
   first?: boolean;
   /**
    *
+   * @type {SortObject}
+   * @memberof PageAITransformMappingProjection
+   */
+  sort?: SortObject;
+  /**
+   *
    * @type {number}
    * @memberof PageAITransformMappingProjection
    */
   numberOfElements?: number;
   /**
    *
-   * @type {SortObject}
+   * @type {number}
    * @memberof PageAITransformMappingProjection
    */
-  sort?: SortObject;
+  size?: number;
   /**
    *
    * @type {boolean}
@@ -127,13 +127,13 @@ export function PageAITransformMappingProjectionFromJSONTyped(
     totalPages: json['totalPages'],
     totalElements: json['totalElements'],
     last: !exists(json, 'last') ? undefined : json['last'],
-    size: !exists(json, 'size') ? undefined : json['size'],
     number: !exists(json, 'number') ? undefined : json['number'],
     first: !exists(json, 'first') ? undefined : json['first'],
+    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
     numberOfElements: !exists(json, 'numberOfElements')
       ? undefined
       : json['numberOfElements'],
-    sort: !exists(json, 'sort') ? undefined : SortObjectFromJSON(json['sort']),
+    size: !exists(json, 'size') ? undefined : json['size'],
     empty: !exists(json, 'empty') ? undefined : json['empty'],
   };
 }
@@ -156,11 +156,11 @@ export function PageAITransformMappingProjectionToJSON(
     totalPages: value.totalPages,
     totalElements: value.totalElements,
     last: value.last,
-    size: value.size,
     number: value.number,
     first: value.first,
-    numberOfElements: value.numberOfElements,
     sort: SortObjectToJSON(value.sort),
+    numberOfElements: value.numberOfElements,
+    size: value.size,
     empty: value.empty,
   };
 }

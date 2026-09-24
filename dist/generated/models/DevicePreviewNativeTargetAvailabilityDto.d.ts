@@ -83,6 +83,12 @@ export interface DevicePreviewNativeTargetAvailabilityDto {
     creditCost: number;
     /**
      *
+     * @type {string}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    tier: DevicePreviewNativeTargetAvailabilityDtoTierEnum;
+    /**
+     *
      * @type {boolean}
      * @memberof DevicePreviewNativeTargetAvailabilityDto
      */
@@ -135,6 +141,100 @@ export interface DevicePreviewNativeTargetAvailabilityDto {
      * @memberof DevicePreviewNativeTargetAvailabilityDto
      */
     publicPollingWorkers: number;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    minimumWorkerReleaseVersion?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    desiredWorkerReleaseVersion?: string | null;
+    /**
+     *
+     * @type {number}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    desiredReleaseWorkers?: number | null;
+    /**
+     *
+     * @type {number}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    desiredReleasePublicPollingWorkers?: number | null;
+    /**
+     *
+     * @type {{ [key: string]: number; }}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    releaseVersions: {
+        [key: string]: number;
+    };
+    /**
+     *
+     * @type {number}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    desiredLanes: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    matchedLiveLanes: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    identityMismatchLanes: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    servingLanes: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    spareLanes: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    busyLanes: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    degradedLanes: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    quarantinedLanes: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DevicePreviewNativeTargetAvailabilityDto
+     */
+    zeroCapacityLanes: number;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum DevicePreviewNativeTargetAvailabilityDtoTierEnum {
+    STANDARD = "STANDARD",
+    PREMIUM = "PREMIUM"
 }
 /**
  * @export

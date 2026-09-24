@@ -10,13 +10,29 @@ This is the base class for all generated API classes.
 
   ↳ [`AIControllerApi`](AIControllerApi.md)
 
+  ↳ [`AgentControllerApi`](AgentControllerApi.md)
+
   ↳ [`AliasControllerApi`](AliasControllerApi.md)
 
   ↳ [`ApiAuditLogControllerApi`](ApiAuditLogControllerApi.md)
 
+  ↳ [`ApiAutomatedInboxPlacementControllerApi`](ApiAutomatedInboxPlacementControllerApi.md)
+
+  ↳ [`ApiEmailWarmupControllerApi`](ApiEmailWarmupControllerApi.md)
+
+  ↳ [`ApiFreeInboxControllerApi`](ApiFreeInboxControllerApi.md)
+
   ↳ [`ApiInboxPlacementTestControllerApi`](ApiInboxPlacementTestControllerApi.md)
 
+  ↳ [`ApiMcpControllerApi`](ApiMcpControllerApi.md)
+
+  ↳ [`ApiMcpOAuthControllerApi`](ApiMcpOAuthControllerApi.md)
+
+  ↳ [`ApiSendingConnectionControllerApi`](ApiSendingConnectionControllerApi.md)
+
   ↳ [`AttachmentControllerApi`](AttachmentControllerApi.md)
+
+  ↳ [`AuthV2Api`](AuthV2Api.md)
 
   ↳ [`BounceControllerApi`](BounceControllerApi.md)
 
@@ -77,6 +93,8 @@ This is the base class for all generated API classes.
   ↳ [`PhoneControllerApi`](PhoneControllerApi.md)
 
   ↳ [`RulesetControllerApi`](RulesetControllerApi.md)
+
+  ↳ [`SCIMApi`](SCIMApi.md)
 
   ↳ [`SentEmailsControllerApi`](SentEmailsControllerApi.md)
 

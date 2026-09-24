@@ -20,12 +20,6 @@ export interface SentSmsProjection {
      * @type {string}
      * @memberof SentSmsProjection
      */
-    id: string;
-    /**
-     *
-     * @type {string}
-     * @memberof SentSmsProjection
-     */
     body: string;
     /**
      *
@@ -35,16 +29,16 @@ export interface SentSmsProjection {
     userId: string;
     /**
      *
-     * @type {Date}
-     * @memberof SentSmsProjection
-     */
-    createdAt: Date;
-    /**
-     *
      * @type {string}
      * @memberof SentSmsProjection
      */
     phoneNumber: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof SentSmsProjection
+     */
+    createdAt: Date;
     /**
      *
      * @type {string}
@@ -63,6 +57,12 @@ export interface SentSmsProjection {
      * @memberof SentSmsProjection
      */
     replyToId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SentSmsProjection
+     */
+    id: string;
 }
 export declare function SentSmsProjectionFromJSON(json: any): SentSmsProjection;
 export declare function SentSmsProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): SentSmsProjection;

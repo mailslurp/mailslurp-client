@@ -14,6 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
+  AIMessageMatchOptions,
+  AIMessageMatchOptionsFromJSON,
+  AIMessageMatchOptionsFromJSONTyped,
+  AIMessageMatchOptionsToJSON,
   MatchOption,
   MatchOptionFromJSON,
   MatchOptionFromJSONTyped,
@@ -86,6 +90,12 @@ export interface WaitForConditions {
    * @memberof WaitForConditions
    */
   before?: Date | null;
+  /**
+   *
+   * @type {AIMessageMatchOptions}
+   * @memberof WaitForConditions
+   */
+  ai?: AIMessageMatchOptions | null;
 }
 
 /**
@@ -143,6 +153,9 @@ export function WaitForConditionsFromJSONTyped(
       : json['before'] === null
       ? null
       : new Date(json['before']),
+    ai: !exists(json, 'ai')
+      ? undefined
+      : AIMessageMatchOptionsFromJSON(json['ai']),
   };
 }
 
@@ -179,5 +192,6 @@ export function WaitForConditionsToJSON(value?: WaitForConditions | null): any {
         : value.before === null
         ? null
         : value.before.toISOString(),
+    ai: AIMessageMatchOptionsToJSON(value.ai),
   };
 }

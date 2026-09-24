@@ -50,24 +50,6 @@ export interface SentEmailProjection {
   from?: string | null;
   /**
    *
-   * @type {Sender}
-   * @memberof SentEmailProjection
-   */
-  sender?: Sender | null;
-  /**
-   *
-   * @type {EmailRecipients}
-   * @memberof SentEmailProjection
-   */
-  recipients?: EmailRecipients | null;
-  /**
-   *
-   * @type {string}
-   * @memberof SentEmailProjection
-   */
-  subject?: string | null;
-  /**
-   *
    * @type {string}
    * @memberof SentEmailProjection
    */
@@ -80,10 +62,22 @@ export interface SentEmailProjection {
   inboxId: string;
   /**
    *
+   * @type {EmailRecipients}
+   * @memberof SentEmailProjection
+   */
+  recipients?: EmailRecipients | null;
+  /**
+   *
    * @type {Array<string>}
    * @memberof SentEmailProjection
    */
   attachments?: Array<string> | null;
+  /**
+   *
+   * @type {string}
+   * @memberof SentEmailProjection
+   */
+  subject?: string | null;
   /**
    *
    * @type {string}
@@ -134,16 +128,22 @@ export interface SentEmailProjection {
   inReplyTo?: string | null;
   /**
    *
-   * @type {boolean}
+   * @type {Sender}
    * @memberof SentEmailProjection
    */
-  virtualSend: boolean;
+  sender?: Sender | null;
   /**
    *
    * @type {string}
    * @memberof SentEmailProjection
    */
   bodyMD5Hash?: string | null;
+  /**
+   *
+   * @type {boolean}
+   * @memberof SentEmailProjection
+   */
+  virtualSend: boolean;
 }
 
 export function SentEmailProjectionFromJSON(json: any): SentEmailProjection {
@@ -161,16 +161,13 @@ export function SentEmailProjectionFromJSONTyped(
     id: json['id'],
     threadId: !exists(json, 'threadId') ? undefined : json['threadId'],
     from: !exists(json, 'from') ? undefined : json['from'],
-    sender: !exists(json, 'sender')
-      ? undefined
-      : SenderFromJSON(json['sender']),
+    userId: json['userId'],
+    inboxId: json['inboxId'],
     recipients: !exists(json, 'recipients')
       ? undefined
       : EmailRecipientsFromJSON(json['recipients']),
-    subject: !exists(json, 'subject') ? undefined : json['subject'],
-    userId: json['userId'],
-    inboxId: json['inboxId'],
     attachments: !exists(json, 'attachments') ? undefined : json['attachments'],
+    subject: !exists(json, 'subject') ? undefined : json['subject'],
     textExcerpt: !exists(json, 'textExcerpt') ? undefined : json['textExcerpt'],
     bodyExcerpt: !exists(json, 'bodyExcerpt') ? undefined : json['bodyExcerpt'],
     to: !exists(json, 'to') ? undefined : json['to'],
@@ -179,8 +176,11 @@ export function SentEmailProjectionFromJSONTyped(
     bcc: !exists(json, 'bcc') ? undefined : json['bcc'],
     messageId: !exists(json, 'messageId') ? undefined : json['messageId'],
     inReplyTo: !exists(json, 'inReplyTo') ? undefined : json['inReplyTo'],
-    virtualSend: json['virtualSend'],
+    sender: !exists(json, 'sender')
+      ? undefined
+      : SenderFromJSON(json['sender']),
     bodyMD5Hash: !exists(json, 'bodyMD5Hash') ? undefined : json['bodyMD5Hash'],
+    virtualSend: json['virtualSend'],
   };
 }
 
@@ -197,12 +197,11 @@ export function SentEmailProjectionToJSON(
     id: value.id,
     threadId: value.threadId,
     from: value.from,
-    sender: SenderToJSON(value.sender),
-    recipients: EmailRecipientsToJSON(value.recipients),
-    subject: value.subject,
     userId: value.userId,
     inboxId: value.inboxId,
+    recipients: EmailRecipientsToJSON(value.recipients),
     attachments: value.attachments,
+    subject: value.subject,
     textExcerpt: value.textExcerpt,
     bodyExcerpt: value.bodyExcerpt,
     to: value.to,
@@ -211,7 +210,8 @@ export function SentEmailProjectionToJSON(
     bcc: value.bcc,
     messageId: value.messageId,
     inReplyTo: value.inReplyTo,
-    virtualSend: value.virtualSend,
+    sender: SenderToJSON(value.sender),
     bodyMD5Hash: value.bodyMD5Hash,
+    virtualSend: value.virtualSend,
   };
 }

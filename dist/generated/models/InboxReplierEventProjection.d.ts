@@ -20,24 +20,6 @@ export interface InboxReplierEventProjection {
      * @type {string}
      * @memberof InboxReplierEventProjection
      */
-    message?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
-    id?: string | null;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof InboxReplierEventProjection
-     */
-    recipients?: Array<string> | null;
-    /**
-     *
-     * @type {string}
-     * @memberof InboxReplierEventProjection
-     */
     status?: InboxReplierEventProjectionStatusEnum;
     /**
      *
@@ -50,19 +32,25 @@ export interface InboxReplierEventProjection {
      * @type {string}
      * @memberof InboxReplierEventProjection
      */
-    emailId?: string | null;
+    inboxId?: string | null;
     /**
      *
-     * @type {string}
+     * @type {Array<string>}
      * @memberof InboxReplierEventProjection
      */
-    inboxId?: string | null;
+    recipients?: Array<string> | null;
     /**
      *
      * @type {Date}
      * @memberof InboxReplierEventProjection
      */
     createdAt: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    emailId?: string | null;
     /**
      *
      * @type {string}
@@ -75,6 +63,18 @@ export interface InboxReplierEventProjection {
      * @memberof InboxReplierEventProjection
      */
     replierId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    message?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InboxReplierEventProjection
+     */
+    id?: string | null;
 }
 /**
  * @export

@@ -14,6 +14,10 @@
 
 import { exists, mapValues } from '../runtime';
 import {
+  EmailAuditCheck,
+  EmailAuditCheckFromJSON,
+  EmailAuditCheckFromJSONTyped,
+  EmailAuditCheckToJSON,
   EmailAuditSpellingIssue,
   EmailAuditSpellingIssueFromJSON,
   EmailAuditSpellingIssueFromJSONTyped,
@@ -38,6 +42,12 @@ import {
  * @interface EmailAuditAnalysisResult
  */
 export interface EmailAuditAnalysisResult {
+  /**
+   * Versioned static accessibility, unresolved template, and compliance review checks. Null on historical audits that did not run these checks.
+   * @type {Array<EmailAuditCheck>}
+   * @memberof EmailAuditAnalysisResult
+   */
+  contentReview?: Array<EmailAuditCheck> | null;
   /**
    * Health status for a one-shot email audit
    * @type {string}
@@ -206,6 +216,36 @@ export interface EmailAuditAnalysisResult {
    * @memberof EmailAuditAnalysisResult
    */
   errorMessage?: string | null;
+  /**
+   * Spam verdict supplied by the source mail receiver
+   * @type {string}
+   * @memberof EmailAuditAnalysisResult
+   */
+  spamVerdict?: string | null;
+  /**
+   * Virus verdict supplied by the source mail receiver
+   * @type {string}
+   * @memberof EmailAuditAnalysisResult
+   */
+  virusVerdict?: string | null;
+  /**
+   * SPF verdict supplied by the source mail receiver
+   * @type {string}
+   * @memberof EmailAuditAnalysisResult
+   */
+  spfVerdict?: string | null;
+  /**
+   * DKIM verdict supplied by the source mail receiver
+   * @type {string}
+   * @memberof EmailAuditAnalysisResult
+   */
+  dkimVerdict?: string | null;
+  /**
+   * DMARC verdict supplied by the source mail receiver
+   * @type {string}
+   * @memberof EmailAuditAnalysisResult
+   */
+  dmarcVerdict?: string | null;
 }
 
 /**
@@ -232,6 +272,11 @@ export function EmailAuditAnalysisResultFromJSONTyped(
     return json;
   }
   return {
+    contentReview: !exists(json, 'contentReview')
+      ? undefined
+      : json['contentReview'] === null
+      ? null
+      : (json['contentReview'] as Array<any>).map(EmailAuditCheckFromJSON),
     status: json['status'],
     healthScore: json['healthScore'],
     totalChecks: json['totalChecks'],
@@ -272,6 +317,15 @@ export function EmailAuditAnalysisResultFromJSONTyped(
     errorMessage: !exists(json, 'errorMessage')
       ? undefined
       : json['errorMessage'],
+    spamVerdict: !exists(json, 'spamVerdict') ? undefined : json['spamVerdict'],
+    virusVerdict: !exists(json, 'virusVerdict')
+      ? undefined
+      : json['virusVerdict'],
+    spfVerdict: !exists(json, 'spfVerdict') ? undefined : json['spfVerdict'],
+    dkimVerdict: !exists(json, 'dkimVerdict') ? undefined : json['dkimVerdict'],
+    dmarcVerdict: !exists(json, 'dmarcVerdict')
+      ? undefined
+      : json['dmarcVerdict'],
   };
 }
 
@@ -285,6 +339,12 @@ export function EmailAuditAnalysisResultToJSON(
     return null;
   }
   return {
+    contentReview:
+      value.contentReview === undefined
+        ? undefined
+        : value.contentReview === null
+        ? null
+        : (value.contentReview as Array<any>).map(EmailAuditCheckToJSON),
     status: value.status,
     healthScore: value.healthScore,
     totalChecks: value.totalChecks,
@@ -319,5 +379,10 @@ export function EmailAuditAnalysisResultToJSON(
     externalCheckSkippedCount: value.externalCheckSkippedCount,
     insights: value.insights,
     errorMessage: value.errorMessage,
+    spamVerdict: value.spamVerdict,
+    virusVerdict: value.virusVerdict,
+    spfVerdict: value.spfVerdict,
+    dkimVerdict: value.dkimVerdict,
+    dmarcVerdict: value.dmarcVerdict,
   };
 }

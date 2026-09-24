@@ -44,6 +44,7 @@ var SearchInboxesOptionsInboxFunctionEnum;
     SearchInboxesOptionsInboxFunctionEnum["CATCH_ALL"] = "CATCH_ALL";
     SearchInboxesOptionsInboxFunctionEnum["CONNECTOR"] = "CONNECTOR";
     SearchInboxesOptionsInboxFunctionEnum["ACCOUNT"] = "ACCOUNT";
+    SearchInboxesOptionsInboxFunctionEnum["GUIDED_TOUR"] = "GUIDED_TOUR";
     SearchInboxesOptionsInboxFunctionEnum["GUEST"] = "GUEST";
     SearchInboxesOptionsInboxFunctionEnum["OAUTH_CONNECTION_GMAIL"] = "OAUTH_CONNECTION_GMAIL";
 })(SearchInboxesOptionsInboxFunctionEnum = exports.SearchInboxesOptionsInboxFunctionEnum || (exports.SearchInboxesOptionsInboxFunctionEnum = {}));

@@ -32,6 +32,9 @@ function InboxPlacementRemoteResultsDtoFromJSONTyped(json, ignoreDiscriminator) 
         analysis: !(0, runtime_1.exists)(json, 'analysis')
             ? undefined
             : (0, _1.InboxPlacementAnalysisBundleDtoFromJSON)(json['analysis']),
+        providerAnalysis: !(0, runtime_1.exists)(json, 'providerAnalysis')
+            ? undefined
+            : (0, _1.InboxPlacementProviderAnalysisDtoFromJSON)(json['providerAnalysis']),
         targets: json['targets'].map(_1.InboxPlacementTargetResultDtoFromJSON),
         scores: json['scores'],
         share: !(0, runtime_1.exists)(json, 'share') ? undefined : json['share'],
@@ -51,6 +54,7 @@ function InboxPlacementRemoteResultsDtoToJSON(value) {
         setupAnalysis: value.setupAnalysis,
         contentAnalysis: value.contentAnalysis,
         analysis: (0, _1.InboxPlacementAnalysisBundleDtoToJSON)(value.analysis),
+        providerAnalysis: (0, _1.InboxPlacementProviderAnalysisDtoToJSON)(value.providerAnalysis),
         targets: value.targets.map(_1.InboxPlacementTargetResultDtoToJSON),
         scores: value.scores,
         share: value.share,

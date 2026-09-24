@@ -115,6 +115,12 @@ export interface OrganizationInboxProjection {
    * @memberof OrganizationInboxProjection
    */
   accountRegion?: OrganizationInboxProjectionAccountRegionEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof OrganizationInboxProjection
+   */
+  mergedIntoInboxId?: string | null;
 }
 
 /**
@@ -135,6 +141,7 @@ export enum OrganizationInboxProjectionFunctionsAsEnum {
   CATCH_ALL = 'CATCH_ALL',
   CONNECTOR = 'CONNECTOR',
   ACCOUNT = 'ACCOUNT',
+  GUIDED_TOUR = 'GUIDED_TOUR',
   GUEST = 'GUEST',
   OAUTH_CONNECTION_GMAIL = 'OAUTH_CONNECTION_GMAIL',
 }
@@ -147,6 +154,7 @@ export enum OrganizationInboxProjectionAccountRegionEnum {
   US_EAST_1_ACCOUNT_STAGING = 'US_EAST_1_ACCOUNT_STAGING',
   EU_WEST_1_ACCOUNT_STAGING = 'EU_WEST_1_ACCOUNT_STAGING',
   US_WEST_2_ACCOUNT_SES_1 = 'US_WEST_2_ACCOUNT_SES_1',
+  US_EAST_1_ACCOUNT_SES_1 = 'US_EAST_1_ACCOUNT_SES_1',
   EU_WEST_1_ACCOUNT_SES_1 = 'EU_WEST_1_ACCOUNT_SES_1',
   US_WEST_2_ACCOUNT_SES_2 = 'US_WEST_2_ACCOUNT_SES_2',
   EU_WEST_1_ACCOUNT_SES_2 = 'EU_WEST_1_ACCOUNT_SES_2',
@@ -194,6 +202,9 @@ export function OrganizationInboxProjectionFromJSONTyped(
     accountRegion: !exists(json, 'accountRegion')
       ? undefined
       : json['accountRegion'],
+    mergedIntoInboxId: !exists(json, 'mergedIntoInboxId')
+      ? undefined
+      : json['mergedIntoInboxId'],
   };
 }
 
@@ -228,5 +239,6 @@ export function OrganizationInboxProjectionToJSON(
         ? null
         : value.expiresAt.toISOString(),
     accountRegion: value.accountRegion,
+    mergedIntoInboxId: value.mergedIntoInboxId,
   };
 }

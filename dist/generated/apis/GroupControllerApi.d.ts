@@ -15,10 +15,10 @@ export interface AddContactsToGroupRequest {
     groupId: string;
     updateGroupContacts: UpdateGroupContacts;
 }
-export interface CreateGroupRequest {
+export interface CreateGroup1Request {
     createGroupOptions: CreateGroupOptions;
 }
-export interface DeleteGroupRequest {
+export interface DeleteGroup1Request {
     groupId: string;
 }
 export interface GetAllGroupsRequest {
@@ -28,7 +28,7 @@ export interface GetAllGroupsRequest {
     since?: Date;
     before?: Date;
 }
-export interface GetGroupRequest {
+export interface GetGroup1Request {
     groupId: string;
 }
 export interface GetGroupWithContactsRequest {
@@ -61,19 +61,19 @@ export declare class GroupControllerApi extends runtime.BaseAPI {
     /**
      * Create a group
      */
-    createGroupRaw(requestParameters: CreateGroupRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GroupDto>>;
+    createGroup1Raw(requestParameters: CreateGroup1Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GroupDto>>;
     /**
      * Create a group
      */
-    createGroup(requestParameters: CreateGroupRequest, initOverrides?: RequestInit): Promise<GroupDto>;
+    createGroup1(requestParameters: CreateGroup1Request, initOverrides?: RequestInit): Promise<GroupDto>;
     /**
      * Delete group
      */
-    deleteGroupRaw(requestParameters: DeleteGroupRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
+    deleteGroup1Raw(requestParameters: DeleteGroup1Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<void>>;
     /**
      * Delete group
      */
-    deleteGroup(requestParameters: DeleteGroupRequest, initOverrides?: RequestInit): Promise<void>;
+    deleteGroup1(requestParameters: DeleteGroup1Request, initOverrides?: RequestInit): Promise<void>;
     /**
      * Get all Contact Groups in paginated format
      */
@@ -85,11 +85,11 @@ export declare class GroupControllerApi extends runtime.BaseAPI {
     /**
      * Get group
      */
-    getGroupRaw(requestParameters: GetGroupRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GroupDto>>;
+    getGroup1Raw(requestParameters: GetGroup1Request, initOverrides?: RequestInit): Promise<runtime.ApiResponse<GroupDto>>;
     /**
      * Get group
      */
-    getGroup(requestParameters: GetGroupRequest, initOverrides?: RequestInit): Promise<GroupDto>;
+    getGroup1(requestParameters: GetGroup1Request, initOverrides?: RequestInit): Promise<GroupDto>;
     /**
      * Get group and contacts belonging to it
      */

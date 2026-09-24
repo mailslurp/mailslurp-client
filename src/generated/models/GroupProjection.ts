@@ -24,18 +24,6 @@ export interface GroupProjection {
    * @type {string}
    * @memberof GroupProjection
    */
-  name: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GroupProjection
-   */
-  id: string;
-  /**
-   *
-   * @type {string}
-   * @memberof GroupProjection
-   */
   description?: string | null;
   /**
    *
@@ -43,6 +31,18 @@ export interface GroupProjection {
    * @memberof GroupProjection
    */
   createdAt: Date;
+  /**
+   *
+   * @type {string}
+   * @memberof GroupProjection
+   */
+  name: string;
+  /**
+   *
+   * @type {string}
+   * @memberof GroupProjection
+   */
+  id: string;
 }
 
 export function GroupProjectionFromJSON(json: any): GroupProjection {
@@ -57,10 +57,10 @@ export function GroupProjectionFromJSONTyped(
     return json;
   }
   return {
-    name: json['name'],
-    id: json['id'],
     description: !exists(json, 'description') ? undefined : json['description'],
     createdAt: new Date(json['createdAt']),
+    name: json['name'],
+    id: json['id'],
   };
 }
 
@@ -72,9 +72,9 @@ export function GroupProjectionToJSON(value?: GroupProjection | null): any {
     return null;
   }
   return {
-    name: value.name,
-    id: value.id,
     description: value.description,
     createdAt: value.createdAt.toISOString(),
+    name: value.name,
+    id: value.id,
   };
 }

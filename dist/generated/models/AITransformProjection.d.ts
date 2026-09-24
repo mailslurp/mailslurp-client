@@ -18,28 +18,10 @@ import { StructuredOutputSchema } from './';
 export interface AITransformProjection {
     /**
      *
-     * @type {string}
-     * @memberof AITransformProjection
-     */
-    name?: string | null;
-    /**
-     *
-     * @type {string}
-     * @memberof AITransformProjection
-     */
-    id: string;
-    /**
-     *
      * @type {Date}
      * @memberof AITransformProjection
      */
     createdAt: Date;
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof AITransformProjection
-     */
-    conditions?: Array<string> | null;
     /**
      *
      * @type {Array<string>}
@@ -52,6 +34,24 @@ export interface AITransformProjection {
      * @memberof AITransformProjection
      */
     outputSchema?: StructuredOutputSchema | null;
+    /**
+     *
+     * @type {Array<string>}
+     * @memberof AITransformProjection
+     */
+    conditions?: Array<string> | null;
+    /**
+     *
+     * @type {string}
+     * @memberof AITransformProjection
+     */
+    name?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof AITransformProjection
+     */
+    id: string;
 }
 export declare function AITransformProjectionFromJSON(json: any): AITransformProjection;
 export declare function AITransformProjectionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AITransformProjection;

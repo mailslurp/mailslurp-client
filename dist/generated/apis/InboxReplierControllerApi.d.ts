@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateInboxReplierOptions, InboxReplierDto, PageInboxReplierDto, PageInboxReplierEvents, UpdateInboxReplierOptions } from '../models';
+import { CreateInboxReplierOptions, InboxReplierDto, PageInboxReplierDto, PageInboxReplierEvents, UpdateInboxReplierActiveOptions, UpdateInboxReplierOptions } from '../models';
 export interface CreateNewInboxReplierRequest {
     createInboxReplierOptions: CreateInboxReplierOptions;
 }
@@ -49,6 +49,10 @@ export interface GetInboxRepliersRequest {
 export interface UpdateInboxReplierRequest {
     id: string;
     updateInboxReplierOptions: UpdateInboxReplierOptions;
+}
+export interface UpdateInboxReplierActiveRequest {
+    id: string;
+    updateInboxReplierActiveOptions: UpdateInboxReplierActiveOptions;
 }
 /**
  *
@@ -134,6 +138,16 @@ export declare class InboxReplierControllerApi extends runtime.BaseAPI {
      * Update an inbox replier
      */
     updateInboxReplier(requestParameters: UpdateInboxReplierRequest, initOverrides?: RequestInit): Promise<InboxReplierDto>;
+    /**
+     * Enable or disable an inbox replier without changing its other settings
+     * Update an inbox replier\'s active state
+     */
+    updateInboxReplierActiveRaw(requestParameters: UpdateInboxReplierActiveRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxReplierDto>>;
+    /**
+     * Enable or disable an inbox replier without changing its other settings
+     * Update an inbox replier\'s active state
+     */
+    updateInboxReplierActive(requestParameters: UpdateInboxReplierActiveRequest, initOverrides?: RequestInit): Promise<InboxReplierDto>;
 }
 /**
  * @export

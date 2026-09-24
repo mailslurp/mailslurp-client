@@ -40,19 +40,19 @@ function JsonNodeFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
-        array: !(0, runtime_1.exists)(json, 'array') ? undefined : json['array'],
+        string: !(0, runtime_1.exists)(json, 'string') ? undefined : json['string'],
         _null: !(0, runtime_1.exists)(json, 'null') ? undefined : json['null'],
         object: !(0, runtime_1.exists)(json, 'object') ? undefined : json['object'],
         _float: !(0, runtime_1.exists)(json, 'float') ? undefined : json['float'],
-        valueNode: !(0, runtime_1.exists)(json, 'valueNode') ? undefined : json['valueNode'],
+        container: !(0, runtime_1.exists)(json, 'container') ? undefined : json['container'],
+        textual: !(0, runtime_1.exists)(json, 'textual') ? undefined : json['textual'],
         missingNode: !(0, runtime_1.exists)(json, 'missingNode') ? undefined : json['missingNode'],
         nodeType: !(0, runtime_1.exists)(json, 'nodeType') ? undefined : json['nodeType'],
-        string: !(0, runtime_1.exists)(json, 'string') ? undefined : json['string'],
+        pojo: !(0, runtime_1.exists)(json, 'pojo') ? undefined : json['pojo'],
+        number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
         integralNumber: !(0, runtime_1.exists)(json, 'integralNumber')
             ? undefined
             : json['integralNumber'],
-        pojo: !(0, runtime_1.exists)(json, 'pojo') ? undefined : json['pojo'],
         floatingPointNumber: !(0, runtime_1.exists)(json, 'floatingPointNumber')
             ? undefined
             : json['floatingPointNumber'],
@@ -62,11 +62,11 @@ function JsonNodeFromJSONTyped(json, ignoreDiscriminator) {
         _double: !(0, runtime_1.exists)(json, 'double') ? undefined : json['double'],
         bigDecimal: !(0, runtime_1.exists)(json, 'bigDecimal') ? undefined : json['bigDecimal'],
         bigInteger: !(0, runtime_1.exists)(json, 'bigInteger') ? undefined : json['bigInteger'],
-        textual: !(0, runtime_1.exists)(json, 'textual') ? undefined : json['textual'],
         _boolean: !(0, runtime_1.exists)(json, 'boolean') ? undefined : json['boolean'],
         binary: !(0, runtime_1.exists)(json, 'binary') ? undefined : json['binary'],
-        container: !(0, runtime_1.exists)(json, 'container') ? undefined : json['container'],
-        number: !(0, runtime_1.exists)(json, 'number') ? undefined : json['number'],
+        valueNode: !(0, runtime_1.exists)(json, 'valueNode') ? undefined : json['valueNode'],
+        empty: !(0, runtime_1.exists)(json, 'empty') ? undefined : json['empty'],
+        array: !(0, runtime_1.exists)(json, 'array') ? undefined : json['array'],
         embeddedValue: !(0, runtime_1.exists)(json, 'embeddedValue')
             ? undefined
             : json['embeddedValue'],
@@ -81,17 +81,17 @@ function JsonNodeToJSON(value) {
         return null;
     }
     return {
-        empty: value.empty,
-        array: value.array,
+        string: value.string,
         null: value._null,
         object: value.object,
         float: value._float,
-        valueNode: value.valueNode,
+        container: value.container,
+        textual: value.textual,
         missingNode: value.missingNode,
         nodeType: value.nodeType,
-        string: value.string,
-        integralNumber: value.integralNumber,
         pojo: value.pojo,
+        number: value.number,
+        integralNumber: value.integralNumber,
         floatingPointNumber: value.floatingPointNumber,
         short: value._short,
         int: value._int,
@@ -99,11 +99,11 @@ function JsonNodeToJSON(value) {
         double: value._double,
         bigDecimal: value.bigDecimal,
         bigInteger: value.bigInteger,
-        textual: value.textual,
         boolean: value._boolean,
         binary: value.binary,
-        container: value.container,
-        number: value.number,
+        valueNode: value.valueNode,
+        empty: value.empty,
+        array: value.array,
         embeddedValue: value.embeddedValue,
     };
 }

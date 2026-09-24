@@ -30,13 +30,61 @@ export interface InboxRetentionPolicyDto {
    * @type {string}
    * @memberof InboxRetentionPolicyDto
    */
+  name?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxRetentionPolicyDto
+   */
+  scope: InboxRetentionPolicyDtoScopeEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxRetentionPolicyDto
+   */
   inboxId?: string | null;
+  /**
+   *
+   * @type {string}
+   * @memberof InboxRetentionPolicyDto
+   */
+  domainId?: string | null;
   /**
    *
    * @type {number}
    * @memberof InboxRetentionPolicyDto
    */
   retentionDays: number;
+  /**
+   *
+   * @type {boolean}
+   * @memberof InboxRetentionPolicyDto
+   */
+  enabled: boolean;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof InboxRetentionPolicyDto
+   */
+  excludedInboxIds: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof InboxRetentionPolicyDto
+   */
+  excludedDomainIds: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof InboxRetentionPolicyDto
+   */
+  excludedInboxEmailAddressPatterns: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof InboxRetentionPolicyDto
+   */
+  excludedDomainNamePatterns: Array<string>;
   /**
    *
    * @type {Date}
@@ -49,6 +97,16 @@ export interface InboxRetentionPolicyDto {
    * @memberof InboxRetentionPolicyDto
    */
   updatedAt: Date;
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum InboxRetentionPolicyDtoScopeEnum {
+  ACCOUNT = 'ACCOUNT',
+  INBOX = 'INBOX',
+  DOMAIN = 'DOMAIN',
 }
 
 export function InboxRetentionPolicyDtoFromJSON(
@@ -66,8 +124,17 @@ export function InboxRetentionPolicyDtoFromJSONTyped(
   }
   return {
     id: json['id'],
+    name: !exists(json, 'name') ? undefined : json['name'],
+    scope: json['scope'],
     inboxId: !exists(json, 'inboxId') ? undefined : json['inboxId'],
+    domainId: !exists(json, 'domainId') ? undefined : json['domainId'],
     retentionDays: json['retentionDays'],
+    enabled: json['enabled'],
+    excludedInboxIds: json['excludedInboxIds'],
+    excludedDomainIds: json['excludedDomainIds'],
+    excludedInboxEmailAddressPatterns:
+      json['excludedInboxEmailAddressPatterns'],
+    excludedDomainNamePatterns: json['excludedDomainNamePatterns'],
     createdAt: new Date(json['createdAt']),
     updatedAt: new Date(json['updatedAt']),
   };
@@ -84,8 +151,16 @@ export function InboxRetentionPolicyDtoToJSON(
   }
   return {
     id: value.id,
+    name: value.name,
+    scope: value.scope,
     inboxId: value.inboxId,
+    domainId: value.domainId,
     retentionDays: value.retentionDays,
+    enabled: value.enabled,
+    excludedInboxIds: value.excludedInboxIds,
+    excludedDomainIds: value.excludedDomainIds,
+    excludedInboxEmailAddressPatterns: value.excludedInboxEmailAddressPatterns,
+    excludedDomainNamePatterns: value.excludedDomainNamePatterns,
     createdAt: value.createdAt.toISOString(),
     updatedAt: value.updatedAt.toISOString(),
   };

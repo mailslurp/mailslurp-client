@@ -39,6 +39,34 @@ export interface EmailBlacklistListingResult {
      * @memberof EmailBlacklistListingResult
      */
     responseMessages: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailBlacklistListingResult
+     */
+    status: EmailBlacklistListingResultStatusEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailBlacklistListingResult
+     */
+    errorMessage?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof EmailBlacklistListingResult
+     */
+    provider: string;
+}
+/**
+ * @export
+ * @enum {string}
+ */
+export declare enum EmailBlacklistListingResultStatusEnum {
+    LISTED = "LISTED",
+    NOT_LISTED = "NOT_LISTED",
+    ERROR = "ERROR",
+    NOT_CHECKED = "NOT_CHECKED"
 }
 export declare function EmailBlacklistListingResultFromJSON(json: any): EmailBlacklistListingResult;
 export declare function EmailBlacklistListingResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailBlacklistListingResult;

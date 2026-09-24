@@ -69,6 +69,12 @@ export interface CreatePhoneNumberOptions {
      * @memberof CreatePhoneNumberOptions
      */
     phoneLineFilter?: CreatePhoneNumberOptionsPhoneLineFilterEnum;
+    /**
+     *
+     * @type {string}
+     * @memberof CreatePhoneNumberOptions
+     */
+    environmentAccountId?: string | null;
 }
 /**
  * @export

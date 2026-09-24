@@ -13,6 +13,7 @@
 - [CATCH\_ALL](OrganizationInboxProjectionFunctionsAsEnum.md#catch_all)
 - [CONNECTOR](OrganizationInboxProjectionFunctionsAsEnum.md#connector)
 - [GUEST](OrganizationInboxProjectionFunctionsAsEnum.md#guest)
+- [GUIDED\_TOUR](OrganizationInboxProjectionFunctionsAsEnum.md#guided_tour)
 - [OAUTH\_CONNECTION\_GMAIL](OrganizationInboxProjectionFunctionsAsEnum.md#oauth_connection_gmail)
 - [THREAD](OrganizationInboxProjectionFunctionsAsEnum.md#thread)
 
@@ -45,6 +46,12 @@ ___
 ### GUEST
 
 • **GUEST** = ``"GUEST"``
+
+___
+
+### GUIDED\_TOUR
+
+• **GUIDED\_TOUR** = ``"GUIDED_TOUR"``
 
 ___
 

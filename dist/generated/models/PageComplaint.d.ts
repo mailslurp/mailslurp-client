@@ -51,12 +51,6 @@ export interface PageComplaint {
      * @type {number}
      * @memberof PageComplaint
      */
-    size?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof PageComplaint
-     */
     number?: number;
     /**
      *
@@ -66,16 +60,22 @@ export interface PageComplaint {
     first?: boolean;
     /**
      *
+     * @type {SortObject}
+     * @memberof PageComplaint
+     */
+    sort?: SortObject;
+    /**
+     *
      * @type {number}
      * @memberof PageComplaint
      */
     numberOfElements?: number;
     /**
      *
-     * @type {SortObject}
+     * @type {number}
      * @memberof PageComplaint
      */
-    sort?: SortObject;
+    size?: number;
     /**
      *
      * @type {boolean}

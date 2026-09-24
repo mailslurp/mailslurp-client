@@ -20,8 +20,12 @@
 
 ### Methods
 
+- [confirmInboxPlacementTestSent](ApiInboxPlacementTestControllerApi.md#confirminboxplacementtestsent)
+- [confirmInboxPlacementTestSentRaw](ApiInboxPlacementTestControllerApi.md#confirminboxplacementtestsentraw)
 - [createInboxPlacementTest](ApiInboxPlacementTestControllerApi.md#createinboxplacementtest)
 - [createInboxPlacementTestRaw](ApiInboxPlacementTestControllerApi.md#createinboxplacementtestraw)
+- [exportInboxPlacementSeedList](ApiInboxPlacementTestControllerApi.md#exportinboxplacementseedlist)
+- [exportInboxPlacementSeedListRaw](ApiInboxPlacementTestControllerApi.md#exportinboxplacementseedlistraw)
 - [exportInboxPlacementTestResults](ApiInboxPlacementTestControllerApi.md#exportinboxplacementtestresults)
 - [exportInboxPlacementTestResultsRaw](ApiInboxPlacementTestControllerApi.md#exportinboxplacementtestresultsraw)
 - [getInboxPlacementAnalyticsBreakdown](ApiInboxPlacementTestControllerApi.md#getinboxplacementanalyticsbreakdown)
@@ -40,6 +44,8 @@
 - [getInboxPlacementTestResultsRaw](ApiInboxPlacementTestControllerApi.md#getinboxplacementtestresultsraw)
 - [getInboxPlacementTests](ApiInboxPlacementTestControllerApi.md#getinboxplacementtests)
 - [getInboxPlacementTestsRaw](ApiInboxPlacementTestControllerApi.md#getinboxplacementtestsraw)
+- [prepareInboxPlacementTest](ApiInboxPlacementTestControllerApi.md#prepareinboxplacementtest)
+- [prepareInboxPlacementTestRaw](ApiInboxPlacementTestControllerApi.md#prepareinboxplacementtestraw)
 - [request](ApiInboxPlacementTestControllerApi.md#request)
 - [withMiddleware](ApiInboxPlacementTestControllerApi.md#withmiddleware)
 - [withPostMiddleware](ApiInboxPlacementTestControllerApi.md#withpostmiddleware)
@@ -72,6 +78,46 @@
 [BaseAPI](BaseAPI.md).[configuration](BaseAPI.md#configuration)
 
 ## Methods
+
+### confirmInboxPlacementTestSent
+
+▸ **confirmInboxPlacementTestSent**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxPlacementTestRunDto`](../interfaces/InboxPlacementTestRunDto.md)\>
+
+Reconcile any messages that arrived after seed reservation, commit allowance, and move a prepared dashboard test into its active lifecycle. This operation is idempotent.
+Confirm an inbox placement test email has been sent
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ConfirmInboxPlacementTestSentRequest`](../interfaces/ConfirmInboxPlacementTestSentRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxPlacementTestRunDto`](../interfaces/InboxPlacementTestRunDto.md)\>
+
+___
+
+### confirmInboxPlacementTestSentRaw
+
+▸ **confirmInboxPlacementTestSentRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxPlacementTestRunDto`](../interfaces/InboxPlacementTestRunDto.md)\>\>
+
+Reconcile any messages that arrived after seed reservation, commit allowance, and move a prepared dashboard test into its active lifecycle. This operation is idempotent.
+Confirm an inbox placement test email has been sent
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ConfirmInboxPlacementTestSentRequest`](../interfaces/ConfirmInboxPlacementTestSentRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxPlacementTestRunDto`](../interfaces/InboxPlacementTestRunDto.md)\>\>
+
+___
 
 ### createInboxPlacementTest
 
@@ -108,6 +154,46 @@ Create a new direct-send inbox placement test
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxPlacementTestRunDto`](../interfaces/InboxPlacementTestRunDto.md)\>\>
+
+___
+
+### exportInboxPlacementSeedList
+
+▸ **exportInboxPlacementSeedList**(`requestParameters`, `initOverrides?`): `Promise`<`void`\>
+
+Export the current run\'s seed addresses with headers recognized by the selected email platform. Downloading a prepared seed list does not confirm the send or consume allowance.
+Download inbox placement seed addresses as an email-platform CSV
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ExportInboxPlacementSeedListRequest`](../interfaces/ExportInboxPlacementSeedListRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### exportInboxPlacementSeedListRaw
+
+▸ **exportInboxPlacementSeedListRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
+
+Export the current run\'s seed addresses with headers recognized by the selected email platform. Downloading a prepared seed list does not confirm the send or consume allowance.
+Download inbox placement seed addresses as an email-platform CSV
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`ExportInboxPlacementSeedListRequest`](../interfaces/ExportInboxPlacementSeedListRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<`void`\>\>
 
 ___
 
@@ -456,6 +542,46 @@ List inbox placement test runs
 #### Returns
 
 `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxPlacementTestRunDto`](../interfaces/InboxPlacementTestRunDto.md)[]\>\>
+
+___
+
+### prepareInboxPlacementTest
+
+▸ **prepareInboxPlacementTest**(`requestParameters`, `initOverrides?`): `Promise`<[`InboxPlacementTestRunDto`](../interfaces/InboxPlacementTestRunDto.md)\>
+
+Reserve seed addresses for the dashboard create flow. The run remains staged and allowance is not committed until send confirmation. Reuses a recent active preparation when possible.
+Prepare a direct-send inbox placement test without consuming allowance
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`PrepareInboxPlacementTestRequest`](../interfaces/PrepareInboxPlacementTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`InboxPlacementTestRunDto`](../interfaces/InboxPlacementTestRunDto.md)\>
+
+___
+
+### prepareInboxPlacementTestRaw
+
+▸ **prepareInboxPlacementTestRaw**(`requestParameters`, `initOverrides?`): `Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxPlacementTestRunDto`](../interfaces/InboxPlacementTestRunDto.md)\>\>
+
+Reserve seed addresses for the dashboard create flow. The run remains staged and allowance is not committed until send confirmation. Reuses a recent active preparation when possible.
+Prepare a direct-send inbox placement test without consuming allowance
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `requestParameters` | [`PrepareInboxPlacementTestRequest`](../interfaces/PrepareInboxPlacementTestRequest.md) |
+| `initOverrides?` | `RequestInit` |
+
+#### Returns
+
+`Promise`<[`ApiResponse`](../interfaces/ApiResponse.md)<[`InboxPlacementTestRunDto`](../interfaces/InboxPlacementTestRunDto.md)\>\>
 
 ___
 

@@ -9,6 +9,7 @@
 ### Enumeration Members
 
 - [DEVICE\_PREVIEW\_INGEST](DevicePreviewSharedRunDtoSourceTypeEnum.md#device_preview_ingest)
+- [GUIDED\_TOUR](DevicePreviewSharedRunDtoSourceTypeEnum.md#guided_tour)
 - [PUBLIC\_FREE\_TEST](DevicePreviewSharedRunDtoSourceTypeEnum.md#public_free_test)
 - [RAW\_UPLOAD](DevicePreviewSharedRunDtoSourceTypeEnum.md#raw_upload)
 - [STORED\_EMAIL](DevicePreviewSharedRunDtoSourceTypeEnum.md#stored_email)
@@ -18,6 +19,12 @@
 ### DEVICE\_PREVIEW\_INGEST
 
 • **DEVICE\_PREVIEW\_INGEST** = ``"DEVICE_PREVIEW_INGEST"``
+
+___
+
+### GUIDED\_TOUR
+
+• **GUIDED\_TOUR** = ``"GUIDED_TOUR"``
 
 ___
 

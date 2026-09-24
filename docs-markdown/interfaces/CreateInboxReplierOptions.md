@@ -14,6 +14,7 @@ CreateInboxReplierOptions
 
 ### Properties
 
+- [attachments](CreateInboxReplierOptions.md#attachments)
 - [body](CreateInboxReplierOptions.md#body)
 - [charset](CreateInboxReplierOptions.md#charset)
 - [field](CreateInboxReplierOptions.md#field)
@@ -31,6 +32,18 @@ CreateInboxReplierOptions
 - [templateVariables](CreateInboxReplierOptions.md#templatevariables)
 
 ## Properties
+
+### attachments
+
+• `Optional` **attachments**: `string`[]
+
+Optional attachment IDs to include with every automated reply
+
+**`Memberof`**
+
+CreateInboxReplierOptions
+
+___
 
 ### body
 

@@ -10,9 +10,15 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateInboxRetentionPolicyForAccountOptions, EmptyResponseDto, InboxRetentionPolicyDto, InboxRetentionPolicyOptionalDto, InboxRetentionPolicyRunDto, JsonNode, PageEntityAutomationItems, PageEntityEventItems, PageEntityFavouriteItems, PageInboxRetentionPolicyRunProjection, UserInfoDto } from '../models';
+import { CreateInboxRetentionPolicyForAccountOptions, CreateInboxRetentionPolicyOptions, EmptyResponseDto, InboxRetentionPoliciesDto, InboxRetentionPolicyDto, InboxRetentionPolicyOptionalDto, InboxRetentionPolicyRunDto, JsonNode, PageEntityAutomationItems, PageEntityEventItems, PageEntityFavouriteItems, PageInboxRetentionPolicyRunProjection, UpdateInboxRetentionPolicyOptions, UserInfoDto, UserStorageInsightsDto } from '../models';
+export interface CreateInboxRetentionPolicyRequest {
+    createInboxRetentionPolicyOptions: CreateInboxRetentionPolicyOptions;
+}
 export interface CreateOrUpdateInboxRetentionPolicyForAccountRequest {
     createInboxRetentionPolicyForAccountOptions: CreateInboxRetentionPolicyForAccountOptions;
+}
+export interface DeleteInboxRetentionPolicyRequest {
+    policyId: string;
 }
 export interface GetEntityAutomationsRequest {
     page?: number;
@@ -45,6 +51,9 @@ export interface GetEntityFavoritesRequest {
     before?: Date;
     filter?: GetEntityFavoritesFilterEnum;
 }
+export interface GetInboxRetentionPolicyRequest {
+    policyId: string;
+}
 export interface GetInboxRetentionPolicyRunRequest {
     runId: string;
 }
@@ -57,10 +66,25 @@ export interface GetJsonPropertyAsStringRequest {
     property: string;
     jsonNode: JsonNode;
 }
+export interface GetUserStorageInsightsRequest {
+    limit?: number;
+}
+export interface UpdateInboxRetentionPolicyRequest {
+    policyId: string;
+    updateInboxRetentionPolicyOptions: UpdateInboxRetentionPolicyOptions;
+}
 /**
  *
  */
 export declare class UserControllerApi extends runtime.BaseAPI {
+    /**
+     * Create an inbox retention policy for your account
+     */
+    createInboxRetentionPolicyRaw(requestParameters: CreateInboxRetentionPolicyRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRetentionPolicyDto>>;
+    /**
+     * Create an inbox retention policy for your account
+     */
+    createInboxRetentionPolicy(requestParameters: CreateInboxRetentionPolicyRequest, initOverrides?: RequestInit): Promise<InboxRetentionPolicyDto>;
     /**
      * Start an asynchronous inbox retention policy run for your account
      */
@@ -77,6 +101,14 @@ export declare class UserControllerApi extends runtime.BaseAPI {
      * Create inbox retention policy for your global account
      */
     createOrUpdateInboxRetentionPolicyForAccount(requestParameters: CreateOrUpdateInboxRetentionPolicyForAccountRequest, initOverrides?: RequestInit): Promise<InboxRetentionPolicyDto>;
+    /**
+     * Delete an inbox retention policy for your account
+     */
+    deleteInboxRetentionPolicyRaw(requestParameters: DeleteInboxRetentionPolicyRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<EmptyResponseDto>>;
+    /**
+     * Delete an inbox retention policy for your account
+     */
+    deleteInboxRetentionPolicy(requestParameters: DeleteInboxRetentionPolicyRequest, initOverrides?: RequestInit): Promise<EmptyResponseDto>;
     /**
      * Delete inbox retention policy for your global account
      */
@@ -103,6 +135,14 @@ export declare class UserControllerApi extends runtime.BaseAPI {
     /**
      */
     getEntityFavorites(requestParameters: GetEntityFavoritesRequest, initOverrides?: RequestInit): Promise<PageEntityFavouriteItems>;
+    /**
+     * Get an inbox retention policy for your account
+     */
+    getInboxRetentionPolicyRaw(requestParameters: GetInboxRetentionPolicyRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRetentionPolicyDto>>;
+    /**
+     * Get an inbox retention policy for your account
+     */
+    getInboxRetentionPolicy(requestParameters: GetInboxRetentionPolicyRequest, initOverrides?: RequestInit): Promise<InboxRetentionPolicyDto>;
     /**
      * Get inbox retention policy for your global account
      */
@@ -143,6 +183,30 @@ export declare class UserControllerApi extends runtime.BaseAPI {
      * Get account information for your user
      */
     getUserInfo(initOverrides?: RequestInit): Promise<UserInfoDto>;
+    /**
+     * Get retained storage usage insights for your account
+     */
+    getUserStorageInsightsRaw(requestParameters: GetUserStorageInsightsRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<UserStorageInsightsDto>>;
+    /**
+     * Get retained storage usage insights for your account
+     */
+    getUserStorageInsights(requestParameters: GetUserStorageInsightsRequest, initOverrides?: RequestInit): Promise<UserStorageInsightsDto>;
+    /**
+     * List inbox retention policies for your account
+     */
+    listInboxRetentionPoliciesRaw(initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRetentionPoliciesDto>>;
+    /**
+     * List inbox retention policies for your account
+     */
+    listInboxRetentionPolicies(initOverrides?: RequestInit): Promise<InboxRetentionPoliciesDto>;
+    /**
+     * Update an inbox retention policy for your account
+     */
+    updateInboxRetentionPolicyRaw(requestParameters: UpdateInboxRetentionPolicyRequest, initOverrides?: RequestInit): Promise<runtime.ApiResponse<InboxRetentionPolicyDto>>;
+    /**
+     * Update an inbox retention policy for your account
+     */
+    updateInboxRetentionPolicy(requestParameters: UpdateInboxRetentionPolicyRequest, initOverrides?: RequestInit): Promise<InboxRetentionPolicyDto>;
 }
 /**
  * @export

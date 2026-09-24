@@ -46,6 +46,30 @@ export interface LookupDmarcDomainResults {
      * @memberof LookupDmarcDomainResults
      */
     warnings: Array<string>;
+    /**
+     *
+     * @type {string}
+     * @memberof LookupDmarcDomainResults
+     */
+    queriedDomain: string;
+    /**
+     *
+     * @type {string}
+     * @memberof LookupDmarcDomainResults
+     */
+    organizationalDomain?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof LookupDmarcDomainResults
+     */
+    inheritedFromOrganizationalDomain: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof LookupDmarcDomainResults
+     */
+    effectivePolicy?: string | null;
 }
 export declare function LookupDmarcDomainResultsFromJSON(json: any): LookupDmarcDomainResults;
 export declare function LookupDmarcDomainResultsFromJSONTyped(json: any, ignoreDiscriminator: boolean): LookupDmarcDomainResults;

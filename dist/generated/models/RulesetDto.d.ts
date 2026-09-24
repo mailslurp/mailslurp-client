@@ -58,6 +58,12 @@ export interface RulesetDto {
      */
     handler: RulesetDtoHandlerEnum;
     /**
+     * Whether the ruleset is active
+     * @type {boolean}
+     * @memberof RulesetDto
+     */
+    active: boolean;
+    /**
      *
      * @type {Date}
      * @memberof RulesetDto
