@@ -115,8 +115,8 @@ describe.skipIf(!process.env.API_KEY)('wait_for_latest', () => {
   const config = { apiKey: process.env.API_KEY };
   test('inbox wait for', async () => {
     const mailslurp = new MailSlurp(config);
-    const timeoutMs = 30_000;
     //<gen>wait_for_latest
+    const timeoutMs = 30_000;
     const inbox = await mailslurp.createInbox();
     await mailslurp.sendEmail(inbox.id, {
       to: [inbox.emailAddress],
@@ -136,6 +136,7 @@ describe.skipIf(!process.env.API_KEY)('wait_for_latest', () => {
     // wait for second using controller instead
     const secondEmail = await mailslurp.waitController.waitForLatestEmail({
       inboxId: inbox.id,
+      timeout: timeoutMs,
       unreadOnly: true,
     });
     expect(secondEmail.subject).toContain('second');
