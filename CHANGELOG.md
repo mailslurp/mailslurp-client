@@ -1,4 +1,9 @@
 # Changelog
+## [17.7.0]
+- Throw `MailSlurpApiError` for API errors from both convenience methods and controllers. It is a real `Error` whose `message` is the API's explanation (for example an upgrade-required limit), so test runners print the reason instead of `[object Object]` or a bare `Response`.
+- Controller errors keep the Response members earlier versions threw (`status`, `statusText`, `ok`, `headers`, `url`, `text()`, `json()`, `blob()`, `arrayBuffer()`, `formData()`, `clone()`), and `response` is the original `Response`. Code that checks `e instanceof Response` should use `e.response` instead.
+- Convenience methods keep every field of the API error body (`message`, `errorCode`, `messageLabel`) on the thrown error, as before.
+
 ## [17.5.0]
 - Forward the documented `fetchApi` override to every generated controller.
 - Guard `URLSearchParams` access so JSON requests continue to work on legacy Node.js runtimes.

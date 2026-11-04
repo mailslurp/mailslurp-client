@@ -282,14 +282,35 @@ export type GetMessagesOptions = {
     size?: number;
 };
 /**
- * Error thrown by MailSlurp convenience methods when the API rejects a request.
- * It keeps every field of the API error body (such as `message`, `errorCode` and `messageLabel`)
- * and adds the HTTP `status`, so test runners print a readable reason instead of `[object Object]`.
+ * Error thrown when the MailSlurp API rejects a request, by both the convenience methods and the
+ * controllers (for example `mailslurp.inboxController`). `message` is the API's explanation, so
+ * test runners print a readable reason. Every field of the API error body (such as `errorCode`
+ * and `messageLabel`) is copied onto the error.
+ *
+ * Controller errors also keep the Response members that earlier versions threw: `status`,
+ * `statusText`, `ok`, `headers`, `url`, `text()`, `json()`, `blob()`, `arrayBuffer()`,
+ * `formData()` and `clone()`. `response` is the original Response.
  */
 export declare class MailSlurpApiError extends Error {
     status?: number;
+    statusText?: string;
+    ok?: boolean;
+    headers?: Headers;
+    url?: string;
+    redirected?: boolean;
+    type?: string;
+    response?: Response;
     [key: string]: unknown;
-    constructor(message: string, status?: number, body?: Record<string, unknown>);
+    constructor(message: string, status?: number, body?: Record<string, unknown>, response?: Response);
+    get body(): ReadableStream<Uint8Array> | null | undefined;
+    get bodyUsed(): boolean | undefined;
+    text(): Promise<string>;
+    json(): Promise<any>;
+    blob(): Promise<Blob>;
+    arrayBuffer(): Promise<ArrayBuffer>;
+    formData(): Promise<FormData>;
+    clone(): Response;
+    private requireResponse;
 }
 export declare function wrapException<T>(fn: () => Promise<T>): Promise<T>;
 export interface Result<T> {

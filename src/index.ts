@@ -187,7 +187,7 @@ export class MailSlurp {
     const clientConfiguration = new Configuration({
       apiKey: opts.apiKey,
       basePath: opts.basePath || 'https://javascript.api.mailslurp.com',
-      fetchApi: opts.fetchApi,
+      fetchApi: withApiErrors(opts.fetchApi),
       headers: opts.headers || undefined,
     });
     const args = [clientConfiguration, clientConfiguration.basePath, _fetch];
@@ -664,33 +664,183 @@ export type GetMessagesOptions = {
 };
 
 // helper
+const RESPONSE_FIELDS = new Set([
+  'status',
+  'statusText',
+  'ok',
+  'headers',
+  'url',
+  'redirected',
+  'type',
+  'body',
+  'bodyUsed',
+  'response',
+  'text',
+  'json',
+  'blob',
+  'arrayBuffer',
+  'formData',
+  'clone',
+  'name',
+  'stack',
+]);
+
 /**
- * Error thrown by MailSlurp convenience methods when the API rejects a request.
- * It keeps every field of the API error body (such as `message`, `errorCode` and `messageLabel`)
- * and adds the HTTP `status`, so test runners print a readable reason instead of `[object Object]`.
+ * Error thrown when the MailSlurp API rejects a request, by both the convenience methods and the
+ * controllers (for example `mailslurp.inboxController`). `message` is the API's explanation, so
+ * test runners print a readable reason. Every field of the API error body (such as `errorCode`
+ * and `messageLabel`) is copied onto the error.
+ *
+ * Controller errors also keep the Response members that earlier versions threw: `status`,
+ * `statusText`, `ok`, `headers`, `url`, `text()`, `json()`, `blob()`, `arrayBuffer()`,
+ * `formData()` and `clone()`. `response` is the original Response.
  */
 export class MailSlurpApiError extends Error {
   status?: number;
+  statusText?: string;
+  ok?: boolean;
+  headers?: Headers;
+  url?: string;
+  redirected?: boolean;
+  type?: string;
+  response?: Response;
   [key: string]: unknown;
 
   constructor(
     message: string,
     status?: number,
-    body?: Record<string, unknown>
+    body?: Record<string, unknown>,
+    response?: Response
   ) {
     super(message);
     // Keep instanceof checks working when compiled to ES5.
     Object.setPrototypeOf(this, MailSlurpApiError.prototype);
-    if (body) {
-      Object.assign(this, body);
+    if (body && typeof body === 'object') {
+      for (const key of Object.keys(body)) {
+        if (!RESPONSE_FIELDS.has(key)) {
+          this[key] = body[key];
+        }
+      }
     }
     this.message = message;
     this.name = 'MailSlurpApiError';
     this.status = status;
+    if (response) {
+      this.response = response;
+      this.statusText = response.statusText;
+      this.ok = response.ok;
+      this.headers = response.headers;
+      this.url = response.url;
+      this.redirected = response.redirected;
+      this.type = response.type;
+    }
+  }
+
+  get body(): ReadableStream<Uint8Array> | null | undefined {
+    return this.response?.body;
+  }
+
+  get bodyUsed(): boolean | undefined {
+    return this.response?.bodyUsed;
+  }
+
+  text(): Promise<string> {
+    return this.requireResponse().text();
+  }
+
+  json(): Promise<any> {
+    return this.requireResponse().json();
+  }
+
+  blob(): Promise<Blob> {
+    return this.requireResponse().blob();
+  }
+
+  arrayBuffer(): Promise<ArrayBuffer> {
+    return this.requireResponse().arrayBuffer();
+  }
+
+  formData(): Promise<FormData> {
+    return this.requireResponse().formData();
+  }
+
+  clone(): Response {
+    return this.requireResponse().clone();
+  }
+
+  private requireResponse(): Response {
+    if (!this.response) {
+      throw new Error('This MailSlurpApiError has no HTTP response');
+    }
+    return this.response;
   }
 }
 
+function parseErrorBody(text: string): Record<string, unknown> | undefined {
+  try {
+    const parsed = JSON.parse(text);
+    return parsed && typeof parsed === 'object' ? parsed : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+function errorReason(
+  body: Record<string, unknown> | undefined,
+  text: string | undefined,
+  statusText: string | undefined
+): string {
+  if (body && typeof body.message === 'string' && body.message) {
+    return body.message;
+  }
+  const plain = text?.trim();
+  if (plain && !body) {
+    return plain.length > 1000 ? plain.substring(0, 1000) + '...' : plain;
+  }
+  return statusText || 'Request failed';
+}
+
+/**
+ * Generated controllers throw the Response for any non-2xx status. Wrapping fetch swaps that
+ * Response for a MailSlurpApiError that still behaves like it, so existing `e.status` and
+ * `await e.text()` handling keeps working while `e.message` explains the failure. Successful
+ * responses pass through untouched, including custom fetch results.
+ */
+function withApiErrors(fetchApi?: FetchAPI): FetchAPI {
+  return async (url, init) => {
+    const response = await (fetchApi || fetch)(url, init);
+    if (
+      !response ||
+      typeof response.status !== 'number' ||
+      (response.status >= 200 && response.status < 300)
+    ) {
+      return response;
+    }
+    let text: string | undefined;
+    try {
+      text =
+        typeof response.clone === 'function'
+          ? await response.clone().text()
+          : undefined;
+    } catch {
+      text = undefined;
+    }
+    const body = text ? parseErrorBody(text) : undefined;
+    const error = new MailSlurpApiError(
+      errorReason(body, text, response.statusText),
+      response.status,
+      body,
+      response
+    );
+    // The generated runtime throws the non-2xx object it receives from fetch.
+    return error as unknown as Response;
+  };
+}
+
 async function toMailSlurpApiError(e: any): Promise<unknown> {
+  if (e instanceof MailSlurpApiError) {
+    return e;
+  }
   if (!e || typeof e.json !== 'function') {
     return e;
   }
@@ -701,11 +851,11 @@ async function toMailSlurpApiError(e: any): Promise<unknown> {
     body = undefined;
   }
   const status = typeof e.status === 'number' ? e.status : undefined;
-  const reason =
-    (body && typeof body.message === 'string' && body.message) ||
-    e.statusText ||
-    'Request failed';
-  return new MailSlurpApiError(reason, status, body);
+  return new MailSlurpApiError(
+    errorReason(body, undefined, e.statusText),
+    status,
+    body
+  );
 }
 
 async function wrapCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {

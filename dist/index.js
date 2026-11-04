@@ -89,6 +89,17 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
+var __values = (this && this.__values) || function(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MailSlurpApiError = exports.MailSlurp = void 0;
 exports.wrapException = wrapException;
@@ -156,7 +167,7 @@ var MailSlurp = /** @class */ (function () {
         var clientConfiguration = new generated_1.Configuration({
             apiKey: opts.apiKey,
             basePath: opts.basePath || 'https://javascript.api.mailslurp.com',
-            fetchApi: opts.fetchApi,
+            fetchApi: withApiErrors(opts.fetchApi),
             headers: opts.headers || undefined,
         });
         var args = [clientConfiguration, clientConfiguration.basePath, _fetch];
@@ -624,34 +635,192 @@ var MailSlurp = /** @class */ (function () {
 }());
 exports.MailSlurp = MailSlurp;
 // helper
+var RESPONSE_FIELDS = new Set([
+    'status',
+    'statusText',
+    'ok',
+    'headers',
+    'url',
+    'redirected',
+    'type',
+    'body',
+    'bodyUsed',
+    'response',
+    'text',
+    'json',
+    'blob',
+    'arrayBuffer',
+    'formData',
+    'clone',
+    'name',
+    'stack',
+]);
 /**
- * Error thrown by MailSlurp convenience methods when the API rejects a request.
- * It keeps every field of the API error body (such as `message`, `errorCode` and `messageLabel`)
- * and adds the HTTP `status`, so test runners print a readable reason instead of `[object Object]`.
+ * Error thrown when the MailSlurp API rejects a request, by both the convenience methods and the
+ * controllers (for example `mailslurp.inboxController`). `message` is the API's explanation, so
+ * test runners print a readable reason. Every field of the API error body (such as `errorCode`
+ * and `messageLabel`) is copied onto the error.
+ *
+ * Controller errors also keep the Response members that earlier versions threw: `status`,
+ * `statusText`, `ok`, `headers`, `url`, `text()`, `json()`, `blob()`, `arrayBuffer()`,
+ * `formData()` and `clone()`. `response` is the original Response.
  */
 var MailSlurpApiError = /** @class */ (function (_super) {
     __extends(MailSlurpApiError, _super);
-    function MailSlurpApiError(message, status, body) {
+    function MailSlurpApiError(message, status, body, response) {
+        var e_1, _a;
         var _this = _super.call(this, message) || this;
         // Keep instanceof checks working when compiled to ES5.
         Object.setPrototypeOf(_this, MailSlurpApiError.prototype);
-        if (body) {
-            Object.assign(_this, body);
+        if (body && typeof body === 'object') {
+            try {
+                for (var _b = __values(Object.keys(body)), _c = _b.next(); !_c.done; _c = _b.next()) {
+                    var key = _c.value;
+                    if (!RESPONSE_FIELDS.has(key)) {
+                        _this[key] = body[key];
+                    }
+                }
+            }
+            catch (e_1_1) { e_1 = { error: e_1_1 }; }
+            finally {
+                try {
+                    if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+                }
+                finally { if (e_1) throw e_1.error; }
+            }
         }
         _this.message = message;
         _this.name = 'MailSlurpApiError';
         _this.status = status;
+        if (response) {
+            _this.response = response;
+            _this.statusText = response.statusText;
+            _this.ok = response.ok;
+            _this.headers = response.headers;
+            _this.url = response.url;
+            _this.redirected = response.redirected;
+            _this.type = response.type;
+        }
         return _this;
     }
+    Object.defineProperty(MailSlurpApiError.prototype, "body", {
+        get: function () {
+            var _a;
+            return (_a = this.response) === null || _a === void 0 ? void 0 : _a.body;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(MailSlurpApiError.prototype, "bodyUsed", {
+        get: function () {
+            var _a;
+            return (_a = this.response) === null || _a === void 0 ? void 0 : _a.bodyUsed;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    MailSlurpApiError.prototype.text = function () {
+        return this.requireResponse().text();
+    };
+    MailSlurpApiError.prototype.json = function () {
+        return this.requireResponse().json();
+    };
+    MailSlurpApiError.prototype.blob = function () {
+        return this.requireResponse().blob();
+    };
+    MailSlurpApiError.prototype.arrayBuffer = function () {
+        return this.requireResponse().arrayBuffer();
+    };
+    MailSlurpApiError.prototype.formData = function () {
+        return this.requireResponse().formData();
+    };
+    MailSlurpApiError.prototype.clone = function () {
+        return this.requireResponse().clone();
+    };
+    MailSlurpApiError.prototype.requireResponse = function () {
+        if (!this.response) {
+            throw new Error('This MailSlurpApiError has no HTTP response');
+        }
+        return this.response;
+    };
     return MailSlurpApiError;
 }(Error));
 exports.MailSlurpApiError = MailSlurpApiError;
+function parseErrorBody(text) {
+    try {
+        var parsed = JSON.parse(text);
+        return parsed && typeof parsed === 'object' ? parsed : undefined;
+    }
+    catch (_a) {
+        return undefined;
+    }
+}
+function errorReason(body, text, statusText) {
+    if (body && typeof body.message === 'string' && body.message) {
+        return body.message;
+    }
+    var plain = text === null || text === void 0 ? void 0 : text.trim();
+    if (plain && !body) {
+        return plain.length > 1000 ? plain.substring(0, 1000) + '...' : plain;
+    }
+    return statusText || 'Request failed';
+}
+/**
+ * Generated controllers throw the Response for any non-2xx status. Wrapping fetch swaps that
+ * Response for a MailSlurpApiError that still behaves like it, so existing `e.status` and
+ * `await e.text()` handling keeps working while `e.message` explains the failure. Successful
+ * responses pass through untouched, including custom fetch results.
+ */
+function withApiErrors(fetchApi) {
+    var _this = this;
+    return function (url, init) { return __awaiter(_this, void 0, void 0, function () {
+        var response, text, _a, _b, body, error;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0: return [4 /*yield*/, (fetchApi || fetch)(url, init)];
+                case 1:
+                    response = _c.sent();
+                    if (!response ||
+                        typeof response.status !== 'number' ||
+                        (response.status >= 200 && response.status < 300)) {
+                        return [2 /*return*/, response];
+                    }
+                    _c.label = 2;
+                case 2:
+                    _c.trys.push([2, 6, , 7]);
+                    if (!(typeof response.clone === 'function')) return [3 /*break*/, 4];
+                    return [4 /*yield*/, response.clone().text()];
+                case 3:
+                    _a = _c.sent();
+                    return [3 /*break*/, 5];
+                case 4:
+                    _a = undefined;
+                    _c.label = 5;
+                case 5:
+                    text = _a;
+                    return [3 /*break*/, 7];
+                case 6:
+                    _b = _c.sent();
+                    text = undefined;
+                    return [3 /*break*/, 7];
+                case 7:
+                    body = text ? parseErrorBody(text) : undefined;
+                    error = new MailSlurpApiError(errorReason(body, text, response.statusText), response.status, body, response);
+                    // The generated runtime throws the non-2xx object it receives from fetch.
+                    return [2 /*return*/, error];
+            }
+        });
+    }); };
+}
 function toMailSlurpApiError(e) {
     return __awaiter(this, void 0, void 0, function () {
-        var body, _a, status, reason;
+        var body, _a, status;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
+                    if (e instanceof MailSlurpApiError) {
+                        return [2 /*return*/, e];
+                    }
                     if (!e || typeof e.json !== 'function') {
                         return [2 /*return*/, e];
                     }
@@ -668,17 +837,14 @@ function toMailSlurpApiError(e) {
                     return [3 /*break*/, 4];
                 case 4:
                     status = typeof e.status === 'number' ? e.status : undefined;
-                    reason = (body && typeof body.message === 'string' && body.message) ||
-                        e.statusText ||
-                        'Request failed';
-                    return [2 /*return*/, new MailSlurpApiError(reason, status, body)];
+                    return [2 /*return*/, new MailSlurpApiError(errorReason(body, undefined, e.statusText), status, body)];
             }
         });
     });
 }
 function wrapCall(tag, fn) {
     return __awaiter(this, void 0, void 0, function () {
-        var e_1;
+        var e_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -686,8 +852,8 @@ function wrapCall(tag, fn) {
                     return [4 /*yield*/, fn()];
                 case 1: return [2 /*return*/, _a.sent()];
                 case 2:
-                    e_1 = _a.sent();
-                    return [4 /*yield*/, toMailSlurpApiError(e_1)];
+                    e_2 = _a.sent();
+                    return [4 /*yield*/, toMailSlurpApiError(e_2)];
                 case 3: throw _a.sent();
                 case 4: return [2 /*return*/];
             }
@@ -703,7 +869,7 @@ function wrapException(fn) {
 }
 function wrapResult(fn) {
     return __awaiter(this, void 0, void 0, function () {
-        var content, e_2, statusCode, message, _a;
+        var content, e_3, statusCode, message, _a;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
@@ -715,15 +881,15 @@ function wrapResult(fn) {
                             content: content,
                         }];
                 case 2:
-                    e_2 = _b.sent();
-                    statusCode = e_2.status ? e_2.status : 500;
-                    if (!e_2.json) return [3 /*break*/, 4];
-                    return [4 /*yield*/, e_2.json()];
+                    e_3 = _b.sent();
+                    statusCode = e_3.status ? e_3.status : 500;
+                    if (!e_3.json) return [3 /*break*/, 4];
+                    return [4 /*yield*/, e_3.json()];
                 case 3:
                     _a = _b.sent();
                     return [3 /*break*/, 5];
                 case 4:
-                    _a = e_2;
+                    _a = e_3;
                     _b.label = 5;
                 case 5:
                     message = _a;

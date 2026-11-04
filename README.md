@@ -114,6 +114,7 @@ const mailslurp = new MailSlurp({
 Any method that returns non-2xx response throws an exception by default (unless you use methods with the `Raw` suffix). There are valid 404 responses that you should handle, these include the 408 returned from `waitFor` methods when the required matching emails could not be found.
 
 - `4xx` (400, 404...) response codes indicate a client error. Access the error message on the response body
+- The thrown value is a `MailSlurpApiError`: an `Error` whose `message` is the API's explanation, with `status`, `errorCode` and the other error body fields. It also keeps the response methods, so `e.status`, `await e.text()` and `await e.json()` work as before, and `e.response` is the original `Response`.
 - `5xx` (500, 501...) response codes indicate a server error. If encountered please contact support.
 
 ```typescript
