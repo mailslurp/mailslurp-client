@@ -281,6 +281,16 @@ export type GetMessagesOptions = {
     sort?: SortEnum;
     size?: number;
 };
+/**
+ * Error thrown by MailSlurp convenience methods when the API rejects a request.
+ * It keeps every field of the API error body (such as `message`, `errorCode` and `messageLabel`)
+ * and adds the HTTP `status`, so test runners print a readable reason instead of `[object Object]`.
+ */
+export declare class MailSlurpApiError extends Error {
+    status?: number;
+    [key: string]: unknown;
+    constructor(message: string, status?: number, body?: Record<string, unknown>);
+}
 export declare function wrapException<T>(fn: () => Promise<T>): Promise<T>;
 export interface Result<T> {
     content?: T;

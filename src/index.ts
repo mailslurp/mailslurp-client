@@ -664,11 +664,55 @@ export type GetMessagesOptions = {
 };
 
 // helper
+/**
+ * Error thrown by MailSlurp convenience methods when the API rejects a request.
+ * It keeps every field of the API error body (such as `message`, `errorCode` and `messageLabel`)
+ * and adds the HTTP `status`, so test runners print a readable reason instead of `[object Object]`.
+ */
+export class MailSlurpApiError extends Error {
+  status?: number;
+  [key: string]: unknown;
+
+  constructor(
+    message: string,
+    status?: number,
+    body?: Record<string, unknown>
+  ) {
+    super(message);
+    // Keep instanceof checks working when compiled to ES5.
+    Object.setPrototypeOf(this, MailSlurpApiError.prototype);
+    if (body) {
+      Object.assign(this, body);
+    }
+    this.message = message;
+    this.name = 'MailSlurpApiError';
+    this.status = status;
+  }
+}
+
+async function toMailSlurpApiError(e: any): Promise<unknown> {
+  if (!e || typeof e.json !== 'function') {
+    return e;
+  }
+  let body: Record<string, unknown> | undefined;
+  try {
+    body = await e.json();
+  } catch {
+    body = undefined;
+  }
+  const status = typeof e.status === 'number' ? e.status : undefined;
+  const reason =
+    (body && typeof body.message === 'string' && body.message) ||
+    e.statusText ||
+    'Request failed';
+  return new MailSlurpApiError(reason, status, body);
+}
+
 async function wrapCall<T>(tag: String, fn: () => Promise<T>): Promise<T> {
   try {
     return await fn();
   } catch (e) {
-    throw e.json ? await e.json() : e;
+    throw await toMailSlurpApiError(e);
   }
 }
 

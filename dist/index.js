@@ -1,4 +1,19 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -75,7 +90,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MailSlurp = void 0;
+exports.MailSlurpApiError = exports.MailSlurp = void 0;
 exports.wrapException = wrapException;
 exports.wrapResult = wrapResult;
 require('cross-fetch/polyfill');
@@ -609,27 +624,72 @@ var MailSlurp = /** @class */ (function () {
 }());
 exports.MailSlurp = MailSlurp;
 // helper
-function wrapCall(tag, fn) {
+/**
+ * Error thrown by MailSlurp convenience methods when the API rejects a request.
+ * It keeps every field of the API error body (such as `message`, `errorCode` and `messageLabel`)
+ * and adds the HTTP `status`, so test runners print a readable reason instead of `[object Object]`.
+ */
+var MailSlurpApiError = /** @class */ (function (_super) {
+    __extends(MailSlurpApiError, _super);
+    function MailSlurpApiError(message, status, body) {
+        var _this = _super.call(this, message) || this;
+        // Keep instanceof checks working when compiled to ES5.
+        Object.setPrototypeOf(_this, MailSlurpApiError.prototype);
+        if (body) {
+            Object.assign(_this, body);
+        }
+        _this.message = message;
+        _this.name = 'MailSlurpApiError';
+        _this.status = status;
+        return _this;
+    }
+    return MailSlurpApiError;
+}(Error));
+exports.MailSlurpApiError = MailSlurpApiError;
+function toMailSlurpApiError(e) {
     return __awaiter(this, void 0, void 0, function () {
-        var e_1, _a;
+        var body, _a, status, reason;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    _b.trys.push([0, 2, , 6]);
-                    return [4 /*yield*/, fn()];
-                case 1: return [2 /*return*/, _b.sent()];
+                    if (!e || typeof e.json !== 'function') {
+                        return [2 /*return*/, e];
+                    }
+                    _b.label = 1;
+                case 1:
+                    _b.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, e.json()];
                 case 2:
-                    e_1 = _b.sent();
-                    if (!e_1.json) return [3 /*break*/, 4];
-                    return [4 /*yield*/, e_1.json()];
+                    body = _b.sent();
+                    return [3 /*break*/, 4];
                 case 3:
                     _a = _b.sent();
-                    return [3 /*break*/, 5];
+                    body = undefined;
+                    return [3 /*break*/, 4];
                 case 4:
-                    _a = e_1;
-                    _b.label = 5;
-                case 5: throw _a;
-                case 6: return [2 /*return*/];
+                    status = typeof e.status === 'number' ? e.status : undefined;
+                    reason = (body && typeof body.message === 'string' && body.message) ||
+                        e.statusText ||
+                        'Request failed';
+                    return [2 /*return*/, new MailSlurpApiError(reason, status, body)];
+            }
+        });
+    });
+}
+function wrapCall(tag, fn) {
+    return __awaiter(this, void 0, void 0, function () {
+        var e_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, , 4]);
+                    return [4 /*yield*/, fn()];
+                case 1: return [2 /*return*/, _a.sent()];
+                case 2:
+                    e_1 = _a.sent();
+                    return [4 /*yield*/, toMailSlurpApiError(e_1)];
+                case 3: throw _a.sent();
+                case 4: return [2 /*return*/];
             }
         });
     });
