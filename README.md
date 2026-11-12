@@ -2,7 +2,9 @@
 
 Create real email addresses on demand. Send and receive emails and attachments from code and tests using Javascript or Typescript. Use real phone numbers to process inbound TXT messages.
 
-[MailSlurp](https://www.mailslurp.com) is an email and SMS [API](https://docs.mailslurp.com/js/) service that lets you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests. You can also [create phone numbers](/) and fetch inbound SMS. 
+Use MailSlurp when your tests need real, private inboxes and phone numbers: each test gets its own address or number, waits for the message and reads the code, locally or in CI. The same account previews emails on real devices and checks inbox placement.
+
+[MailSlurp](https://www.mailslurp.com) is an email and SMS [API](https://www.mailslurp.com/docs/js/) service that lets you create real email addresses in code. You can then send and receive emails and attachments in Javascript applications and tests. You can also [create phone numbers](https://www.mailslurp.com/product/phone-number-sms-service/) and fetch inbound SMS. 
 
 MailSlurp is free for personal use but requires an [API KEY](https://app.mailslurp.com). Please see the [getting started guide](https://www.mailslurp.com/guides/getting-started/) for an introduction on key MailSlurp concepts or continue reading. 
 
